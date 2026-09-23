@@ -1,6 +1,6 @@
 # Cairn: scope
 
-*Status: scoping. Source notes: [`idea-notes.md`](idea-notes.md).*
+*Status: Phase 0 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
 
 ## 1. The question
 
@@ -62,7 +62,12 @@ Wrinkles the parser and graph extractor must handle:
 
 ## 4. Phases
 
-### Phase 0: blueprint-only analysis (no Lean build) ✅ start here
+### Phase 0: blueprint-only analysis (no Lean build) ✅ done for PFR
+
+**Result:** in every scope the human order beats all sampled valid orders on working-memory
+load, and it is near the local-search optimum within chapters. Across chapters, grouping by
+topic beats load minimisation. Details and caveats: [`phase0-pfr.md`](phase0-pfr.md).
+Run with `cairn phase0 <blueprint/src> ...` or `scripts/phase0_pfr.sh`.
 
 Needs only a Python LaTeX parser. It answers the cheapest question first.
 
@@ -85,14 +90,20 @@ already in trouble. That would be worth knowing before building the Lean side.
    (`Expr.getUsedConstants`, filtering auxiliary declarations and mapping them to
    their parent). Output: JSONL of `{name, module, kind, type_deps, value_deps,
    is_project_local}`.
-2. Check the existing tools before writing our own: LeanDojo, `jixia`,
-   doc-gen4's dependency data, leanblueprint's `checkdecls`.
+2. **Decision: write our own small metaprogram** (see §8.2). Don't adopt LeanDojo or jixia.
 3. Join with the blueprint via the `\lean{}` names to get a formal graph with a
    partial human labelling.
 
-Cost warning: building PFR needs the Mathlib cache (`lake exe cache get`), which
-takes several GB and a fair amount of wall-clock time. Worth a setup script or
-container.
+Cost: building PFR (75 files, about 13k lines of Lean on toolchain `v4.35.0-rc2`)
+needs the prebuilt Mathlib cache (`lake exe cache get`, several GB) and then a
+compile of PFR itself. About 86% of the blueprint's `\lean{}` names (220 of 255)
+are still defined in PFR; the rest have been upstreamed to Mathlib or renamed.
+
+**Blocked in the current cloud environment:** its network policy denies
+`release.lean-lang.org` (the Lean toolchain download). Toolchain and cache
+downloads need that host, GitHub release assets and the Mathlib cache host
+allowed in the environment's network settings. Alternatively, build locally and
+commit only the extracted JSONL.
 
 ### Phase 2: baselines and benchmark
 
@@ -118,28 +129,30 @@ set**, not a training set.
 
 ## 5. Corpus candidates
 
-Start with PFR, which is small, finished and uniform. Then add projects that use
+Start with PFR: finished, one uniform blueprint, 218 nodes, and a medium-sized Lean project. Then add projects that use
 leanblueprint, for example the PrimeNumberTheoremAnd, FLT, Carleson,
 Sphere Eversion and the Infinitely-many-primes demo. Verify each one's licence,
 toolchain and blueprint conventions before adding it; this list has not been
 checked.
 
-## 6. Proposed repo layout (created when the first code lands)
+## 6. Repo layout
 
 ```
 cairn/
   docs/                 # these notes
   python/cairn/
-    blueprint.py        # LaTeX → nodes/edges/order
-    graph.py            # graph utils, topo-sort sampling, cutwidth
-    baselines/          # ordering, clustering, key-node scorers
-    eval.py             # metrics + null models
-  lean/CairnExtract/    # Lean metaprogram for formal dependency graphs
-  data/                 # pinned project commits (gitignored raw clones)
-  notebooks/            # exploratory analysis
+    blueprint.py        # LaTeX → nodes/edges/order            (exists)
+    graph.py            # orders, null models, metrics         (exists)
+    phase0.py, plots.py # Phase 0 analysis + report            (exists)
+    cli.py              # `cairn parse`, `cairn phase0`         (exists)
+  python/tests/         # pytest, incl. a tiny fixture blueprint (exists)
+  scripts/              # pinned reproduction scripts          (exists)
+  results/              # committed reports and figures        (exists)
+  lean/CairnExtract/    # Phase 1 metaprogram                  (next)
+  data/raw/             # pinned project clones (gitignored)
 ```
 
-Python ≥3.11 with `networkx`, `pydantic`, `pytest`, managed by `uv`.
+Python ≥3.11 with `networkx`, `matplotlib`, `pytest`, managed by `uv`.
 
 ## 7. Risks
 
@@ -155,13 +168,22 @@ Python ≥3.11 with `networkx`, `pydantic`, `pytest`, managed by `uv`.
 - **Small N.** A few projects means per-project results, not pooled
   significance.
 
-## 8. Open decisions
+## 8. Decisions
 
-1. **Goal of the output**: a short write-up or blog post (maybe sent to Massot
-   or Tao), a reusable tool, or a paper? This decides how polished Phase 2
-   needs to be.
-2. **Lean extraction**: write our own metaprogram or adopt LeanDojo/jixia?
-   Decide after a half-day spike.
-3. **Compute**: local build of PFR + Mathlib, or a prepared container?
-4. **LLM baseline**: which model and budget for the "LLM-chosen order" baseline
-   in task (b).
+1. **Output: a reusable tool.** Everything lives in the `cairn` package and CLI
+   and runs on any leanblueprint project. Reports are generated, not hand-edited.
+2. **Lean extraction: our own minimal metaprogram**, run with
+   `lake env lean --run` inside each target project. What we need is small: for
+   each project declaration, the constants used in its type and value, with
+   compiler auxiliaries (`_proof_n`, `match_n`, `_eq_n`, …) folded into their
+   parents. That is roughly 100 lines over `Environment` and
+   `Expr.getUsedConstants`. It has to compile against each project's own
+   (often release-candidate) toolchain, and a tiny script is the easiest thing
+   to keep working across versions. LeanDojo traces whole repositories, is slow,
+   and lags new Lean releases. jixia gives much more (syntax, tactic-level
+   data) than a dependency graph needs. doc-gen4 and `checkdecls` don't give
+   declaration-level dependencies. Revisit if tactic-level hardness signals
+   (Phase 2c) need per-step data.
+3. **Compute:** see Phase 1. The cloud environment needs Lean hosts allowed
+   before it can build, or the build runs locally.
+4. **LLM baseline:** use the current Claude model.

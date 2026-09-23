@@ -1,0 +1,13 @@
+\begin{definition}[Widget]\label{def-widget}\lean{Foo.Widget}\leanok
+A widget is a thing. % \uses{commented-out}
+\end{definition}
+
+\begin{lemma}[Widgets are nice [really]]\label{nice}
+  \uses{def-widget}
+  \lean{Foo.nice, Foo.nice'}\leanok
+  Every widget is nice.
+\end{lemma}
+\begin{proof}
+  \uses{later}\leanok
+  By the later lemma (a forward reference). 50\% of the time.
+\end{proof}
