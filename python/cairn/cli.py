@@ -30,6 +30,16 @@ def main(argv: list[str] | None = None) -> None:
     p0.add_argument("--restarts", type=int, default=20)
     p0.add_argument("--seed", type=int, default=0)
 
+    p1 = sub.add_parser("phase1", help="compare \\uses with Lean dependencies; rerun ordering analysis on Lean edges")
+    p1.add_argument("src", type=Path)
+    p1.add_argument("decls", type=Path, help="JSONL from lean/extract_deps.lean")
+    p1.add_argument("--entry", default="content.tex")
+    p1.add_argument("--project", required=True)
+    p1.add_argument("--provenance", default="")
+    p1.add_argument("-o", "--out", type=Path, required=True)
+    p1.add_argument("--samples", type=int, default=1000)
+    p1.add_argument("--seed", type=int, default=0)
+
     args = ap.parse_args(argv)
     bp = parse_blueprint(args.src, args.entry)
 
@@ -45,6 +55,16 @@ def main(argv: list[str] | None = None) -> None:
             args.out.write_text(text)
         else:
             print(text)
+        return
+
+    if args.cmd == "phase1":
+        from .formal import load_decls
+        from .phase1 import analyse, write_report as write_phase1
+
+        decls = load_decls(args.decls)
+        stats, results, _ = analyse(bp, decls, samples=args.samples, seed=args.seed)
+        write_phase1(stats, results, args.out, args.project, args.provenance)
+        print(f"{stats['project_decls']} project decls, coverage {stats['coverage']:.0%}; wrote {args.out}/phase1.md")
         return
 
     from .phase0 import analyse_blueprint, write_report

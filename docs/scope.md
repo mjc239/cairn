@@ -1,6 +1,6 @@
 # Cairn: scope
 
-*Status: Phase 0 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
+*Status: Phases 0 and 1 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
 
 ## 1. The question
 
@@ -83,27 +83,28 @@ Needs only a Python LaTeX parser. It answers the cheapest question first.
 If human order is no better than random, the working-memory hypothesis is
 already in trouble. That would be worth knowing before building the Lean side.
 
-### Phase 1: formal graph extraction
+### Phase 1: formal graph extraction ✅ done for PFR
 
-1. A Lean 4 metaprogram run against the built project. For each declaration in
-   the project namespace it collects the constants used in its type and value
-   (`Expr.getUsedConstants`, filtering auxiliary declarations and mapping them to
-   their parent). Output: JSONL of `{name, module, kind, type_deps, value_deps,
-   is_project_local}`.
-2. **Decision: write our own small metaprogram** (see §8.2). Don't adopt LeanDojo or jixia.
-3. Join with the blueprint via the `\lean{}` names to get a formal graph with a
-   partial human labelling.
+**Result:** 98% of blueprint `\lean{}` names resolve. Author `\uses` links are 87%
+confirmed by Lean but record only about a third of Lean's links (most omissions
+are definitions and workhorse lemmas). The human order still beats every random
+order, but on Lean links a naive just-in-time order matches it in three
+chapters. Details: [`phase1-pfr.md`](phase1-pfr.md).
 
-Cost: building PFR (75 files, about 13k lines of Lean on toolchain `v4.35.0-rc2`)
-needs the prebuilt Mathlib cache (`lake exe cache get`, several GB) and then a
-compile of PFR itself. About 86% of the blueprint's `\lean{}` names (220 of 255)
-are still defined in PFR; the rest have been upstreamed to Mathlib or renamed.
+1. [`lean/extract_deps.lean`](../lean/extract_deps.lean): run with
+   `lake env lean --run` inside the built project. It emits JSON Lines with each
+   constant's kind, module, source line and the constants used in its type and
+   its value.
+2. `cairn.formal` folds compiler auxiliaries into their parents, builds the
+   project-local graph, joins it to the blueprint through `\lean{}` and
+   projects it onto blueprint nodes through unlabelled helper declarations.
+3. `cairn phase1` compares author and Lean edges and reruns the Phase 0
+   ordering analysis on the Lean graph.
 
-**Blocked in the current cloud environment:** its network policy denies
-`release.lean-lang.org` (the Lean toolchain download). Toolchain and cache
-downloads need that host, GitHub release assets and the Mathlib cache host
-allowed in the environment's network settings. Alternatively, build locally and
-commit only the extracted JSONL.
+Cost in the cloud container: about 2 minutes for `lake exe cache get` (7.5 GB)
+and 4 minutes for `lake build PFR` on 4 cores. The extraction itself takes
+about 15 seconds. Needs network access to `release.lean-lang.org`, GitHub and
+`cache.mathlib.org`. `scripts/phase1_pfr.sh` does all of it.
 
 ### Phase 2: baselines and benchmark
 
@@ -172,7 +173,7 @@ Python ≥3.11 with `networkx`, `matplotlib`, `pytest`, managed by `uv`.
 
 1. **Output: a reusable tool.** Everything lives in the `cairn` package and CLI
    and runs on any leanblueprint project. Reports are generated, not hand-edited.
-2. **Lean extraction: our own minimal metaprogram**, run with
+2. **Lean extraction: our own minimal metaprogram** (implemented: `lean/extract_deps.lean`, about 70 lines), run with
    `lake env lean --run` inside each target project. What we need is small: for
    each project declaration, the constants used in its type and value, with
    compiler auxiliaries (`_proof_n`, `match_n`, `_eq_n`, …) folded into their
@@ -184,6 +185,6 @@ Python ≥3.11 with `networkx`, `matplotlib`, `pytest`, managed by `uv`.
    data) than a dependency graph needs. doc-gen4 and `checkdecls` don't give
    declaration-level dependencies. Revisit if tactic-level hardness signals
    (Phase 2c) need per-step data.
-3. **Compute:** see Phase 1. The cloud environment needs Lean hosts allowed
-   before it can build, or the build runs locally.
+3. **Compute:** the cloud container is enough. With network access enabled,
+   PFR builds from the Mathlib cache in about 7 minutes end to end (see Phase 1).
 4. **LLM baseline:** use the current Claude model.

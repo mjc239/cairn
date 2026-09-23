@@ -1,0 +1,162 @@
+"""Formal (Lean) dependency graphs, from the JSON Lines written by ``lean/extract_deps.lean``.
+
+Compiler auxiliaries (``foo._proof_1``, ``foo.match_1``, ``foo.eq_1``, recursors, constructors, ...)
+are folded into the user-facing declaration they belong to, both as dependents and as dependencies.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from dataclasses import dataclass, field
+from pathlib import Path
+
+import networkx as nx
+
+from .blueprint import Blueprint
+
+_INTERNAL_COMPONENT = re.compile(r"^(_.*|\d+|(match|proof|eq|omega)_\d+.*)$")
+_GENERATED_SUFFIXES = {
+    "rec", "recOn", "casesOn", "below", "brecOn", "binductionOn", "ibelow", "noConfusion",
+    "noConfusionType", "mk", "sizeOf_spec", "injEq", "inj", "ext_iff", "ctorIdx", "toCtorIdx",
+}
+
+
+def _components(name: str) -> list[str]:
+    # Lean escapes unusual components with «»; dots inside them are not separators.
+    return [c.strip("«»") for c in re.findall(r"«[^»]*»|[^.]+", name)]
+
+
+def fold_name(name: str, kinds: dict[str, str] | None = None) -> str:
+    """Map a constant to the user-facing declaration it was generated for.
+
+    Private prefixes are stripped, internal components (``_proof_1``, ``match_2``, numbers, ``_private``)
+    are dropped from the end, and generated structure/inductive companions (``.rec``, ``.mk``, ...) map
+    to the type.
+    """
+    if name.startswith("_private."):
+        # _private.<Module>.<n>.<user name>
+        parts = _components(name)
+        idx = next((i for i, p in enumerate(parts) if p.isdigit()), None)
+        name = ".".join(parts[idx + 1 :]) if idx is not None else name
+    parts = _components(name)
+    while len(parts) > 1 and _INTERNAL_COMPONENT.match(parts[-1]):
+        parts.pop()
+    if kinds is not None:
+        if kinds.get(".".join(parts)) == "constructor" and len(parts) > 1:
+            return ".".join(parts[:-1])
+        for i in range(1, len(parts)):
+            if parts[i] in _GENERATED_SUFFIXES and kinds.get(".".join(parts[:i])) == "inductive":
+                return ".".join(parts[:i])
+    return ".".join(parts)
+
+
+@dataclass
+class FormalDecl:
+    name: str
+    kind: str
+    module: str
+    line: int | None
+    type_deps: set[str] = field(default_factory=set)
+    value_deps: set[str] = field(default_factory=set)
+    members: list[str] = field(default_factory=list)
+
+
+def load_decls(path: str | Path) -> dict[str, FormalDecl]:
+    """Load ``extract_deps`` output and fold auxiliaries into user-facing declarations."""
+    rows = [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
+    kinds = {r["name"]: r["kind"] for r in rows}
+    user_names = {r["user_name"] for r in rows}
+    decls: dict[str, FormalDecl] = {}
+    for r in rows:
+        if any(c.startswith(("_aux", "_unexpand", "_delab")) for c in _components(r["user_name"])):
+            continue  # notation / macro plumbing, not mathematics
+        target = fold_name(r["name"], kinds)
+        if target != r["user_name"] and target not in user_names:
+            continue  # auxiliary of something that is not a declaration here
+        d = decls.get(target)
+        if d is None:
+            d = decls[target] = FormalDecl(target, r["kind"], r["module"], r["line"])
+        if r["user_name"] == target:  # the declaration itself, not one of its auxiliaries
+            d.kind, d.module = r["kind"], r["module"]
+            d.line = r["line"] if r["line"] is not None else d.line
+        d.members.append(r["name"])
+        d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])
+        d.value_deps.update(fold_name(x, kinds) for x in r["value_deps"])
+    for d in decls.values():
+        d.type_deps.discard(d.name)
+        d.value_deps.discard(d.name)
+    return decls
+
+
+def formal_graph(decls: dict[str, FormalDecl], include_type: bool = True, include_value: bool = True) -> nx.DiGraph:
+    """Project-local graph: edge ``u -> v`` when declaration ``v`` uses project declaration ``u``."""
+    g = nx.DiGraph()
+    for d in decls.values():
+        g.add_node(d.name, kind=d.kind, module=d.module, line=d.line)
+    for d in decls.values():
+        deps = (d.type_deps if include_type else set()) | (d.value_deps if include_value else set())
+        for u in deps:
+            if u in decls:
+                g.add_edge(u, d.name)
+    return g
+
+
+@dataclass
+class BlueprintJoin:
+    """Blueprint nodes mapped onto formal declarations."""
+
+    node_decls: dict[str, list[str]]
+    """Blueprint node id -> formal declarations it names that exist in the project."""
+    missing: dict[str, list[str]]
+    """Blueprint node id -> ``\\lean`` names not found among project declarations (upstreamed, renamed, typo)."""
+
+    @property
+    def coverage(self) -> float:
+        found = sum(len(v) for v in self.node_decls.values())
+        total = found + sum(len(v) for v in self.missing.values())
+        return found / total if total else 0.0
+
+
+def join_blueprint(bp: Blueprint, decls: dict[str, FormalDecl]) -> BlueprintJoin:
+    node_decls: dict[str, list[str]] = {}
+    missing: dict[str, list[str]] = {}
+    for n in bp.nodes:
+        for name in n.lean_decls:
+            target = name if name in decls else fold_name(name)
+            if target in decls:
+                node_decls.setdefault(n.id, []).append(target)
+            else:
+                missing.setdefault(n.id, []).append(name)
+    return BlueprintJoin(node_decls, missing)
+
+
+def projected_graph(bp: Blueprint, fg: nx.DiGraph, join: BlueprintJoin) -> nx.DiGraph:
+    """Blueprint-node graph whose edges come from Lean, not from ``\\uses``.
+
+    ``B -> A`` when some declaration of ``A`` depends on a declaration of ``B``, either directly or
+    through a chain of project declarations that belong to no blueprint node (helper lemmas the
+    blueprint never mentions). Nodes without any formal declaration are kept as isolated nodes.
+    """
+    owner: dict[str, str] = {}
+    for node, ds in join.node_decls.items():
+        for d in ds:
+            owner.setdefault(d, node)
+    g = nx.DiGraph()
+    for n in bp.nodes:
+        g.add_node(n.id, kind=n.kind, chapter=n.chapter, position=n.position)
+    for node, ds in join.node_decls.items():
+        seen: set[str] = set()
+        stack = [p for d in ds for p in fg.predecessors(d)]
+        while stack:
+            u = stack.pop()
+            if u in seen:
+                continue
+            seen.add(u)
+            src = owner.get(u)
+            if src is not None:
+                if src != node:
+                    g.add_edge(src, node)
+                continue  # stop at labelled declarations: their own deps belong to them
+            stack.extend(fg.predecessors(u))
+    return g
