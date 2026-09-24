@@ -24,6 +24,7 @@ from sklearn.preprocessing import StandardScaler
 from .blueprint import Blueprint
 from .formal import FormalDecl, formal_graph, join_blueprint, projected_graph
 from .graph import (
+    goal_first_order,
     greedy_min_open_order,
     just_in_time_order,
     kendall_tau,
@@ -165,6 +166,36 @@ def evaluate_key_nodes(decls: dict[str, FormalDecl], fg: nx.DiGraph, positives: 
     }
 
 
+def key_node_matrix(bp: Blueprint, decls: dict[str, FormalDecl]) -> tuple[list[str], np.ndarray, np.ndarray, list[str]]:
+    """Names, log-scaled feature matrix, labels and feature names for one project."""
+    fg = formal_graph(decls)
+    join = join_blueprint(bp, decls)
+    positives = {d for ds in join.node_decls.values() for d in ds}
+    feats = key_node_features(decls, fg)
+    names = sorted(fg.nodes)
+    cols = list(next(iter(feats.values())).keys())
+    x = np.array([[feats[v][c] for c in cols] for v in names], dtype=float)
+    y = np.array([v in positives for v in names], dtype=float)
+    return names, np.sign(x) * np.log1p(np.abs(x)), y, cols
+
+
+def transfer_key_nodes(projects: dict[str, tuple[Blueprint, dict[str, FormalDecl]]]) -> dict:
+    """Train the key-declaration model on one project, score it on each other project."""
+    data = {name: key_node_matrix(bp, decls) for name, (bp, decls) in projects.items()}
+    out = {}
+    for train, (_, xtr, ytr, _) in data.items():
+        model = make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
+        model.fit(xtr, ytr)
+        for test, (_, xte, yte, _) in data.items():
+            if test == train:
+                continue
+            p = model.predict_proba(xte)[:, 1]
+            out[f"{train} -> {test}"] = {"auroc": float(roc_auc_score(yte, p)),
+                                         "p_at_k": _precision_at_k(yte, p, int(yte.sum())),
+                                         "base_rate": float(yte.mean())}
+    return out
+
+
 def _cross_validated(x: np.ndarray, y: np.ndarray, groups: list[str]) -> tuple[np.ndarray, list[float]]:
     """Out-of-fold probabilities (5 folds, whole modules held out) and the full-data coefficients."""
 
@@ -292,6 +323,7 @@ def evaluate_orders(bp: Blueprint, decls, fg, join, lean_g: nx.DiGraph, predicte
         "Human (blueprint)": human,
         "Lean source order": lean_src_nodes,
         "Just-in-time DFS": just_in_time_order(dag, rng),
+        "Goal-first DFS": goal_first_order(dag, rng),
         "Global optimum (greedy + local search)": optimise_order(dag, rng),
         "Cluster-then-order, true chapters": cluster_then_order(dag, chapter, rng, chapters_in_order, node_src),
         "Cluster-then-order, Lean modules": cluster_then_order(dag, predicted_clusters, rng, tie=node_src),

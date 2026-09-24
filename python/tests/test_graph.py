@@ -4,6 +4,7 @@ import networkx as nx
 import pytest
 
 from cairn.graph import (
+    goal_first_order,
     greedy_min_open_order,
     just_in_time_order,
     kendall_tau,
@@ -100,3 +101,13 @@ def test_metrics_are_reversal_invariant():
     assert (a.cutwidth, a.mean_cut, a.max_open, a.mean_open, a.mean_edge_length) == (
         b.cutwidth, b.mean_cut, b.max_open, b.mean_open, b.mean_edge_length)
     assert b.forward_refs == g.number_of_edges()
+
+
+def test_goal_first_order_is_top_down():
+    g = nx.DiGraph([("a", "b"), ("b", "c"), ("a", "c"), ("d", "c")])
+    for seed in range(5):
+        order = goal_first_order(g, random.Random(seed))
+        assert order[0] == "c"
+        pos = {v: i for i, v in enumerate(order)}
+        # every non-final result appears after at least one result that uses it
+        assert all(any(pos[w] < pos[v] for w in g.successors(v)) for v in g if g.out_degree(v))

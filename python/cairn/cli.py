@@ -74,7 +74,28 @@ def main(argv: list[str] | None = None) -> None:
     pe.add_argument("--project", required=True)
     pe.add_argument("-o", "--out", type=Path, required=True, help="markdown report path")
 
+    pt = sub.add_parser("transfer", help="train the key-declaration model on one project, test on others")
+    pt.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
+    pt.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
+
     args = ap.parse_args(argv)
+    if args.cmd == "transfer":
+        from .formal import load_decls
+        from .phase2 import transfer_key_nodes
+
+        projects = {}
+        for spec in args.project:
+            name, _, rest = spec.partition("=")
+            src, decls, *more = rest.split(":")
+            group_by = more[0] if more else "file"
+            entry = more[1] if len(more) > 1 else "content.tex"
+            projects[name] = (parse_blueprint(Path(src), entry, group_by), load_decls(Path(decls)))
+        res = transfer_key_nodes(projects)
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(json.dumps(res, indent=2))
+        for k, v in res.items():
+            print(f"{k}: AUROC {v['auroc']:.2f}, P@k {v['p_at_k']:.0%} (base rate {v['base_rate']:.0%})")
+        return
     bp = parse_blueprint(args.src, args.entry, args.group_by)
 
     if args.cmd == "parse":

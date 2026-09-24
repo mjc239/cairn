@@ -1,0 +1,80 @@
+{
+  "variants": {
+    "named": {
+      "runs": [
+        {
+          "run": "results/phase2/carleson/llm",
+          "tau_within_chapters": 0.19089622434190753,
+          "per_chapter": {
+            "proof-of-metric-space-carleson-overview": -0.8888888888888888,
+            "proof-of-finitary-carleson": 0.33333333333333337,
+            "proof-of-discrete-carleson": 0.7747747747747747,
+            "proof-of-the-antichain-operator-proposit": 0.46153846153846156,
+            "proof-of-the-forest-operator-proposition": 0.7462887989203779,
+            "two-sided-metric-space-carleson": -0.16959064327485374,
+            "proof-of-the-classical-carleson-theorem": 0.0788177339901478
+          },
+          "mean_open": 19.402366863905325,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/carleson/llm_runs/named-s1",
+          "tau_within_chapters": 0.21492552905568202,
+          "per_chapter": {
+            "proof-of-metric-space-carleson-overview": -0.4444444444444444,
+            "proof-of-finitary-carleson": 0.35238095238095235,
+            "proof-of-discrete-carleson": 0.7777777777777778,
+            "proof-of-the-antichain-operator-proposit": 0.1282051282051282,
+            "proof-of-the-forest-operator-proposition": 0.7948717948717949,
+            "two-sided-metric-space-carleson": -0.1929824561403508,
+            "proof-of-the-classical-carleson-theorem": 0.08866995073891626
+          },
+          "mean_open": 19.37869822485207,
+          "violations_repaired": 0,
+          "invalid": []
+        }
+      ],
+      "tau_mean": 0.20291087669879476,
+      "tau_sd": 0.01699128431030781
+    },
+    "blind": {
+      "runs": [
+        {
+          "run": "results/phase2/carleson/llm_runs/blind-s0",
+          "tau_within_chapters": 0.21357591155361444,
+          "per_chapter": {
+            "proof-of-metric-space-carleson-overview": -0.7222222222222223,
+            "proof-of-finitary-carleson": 0.35238095238095235,
+            "proof-of-discrete-carleson": 0.6336336336336337,
+            "proof-of-the-antichain-operator-proposit": 0.46153846153846156,
+            "proof-of-the-forest-operator-proposition": 0.6437246963562753,
+            "two-sided-metric-space-carleson": -0.16959064327485374,
+            "proof-of-the-classical-carleson-theorem": 0.29556650246305416
+          },
+          "mean_open": 19.781065088757398,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/carleson/llm_runs/blind-s1",
+          "tau_within_chapters": 0.14527526326852228,
+          "per_chapter": {
+            "proof-of-metric-space-carleson-overview": -0.6111111111111112,
+            "proof-of-finitary-carleson": 0.35238095238095235,
+            "proof-of-discrete-carleson": 0.6936936936936937,
+            "proof-of-the-antichain-operator-proposit": 0.10256410256410253,
+            "proof-of-the-forest-operator-proposition": 0.6545209176788125,
+            "two-sided-metric-space-carleson": -0.20467836257309946,
+            "proof-of-the-classical-carleson-theorem": 0.029556650246305383
+          },
+          "mean_open": 19.680473372781066,
+          "violations_repaired": 0,
+          "invalid": []
+        }
+      ],
+      "tau_mean": 0.17942558741106834,
+      "tau_sd": 0.04829585156182601
+    }
+  }
+}

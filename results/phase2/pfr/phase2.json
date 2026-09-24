@@ -219,24 +219,31 @@
         "forward_refs": 1,
         "chapter_runs": 77
       },
+      "Goal-first DFS": {
+        "tau_whole": 0.0007432181345224942,
+        "tau_within_chapters": -0.16791931503157703,
+        "mean_open": 48.231884057971016,
+        "forward_refs": 235,
+        "chapter_runs": 74
+      },
       "Global optimum (greedy + local search)": {
-        "tau_whole": 0.11464139725009292,
-        "tau_within_chapters": 0.5377056142111647,
-        "mean_open": 44.43961352657005,
+        "tau_whole": 0.04329245633593459,
+        "tau_within_chapters": 0.44915380123021686,
+        "mean_open": 44.44444444444444,
         "forward_refs": 1,
-        "chapter_runs": 106
+        "chapter_runs": 108
       },
       "Cluster-then-order, true chapters": {
-        "tau_whole": 0.9543849869936827,
-        "tau_within_chapters": 0.7286002789773056,
-        "mean_open": 44.27536231884058,
+        "tau_whole": 0.9540133779264214,
+        "tau_within_chapters": 0.7288089532817246,
+        "mean_open": 44.17874396135266,
         "forward_refs": 6,
         "chapter_runs": 13
       },
       "Cluster-then-order, Lean modules": {
-        "tau_whole": 0.5582497212931996,
-        "tau_within_chapters": 0.7279403522767367,
-        "mean_open": 55.98067632850242,
+        "tau_whole": 0.5570419918246006,
+        "tau_within_chapters": 0.7256583517799375,
+        "mean_open": 55.84057971014493,
         "forward_refs": 1,
         "chapter_runs": 25
       },
@@ -248,11 +255,11 @@
         "chapter_runs": 13
       },
       "Random topological (mean of 200)": {
-        "tau_whole": 0.2509517837235229,
-        "tau_within_chapters": 0.5399979540725695,
-        "mean_open": 63.787584541062806,
+        "tau_whole": 0.25024154589371983,
+        "tau_within_chapters": 0.5371179351959514,
+        "mean_open": 63.716352657004826,
         "forward_refs": 0,
-        "chapter_runs": 162.605
+        "chapter_runs": 162.485
       }
     },
     "per_chapter_tau": {
@@ -260,33 +267,37 @@
         "Human (blueprint)": 1.0,
         "Lean source order": 0.6666666666666667,
         "Just-in-time DFS": 0.5026455026455027,
-        "Global optimum (greedy + local search)": 0.11111111111111116,
+        "Goal-first DFS": 0.40740740740740744,
+        "Global optimum (greedy + local search)": 0.21693121693121697,
         "Cluster-then-order, true chapters": 0.6296296296296297,
-        "Cluster-then-order, Lean modules": 0.3386243386243386,
+        "Cluster-then-order, Lean modules": 0.3492063492063492,
         "LLM within true chapters": 0.9206349206349207
       },
       "distance": {
         "Human (blueprint)": 1.0,
         "Lean source order": 0.7846153846153846,
         "Just-in-time DFS": 0.4030769230769231,
-        "Global optimum (greedy + local search)": 0.3107692307692308,
-        "Cluster-then-order, true chapters": 0.16923076923076918,
-        "Cluster-then-order, Lean modules": 0.6369230769230769,
+        "Goal-first DFS": 0.22461538461538466,
+        "Global optimum (greedy + local search)": 0.21846153846153848,
+        "Cluster-then-order, true chapters": 0.18153846153846154,
+        "Cluster-then-order, Lean modules": 0.6861538461538461,
         "LLM within true chapters": 0.7476923076923077
       },
       "entropy_pfr": {
         "Human (blueprint)": 1.0,
         "Lean source order": 1.0,
         "Just-in-time DFS": 0.5652173913043479,
-        "Global optimum (greedy + local search)": 0.383399209486166,
+        "Goal-first DFS": 0.09090909090909094,
+        "Global optimum (greedy + local search)": 0.3913043478260869,
         "Cluster-then-order, true chapters": 0.8023715415019763,
-        "Cluster-then-order, Lean modules": 0.9130434782608696,
+        "Cluster-then-order, Lean modules": 0.8972332015810277,
         "LLM within true chapters": 0.9683794466403162
       },
       "improved_exponent": {
         "Human (blueprint)": 1.0,
         "Lean source order": 0.8666666666666667,
         "Just-in-time DFS": 0.7333333333333334,
+        "Goal-first DFS": -1.0,
         "Global optimum (greedy + local search)": 0.7333333333333334,
         "Cluster-then-order, true chapters": 1.0,
         "Cluster-then-order, Lean modules": 1.0,
@@ -296,7 +307,8 @@
         "Human (blueprint)": 1.0,
         "Lean source order": 1.0,
         "Just-in-time DFS": 0.0714285714285714,
-        "Global optimum (greedy + local search)": 0.7857142857142857,
+        "Goal-first DFS": -0.7857142857142858,
+        "Global optimum (greedy + local search)": 0.0714285714285714,
         "Cluster-then-order, true chapters": 1.0,
         "Cluster-then-order, Lean modules": 0.7857142857142857,
         "LLM within true chapters": 0.7857142857142857
@@ -305,6 +317,7 @@
         "Human (blueprint)": 1.0,
         "Lean source order": 0.7333333333333334,
         "Just-in-time DFS": 0.6444444444444444,
+        "Goal-first DFS": -0.46666666666666656,
         "Global optimum (greedy + local search)": 0.7777777777777778,
         "Cluster-then-order, true chapters": 0.7333333333333334,
         "Cluster-then-order, Lean modules": 0.4666666666666667,
@@ -314,18 +327,20 @@
         "Human (blueprint)": 1.0,
         "Lean source order": 0.9095744680851063,
         "Just-in-time DFS": 0.2978723404255319,
-        "Global optimum (greedy + local search)": 0.36170212765957444,
-        "Cluster-then-order, true chapters": 0.6507092198581561,
-        "Cluster-then-order, Lean modules": 0.8333333333333334,
+        "Goal-first DFS": -0.037234042553191404,
+        "Global optimum (greedy + local search)": 0.3262411347517731,
+        "Cluster-then-order, true chapters": 0.6400709219858156,
+        "Cluster-then-order, Lean modules": 0.8421985815602837,
         "LLM within true chapters": 0.898936170212766
       },
       "further_improvement": {
         "Human (blueprint)": 1.0,
         "Lean source order": 0.9943100995732574,
         "Just-in-time DFS": 0.5675675675675675,
-        "Global optimum (greedy + local search)": 0.8378378378378378,
+        "Goal-first DFS": 0.22332859174964437,
+        "Global optimum (greedy + local search)": 0.8577524893314367,
         "Cluster-then-order, true chapters": 0.8435277382645804,
-        "Cluster-then-order, Lean modules": 0.8492176386913229,
+        "Cluster-then-order, Lean modules": 0.7780938833570412,
         "LLM within true chapters": 0.8662873399715505
       }
     },

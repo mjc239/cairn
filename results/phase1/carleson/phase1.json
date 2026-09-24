@@ -1,0 +1,4522 @@
+{
+  "project": "Carleson",
+  "provenance": "fpvandoorn/carleson @ d966776f60fe (2026-09-23), chapters = \\section",
+  "stats": {
+    "project_decls": 3422,
+    "project_decls_by_kind": {
+      "def": 518,
+      "inductive": 27,
+      "theorem": 2877
+    },
+    "formal_edges": 31692,
+    "blueprint_nodes": 180,
+    "blueprint_nodes_with_formal_decl": 170,
+    "lean_names_resolved": 238,
+    "lean_names_missing": {
+      "covering-separable-space": [
+        "Metric.dense_iff_iUnion_ball",
+        "TopologicalSpace.exists_countable_dense"
+      ],
+      "disjoint-family-countable": [
+        "Pairwise.countable_of_isOpen_disjoint"
+      ],
+      "fourier-coeff-derivative": [
+        "fourierCoeffOn_of_hasDerivAt"
+      ],
+      "convergence-of-coeffs-summable": [
+        "hasSum_fourier_series_of_summable"
+      ],
+      "periodic-domain-shift": [
+        "Function.Periodic.intervalIntegral_add_eq",
+        "intervalIntegral.integral_comp_sub_right"
+      ],
+      "real-line-metric": [
+        "instProperSpaceReal",
+        "locallyCompact_of_proper",
+        "Real.instCompleteSpace"
+      ],
+      "real-line-ball": [
+        "Real.ball_eq_Ioo"
+      ],
+      "real-line-measure": [
+        "instIsAddHaarMeasureVolume"
+      ],
+      "real-line-ball-measure": [
+        "Real.volume_ball"
+      ]
+    },
+    "coverage": 0.9482071713147411,
+    "labelled_decls": 236,
+    "unlabelled_theorems": 2646,
+    "edges": {
+      "author_edges": 212,
+      "lean_edges": 353,
+      "author_direct_in_lean": 199,
+      "author_implied_transitively": 1,
+      "author_absent_from_lean": [
+        [
+          "Dirichlet-kernel",
+          "Dirichlet-Hilbert"
+        ],
+        [
+          "antichain-decomposition",
+          "forest-complement"
+        ],
+        [
+          "ball-metric-entropy",
+          "tile-structure"
+        ],
+        [
+          "convergence-for-twice-contdiff",
+          "convergence-for-smooth"
+        ],
+        [
+          "convex-scales",
+          "first-tree-pointwise"
+        ],
+        [
+          "exceptional-set-carleson",
+          "classical-carleson"
+        ],
+        [
+          "layer-cake-representation",
+          "Hardy-Littlewood"
+        ],
+        [
+          "monotone-cube-metrics",
+          "tile-uncertainty"
+        ],
+        [
+          "partial-Fourier-sums-of-small",
+          "control-approximation-effect"
+        ],
+        [
+          "real-Carleson",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "tile-range-support",
+          "tile-uncertainty"
+        ],
+        [
+          "wiggle-order-1",
+          "wiggle-order-3"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "Hardy-Littlewood",
+          "Calderon-Zygmund-decomposition"
+        ],
+        [
+          "Hardy-Littlewood",
+          "Cotlar-control"
+        ],
+        [
+          "Hardy-Littlewood",
+          "Cotlar-sets"
+        ],
+        [
+          "Hardy-Littlewood",
+          "R-truncation"
+        ],
+        [
+          "Hardy-Littlewood",
+          "adjoint-tree-control"
+        ],
+        [
+          "Hardy-Littlewood",
+          "bound-for-tree-projection"
+        ],
+        [
+          "Hardy-Littlewood",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Hardy-Littlewood",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Hardy-Littlewood",
+          "estimate-bad-partial"
+        ],
+        [
+          "Hardy-Littlewood",
+          "estimate-good"
+        ],
+        [
+          "Hardy-Littlewood",
+          "estimate-x-shift"
+        ],
+        [
+          "Hardy-Littlewood",
+          "tree-projection-estimate"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "partial-Fourier-sum-bound"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "Holder-correlation-tree"
+        ],
+        [
+          "adjoint-tile-support",
+          "Holder-correlation-tree"
+        ],
+        [
+          "adjoint-tile-support",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "adjoint-tile-support",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "adjoint-tile-support",
+          "correlation-separated-trees"
+        ],
+        [
+          "adjoint-tile-support",
+          "global-tree-control-1"
+        ],
+        [
+          "adjoint-tile-support",
+          "local-tree-control"
+        ],
+        [
+          "ball-covering",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "ball-covering",
+          "estimate-F-set"
+        ],
+        [
+          "ball-covering",
+          "estimate-bad"
+        ],
+        [
+          "ball-covering",
+          "estimate-bad-partial"
+        ],
+        [
+          "ball-covering",
+          "estimate-good"
+        ],
+        [
+          "basic-grid-structure",
+          "boundary-measure"
+        ],
+        [
+          "basic-grid-structure",
+          "frequency-ball-cover"
+        ],
+        [
+          "basic-grid-structure",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "small-boundary"
+        ],
+        [
+          "basic-grid-structure",
+          "smaller-boundary"
+        ],
+        [
+          "basic-grid-structure",
+          "tile-structure"
+        ],
+        [
+          "basic-grid-structure",
+          "transitive-boundary"
+        ],
+        [
+          "convergence-for-smooth",
+          "classical-carleson"
+        ],
+        [
+          "convex-scales",
+          "second-tree-pointwise"
+        ],
+        [
+          "cover-by-cubes",
+          "boundary-measure"
+        ],
+        [
+          "cover-by-cubes",
+          "grid-existence"
+        ],
+        [
+          "cover-by-cubes",
+          "small-boundary"
+        ],
+        [
+          "cover-by-cubes",
+          "smaller-boundary"
+        ],
+        [
+          "dyadic-partition-1",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partitions",
+          "boundary-operator-bound"
+        ],
+        [
+          "dyadic-partitions",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "dyadic-partitions",
+          "densities-tree-bound"
+        ],
+        [
+          "dyadic-partitions",
+          "first-tree-pointwise"
+        ],
+        [
+          "dyadic-partitions",
+          "third-tree-pointwise"
+        ],
+        [
+          "dyadic-property",
+          "boundary-measure"
+        ],
+        [
+          "dyadic-property",
+          "grid-existence"
+        ],
+        [
+          "dyadic-property",
+          "small-boundary"
+        ],
+        [
+          "equivalence-relation",
+          "forest-geometry"
+        ],
+        [
+          "equivalence-relation",
+          "forest-inner"
+        ],
+        [
+          "equivalence-relation",
+          "forest-separation"
+        ],
+        [
+          "equivalence-relation",
+          "forest-stacking"
+        ],
+        [
+          "equivalence-relation",
+          "forest-union"
+        ],
+        [
+          "estimate-x-shift",
+          "simple-nontangential-operator"
+        ],
+        [
+          "finitary-Carleson",
+          "R-truncation"
+        ],
+        [
+          "finitary-Carleson",
+          "S-truncation"
+        ],
+        [
+          "forest-row-decomposition",
+          "disjoint-row-support"
+        ],
+        [
+          "forest-row-decomposition",
+          "row-bound"
+        ],
+        [
+          "forest-row-decomposition",
+          "row-correlation"
+        ],
+        [
+          "frequency-ball-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-van-der-Corput"
+        ],
+        [
+          "frequency-ball-growth",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-growth",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-van-der-Corput"
+        ],
+        [
+          "frequency-metric",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-metric",
+          "frequency-ball-growth"
+        ],
+        [
+          "frequency-metric",
+          "frequency-monotone"
+        ],
+        [
+          "frequency-metric",
+          "integer-ball-cover"
+        ],
+        [
+          "frequency-metric",
+          "oscillation-control"
+        ],
+        [
+          "frequency-metric",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-metric",
+          "real-Carleson"
+        ],
+        [
+          "frequency-metric",
+          "real-van-der-Corput"
+        ],
+        [
+          "frequency-monotone",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-monotone",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-monotone",
+          "real-van-der-Corput"
+        ],
+        [
+          "global-tree-control-1",
+          "Holder-correlation-tree"
+        ],
+        [
+          "integer-ball-cover",
+          "control-approximation-effect"
+        ],
+        [
+          "integer-ball-cover",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "integer-ball-cover",
+          "real-van-der-Corput"
+        ],
+        [
+          "kernel-summand",
+          "Holder-correlation-tile"
+        ],
+        [
+          "kernel-summand",
+          "R-truncation"
+        ],
+        [
+          "kernel-summand",
+          "adjoint-tree-estimate"
+        ],
+        [
+          "kernel-summand",
+          "bound-for-tree-projection"
+        ],
+        [
+          "kernel-summand",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "kernel-summand",
+          "correlation-kernel-bound"
+        ],
+        [
+          "kernel-summand",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "kernel-summand",
+          "correlation-separated-trees"
+        ],
+        [
+          "kernel-summand",
+          "dens1-antichain"
+        ],
+        [
+          "kernel-summand",
+          "dens2-antichain"
+        ],
+        [
+          "kernel-summand",
+          "forest-complement"
+        ],
+        [
+          "kernel-summand",
+          "forest-operator"
+        ],
+        [
+          "kernel-summand",
+          "forest-union"
+        ],
+        [
+          "kernel-summand",
+          "global-tree-control-1"
+        ],
+        [
+          "kernel-summand",
+          "local-tree-control"
+        ],
+        [
+          "kernel-summand",
+          "maximal-bound-antichain"
+        ],
+        [
+          "kernel-summand",
+          "row-bound"
+        ],
+        [
+          "kernel-summand",
+          "row-correlation"
+        ],
+        [
+          "kernel-summand",
+          "third-tree-pointwise"
+        ],
+        [
+          "kernel-summand",
+          "tile-correlation"
+        ],
+        [
+          "kernel-summand",
+          "tile-range-support"
+        ],
+        [
+          "lower-secant-bound",
+          "integrable-bump-convolution"
+        ],
+        [
+          "maximal-theorem",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "maximal-theorem",
+          "estimate-bad-partial"
+        ],
+        [
+          "maximal-theorem",
+          "estimate-good"
+        ],
+        [
+          "monotone-cube-metrics",
+          "disjoint-row-support"
+        ],
+        [
+          "monotone-cube-metrics",
+          "first-tree-pointwise"
+        ],
+        [
+          "monotone-cube-metrics",
+          "overlap-implies-distance"
+        ],
+        [
+          "monotone-cube-metrics",
+          "tile-structure"
+        ],
+        [
+          "oscillation-control",
+          "control-approximation-effect"
+        ],
+        [
+          "oscillation-control",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "oscillation-control",
+          "real-van-der-Corput"
+        ],
+        [
+          "overlap-implies-distance",
+          "dyadic-partition-1"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "classical-carleson"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "real-Carleson",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "control-approximation-effect"
+        ],
+        [
+          "real-line-doubling",
+          "Dirichlet-approximation"
+        ],
+        [
+          "real-line-doubling",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "real-line-doubling",
+          "nontangential-operator-bound"
+        ],
+        [
+          "real-line-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-line-doubling",
+          "real-van-der-Corput"
+        ],
+        [
+          "real-line-doubling",
+          "tree-projection-estimate"
+        ],
+        [
+          "real-van-der-Corput",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "relation-geometry",
+          "forest-union"
+        ],
+        [
+          "smooth-approximation",
+          "classical-carleson"
+        ],
+        [
+          "tile-disjointness",
+          "antichain-tile-count"
+        ],
+        [
+          "tile-disjointness",
+          "dens1-antichain"
+        ],
+        [
+          "tile-reach",
+          "global-antichain-density"
+        ],
+        [
+          "transitive-boundary",
+          "smaller-boundary"
+        ],
+        [
+          "two-sided-metric-space-Carleson",
+          "control-approximation-effect"
+        ],
+        [
+          "two-sided-metric-space-Carleson",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "wiggle-order-1",
+          "forest-inner"
+        ],
+        [
+          "wiggle-order-1",
+          "forest-union"
+        ],
+        [
+          "wiggle-order-1",
+          "relation-geometry"
+        ],
+        [
+          "wiggle-order-2",
+          "L2-antichain"
+        ],
+        [
+          "wiggle-order-3",
+          "C-convex"
+        ],
+        [
+          "wiggle-order-3",
+          "C1-convex"
+        ],
+        [
+          "wiggle-order-3",
+          "C3-convex"
+        ],
+        [
+          "wiggle-order-3",
+          "L2-antichain"
+        ],
+        [
+          "wiggle-order-3",
+          "equivalence-relation"
+        ],
+        [
+          "wiggle-order-3",
+          "forest-convex"
+        ],
+        [
+          "wiggle-order-3",
+          "forest-geometry"
+        ],
+        [
+          "wiggle-order-3",
+          "forest-inner"
+        ],
+        [
+          "wiggle-order-3",
+          "forest-separation"
+        ],
+        [
+          "wiggle-order-3",
+          "forest-stacking"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 0,
+    "unreported_top_sources": {
+      "kernel-summand": 21,
+      "Hardy-Littlewood": 12,
+      "wiggle-order-3": 10,
+      "frequency-metric": 8,
+      "basic-grid-structure": 7,
+      "real-line-doubling": 7,
+      "adjoint-tile-support": 6,
+      "ball-covering": 5,
+      "dyadic-partitions": 5,
+      "equivalence-relation": 5
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 170,
+      "n_edges": 212,
+      "forward_refs": [
+        [
+          "exceptional-set-carleson",
+          "classical-carleson"
+        ],
+        [
+          "linearised-metric-Carleson",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "R-truncation",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ],
+        [
+          "grid-existence",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-structure",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-sum-operator",
+          "finitary-Carleson"
+        ],
+        [
+          "exceptional-set",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-union",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-complement",
+          "discrete-Carleson"
+        ],
+        [
+          "dens2-antichain",
+          "antichain-operator"
+        ],
+        [
+          "dens1-antichain",
+          "antichain-operator"
+        ],
+        [
+          "forest-row-decomposition",
+          "forest-operator"
+        ],
+        [
+          "row-bound",
+          "forest-operator"
+        ],
+        [
+          "row-correlation",
+          "forest-operator"
+        ],
+        [
+          "disjoint-row-support",
+          "forest-operator"
+        ],
+        [
+          "Lipschitz-Holder-approximation",
+          "Holder-van-der-Corput"
+        ],
+        [
+          "layer-cake-representation",
+          "Hardy-Littlewood"
+        ],
+        [
+          "S-truncation",
+          "R-truncation"
+        ],
+        [
+          "linearized-truncation",
+          "S-truncation"
+        ],
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "antichain-decomposition",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ],
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ],
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "convergence-for-twice-contdiff",
+          "convergence-for-smooth"
+        ],
+        [
+          "partial-Fourier-sums-of-small",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 170,
+          "forward_refs": 88,
+          "cutwidth": 44,
+          "mean_cut": 23.059171597633135,
+          "max_open": 30,
+          "mean_open": 16.733727810650887,
+          "mean_edge_length": 18.382075471698112
+        },
+        "human_repaired": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 41,
+          "mean_cut": 19.473372781065088,
+          "max_open": 36,
+          "mean_open": 15.08284023668639,
+          "mean_edge_length": 15.523584905660377
+        },
+        "just_in_time": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 46,
+          "mean_cut": 24.680473372781066,
+          "max_open": 29,
+          "mean_open": 17.502958579881657,
+          "mean_edge_length": 19.67452830188679
+        },
+        "greedy_min_open": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 65,
+          "mean_cut": 38.79289940828402,
+          "max_open": 49,
+          "mean_open": 28.83431952662722,
+          "mean_edge_length": 30.92452830188679
+        },
+        "optimised": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 33,
+          "mean_cut": 14.502958579881657,
+          "max_open": 26,
+          "mean_open": 12.603550295857989,
+          "mean_edge_length": 11.56132075471698
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.6911938739993039,
+        "just_in_time": 0.1468151757744518,
+        "greedy_min_open": 0.04768534632788024,
+        "optimised": 0.2597285067873303
+      },
+      "random": {
+        "mean_open": {
+          "mean": 41.917662721893485,
+          "p05": 39.662721893491124,
+          "p50": 41.9585798816568,
+          "p95": 44.01775147928994
+        },
+        "max_open": {
+          "mean": 65.892,
+          "p05": 60,
+          "p50": 66,
+          "p95": 71
+        },
+        "mean_cut": {
+          "mean": 49.45416568047337,
+          "p05": 46.319526627218934,
+          "p50": 49.50295857988166,
+          "p95": 52.37278106508876
+        },
+        "cutwidth": {
+          "mean": 77.387,
+          "p05": 71,
+          "p50": 78,
+          "p95": 84
+        },
+        "mean_edge_length": {
+          "mean": 39.4233679245283,
+          "p05": 36.924528301886795,
+          "p50": 39.4622641509434,
+          "p95": 41.75
+        }
+      },
+      "random_tau_vs_human_mean": -0.0811131221719457,
+      "uniform": {
+        "mean_open": {
+          "p05": 34.94082840236686,
+          "p50": 38.10650887573964,
+          "p95": 40.95266272189349
+        },
+        "max_open": {
+          "p05": 52,
+          "p50": 59,
+          "p95": 65
+        },
+        "mean_cut": {
+          "p05": 45.142011834319526,
+          "p50": 48.9585798816568,
+          "p95": 52.260355029585796
+        },
+        "cutwidth": {
+          "p05": 65,
+          "p50": 72,
+          "p95": 79
+        },
+        "mean_edge_length": {
+          "p05": 35.985849056603776,
+          "p50": 39.028301886792455,
+          "p95": 41.660377358490564
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.001,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 25,
+        "just_in_time": 27,
+        "greedy_min_open": 86,
+        "optimised": 43
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 170,
+      "n_edges": 353,
+      "forward_refs": [
+        [
+          "smooth-approximation",
+          "classical-carleson"
+        ],
+        [
+          "convergence-for-smooth",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson",
+          "classical-carleson"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "classical-carleson"
+        ],
+        [
+          "linearised-metric-Carleson",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "R-truncation",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ],
+        [
+          "grid-existence",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-structure",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-sum-operator",
+          "finitary-Carleson"
+        ],
+        [
+          "exceptional-set",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-union",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-complement",
+          "discrete-Carleson"
+        ],
+        [
+          "dens2-antichain",
+          "antichain-operator"
+        ],
+        [
+          "dens1-antichain",
+          "antichain-operator"
+        ],
+        [
+          "kernel-summand",
+          "forest-operator"
+        ],
+        [
+          "forest-row-decomposition",
+          "forest-operator"
+        ],
+        [
+          "row-bound",
+          "forest-operator"
+        ],
+        [
+          "row-correlation",
+          "forest-operator"
+        ],
+        [
+          "disjoint-row-support",
+          "forest-operator"
+        ],
+        [
+          "Lipschitz-Holder-approximation",
+          "Holder-van-der-Corput"
+        ],
+        [
+          "S-truncation",
+          "R-truncation"
+        ],
+        [
+          "linearized-truncation",
+          "S-truncation"
+        ],
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "grid-existence"
+        ],
+        [
+          "cover-by-cubes",
+          "grid-existence"
+        ],
+        [
+          "dyadic-property",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "tile-structure"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "wiggle-order-1",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "relation-geometry",
+          "forest-union"
+        ],
+        [
+          "equivalence-relation",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ],
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ],
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "real-line-doubling",
+          "tree-projection-estimate"
+        ],
+        [
+          "real-line-doubling",
+          "nontangential-operator-bound"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "dyadic-partition-1",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-1",
+          "Holder-correlation-tree"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "maximal-theorem",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "ball-covering",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "control-approximation-effect"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "control-approximation-effect"
+        ],
+        [
+          "real-line-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-metric",
+          "control-approximation-effect"
+        ],
+        [
+          "oscillation-control",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-monotone",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-growth",
+          "control-approximation-effect"
+        ],
+        [
+          "integer-ball-cover",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-metric",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Dirichlet-approximation"
+        ],
+        [
+          "real-line-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-metric",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "oscillation-control",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-monotone",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-growth",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "integer-ball-cover",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-van-der-Corput",
+          "partial-Fourier-sums-of-small"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 170,
+          "forward_refs": 126,
+          "cutwidth": 87,
+          "mean_cut": 48.917159763313606,
+          "max_open": 35,
+          "mean_open": 21.556213017751478,
+          "mean_edge_length": 23.41926345609065
+        },
+        "human_repaired": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 83,
+          "mean_cut": 60.798816568047336,
+          "max_open": 43,
+          "mean_open": 24.27810650887574,
+          "mean_edge_length": 29.107648725212464
+        },
+        "just_in_time": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 110,
+          "mean_cut": 58.72781065088758,
+          "max_open": 38,
+          "mean_open": 20.994082840236686,
+          "mean_edge_length": 28.11614730878187
+        },
+        "greedy_min_open": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 140,
+          "mean_cut": 83.92307692307692,
+          "max_open": 50,
+          "mean_open": 32.64497041420118,
+          "mean_edge_length": 40.17847025495751
+        },
+        "optimised": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 88,
+          "mean_cut": 41.650887573964496,
+          "max_open": 25,
+          "mean_open": 16.49112426035503,
+          "mean_edge_length": 19.940509915014164
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.6453880960668291,
+        "just_in_time": -0.023738252697528717,
+        "greedy_min_open": -0.02109293421510605,
+        "optimised": -0.1117298990602158
+      },
+      "random": {
+        "mean_open": {
+          "mean": 44.9370473372781,
+          "p05": 42.023668639053255,
+          "p50": 45.05917159763314,
+          "p95": 47.55621301775148
+        },
+        "max_open": {
+          "mean": 72.177,
+          "p05": 65,
+          "p50": 72,
+          "p95": 79
+        },
+        "mean_cut": {
+          "mean": 108.70821301775148,
+          "p05": 100.18934911242603,
+          "p50": 108.76923076923077,
+          "p95": 116.89940828402366
+        },
+        "cutwidth": {
+          "mean": 171.178,
+          "p05": 156,
+          "p50": 172,
+          "p95": 185
+        },
+        "mean_edge_length": {
+          "mean": 52.044441926345606,
+          "p05": 47.96600566572238,
+          "p50": 52.07365439093484,
+          "p95": 55.96600566572238
+        }
+      },
+      "random_tau_vs_human_mean": -0.08032412112774104,
+      "uniform": {
+        "mean_open": {
+          "p05": 41.33136094674556,
+          "p50": 44.53846153846154,
+          "p95": 47.22485207100592
+        },
+        "max_open": {
+          "p05": 62,
+          "p50": 71,
+          "p95": 78
+        },
+        "mean_cut": {
+          "p05": 107.23076923076923,
+          "p50": 115.76331360946746,
+          "p95": 121.6094674556213
+        },
+        "cutwidth": {
+          "p05": 156,
+          "p50": 168,
+          "p95": 179
+        },
+        "mean_edge_length": {
+          "p05": 51.3371104815864,
+          "p50": 55.422096317280456,
+          "p95": 58.22096317280453
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 25,
+        "just_in_time": 32,
+        "greedy_min_open": 87,
+        "optimised": 49
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 170,
+      "n_edges": 353,
+      "forward_refs": [
+        [
+          "smooth-approximation",
+          "classical-carleson"
+        ],
+        [
+          "convergence-for-smooth",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson",
+          "classical-carleson"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "classical-carleson"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "classical-carleson"
+        ],
+        [
+          "linearised-metric-Carleson",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "R-truncation",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ],
+        [
+          "grid-existence",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-structure",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-sum-operator",
+          "finitary-Carleson"
+        ],
+        [
+          "exceptional-set",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-union",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-complement",
+          "discrete-Carleson"
+        ],
+        [
+          "dens2-antichain",
+          "antichain-operator"
+        ],
+        [
+          "dens1-antichain",
+          "antichain-operator"
+        ],
+        [
+          "kernel-summand",
+          "forest-operator"
+        ],
+        [
+          "forest-row-decomposition",
+          "forest-operator"
+        ],
+        [
+          "row-bound",
+          "forest-operator"
+        ],
+        [
+          "row-correlation",
+          "forest-operator"
+        ],
+        [
+          "disjoint-row-support",
+          "forest-operator"
+        ],
+        [
+          "Lipschitz-Holder-approximation",
+          "Holder-van-der-Corput"
+        ],
+        [
+          "S-truncation",
+          "R-truncation"
+        ],
+        [
+          "linearized-truncation",
+          "S-truncation"
+        ],
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "grid-existence"
+        ],
+        [
+          "cover-by-cubes",
+          "grid-existence"
+        ],
+        [
+          "dyadic-property",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "tile-structure"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "wiggle-order-1",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "relation-geometry",
+          "forest-union"
+        ],
+        [
+          "equivalence-relation",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ],
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ],
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "real-line-doubling",
+          "tree-projection-estimate"
+        ],
+        [
+          "real-line-doubling",
+          "nontangential-operator-bound"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "dyadic-partition-1",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-1",
+          "Holder-correlation-tree"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "maximal-theorem",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "ball-covering",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "control-approximation-effect"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "control-approximation-effect"
+        ],
+        [
+          "real-line-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-metric",
+          "control-approximation-effect"
+        ],
+        [
+          "oscillation-control",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-monotone",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-growth",
+          "control-approximation-effect"
+        ],
+        [
+          "integer-ball-cover",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-metric",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Dirichlet-approximation"
+        ],
+        [
+          "real-line-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-metric",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "oscillation-control",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-monotone",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-growth",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "integer-ball-cover",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-van-der-Corput",
+          "partial-Fourier-sums-of-small"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 170,
+          "forward_refs": 126,
+          "cutwidth": 87,
+          "mean_cut": 48.917159763313606,
+          "max_open": 35,
+          "mean_open": 21.556213017751478,
+          "mean_edge_length": 23.41926345609065
+        },
+        "human_repaired": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 83,
+          "mean_cut": 60.798816568047336,
+          "max_open": 43,
+          "mean_open": 24.27810650887574,
+          "mean_edge_length": 29.107648725212464
+        },
+        "just_in_time": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 110,
+          "mean_cut": 58.72781065088758,
+          "max_open": 38,
+          "mean_open": 20.994082840236686,
+          "mean_edge_length": 28.11614730878187
+        },
+        "greedy_min_open": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 140,
+          "mean_cut": 83.92307692307692,
+          "max_open": 50,
+          "mean_open": 32.64497041420118,
+          "mean_edge_length": 40.17847025495751
+        },
+        "optimised": {
+          "n": 170,
+          "forward_refs": 0,
+          "cutwidth": 88,
+          "mean_cut": 41.650887573964496,
+          "max_open": 25,
+          "mean_open": 16.49112426035503,
+          "mean_edge_length": 19.940509915014164
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.6453880960668291,
+        "just_in_time": -0.023738252697528717,
+        "greedy_min_open": -0.02109293421510605,
+        "optimised": -0.1117298990602158
+      },
+      "random": {
+        "mean_open": {
+          "mean": 44.9370473372781,
+          "p05": 42.023668639053255,
+          "p50": 45.05917159763314,
+          "p95": 47.55621301775148
+        },
+        "max_open": {
+          "mean": 72.177,
+          "p05": 65,
+          "p50": 72,
+          "p95": 79
+        },
+        "mean_cut": {
+          "mean": 108.70821301775148,
+          "p05": 100.18934911242603,
+          "p50": 108.76923076923077,
+          "p95": 116.89940828402366
+        },
+        "cutwidth": {
+          "mean": 171.178,
+          "p05": 156,
+          "p50": 172,
+          "p95": 185
+        },
+        "mean_edge_length": {
+          "mean": 52.044441926345606,
+          "p05": 47.96600566572238,
+          "p50": 52.07365439093484,
+          "p95": 55.96600566572238
+        }
+      },
+      "random_tau_vs_human_mean": -0.08032412112774104,
+      "uniform": {
+        "mean_open": {
+          "p05": 41.33136094674556,
+          "p50": 44.53846153846154,
+          "p95": 47.22485207100592
+        },
+        "max_open": {
+          "p05": 62,
+          "p50": 71,
+          "p95": 78
+        },
+        "mean_cut": {
+          "p05": 107.23076923076923,
+          "p50": 115.76331360946746,
+          "p95": 121.6094674556213
+        },
+        "cutwidth": {
+          "p05": 156,
+          "p50": 168,
+          "p95": 179
+        },
+        "mean_edge_length": {
+          "p05": 51.3371104815864,
+          "p50": 55.422096317280456,
+          "p95": 58.22096317280453
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 25,
+        "just_in_time": 32,
+        "greedy_min_open": 87,
+        "optimised": 49
+      }
+    },
+    {
+      "name": "Lean: proof-of-metric-space-carleson-overview",
+      "n_nodes": 9,
+      "n_edges": 2,
+      "forward_refs": [
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ],
+        [
+          "kernel-summand",
+          "forest-operator"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 9,
+          "forward_refs": 2,
+          "cutwidth": 1,
+          "mean_cut": 0.75,
+          "max_open": 1,
+          "mean_open": 0.75,
+          "mean_edge_length": 3.0
+        },
+        "human_repaired": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.25,
+          "max_open": 1,
+          "mean_open": 0.25,
+          "mean_edge_length": 1.0
+        },
+        "just_in_time": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.25,
+          "max_open": 1,
+          "mean_open": 0.25,
+          "mean_edge_length": 1.0
+        },
+        "greedy_min_open": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.25,
+          "max_open": 1,
+          "mean_open": 0.25,
+          "mean_edge_length": 1.0
+        },
+        "optimised": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.25,
+          "max_open": 1,
+          "mean_open": 0.25,
+          "mean_edge_length": 1.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.6666666666666667,
+        "just_in_time": 0.33333333333333337,
+        "greedy_min_open": -0.05555555555555558,
+        "optimised": -0.05555555555555558
+      },
+      "random": {
+        "mean_open": {
+          "mean": 0.707625,
+          "p05": 0.25,
+          "p50": 0.625,
+          "p95": 1.25
+        },
+        "max_open": {
+          "mean": 1.513,
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "mean": 0.707625,
+          "p05": 0.25,
+          "p50": 0.625,
+          "p95": 1.25
+        },
+        "cutwidth": {
+          "mean": 1.513,
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_edge_length": {
+          "mean": 2.8305,
+          "p05": 1.0,
+          "p50": 2.5,
+          "p95": 5.0
+        }
+      },
+      "random_tau_vs_human_mean": -0.1575,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.25,
+          "p50": 0.75,
+          "p95": 1.375
+        },
+        "max_open": {
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "p05": 0.25,
+          "p50": 0.75,
+          "p95": 1.375
+        },
+        "cutwidth": {
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_edge_length": {
+          "p05": 1.0,
+          "p50": 3.0,
+          "p95": 5.5
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.59,
+          "max_open": 0.2435,
+          "mean_cut": 0.59,
+          "cutwidth": 0.2435,
+          "mean_edge_length": 0.59
+        },
+        "human_repaired": {
+          "mean_open": 0.057,
+          "max_open": 0.2435,
+          "mean_cut": 0.057,
+          "cutwidth": 0.2435,
+          "mean_edge_length": 0.057
+        },
+        "just_in_time": {
+          "mean_open": 0.057,
+          "max_open": 0.2435,
+          "mean_cut": 0.057,
+          "cutwidth": 0.2435,
+          "mean_edge_length": 0.057
+        },
+        "greedy_min_open": {
+          "mean_open": 0.057,
+          "max_open": 0.2435,
+          "mean_cut": 0.057,
+          "cutwidth": 0.2435,
+          "mean_edge_length": 0.057
+        },
+        "optimised": {
+          "mean_open": 0.057,
+          "max_open": 0.2435,
+          "mean_cut": 0.057,
+          "cutwidth": 0.2435,
+          "mean_edge_length": 0.057
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.44,
+          "max_open": 0.185,
+          "mean_cut": 0.44,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.44
+        },
+        "human_repaired": {
+          "mean_open": 0.0275,
+          "max_open": 0.185,
+          "mean_cut": 0.0275,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.0275
+        },
+        "just_in_time": {
+          "mean_open": 0.0275,
+          "max_open": 0.185,
+          "mean_cut": 0.0275,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.0275
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0275,
+          "max_open": 0.185,
+          "mean_cut": 0.0275,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.0275
+        },
+        "optimised": {
+          "mean_open": 0.0275,
+          "max_open": 0.185,
+          "mean_cut": 0.0275,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.0275
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: proof-of-finitary-carleson",
+      "n_nodes": 15,
+      "n_edges": 27,
+      "forward_refs": [
+        [
+          "basic-grid-structure",
+          "grid-existence"
+        ],
+        [
+          "dyadic-property",
+          "grid-existence"
+        ],
+        [
+          "cover-by-cubes",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "basic-grid-structure",
+          "tile-structure"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 15,
+          "forward_refs": 9,
+          "cutwidth": 15,
+          "mean_cut": 8.928571428571429,
+          "max_open": 9,
+          "mean_open": 6.357142857142857,
+          "mean_edge_length": 4.62962962962963
+        },
+        "human_repaired": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 7.071428571428571,
+          "max_open": 6,
+          "mean_open": 3.0714285714285716,
+          "mean_edge_length": 3.6666666666666665
+        },
+        "just_in_time": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 6.785714285714286,
+          "max_open": 5,
+          "mean_open": 2.9285714285714284,
+          "mean_edge_length": 3.5185185185185186
+        },
+        "greedy_min_open": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 8.5,
+          "max_open": 6,
+          "mean_open": 3.0,
+          "mean_edge_length": 4.407407407407407
+        },
+        "optimised": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 6.785714285714286,
+          "max_open": 5,
+          "mean_open": 2.857142857142857,
+          "mean_edge_length": 3.5185185185185186
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5619047619047619,
+        "just_in_time": -0.23809523809523814,
+        "greedy_min_open": 0.08571428571428574,
+        "optimised": 0.3904761904761904
+      },
+      "random": {
+        "mean_open": {
+          "mean": 4.428714285714285,
+          "p05": 3.642857142857143,
+          "p50": 4.428571428571429,
+          "p95": 5.142857142857143
+        },
+        "max_open": {
+          "mean": 7.498,
+          "p05": 6,
+          "p50": 8,
+          "p95": 9
+        },
+        "mean_cut": {
+          "mean": 9.995785714285713,
+          "p05": 8.5,
+          "p50": 10.0,
+          "p95": 11.5
+        },
+        "cutwidth": {
+          "mean": 17.301,
+          "p05": 15,
+          "p50": 18,
+          "p95": 18
+        },
+        "mean_edge_length": {
+          "mean": 5.183,
+          "p05": 4.407407407407407,
+          "p50": 5.185185185185185,
+          "p95": 5.962962962962963
+        }
+      },
+      "random_tau_vs_human_mean": 0.04382857142857144,
+      "uniform": {
+        "mean_open": {
+          "p05": 4.0,
+          "p50": 4.785714285714286,
+          "p95": 5.428571428571429
+        },
+        "max_open": {
+          "p05": 7,
+          "p50": 8,
+          "p95": 9
+        },
+        "mean_cut": {
+          "p05": 9.142857142857142,
+          "p50": 10.714285714285714,
+          "p95": 12.142857142857142
+        },
+        "cutwidth": {
+          "p05": 15,
+          "p50": 17,
+          "p95": 18
+        },
+        "mean_edge_length": {
+          "p05": 4.7407407407407405,
+          "p50": 5.555555555555555,
+          "p95": 6.296296296296297
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 0.8695,
+          "mean_cut": 0.1085,
+          "cutwidth": 0.0485,
+          "mean_edge_length": 0.1085
+        },
+        "human_repaired": {
+          "mean_open": 0.0005,
+          "max_open": 0.1365,
+          "mean_cut": 0.0,
+          "cutwidth": 0.163,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.1365,
+          "mean_cut": 0.053,
+          "cutwidth": 0.02,
+          "mean_edge_length": 0.053
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0485,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 0.8375,
+          "mean_cut": 0.025,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.025
+        },
+        "human_repaired": {
+          "mean_open": 0.0025,
+          "max_open": 0.0175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2025,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0175,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0075
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: proof-of-discrete-carleson",
+      "n_nodes": 37,
+      "n_edges": 56,
+      "forward_refs": [
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "equivalence-relation",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "wiggle-order-1",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "relation-geometry",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 37,
+          "forward_refs": 17,
+          "cutwidth": 28,
+          "mean_cut": 17.61111111111111,
+          "max_open": 18,
+          "mean_open": 13.222222222222221,
+          "mean_edge_length": 11.321428571428571
+        },
+        "human_repaired": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 9.38888888888889,
+          "max_open": 12,
+          "mean_open": 4.527777777777778,
+          "mean_edge_length": 6.035714285714286
+        },
+        "just_in_time": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 20,
+          "mean_cut": 12.722222222222221,
+          "max_open": 10,
+          "mean_open": 5.166666666666667,
+          "mean_edge_length": 8.178571428571429
+        },
+        "greedy_min_open": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 10.444444444444445,
+          "max_open": 10,
+          "mean_open": 5.5,
+          "mean_edge_length": 6.714285714285714
+        },
+        "optimised": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 7.083333333333333,
+          "max_open": 10,
+          "mean_open": 3.6944444444444446,
+          "mean_edge_length": 4.553571428571429
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.7777777777777778,
+        "just_in_time": 0.1141141141141141,
+        "greedy_min_open": 0.2792792792792793,
+        "optimised": 0.39639639639639634
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.62411111111111,
+          "p05": 7.5,
+          "p50": 9.666666666666666,
+          "p95": 11.75
+        },
+        "max_open": {
+          "mean": 14.88,
+          "p05": 11,
+          "p50": 15,
+          "p95": 19
+        },
+        "mean_cut": {
+          "mean": 15.419305555555555,
+          "p05": 12.555555555555555,
+          "p50": 15.527777777777779,
+          "p95": 17.916666666666668
+        },
+        "cutwidth": {
+          "mean": 26.428,
+          "p05": 22,
+          "p50": 26,
+          "p95": 31
+        },
+        "mean_edge_length": {
+          "mean": 9.912410714285715,
+          "p05": 8.071428571428571,
+          "p50": 9.982142857142858,
+          "p95": 11.517857142857142
+        }
+      },
+      "random_tau_vs_human_mean": 0.09962162162162162,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.555555555555555,
+          "p50": 10.75,
+          "p95": 11.694444444444445
+        },
+        "max_open": {
+          "p05": 15,
+          "p50": 17,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 16.083333333333332,
+          "p50": 18.02777777777778,
+          "p95": 20.02777777777778
+        },
+        "cutwidth": {
+          "p05": 24,
+          "p50": 26,
+          "p95": 29
+        },
+        "mean_edge_length": {
+          "p05": 10.339285714285714,
+          "p50": 11.589285714285714,
+          "p95": 12.875
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 0.867,
+          "mean_cut": 0.9215,
+          "cutwidth": 0.6885,
+          "mean_edge_length": 0.9215
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.147,
+          "mean_cut": 0.0,
+          "cutwidth": 0.034,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.063,
+          "cutwidth": 0.013,
+          "mean_edge_length": 0.063
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.001,
+          "cutwidth": 0.0005,
+          "mean_edge_length": 0.001
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 0.75,
+          "mean_cut": 0.31,
+          "cutwidth": 0.8375,
+          "mean_edge_length": 0.31
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: proof-of-the-antichain-operator-proposit",
+      "n_nodes": 13,
+      "n_edges": 15,
+      "forward_refs": [
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 13,
+          "forward_refs": 6,
+          "cutwidth": 6,
+          "mean_cut": 4.0,
+          "max_open": 5,
+          "mean_open": 3.0833333333333335,
+          "mean_edge_length": 3.2
+        },
+        "human_repaired": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 4.666666666666667,
+          "max_open": 5,
+          "mean_open": 2.75,
+          "mean_edge_length": 3.7333333333333334
+        },
+        "just_in_time": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 3.8333333333333335,
+          "max_open": 5,
+          "mean_open": 2.6666666666666665,
+          "mean_edge_length": 3.066666666666667
+        },
+        "greedy_min_open": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.8333333333333335,
+          "max_open": 5,
+          "mean_open": 2.6666666666666665,
+          "mean_edge_length": 3.066666666666667
+        },
+        "optimised": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.25,
+          "max_open": 5,
+          "mean_open": 2.4166666666666665,
+          "mean_edge_length": 2.6
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5128205128205128,
+        "just_in_time": 0.07692307692307687,
+        "greedy_min_open": 0.17948717948717952,
+        "optimised": -0.20512820512820507
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.89425,
+          "p05": 3.1666666666666665,
+          "p50": 3.9166666666666665,
+          "p95": 4.5
+        },
+        "max_open": {
+          "mean": 6.508,
+          "p05": 5,
+          "p50": 7,
+          "p95": 8
+        },
+        "mean_cut": {
+          "mean": 5.452083333333333,
+          "p05": 4.333333333333333,
+          "p50": 5.5,
+          "p95": 6.333333333333333
+        },
+        "cutwidth": {
+          "mean": 8.816,
+          "p05": 7,
+          "p50": 9,
+          "p95": 10
+        },
+        "mean_edge_length": {
+          "mean": 4.361666666666667,
+          "p05": 3.466666666666667,
+          "p50": 4.4,
+          "p95": 5.066666666666666
+        }
+      },
+      "random_tau_vs_human_mean": -0.06084615384615384,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.4166666666666665,
+          "p50": 4.166666666666667,
+          "p95": 4.666666666666667
+        },
+        "max_open": {
+          "p05": 6,
+          "p50": 7,
+          "p95": 8
+        },
+        "mean_cut": {
+          "p05": 4.833333333333333,
+          "p50": 5.666666666666667,
+          "p95": 6.416666666666667
+        },
+        "cutwidth": {
+          "p05": 7,
+          "p50": 9,
+          "p95": 10
+        },
+        "mean_edge_length": {
+          "p05": 3.8666666666666667,
+          "p50": 4.533333333333333,
+          "p95": 5.133333333333334
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0305,
+          "max_open": 0.0715,
+          "mean_cut": 0.013,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.013
+        },
+        "human_repaired": {
+          "mean_open": 0.005,
+          "max_open": 0.0715,
+          "mean_cut": 0.0995,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.0995
+        },
+        "just_in_time": {
+          "mean_open": 0.0025,
+          "max_open": 0.0715,
+          "mean_cut": 0.003,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.003
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0025,
+          "max_open": 0.0715,
+          "mean_cut": 0.003,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.003
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0715,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2325,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0025,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0225,
+          "cutwidth": 0.0425,
+          "mean_edge_length": 0.0225
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0425,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2175,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: proof-of-the-forest-operator-proposition",
+      "n_nodes": 39,
+      "n_edges": 63,
+      "forward_refs": [
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "dyadic-partition-1",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-1",
+          "Holder-correlation-tree"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 39,
+          "forward_refs": 21,
+          "cutwidth": 22,
+          "mean_cut": 11.394736842105264,
+          "max_open": 14,
+          "mean_open": 6.7368421052631575,
+          "mean_edge_length": 6.873015873015873
+        },
+        "human_repaired": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 11.894736842105264,
+          "max_open": 11,
+          "mean_open": 5.7631578947368425,
+          "mean_edge_length": 7.174603174603175
+        },
+        "just_in_time": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 11.5,
+          "max_open": 11,
+          "mean_open": 6.0,
+          "mean_edge_length": 6.936507936507937
+        },
+        "greedy_min_open": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 28,
+          "mean_cut": 15.078947368421053,
+          "max_open": 12,
+          "mean_open": 7.921052631578948,
+          "mean_edge_length": 9.095238095238095
+        },
+        "optimised": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 11.157894736842104,
+          "max_open": 9,
+          "mean_open": 5.552631578947368,
+          "mean_edge_length": 6.73015873015873
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.8272604588394062,
+        "just_in_time": 0.7300944669365722,
+        "greedy_min_open": 0.1767881241565452,
+        "optimised": 0.23616734143049933
+      },
+      "random": {
+        "mean_open": {
+          "mean": 10.510131578947368,
+          "p05": 9.526315789473685,
+          "p50": 10.578947368421053,
+          "p95": 11.210526315789474
+        },
+        "max_open": {
+          "mean": 17.795,
+          "p05": 15,
+          "p50": 18,
+          "p95": 20
+        },
+        "mean_cut": {
+          "mean": 19.24186842105263,
+          "p05": 16.657894736842106,
+          "p50": 19.36842105263158,
+          "p95": 21.63157894736842
+        },
+        "cutwidth": {
+          "mean": 31.202,
+          "p05": 28,
+          "p50": 31,
+          "p95": 33
+        },
+        "mean_edge_length": {
+          "mean": 11.60620634920635,
+          "p05": 10.047619047619047,
+          "p50": 11.682539682539682,
+          "p95": 13.047619047619047
+        }
+      },
+      "random_tau_vs_human_mean": 0.09631309041835358,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.394736842105264,
+          "p50": 10.31578947368421,
+          "p95": 11.263157894736842
+        },
+        "max_open": {
+          "p05": 15,
+          "p50": 17,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 18.42105263157895,
+          "p50": 20.605263157894736,
+          "p95": 22.5
+        },
+        "cutwidth": {
+          "p05": 27,
+          "p50": 31,
+          "p95": 33
+        },
+        "mean_edge_length": {
+          "p05": 11.11111111111111,
+          "p50": 12.428571428571429,
+          "p95": 13.571428571428571
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.001,
+          "cutwidth": 0.039,
+          "mean_edge_length": 0.001
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.115,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: two-sided-metric-space-carleson",
+      "n_nodes": 19,
+      "n_edges": 32,
+      "forward_refs": [
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "maximal-theorem",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "ball-covering",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 19,
+          "forward_refs": 8,
+          "cutwidth": 13,
+          "mean_cut": 8.277777777777779,
+          "max_open": 11,
+          "mean_open": 6.888888888888889,
+          "mean_edge_length": 4.65625
+        },
+        "human_repaired": {
+          "n": 19,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 7.0,
+          "max_open": 9,
+          "mean_open": 4.833333333333333,
+          "mean_edge_length": 3.9375
+        },
+        "just_in_time": {
+          "n": 19,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 6.388888888888889,
+          "max_open": 8,
+          "mean_open": 3.888888888888889,
+          "mean_edge_length": 3.59375
+        },
+        "greedy_min_open": {
+          "n": 19,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 7.0,
+          "max_open": 6,
+          "mean_open": 3.111111111111111,
+          "mean_edge_length": 3.9375
+        },
+        "optimised": {
+          "n": 19,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 5.277777777777778,
+          "max_open": 6,
+          "mean_open": 2.9444444444444446,
+          "mean_edge_length": 2.96875
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.08771929824561409,
+        "just_in_time": -0.029239766081871288,
+        "greedy_min_open": -0.23976608187134496,
+        "optimised": -0.26315789473684204
+      },
+      "random": {
+        "mean_open": {
+          "mean": 4.688888888888889,
+          "p05": 4.222222222222222,
+          "p50": 4.722222222222222,
+          "p95": 5.0
+        },
+        "max_open": {
+          "mean": 8.699,
+          "p05": 8,
+          "p50": 9,
+          "p95": 9
+        },
+        "mean_cut": {
+          "mean": 8.472611111111112,
+          "p05": 7.277777777777778,
+          "p50": 8.5,
+          "p95": 9.61111111111111
+        },
+        "cutwidth": {
+          "mean": 16.486,
+          "p05": 14,
+          "p50": 17,
+          "p95": 17
+        },
+        "mean_edge_length": {
+          "mean": 4.76584375,
+          "p05": 4.09375,
+          "p50": 4.78125,
+          "p95": 5.40625
+        }
+      },
+      "random_tau_vs_human_mean": -0.15764912280701754,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.7222222222222223,
+          "p50": 4.444444444444445,
+          "p95": 4.888888888888889
+        },
+        "max_open": {
+          "p05": 7,
+          "p50": 8,
+          "p95": 9
+        },
+        "mean_cut": {
+          "p05": 6.555555555555555,
+          "p50": 8.11111111111111,
+          "p95": 9.333333333333334
+        },
+        "cutwidth": {
+          "p05": 14,
+          "p50": 16,
+          "p95": 17
+        },
+        "mean_edge_length": {
+          "p05": 3.6875,
+          "p50": 4.5625,
+          "p95": 5.25
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.4,
+          "cutwidth": 0.0055,
+          "mean_edge_length": 0.4
+        },
+        "human_repaired": {
+          "mean_open": 0.714,
+          "max_open": 0.641,
+          "mean_cut": 0.0215,
+          "cutwidth": 0.659,
+          "mean_edge_length": 0.0215
+        },
+        "just_in_time": {
+          "mean_open": 0.012,
+          "max_open": 0.15,
+          "mean_cut": 0.003,
+          "cutwidth": 0.215,
+          "mean_edge_length": 0.003
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0215,
+          "cutwidth": 0.0925,
+          "mean_edge_length": 0.0215
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0925,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.555,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.555
+        },
+        "human_repaired": {
+          "mean_open": 0.9175,
+          "max_open": 0.8375,
+          "mean_cut": 0.1125,
+          "cutwidth": 0.82,
+          "mean_edge_length": 0.1125
+        },
+        "just_in_time": {
+          "mean_open": 0.115,
+          "max_open": 0.415,
+          "mean_cut": 0.0325,
+          "cutwidth": 0.4375,
+          "mean_edge_length": 0.0325
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.1125,
+          "cutwidth": 0.15,
+          "mean_edge_length": 0.1125
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.15,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: proof-of-the-classical-carleson-theorem",
+      "n_nodes": 29,
+      "n_edges": 70,
+      "forward_refs": [
+        [
+          "Hilbert-kernel-regularity",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "control-approximation-effect"
+        ],
+        [
+          "real-Carleson-operator-measurable",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-metric",
+          "control-approximation-effect"
+        ],
+        [
+          "partial-Fourier-sum-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "real-line-doubling",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "control-approximation-effect"
+        ],
+        [
+          "oscillation-control",
+          "control-approximation-effect"
+        ],
+        [
+          "integer-ball-cover",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-monotone",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-growth",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "frequency-metric",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Dirichlet-approximation"
+        ],
+        [
+          "frequency-ball-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-van-der-Corput",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-metric",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-line-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "oscillation-control",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "integer-ball-cover",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-monotone",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "frequency-ball-growth",
+          "partial-Fourier-sums-of-small"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 29,
+          "forward_refs": 37,
+          "cutwidth": 36,
+          "mean_cut": 24.178571428571427,
+          "max_open": 20,
+          "mean_open": 13.607142857142858,
+          "mean_edge_length": 9.67142857142857
+        },
+        "human_repaired": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 44,
+          "mean_cut": 20.321428571428573,
+          "max_open": 16,
+          "mean_open": 9.464285714285714,
+          "mean_edge_length": 8.128571428571428
+        },
+        "just_in_time": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 43,
+          "mean_cut": 25.642857142857142,
+          "max_open": 15,
+          "mean_open": 9.714285714285714,
+          "mean_edge_length": 10.257142857142858
+        },
+        "greedy_min_open": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 42,
+          "mean_cut": 22.571428571428573,
+          "max_open": 13,
+          "mean_open": 7.642857142857143,
+          "mean_edge_length": 9.028571428571428
+        },
+        "optimised": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 42,
+          "mean_cut": 15.321428571428571,
+          "max_open": 13,
+          "mean_open": 6.464285714285714,
+          "mean_edge_length": 6.128571428571429
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5270935960591133,
+        "just_in_time": -0.2512315270935961,
+        "greedy_min_open": -0.12315270935960587,
+        "optimised": 0.09852216748768472
+      },
+      "random": {
+        "mean_open": {
+          "mean": 10.60832142857143,
+          "p05": 9.571428571428571,
+          "p50": 10.678571428571429,
+          "p95": 11.392857142857142
+        },
+        "max_open": {
+          "mean": 17.233,
+          "p05": 15,
+          "p50": 17,
+          "p95": 18
+        },
+        "mean_cut": {
+          "mean": 27.131535714285715,
+          "p05": 22.392857142857142,
+          "p50": 27.357142857142858,
+          "p95": 30.964285714285715
+        },
+        "cutwidth": {
+          "mean": 45.089,
+          "p05": 42,
+          "p50": 45,
+          "p95": 48
+        },
+        "mean_edge_length": {
+          "mean": 10.852614285714285,
+          "p05": 8.957142857142857,
+          "p50": 10.942857142857143,
+          "p95": 12.385714285714286
+        }
+      },
+      "random_tau_vs_human_mean": 0.007625615763546794,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.5,
+          "p50": 10.678571428571429,
+          "p95": 11.571428571428571
+        },
+        "max_open": {
+          "p05": 16,
+          "p50": 17,
+          "p95": 18
+        },
+        "mean_cut": {
+          "p05": 26.357142857142858,
+          "p50": 29.214285714285715,
+          "p95": 31.75
+        },
+        "cutwidth": {
+          "p05": 43,
+          "p50": 45,
+          "p95": 48
+        },
+        "mean_edge_length": {
+          "p05": 10.542857142857143,
+          "p50": 11.685714285714285,
+          "p95": 12.7
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.1355,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.1355
+        },
+        "human_repaired": {
+          "mean_open": 0.037,
+          "max_open": 0.146,
+          "mean_cut": 0.01,
+          "cutwidth": 0.2475,
+          "mean_edge_length": 0.01
+        },
+        "just_in_time": {
+          "mean_open": 0.0675,
+          "max_open": 0.0275,
+          "mean_cut": 0.2615,
+          "cutwidth": 0.1025,
+          "mean_edge_length": 0.2615
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.057,
+          "cutwidth": 0.0625,
+          "mean_edge_length": 0.057
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0625,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.005
+        },
+        "human_repaired": {
+          "mean_open": 0.0375,
+          "max_open": 0.1875,
+          "mean_cut": 0.0,
+          "cutwidth": 0.25,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0625,
+          "max_open": 0.025,
+          "mean_cut": 0.035,
+          "cutwidth": 0.1,
+          "mean_edge_length": 0.035
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.03,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.03,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

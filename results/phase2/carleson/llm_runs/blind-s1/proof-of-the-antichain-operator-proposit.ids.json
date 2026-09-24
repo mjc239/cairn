@@ -1,0 +1,15 @@
+{
+ "r536": "correlation-kernel-bound",
+ "r157": "local-antichain-density",
+ "r592": "dens2-antichain",
+ "r990": "maximal-bound-antichain",
+ "r473": "tile-uncertainty",
+ "r683": "stack-density",
+ "r667": "dens1-antichain",
+ "r304": "tile-disjointness",
+ "r616": "tile-correlation",
+ "r523": "tile-range-support",
+ "r596": "global-antichain-density",
+ "r932": "tile-reach",
+ "r465": "antichain-tile-count"
+}

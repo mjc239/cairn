@@ -203,6 +203,25 @@ def just_in_time_order(g: nx.DiGraph, rng: random.Random) -> list[str]:
     return order
 
 
+def goal_first_order(g: nx.DiGraph, rng: random.Random) -> list[str]:
+    """Top-down narrative DFS: for each final result in random order, state it, then (depth-first) the
+    results it uses that have not appeared yet. Each non-final result appears right after the first result
+    that needs it; a lemma shared by siblings can therefore precede a sibling that uses it, so this is not a
+    strict reverse-topological order (``just_in_time_order(...)[::-1]`` is)."""
+    seen: set[str] = set()
+    order: list[str] = []
+    for sink in _shuffled((v for v in g.nodes if g.out_degree(v) == 0), rng):
+        stack = [sink]
+        while stack:
+            v = stack.pop()
+            if v in seen:
+                continue
+            seen.add(v)
+            order.append(v)
+            stack.extend(reversed(_shuffled((p for p in g.predecessors(v) if p not in seen), rng)))
+    return order
+
+
 def _shuffled(items, rng: random.Random) -> list:
     items = sorted(items)
     rng.shuffle(items)

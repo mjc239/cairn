@@ -1,6 +1,6 @@
 {
   "project": "Carleson",
-  "provenance": "fpvandoorn/carleson @ d966776f60fe (2026-09-23), blueprint/src, chapters = \\section",
+  "provenance": "fpvandoorn/carleson @ d966776f60fe (2026-09-23), chapters = \\section",
   "scopes": [
     {
       "name": "(whole blueprint)",
@@ -784,11 +784,11 @@
           "grid-existence"
         ],
         [
-          "frequency-ball-cover",
+          "disjoint-frequency-cubes",
           "tile-structure"
         ],
         [
-          "disjoint-frequency-cubes",
+          "frequency-ball-cover",
           "tile-structure"
         ],
         [
@@ -998,6 +998,10 @@
       "n_edges": 38,
       "forward_refs": [
         [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
           "second-exception",
           "exceptional-set"
         ],
@@ -1006,15 +1010,7 @@
           "exceptional-set"
         ],
         [
-          "third-exception",
-          "exceptional-set"
-        ],
-        [
-          "forest-stacking",
-          "forest-union"
-        ],
-        [
-          "C-dens1",
+          "forest-separation",
           "forest-union"
         ],
         [
@@ -1026,11 +1022,11 @@
           "forest-union"
         ],
         [
-          "forest-convex",
+          "C-dens1",
           "forest-union"
         ],
         [
-          "forest-separation",
+          "forest-convex",
           "forest-union"
         ],
         [
@@ -1038,11 +1034,19 @@
           "forest-union"
         ],
         [
-          "antichain-decomposition",
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "L2-antichain",
           "forest-complement"
         ],
         [
           "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "antichain-decomposition",
           "forest-complement"
         ],
         [
@@ -1051,10 +1055,6 @@
         ],
         [
           "L0-antichain",
-          "forest-complement"
-        ],
-        [
-          "L2-antichain",
           "forest-complement"
         ]
       ],
@@ -1260,11 +1260,11 @@
       "n_edges": 13,
       "forward_refs": [
         [
-          "tile-correlation",
+          "antichain-tile-count",
           "dens1-antichain"
         ],
         [
-          "antichain-tile-count",
+          "tile-correlation",
           "dens1-antichain"
         ],
         [
@@ -1272,11 +1272,11 @@
           "tile-correlation"
         ],
         [
-          "tile-uncertainty",
+          "tile-range-support",
           "tile-correlation"
         ],
         [
-          "tile-range-support",
+          "tile-uncertainty",
           "tile-correlation"
         ],
         [
@@ -1518,11 +1518,11 @@
           "densities-tree-bound"
         ],
         [
-          "correlation-distant-tree-parts",
+          "correlation-near-tree-parts",
           "correlation-separated-trees"
         ],
         [
-          "correlation-near-tree-parts",
+          "correlation-distant-tree-parts",
           "correlation-separated-trees"
         ],
         [
@@ -1530,11 +1530,11 @@
           "correlation-distant-tree-parts"
         ],
         [
-          "Holder-correlation-tree",
+          "lower-oscillation-bound",
           "correlation-distant-tree-parts"
         ],
         [
-          "lower-oscillation-bound",
+          "Holder-correlation-tree",
           "correlation-distant-tree-parts"
         ],
         [
@@ -1554,11 +1554,11 @@
           "Holder-correlation-tree"
         ],
         [
-          "square-function-count",
+          "thin-scale-impact",
           "bound-for-tree-projection"
         ],
         [
-          "thin-scale-impact",
+          "square-function-count",
           "bound-for-tree-projection"
         ]
       ],
@@ -1776,15 +1776,15 @@
           "nontangential-from-simple"
         ],
         [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
           "estimate-bad",
           "calderon-zygmund-weak-1-1"
         ],
         [
           "estimate-good",
-          "calderon-zygmund-weak-1-1"
-        ],
-        [
-          "Calderon-Zygmund-decomposition",
           "calderon-zygmund-weak-1-1"
         ]
       ],
@@ -1998,26 +1998,6 @@
           "control-approximation-effect"
         ],
         [
-          "real-van-der-Corput",
-          "real-Carleson"
-        ],
-        [
-          "oscillation-control",
-          "real-Carleson"
-        ],
-        [
-          "frequency-ball-growth",
-          "real-Carleson"
-        ],
-        [
-          "Hilbert-kernel-bound",
-          "real-Carleson"
-        ],
-        [
-          "Hilbert-strong-2-2",
-          "real-Carleson"
-        ],
-        [
           "real-line-measure",
           "real-Carleson"
         ],
@@ -2026,15 +2006,15 @@
           "real-Carleson"
         ],
         [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
           "Hilbert-kernel-regularity",
-          "real-Carleson"
-        ],
-        [
-          "integer-ball-cover",
-          "real-Carleson"
-        ],
-        [
-          "real-line-metric",
           "real-Carleson"
         ],
         [
@@ -2042,12 +2022,28 @@
           "real-Carleson"
         ],
         [
+          "real-line-metric",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
           "real-line-doubling",
           "real-Carleson"
         ],
         [
-          "Dirichlet-approximation",
-          "Hilbert-strong-2-2"
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
         ],
         [
           "integrable-bump-convolution",
@@ -2055,6 +2051,10 @@
         ],
         [
           "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "Dirichlet-approximation",
           "Hilbert-strong-2-2"
         ]
       ],

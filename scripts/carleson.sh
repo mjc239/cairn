@@ -30,3 +30,13 @@ uv run cairn phase0 "$SRC" "${COMMON[@]}" -o results/phase0/carleson
 uv run cairn phase1 "$SRC" "$DECLS" "${COMMON[@]}" -o results/phase1/carleson
 uv run cairn llm-prompts "$SRC" "$DECLS" --group-by section -o results/phase2/carleson/llm
 uv run cairn phase2 "$SRC" "$DECLS" "${COMMON[@]}" --llm-dir results/phase2/carleson/llm -o results/phase2/carleson
+R=results/phase2/carleson/llm_runs
+uv run cairn llm-eval "$SRC" "$DECLS" --group-by section --project Carleson -o results/phase2/carleson/llm_runs.md \
+  --run named=results/phase2/carleson/llm --run named=$R/named-s1 --run blind=$R/blind-s0 --run blind=$R/blind-s1
+# Cross-project: train the key-declaration model on one project, test on the other (needs the PFR dump too).
+PFR_DECLS="$ROOT/data/raw/pfr_decls.jsonl"
+[ -f "$PFR_DECLS" ] || gunzip -c results/phase1/pfr/pfr_decls.jsonl.gz > "$PFR_DECLS"
+[ -d "$ROOT/data/raw/pfr/.git" ] || "$ROOT/scripts/phase0_pfr.sh" >/dev/null
+uv run cairn transfer -o results/cross_project/key_node_transfer.json \
+  --project "PFR=$ROOT/data/raw/pfr/blueprint/src:$PFR_DECLS" \
+  --project "Carleson=$SRC:$DECLS:section"

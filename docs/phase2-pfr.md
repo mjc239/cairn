@@ -33,11 +33,15 @@ cheap features, cross-validated with whole Lean modules held out:
   declarations are unavoidable bottlenecks. Betweenness captures "on many
   paths" better.
 - **The misses are informative.**
-  - The top-scoring declarations the blueprint *doesn't* name are mostly
+  - Several top-scoring declarations the blueprint *doesn't* name are
     `_aux`/`_prelim`/primed variants of named results, such as
-    `tau_strictly_decreases_aux` and `weak_PFR_asymm_prelim`. These are
-    exactly what a human folds into a parent lemma, which points to a
-    name-based "variant of" feature as the obvious next step.
+    `tau_strictly_decreases_aux`. **Follow-up: this was a misleading
+    anecdote.** Five label-free "variant of" features (aux-style names,
+    name-stem families, single-user helpers) don't help: AUROC 0.87 → 0.86.
+    Across all of PFR, `_aux` declarations are named at 19% and primed ones
+    at 17%, about the base rate, because the blueprint usually lists variants
+    *together with* their parent in one node's `\lean{}`. 20 of the 25 named
+    primed declarations have their unprimed base named too.
   - The lowest-scoring *named* declarations are small foundational facts,
     such as `entropy_le_log_card` and `condEntropy_add_right`. Authors name
     these for exposition even though they are structurally minor.
@@ -92,9 +96,24 @@ cheap features, cross-validated with whole Lean modules held out:
    carries most of the expository order. Its load is higher (56.3) because
    modules interleave chapters.
 
+### Follow-up: repeats and anonymisation
+
+Three runs each, with prompt order reshuffled per run
+([`results/phase2/pfr/llm_runs.md`](../results/phase2/pfr/llm_runs.md)):
+
+| Prompt | τ within chapters |
+|---|---:|
+| Labelled (authors' ids and titles) | 0.85 ± 0.00 |
+| Anonymised (random ids, no titles, cross-references rewritten) | 0.83 ± 0.01 |
+
+The LLM result is stable and does not depend on the authors' labels.
+Recognising the statements themselves is still possible, which would need
+paraphrasing to rule out. See [`carleson.md`](carleson.md) for how this
+changes on a paper-style blueprint.
+
 ### Caveats
 
-- **Contamination:** the LLM may have seen the PFR paper or blueprint in
+- **Contamination** (partly addressed above): the LLM may have seen the PFR paper or blueprint in
   training. The prompts also use the authors' labels as ids (e.g.
   `pfr-9-aux`), which carry hints. It was told not to look anything up and
   could read only its prompt files.

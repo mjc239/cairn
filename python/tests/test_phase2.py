@@ -68,3 +68,23 @@ def test_anonymised_prompts_hide_labels_and_map_back(tmp_path):
     (tmp_path / "ch.response.json").write_text(json.dumps(answer))
     res = load_llm_orders(tmp_path, [n.id for n in nodes], {n.id: "ch" for n in nodes}, g)
     assert res["order"] == [f"secret-{k}" for k in range(8)]
+
+
+def test_transfer_key_nodes_runs_both_directions():
+    from cairn.blueprint import Blueprint, Node
+    from cairn.phase2 import transfer_key_nodes
+
+    def project(prefix, n):
+        decls = {}
+        for i in range(n):
+            deps = {f"{prefix}.d{j}" for j in range(i)} if i % 3 == 0 else {f"{prefix}.d{i - 1}"} if i else set()
+            decls[f"{prefix}.d{i}"] = FormalDecl(f"{prefix}.d{i}", "theorem", f"M.{i % 4}", i, value_deps=deps,
+                                                 type_size=10 + i, value_size=50 * (i % 3 == 0) + i)
+        named = [f"{prefix}.d{i}" for i in range(n) if i % 3 == 0]
+        nodes = [Node(id=f"n{i}", kind="lemma", position=i, chapter="c", source="s", line=1, lean_decls=[d])
+                 for i, d in enumerate(named)]
+        return Blueprint(nodes=nodes, unresolved=[], orphan_proofs=[]), decls
+
+    res = transfer_key_nodes({"A": project("A", 30), "B": project("B", 24)})
+    assert set(res) == {"A -> B", "B -> A"}
+    assert all(0.0 <= r["auroc"] <= 1.0 for r in res.values())
