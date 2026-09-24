@@ -1,0 +1,1794 @@
+{
+  "nodes": [
+    {
+      "id": "def:fourier-transform",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 10,
+      "title": null,
+      "labels": [
+        "def:fourier-transform"
+      ],
+      "lean_decls": [
+        "VectorFourier.fourierIntegral",
+        "Fourier.fourierIntegral",
+        "Real.fourierIntegral",
+        "Real.fourierIntegralInv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $f\\in L^1(V,E)$. Its \\emph{Fourier transform} (w.r.t. $L$) is the function $\\mathcal Ff=\\widehat f:W\\to E$ given by $$\\mathcal Ff(w):=\\widehat f(w):=\\int_V e^{-2\\pi i L(v,w)}f(v)\\,d\\mu.$$ The \\emph{inverse Fourier transform} (w.r.t. $L$) is similarly defined as $$\\mathcal F^{-1}f(w)=\\check f(w):=\\int_Ve^{2\\pi iL(v,w)}f(v)\\,d\\mu.$$"
+    },
+    {
+      "id": "lem:fourier-bounded",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 23,
+      "title": null,
+      "labels": [
+        "lem:fourier-bounded"
+      ],
+      "lean_decls": [
+        "VectorFourier.fourierIntegral_convergent_iff",
+        "VectorFourier.norm_fourierIntegral_le_integral_norm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-transform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 1,
+      "proof_event": 2,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f\\in L^1(V,E)$. Then its Fourier transform $\\widehat f$ is well-defined and bounded. In particular, the Fourier transform defines a map $\\mathcal F:L^1(V,E)\\to L^\\infty(V,E)$."
+    },
+    {
+      "id": "lem:fourier-cont",
+      "kind": "lemma",
+      "position": 2,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 39,
+      "title": null,
+      "labels": [
+        "lem:fourier-cont"
+      ],
+      "lean_decls": [
+        "VectorFourier.fourierIntegral_continuous"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-transform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f\\in L^1(V,E)$. Then $\\widehat f$ is continuous."
+    },
+    {
+      "id": "lem:fourier-multiplication",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 51,
+      "title": "Multiplication formula",
+      "labels": [
+        "lem:fourier-multiplication"
+      ],
+      "lean_decls": [
+        "VectorFourier.integral_bilin_fourierIntegral_eq_flip"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:fourier-cont"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 6,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f,g\\in L^1(V,E)$. Then $$\\int_WM(\\widehat f(w),g(w))\\,d\\nu(w)=\\int_VM(f(v),\\widehat g(v))\\,d\\mu(v).$$"
+    },
+    {
+      "id": "lem:fourier-prop",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 64,
+      "title": null,
+      "labels": [
+        "lem:fourier-prop"
+      ],
+      "lean_decls": [
+        "VectorFourier.fourierIntegral_add",
+        "Fourier.fourierIntegral_comp_add_right",
+        "Fourier.fourierIntegral_smul_const",
+        "MeasureTheory.fourier_conj",
+        "MeasureTheory.fourier_convolution"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-transform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Lef $f,g\\in L^1(V,E)$, $t\\in\\R$ and $a,b\\in\\C$. The Fourier transform satisfies the following elementary properties: \\begin{enumerate} \\item[(i)] $\\mathcal F(af+bg)=a\\mathcal Ff+b\\mathcal Fg$\\hfill(Linearity) \\item[(ii)] $\\mathcal F(f(x-t)) = e^{-2\\pi i ty}\\mathcal F f(y)$\\hfill (Shifting) \\item[(iii)] $\\mathcal F(f(tx)) = \\frac1{|t|}\\mathcal F f(\\frac yt)$\\hfill (Scaling) \\item[(iv)] If $E$ admits a conjugation, then $\\mathcal F(\\overline{f(x)}) = \\overline{\\mathcal Ff(-y)}$\\hfill (Conjugation) \\item[(v)] Define the convolution of $f$ and $g$ w.r.t. a bilinear map $M:E\\times E\\to F$ as $$(f\\ast_Mg)(w):=\\int_VM(f(v),g(w-v))\\,d\\mu(v).$$ Then $\\mathcal F(f\\ast_M g) =M(\\mathcal Ff,\\mathcal Fg)$ \\hfill (Convolution) \\end{enumerate}"
+    },
+    {
+      "id": "lem:fourier-gaussian",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 92,
+      "title": null,
+      "labels": [
+        "lem:fourier-gaussian"
+      ],
+      "lean_decls": [
+        "fourierIntegral_gaussian_innerProductSpace'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-transform"
+      ],
+      "proof_uses": [
+        "lem:fourier-prop"
+      ],
+      "has_proof": true,
+      "statement_event": 9,
+      "proof_event": 10,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $x\\in V$ and $\\delta>0$. Define the \\emph{modulated Gaussian} $$u_{x,\\delta}(y):V\\to\\C,\\quad y\\mapsto e^{-\\delta\\pi|y|^2}e^{2\\pi i x y}.$$ Its Fourier transform (w.r.t. the inner product) is given by $$\\widehat{u_{x,\\delta}}(z)=\\delta^{-n/2}e^{-\\pi|x-y|^2/\\delta}=:K_\\delta(x-z).$$"
+    },
+    {
+      "id": "lem:weierstrass-kernel",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 122,
+      "title": null,
+      "labels": [
+        "lem:weierstrass-kernel"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $K_\\delta(v)=\\delta^{-n/2}e^{-\\pi|v|^2/\\delta}$ as in \\Cref{lem:fourier-gaussian}. This is a \\emph{good kernel}, called the \\emph{Weierstrass kernel}, satisfying $$\\int_{V}K_\\delta(x)\\,dx= 1\\quad\\text{and}\\quad \\int_{|x|>\\eta}K_\\delta(x)\\,dx\\xrightarrow{\\delta\\to0}0\\quad\\text{for all }\\eta>0.$$ Furthermore, it satisfies the stronger bounds $$K_\\delta(x)\\leq \\delta^{-n/2}\\quad\\text{and}\\quad K_\\delta(x)\\leq B\\delta^{1/2}|x|^{-n-1}$$ for some constant $B$ independent of $\\delta$."
+    },
+    {
+      "id": "thm:kernel-approximation",
+      "kind": "theorem",
+      "position": 7,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 149,
+      "title": null,
+      "labels": [
+        "thm:kernel-approximation"
+      ],
+      "lean_decls": [
+        "Real.tendsto_integral_gaussian_smul'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:weierstrass-kernel"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 13,
+      "proof_event": 14,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f:V\\to E$ be integrable. Let $K_\\delta$ be the Weierstrass kernel from \\Cref{lem:weierstrass-kernel}, or indeed any family of functions satisfying the conditions of \\Cref{lem:weierstrass-kernel}. Then $$(K_\\delta\\ast f)(x):=\\int_V K_\\delta(y)f(x-y)\\,d\\mu(y)\\xrightarrow{\\delta\\to0}f(x)$$ in the $L^1$-norm. If $f$ is continuous, the convergence also holds pointwise."
+    },
+    {
+      "id": "_anon1:plancherel",
+      "kind": "remark",
+      "position": 8,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 187,
+      "title": null,
+      "labels": [
+        "_anon1:plancherel"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 15,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "One can drop the continuity assumption and still get pointwise convergence almost everywhere. The proof stays the same, but one focuses on Lebesgue points of $f$. It takes slightly more work to argue that $\\varphi$ behaves nicely, but the rest of the proof stays the same."
+    },
+    {
+      "id": "thm:fourier-inversion",
+      "kind": "theorem",
+      "position": 9,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 193,
+      "title": "Inversion formula",
+      "labels": [
+        "thm:fourier-inversion"
+      ],
+      "lean_decls": [
+        "MeasureTheory.Integrable.fourier_inversion",
+        "Continuous.fourier_inversion"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:kernel-approximation",
+        "lem:fourier-multiplication"
+      ],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f:V\\to E$ be integrable and continuous. Assume $\\widehat f$ is integrable as well. Then $$\\mathcal F^{-1}\\mathcal F f=f.$$"
+    },
+    {
+      "id": "_anon2:plancherel",
+      "kind": "remark",
+      "position": 10,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 207,
+      "title": null,
+      "labels": [
+        "_anon2:plancherel"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 18,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Note that both assumptions are necessary, since $\\mathcal F^{-1}\\mathcal Ff$ is continuous, and only defined if $\\mathcal Ff$ is integrable."
+    },
+    {
+      "id": "thm:fourier-inversion-L1",
+      "kind": "theorem",
+      "position": 11,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 212,
+      "title": "Inversion formula, $L^1$-version",
+      "labels": [
+        "thm:fourier-inversion-L1"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:kernel-approximation",
+        "lem:fourier-multiplication"
+      ],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "plancherel",
+      "proof_leanok": true,
+      "text": "Let $f\\in L^1(V,E)$. If $\\widehat f\\in L^1(V,E)$, then $\\mathcal F^{-1}\\mathcal Ff=f$."
+    },
+    {
+      "id": "thm:plancherel",
+      "kind": "theorem",
+      "position": 12,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 227,
+      "title": "Plancherel's Theorem",
+      "labels": [
+        "thm:plancherel"
+      ],
+      "lean_decls": [
+        "MeasureTheory.mem\u2112p_fourierIntegral",
+        "MeasureTheory.snorm_fourierIntegral"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:kernel-approximation",
+        "lem:fourier-multiplication",
+        "lem:fourier-gaussian",
+        "lem:fourier-prop"
+      ],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "Suppose that $f : V \\to E$ is in $L^1(V,E)\\cap L^2(V,E)$ and let $\\widehat{f}$ be the Fourier transform of $f$. Then $\\widehat{f},\\check{f}\\in L^2(V,E)$ and \\[\\|\\widehat{f}\\|_{L^2} = \\|f\\|_{L^2}=\\|\\check f\\|_{L^2}.\\] Suppose that $f : V \\to E$ is in $L^1(V,E)\\cap L^2(V,E)$ and let $\\widehat{f}$ be the Fourier transform of $f$. Then $\\widehat{f},\\check{f}\\in L^2(V,E)$ and \\[\\|\\widehat{f}\\|_{L^2} = \\|f\\|_{L^2}=\\|\\check f\\|_{L^2}.\\]"
+    },
+    {
+      "id": "lem:L12-dense",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 249,
+      "title": null,
+      "labels": [
+        "lem:L12-dense"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 23,
+      "proof_event": 24,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "$L^1(V,E)\\cap L^2(V,E)$ is dense in $L^2(V,E)$."
+    },
+    {
+      "id": "lem:fourier12-cauchy",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 263,
+      "title": null,
+      "labels": [
+        "lem:fourier12-cauchy"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:L12-dense"
+      ],
+      "proof_uses": [
+        "thm:plancherel",
+        "lem:fourier-prop"
+      ],
+      "has_proof": true,
+      "statement_event": 25,
+      "proof_event": 26,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "Let $f\\in L^2(V,E)$ and $(f_n)_n\\subset L^1(V,E)\\cap L^2(V,E)$ a sequence with $f_n\\xrightarrow[L^2]{}f$. Then $(\\widehat f_n)_n$ is a Cauchy sequence, hence converges in $L^2(V,E)$."
+    },
+    {
+      "id": "def:fourier-L2",
+      "kind": "definition",
+      "position": 15,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 277,
+      "title": null,
+      "labels": [
+        "def:fourier-L2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:fourier12-cauchy"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 27,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $f\\in L^2(V,E)$ and take a sequence $(f_n)_n\\subset L^1(V,E)\\cap L^2(V,E)$ with $f_n\\xrightarrow[L^2]{}f$. Set $$\\mathcal Ff:=\\widehat f:=\\lim_{n\\to\\infty}\\widehat{f_n},$$ the limit taken in the $L^2$-sense."
+    },
+    {
+      "id": "lem:fourier2-welldef",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 285,
+      "title": null,
+      "labels": [
+        "lem:fourier2-welldef"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-L2",
+        "lem:fourier12-cauchy"
+      ],
+      "proof_uses": [
+        "thm:plancherel"
+      ],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "This is well-defined: By \\Cref{lem:fourier12-cauchy}, the limit exists. Further it does not depend on the choice of sequence $(f_n)_n$. If $f\\in L^1(V,E)\\cap L^2(V,E)$, this definition agrees with the Fourier transform on $L^1(V,E)$."
+    },
+    {
+      "id": "def:invFourier-L2",
+      "kind": "definition",
+      "position": 17,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 302,
+      "title": null,
+      "labels": [
+        "def:invFourier-L2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:fourier12-cauchy",
+        "thm:plancherel"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 30,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define analogously $\\mathcal F^{-1}f:=\\check f:=\\lim_{n\\to\\infty}\\check f_n$, if $f_n\\xrightarrow[L^2]{}f\\in L^2(V,E)$ with $(f_n)_n\\subset L^1(V,E)\\cap L^2(V,E)$. By the same arguments as above, this is well-defined."
+    },
+    {
+      "id": "thm:fourier2-properties",
+      "kind": "corollary",
+      "position": 18,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 311,
+      "title": null,
+      "labels": [
+        "thm:fourier2-properties"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-L2",
+        "def:invFourier-L2",
+        "lem:fourier2-welldef"
+      ],
+      "proof_uses": [
+        "thm:plancherel",
+        "thm:fourier-inversion",
+        "lem:fourier-prop"
+      ],
+      "has_proof": true,
+      "statement_event": 31,
+      "proof_event": 32,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "Plancherel's Theorem, the inversion formula, and the properties of \\Cref{lem:fourier-prop} hold for the Fourier transform on $L^2(V,E)$ as well."
+    },
+    {
+      "id": "thm:fourier-is-l2-linear",
+      "kind": "corollary",
+      "position": 19,
+      "chapter": "plancherel",
+      "source": "chapter/plancherel.tex",
+      "line": 328,
+      "title": null,
+      "labels": [
+        "thm:fourier-is-l2-linear"
+      ],
+      "lean_decls": [
+        "MeasureTheory.fourierIntegralL2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:fourier-L2",
+        "lem:fourier2-welldef"
+      ],
+      "proof_uses": [
+        "thm:fourier2-properties"
+      ],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "plancherel",
+      "proof_leanok": false,
+      "text": "The Fourier transform induces a continuous linear map $L^2(V,E) \\to L^2(V,E)$."
+    },
+    {
+      "id": "thm:maximum_modulus",
+      "kind": "theorem",
+      "position": 20,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "thm:maximum_modulus"
+      ],
+      "lean_decls": [
+        "Analysis.Complex.norm_eqOn_closure_of_isPreconnected_of_isMaxOn"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "interpolation",
+      "proof_leanok": true,
+      "text": "Let $U$ be a connected open set in a complex normed space $E$. Let $f:E\\to F$ be a function that complex differentiable on $U$ and continuous on $\\bar{U}$.\\\\ If $|f(z)|$ takes its maximum on a point $u\\in U$, then it must be constant on $\\bar{U}$."
+    },
+    {
+      "id": "lem:threelines",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 28,
+      "title": null,
+      "labels": [
+        "lem:threelines"
+      ],
+      "lean_decls": [
+        "DiffContOnCl.norm_le_pow_mul_pow"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 37,
+      "proof_event": 38,
+      "proof_chapter": "interpolation",
+      "proof_leanok": true,
+      "text": "Let $S$ be the strip $S:=\\{z \\in \\C \\ | \\ 0 < \\mathrm{Re} \\, z < 1 \\}$. Let $f: \\overline{S} \\to \\C$ be a function that is holomorphic on $S$ and continuous and bounded on $\\overline{S}$.\\\\ Assume $M_0, M_1$ are positive real numbers such that for all values of $y$ in $\\R$, we have \\[| \\phi(iy) | \\leq M_0 \\ \\qquad | \\phi(1+iy) | \\leq M_1 \\] i.e., the absolute values of the function on the lines $\\{\\mathrm{Re} \\, z = 0\\}$ and $\\{\\mathrm{Re} \\, z = 1\\}$ are bounded by $M_0$ and $M_1$ respectively.\\\\ Then, for all $0 \\leq t \\leq 1$ and for all real values of $y$, we have \\[ | \\phi(t + iy) | \\leq M_0^{1-t} M_1^t\\]"
+    },
+    {
+      "id": "lem:snorm_eq_sSup_snorm",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 97,
+      "title": null,
+      "labels": [
+        "lem:snorm_eq_sSup_snorm"
+      ],
+      "lean_decls": [
+        "MeasureTheory.snorm_eq_sSup_snorm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 39,
+      "proof_event": 40,
+      "proof_chapter": "interpolation",
+      "proof_leanok": true,
+      "text": "Let $p$ and $q$ be real conjugate exponents. Let $f$ be measurable. Then \\[ \\|f\\|_{L^q} = \\sup_{\\|g\\|_{L^p} \\leq 1, \\ g \\text{ simple}} \\| fg \\|_{L^1}.\\] In particular, if the right hand side formula is finite, $f\\in L^q$."
+    },
+    {
+      "id": "lem:snormEssSup_eq_sSup_snorm",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 126,
+      "title": null,
+      "labels": [
+        "lem:snormEssSup_eq_sSup_snorm"
+      ],
+      "lean_decls": [
+        "MeasureTheory.snormEssSup_eq_sSup_snorm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "interpolation",
+      "proof_leanok": true,
+      "text": "Let $f$ be measurable and the measure $\\mu$ be $\\sigma$-finite. Then \\[ \\|f\\|_{L^\\infty} = \\sup_{\\|g\\|_{L^1} \\leq 1, \\ g \\text{ simple}} \\| fg \\|_{L^1}.\\]"
+    },
+    {
+      "id": "lem:hoelder'",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 191,
+      "title": null,
+      "labels": [
+        "lem:hoelder'"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "interpolation",
+      "proof_leanok": true,
+      "text": "Let $(X, \\mu)$ be a measure space and $0< p_0 <p_1\\leq \\infty$, $0 \\le p \\le \\infty$. Assume we have $t \\ge 0$ such that \\[ \\frac{1}{p} = \\frac{1-t}{p_0} + \\frac{t}{p_1} \\] Let $f : X \\to \\mathbb C$ be a measurable function. Then \\[ \\| f \\|_{L^p} \\leq \\| f \\|^{1-t}_{L^{p_0}} \\|f\\|^t_{L^{p_1}} \\] In particular, the $f$ in $L^{p_0}(X) \\cap L^{p_1}(X)$, then $f$ is in $L^p(X)$."
+    },
+    {
+      "id": "thm:riesz_interpolation",
+      "kind": "theorem",
+      "position": 25,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 231,
+      "title": null,
+      "labels": [
+        "thm:riesz_interpolation"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:lp_of_sup_norm",
+        "lem:threelines"
+      ],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "interpolation",
+      "proof_leanok": false,
+      "text": "Let $(X, \\mu)$ and $(Y, \\nu)$ be measure spaces and consider all $L^p$ spaces to be complex valued.\\\\ Suppose $T$ is a linear map $L^{p_0}(X) + L^{p_1}(X) \\to L^{q_0}(Y) + L^{q_1}(Y)$ that restricts to bounded operators $L^{p_0} \\to L^{q_0}$ and $L^{p_1} \\to L^{q_1}$. Let $M_0, M_1$ be the respective bounds, i.e., \\[ \\begin{cases} ||Tf||_{L^{q_0}} \\leq M_0 ||f||_{L^{p_0}} \\\\ ||Tf||_{L^{q_1}} \\leq M_1 ||f||_{L^{p_1}} \\end{cases}\\] Then, for any pair $(p, q)$ such that there is a $t$ in $[0,1]$ for which \\[\\frac{1}{p} = \\frac{1-t}{p_0} + \\frac{t}{p_1} \\qquad \\frac{1}{q} = \\frac{1-t}{q_0} + \\frac{t}{q_1} \\] we have that the operator is bounded $L^p \\to L^q$, and in particular \\[ ||Tf||_{L^q} \\leq M_0^{1-t} M_1^t ||f||_{L^p} \\]"
+    },
+    {
+      "id": "lem:hausdorff_young",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 326,
+      "title": null,
+      "labels": [
+        "lem:hausdorff_young"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:riesz_interpolation"
+      ],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "interpolation",
+      "proof_leanok": false,
+      "text": "Let $X=[0,2\\pi]$ with normalized Lebesgue measure $\\frac{d\\theta}{2\\pi}$ and let $Y=\\bbz$ with counting measure.\\\\ Consider the operator $T: f \\mapsto \\{a_n\\}_{n\\in \\bbz}$ where \\[ a_n = \\frac{1}{2\\pi} \\int_0^{2\\pi} f(\\theta) e^{-in\\theta} d\\theta \\] For $1\\leq p\\leq 2$ and $\\frac{1}{p}+\\frac{1}{q}=1$, we have \\[ ||Tf||_{L^q} \\leq ||f||_{L^p} \\]"
+    },
+    {
+      "id": "lem:hausdorff_young_dual",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 369,
+      "title": null,
+      "labels": [
+        "lem:hausdorff_young_dual"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:riesz_interpolation"
+      ],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "interpolation",
+      "proof_leanok": false,
+      "text": "For $1\\leq p \\leq 2$ and $q$ conjugate exponent to $p$, we have \\[ ||T' \\{a_n\\}||_{L^q} \\leq ||\\{a_n\\}||_{L^p} \\]"
+    },
+    {
+      "id": "lem:young_convolution",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "interpolation",
+      "source": "chapter/interpolation.tex",
+      "line": 405,
+      "title": null,
+      "labels": [
+        "lem:young_convolution"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:riesz_interpolation"
+      ],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "interpolation",
+      "proof_leanok": false,
+      "text": "For any $f\\in L^p$ and $g \\in L^r$, their convolution \\[ (f * g) (x) = \\int_{\\R^d} f(x-y) g(y) dy \\] is well-defined (i.e. the right-hand side is integrable for almost every $x$) and, if $\\frac{1}{q} = \\frac{1}{p} + \\frac{1}{r} - 1$, we have \\[ || f * g ||_{L^q} \\leq ||f||_{L^p} ||g||_{L^r}\\]"
+    },
+    {
+      "id": "_anon3:distributions",
+      "kind": "definition",
+      "position": 29,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 33,
+      "title": null,
+      "labels": [
+        "_anon3:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 53,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "$\\cD(\\Omega) = C_c^\\infty(\\Omega)$ is the set of test functions together with a topology determined by its converging sequences : $\\phi_n \\to \\phi$ in $\\cD(\\Omega)$ if \\begin{itemize} \\item there exists a compact subset $K \\subset \\Omega$ such that $\\Supp(\\phi_n) \\subset K$. \\item For all multiindices $\\alpha$ we have $\\partial_\\alpha \\phi_n \\to \\partial_\\alpha \\phi$ in uniformly. \\end{itemize} Convention: if $x \\in \\R^d \\setminus \\Omega$, then $\\phi(x) := 0$.\\\\ $\\cD'(\\Omega)$ is the topological dual space, i.e. the space of continuous linear functionals $D(\\Omega) \\to \\C$ with the weak-*-convergence, i.e. pointwise convergence."
+    },
+    {
+      "id": "_anon4:distributions",
+      "kind": "remark",
+      "position": 30,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 42,
+      "title": null,
+      "labels": [
+        "_anon4:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 54,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A notion of converging sequence on a set $X$ is \\begin{itemize} \\item The constant function on $x$ converges to $x$ \\item A sequence converges to $x$ iff any subsequence has a subsequence converging to $x$. \\end{itemize} Note, that any subsequence of a converging sequence converges to the same limit. It induces a closure operator on $X$ (for $\\overline{A \\cup B} \\subset \\bar A \\cup \\bar B$ you use, that if a sequence in $A \\cup B$ converges to $x$, then it has a subsequence (converging to $x$) lying in $A$ or in $B$)."
+    },
+    {
+      "id": "_anon5:distributions",
+      "kind": "example",
+      "position": 31,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 54,
+      "title": null,
+      "labels": [
+        "_anon5:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 55,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Every locally integrable function $f \\in L^1_{loc}(\\Omega)$ gives us a distribution $\\Lambda f \\in D'(\\Omega)$ defined by \\[ \\Lambda f (\\phi) = \\int_{\\Omega} f(x) \\phi(x) \\dm x \\] which is well-defined because $\\phi$ has compact support."
+    },
+    {
+      "id": "_anon6:distributions",
+      "kind": "example",
+      "position": 32,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 61,
+      "title": null,
+      "labels": [
+        "_anon6:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "Let $\\mu$ be a Radon measure on $\\Omega$ (or more generally a signed Borel measure which is finite on compact subsets of $\\Omega$). Then it defines a distribution: \\[ T_\\mu(\\phi) = \\int_{\\Omega} \\phi \\dm \\mu \\]"
+    },
+    {
+      "id": "_anon7:distributions",
+      "kind": "example",
+      "position": 33,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 71,
+      "title": "Dirac-$\\delta$",
+      "labels": [
+        "_anon7:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 58,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We have $\\delta \\in D'(\\Omega)$ given by \\[ \\delta(\\phi) := \\phi(0) \\]"
+    },
+    {
+      "id": "ex:conv",
+      "kind": "example",
+      "position": 34,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 82,
+      "title": null,
+      "labels": [
+        "ex:conv"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 59,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{} For $f \\in L^1_{loc}(\\Omega), g \\in D(\\Omega)$ we have \\[ (f * g)(x) = \\Lambda f (\\tau_x (\\psi^R)) \\]"
+    },
+    {
+      "id": "_anon8:distributions",
+      "kind": "proposition",
+      "position": 35,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 88,
+      "title": null,
+      "labels": [
+        "_anon8:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "Let $F \\in \\cD'(\\Omega) , \\psi \\in D$. The following two distributions coincide: \\begin{enumerate} \\item The distribution determined by the smooth function $x \\mapsto F(\\tau_x (\\psi^R))$. \\item The distribution $\\phi \\mapsto F(\\psi^R * \\phi)$. \\end{enumerate} We write this distribution as $F * \\psi$."
+    },
+    {
+      "id": "lemma:distribCommInt",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 118,
+      "title": null,
+      "labels": [
+        "lemma:distribCommInt"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "{} Let $\\phi \\in C_c^{\\infty}(\\Omega \\times \\Omega)$. Then for any $F \\in D'(\\Omega)$ we have \\[ F \\left(\\int_\\Omega \\phi(x,\\_) \\dm x \\right) = \\int_\\Omega F(\\phi(x ,\\_)) \\dm x \\]"
+    },
+    {
+      "id": "_anon9:distributions",
+      "kind": "example",
+      "position": 37,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 142,
+      "title": null,
+      "labels": [
+        "_anon9:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 64,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "From the description \\ref{ex:conv}: Writing $\\Lambda f * g$ is unambiguous."
+    },
+    {
+      "id": "_anon10:distributions",
+      "kind": "example",
+      "position": 38,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 145,
+      "title": null,
+      "labels": [
+        "_anon10:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 65,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We have $\\delta_0 * f = \\Lambda f$ for all $f \\in D$."
+    },
+    {
+      "id": "lemma:cont",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 148,
+      "title": null,
+      "labels": [
+        "lemma:cont"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "{} Convolution $F * \\psi$ is continuous in both variables."
+    },
+    {
+      "id": "proposition:deltaInClosure",
+      "kind": "proposition",
+      "position": 40,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 155,
+      "title": null,
+      "labels": [
+        "proposition:deltaInClosure"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "{} There exists a sequence $\\psi_n \\in C_c^{\\infty}(\\Omega)$ such that $\\Lambda \\psi_n \\to \\delta_0$ in $D'(\\Omega)$."
+    },
+    {
+      "id": "_anon11:distributions",
+      "kind": "corollary",
+      "position": 41,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 166,
+      "title": null,
+      "labels": [
+        "_anon11:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 70,
+      "proof_event": 71,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "Let $f,g \\in L^1_{loc}(\\Omega)$ such that $\\Lambda_f = \\Lambda_g$. Then $f = g$ almost everywhere."
+    },
+    {
+      "id": "_anon12:distributions",
+      "kind": "example",
+      "position": 42,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 172,
+      "title": null,
+      "labels": [
+        "_anon12:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 72,
+      "proof_event": 73,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "$\\delta$ is not a function! I.e. its not of the form $\\Lambda f$ for some $f \\in L^1_{loc}$"
+    },
+    {
+      "id": "_anon13:distributions",
+      "kind": "corollary",
+      "position": 43,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 178,
+      "title": null,
+      "labels": [
+        "_anon13:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 74,
+      "proof_event": 75,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "Then $C^\\infty(\\R^d)$ is dense in $\\cD'(\\R^d)$."
+    },
+    {
+      "id": "_anon14:distributions",
+      "kind": "definition",
+      "position": 44,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 197,
+      "title": null,
+      "labels": [
+        "_anon14:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 76,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a multiindex $\\alpha$ and a distribution $F$ define the distribution \\[\\partial^\\alpha F (\\phi) = (-1)^{|\\alpha|}(F \\partial^\\alpha \\phi)\\]"
+    },
+    {
+      "id": "_anon15:distributions",
+      "kind": "remark",
+      "position": 45,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 201,
+      "title": null,
+      "labels": [
+        "_anon15:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 77,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "let $f \\in L^1_{loc}(\\Omega)$. If there exists some $f' \\in L^1_{loc}(\\Omega)$, such that $\\Lambda f' = \\partial^\\alpha \\Lambda f$ as distributions, then we call $f'$ the {\\bf weak derivative} of $f$ with respect to $\\alpha$."
+    },
+    {
+      "id": "_anon16:distributions",
+      "kind": "proposition",
+      "position": 46,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 204,
+      "title": null,
+      "labels": [
+        "_anon16:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 78,
+      "proof_event": 79,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "For $F \\in D', \\phi \\in D $ , We have \\[\\partial^\\alpha (F * \\phi) = (\\partial^\\alpha F) * \\phi = F * \\partial^\\alpha \\phi\\]"
+    },
+    {
+      "id": "_anon17:distributions",
+      "kind": "definition",
+      "position": 47,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 220,
+      "title": null,
+      "labels": [
+        "_anon17:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 80,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Consider the increasing sequence of norms on $C^\\infty(\\Omega)$ defined by \\[ \\|\\phi\\|_N = \\sup \\{ | x^\\beta (\\partial_x^\\alpha \\phi(x)) | \\mid x \\in \\R^d , |\\alpha|,\\|\\beta\\|\\le N\\} \\] \\[ \\cS = \\{\\phi \\in C^\\infty(\\R^d) \\mid \\|\\phi\\|_N < \\infty \\forall N\\} \\] with the obvious notion of convergence."
+    },
+    {
+      "id": "_anon18:distributions",
+      "kind": "lemma",
+      "position": 48,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 230,
+      "title": null,
+      "labels": [
+        "_anon18:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 81,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We have a continuous inclusions $\\cD \\subset \\cS$, hence $\\cS' \\subset \\cD'(\\R^d)$. \\\\ Moreover, this inclusion is dense. Hence being tempered is a property of distributions."
+    },
+    {
+      "id": "lemma:slowlyInc",
+      "kind": "lemma",
+      "position": 49,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 234,
+      "title": null,
+      "labels": [
+        "lemma:slowlyInc"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 82,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{} Let $f \\in L^1_{loc}(\\R^d)$ such that there exists $N \\ge 0$ with \\[ \\int_{|x| < R} |f(x)| \\dm x = O(R^N) , \\text{ as } R \\to \\infty \\] The distribution $\\Lambda_f$ is tempered."
+    },
+    {
+      "id": "_anon19:distributions",
+      "kind": "example",
+      "position": 50,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 242,
+      "title": null,
+      "labels": [
+        "_anon19:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 83,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "This condition holds for functions in $L^p(\\R^d)$ for $p \\in [1,\\infty]$"
+    },
+    {
+      "id": "_anon20:distributions",
+      "kind": "lemma",
+      "position": 51,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 245,
+      "title": null,
+      "labels": [
+        "_anon20:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 84,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $F \\in \\cD'$ has compact support then it is tempered: Choose $\\eta \\in \\cD$ such that $\\eta|_U = 1$ on some neighborhood $U \\supset \\Supp(F)$. Then $F(\\eta \\phi) = F(\\phi)$ for all $\\phi \\in \\cD$ and $\\phi \\mapsto F (\\eta \\phi)$ defines a continuous functional on $\\cS$. It does not depend on the choice of $\\eta$, because given another such $\\eta'$ and any $\\phi \\in \\cS$ we have $\\Supp((\\eta - \\eta') \\cdot \\phi) \\cap \\Supp(F) = \\varnothing$."
+    },
+    {
+      "id": "_anon21:distributions",
+      "kind": "lemma",
+      "position": 52,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 249,
+      "title": null,
+      "labels": [
+        "_anon21:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 85,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\begin{itemize} \\item All $\\partial^\\alpha F$ are tempered. \\item Let $\\psi \\in C^\\infty$ be slowly increasing, i.e. for each $\\alpha$ exists $N_\\alpha$ such that $\\partial_x^\\alpha \\psi(x) = O(|x|^{N_\\alpha})$. Then $\\psi F$, defined by $(\\psi F)(\\phi)(F(\\psi \\phi)$ is tempered. \\end{itemize}"
+    },
+    {
+      "id": "_anon22:distributions",
+      "kind": "example",
+      "position": 53,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 256,
+      "title": null,
+      "labels": [
+        "_anon22:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 86,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $\\psi \\in \\cS$, then $F(\\tau_\\bullet (\\psi^R))$ is slowly increasing. The other formulation is still valid because $\\cS$ is stable under $*$."
+    },
+    {
+      "id": "_anon23:distributions",
+      "kind": "definition",
+      "position": 54,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 260,
+      "title": null,
+      "labels": [
+        "_anon23:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 87,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The fourier transformation is a continuous bijection \\begin{align*} \\cS &\\to \\cS \\\\ \\phi &\\mapsto \\hat \\phi = (\\xi \\mapsto \\int_{\\R^d} \\phi(x) e^{-2\\pi i x \\xi} \\dm x) \\end{align*}"
+    },
+    {
+      "id": "_anon24:distributions",
+      "kind": "lemma",
+      "position": 55,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 268,
+      "title": null,
+      "labels": [
+        "_anon24:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 88,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We have \\[\\Lambda_{\\hat \\psi}(\\phi) = \\int_{\\R^d} \\hat \\psi (x) \\phi(x) \\dm x = \\int_{\\R^d} \\psi(x) \\hat \\phi(x) \\dm x = \\Lambda_{\\psi}(\\hat \\phi)\\]"
+    },
+    {
+      "id": "_anon25:distributions",
+      "kind": "definition",
+      "position": 56,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 273,
+      "title": null,
+      "labels": [
+        "_anon25:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 89,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define \\[ \\hat F (\\phi) = F (\\hat \\phi) \\] and similarly for the inverse transform $f \\mapsto \\check{f}$."
+    },
+    {
+      "id": "_anon26:distributions",
+      "kind": "example",
+      "position": 57,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 281,
+      "title": null,
+      "labels": [
+        "_anon26:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 90,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $1 \\in S$ denotes the constant function at $1$, then \\[ \\widehat {\\delta} = \\Lambda_1 \\] because \\[ \\hat \\delta (\\phi) =\\hat \\phi(0) = \\int 1 \\phi(x) \\dm x = \\Lambda_1(\\phi) \\]"
+    },
+    {
+      "id": "_anon27:distributions",
+      "kind": "definition",
+      "position": 58,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 299,
+      "title": null,
+      "labels": [
+        "_anon27:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 91,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A fundamental solution of $L$ is a distribution $F$ such that $L(F) = \\delta$"
+    },
+    {
+      "id": "_anon28:distributions",
+      "kind": "lemma",
+      "position": 59,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 303,
+      "title": null,
+      "labels": [
+        "_anon28:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 92,
+      "proof_event": 93,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "The operator \\[ f \\mapsto T(f) := F * f \\] defines an inverse to $L$"
+    },
+    {
+      "id": "_anon29:distributions",
+      "kind": "definition",
+      "position": 60,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 321,
+      "title": null,
+      "labels": [
+        "_anon29:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 94,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The characteristic polynomial of $L$ is \\[P(\\xi) = \\sum_{|\\alpha|\\le m} a_\\alpha (2 \\pi i \\xi)^\\alpha\\]"
+    },
+    {
+      "id": "_anon30:distributions",
+      "kind": "theorem",
+      "position": 61,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 333,
+      "title": null,
+      "labels": [
+        "_anon30:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 95,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For $\\lambda > -d$, Let $H_\\lambda$ be the tempered distribution associated to $|x|^\\lambda \\in L^1_{loc}$. \\\\ If $-d < \\lambda < 0$ then \\[ \\widehat {H_\\lambda} = c_\\lambda H_{-d-\\lambda} \\] with \\[ c_\\lambda = \\frac{\\Gamma((d + \\lambda)/2)}{\\Gamma(\\lambda / 2)} \\pi^{-d/2-\\lambda} \\]"
+    },
+    {
+      "id": "_anon31:distributions",
+      "kind": "proposition",
+      "position": 62,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 346,
+      "title": null,
+      "labels": [
+        "_anon31:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 96,
+      "proof_event": 97,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "If $d = 2$, the function $F := 1/(2\\pi) \\log |x| \\in L^1_{loc}$ is a fundamental solution of $\\Delta$"
+    },
+    {
+      "id": "remark:approxId",
+      "kind": "remark",
+      "position": 63,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 384,
+      "title": null,
+      "labels": [
+        "remark:approxId"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 98,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{} $\\cH_t \\to \\delta$ in $\\cS'$ as $t \\to 0$ and $\\int_{\\R^d} \\cH_t(x) \\dm x = 1$ for all $t$"
+    },
+    {
+      "id": "_anon32:distributions",
+      "kind": "theorem",
+      "position": 64,
+      "chapter": "distributions",
+      "source": "chapter/distributions.tex",
+      "line": 399,
+      "title": null,
+      "labels": [
+        "_anon32:distributions"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 99,
+      "proof_event": 100,
+      "proof_chapter": "distributions",
+      "proof_leanok": false,
+      "text": "$F$ is a fundamental solution of $L = \\frac{\\partial}{\\partial t} - \\Delta_x$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "def:fourier-transform",
+      "target": "lem:fourier-bounded",
+      "kind": "statement"
+    },
+    {
+      "source": "def:fourier-transform",
+      "target": "lem:fourier-cont",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:fourier-cont",
+      "target": "lem:fourier-multiplication",
+      "kind": "statement"
+    },
+    {
+      "source": "def:fourier-transform",
+      "target": "lem:fourier-prop",
+      "kind": "statement"
+    },
+    {
+      "source": "def:fourier-transform",
+      "target": "lem:fourier-gaussian",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:fourier-prop",
+      "target": "lem:fourier-gaussian",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:weierstrass-kernel",
+      "target": "thm:kernel-approximation",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:kernel-approximation",
+      "target": "thm:fourier-inversion",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-multiplication",
+      "target": "thm:fourier-inversion",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:kernel-approximation",
+      "target": "thm:fourier-inversion-L1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-multiplication",
+      "target": "thm:fourier-inversion-L1",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:kernel-approximation",
+      "target": "thm:plancherel",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-multiplication",
+      "target": "thm:plancherel",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-gaussian",
+      "target": "thm:plancherel",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-prop",
+      "target": "thm:plancherel",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:L12-dense",
+      "target": "lem:fourier12-cauchy",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:plancherel",
+      "target": "lem:fourier12-cauchy",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-prop",
+      "target": "lem:fourier12-cauchy",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier12-cauchy",
+      "target": "def:fourier-L2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:fourier-L2",
+      "target": "lem:fourier2-welldef",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:fourier12-cauchy",
+      "target": "lem:fourier2-welldef",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:plancherel",
+      "target": "lem:fourier2-welldef",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier12-cauchy",
+      "target": "def:invFourier-L2",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:plancherel",
+      "target": "def:invFourier-L2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:fourier-L2",
+      "target": "thm:fourier2-properties",
+      "kind": "statement"
+    },
+    {
+      "source": "def:invFourier-L2",
+      "target": "thm:fourier2-properties",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:fourier2-welldef",
+      "target": "thm:fourier2-properties",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:plancherel",
+      "target": "thm:fourier2-properties",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fourier-inversion",
+      "target": "thm:fourier2-properties",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:fourier-prop",
+      "target": "thm:fourier2-properties",
+      "kind": "proof"
+    },
+    {
+      "source": "def:fourier-L2",
+      "target": "thm:fourier-is-l2-linear",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:fourier2-welldef",
+      "target": "thm:fourier-is-l2-linear",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:fourier2-properties",
+      "target": "thm:fourier-is-l2-linear",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:threelines",
+      "target": "thm:riesz_interpolation",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:riesz_interpolation",
+      "target": "lem:hausdorff_young",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:riesz_interpolation",
+      "target": "lem:hausdorff_young_dual",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:riesz_interpolation",
+      "target": "lem:young_convolution",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [
+    [
+      "thm:riesz_interpolation",
+      "lem:lp_of_sup_norm",
+      "proof"
+    ]
+  ],
+  "orphan_proofs": []
+}

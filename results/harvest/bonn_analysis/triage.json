@@ -1,0 +1,25 @@
+{
+ "name": "bonn_analysis",
+ "repo": "fpvandoorn/BonnAnalysis",
+ "status": "failed",
+ "stage": "extract",
+ "commit": "af8a23e0fae8fb206a7f3e48dc6728397106e246",
+ "commit_date": "2026-01-08",
+ "toolchain": "leanprover/lean4:v4.10.0-rc1",
+ "mathlib": "b387c548d1dc",
+ "blueprint_dir": "blueprint/src",
+ "entry": "chapter/main.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 65,
+ "uses_edges": 37,
+ "chapters": 3,
+ "lean_nodes": 14,
+ "leanok_nodes": 17,
+ "libs": [
+  "BonnAnalysis"
+ ],
+ "build_minutes": 1.8,
+ "error": "",
+ "minutes": 3.5
+}
