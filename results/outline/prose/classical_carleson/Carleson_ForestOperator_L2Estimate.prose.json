@@ -1,0 +1,19 @@
+{"title": "The $L^2$ tree estimate",
+ "results": {
+  "TileStructure.Forest.tree_projection_estimate": {
+   "statement": "(Lemma 7.2.1) Let $t$ be a forest, $u \\in t$, and let $f, g$ be bounded with compact support. Then $$\\Big|\\int_X \\overline{g(x)}\\, \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\,dx\\Big| \\le C_{7.2.1}(a)\\, \\big\\|P_{\\mathcal{J}(\\mathfrak{T}(u))} |f|\\big\\|_{L^2}\\, \\big\\|P_{\\mathcal{L}(\\mathfrak{T}(u))} |g|\\big\\|_{L^2},$$ where $P_{\\mathcal{C}} h$ denotes `approxOnCube` $\\mathcal{C}$ $h$ (the approximation of $h$ by its averages on the cubes of the collection $\\mathcal{C}$), $\\mathcal{J}$ and $\\mathcal{L}$ are the cube collections `Forest.𝓙` and `Forest.𝓛`, and $C_{7.2.1}$ is `Forest.C7_2_1`.",
+   "sketch": "Using the pointwise estimate `pointwise_tree_estimate` on each cube $L \\in \\mathcal{L}(\\mathfrak{T}(u))$, the pairing is bounded by a sum of terms involving the nontangential maximal function, the boundary operator and the maximal function $M_{\\mathcal{B}}$ applied to $P_{\\mathcal{J}}|f|$, integrated against $P_{\\mathcal{L}}|g|$; these are then controlled in $L^2$ by `nontangential_operator_bound`, `boundary_operator_bound` and `eLpNorm_MB_le`."
+  },
+  "TileStructure.Forest.boundary_operator_bound": {
+   "statement": "(Lemma 7.2.3) For a forest $t$, a tile $u$, and $f$ bounded with compact support, $$\\|\\mathrm{boundaryOperator}_t(u, f)\\|_{L^2} \\le C_{7.2.3}(a)\\, \\|f\\|_{L^2},$$ where $C_{7.2.3}$ is `Forest.C7_2_3`.",
+   "sketch": "The boundary operator is dominated pointwise by a multiple of the maximal function $M_{\\mathcal{B}}$ over the ball family $\\mathcal{B}$ (with centres `c𝓑` and radii `r𝓑`), using the structure of the cube collections $\\mathcal{J}$ and $\\mathcal{J}_0$ of $\\mathfrak{T}(u)$; the $L^2$ bound then follows from `hasStrongType_maximalFunction_one` with $p = 2$."
+  },
+  "TileStructure.Forest.eLpNorm_MB_le": {
+   "statement": "For $f$ bounded with compact support, the maximal function $M_{\\mathcal{B}}$ associated with the ball family $\\mathcal{B}$ = `Forest.𝓑`, centres `Forest.c𝓑` and radii `Forest.r𝓑` (with exponent $1$) satisfies $$\\|M_{\\mathcal{B}} f\\|_{L^2} \\le C_{M}(A, 2)\\, \\|f\\|_{L^2},$$ where $A$ = `defaultA a` and $C_M$ is `CMB`.",
+   "sketch": "Direct application of the strong type $(2,2)$ bound `hasStrongType_maximalFunction_one` with $p = 2$."
+  },
+  "TileStructure.Forest.nontangential_operator_bound": {
+   "statement": "(Lemma 7.2.2) For $f$ bounded with compact support and $\\theta \\in \\Theta(X)$, the nontangential maximal function satisfies $$\\|T^{\\theta}_{\\mathrm{nt}} f\\|_{L^2} \\le C_{7.2.2}(a)\\, \\|f\\|_{L^2},$$ where $T^{\\theta}_{\\mathrm{nt}}$ is `Forest.nontangentialMaximalFunction θ` and $C_{7.2.2}$ is `Forest.C7_2_2`.",
+   "sketch": "The nontangential maximal function is controlled pointwise in terms of maximal averages over the balls of $\\mathcal{B}$ (with centres `c𝓑`, radii `r𝓑`) and related operators, and the $L^2$ bound for $M_{\\mathcal{B}}$ from `eLpNorm_MB_le` is then applied."
+  }
+ }}

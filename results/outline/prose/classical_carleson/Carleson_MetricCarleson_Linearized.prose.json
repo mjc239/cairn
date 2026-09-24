@@ -1,0 +1,9 @@
+{
+ "title": "The Linearized Metric Carleson Theorem",
+ "results": {
+  "linearized_metric_carleson": {
+   "statement": "(Theorem 1.1.2) Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G\\subseteq X$ be measurable, and let $f$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Further, suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G T_{Q}^{\\mathrm{lin}}f(x)\\,dx\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q},$$ where $T_Q^{\\mathrm{lin}}$ is the linearized Carleson operator $\\mathrm{linearizedCarlesonOperator}\\,Q\\,K$.",
+   "sketch": "Obtained from Lemma 3.0.2 (R_truncation), which bounds the truncated operator with truncation parameters in $(R^{-1},R)$ for $R=2^n$, by letting $n\\to\\infty$; the base point $\\mathrm{cancelPt}(X)$ enters the construction."
+  }
+ }
+}

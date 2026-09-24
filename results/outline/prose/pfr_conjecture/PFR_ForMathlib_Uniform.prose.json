@@ -1,0 +1,16 @@
+{
+ "title": "Uniformly Distributed Random Variables",
+ "results": {
+  "ProbabilityTheory.IsUniform": {
+   "statement": "For a set $H\\subseteq S$, a random variable $X:\\Omega\\to S$ and a measure $\\mu$ on $\\Omega$ (by default the ambient measure), defines the predicate $\\mathrm{IsUniform}(H,X,\\mu)$ asserting that the law of $X$ under $\\mu$ is the uniform probability measure on the finite set $H$. The predicate makes sense without assuming $H$ nonempty and finite, $X$ measurable or $\\mu$ a probability measure (e.g. it is well-defined but false for infinite $H$)."
+  },
+  "ProbabilityTheory.exists_isUniform_measureSpace": {
+   "statement": "Let $H$ be a nonempty finite subset of $S$. Then there exist a type $\\Omega$ with a measurable-space structure and a random variable $U:\\Omega\\to S$ such that the ambient measure on $\\Omega$ is a probability measure, $U$ is measurable, $U$ is uniformly distributed on $H$, $U(\\omega)\\in H$ for every $\\omega\\in\\Omega$, and $U$ has finite range.",
+   "sketch": "It follows from the existence of a uniformly distributed random variable on $H$ (helper lemma `exists_isUniform`), together with the fact that a variable taking values in a finite set has finite range."
+  },
+  "ProbabilityTheory.IsUniform.measureReal_preimage_of_mem": {
+   "statement": "Let $A$ be a finite set, and let $X$ be a measurable random variable that is uniformly distributed on $A$ with respect to $\\mu$. Then for every $s\\in A$, $\\mu(X=s)=1/|A|$ (as a real number).",
+   "sketch": "It is obtained from the corresponding statement for the (extended-valued) measure of the preimage, which in turn uses that a uniform variable gives zero mass to the complement of $A$ and equal mass to each point of $A$."
+  }
+ }
+}

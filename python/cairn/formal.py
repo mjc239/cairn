@@ -68,6 +68,8 @@ class FormalDecl:
     doc: str | None = None
     type_pp: str = ""
     """Pretty-printed statement (Lean syntax), when the dump has it."""
+    stmt_short: str = ""
+    """Short statement: explicit hypotheses and conclusion only."""
 
 
 def load_decls(path: str | Path) -> dict[str, FormalDecl]:
@@ -92,6 +94,7 @@ def load_decls(path: str | Path) -> dict[str, FormalDecl]:
             d.private = r["private"]
             d.doc = r.get("doc")
             d.type_pp = r.get("type_pp", "")
+            d.stmt_short = r.get("stmt_short", "")
         d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])
         d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])

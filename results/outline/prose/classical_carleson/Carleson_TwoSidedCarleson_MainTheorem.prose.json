@@ -1,0 +1,9 @@
+{
+ "title": "The Two-Sided Metric Carleson Theorem",
+ "results": {
+  "two_sided_metric_carleson": {
+   "statement": "Let $a \\ge 4$, $q \\in (1, 2]$ with Hölder conjugate $q'$, let $F, G$ be measurable sets, and suppose that for every $r > 0$ the truncated Calderón–Zygmund operator $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. If $f$ is measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x \\in X$, then $\\int_G \\mathrm{carlesonOperator}(K, f)(x)\\, dx \\le C_{10.0.1}(a, q)\\, \\mathrm{vol}(G)^{1/q'}\\, \\mathrm{vol}(F)^{1/q}$.",
+   "sketch": "Lemma `nontangential_from_simple` gives that the nontangential operator has bounded strong type $(2,2)$ with constant $C_{10.0.2}(a)$, which is the operator hypothesis needed to apply `metric_carleson`."
+  }
+ }
+}

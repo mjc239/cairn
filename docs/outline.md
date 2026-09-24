@@ -14,7 +14,9 @@ This is the end-to-end tool the project set out to build. The input is a Lean
 development's dependency dump; **no blueprint is used**. The output is a
 readable outline: which results to state, in what order, grouped into
 chapters, each with its Lean statement, its docstring, the results its proof
-uses, and the helper lemmas folded into it.
+uses, and the helper lemmas folded into it. An optional LLM layer adds chapter
+titles, English statements and proof sketches, checked against the Lean (see
+[Prose](#prose-titles-english-statements-proof-sketches)).
 
 ## Pipeline
 
@@ -102,26 +104,96 @@ From `pfr_conjecture.md` (`--root PFR_conjecture --detail 0.25`: 134 results
 out of 1,395 declarations, 24 chapters):
 
 ```
-## 24. `PFR.Main`
-- **Theorem** `PFR_conjecture`
-  `∀ {G : Type u_1} [inst : AddCommGroup G] {A : Set G} {K : ℝ} … A.Nonempty → ↑(A + A).ncard ≤ K * ↑A.ncard → ∃ H c, ↑(Nat.card ↑c) < 2 * K ^ 12 ∧ …`
-  — The polynomial Freiman-Ruzsa (PFR) conjecture: if `A` is a subset of an elementary abelian 2-group …
-- *Proof of* `PFR_conjecture` — uses `PFR_conjecture_aux`; folds in 7 helper lemmas …
+## 24. The Polynomial Freiman–Ruzsa Conjecture
+
+*Lean module `PFR.Main`*
+
+- **Theorem** (`PFR_conjecture`). Let $A$ be a nonempty subset of $G$ (an elementary abelian $2$-group) with
+  $|A+A|\le K|A|$. Then there exist a subgroup $H\le G$ and a set $c\subseteq G$ with $|c|<2K^{12}$,
+  $|H|\le|A|$, and $A\subseteq c+H$.
+  Lean: `[Countable G] [Module (ZMod 2) G] [Finite G] (hA₀ : A.Nonempty) (hA : ↑(A + A).ncard ≤ K * ↑A.ncard) :
+        ∃ H c, ↑(Nat.card ↑c) < 2 * K ^ 12 ∧ (↑H).ncard ≤ A.ncard ∧ A ⊆ c + ↑H`
+- *Proof of* `PFR_conjecture`. It is derived from the auxiliary statement `PFR_conjecture_aux`: the bounds … are
+  converted, with an auxiliary positivity lemma, into a covering by fewer than $2K^{12}$ cosets …
+  (uses `PFR_conjecture_aux`; folds in 1 helper lemma: `PFR_conjecture_pos_aux'`)
 ```
 
 The goal-first version (`--top-down 0.6 --roadmap chapter`) opens the same
 chapter by announcing `PFR_conjecture` and `PFR_conjecture_aux`, marked
 *(proof deferred)*, and proves them at the end. It defers 57 proofs in total.
 
+## Short statements
+
+`extract_deps.lean` also prints a **short statement** (`stmt_short`) for each
+user-facing declaration. It opens the binders with `forallTelescope` and keeps:
+
+- explicit arguments and hypotheses, e.g. `(hA : A.Nonempty)`;
+- instance assumptions that carry content: a proposition (`[Finite G]`,
+  `[IsProbabilityMeasure μ]`), or a class applied to more than bare variables
+  (`[Module (ZMod 2) G]`).
+
+It drops implicit arguments and purely structural instances such as
+`[AddCommGroup G]` or `[MeasurableSpace Ω]`. Proofs inside terms are hidden,
+and namespaces that a reader would have open are stripped. The median
+statement shrinks from 274 to 146 characters on PFR and from 246 to 116 on
+Carleson. The full statement stays in the
+dump as `type_pp`.
+
+## Prose: titles, English statements, proof sketches
+
+`python/cairn/prose.py` adds the LLM layer, anchored to the verified
+statements. Everything goes through files, so any model can fill them in:
+
+```sh
+cairn outline … --prose DIR --write-prose-prompts   # DIR/<chapter>.prompt.md → fill DIR/<chapter>.prose.json
+cairn outline … --prose DIR --write-check-prompts   # DIR/<chapter>.check.md  → fill DIR/<chapter>.check.json
+cairn outline … --prose DIR -o outline.md           # render; prints translated / checked / flagged
+```
+
+1. **Translate.** For each chapter, the prompt lists every result with its
+   short Lean statement, its docstring, and for theorems the results its
+   proof uses (with their statements) and the helpers folded in. The model
+   returns a chapter title of at most 8 words, a faithful English statement
+   per result, and a one- or two-sentence proof sketch per theorem based on
+   the listed uses.
+2. **Check.** A *separate* reader sees only Lean/English pairs, never the
+   translator's prompt, and marks each translation faithful or not, with the
+   issue. The prose itself never replaces the Lean: the rendered outline shows
+   the English, then the verified Lean statement beneath it, and a ⚠ with the
+   checker's issue on flagged items.
+3. **Render.** Chapter headings become the generated titles, with the Lean
+   module underneath.
+
+Both example outlines were translated and checked this way, with Claude
+subagents as the translator and checker:
+
+CHECK_RESULTS
+
+Caveats:
+
+- **The translations came from an earlier prompt.** It clipped Lean
+  statements at 600 characters and did not yet show instance assumptions.
+  Six long statements (`sum_dist_diff_le`, `e764_preCS`,
+  `combine_estimates₀/₁`, `aux₄`, `estimate_trnc₁`, plus two
+  `global_tree_control1_edist_part*`) were cut off, and the English says so.
+  The checker saw the full current statements, so any hypothesis the English
+  misses as a result is flagged. The prompts now allow 3,000 characters.
+- **Sketches are not checked.** Several go beyond the listed dependencies,
+  reconstructing the standard argument (e.g. `classical_carleson`,
+  `ent_bsg`). They read well but are the least grounded part of the outline.
+- **Notation meaning is inferred from names** when there is no docstring
+  (e.g. "characteristic 2" in `sum_of_rdist_eq_char_2`). The checker is the
+  guard against this.
+
 ## Limitations and next steps
 
-- **Statements are Lean syntax, not prose.** Implicit arguments and instance
-  binders make them long. Pretty-printing with implicits hidden
-  (`pp.explicit false`, dropping instance binders) is a cheap improvement.
-  Turning statements into mathematical English is the natural LLM step, now
-  anchored to verified statements.
-- **Module names serve as chapter titles.** Naming a chapter, for example
-  from the docstrings of its results, is another small LLM task.
+- ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
+  chapter titles~~. Done: short statements, prose and titles above.
+- **Flagged translations are only marked, not fixed.** A repair loop would
+  send each flagged item back to the translator with the checker's issue, then
+  check it again.
+- **Proof sketches are unchecked.** A checker could compare each sketch
+  against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline
   length, may suit readers better.
 - **Only two training projects.** Adding more blueprint projects to

@@ -1,0 +1,12 @@
+{
+ "title": "Mutual information of kernels",
+ "results": {
+  "ProbabilityTheory.Kernel.mutualInfo": {
+   "statement": "For a kernel $\\kappa$ from $T$ into a product space $S\\times U$ and a measure $\\mu$ on $T$, $I_k[\\kappa,\\mu]$ denotes the mutual information of the kernel $\\kappa$ with respect to $\\mu$."
+  },
+  "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
+   "statement": "Let $\\kappa$ be a kernel from $T$ into $S \\times U$ that has almost everywhere finite kernel support with respect to the measure $\\mu$. Then $0 \\le I_k[\\kappa,\\mu]$.",
+   "sketch": "Replace $\\kappa$ by an almost-everywhere equal kernel with finite kernel support (`AEFiniteKernelSupport.mk`), which does not change the mutual information; for such a kernel the mutual information is an average of measure mutual informations, each nonnegative by `measureMutualInfo_nonneg`."
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "title": "Estimates for the Remaining Tiles",
+ "results": {
+  "TileStructure.Forest.correlation_near_tree_parts": {
+   "statement": "(Lemma 7.4.6) Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, and let $f_1,f_2$ be bounded with compact support. Then $$\\Big\\|\\int_X T^*_{\\mathfrak T(u_1)}f_1(x)\\,\\overline{T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f_2(x)}\\,dx\\Big\\|\\le C_{7.4.6}(a,n)\\,\\big\\|\\mathbf 1_{\\mathcal I(u_1)}\\,S^*_{u_1}f_1\\big\\|_{L^2}\\,\\big\\|\\mathbf 1_{\\mathcal I(u_1)}\\,S^*_{u_2}f_2\\big\\|_{L^2},$$ where $T^*_{\\mathfrak C}$ is the adjoint Carleson sum over $\\mathfrak C$ and $S^*_{u}$ denotes the adjoint boundary operator $t.\\mathrm{adjointBoundaryOperator}\\,u$.",
+   "sketch": "Rewrites the pairing via the adjointness identity (adjointCarlesonSum_adjoint), applies the tree projection estimate (Lemma 7.2.1) to the tree $\\mathfrak T(u_1)$, and controls the projection of $|T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f_2|$ onto the cubes $\\mathcal J_6(u_1)$ by Lemma 7.6.2 (bound_for_tree_projection)."
+  },
+  "TileStructure.Forest.𝓙₆": {
+   "statement": "For a forest $t$ and a tile $u_1$, defines the collection of dyadic cubes $\\mathcal J_6(u_1)\\subseteq\\mathrm{Grid}(X)$, the set $\\mathcal J'$ from the start of Section 7.6 (named differently to distinguish it from the $\\mathcal J'$ of Section 7.5)."
+  },
+  "TileStructure.Forest.thin_scale_impact_prelims": {
+   "statement": "Let $u_1\\in t$ and $J\\in\\mathcal J_6(u_1)$, and let $\\mathfrak p$ be a tile such that the balls $B(c(\\mathfrak p),8D^{s(\\mathfrak p)})$ and $B(c(J),8D^{s(J)})$ are not disjoint and $s(J)-C_{7.6.3}(a,n)<s(\\mathfrak p)$, where $D=D(a)$ is the default doubling parameter. Then $d(c(\\mathfrak p),c(J))<16D^{s(\\mathfrak p)+C_{7.6.3}(a,n)+2}$, and there is a cube $J'$ with $J<J'$ and $s(J')=s(J)+1$ together with a tile $\\mathfrak p'\\in\\mathfrak T(u_1)$ such that $\\mathcal I(\\mathfrak p')\\subseteq B(c(J'),100D^{s(J')+1})$.",
+   "sketch": "Uses the definition of $\\mathcal J_6$ via $\\mathcal J$ and $\\mathcal J_0$ and passes to the parent cube $J'$ of $J$ (Grid.succ); the distance bound follows from the overlapping balls and the scale condition."
+  },
+  "TileStructure.Forest.thin_scale_impact_key": {
+   "statement": "Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, let $\\mathfrak p\\in\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)$, let $J\\in\\mathcal J_6(u_1)$, suppose the balls $B(c(\\mathfrak p),8D^{s(\\mathfrak p)})$ and $B(c(J),8D^{s(J)})$ are not disjoint, and suppose $s(J)-C_{7.6.3}(a,n)<s(\\mathfrak p)$. Then $$2^{Z(n+1)-1}<2^{a(\\mathbb c\\,a^2(C_{7.6.3}(a,n)+2+1)+9)}\\cdot2^{Zn/2},$$ where $Z=Z(a)$ is the default parameter $\\mathrm{defaultZ}(a)$ and $\\mathbb c$ is the absolute constant $𝕔$. (This relation is later shown to be contradictory.)",
+   "sketch": "Applies thin_scale_impact_prelims to obtain the distance bound and a tile of $\\mathfrak T(u_1)$ near the parent of $J$, then compares frequency distances of dilated tiles using properties of compatible function distances to derive the inequality."
+  },
+  "TileStructure.Forest.e763": {
+   "statement": "(Equation (7.6.3) of Lemma 7.6.2) Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, and let $f$ be bounded with compact support. Then $$\\Big\\|P_{\\mathcal J_6(u_1)}\\big|T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f\\big|\\Big\\|_{L^2}\\le\\sum_{k=\\lfloor C_{7.6.3}(a,n)\\rfloor}^{2S}\\Bigg(\\sum_{J\\in\\mathcal J_6(u_1)}\\mu(J)^{-1}\\Big(\\int_J\\sum_{\\mathfrak p}\\big\\|T^*_{\\mathfrak p}f(y)\\big\\|\\,d\\mu(y)\\Big)^2\\Bigg)^{1/2},$$ where the inner sum runs over $\\mathfrak p\\in\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)$ such that $J$ meets $B(c(\\mathfrak p),8D^{s(\\mathfrak p)})$ and $s(\\mathfrak p)=s(J)-k$, and $S=\\mathrm{defaultS}(X)$.",
+   "sketch": "Decomposes the adjoint sum by the scale difference $k=s(J)-s(\\mathfrak p)$; the key relation thin_scale_impact_key (which is contradictory) rules out tiles with $k<\\lfloor C_{7.6.3}(a,n)\\rfloor$, and the triangle inequality in $L^2$ gives the sum over $k$."
+  },
+  "TileStructure.Forest.e764_preCS": {
+   "statement": "(Equation (7.6.4) of Lemma 7.6.2, before Cauchy–Schwarz) Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, and let $f$ be bounded with compact support. Then $\\big\\|P_{\\mathcal J_6(u_1)}|T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f|\\big\\|_{L^2}$ is at most $$C_{2.1.3}(a)\\,2^{4a}\\sum_{k=\\lfloor C_{7.6.3}(a,n)\\rfloor}^{2S}\\Bigg(\\sum_{J\\in\\mathcal J_6(u_1)}\\mu(J)^{-1}\\Big(\\sum_{I}\\int_J\\mathbf 1_{B(c(I),8D^{s(I)})}(y)\\,M_{\\mathcal B}f\\cdots\\Big)\\cdots\\Bigg)\\cdots,$$ where $I$ ranges over cubes with $s(I)=s(J)-k$, $I$ disjoint from $\\mathcal I(u_1)$, and $J$ meeting $B(c(I),8D^{s(I)})$; $M_{\\mathcal B}$ is the maximal function (exponent 1) over the balls $\\mathcal B$. (The remainder of the Lean statement is truncated in the source.)",
+   "sketch": "Starts from (7.6.3) (e763); each tile $\\mathfrak p$ in the inner sum has $\\mathcal I(\\mathfrak p)$ disjoint from $\\mathcal I(u_1)$ (otherwise overlap_implies_distance would put it in $\\mathfrak S_0(u_1,u_2)$), so the tiles are grouped by their cubes $I$ and $|T^*_{\\mathfrak p}f|$ is bounded pointwise by a multiple of the indicator of $B(c(I),8D^{s(I)})$ times the maximal function."
+  },
+  "TileStructure.Forest.e764_postCS": {
+   "statement": "(Equation (7.6.4) of Lemma 7.6.2, after Cauchy–Schwarz) Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, and let $f$ be bounded with compact support. Then $$\\Big\\|P_{\\mathcal J_6(u_1)}\\big|T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f\\big|\\Big\\|_{L^2}\\le\\Big(C_{2.1.3}(a)\\,2^{11a+2}\\sum_{k=\\lfloor C_{7.6.3}(a,n)\\rfloor}^{2S}D^{-k\\kappa/2}\\Big)\\,\\big\\|\\mathbf 1_{\\mathcal I(u_1)}M_{\\mathcal B}f\\big\\|_{L^2},$$ where $\\kappa=\\kappa(a)$ is the default parameter and $S=\\mathrm{defaultS}(X)$.",
+   "sketch": "Applies Cauchy–Schwarz to the bound e764_preCS and simplifies, using the definitions of $\\mathcal J_6$, $\\mathcal J$, $\\mathcal J_0$ and dilated tiles to obtain the factor $D^{-k\\kappa/2}$ for each $k$."
+  },
+  "TileStructure.Forest.bound_for_tree_projection": {
+   "statement": "(Lemma 7.6.2) Let $u_1,u_2\\in t$ with $u_1\\ne u_2$ and $\\mathcal I(u_1)\\le\\mathcal I(u_2)$, and let $f$ be bounded with compact support. Then $$\\Big\\|P_{\\mathcal J_6(u_1)}\\big|T^*_{\\mathfrak T(u_2)\\setminus\\mathfrak S_0(u_1,u_2)}f\\big|\\Big\\|_{L^2}\\le C_{7.6.2}(a,n)\\,\\big\\|\\mathbf 1_{\\mathcal I(u_1)}M_{\\mathcal B}f\\big\\|_{L^2}.$$",
+   "sketch": "Follows from e764_postCS by bounding the constant $C_{2.1.3}(a)2^{11a+2}\\sum_kD^{-k\\kappa/2}$ by $C_{7.6.2}(a,n)$."
+  }
+ }
+}

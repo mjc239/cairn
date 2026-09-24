@@ -1,0 +1,13 @@
+{
+ "title": "Independent copies with finite range",
+ "results": {
+  "ProbabilityTheory.independent_copies3_nondep_finiteRange": {
+   "statement": "Let $X_1:\\Omega_1\\to G_1$, $X_2:\\Omega_2\\to G_2$, $X_3:\\Omega_3\\to G_3$ be measurable (with finite range) on spaces with measures $\\mu_1,\\mu_2,\\mu_3$. Then there exist a measurable space $A$, a probability measure $\\mu_A$ on $A$ and measurable maps $X_1',X_2',X_3'$ on $A$ that are jointly independent under $\\mu_A$, such that $X_i'$ under $\\mu_A$ has the same distribution as $X_i$ under $\\mu_i$ for $i=1,2,3$, and each $X_i'$ has finite range.",
+   "sketch": "Take the independent copies given by independent_copies3_nondep; each copy agrees in law with a finite-range variable, so it takes values in the finite range of the original almost surely, and one modifies it on a null set (preserving independence and identical distribution) to obtain a variable with finite range."
+  },
+  "ProbabilityTheory.independent_copies_finiteRange": {
+   "statement": "Let $X:\\Omega\\to G$ and $Y:\\Omega'\\to G'$ be measurable (with finite range), and $\\mu,\\mu'$ measures on $\\Omega,\\Omega'$. Then there exist a probability measure $\\nu$ on some space and measurable maps $X',Y'$ on it such that $X'$ and $Y'$ are independent under $\\nu$, $X'$ under $\\nu$ has the same distribution as $X$ under $\\mu$, $Y'$ under $\\nu$ has the same distribution as $Y$ under $\\mu'$, and both $X'$ and $Y'$ have finite range.",
+   "sketch": "Take the independent copies from independent_copies; since they are identically distributed with finite-range variables they almost surely take values in the finite ranges of the originals, and are modified on a null set to have finite range while keeping independence and distributions."
+  }
+ }
+}

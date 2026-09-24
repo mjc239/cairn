@@ -1,0 +1,8 @@
+{
+ "title": "Pairs of Random Variables",
+ "results": {
+  "prod": {
+   "statement": "For random variables $X:\\Omega\\to S$ and $Y:\\Omega\\to T$, defines the pair $\\langle X,Y\\rangle:\\Omega\\to S\\times T$, the random variable $\\omega\\mapsto (X(\\omega),Y(\\omega))$."
+  }
+ }
+}

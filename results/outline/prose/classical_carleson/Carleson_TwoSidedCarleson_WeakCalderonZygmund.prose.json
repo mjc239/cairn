@@ -1,0 +1,9 @@
+{
+ "title": "Weak (1,1) Bound for Calderón–Zygmund Operators",
+ "results": {
+  "estimate_czOperator": {
+   "statement": "(Lemma 10.0.3.) Let $a \\ge 4$, $r > 0$, let $f$ be bounded with finite-measure support, and suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. Then for every $\\alpha$, the distribution function satisfies $\\mathrm{vol}\\{x : \\|\\mathrm{czOperator}(K, r) f(x)\\| > \\alpha\\} \\le \\frac{C_{10.0.3}(a)}{\\alpha} \\|f\\|_{L^1}$.",
+   "sketch": "The proof relies on the strong-type bound for the maximal function, `hasStrongType_maximalFunction`, combined with the assumed $L^2$ bound for $\\mathrm{czOperator}(K, r)$."
+  }
+ }
+}

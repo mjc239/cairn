@@ -1,0 +1,24 @@
+{
+ "title": "The 100% Inverse Theorem",
+ "results": {
+  "symmGroup": {
+   "statement": "For a measurable random variable $X:\\Omega\\to G$, defines the symmetry group $\\mathrm{Sym}[X]$: the additive subgroup of $G$ consisting of all $h\\in G$ such that $X+h$ has the same distribution as $X$."
+  },
+  "sub_mem_symmGroup": {
+   "statement": "Let $X$ be a measurable $G$-valued random variable with $d[X;X]=0$, and let $x,y\\in G$ satisfy $P[X=x]\\neq 0$ and $P[X=y]\\neq 0$. Then $x-y\\in\\mathrm{Sym}[X]$.",
+   "sketch": "Taking an independent copy and using that the Ruzsa distance vanishes, one obtains an entropy identity which, via $I[X:Y]=H[X]-H[X|Y]$ and the characterization $I[X:Y]=0\\iff X,Y$ independent, yields an independence statement; then the conditional entropy is invariant under injective shifts ($H[f(Y,X)|Y]=H[X|Y]$), and independence gives $H[X|Y]=H[X]$, from which one deduces that $X$ and $X+(x-y)$ are identically distributed."
+  },
+  "isUniform_sub_const_of_rdist_eq_zero": {
+   "statement": "Let $X$ be a measurable $G$-valued random variable with $d[X;X]=0$, and let $x_0\\in G$ satisfy $P[X=x_0]\\neq 0$. Then $X-x_0$ is uniformly distributed on the subgroup $\\mathrm{Sym}[X]$.",
+   "sketch": "By the previous result, any two values $x,y$ of positive probability satisfy $x-y\\in\\mathrm{Sym}[X]$; combining this with the definition of membership in $\\mathrm{Sym}[X]$ shows that $X-x_0$ is supported on $\\mathrm{Sym}[X]$ and has equal mass on each of its elements."
+  },
+  "exists_isUniform_of_rdist_self_eq_zero": {
+   "statement": "Let $X$ be a measurable $G$-valued random variable with $d[X;X]=0$. Then there exist a subgroup $H\\le G$ and a measurable random variable $U$, uniformly distributed on $H$, such that $d[X;U]=0$.",
+   "sketch": "Pick $x_0$ with $P[X=x_0]>0$ (possible since $X$ has finite range) and take $H=\\mathrm{Sym}[X]$ and $U=X-x_0$, which is uniform on $H$ by the previous result; then $d[X;U]=d[X;X]=0$ because Ruzsa distance is invariant under adding a constant."
+  },
+  "exists_isUniform_of_rdist_eq_zero": {
+   "statement": "Let $X$ and $X'$ be measurable $G$-valued random variables with $d[X;X']=0$. Then there exist a subgroup $H\\le G$ and a measurable random variable $U$, uniformly distributed on $H$, such that $d[X;U]=0$ and $d[X';U]=0$.",
+   "sketch": "By the triangle inequality $d[X;X]\\le d[X;X']+d[X';X]=0$, so the previous result gives $H$ and $U$ with $d[X;U]=0$; then $d[X';U]\\le d[X';X]+d[X;U]=0$ by the triangle inequality again (with nonnegativity of Ruzsa distance and the entropy bound $|H[X]-H[Y]|\\le 2d[X;Y]$ used along the way)."
+  }
+ }
+}

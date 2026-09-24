@@ -1,0 +1,13 @@
+{
+ "title": "The entropic PFR theorem",
+ "results": {
+  "tau_strictly_decreases": {
+   "statement": "Let $p$ be a reference package with parameter $\\eta$, and let $X_1, X_2$ be measurable $G$-valued random variables such that $(X_1,X_2)$ minimizes $\\tau$ for $p$. If $\\eta = 1/9$, then $d[X_1;X_2] = 0$. (This is the contrapositive of: if $d[X_1;X_2] > 0$ then there are $G$-valued $X_1', X_2'$ with $\\tau[X_1';X_2'] < \\tau[X_1;X_2]$.)",
+   "sketch": "Using `independent_copies4_nondep`, construct jointly independent copies of $X_1, X_2, X_1, X_2$ on a common probability space; the copies of $(X_1,X_2)$ still minimize $\\tau$ and have the same Ruzsa distances, so `tau_strictly_decreases_aux` applies and gives $d = 0$, which transfers back to $X_1, X_2$."
+  },
+  "entropic_PFR_conjecture": {
+   "statement": "Let $p$ be a reference package with reference random variables $X^0_1, X^0_2$ (valued in $G$) and parameter $\\eta = 1/9$. Then there exist a subgroup $H \\le G$, a probability space $\\Omega$ and a measurable random variable $U : \\Omega \\to G$ uniformly distributed on $H$ such that $$d[X^0_1;U] + d[X^0_2;U] \\le 11\\, d[X^0_1;X^0_2].$$",
+   "sketch": "Take a $\\tau$-minimizer $(X_1,X_2)$ from `tau_minimizer_exists`; by `tau_strictly_decreases`, $d[X_1;X_2] = 0$, so `exists_isUniform_of_rdist_eq_zero` gives a uniform $U$ on a subgroup $H$ with $d[X_1;U] = d[X_2;U] = 0$. The triangle inequality for Ruzsa distance, combined with the minimality of $\\tau$ compared against the pair $(X^0_1, X^0_2)$, then yields the bound."
+  }
+ }
+}

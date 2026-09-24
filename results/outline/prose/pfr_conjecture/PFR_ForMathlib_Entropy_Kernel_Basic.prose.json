@@ -1,0 +1,24 @@
+{
+ "title": "Entropy of Markov kernels",
+ "results": {
+  "ProbabilityTheory.Kernel.entropy": {
+   "statement": "For a kernel $\\kappa$ from $T$ to $S$ and a measure $\\mu$ on $T$, $H_k[\\kappa,\\mu]$ denotes the entropy of the kernel $\\kappa$ with respect to the measure $\\mu$."
+  },
+  "ProbabilityTheory.Kernel.entropy_prodMkLeft_unit": {
+   "statement": "Let $\\kappa$ be a kernel from $T$ to $S$ and $\\mu$ a measure on $T$. Let $\\kappa'$ be the kernel from $\\mathrm{Unit}\\times T$ to $S$ given by $\\kappa'(( ), t) = \\kappa(t)$ (`Kernel.prodMkLeft Unit κ`), and let $\\mu'$ be the image of $\\mu$ under $t \\mapsto ((), t)$. Then $H_k[\\kappa',\\mu'] = H_k[\\kappa,\\mu]$.",
+   "sketch": "The map $t \\mapsto ((),t)$ is a measurable equivalence $T \\simeq \\mathrm{Unit}\\times T$, and kernel entropy is invariant under composing with such an equivalence (`entropy_comap_equiv`)."
+  },
+  "ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib": {
+   "statement": "Let $X : \\Omega \\to S$ and $Y : \\Omega \\to T$ be measurable random variables and $\\mu$ a measure on $\\Omega$. Then the conditional distribution kernel $\\mathrm{condDistrib}(X \\mid Y;\\mu)$ has almost everywhere finite kernel support with respect to the law $Y_*\\mu$ of $Y$.",
+   "sketch": "Since $X$ has finite range, the conditional distribution of $X$ given $Y$ is, almost everywhere with respect to the law of $Y$, supported on the finite set of values of $X$, as seen by evaluating it via `condDistrib_apply`."
+  },
+  "ProbabilityTheory.Kernel.entropy_compProd": {
+   "statement": "Let $\\kappa$ be a kernel with almost everywhere finite kernel support with respect to $\\mu$, and $\\eta$ a kernel with almost everywhere finite kernel support with respect to $\\mu \\otimes \\kappa$ (`μ.compProd κ`). Then $H_k[\\kappa \\otimes \\eta,\\ \\mu] = H_k[\\kappa,\\mu] + H_k[\\eta,\\ \\mu\\otimes\\kappa]$, where $\\kappa\\otimes\\eta$ is the composition-product kernel `κ.compProd η`.",
+   "sketch": "Replace $\\kappa$ and $\\eta$ by almost-everywhere equal kernels with finite kernel support (`AEFiniteKernelSupport.mk`, `finiteKernelSupport_mk`); then all integrals reduce to finite sums (integrability by `integrable_of_finiteSupport`) and the identity follows by expanding the measure entropies of the composition product."
+  },
+  "ProbabilityTheory.Kernel.chain_rule": {
+   "statement": "Let $\\kappa$ be a kernel into a product space $S\\times U$ that has almost everywhere finite kernel support with respect to $\\mu$. Then $H_k[\\kappa,\\mu] = H_k[\\kappa.\\mathrm{fst},\\mu] + H_k[\\kappa.\\mathrm{condKernel},\\ \\mu\\otimes\\kappa.\\mathrm{fst}]$, where $\\kappa.\\mathrm{fst}$ is the first marginal of $\\kappa$ and $\\kappa.\\mathrm{condKernel}$ its conditional kernel.",
+   "sketch": "By the disintegration $\\kappa = \\kappa.\\mathrm{fst} \\otimes \\kappa.\\mathrm{condKernel}$ (`Kernel.disintegration`), this is `entropy_compProd`, whose finiteness hypotheses hold for $\\kappa.\\mathrm{fst}$ and, by `aefiniteKernelSupport_of_cond`, for $\\kappa.\\mathrm{condKernel}$."
+  }
+ }
+}

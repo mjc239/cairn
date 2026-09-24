@@ -1,0 +1,15 @@
+{
+ "title": "Ruzsa distance for measures and kernels",
+ "results": {
+  "ProbabilityTheory.Kernel.rdistm": {
+   "statement": "For two measures $\\mu,\\nu$ on an abelian group $G$, the Ruzsa distance $\\mathrm{rdistm}(\\mu,\\nu)$ is the real number $H[X-Y]-H[X]/2-H[Y]/2$, where $X$ and $Y$ are independent random variables distributed according to $\\mu$ and $\\nu$ respectively."
+  },
+  "ProbabilityTheory.Kernel.rdist": {
+   "statement": "For kernels $\\kappa$ from $T$ to $G$ and $\\eta$ from $T'$ to $G$ (with values in the same group $G$) and measures $\\mu$ on $T$ and $\\nu$ on $T'$, the kernel Ruzsa distance $d_k[\\kappa;\\mu \\,\\#\\, \\eta;\\nu]$ is the average of the Ruzsa distances $\\mathrm{rdistm}(\\kappa(t),\\eta(t'))$ between the image measures, averaged over $(t,t')$ with respect to $\\mu\\times\\nu$."
+  },
+  "ProbabilityTheory.Kernel.rdist_symm": {
+   "statement": "The kernel Ruzsa distance is symmetric: $d_k[\\kappa;\\mu \\,\\#\\, \\eta;\\nu] = d_k[\\eta;\\nu \\,\\#\\, \\kappa;\\mu]$.",
+   "sketch": "Unfold the kernel Ruzsa distance as an average of $\\mathrm{rdistm}$, whose entropy terms are expressed via $\\mathrm{measureEntropy}$ and kernel entropy; swapping the two factors of the product measure (a measurable equivalence, under which kernel entropy is invariant) and using integrability of functions against finitely supported measures gives the equality."
+  }
+ }
+}

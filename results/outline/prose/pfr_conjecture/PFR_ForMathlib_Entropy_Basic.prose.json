@@ -1,0 +1,93 @@
+{
+ "title": "Shannon entropy and mutual information",
+ "results": {
+  "ProbabilityTheory.entropy": {
+   "statement": "For a random variable $X : \\Omega \\to S$ with values in a finite measurable space and a measure $\\mu$ on $\\Omega$, the entropy $H[X;\\mu]$ is defined as the (measure) entropy of the law of $X$ under $\\mu$."
+  },
+  "ProbabilityTheory.condEntropy": {
+   "statement": "For random variables $X : \\Omega \\to S$, $Y : \\Omega \\to T$ and a measure $\\mu$, the conditional entropy $H[X \\mid Y;\\mu]$ is defined as the expectation, under the law of $Y$, of the entropy of the law of $X$ conditioned on the event $Y = y$."
+  },
+  "ProbabilityTheory.condEntropy_of_injective": {
+   "statement": "Let $\\mu$ be a measure, $X : \\Omega \\to S$ and $Y : \\Omega \\to T$ measurable random variables, and $f : T \\to S \\to U$ such that $f(t,\\cdot)$ is injective for every $t \\in T$. Then $H[f(Y,X) \\mid Y] = H[X \\mid Y]$. For instance, $H[X - Y \\mid Y] = H[X \\mid Y]$.",
+   "sketch": "Write the conditional entropy as a finite sum over the values $y$ of $Y$ of the entropy of $X$ (resp. $f(y,X)$) under $\\mu$ conditioned on $Y = y$; on each such event $f(Y,X)$ coincides with the injective image $f(y, X)$, whose entropy equals that of $X$."
+  },
+  "ProbabilityTheory.condMutualInfo": {
+   "statement": "For random variables $X, Y, Z$ on $\\Omega$ and a measure $\\mu$, the conditional mutual information $I[X : Y \\mid Z;\\mu]$ is defined as the mutual information of $X$ and $Y$ under $\\mu$ conditioned on $Z = z$, integrated over $z$ with respect to the law of $Z$."
+  },
+  "ProbabilityTheory.condEntropy_eq_kernel_entropy": {
+   "statement": "Let $X, Y$ be measurable random variables and $\\mu$ a measure. Then the conditional entropy $H[X \\mid Y;\\mu]$ equals the kernel entropy $H_k[\\mathrm{condDistrib}(X \\mid Y;\\mu),\\ Y_*\\mu]$ of the conditional distribution kernel of $X$ given $Y$, with respect to the law of $Y$.",
+   "sketch": "Unfold the definition of conditional entropy and evaluate the conditional distribution kernel at each point $y$ of the (finite) support of the law of $Y$, where it agrees with the law of $X$ conditioned on $Y = y$."
+  },
+  "ProbabilityTheory.condMutualInfo_eq_kernel_mutualInfo": {
+   "statement": "Let $X, Y, Z$ be measurable random variables and $\\mu$ a measure. Then $I[X : Y \\mid Z;\\mu] = I_k[\\mathrm{condDistrib}((X,Y) \\mid Z;\\mu),\\ Z_*\\mu]$, the kernel mutual information of the conditional distribution of $(X,Y)$ given $Z$ with respect to the law of $Z$.",
+   "sketch": "Unfold both sides pointwise on the finite support of the law of $Z$, using that the marginals of the conditional distribution of $(X,Y)$ given $Z$ agree almost everywhere with the conditional distributions of $X$ and of $Y$ given $Z$."
+  },
+  "ProbabilityTheory.condMutualInfo_eq": {
+   "statement": "Let $X, Y, Z$ be measurable random variables and $\\mu$ a measure. Then $I[X : Y \\mid Z] = H[X \\mid Z] + H[Y \\mid Z] - H[(X,Y) \\mid Z]$.",
+   "sketch": "Rewrite the conditional mutual information and the conditional entropies as kernel quantities via `condMutualInfo_eq_kernel_mutualInfo` and `condEntropy_eq_kernel_entropy`, and identify the marginal kernels of $\\mathrm{condDistrib}((X,Y)\\mid Z)$ with $\\mathrm{condDistrib}(X \\mid Z)$ and $\\mathrm{condDistrib}(Y\\mid Z)$ almost everywhere."
+  },
+  "ProbabilityTheory.condMutualInfo_of_inj_map": {
+   "statement": "Let $X : \\Omega \\to S$, $Y$, $Z : \\Omega \\to U$ be measurable random variables and $f : U \\to S \\to V$ such that $f(u,\\cdot)$ is injective for every $u \\in U$. Then $I[f(Z,X) : Y \\mid Z] = I[X : Y \\mid Z]$ (with respect to $\\mu$).",
+   "sketch": "Expand both sides with `condMutualInfo_eq` into conditional entropies; the terms $H[f(Z,X)\\mid Z]$ and $H[(f(Z,X),Y)\\mid Z]$ equal $H[X\\mid Z]$ and $H[(X,Y)\\mid Z]$ by `condEntropy_of_injective`."
+  },
+  "ProbabilityTheory.mutualInfo": {
+   "statement": "For random variables $X, Y$ on $\\Omega$ and a measure $\\mu$, the mutual information is defined as $I[X : Y] := H[X] + H[Y] - H[(X,Y)]$."
+  },
+  "ProbabilityTheory.mutualInfo_eq_entropy_sub_condEntropy": {
+   "statement": "Let $X, Y$ be measurable random variables and $\\mu$ a measure. Then $I[X : Y] = H[X] - H[X \\mid Y]$.",
+   "sketch": "Express the conditional entropy as a kernel entropy (`condEntropy_eq_kernel_entropy`) and apply the chain rule for kernel entropy (`Kernel.chain_rule`), together with `Kernel.entropy_prodMkLeft_unit`, to get $H[(X,Y)] = H[Y] + H[X\\mid Y]$; the identity then follows from the definition of mutual information."
+  },
+  "ProbabilityTheory.mutualInfo_eq_zero": {
+   "statement": "Let $X, Y$ be measurable random variables. Then $I[X : Y;\\mu] = 0$ if and only if $X$ and $Y$ are independent with respect to $\\mu$.",
+   "sketch": "The mutual information equals the measure mutual information of the joint law of $(X,Y)$; by `measureMutualInfo_nonneg_aux` this vanishes iff the joint law is the product of its marginals on singletons, which (the laws having finite support) is equivalent to independence."
+  },
+  "ProbabilityTheory.IndepFun.condEntropy_eq_entropy": {
+   "statement": "Let $X, Y$ be measurable random variables that are independent with respect to $\\mu$. Then $H[X \\mid Y;\\mu] = H[X;\\mu]$.",
+   "sketch": "By `mutualInfo_eq_zero`, independence gives $I[X:Y] = 0$, and `mutualInfo_eq_entropy_sub_condEntropy` gives $I[X:Y] = H[X] - H[X\\mid Y]$."
+  },
+  "ProbabilityTheory.condEntropy_two_eq_kernel_entropy": {
+   "statement": "Let $X, Y, Z$ be measurable random variables and $\\mu$ a measure. Then $H[X \\mid (Y,Z);\\mu]$ equals the kernel entropy $H_k[\\kappa.\\mathrm{condKernel},\\ Z_*\\mu \\otimes \\kappa.\\mathrm{fst}]$, where $\\kappa := \\mathrm{condDistrib}((Y,X) \\mid Z;\\mu)$ is the conditional distribution of $(Y,X)$ given $Z$.",
+   "sketch": "Apply `condEntropy_eq_kernel_entropy` to $X$ and $(Y,Z)$, and use `condKernel_condDistrib_ae_eq` to identify, almost everywhere, the conditional kernel of $\\kappa$ with the conditional distribution of $X$ given $(Y,Z)$ (up to swapping coordinates), then compare the two resulting sums."
+  },
+  "ProbabilityTheory.cond_chain_rule": {
+   "statement": "Let $\\mu$ be a measure and $X, Y, Z$ measurable random variables. Then $H[(X,Y) \\mid Z] = H[Y \\mid Z] + H[X \\mid (Y,Z)]$.",
+   "sketch": "Write $H[(X,Y)\\mid Z]$ as a kernel entropy (`condEntropy_eq_kernel_entropy`) and apply the chain rule for kernel entropy (`Kernel.chain_rule`), whose hypotheses are supplied by `aefiniteKernelSupport_condDistrib`; the two resulting terms are identified with $H[Y\\mid Z]$ and, via `condEntropy_two_eq_kernel_entropy`, with $H[X \\mid (Y,Z)]$."
+  },
+  "ProbabilityTheory.entropy_eq_sum_finset": {
+   "statement": "Let $X$ be a random variable, $\\mu$ a measure and $A$ a finite set such that the law $X_*\\mu$ of $X$ gives measure $0$ to the complement of $A$. Then $H[X;\\mu] = \\sum_{x\\in A} \\mathrm{negMulLog}\\big(X_*\\mu(\\{x\\})\\big)$, where $\\mathrm{negMulLog}(t) = -t\\log t$.",
+   "sketch": "Using `measureEntropy_of_isProbabilityMeasure`, the entropy is $\\sum_s \\mathrm{negMulLog}(X_*\\mu(\\{s\\}))$ over all $s$, and the terms with $s \\notin A$ vanish."
+  },
+  "ProbabilityTheory.IsUniform.entropy_eq": {
+   "statement": "Let $X$ be a measurable random variable that is uniformly distributed on the (finite) set $H$ with respect to $\\mu$. Then $\\mathbb{H}[X;\\mu] = \\log |H|$.",
+   "sketch": "By `entropy_eq_sum_finset` the entropy is a sum over $H$; by `IsUniform.measureReal_preimage_of_mem` each term equals $\\mathrm{negMulLog}(1/|H|)$, and summing $|H|$ such terms gives $\\log |H|$."
+  },
+  "ProbabilityTheory.entropy_submodular": {
+   "statement": "Let $\\mu$ be a measure and $X, Y, Z$ measurable random variables. Then $H[X \\mid (Y,Z)] \\le H[X \\mid Z]$.",
+   "sketch": "Express the conditional entropies as kernel entropies (`condEntropy_eq_kernel_entropy`) and use the chain rule for kernel entropy (`Kernel.chain_rule`) together with nonnegativity of kernel mutual information (`Kernel.mutualInfo_nonneg`), which shows that the entropy of the conditional kernel is at most the entropy of the corresponding marginal kernel."
+  },
+  "ProbabilityTheory.entropy_triple_add_entropy_le": {
+   "statement": "Let $\\mu$ be a measure and $X, Y, Z$ measurable random variables. Then $H[(X,(Y,Z))] + H[Z] \\le H[(X,Z)] + H[(Y,Z)]$ (submodularity of entropy).",
+   "sketch": "Rewrite the joint entropies via conditional entropies expressed as kernel entropies (`condEntropy_eq_kernel_entropy`) and the chain rule for kernel entropy (`Kernel.chain_rule`) (with `Kernel.entropy_prodMkLeft_unit`); the resulting comparison of kernel entropies gives the inequality."
+  },
+  "ProbabilityTheory.entropy_sub_mutualInfo_eq_condEntropy": {
+   "statement": "Let $X, Y$ be measurable random variables and $\\mu$ a measure. Then $H[X] - I[X : Y] = H[X \\mid Y]$.",
+   "sketch": "Immediate rearrangement of `mutualInfo_eq_entropy_sub_condEntropy`."
+  },
+  "ProbabilityTheory.prob_ge_exp_neg_entropy": {
+   "statement": "Let $X : \\Omega \\to S$ be a measurable random variable and $\\mu$ a measure on $\\Omega$. Then there exists $s \\in S$ such that $\\mu(\\Omega)\\cdot e^{-H[X;\\mu]} \\le X_*\\mu(\\{s\\})$; in particular (for a probability measure) $\\mathbb{P}[X = s] \\ge e^{-H[X]}$.",
+   "sketch": "Write the entropy as the finite sum $\\sum_s -p_s\\log p_s$ over the support of the law of $X$ (`measureEntropy_eq_sum`), and derives the existence of a sufficiently large point mass from this expression."
+  },
+  "ProbabilityTheory.mutualInfo_nonneg": {
+   "statement": "Let $X, Y$ be measurable random variables and $\\mu$ a measure. Then $0 \\le I[X : Y;\\mu]$.",
+   "sketch": "The mutual information is the measure mutual information of the joint law of $(X,Y)$, which is nonnegative by `measureMutualInfo_nonneg`."
+  },
+  "ProbabilityTheory.condMutualInfo_eq_zero": {
+   "statement": "Let $X, Y$ be measurable random variables (and $Z$ a random variable). Then $I[X : Y \\mid Z;\\mu] = 0$ if and only if $X$ and $Y$ are conditionally independent relative to $Z$ with respect to $\\mu$.",
+   "sketch": "The conditional mutual information is a finite nonnegative combination, over the values $z$ of $Z$, of the mutual informations of $X$ and $Y$ conditioned on $Z = z$, each nonnegative by `mutualInfo_nonneg`; so it vanishes iff each conditional mutual information with positive weight vanishes, i.e. by `mutualInfo_eq_zero` iff $X, Y$ are independent conditionally on each $Z = z$, which is conditional independence."
+  },
+  "ProbabilityTheory.ent_of_cond_indep": {
+   "statement": "Let $\\mu$ be a measure and $X, Y, Z$ measurable random variables such that $X$ and $Y$ are conditionally independent relative to $Z$. Then $H[(X,(Y,Z))] = H[(X,Z)] + H[(Y,Z)] - H[Z]$.",
+   "sketch": "The joint entropies are decomposed into conditional entropies expressed as kernel entropies (`condEntropy_eq_kernel_entropy`) using the chain rule for kernel entropy (`Kernel.chain_rule`) and `Kernel.entropy_prodMkLeft_unit`; conditional independence then makes the relevant conditional kernel entropies split."
+  }
+ }
+}

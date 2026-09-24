@@ -1,0 +1,51 @@
+{"title": "Decomposing the tiles into forests (Lemma 5.1.2)",
+ "results": {
+  "𝔗₁": {
+   "statement": "For $k, n, j \\in \\mathbb{N}$ and a tile $u$, the set $\\mathfrak{T}_1(u) = \\mathfrak{T}_1(k,n,j,u)$, a subset of $\\mathfrak{C}_1(k,n,j)$, defined in (5.4.1). (In lemmas one assumes $u \\in \\mathfrak{U}_1(k,n,l)$.)"
+  },
+  "forest_union": {
+   "statement": "(Lemma 5.1.2) Let $f$ be a measurable function with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x \\in X$. Then $$\\int_{G\\setminus G'} \\|\\mathrm{carlesonSum}(\\mathfrak{P}_1, f)(x)\\|\\,dx \\le C_{5.1.2}(a,q)\\, \\mu(G)^{1-1/q}\\, \\mu(F)^{1/q},$$ where $C_{5.1.2}$ is the constant `C5_1_2` and $q$ is `nnq X`.",
+   "sketch": "Immediate from `forest_union_optimized`, since the optimized constant $C^{\\mathrm{opt}}_{5.1.2}(a,q)$ is at most $C_{5.1.2}(a,q)$."
+  },
+  "forest_union_aux": {
+   "statement": "Let $f$ be measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$. Then $$\\int_{G\\setminus G'} \\|\\mathrm{carlesonSum}(\\mathfrak{P}_1, f)(x)\\|\\,dx \\le C_{2.0.4}^{\\mathrm{base}}(a)\\, 2^{a+5/2}\\, \\mu(G)^{1-1/q}\\, \\mu(F)^{1/q} \\sum_{n \\le \\mathrm{max}\\mathfrak{C}} \\sum_{k \\le n} \\sum_{j \\le 2n+3} \\sum_{l < 4n+12} 2^{-\\frac{q-1}{q} n},$$ where $C_{2.0.4}^{\\mathrm{base}}$ is `C2_0_4_base` and $\\mathrm{max}\\mathfrak{C}$ is `maxℭ X`.",
+   "sketch": "Decompose $\\mathfrak{P}_1$ into the sets $\\mathfrak{C}_6(k,n,j)$, split each Carleson sum over $\\mathfrak{C}_6(k,n,j)$ into $4n+12$ forest sums via `carlesonSum_ℭ₆_eq_sum`, and bound each forest term with `lintegral_carlesonSum_forest'`; the triangle inequality then gives the sum over all forests."
+  },
+  "ℭ₆": {
+   "statement": "For $k, n, j \\in \\mathbb{N}$, the set of tiles $\\mathfrak{C}_6(k,n,j)$, a subset of $\\mathfrak{C}_5(k,n,j)$, defined just above (5.4.1)."
+  },
+  "URel": {
+   "statement": "For $k,n,j \\in \\mathbb{N}$ and tiles $u, u'$, the relation $u \\sim u'$ (`URel k n j u u'`) defined below (5.4.2); it is an equivalence relation on $\\mathfrak{U}_2(k,n,j)$."
+  },
+  "equivalenceOn_urel": {
+   "statement": "(Lemma 5.4.2) The relation $\\sim$ (`URel k n j`) is an equivalence relation on the set $\\mathfrak{U}_2(k,n,j)$.",
+   "sketch": "Reflexivity and symmetry come from the definition; transitivity uses the geometry of the tiles in $\\mathfrak{C}_1(k,n,j)$ and $\\mathfrak{M}(k,n)$, $\\mathfrak{B}(k,n,p)$ together with the distance comparison between nested cubes `Grid.dist_strictMono` (with $C_{2.1.2} \\le 1/256$) and properties of enlarged tiles $\\lambda p$."
+  },
+  "forest_inner": {
+   "statement": "(Lemma 5.4.7, verifying (2.0.37)) If $u \\in \\mathfrak{U}_3(k,n,j)$ and $p \\in \\mathfrak{T}_2(k,n,j,u)$, then $B(c(p), 8 D^{s(p)}) \\subseteq \\mathcal{I}(u)$, where $D$ is `defaultD a`, $c(p)=𝔠 p$ and $s(p) = 𝔰 p$.",
+   "sketch": "Uses the equivalence relation `equivalenceOn_urel`, the distance comparison `Grid.dist_strictMono`, the definition of $\\mathfrak{C}_1$, $\\mathfrak{C}$ via densities `dens₂`, the stack size and the auxiliary cube family `aux𝓒`, to show that tiles in $\\mathfrak{T}_2(u)$ lie well inside $\\mathcal{I}(u)$."
+  },
+  "forest_separation": {
+   "statement": "(Lemma 5.4.6, verifying (2.0.36)) Let $u, u' \\in \\mathfrak{U}_3(k,n,j)$ with $u \\ne u'$, let $p \\in \\mathfrak{T}_2(k,n,j,u')$, and suppose $\\mathcal{I}(p) \\le \\mathcal{I}(u)$. Then $$2^{Z(n+1)} < d_{c(p),\\, D^{s(p)}/4}(\\mathcal{Q}(p), \\mathcal{Q}(u)),$$ where $Z$ is `defaultZ a` and $D$ is `defaultD a`.",
+   "sketch": "Uses that $u$ and $u'$ are inequivalent for `URel` (via `equivalenceOn_urel`), together with the distance comparison `Grid.dist_strictMono` and the definitions of $\\mathfrak{C}_1, \\mathfrak{C}_2, \\mathfrak{C}_5$, `dens₂`, `stackSize` and `aux𝓒`, to obtain the separation."
+  },
+  "forest": {
+   "statement": "For $k,n,j,l \\in \\mathbb{N}$, the forest (of type `Forest X n`) whose set of tree tops is $\\mathfrak{U}_4(k,n,j,l)$."
+  },
+  "carlesonSum_ℭ₆_eq_sum": {
+   "statement": "If $k \\le n$, then for all $x$, $$\\mathrm{carlesonSum}(\\mathfrak{C}_6(k,n,j), f)(x) = \\sum_{l < 4n+12} \\mathrm{carlesonSum}\\Big(\\bigcup_{u \\in \\mathfrak{U}_4(k,n,j,l)} \\mathfrak{T}_2(k,n,j,u), f\\Big)(x).$$",
+   "sketch": "The sets $\\bigcup_{u \\in \\mathfrak{U}_4(k,n,j,l)} \\mathfrak{T}_2(k,n,j,u)$, $l < 4n+12$, partition $\\mathfrak{C}_6(k,n,j)$; the sets $\\mathfrak{U}_4$ are built by iterated maximal disjoint covering subfamilies (`exists_maximal_disjoint_covering_subfamily`) of representatives for `URel`, and the number of layers is controlled using `dens₂`, `aux𝓒` and `Grid.dist_strictMono`; the Carleson sum is additive over this partition."
+  },
+  "lintegral_carlesonSum_forest": {
+   "statement": "Let $f$ be measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$. Then $$\\int_{G\\setminus G'} \\Big\\|\\mathrm{carlesonSum}\\Big(\\bigcup_{u \\in \\mathfrak{U}_4(k,n,j,l)} \\mathfrak{T}_2(k,n,j,u), f\\Big)(x)\\Big\\|\\,dx \\le C_{2.0.4}(a,q,n) \\Big(\\frac{2^{2a+5}\\mu(F)}{\\mu(G)}\\Big)^{1/q - 1/2} \\mu(F)^{1/2}\\, \\mu(G)^{1/2}.$$",
+   "sketch": "Apply the forest operator estimate `forest_operator_le_volume` to the forest `forest k n j l` on the set $G\\setminus G'$, rewriting the Carleson sum as the sum over the trees, and use the density control available away from $G_1$ to estimate the density factor."
+  },
+  "lintegral_carlesonSum_forest'": {
+   "statement": "Let $f$ be measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$. Then $$\\int_{G\\setminus G'} \\Big\\|\\mathrm{carlesonSum}\\Big(\\bigcup_{u \\in \\mathfrak{U}_4(k,n,j,l)} \\mathfrak{T}_2(k,n,j,u), f\\Big)(x)\\Big\\|\\,dx \\le C_{2.0.4}(a,q,n)\\, 2^{a+5/2}\\, \\mu(G)^{1-1/q}\\, \\mu(F)^{1/q}.$$",
+   "sketch": "Follows from `lintegral_carlesonSum_forest` by rewriting $\\big(2^{2a+5}\\mu(F)/\\mu(G)\\big)^{1/q-1/2}\\mu(F)^{1/2}\\mu(G)^{1/2}$ and bounding it by $2^{a+5/2}\\mu(G)^{1-1/q}\\mu(F)^{1/q}$."
+  },
+  "forest_union_optimized": {
+   "statement": "Let $f$ be measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x \\in X$. Then $$\\int_{G\\setminus G'} \\|\\mathrm{carlesonSum}(\\mathfrak{P}_1, f)(x)\\|\\,dx \\le C^{\\mathrm{opt}}_{5.1.2}(a,q)\\, \\mu(G)^{1-1/q}\\, \\mu(F)^{1/q},$$ where $C^{\\mathrm{opt}}_{5.1.2}$ is `C5_1_2_optimized` and $q$ is `nnq X`.",
+   "sketch": "Start from `forest_union_aux` and bound the quadruple sum $\\sum_{n}\\sum_{k\\le n}\\sum_{j \\le 2n+3}\\sum_{l<4n+12} 2^{-\\frac{q-1}{q}n}$ by a convergent series, which yields the constant $C^{\\mathrm{opt}}_{5.1.2}$."
+  }
+ }}

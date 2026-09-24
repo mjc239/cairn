@@ -1,0 +1,14 @@
+{
+ "title": "Random variables with finite range",
+ "results": {
+  "FiniteRange": {
+   "statement": "A map $X:\\Omega\\to G$ has finite range if its range $X(\\Omega)$ is a finite set."
+  },
+  "FiniteRange.fintype": {
+   "statement": "For a map $X:\\Omega\\to G$ with finite range, the Fintype structure (an explicit finite enumeration) on its range $\\mathrm{range}(X)$."
+  },
+  "FiniteRange.toFinset": {
+   "statement": "For a map $X:\\Omega\\to G$ with finite range, its range $\\mathrm{range}(X)$ viewed as a finite set (Finset) of $G$."
+  }
+ }
+}

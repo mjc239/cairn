@@ -1,0 +1,11 @@
+{"title": "Tile Families for the Discrete Carleson Theorem", "results": {
+"aux𝓒": {"statement": "For $k \\in \\mathbb{N}$, we define an auxiliary collection $\\operatorname{aux}\\mathcal{C}(k)$ of dyadic cubes, a subset of $\\mathcal{D}$ (the grid of $X$)."},
+"dens'": {"statement": "For $k \\in \\mathbb{N}$ and a set of tiles $\\mathfrak{P}' \\subseteq \\mathfrak{P}(X)$, we define the density $\\operatorname{dens}'_k(\\mathfrak{P}') \\in [0, \\infty]$ as in (5.1.6)."},
+"ℭ": {"statement": "For $k, n \\in \\mathbb{N}$, we define the set of tiles $\\mathfrak{C}(k, n) \\subseteq \\mathfrak{P}(X)$; these sets form the partition of $\\mathfrak{P}(k)$ by density given in (5.1.7)."},
+"𝔐": {"statement": "For $k, n \\in \\mathbb{N}$, we define the set of tiles $\\mathfrak{M}(k, n) \\subseteq \\mathfrak{P}(X)$ as in (5.1.4) and (5.1.5)."},
+"𝔅": {"statement": "For $k, n \\in \\mathbb{N}$ and a tile $p \\in \\mathfrak{P}(X)$, we define the subset $\\mathfrak{B}(p)$ of $\\mathfrak{M}(k, n)$ as in (5.1.8)."},
+"ℭ₁": {"statement": "For $k, n, j \\in \\mathbb{N}$, we define the subset $\\mathfrak{C}_1(k, n, j)$ of $\\mathfrak{C}(k, n)$ as in (5.1.9). Together with $\\mathfrak{L}_0(k, n)$ these sets form a partition (of $\\mathfrak{C}(k,n)$)."},
+"ℭ₂": {"statement": "For $k, n, j \\in \\mathbb{N}$, we define the subset $\\mathfrak{C}_2(k, n, j)$ of $\\mathfrak{C}_1(k, n, j)$ as in (5.1.13)."},
+"𝔘₁": {"statement": "For $k, n, j \\in \\mathbb{N}$, we define the subset $\\mathfrak{U}_1(k, n, j)$ of $\\mathfrak{C}_1(k, n, j)$ as in (5.1.14)."},
+"ℭ₅": {"statement": "For $k, n, j \\in \\mathbb{N}$, we define the subset $\\mathfrak{C}_5(k, n, j)$ of $\\mathfrak{C}_4(k, n, j)$ as in (5.1.23)."}
+}}

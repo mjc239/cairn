@@ -1,0 +1,13 @@
+{
+ "title": "The Second Estimate",
+ "results": {
+  "second_estimate_aux": {
+   "statement": "Let $p$ be a reference package with parameter $\\eta$, and let $X_1,X_2,X_1',X_2':\\Omega\\to G$ be measurable random variables such that $X_1'$ has the same distribution as $X_1$, $X_2'$ has the same distribution as $X_2$, the four variables $X_1,X_2,X_1',X_2'$ are jointly independent, and $(X_1,X_2)$ minimizes $\\tau$ for $p$. Then $$d[X_1;X_1]+d[X_2;X_2]\\le 2\\left(d[X_1;X_2]+\\frac{2\\eta\\, d[X_1;X_2]-I[X_1+X_2 : X_1'+X_2 \\mid X_1+X_2+X_1'+X_2']}{1-\\eta}\\right).$$",
+   "sketch": "The lower bound for $\\tau$-minimizers (`distance_ge_of_min`) is applied to suitable conditioned sums, combined with the entropy estimate `ent_ofsum_le` and the comparison of (conditional) Ruzsa distances when adding an independent variable (`comparison_of_ruzsa_distances`, `condRuzsaDist_diff_le`), after reindexing the independent family."
+  },
+  "second_estimate": {
+   "statement": "Under the same hypotheses (a reference package $p$ with parameter $\\eta$; measurable $X_1,X_2,X_1',X_2':\\Omega\\to G$ with $X_1'$ distributed as $X_1$, $X_2'$ distributed as $X_2$, the four jointly independent, and $(X_1,X_2)$ a $\\tau$-minimizer for $p$), one has $$I[X_1+X_2 : X_1'+X_1 \\mid X_1+X_2+X_1'+X_2']\\le 2\\eta\\, d[X_1;X_2]+\\frac{2\\eta\\left(2\\eta\\, d[X_1;X_2]-I[X_1+X_2 : X_1'+X_2\\mid X_1+X_2+X_1'+X_2']\\right)}{1-\\eta},$$ i.e. $I_2\\le 2\\eta k+\\frac{2\\eta(2\\eta k-I_1)}{1-\\eta}$.",
+   "sketch": "The listed ingredients are the definitions of entropy, mutual information and kernel Ruzsa distance, the symmetry $d_k[\\kappa;\\mu\\,\\#\\,\\eta;\\nu]=d_k[\\eta;\\nu\\,\\#\\,\\kappa;\\mu]$, and the identity $H[\\langle X,X+Y\\rangle]=H[\\langle X,Y\\rangle]$, together with finite-range bookkeeping; the proof combines these to rewrite and bound $I_2$."
+  }
+ }
+}

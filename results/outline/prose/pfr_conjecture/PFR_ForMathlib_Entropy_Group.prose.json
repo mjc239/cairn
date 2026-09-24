@@ -1,0 +1,17 @@
+{
+ "title": "Entropy of sums and differences",
+ "results": {
+  "ProbabilityTheory.entropy_add_right": {
+   "statement": "Let $X, Y$ be measurable random variables with values in an additive group, and $\\mu$ a measure. Then $H[(X, X+Y)] = H[(X, Y)]$ (entropies with respect to $\\mu$).",
+   "sketch": "The map $(x,y) \\mapsto (x, x+y)$ is injective, and entropy is invariant under injective maps."
+  },
+  "ProbabilityTheory.entropy_add_left": {
+   "statement": "Let $X, Y$ be measurable random variables with values in an additive group, and $\\mu$ a measure. Then $H[(Y+X, Y)] = H[(X, Y)]$ (entropies with respect to $\\mu$).",
+   "sketch": "Follows from `entropy_add_right` together with symmetry of joint entropy and invariance of entropy under injective maps."
+  },
+  "ProbabilityTheory.entropy_sub_mutualInfo_le_entropy_sub": {
+   "statement": "Let $X, Y$ be measurable random variables with values in an additive group. Then $H[X] - I[X:Y] \\le H[X - Y]$ (with respect to $\\mu$).",
+   "sketch": "The conditional entropies involved are rewritten as kernel entropies of conditional distributions (`condEntropy_eq_kernel_entropy`), and the chain rule for kernel entropy together with `Kernel.entropy_prodMkLeft_unit` is used to compare them."
+  }
+ }
+}

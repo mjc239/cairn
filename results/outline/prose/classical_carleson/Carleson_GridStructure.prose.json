@@ -1,0 +1,12 @@
+{
+ "title": "Structure of the Dyadic Grid",
+ "results": {
+  "Grid.succ": {
+   "statement": "For a dyadic cube $i\\in\\mathrm{Grid}(X)$, defines $\\mathrm{succ}(i)$: if $i$ is not maximal, the unique minimal cube strictly greater than $i$ (its parent). This is not a successor order, since a cube can be the successor of several cubes."
+  },
+  "Grid.dist_strictMono": {
+   "statement": "(Stronger version of Lemma 2.1.2) If $I<J$ are dyadic cubes, then for all $f,g$ $$d_{c(I),\\,D^{s(I)}/4}(f,g)\\le C_{2.1.2}(a)\\,d_{c(J),\\,D^{s(J)}/4}(f,g),$$ where $D=D(a)$ is the default doubling parameter and $d_{x,r}$ denotes the distance between functions on the ball $B(x,r)$.",
+   "sketch": "Uses the doubling-type properties of the compatible function distances (cdist_le, cdist_mono, le_cdist) together with ball-covering facts, comparing the distance on the small ball around $c(I)$ with that on the ball around $c(J)$."
+  }
+ }
+}

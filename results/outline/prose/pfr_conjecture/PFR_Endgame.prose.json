@@ -1,0 +1,29 @@
+{
+ "title": "Endgame: the entropic PFR iteration step",
+ "results": {
+  "construct_good": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, let $X_1, X_2 : \\Omega \\to G$ be such that $(X_1,X_2)$ minimizes $\\tau$ for $p$, and let $T_1, T_2, T_3 : \\Omega \\to G$ be measurable random variables with $T_1 + T_2 + T_3 = 0$ identically. Then, writing $\\delta := I[T_1:T_2] + I[T_2:T_3] + I[T_3:T_1]$, $$d[X_1;X_2] \\le \\delta + \\frac{\\eta}{3}\\Big(\\delta + \\sum_{j=1}^{3}\\big( (d[X^0_1;T_j] - d[X^0_1;X_1]) + (d[X^0_2;T_j] - d[X^0_2;X_2]) \\big)\\Big).$$",
+   "sketch": "The proof expresses the relevant distances and mutual informations via entropies, using $H[(Y+X,Y)] = H[(X,Y)]$, the characterization of zero mutual information as independence, and the expansion of the conditional Ruzsa distance as a weighted sum over the finitely many values of the conditioning variable, and compares with the $\\tau$-minimality of $(X_1,X_2)$."
+  },
+  "cond_construct_good": {
+   "statement": "Under the hypotheses of the previous result (with $(X_1,X_2)$ a $\\tau$-minimizer for the reference package $p$, and $T_1,T_2,T_3 : \\Omega \\to G$ measurable with $T_1+T_2+T_3 = 0$), let moreover $R$ be a measurable random variable on $\\Omega$. Then, writing $\\delta_R := I[T_1:T_2\\mid R] + I[T_2:T_3\\mid R] + I[T_3:T_1\\mid R]$, $$d[X_1;X_2] \\le \\delta_R + \\frac{\\eta}{3}\\Big(\\delta_R + \\sum_{j=1}^{3}\\big( (d[X^0_1;T_j\\mid R] - d[X^0_1;X_1]) + (d[X^0_2;T_j\\mid R] - d[X^0_2;X_2]) \\big)\\Big).$$",
+   "sketch": "Apply `construct_good` to the variables conditioned on each value of $R$, and integrate over the distribution of $R$, using that the conditional Ruzsa distance $d[X;Y\\mid W]$ equals the integral of $d[X; Y|_{W=w}]$ against the law of $W$ (and similarly for the conditional mutual informations)."
+  },
+  "I₃_eq": {
+   "statement": "Let $X_1, X_2, X_1', X_2' : \\Omega \\to G$ be measurable, with $X_1'$ having the same distribution as $X_1$, and $X_1, X_2, X_1', X_2'$ jointly independent. Then $$I[X_1'+X_2 : X_1'+X_1 \\mid X_1+X_2+X_1'+X_2'] = I[X_1+X_2 : X_1'+X_1 \\mid X_1+X_2+X_1'+X_2'],$$ i.e. the quantity $I_3 = I[V:W\\mid S]$ equals $I_2$.",
+   "sketch": "The conditional mutual informations are rewritten in terms of conditional entropies, which are expressed as kernel entropies; the chain rule for kernel entropy and the invariance of kernel entropy under adjoining a trivial (unit) coordinate are then used to identify the two sides."
+  },
+  "sum_condMutual_le": {
+   "statement": "Let $p$ be a reference package (with reference random variables $X^0_1 = $ `p.X₀₁`, $X^0_2 = $ `p.X₀₂` and parameter $\\eta = $ `p.η`), and let $X_1, X_2, X_1', X_2' : \\Omega \\to G$ be measurable random variables such that $X_1'$ has the same distribution as $X_1$, $X_2'$ has the same distribution as $X_2$, the four variables $X_1, X_2, X_1', X_2'$ are jointly independent, and $(X_1, X_2)$ minimizes $\\tau$ for $p$ (`TauMinimizes p X₁ X₂`). Put $S := X_1+X_2+X_1'+X_2'$, $U := X_1+X_2$, $V := X_1'+X_2$, $W := X_1'+X_1$, $k := d[X_1;X_2]$ and $I_1 := I[U:V\\mid S]$. Then $$I[U:V\\mid S] + I[V:W\\mid S] + I[W:U\\mid S] \\le 6\\eta k - \\frac{1-5\\eta}{1-\\eta}\\,(2\\eta k - I_1).$$",
+   "sketch": "Uses `I₃_eq` to identify $I[V:W\\mid S]$ with $I[U:W\\mid S]$, together with `second_estimate`; the remaining manipulations use symmetry of conditional mutual information and invariance of entropy under injective maps."
+  },
+  "sum_dist_diff_le": {
+   "statement": "Let $p$ be a reference package (with reference random variables $X^0_1 = $ `p.X₀₁`, $X^0_2 = $ `p.X₀₂` and parameter $\\eta = $ `p.η`), and let $X_1, X_2, X_1', X_2' : \\Omega \\to G$ be measurable random variables such that $X_1'$ has the same distribution as $X_1$, $X_2'$ has the same distribution as $X_2$, the four variables $X_1, X_2, X_1', X_2'$ are jointly independent, and $(X_1, X_2)$ minimizes $\\tau$ for $p$ (`TauMinimizes p X₁ X₂`). Put $S := X_1+X_2+X_1'+X_2'$, $U := X_1+X_2$, $V := X_1'+X_2$, $W := X_1'+X_1$, $k := d[X_1;X_2]$ and $I_1 := I[U:V\\mid S]$. Then $$\\sum_{i=1}^{2}\\ \\sum_{A\\in\\{U,V,W\\}} \\big(d[X^0_i;A\\mid S] - d[X^0_i;X_i]\\big) \\le (6-3\\eta)k + 3(2\\eta k - I_1).$$",
+   "sketch": "Each difference $d[X^0_i; Y+Z \\mid Y+Z+Z'] - d[X^0_i;Y]$ is bounded via `condRuzsaDist_diff_ofsum_le` in terms of entropies, after rearranging the independent quadruple (using `iIndepFun.apply_two_last`) and replacing the conditioned sum by its complementary summand via `condRuzsaDist'_of_inj_map'`; the resulting entropy terms are then controlled by `ent_ofsum_le`."
+  },
+  "tau_strictly_decreases_aux": {
+   "statement": "Let $p$ be a reference package (with reference random variables $X^0_1 = $ `p.X₀₁`, $X^0_2 = $ `p.X₀₂` and parameter $\\eta = $ `p.η`), and let $X_1, X_2, X_1', X_2' : \\Omega \\to G$ be measurable random variables such that $X_1'$ has the same distribution as $X_1$, $X_2'$ has the same distribution as $X_2$, the four variables $X_1, X_2, X_1', X_2'$ are jointly independent, and $(X_1, X_2)$ minimizes $\\tau$ for $p$ (`TauMinimizes p X₁ X₂`). If $\\eta = 1/9$, then $d[X_1;X_2] = 0$. (This is the contrapositive form of the statement that if $d[X_1;X_2] > 0$ then $\\tau$ can be strictly decreased.)",
+   "sketch": "Apply `cond_construct_good` with $T_1 = X_1+X_2$, $T_2 = X_1'+X_2$, $T_3 = X_1'+X_1$ (whose sum vanishes, by `sum_uvw_eq_zero`) conditioned on $R = X_1+X_2+X_1'+X_2'$; then bound the conditional mutual information terms with `sum_condMutual_le` and the remaining terms with `first_estimate` and `diff_ent_le_rdist`, and conclude using nonnegativity of Ruzsa distance and $\\eta = 1/9$."
+  }
+ }
+}

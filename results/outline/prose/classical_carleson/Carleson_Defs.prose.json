@@ -1,0 +1,3 @@
+{"title": "Compatible Families of Functions", "results": {
+"CompatibleFunctions.toFunctionDistances": {"statement": "Every compatible collection of functions $\\Theta$ on $X$ (a `CompatibleFunctions` structure over the field $\\mathbb{K}$) gives rise to a `FunctionDistances` $\\mathbb{K}$ $X$ structure, i.e. the underlying family of functions together with its associated family of distances $d_{B(x,r)}$ indexed by balls."}
+}}

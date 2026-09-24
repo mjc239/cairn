@@ -1,0 +1,25 @@
+{
+ "title": "The Polynomial Freiman–Ruzsa Conjecture",
+ "results": {
+  "ProbabilityTheory.IsUniform.measureReal_preimage_sub_zero": {
+   "statement": "Let $U$ and $V$ be measurable, independent random variables, with $U$ uniformly distributed on the finite set $A$ and $V$ uniformly distributed on the finite set $B$. Then $P[U-V=0]=\\dfrac{|A\\cap B|}{|A|\\cdot|B|}$.",
+   "sketch": "One decomposes the event $U=V$ over the common values $s$, uses independence to write $P[U=s,V=s]=P[U=s]P[V=s]$, and evaluates each factor as $1/|A|$ or $1/|B|$ for $s\\in A\\cap B$ (and $0$ otherwise) using the unit test for uniform distributions."
+  },
+  "ProbabilityTheory.IsUniform.measureReal_preimage_sub": {
+   "statement": "Let $U$ and $V$ be measurable, independent random variables, with $U$ uniformly distributed on the finite set $A$ and $V$ uniformly distributed on the finite set $B$. Then for every $x\\in G$, $P[U-V=x]=\\dfrac{|A\\cap (B+\\{x\\})|}{|A|\\cdot|B|}$.",
+   "sketch": "Apply the case $x=0$ to $U$ and $V+x$, which is uniformly distributed on $B+\\{x\\}$ (a set of the same size as $B$) and still independent of $U$."
+  },
+  "rdist_le_of_isUniform_of_card_sub_le": {
+   "statement": "Let $A\\subseteq G$ be nonempty with $|A-A|\\le K|A|$, and let $U_0$ be a measurable random variable uniformly distributed on $A$. Then $d[U_0;U_0]\\le \\log K$.",
+   "sketch": "Taking an independent copy, $d[U_0;U_0]$ is expressed through $H[U_0-U_0']-H[U_0]$; the difference takes values in $A-A$, so its entropy is at most $\\log|A-A|$, while $H[U_0]=\\log|A|$ by the entropy formula for uniform variables, giving the bound $\\log(|A-A|/|A|)\\le\\log K$."
+  },
+  "PFR_conjecture_aux": {
+   "statement": "Let $A$ be a nonempty subset of $G$ (an elementary abelian $2$-group, per the docstring) with $|A+A|\\le K|A|$. Then there exist a subgroup $H\\le G$ and a set $c\\subseteq G$ such that $|c|\\le K^{13/2}|A|^{1/2}|H|^{-1/2}$, $|H|\\le K^{11}|A|$, $|A|\\le K^{11}|H|$, and $A\\subseteq c+H$.",
+   "sketch": "Apply the entropic PFR theorem (with $\\eta=1/9$) to two copies of a uniform variable $U_A$ on $A$ to get a uniform $U_H$ on a subgroup $H$ with $2d[U_A;U_H]\\le 11\\,d[U_A;U_A]\\le 11\\log K$; the entropy bound $|H[X]-H[Y]|\\le 2d[X;Y]$ together with $H[U_A]=\\log|A|$, $H[U_H]=\\log|H|$ gives the size comparison of $H$ and $A$, and a value $x$ with $P[U_A-U_H=x]\\ge e^{-H[U_A-U_H]}$ combined with the formula $P[U-V=x]=|A\\cap(B+x)|/(|A||B|)$ yields a large intersection $A\\cap(H+x)$, from which a covering $A\\subseteq c+H$ with the stated bound on $|c|$ is produced."
+  },
+  "PFR_conjecture": {
+   "statement": "Let $A$ be a nonempty subset of $G$ (an elementary abelian $2$-group, per the docstring) with $|A+A|\\le K|A|$. Then there exist a subgroup $H\\le G$ and a set $c\\subseteq G$ with $|c|<2K^{12}$, $|H|\\le|A|$, and $A\\subseteq c+H$.",
+   "sketch": "It is derived from the auxiliary statement `PFR_conjecture_aux`: the bounds $|c|\\le K^{13/2}|A|^{1/2}|H|^{-1/2}$, $|H|\\le K^{11}|A|$ and $|A|\\le K^{11}|H|$ are converted, with an auxiliary positivity lemma, into a covering by fewer than $2K^{12}$ cosets of a subgroup of size at most $|A|$."
+  }
+ }
+}

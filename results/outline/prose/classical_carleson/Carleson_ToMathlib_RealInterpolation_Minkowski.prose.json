@@ -1,0 +1,13 @@
+{
+ "title": "Truncation Estimates for Real Interpolation",
+ "results": {
+  "MeasureTheory.estimate_trnc₁": {
+   "statement": "Let $t \\in (0,1)$, $p_0, q_0, p_1, q_1 > 0$, and write $\\mathrm{sel}\\ j$ for the selection of the $j$-indexed exponent. Assume $\\mathrm{sel}\\ j\\ p_0\\ p_1 \\le \\mathrm{sel}\\ j\\ q_0\\ q_1$, both of these are finite, $p_0 < p_1$, $q_0 \\ne q_1$, $p^{-1} = (1-t)p_0^{-1} + t p_1^{-1}$, $q^{-1} = (1-t)q_0^{-1} + t q_1^{-1}$, $f$ is $\\mu$-a.e. strongly measurable, $\\mu$ restricted to the support of $\\|f\\|$ is $\\sigma$-finite, and the exponent $\\mathrm{spf}.\\sigma$ of the scaled power function $\\mathrm{spf}$ equals $\\zeta(p_0, q_0, p_1, q_1, t)$. Then the integral $\\int_0^\\infty \\|\\mathrm{trnc}_j(f, \\mathrm{ton}(s))\\|_{L^{\\mathrm{sel}\\,j\\,p_0\\,p_1}(\\mu)}^{\\mathrm{sel}\\,j\\,q_0\\,q_1} \\cdot s^{(q \\ldots)}\\, ds$ (where $\\mathrm{ton}$ is the truncation scale determined by $\\mathrm{spf}$) is bounded by an explicit expression; the rest of the statement is truncated in the source.",
+   "sketch": "Apply `estimate_trnc` with the particular exponent $\\sigma = \\zeta(p_0, q_0, p_1, q_1, t)$, checking its hypotheses (the ordering of $q_0$ relative to $q$ and positivity of $q_0 + \\sigma^{-1}(q - q_0)$) via identities for $\\zeta$."
+  },
+  "MeasureTheory.estimate_trnc": {
+   "statement": "Let $p_0, q_0 > 0$ with $p_0 \\le q_0$, let $f$ be $\\mu$-a.e. strongly measurable with $\\mu$ restricted to the support of $\\|f\\|$ $\\sigma$-finite, suppose $q_0 < q$ if $j \\oplus \\mathrm{mon} = \\mathrm{true}$ (where $\\mathrm{mon}$ is the monotonicity flag of the truncation scale of $\\mathrm{spf}$) and $q < q_0$ otherwise, and suppose $0 < q_0 + \\mathrm{spf}.\\sigma^{-1}(q - q_0)$. Then $$\\int_0^\\infty \\|\\mathrm{trnc}_j(f, \\mathrm{ton}(s))\\|_{L^{p_0}(\\mu)}^{q_0}\\, s^{q - q_0 - 1}\\, ds \\le \\mathrm{spf}.d^{\\,q - q_0}\\, |q - q_0|^{-1} \\Big(\\int_{\\{\\|f\\| \\ne 0\\}} \\|f(a)\\|^{p_0 + \\mathrm{spf}.\\sigma^{-1}(q - q_0)(p_0/q_0)}\\, d\\mu(a)\\Big)^{q_0/p_0},$$ where $\\mathrm{ton}$ is the truncation scale determined by $\\mathrm{spf}$.",
+   "sketch": "No named results are used; the proof is a direct computation with the truncations and extended nonnegative real arithmetic."
+  }
+ }
+}

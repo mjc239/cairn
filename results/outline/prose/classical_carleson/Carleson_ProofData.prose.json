@@ -1,0 +1,17 @@
+{
+ "title": "Standing Data for the Proof",
+ "results": {
+  "ProofData": {
+   "statement": "Defines the structure $\\mathrm{ProofData}(a,q,K,\\sigma_1,\\sigma_2,F,G)$ on $X$, bundling the data (a natural number $a$, a real $q$, a kernel $K:X\\times X\\to\\mathbb C$, functions $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ and sets $F,G\\subseteq X$) and assumptions common to most of Chapters 2–7 (except Chapter 3)."
+  },
+  "ProofData.toKernelProofData": {
+   "statement": "The kernel data $\\mathrm{KernelProofData}(a,K)$ underlying a $\\mathrm{ProofData}$ structure."
+  },
+  "ProofData.Q": {
+   "statement": "The simple function $Q:X\\to\\Theta(X)$ that is part of a $\\mathrm{ProofData}$ structure."
+  },
+  "defaultS": {
+   "statement": "Defines the natural number $S=\\mathrm{defaultS}(X)$ associated with the space $X$."
+  }
+ }
+}
