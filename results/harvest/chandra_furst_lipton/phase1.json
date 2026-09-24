@@ -8,6 +8,7 @@
       "inductive": 2,
       "theorem": 15
     },
+    "external_decls": 0,
     "formal_edges": 67,
     "blueprint_nodes": 31,
     "blueprint_nodes_with_formal_decl": 14,

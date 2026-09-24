@@ -4,7 +4,7 @@
 
 ## Formal graph
 
-- Project declarations (after folding compiler auxiliaries): 29 (def: 12, inductive: 2, theorem: 15); 67 project-internal dependency edges.
+- Project declarations (after folding compiler auxiliaries): 29 (def: 12, inductive: 2, theorem: 15); 67 dependency edges.
 - Blueprint `\lean{}` names resolved to project declarations: 15 (100%); 14 of 31 blueprint nodes have at least one.
 - Project theorems the blueprint never names: 11.
 

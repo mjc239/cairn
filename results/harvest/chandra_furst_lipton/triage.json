@@ -20,9 +20,12 @@
   "ChandraFurstLipton"
  ],
  "build_minutes": 0.1,
+ "extractor": "extract_deps.lean",
  "decls": 29,
  "theorems": 15,
+ "external_decls": 0,
  "lean_resolved": 1.0,
  "nodes_linked": 14,
- "minutes": 2.8
+ "nodes_linked_external_only": 0,
+ "minutes": 2.6
 }
