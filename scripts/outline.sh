@@ -31,6 +31,7 @@ done
 # Prose (chapter titles, English statements, proof sketches, faithfulness checks) lives in $O/prose/<outline>/.
 # To regenerate it: add --write-prose-prompts, answer <chapter>.prompt.md with <chapter>.prose.json using any model,
 # then rerun with --write-check-prompts and answer <chapter>.check.md with <chapter>.check.json using a second reader.
+# Then --write-repair-prompts: answer <chapter>.repair[N].md with .repair[N].json, and check again until nothing is flagged.
 uv run cairn outline data/raw/pfr_decls.jsonl --model $O/key_model_carleson.json --root PFR_conjecture --detail 0.25 \
   --title "PFR conjecture: outline of the proof" --prose $O/prose/pfr_conjecture -o $O/pfr_conjecture.md
 uv run cairn outline data/raw/pfr_decls.jsonl --model $O/key_model_carleson.json --root PFR_conjecture --detail 0.25 \

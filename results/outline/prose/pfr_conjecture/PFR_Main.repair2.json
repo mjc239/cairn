@@ -1,0 +1,11 @@
+{
+ "ProbabilityTheory.IsUniform.measureReal_preimage_sub_zero": {
+  "statement": "Let $G$ be a finite additive group in which singletons are measurable, let the ambient measure $P$ on $\\Omega$ be a probability measure, and let $A, B$ be finite subsets of $G$. Let $U, V : \\Omega \\to G$ be measurable, independent random variables, with $U$ uniformly distributed on $A$ and $V$ uniformly distributed on $B$. Then $P[U-V=0]=\\dfrac{|A\\cap B|}{|A|\\cdot|B|}$."
+ },
+ "ProbabilityTheory.IsUniform.measureReal_preimage_sub": {
+  "statement": "Let $G$ be a finite additive group in which singletons are measurable, let the ambient measure $P$ on $\\Omega$ be a probability measure, and let $A, B$ be finite subsets of $G$. Let $U, V : \\Omega \\to G$ be measurable, independent random variables, with $U$ uniformly distributed on $A$ and $V$ uniformly distributed on $B$. Then for every $x\\in G$, $P[U-V=x]=\\dfrac{|A\\cap (B+\\{x\\})|}{|A|\\cdot|B|}$."
+ },
+ "rdist_le_of_isUniform_of_card_sub_le": {
+  "statement": "Let $G$ be a countable additive group in which singletons are measurable, and let $A\\subseteq G$ be a finite nonempty set with $|A-A|\\le K|A|$. Suppose the ambient measure on $\\Omega$ is a probability measure, and let $U_0 : \\Omega \\to G$ be a measurable random variable uniformly distributed on $A$. Then $d[U_0;U_0]\\le \\log K$."
+ }
+}

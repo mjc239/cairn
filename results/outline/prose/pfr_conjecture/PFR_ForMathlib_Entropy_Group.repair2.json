@@ -1,0 +1,8 @@
+{
+ "ProbabilityTheory.entropy_add_right": {
+  "statement": "Let $G$ be a countable additive group in which singletons are measurable, let $\\mu$ be a measure on $\\Omega$, and let $X, Y : \\Omega \\to G$ be measurable random variables. Then $H[(X, X+Y);\\mu] = H[(X, Y);\\mu]$."
+ },
+ "ProbabilityTheory.entropy_add_left": {
+  "statement": "Let $G$ be a countable additive group in which singletons are measurable, let $\\mu$ be a measure on $\\Omega$, and let $X, Y : \\Omega \\to G$ be measurable random variables. Then $H[(Y+X, Y);\\mu] = H[(X, Y);\\mu]$."
+ }
+}

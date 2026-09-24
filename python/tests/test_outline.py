@@ -80,4 +80,8 @@ def test_prose_roundtrip(tmp_path):
     prose = load_prose(tmp_path)
     assert prose["M.B"]["results"]["T"]["statement"] == "If h : P then Q." and prose["M.B"]["results"]["T"]["repaired"]
     assert coverage(o, prose)["flagged"] == []
+    (tmp_path / "M_B.check.json").write_text(json.dumps({"T": {"faithful": False, "issue": "still drops h"}}))
+    assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair2.md"]
+    (tmp_path / "M_B.repair2.json").write_text(json.dumps({"T": {"statement": "If h : P holds then Q."}}))
+    assert load_prose(tmp_path)["M.B"]["results"]["T"]["statement"] == "If h : P holds then Q."
     assert strip_namespaces("Foo.P ∧ Bar.Foo.P ∧ Foo.x", ("Foo",)) == "P ∧ Bar.Foo.P ∧ x"

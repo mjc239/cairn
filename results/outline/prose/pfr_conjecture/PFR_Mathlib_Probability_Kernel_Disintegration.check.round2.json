@@ -1,0 +1,34 @@
+{
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {
+  "faithful": false,
+  "issue": "The English omits the instance hypotheses that T is countable with measurable singletons."
+ },
+ "ProbabilityTheory.Kernel.FiniteKernelSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk": {
+  "faithful": false,
+  "issue": "The English omits the hypotheses that T is countable and that T and S have measurable singletons."
+ },
+ "ProbabilityTheory.Kernel.disintegration": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_of_cond": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condDistrib_eq_prod_of_indepFun": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condKernel_condDistrib_ae_eq": {
+  "faithful": true,
+  "issue": ""
+ }
+}

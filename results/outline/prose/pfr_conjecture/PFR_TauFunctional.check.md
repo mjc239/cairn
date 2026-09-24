@@ -35,7 +35,7 @@ English: For a reference package $p$ and random variables $X_1,X_2:\Omega\to G$,
 
 ### `distance_ge_of_min`
 Lean: `(p : refPackage Ω₀₁ Ω₀₂ G) [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] (h : TauMinimizes p X₁ X₂) (h1 : Measurable X₁') (h2 : Measurable X₂') : d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁'] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂'] - d[p.X₀₂ # X₂]) ≤ d[X₁' # X₂']`
-English: Let $p$ be a reference package with parameter $\eta$, let $(X_1,X_2)$ minimize $\tau$ for $p$, and let $X_1',X_2'$ be measurable $G$-valued random variables. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1']-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2']-d[X^0_2;X_2]\right)\le d[X_1';X_2'].$$
+English: Let $p$ be a reference package with reference random variables $X^0_1, X^0_2$ and parameter $\eta$, let $(X_1,X_2)$ minimize $\tau$ for $p$, and let $X_1',X_2'$ be measurable $G$-valued random variables defined on spaces whose ambient measures are probability measures. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1']-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2']-d[X^0_2;X_2]\right)\le d[X_1';X_2'].$$
 
 ### `condRuzsaDistance_ge_of_min`
 Lean: `[Finite G] (p : refPackage Ω₀₁ Ω₀₂ G) [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] [MeasurableSingletonClass G] [Finite S] [MeasurableSingletonClass S] [Finite T] [MeasurableSingletonClass T] (h : TauMinimizes p X₁ X₂) (h1 : Measurable X₁') (h2 : Measurable X₂') (Z : Ω'₁ → S) (W : Ω'₂ → T) (hZ : Measurable Z) (hW : Measurable W) : d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁' | Z] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂' | W] - d[p.X₀₂ # X₂]) ≤ d[X₁' | Z # X₂' | W]`

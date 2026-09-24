@@ -47,4 +47,4 @@ English: For every measure $\mu$ on $S\times U$, $I_m[(\mu(S\times U))^{-1}\,\mu
 
 ### `ProbabilityTheory.measureMutualInfo_nonneg`
 Lean: `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [FiniteSupport μ] : 0 ≤ Im[μ]`
-English: For a measure $\mu$ on $S\times U$ (under the standing finite-support assumptions), $0\le I_m[\mu]$.
+English: Let $S$ and $U$ be spaces in which singletons are measurable, and let $\mu$ be a measure on $S \times U$ with finite support. Then $0 \le I_m[\mu]$, the mutual information of the measure $\mu$.

@@ -11,7 +11,7 @@ Everything goes through files, so any model or API can fill them in:
 3. ``write_repair_prompts`` writes ``<chapter>.repair.md`` for chapters with flagged translations: each flagged
    result with its Lean statement, the previous English and the checker's issue. A model answers
    ``<chapter>.repair.json`` with corrected statements, which override the originals; the chapter is then
-   checked again.
+   checked again. Later rounds write ``<chapter>.repair2.md`` / ``.repair2.json`` and so on, applied in order.
 4. ``load_prose`` reads them all, and :func:`cairn.outline.render` shows the English next to the Lean statement, with
    flagged translations marked. The Lean statement always stays in the outline: it is the verified ground truth.
 """
@@ -185,10 +185,19 @@ def write_repair_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> li
             if d.doc:
                 lines.append(f"Docstring: {_clip(d.doc, 400)}")
             lines += [f"Previous English: {r['statement']}", f"Checker's issue: {r.get('issue', '')}", ""]
-        path = Path(prose_dir) / f"{chapter_key(ch)}.repair.md"
+        key = chapter_key(ch)
+        n = len(_repair_files(Path(prose_dir), key)) + 1
+        path = Path(prose_dir) / f"{key}.repair{n if n > 1 else ''}.md"
         path.write_text("\n".join(lines))
         paths.append(path)
     return paths
+
+
+def _repair_files(prose_dir: Path, key: str) -> list[Path]:
+    """``<key>.repair.json``, ``<key>.repair2.json``, … in round order."""
+    files = [(int(m.group(1) or 1), f) for f in prose_dir.glob(f"{key}.repair*.json")
+             if (m := re.fullmatch(re.escape(key) + r"\.repair(\d*)\.json", f.name))]
+    return [f for _, f in sorted(files)]
 
 
 def load_prose(prose_dir: Path | None) -> dict[str, dict]:
@@ -206,8 +215,7 @@ def load_prose(prose_dir: Path | None) -> dict[str, dict]:
         m = re.search(r"Lean module `([^`]+)`", prompt.read_text()) if prompt.exists() else None
         module = m.group(1) if m else key
         results = {k: dict(v) for k, v in data.get("results", {}).items()}
-        repair = Path(prose_dir) / f"{key}.repair.json"
-        if repair.exists():
+        for repair in _repair_files(Path(prose_dir), key):
             try:
                 for k, v in json.loads(repair.read_text()).items():
                     if k in results and v.get("statement"):

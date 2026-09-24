@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
+  "faithful": true,
+  "issue": ""
+ }
+}

@@ -11,11 +11,11 @@ Use every Lean name exactly as given.
 
 ### `ProbabilityTheory.entropy_add_right`
 Lean: `[Countable G] [MeasurableSingletonClass G] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) : H[⟨X, X + Y⟩; μ] = H[⟨X, Y⟩; μ]`
-English: Let $X, Y$ be measurable random variables with values in an additive group, and $\mu$ a measure. Then $H[(X, X+Y)] = H[(X, Y)]$ (entropies with respect to $\mu$).
+English: Let $G$ be a countable additive group in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables. Then $H[(X, X+Y);\mu] = H[(X, Y);\mu]$.
 
 ### `ProbabilityTheory.entropy_add_left`
 Lean: `[Countable G] [MeasurableSingletonClass G] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) : H[⟨Y + X, Y⟩; μ] = H[⟨X, Y⟩; μ]`
-English: Let $X, Y$ be measurable random variables with values in an additive group, and $\mu$ a measure. Then $H[(Y+X, Y)] = H[(X, Y)]$ (entropies with respect to $\mu$).
+English: Let $G$ be a countable additive group in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables. Then $H[(Y+X, Y);\mu] = H[(X, Y);\mu]$.
 
 ### `ProbabilityTheory.entropy_sub_mutualInfo_le_entropy_sub`
 Lean: `[Countable G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] (hX : Measurable X) (hY : Measurable Y) : H[X; μ] - I[X : Y ; μ] ≤ H[X - Y; μ]`

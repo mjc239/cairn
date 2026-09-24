@@ -11,11 +11,11 @@ Use every Lean name exactly as given.
 
 ### `condRuzsaDist`
 Lean: `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Z : Ω → S) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) [IsFiniteMeasure μ] (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) [IsFiniteMeasure μ'] : ℝ`
-English: For random variables $X:\Omega\to G$, $Z:\Omega\to S$ on $(\Omega,\mu)$ and $Y:\Omega'\to G$, $W:\Omega'\to T$ on $(\Omega',\mu')$, with $G$ an abelian group, the conditional Ruzsa distance $d[X|Z \,;\, Y|W]$ (with respect to $\mu,\mu'$) is the kernel Ruzsa distance between the conditional distribution of $X$ given $Z$ and that of $Y$ given $W$, averaged against the laws of $Z$ and $W$.
+English: Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\Omega\to G$, $Z:\Omega\to S$ and $Y:\Omega'\to G$, $W:\Omega'\to T$, and finite measures $\mu$ on $\Omega$ and $\mu'$ on $\Omega'$ (by default the ambient measures), this defines the real number $d[X|Z \,;\, Y|W]$, the conditional Ruzsa distance of $X$ given $Z$ (with respect to $\mu$) and $Y$ given $W$ (with respect to $\mu'$).
 
 ### `condRuzsaDist'`
 Lean: `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist'._auto_1) (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) [IsFiniteMeasure μ'] : ℝ`
-English: For $X:\Omega\to G$ on $(\Omega,\mu)$ and $Y:\Omega'\to G$, $W:\Omega'\to T$ on $(\Omega',\mu')$, the conditional Ruzsa distance $d[X \,;\, Y|W]$ (with respect to $\mu,\mu'$) is the kernel Ruzsa distance between the (constant) law of $X$ and the conditional distribution of $Y$ given $W$, averaged against the law of $W$.
+English: Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\Omega\to G$ and $Y:\Omega'\to G$, $W:\Omega'\to T$, a measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (by default the ambient measures), this defines the real number $d[X \,;\, Y|W]$, the conditional Ruzsa distance between $X$ (with respect to $\mu$) and $Y$ given $W$ (with respect to $\mu'$).
 
 ### `rdist`
 Lean: `(X : Ω → G) (Y : Ω' → G) (μ : autoParam (Measure Ω) rdist._auto_1) (μ' : autoParam (Measure Ω') rdist._auto_3) : ℝ`

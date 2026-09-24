@@ -1,0 +1,38 @@
+{
+ "refPackage": {
+  "faithful": true,
+  "issue": ""
+ },
+ "refPackage.X₀₁": {
+  "faithful": true,
+  "issue": ""
+ },
+ "refPackage.X₀₂": {
+  "faithful": true,
+  "issue": ""
+ },
+ "refPackage.η": {
+  "faithful": true,
+  "issue": ""
+ },
+ "tau": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TauMinimizes": {
+  "faithful": true,
+  "issue": ""
+ },
+ "distance_ge_of_min": {
+  "faithful": false,
+  "issue": "The English drops the two [IsProbabilityMeasure volume] hypotheses on the spaces carrying X₁', X₂' (or the reference spaces)."
+ },
+ "condRuzsaDistance_ge_of_min": {
+  "faithful": true,
+  "issue": ""
+ },
+ "tau_minimizer_exists": {
+  "faithful": true,
+  "issue": ""
+ }
+}

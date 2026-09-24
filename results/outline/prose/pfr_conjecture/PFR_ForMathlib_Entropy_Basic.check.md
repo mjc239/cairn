@@ -87,11 +87,11 @@ English: Let $S$ and $T$ be countable measurable spaces with measurable singleto
 
 ### `ProbabilityTheory.prob_ge_exp_neg_entropy`
 Lean: `[MeasurableSingletonClass S] [Nonempty S] (X : Ω → S) (μ : Measure Ω) (hX : Measurable X) [FiniteRange X] : ∃ s, μ Set.univ * ↑(Real.exp (-H[X; μ])).toNNReal ≤ (Measure.map X μ) {s}`
-English: Let $X : \Omega \to S$ be a measurable random variable and $\mu$ a measure on $\Omega$. Then there exists $s \in S$ such that $\mu(\Omega)\cdot e^{-H[X;\mu]} \le X_*\mu(\{s\})$; in particular (for a probability measure) $\mathbb{P}[X = s] \ge e^{-H[X]}$.
+English: Let $S$ be a nonempty space in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X : \Omega \to S$ be a measurable random variable taking finitely many values. Then there exists $s \in S$ such that $\mu(\Omega)\cdot e^{-H[X;\mu]} \le (X_*\mu)(\{s\})$, where $e^{-H[X;\mu]}$ is viewed as a nonnegative real.
 
 ### `ProbabilityTheory.mutualInfo_nonneg`
 Lean: `[MeasurableSingletonClass S] [MeasurableSingletonClass T] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) [FiniteRange X] [FiniteRange Y] : 0 ≤ I[X : Y ; μ]`
-English: Let $X, Y$ be measurable random variables and $\mu$ a measure. Then $0 \le I[X : Y;\mu]$.
+English: Let $S$ and $T$ be spaces in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X : \Omega \to S$ and $Y : \Omega \to T$ be measurable random variables, each taking finitely many values. Then $0 \le I[X : Y;\mu]$.
 
 ### `ProbabilityTheory.condMutualInfo_eq_zero`
 Lean: `[MeasurableSingletonClass S] [MeasurableSingletonClass T] [Countable U] [MeasurableSingletonClass U] (hX : Measurable X) (hY : Measurable Y) [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] [FiniteRange Z] : I[X : Y|Z;μ] = 0 ↔ CondIndepFun X Y Z μ`

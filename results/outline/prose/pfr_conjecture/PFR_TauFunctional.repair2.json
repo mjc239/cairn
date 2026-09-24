@@ -1,0 +1,5 @@
+{
+ "distance_ge_of_min": {
+  "statement": "Let $p$ be a reference package with reference random variables $X^0_1, X^0_2$ and parameter $\\eta$, let $(X_1,X_2)$ minimize $\\tau$ for $p$, and let $X_1',X_2'$ be measurable $G$-valued random variables defined on spaces whose ambient measures are probability measures. Then $$d[X_1;X_2]-\\eta\\left(d[X^0_1;X_1']-d[X^0_1;X_1]\\right)-\\eta\\left(d[X^0_2;X_2']-d[X^0_2;X_2]\\right)\\le d[X_1';X_2'].$$"
+ }
+}

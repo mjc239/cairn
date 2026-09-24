@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.IsUniform": {
+  "faithful": false,
+  "issue": "The English says the law of X is the uniform probability measure on H and that the predicate is false for infinite H, but the signature supports neither claim, and with no probability or nonzero-measure assumption they are doubtful."
+ },
+ "ProbabilityTheory.exists_isUniform_measureSpace": {
+  "faithful": false,
+  "issue": "The English drops the hypothesis that S has measurable singletons."
+ },
+ "ProbabilityTheory.IsUniform.measureReal_preimage_of_mem": {
+  "faithful": true,
+  "issue": ""
+ }
+}

@@ -147,6 +147,7 @@ statements. Everything goes through files, so any model can fill them in:
 ```sh
 cairn outline … --prose DIR --write-prose-prompts   # DIR/<chapter>.prompt.md → fill DIR/<chapter>.prose.json
 cairn outline … --prose DIR --write-check-prompts   # DIR/<chapter>.check.md  → fill DIR/<chapter>.check.json
+cairn outline … --prose DIR --write-repair-prompts  # DIR/<chapter>.repair.md → fill DIR/<chapter>.repair.json; check again
 cairn outline … --prose DIR -o outline.md           # render; prints translated / checked / flagged
 ```
 
@@ -161,37 +162,64 @@ cairn outline … --prose DIR -o outline.md           # render; prints translate
    issue. The prose itself never replaces the Lean: the rendered outline shows
    the English, then the verified Lean statement beneath it, and a ⚠ with the
    checker's issue on flagged items.
-3. **Render.** Chapter headings become the generated titles, with the Lean
+3. **Repair.** Flagged items go back to a translator with the Lean statement,
+   the previous English and the checker's issue. The corrected statements
+   override the originals (rounds stack as `.repair.json`, `.repair2.json`, …),
+   and the repaired chapters are checked again by a fresh checker.
+4. **Render.** Chapter headings become the generated titles, with the Lean
    module underneath.
 
 Both example outlines were translated and checked this way, with Claude
 subagents as the translator and checker:
 
-CHECK_RESULTS
+| Round | PFR (134 results) | Carleson (196 results) |
+|---|---:|---:|
+| 1. Translate, check | 83 flagged | 12 flagged |
+| 2. Repair flagged, re-check their chapters | 0 of the 83 still flagged; 15 others newly flagged | 0 of the 12 still flagged |
+| 3. Repair those 15, re-check | 0 flagged | — |
+
+Final: every English statement in both outlines passes its latest check. The
+per-round verdicts are kept in `*.check.round1.json` and `*.check.round2.json`.
+
+What the checks caught:
+
+- **Dropped instance hypotheses** were most of round 1 on PFR. The
+  translations came from an earlier prompt that did not show instance
+  assumptions, so the English lacked "$G$ is finite", "$\mu$ is a probability
+  measure" or "$X$ takes finitely many values". The checker saw the current
+  statements. Carleson's statements rarely hang on instances, hence its much
+  lower count.
+- **Truncated statements.** The earlier prompt clipped Lean statements at 600
+  characters. Six long Carleson bounds (`combine_estimates₀/₁`, `aux₄`,
+  `estimate_trnc₁`, `e764_preCS`, `global_tree_control1_edist_part1/2`) had
+  English that stopped at "…". Prompts now allow 3,000 characters, and the
+  repairs state the full bounds.
+- **Claims the Lean doesn't make:** for example that the sets `ℭ(k,n)`
+  partition `𝔓(k)`, or that a family of tile sets consists of antichains.
+- **Checkers vary.** The round-2 checkers flagged omitted `Countable` and
+  `MeasurableSingletonClass` assumptions that the round-1 checkers had judged
+  technical. A single check pass is a noisy filter. Re-checking whole chapters,
+  not only the repaired items, is what surfaced this.
 
 Caveats:
 
-- **The translations came from an earlier prompt.** It clipped Lean
-  statements at 600 characters and did not yet show instance assumptions.
-  Six long statements (`sum_dist_diff_le`, `e764_preCS`,
-  `combine_estimates₀/₁`, `aux₄`, `estimate_trnc₁`, plus two
-  `global_tree_control1_edist_part*`) were cut off, and the English says so.
-  The checker saw the full current statements, so any hypothesis the English
-  misses as a result is flagged. The prompts now allow 3,000 characters.
 - **Sketches are not checked.** Several go beyond the listed dependencies,
-  reconstructing the standard argument (e.g. `classical_carleson`,
-  `ent_bsg`). They read well but are the least grounded part of the outline.
-- **Notation meaning is inferred from names** when there is no docstring
-  (e.g. "characteristic 2" in `sum_of_rdist_eq_char_2`). The checker is the
-  guard against this.
+  reconstructing the standard argument (e.g. `classical_carleson`, `ent_bsg`).
+  They read well but are the least grounded part of the outline.
+- **Some readings are the translator's.** Where the Lean is ambiguous as
+  printed, the English picks a reading, and the checker accepted it as
+  reasonable. Examples: which space each of several `[IsProbabilityMeasure
+  volume]` refers to; `x ^ (1 / 2)` taken as a real power.
+- **Translator and checker are the same model family**, as separate
+  subagents. They share context isolation but may share blind spots.
 
 ## Limitations and next steps
 
 - ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
   chapter titles~~. Done: short statements, prose and titles above.
-- **Flagged translations are only marked, not fixed.** A repair loop would
-  send each flagged item back to the translator with the checker's issue, then
-  check it again.
+- **Ambiguous pretty-printing.** Printing each instance with the space it
+  lives on (`[IsProbabilityMeasure (volume : Measure Ω₀₁)]`) and
+  disambiguating numerals' types would remove most judgement calls.
 - **Proof sketches are unchecked.** A checker could compare each sketch
   against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline

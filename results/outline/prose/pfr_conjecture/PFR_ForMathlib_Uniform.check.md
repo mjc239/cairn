@@ -11,11 +11,11 @@ Use every Lean name exactly as given.
 
 ### `ProbabilityTheory.IsUniform`
 Lean: `(H : Set S) (X : Ω → S) (μ : autoParam (Measure Ω) IsUniform._auto_1) : Prop`
-English: For a set $H\subseteq S$, a random variable $X:\Omega\to S$ and a measure $\mu$ on $\Omega$ (by default the ambient measure), defines the predicate $\mathrm{IsUniform}(H,X,\mu)$ asserting that the law of $X$ under $\mu$ is the uniform probability measure on the finite set $H$. The predicate makes sense without assuming $H$ nonempty and finite, $X$ measurable or $\mu$ a probability measure (e.g. it is well-defined but false for infinite $H$).
+English: For a set $H\subseteq S$, a random variable $X:\Omega\to S$ and a measure $\mu$ on $\Omega$ (by default the ambient measure), this defines a proposition $\mathrm{IsUniform}(H,X,\mu)$, expressing that $X$ is uniformly distributed on $H$ with respect to $\mu$. No assumptions are made on $H$, $X$ or $\mu$ (in particular $H$ need not be finite or nonempty, $X$ need not be measurable, and $\mu$ need not be a probability measure).
 
 ### `ProbabilityTheory.exists_isUniform_measureSpace`
 Lean: `[MeasurableSingletonClass S] (H : Finset S) (h : H.Nonempty) : ∃ Ω mΩ U, IsProbabilityMeasure volume ∧ Measurable U ∧ IsUniform (↑H) U volume ∧ (∀ (ω : Ω), U ω ∈ H) ∧ FiniteRange U`
-English: Let $H$ be a nonempty finite subset of $S$. Then there exist a type $\Omega$ with a measurable-space structure and a random variable $U:\Omega\to S$ such that the ambient measure on $\Omega$ is a probability measure, $U$ is measurable, $U$ is uniformly distributed on $H$, $U(\omega)\in H$ for every $\omega\in\Omega$, and $U$ has finite range.
+English: Let $S$ be a space in which singletons are measurable, and let $H$ be a nonempty finite subset of $S$. Then there exist a type $\Omega$ with a measure-space structure and a random variable $U:\Omega\to S$ such that the ambient measure on $\Omega$ is a probability measure, $U$ is measurable, $U$ is uniformly distributed on $H$, $U(\omega)\in H$ for every $\omega\in\Omega$, and $U$ takes finitely many values.
 
 ### `ProbabilityTheory.IsUniform.measureReal_preimage_of_mem`
 Lean: `[DiscreteMeasurableSpace S] [IsProbabilityMeasure μ] (h : IsUniform (↑A) X μ) (hX : Measurable X) (hs : s ∈ A) : μ.real (X ⁻¹' {s}) = 1 / ↑A.card`

@@ -15,7 +15,7 @@ English: For a kernel $\kappa$ from $T$ to $S$ and a measure $\mu$ on $T$, defin
 
 ### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk`
 Lean: `[Countable T] [MeasurableSingletonClass T] (_hκ : κ.AEFiniteKernelSupport μ) : Kernel T S`
-English: Given a proof that $\kappa$ has almost everywhere finite support with respect to $\mu$, defines an associated kernel $\mathrm{mk}$ from $T$ to $S$ (a modification of $\kappa$; the definition does not actually use the hypothesis).
+English: Let $T$ be a countable space in which singletons are measurable, and let $\kappa$ be a kernel from $T$ to $S$ that has almost everywhere finite kernel support with respect to a measure $\mu$ on $T$ (hypothesis $h\kappa$). This defines an associated kernel $h\kappa.\mathrm{mk}$ from $T$ to $S$ (the definition does not actually use the hypothesis $h\kappa$).
 
 ### `ProbabilityTheory.Kernel.FiniteKernelSupport`
 Lean: `(κ : Kernel T S) : Prop`
@@ -23,7 +23,7 @@ English: For a kernel $\kappa$ from $T$ to $S$, defines the property that $\kapp
 
 ### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk`
 Lean: `[Countable T] [MeasurableSingletonClass T] [MeasurableSingletonClass S] (hκ : κ.AEFiniteKernelSupport μ) : hκ.mk.FiniteKernelSupport`
-English: If $\kappa$ has almost everywhere finite support with respect to $\mu$ (hypothesis $h\kappa$), then the kernel $h\kappa.\mathrm{mk}$ has finite kernel support.
+English: Let $T$ be a countable space in which singletons are measurable, and let $S$ be a space in which singletons are measurable. If the kernel $\kappa$ from $T$ to $S$ has almost everywhere finite kernel support with respect to $\mu$ (hypothesis $h\kappa$), then the kernel $h\kappa.\mathrm{mk}$ has finite kernel support.
 
 ### `ProbabilityTheory.Kernel.disintegration`
 Lean: `[Countable S] [DiscreteMeasurableSpace S] [Countable U] [Nonempty U] [DiscreteMeasurableSpace U] (κ : Kernel T (S × U)) [IsFiniteKernel κ] : κ = κ.fst.compProd κ.condKernel`

@@ -11,15 +11,15 @@ Use every Lean name exactly as given.
 
 ### `ProbabilityTheory.IsUniform.measureReal_preimage_sub_zero`
 Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure volume] (Uunif : IsUniform (↑A) U volume) (Umeas : Measurable U) (Vunif : IsUniform (↑B) V volume) (Vmeas : Measurable V) (h_indep : IndepFun U V volume) : volume.real ((U - V) ⁻¹' {0}) = ↑(A ∩ B).card / (↑A.card * ↑B.card)`
-English: Let $U$ and $V$ be measurable, independent random variables, with $U$ uniformly distributed on the finite set $A$ and $V$ uniformly distributed on the finite set $B$. Then $P[U-V=0]=\dfrac{|A\cap B|}{|A|\cdot|B|}$.
+English: Let $G$ be a finite additive group in which singletons are measurable, let the ambient measure $P$ on $\Omega$ be a probability measure, and let $A, B$ be finite subsets of $G$. Let $U, V : \Omega \to G$ be measurable, independent random variables, with $U$ uniformly distributed on $A$ and $V$ uniformly distributed on $B$. Then $P[U-V=0]=\dfrac{|A\cap B|}{|A|\cdot|B|}$.
 
 ### `ProbabilityTheory.IsUniform.measureReal_preimage_sub`
 Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure volume] (Uunif : IsUniform (↑A) U volume) (Umeas : Measurable U) (Vunif : IsUniform (↑B) V volume) (Vmeas : Measurable V) (h_indep : IndepFun U V volume) (x : G) : volume.real ((U - V) ⁻¹' {x}) = ↑(A ∩ (B + {x})).card / (↑A.card * ↑B.card)`
-English: Let $U$ and $V$ be measurable, independent random variables, with $U$ uniformly distributed on the finite set $A$ and $V$ uniformly distributed on the finite set $B$. Then for every $x\in G$, $P[U-V=x]=\dfrac{|A\cap (B+\{x\})|}{|A|\cdot|B|}$.
+English: Let $G$ be a finite additive group in which singletons are measurable, let the ambient measure $P$ on $\Omega$ be a probability measure, and let $A, B$ be finite subsets of $G$. Let $U, V : \Omega \to G$ be measurable, independent random variables, with $U$ uniformly distributed on $A$ and $V$ uniformly distributed on $B$. Then for every $x\in G$, $P[U-V=x]=\dfrac{|A\cap (B+\{x\})|}{|A|\cdot|B|}$.
 
 ### `rdist_le_of_isUniform_of_card_sub_le`
 Lean: `[Countable G] [Finite ↑A] [MeasurableSingletonClass G] (hA₀ : A.Nonempty) (hA : ↑(A - A).ncard ≤ K * ↑A.ncard) [IsProbabilityMeasure volume] (U₀unif : IsUniform A U₀ volume) (U₀meas : Measurable U₀) : d[U₀ # U₀] ≤ Real.log K`
-English: Let $A\subseteq G$ be nonempty with $|A-A|\le K|A|$, and let $U_0$ be a measurable random variable uniformly distributed on $A$. Then $d[U_0;U_0]\le \log K$.
+English: Let $G$ be a countable additive group in which singletons are measurable, and let $A\subseteq G$ be a finite nonempty set with $|A-A|\le K|A|$. Suppose the ambient measure on $\Omega$ is a probability measure, and let $U_0 : \Omega \to G$ be a measurable random variable uniformly distributed on $A$. Then $d[U_0;U_0]\le \log K$.
 
 ### `PFR_conjecture_aux`
 Lean: `[Countable G] [Module (ZMod 2) G] [Finite G] (hA₀ : A.Nonempty) (hA : ↑(A + A).ncard ≤ K * ↑A.ncard) : ∃ H c, ↑(Nat.card ↑c) ≤ K ^ (13 / 2) * ↑A.ncard ^ (1 / 2) * ↑(↑H).ncard ^ (-1 / 2) ∧ ↑(↑H).ncard ≤ K ^ 11 * ↑A.ncard ∧ ↑A.ncard ≤ K ^ 11 * ↑(↑H).ncard ∧ A ⊆ c + ↑H`
