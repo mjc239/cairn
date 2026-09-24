@@ -10,5 +10,5 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `dft`
-Lean: `(f : G → ℂ) (_ : AddChar G ℂ) : ℂ`
-English: For $f : G \to \mathbb{C}$, defines its discrete Fourier transform $\widehat{f}$, a function assigning a complex number $\widehat{f}(\psi)$ to each additive character $\psi : G \to \mathbb{C}$.
+Lean: `[Fintype G] (f : G → ℂ) (_ : AddChar G ℂ) : ℂ`
+English: Let $G$ be a finite type (with its additive group structure). For $f : G \to \mathbb{C}$, $\mathrm{dft}(f)$ assigns a complex number $\mathrm{dft}(f)(\psi)$ to each additive character $\psi : G \to \mathbb{C}$; according to its docstring, it is the discrete Fourier transform of $f$.

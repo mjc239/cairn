@@ -1,0 +1,18 @@
+{
+ "s": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "drc": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "sifting": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "sifting_cor": {
+  "faithful": false,
+  "issue": "The English never states the [Fintype G] hypothesis that G is finite (it only uses |G| in defining density)."
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "energy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "boringEnergy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cLpNorm_dft_indicator_one_pow": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "cL2Norm_dft_indicator_one": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ }
+}

@@ -13,18 +13,6 @@ Use every Lean name exactly as given.
 Lean: `(Ω₀₁ : Type u_1) (Ω₀₂ : Type u_2) (G : Type uG) : Type (max (max uG u_1) u_2)`
 English: Defines, for types $\Omega_{01},\Omega_{02}$ and $G$, the structure of a reference package: it bundles the fixed data of the main argument (reference spaces and measures, the two reference random variables, and the parameter $\eta$), so that the $\tau$ functional can refer to a single package.
 
-### `refPackage.X₀₁`
-Lean: `(self : refPackage Ω₀₁ Ω₀₂ G) (_ : Ω₀₁) : G`
-English: For a reference package $p$, defines $X^0_1:\Omega_{01}\to G$, the first reference random variable of the package.
-
-### `refPackage.X₀₂`
-Lean: `(self : refPackage Ω₀₁ Ω₀₂ G) (_ : Ω₀₂) : G`
-English: For a reference package $p$, defines $X^0_2:\Omega_{02}\to G$, the second reference random variable of the package.
-
-### `refPackage.η`
-Lean: `(self : refPackage Ω₀₁ Ω₀₂ G) : ℝ`
-English: For a reference package $p$, defines the real parameter $\eta$ of the package, measuring how good the package is; the argument only works for $\eta$ small enough (typically $\le 1/9$ or $<1/8$).
-
 ### `tau`
 Lean: `(p : refPackage Ω₀₁ Ω₀₂ G) (X₁ : Ω₁ → G) (X₂ : Ω₂ → G) (μ₁ : Measure Ω₁) (μ₂ : Measure Ω₂) : ℝ`
 English: For a reference package $p$ and $G$-valued random variables $X_1:\Omega_1\to G$, $X_2:\Omega_2\to G$ with measures $\mu_1,\mu_2$, defines $$\tau[X_1;\mu_1\,\#\,X_2;\mu_2\mid p]:=d[X_1;X_2]+\eta\, d[X^0_1;X_1]+\eta\, d[X^0_2;X_2],$$ where $X^0_1,X^0_2$ and $\eta$ come from $p$.

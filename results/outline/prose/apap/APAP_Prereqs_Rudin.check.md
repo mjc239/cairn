@@ -10,5 +10,5 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `rudin_ineq`
-Lean: `[DiscreteMeasurableSpace G] (hp : 2 ≤ p) (f : G → ℂ) (hf : AddDissociated (Function.support (cft f))) : ‖f‖ₙ_[↑p] ≤ 4 * Real.exp 2⁻¹ * √↑p * ‖f‖ₙ_[2]`
-English: (Rudin's inequality.) $G$ carries the discrete measurable structure. Let $p \ge 2$ and let $f : G \to \mathbb{C}$ be such that the support of its Fourier transform $\mathrm{cft}(f)$ is dissociated. Then $\|f\|_p \le 4\, e^{1/2} \sqrt{p}\, \|f\|_2$, with norms in the compact (expectation) normalisation.
+Lean: `[Fintype G] [DiscreteMeasurableSpace G] (hp : 2 ≤ p) (f : G → ℂ) (hf : AddDissociated (Function.support (cft f))) : ‖f‖ₙ_[↑p] ≤ 4 * Real.exp 2⁻¹ * √↑p * ‖f‖ₙ_[2]`
+English: (Rudin's inequality.) Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $p \ge 2$ and let $f : G \to \mathbb{C}$ be such that the support of its Fourier transform $\mathrm{cft}(f)$ is dissociated. Then $\|f\|_p \le 4\, e^{1/2} \sqrt{p}\, \|f\|_2$, with norms in the compact (expectation) normalisation.

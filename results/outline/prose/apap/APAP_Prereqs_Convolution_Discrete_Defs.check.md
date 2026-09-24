@@ -10,21 +10,21 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `ddconv`
-Lean: `(f : G → R) (g : G → R) (_ : G) : R`
-English: For $f, g : G \to R$, defines their (discrete) convolution $f * g : G \to R$.
+Lean: `[Fintype G] (f : G → R) (g : G → R) (_ : G) : R`
+English: Let $G$ be a finite type (with its additive group structure). For $f, g : G \to R$, $\mathrm{ddconv}(f, g)$ is a function $G \to R$; according to its docstring, it is the convolution $f * g$ of $f$ and $g$.
 
 ### `ddconv_eq_sum_sub`
-Lean: `(f : G → R) (g : G → R) (a : G) : (f ∗ᵈ g) a = ∑ t, f (a - t) * g t`
-English: For $f, g : G \to R$ and $a \in G$, $(f * g)(a) = \sum_t f(a - t)\, g(t)$.
+Lean: `[Fintype G] (f : G → R) (g : G → R) (a : G) : (f ∗ᵈ g) a = ∑ t, f (a - t) * g t`
+English: Let $G$ be a finite abelian group. For $f, g : G \to R$ and $a \in G$, $(f * g)(a) = \sum_{t \in G} f(a - t)\, g(t)$, where $*$ is discrete convolution.
 
 ### `trivChar`
 Lean: `(_ : G) : R`
 English: Defines $\mathrm{trivChar} : G \to R$, the trivial character.
 
 ### `iterConv`
-Lean: `(f : G → R) (_ : ℕ) (_ : G) : R`
-English: For $f : G \to R$ and $n \in \mathbb{N}$, defines the $n$-fold iterated convolution $f^{*n} : G \to R$.
+Lean: `[Fintype G] (f : G → R) (_ : ℕ) (_ : G) : R`
+English: Let $G$ be a finite type (with its additive group structure). For $f : G \to R$ and $n \in \mathbb{N}$, $\mathrm{iterConv}(f, n)$ is a function $G \to R$; according to its docstring, it is the ($n$-fold) iterated convolution of $f$.
 
 ### `dddconv`
-Lean: `[StarRing R] (f : G → R) (g : G → R) (_ : G) : R`
-English: For a star ring $R$ and $f, g : G \to R$, defines their difference convolution $f \circ g : G \to R$.
+Lean: `[Fintype G] [StarRing R] (f : G → R) (g : G → R) (_ : G) : R`
+English: Let $G$ be a finite type (with its additive group structure) and $R$ a star ring. For $f, g : G \to R$, $\mathrm{dddconv}(f, g)$ is a function $G \to R$; according to its docstring, it is the difference convolution $f \circ g$ of $f$ and $g$.

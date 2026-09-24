@@ -1,0 +1,8 @@
+{
+ "cLpNorm_dft_indicator_one_pow": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. For every $n \\in \\mathbb{N}$ and finite $s \\subseteq G$, $\\|\\widehat{1_s}\\|_{2n}^{2n} = \\mathrm{boringEnergy}_n(s)$, where $\\widehat{1_s}$ is the discrete Fourier transform of the indicator of $s$ and the norm is taken with the compact (expectation) normalisation."
+ },
+ "cL2Norm_dft_indicator_one": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. For every finite $s \\subseteq G$, $\\|\\widehat{1_s}\\|_2 = \\sqrt{|s|}$, where $\\widehat{1_s}$ is the discrete Fourier transform of the indicator of $s$ and the norm has the compact (expectation) normalisation."
+ }
+}

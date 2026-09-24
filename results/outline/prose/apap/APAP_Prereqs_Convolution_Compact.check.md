@@ -10,5 +10,5 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `iterCConv`
-Lean: `[CharZero R] (f : G → R) (_ : ℕ) (_ : G) : R`
-English: For $R$ of characteristic zero, $f : G \to R$ and $n \in \mathbb{N}$, defines the $n$-fold iterated convolution of $f$ with respect to the compact (expectation-normalised) convolution.
+Lean: `[Fintype G] [CharZero R] (f : G → R) (_ : ℕ) (_ : G) : R`
+English: Let $G$ be a finite type (with its additive group structure) and $R$ a ring of characteristic zero. For $f : G \to R$ and $n \in \mathbb{N}$, $\mathrm{iterCConv}(f, n)$ is a function $G \to R$; according to its docstring, it is the (n-fold) iterated convolution of $f$.

@@ -54,23 +54,23 @@ declarations):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 102 (60) | 78% | 27% | 30% | 0.82 | 0.45 | 0.88 |
+| 0.05 | 101 (59) | 78% | 27% | 30% | 0.82 | 0.44 | 0.88 |
 | 0.10 | 167 (119) | 72% | 44% | 48% | 0.84 | 0.51 | 0.61 |
-| 0.15 | 231 (179) | 61% | 53% | 58% | 0.85 | 0.52 | 0.63 |
-| 0.20 | 292 (238) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
-| 0.30 | 417 (356) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
+| 0.15 | 230 (178) | 61% | 53% | 58% | 0.85 | 0.52 | 0.62 |
+| 0.20 | 291 (237) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
+| 0.30 | 415 (354) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
 
 **Carleson** (style `top_down = 0.2` with a chapter roadmap; the blueprint
 names 7% of declarations and no definitions):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 421 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.80 |
-| 0.10 | 551 (218) | 43% | 42% | 51% | 0.71 | 0.44 | 0.30 |
-| 0.15 | 713 (347) | 35% | 54% | 64% | 0.72 | 0.47 | −0.03 |
-| 0.20 | 885 (502) | 29% | 64% | 74% | 0.72 | 0.43 | −0.03 |
+| 0.05 | 420 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.79 |
+| 0.10 | 549 (217) | 43% | 42% | 51% | 0.71 | 0.43 | 0.27 |
+| 0.15 | 711 (346) | 35% | 54% | 64% | 0.72 | 0.47 | −0.03 |
+| 0.20 | 882 (500) | 29% | 64% | 74% | 0.72 | 0.43 | −0.03 |
 
-*(With `--no-define-used`, Carleson's list shrinks to 169–674 results with the
+*(With `--no-define-used`, Carleson's list shrinks to 169–672 results with the
 same recall; PFR's precision is unchanged. Full numbers are in
 `results/outline/*_eval*.json`.)*
 
@@ -129,8 +129,10 @@ user-facing declaration. It opens the binders with `forallTelescope` and keeps:
 
 - explicit arguments and hypotheses, e.g. `(hA : A.Nonempty)`;
 - instance assumptions that carry content: a proposition (`[Finite G]`,
-  `[IsProbabilityMeasure μ]`), or a class applied to more than bare variables
-  (`[Module (ZMod 2) G]`).
+  `[IsProbabilityMeasure μ]`), a class applied to more than bare variables
+  (`[Module (ZMod 2) G]`), or `[Fintype G]`, which is data but says G is finite.
+  Dumps made before `Fintype` was kept get it back from the full statement
+  (`formal.restore_fintype`).
 
 It drops implicit arguments and purely structural instances such as
 `[AddCommGroup G]` or `[MeasurableSpace Ω]`. Proofs inside terms are hidden,
@@ -228,39 +230,39 @@ the previous model, trained on PFR and Carleson only (minus the project).
 
 | Project | Detail | Style | Named (theorems) | Theorem precision | Recall | Nodes covered | Chapter NMI | τ within chapters | Baseline: named, theorem precision |
 |---|---:|---|---:|---:|---:|---:|---:|---:|---|
-| PFR | 0.18 | `top_down=0` | 283 (214) | 59% | 60% | 66% | 0.85 | +0.70 | 306, 50% |
-| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 538 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 466, 45% |
-| brownian_motion | 0.15 | `top_down=0` | 429 (264) | 28% | 39% | 39% | 0.78 | +0.58 | 467, 25% |
-| testing_lower_bounds | 0.12 | `top_down=0` | 157 (116) | 26% | 33% | 33% | 0.63 | +0.58 | 165, 24% |
-| sphere_packing | 0.07 | `top_down=0` | 204 (81) | 28% | 54% | 53% | 0.82 | +0.93 | 211, 28% |
+| PFR | 0.18 | `top_down=0` | 282 (213) | 60% | 60% | 66% | 0.85 | +0.68 | 305, 50% |
+| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 537 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 464, 46% |
+| brownian_motion | 0.15 | `top_down=0` | 426 (263) | 29% | 39% | 39% | 0.78 | +0.58 | 464, 25% |
+| testing_lower_bounds | 0.12 | `top_down=0` | 157 (116) | 26% | 33% | 33% | 0.63 | +0.54 | 165, 24% |
+| sphere_packing | 0.07 | `top_down=0` | 204 (81) | 28% | 54% | 53% | 0.82 | +0.89 | 211, 28% |
 | flt3 | 0.38 | `top_down=0` | 101 (60) | 78% | 58% | 58% | 1.00 | +0.28 | 119, 61% |
-| sphere_eversion | 0.06 | `top_down=0.2` | 199 (43) | 47% | 62% | 65% | 0.62 | +0.50 | 220, 34% |
-| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 78 (43) | 49% | 71% | 91% | 0.92 | +0.70 | 82, 44% |
-| apap | 0.04 | `top_down=0` | 47 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 54, 67% |
+| sphere_eversion | 0.06 | `top_down=0.2` | 188 (42) | 48% | 62% | 65% | 0.62 | +0.51 | 205, 34% |
+| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 78 (43) | 49% | 71% | 91% | 0.92 | +0.67 | 82, 44% |
+| apap | 0.04 | `top_down=0` | 46 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 53, 67% |
 
 *Named counts include the definitions added so that every statement can be read
 (`define_used`), which is why they exceed the detail share. Structure fields count
 with their structure.*
 
 - **Selection works well beyond chance on projects it has never seen.** At
-  each blueprint's own detail, precision on named theorems is 1.9–18 times the
+  each blueprint's own detail, precision on named theorems is 2–18 times the
   base rate. The highest lifts are on the most selective blueprints: APAP names
   4% of its declarations and the outline hits 78%; sphere eversion names 6%
-  and the outline hits 47%.
+  and the outline hits 48%.
 - **More training projects make outlines tighter, not broader.** Across all 45
   project and detail settings, recall is unchanged (mean 57% for both
-  models). Theorem precision rises in 38 settings and falls in 6 (mean 42% vs
+  models). Theorem precision rises in 37 settings and falls in 7 (mean 42% vs
   38%). At the blueprints' own detail, the new model names 3–15% fewer
   results on 8 of 9 projects, with recall within 2 points. It spends its budget on
   fewer, better-chosen theorems.
 - **Carleson is the exception.** The new model names more of its declarations
-  as theorems (192 against 148) and loses theorem precision (40% vs 45%),
+  as theorems (192 against 147) and loses theorem precision (40% vs 46%),
   though recall improves (35% vs 31%). Carleson's blueprint names no
   definitions at all, unlike most training projects, so a model trained on
   them transfers less well there.
 - **Chapters from Lean modules match the blueprint's chapters** (NMI
   0.62–1.00). **Order within chapters agrees well** with the authors
-  (τ +0.50 to +0.93) except in FLT3 and Carleson (+0.28, +0.26), whose
+  (τ +0.51 to +0.89) except in FLT3 and Carleson (+0.28, +0.26), whose
   authors follow the argument rather than the dependency order.
 - **The hardest projects are the largest.** Brownian motion and testing lower
   bounds reach 26–28% theorem precision and 33–39% recall. Their blueprints
@@ -279,13 +281,17 @@ with their structure.*
 [`results/outline/apap.md`](../results/outline/apap.md) is the first harvested
 project with English prose. The outline comes from the model trained on the
 other 8 projects, never on APAP (`key_model_without_apap.json`), at the
-blueprint's own detail (0.044): 47 results in 20 chapters. The prose went
+blueprint's own detail (0.044): 46 results in 20 chapters. The prose went
 through the same translate, check and repair loop as PFR and Carleson:
 
 | Round | Flagged |
 |---|---:|
 | 1. Translate (2 agents), check (fresh agent, Lean/English pairs only) | 3 of 47 |
 | 2. Repair those 3, re-check their chapters | 0 |
+| 3. Short statements now show `[Fintype G]` (below): re-check the 14 chapters whose Lean lines changed | 30 of 39 |
+| 4. Repair those 30, re-check their chapters | 0 |
+
+Final: all 46 English statements pass their latest check.
 
 What the checker caught:
 
@@ -295,28 +301,37 @@ What the checker caught:
   $\log(1/x)$.
 - **Definition glosses that claimed too much.** The signature of `BohrSet`
   shows only `Type → Type`, but the English described its fields. The English
-  for `dLpNorm` asserted a normalisation that the signature can't show, and
-  which conflicts with other chapters. The repairs keep to the signature and
-  attribute extra detail to the docstring ("according to its docstring…").
+  for `dLpNorm` asserted a normalisation that the signature can't show. The
+  repairs keep to the signature and attribute extra detail to the docstring
+  ("according to its docstring…").
+- **Missing finiteness, once the Lean showed it.** The first short statements
+  dropped `[Fintype G]` (see below), and 30 English statements never said G is
+  finite. Round 3 flagged all of them as soon as the Lean line showed the
+  assumption.
 
-Round 1 flagged far less than PFR (83 of 134). The translation prompts now show
-instance assumptions and allow long statements, which removes most of PFR's
-failures.
+**Two fixes this prompted, for every project:**
 
-**A limitation it exposed.** The short Lean statement keeps instance
-assumptions that are propositions (`[Finite G]`) or carry content
-(`[Module (ZMod q) G]`), but drops data classes on a bare variable. That
-includes `[Fintype G]`, so the Lean line under the main theorem `ff` doesn't
-show that G is finite. The English does say so. Keeping `Fintype`, `Finite`
-and similar classes needs a small extractor change and re-extraction.
+- **`[Fintype X]` is now shown.** Short statements keep instance assumptions
+  that are propositions (`[Finite G]`) or carry content (`[Module (ZMod q) G]`),
+  and drop data classes on a bare variable such as `[AddCommGroup G]`.
+  `Fintype X` is data, but it says X is finite, so both extractors now keep
+  it. `formal.restore_fintype` adds it back to older dumps from the full
+  statement, so no re-extraction is needed. Only APAP's outline statements
+  change (PFR uses `[Finite G]`). Other data classes, such as `DecidableEq`,
+  stay hidden as technical.
+- **Boilerplate instances are never named results.** The first APAP outline
+  named an auto-generated `DecidablePred` instance.
+  `outline.is_boilerplate_instance` now excludes auto-named instances of
+  plumbing classes (`Decidable…`, coercions, `Inhabited`, `Repr`, `FunLike`
+  and similar). Instances of mathematical classes stay eligible, because
+  blueprints do name them: `SimpleProcess.instModule` (Brownian motion),
+  `instIsZLatticeE8Lattice` (sphere packing), `instFunctionDistancesReal`
+  (Carleson). Outlines lose 1–15 results; precision and recall move by at most
+  a point.
 
-**Two readability notes:**
-- An auto-generated instance
-  (`AlmostPeriodicity.instDecidablePredForallFinLProp`) was selected as a
-  named definition. Instances could be folded into what uses them, as
-  structure fields now are.
-- Several sketches go beyond the listed dependencies, as for PFR and Carleson
-  (e.g. "iterated density increment" for `ff`, inferred from helper names).
+**Readability note.** Several sketches go beyond the listed dependencies, as for
+PFR and Carleson (e.g. "iterated density increment" for `ff`, inferred from
+helper names).
 
 ## Limitations and next steps
 
@@ -331,7 +346,7 @@ and similar classes needs a small extractor change and re-extraction.
   length, may suit readers better.
 - ~~Only two training projects~~. Done: `key_model_all.json` is trained on 9
   projects (above and [`cross_project.md`](cross_project.md)).
-- **`[Fintype G]` hidden in short statements, and instances named as results**
-  (see APAP above).
+- ~~`[Fintype G]` hidden in short statements, boilerplate instances named as
+  results~~. Done (see APAP above).
 - ~~Structure fields as definitions~~. Done: projections are shown with their
   structure (above).

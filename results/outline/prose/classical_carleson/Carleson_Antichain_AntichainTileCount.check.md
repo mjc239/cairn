@@ -43,15 +43,6 @@ English: If $L \in \mathcal{L}^*(\mathfrak{A}, \vartheta, N)$, then there is a c
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hL : L ∈ 𝓛' 𝔄 ϑ N) : Grid X`
 English: For $L \in \mathcal{L}^*(\mathfrak{A}, \vartheta, N)$, we define the cube $L'$ introduced in the proof of Lemma 6.3.4.
 
-### `Antichain.tile_reach`
-Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hp : dist_{𝔠 p, ↑(defaultD a) ^ 𝔰 p / 4} (𝒬 p) ϑ ≤ 2 ^ N) (hp' : dist_{𝔠 p', ↑(defaultD a) ^ 𝔰 p' / 4} (𝒬 p') ϑ ≤ 2 ^ N) (hI : 𝓘 p ≤ 𝓘 p') (hs : 𝔰 p < 𝔰 p') : smul (2 ^ (N + 2)) p ≤ smul (2 ^ (N + 2)) p'`
-English: (Lemma 6.3.1.) Let $p, p'$ be tiles with $d_{\mathfrak{c}(p),\, D^{s(p)}/4}(\mathcal{Q}(p), \vartheta) \le 2^N$ and $d_{\mathfrak{c}(p'),\, D^{s(p')}/4}(\mathcal{Q}(p'), \vartheta) \le 2^N$, where $D$ = `defaultD a`, and suppose $I(p) \le I(p')$ and $s(p) < s(p')$. Then $2^{N+2} p \le 2^{N+2} p'$ (as dilated tiles, via `smul`).
-
-### `Antichain.stack_density`
-Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (𝔄 : Set (𝔓 X)) (ϑ : Θ X) (N : ℕ) (L : Grid X) : ∑ p ∈ (𝔄_aux 𝔄 ϑ N).toFinset with 𝓘 p = L, volume (E p ∩ G) ≤ 2 ^ (a * (N + 5)) * dens₁ 𝔄 * volume ↑L`
-English: (Lemma 6.3.2.) For every set of tiles $\mathfrak{A}$, every $\vartheta \in \Theta(X)$, every $N \in \mathbb{N}$ and every cube $L$,
-$$\sum_{p \in \mathfrak{A}_{\vartheta, N},\ I(p) = L} \mu(E(p) \cap G) \le 2^{a(N+5)}\, \operatorname{dens}_1(\mathfrak{A})\, \mu(L).$$
-
 ### `Antichain.p''`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hL : L ∈ 𝓛' 𝔄 ϑ N) : 𝔓 X`
 English: For $L \in \mathcal{L}^*(\mathfrak{A}, \vartheta, N)$, we define the tile $p''$ of the blueprint.
@@ -59,3 +50,12 @@ English: For $L \in \mathcal{L}^*(\mathfrak{A}, \vartheta, N)$, we define the ti
 ### `Antichain.pΘ`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hL : L ∈ 𝓛' 𝔄 ϑ N) : 𝔓 X`
 English: For $L \in \mathcal{L}^*(\mathfrak{A}, \vartheta, N)$, we define the tile $p_\Theta$ of the blueprint.
+
+### `Antichain.stack_density`
+Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (𝔄 : Set (𝔓 X)) (ϑ : Θ X) (N : ℕ) (L : Grid X) : ∑ p ∈ (𝔄_aux 𝔄 ϑ N).toFinset with 𝓘 p = L, volume (E p ∩ G) ≤ 2 ^ (a * (N + 5)) * dens₁ 𝔄 * volume ↑L`
+English: (Lemma 6.3.2.) For every set of tiles $\mathfrak{A}$, every $\vartheta \in \Theta(X)$, every $N \in \mathbb{N}$ and every cube $L$,
+$$\sum_{p \in \mathfrak{A}_{\vartheta, N},\ I(p) = L} \mu(E(p) \cap G) \le 2^{a(N+5)}\, \operatorname{dens}_1(\mathfrak{A})\, \mu(L).$$
+
+### `Antichain.tile_reach`
+Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hp : dist_{𝔠 p, ↑(defaultD a) ^ 𝔰 p / 4} (𝒬 p) ϑ ≤ 2 ^ N) (hp' : dist_{𝔠 p', ↑(defaultD a) ^ 𝔰 p' / 4} (𝒬 p') ϑ ≤ 2 ^ N) (hI : 𝓘 p ≤ 𝓘 p') (hs : 𝔰 p < 𝔰 p') : smul (2 ^ (N + 2)) p ≤ smul (2 ^ (N + 2)) p'`
+English: (Lemma 6.3.1.) Let $p, p'$ be tiles with $d_{\mathfrak{c}(p),\, D^{s(p)}/4}(\mathcal{Q}(p), \vartheta) \le 2^N$ and $d_{\mathfrak{c}(p'),\, D^{s(p')}/4}(\mathcal{Q}(p'), \vartheta) \le 2^N$, where $D$ = `defaultD a`, and suppose $I(p) \le I(p')$ and $s(p) < s(p')$. Then $2^{N+2} p \le 2^{N+2} p'$ (as dilated tiles, via `smul`).

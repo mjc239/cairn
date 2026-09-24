@@ -10,9 +10,9 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `cLpNorm_conv_le_cLpNorm_dconv`
-Lean: `[DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
-English: $G$ carries the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$, where $*$ and $\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation.
+Lean: `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
+English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$, where $*$ and $\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation.
 
 ### `dLpNorm_ddconv_le_dLpNorm_dddconv`
-Lean: `[DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
-English: $G$ carries the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$ for the discrete convolution, difference convolution and discrete $L^n$ norm.
+Lean: `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
+English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$ for the discrete convolution $*$, discrete difference convolution $\circ$ and discrete $L^n$ norm.

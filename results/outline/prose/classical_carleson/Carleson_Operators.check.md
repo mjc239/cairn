@@ -9,14 +9,6 @@ quantifier, inequality direction or constant wrong, or misreads the notation. St
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
-### `carlesonOn`
-Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) (f : X → ℂ) (_ : X) : ℂ`
-English: For a tile $\mathfrak p$ and $f:X\to\mathbb C$, defines the function $T_{\mathfrak p}f:X\to\mathbb C$, the operator of Proposition 2.0.2.
-
-### `carlesonSum`
-Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (ℭ : Set (𝔓 X)) (f : X → ℂ) (x : X) : ℂ`
-English: For a set of tiles $\mathfrak C$ and $f:X\to\mathbb C$, defines $T_{\mathfrak C}f:X\to\mathbb C$, the operator defined at the end of Section 7.4.
-
 ### `adjointCarleson`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) (f : X → ℂ) (x : X) : ℂ`
 English: For a tile $\mathfrak p$ and $f:X\to\mathbb C$, defines the adjoint operator $T^*_{\mathfrak p}f:X\to\mathbb C$, as defined above Lemma 7.4.1.
@@ -24,6 +16,14 @@ English: For a tile $\mathfrak p$ and $f:X\to\mathbb C$, defines the adjoint ope
 ### `adjointCarlesonSum`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (ℭ : Set (𝔓 X)) (f : X → ℂ) (x : X) : ℂ`
 English: For a set of tiles $\mathfrak C$ and $f:X\to\mathbb C$, defines $T^*_{\mathfrak C}f:X\to\mathbb C$, as defined at the end of Section 7.4.
+
+### `carlesonOn`
+Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) (f : X → ℂ) (_ : X) : ℂ`
+English: For a tile $\mathfrak p$ and $f:X\to\mathbb C$, defines the function $T_{\mathfrak p}f:X\to\mathbb C$, the operator of Proposition 2.0.2.
+
+### `carlesonSum`
+Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (ℭ : Set (𝔓 X)) (f : X → ℂ) (x : X) : ℂ`
+English: For a set of tiles $\mathfrak C$ and $f:X\to\mathbb C$, defines $T_{\mathfrak C}f:X\to\mathbb C$, the operator defined at the end of Section 7.4.
 
 ### `adjointCarlesonSum_adjoint`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (hg : BoundedCompactSupport g volume) (ℭ : Set (𝔓 X)) : ∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ℭ f x = ∫ (x : X), (starRingEnd ℂ) (adjointCarlesonSum ℭ g x) * f x`

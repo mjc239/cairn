@@ -17,10 +17,6 @@ English: Defines the structure $\mathrm{ProofData}(a,q,K,\sigma_1,\sigma_2,F,G)$
 Lean: `KernelProofData a K`
 English: The kernel data $\mathrm{KernelProofData}(a,K)$ underlying a $\mathrm{ProofData}$ structure.
 
-### `ProofData.Q`
-Lean: `SimpleFunc X (Θ X)`
-English: The simple function $Q:X\to\Theta(X)$ that is part of a $\mathrm{ProofData}$ structure.
-
 ### `defaultS`
 Lean: `(X : Type u_1) : ℕ`
 English: Defines the natural number $S=\mathrm{defaultS}(X)$ associated with the space $X$.

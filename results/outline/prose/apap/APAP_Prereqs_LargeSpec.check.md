@@ -10,5 +10,5 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `largeSpec`
-Lean: `(f : G → ℂ) (η : ℝ) : Finset (AddChar G ℂ)`
-English: For $f : G \to \mathbb{C}$ and $\eta \in \mathbb{R}$, the $\eta$-large spectrum of $f$ is defined as a finite set of additive characters $G \to \mathbb{C}$.
+Lean: `[Fintype G] (f : G → ℂ) (η : ℝ) : Finset (AddChar G ℂ)`
+English: Let $G$ be a finite type (with its additive group structure). For $f : G \to \mathbb{C}$ and $\eta \in \mathbb{R}$, $\mathrm{largeSpec}(f, \eta)$ is a finite set of additive characters $G \to \mathbb{C}$; according to its docstring, it is the $\eta$-large spectrum of $f$.

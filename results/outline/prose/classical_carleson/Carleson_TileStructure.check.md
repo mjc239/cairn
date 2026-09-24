@@ -37,10 +37,6 @@ English: Definition: a tile structure on $X$ with data $Q$ (a simple function $X
 Lean: `PreTileStructure Q D κ S o`
 English: Definition: the pre-tile structure (with data $Q, D, \kappa, S, o$) underlying a tile structure.
 
-### `E`
-Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) : Set X`
-English: Definition: for a tile $p \in \mathfrak{P}(X)$, the set $E(p) \subseteq X$ defined in Proposition 2.0.2.
-
 ### `TileLike`
 Lean: `(X : Type u_1) [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] : Type u_1`
 English: Definition: the type $\mathrm{TileLike}(X)$ of tile-like objects over $X$.
@@ -48,6 +44,10 @@ English: Definition: the type $\mathrm{TileLike}(X)$ of tile-like objects over $
 ### `toTileLike`
 Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) : TileLike X`
 English: Definition: the tile-like object associated with a tile $p \in \mathfrak{P}(X)$.
+
+### `stackSize`
+Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (C : Set (𝔓 X)) (x : X) : ℕ`
+English: Definition: for a set $C$ of tiles and $x \in X$, $\mathrm{stackSize}(C, x) \in \mathbb{N}$ is the number of tiles $p \in C$ whose cube $\mathcal{I}(p)$ contains $x$.
 
 ### `smul`
 Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (l : ℝ) (p : 𝔓 X) : TileLike X`
@@ -69,10 +69,10 @@ English: For every set $A$ of tiles there is a set $B$ of tiles such that the cu
 Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (A : Set (𝔓 X)) (n : ℕ) : Set (𝔓 X)`
 English: Definition: for a set $A$ of tiles and $n \in \mathbb{N}$, the $n$-th disjoint subfamily of $A$ obtained by iterating the choice of a maximal disjoint subfamily.
 
-### `stackSize`
-Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (C : Set (𝔓 X)) (x : X) : ℕ`
-English: Definition: for a set $C$ of tiles and $x \in X$, $\mathrm{stackSize}(C, x) \in \mathbb{N}$ is the number of tiles $p \in C$ whose cube $\mathcal{I}(p)$ contains $x$.
-
 ### `dens₂`
 Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (𝔓' : Set (𝔓 X)) : ENNReal`
 English: Definition: for a set $\mathfrak{P}'$ of tiles, the density $\mathrm{dens}_2(\mathfrak{P}') \in [0, \infty]$.
+
+### `E`
+Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) : Set X`
+English: Definition: for a tile $p \in \mathfrak{P}(X)$, the set $E(p) \subseteq X$ defined in Proposition 2.0.2.

@@ -10,5 +10,5 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `cft`
-Lean: `(f : G → ℂ) (_ : AddChar G ℂ) : ℂ`
-English: For $f : G \to \mathbb{C}$, the discrete Fourier transform (in this module's compact normalisation) assigns to each additive character $\psi : G \to \mathbb{C}$ a complex number $\widehat f(\psi)$.
+Lean: `[Fintype G] (f : G → ℂ) (_ : AddChar G ℂ) : ℂ`
+English: Let $G$ be a finite type (with its additive group structure). For $f : G \to \mathbb{C}$, $\mathrm{cft}(f)$ assigns to each additive character $\psi : G \to \mathbb{C}$ a complex number $\mathrm{cft}(f)(\psi)$; according to its docstring, it is the discrete Fourier transform of $f$.

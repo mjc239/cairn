@@ -10,9 +10,9 @@ Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue
 Use every Lean name exactly as given.
 
 ### `balance_dddconv`
-Lean: `[CharZero R] [StarRing R] (f : G → R) (g : G → R) : Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
-English: Let $R$ have characteristic zero and a star operation. For $f, g : G \to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\operatorname{balance}(f \circ g) = \operatorname{balance}(f) \circ \operatorname{balance}(g)$, where $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+Lean: `[Fintype G] [CharZero R] [StarRing R] (f : G → R) (g : G → R) : Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
+English: Let $G$ be a finite abelian group and let $R$ have characteristic zero and a star operation. For $f, g : G \to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\operatorname{balance}(f \circ g) = \operatorname{balance}(f) \circ \operatorname{balance}(g)$, where $\circ$ is the discrete difference convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
 
 ### `balance_ddconv`
-Lean: `[CharZero R] (f : G → R) (g : G → R) : Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
-English: Let $R$ have characteristic zero. For $f, g : G \to R$, $\operatorname{balance}(f \ast g) = \operatorname{balance}(f) \ast \operatorname{balance}(g)$, where $\ast$ is discrete convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+Lean: `[Fintype G] [CharZero R] (f : G → R) (g : G → R) : Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
+English: Let $G$ be a finite abelian group and let $R$ have characteristic zero. For $f, g : G \to R$, $\operatorname{balance}(f \ast g) = \operatorname{balance}(f) \ast \operatorname{balance}(g)$, where $\ast$ is discrete convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.

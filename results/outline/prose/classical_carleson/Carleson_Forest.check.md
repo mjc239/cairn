@@ -16,7 +16,3 @@ English: For $n \in \mathbb{N}$, the type of $n$-forests in $X$: a structure con
 ### `TileStructure.Row`
 Lean: `(X : Type u_1) [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (n : ℕ) : Type u_1`
 English: For $n \in \mathbb{N}$, the type of $n$-rows in $X$ (an $n$-row as defined in the blueprint).
-
-### `TileStructure.Forest.𝔗`
-Lean: `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (self : Forest X n) (_ : 𝔓 X) : Set (𝔓 X)`
-English: For an $n$-forest $\mathfrak{F}$ and a tile $u$, the set of tiles $\mathfrak{T}(u)$ (the tree with top $u$). Its value only matters when $u \in \mathfrak{U}$.
