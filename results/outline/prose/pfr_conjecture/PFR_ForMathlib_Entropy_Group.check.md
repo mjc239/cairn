@@ -19,4 +19,4 @@ English: Let $X, Y$ be measurable random variables with values in an additive gr
 
 ### `ProbabilityTheory.entropy_sub_mutualInfo_le_entropy_sub`
 Lean: `[Countable G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] (hX : Measurable X) (hY : Measurable Y) : H[X; μ] - I[X : Y ; μ] ≤ H[X - Y; μ]`
-English: Let $X, Y$ be measurable random variables with values in an additive group. Then $H[X] - I[X:Y] \le H[X - Y]$ (with respect to $\mu$).
+English: Let $G$ be a countable additive group with measurable singletons, let $\mu$ be a probability measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables, both of finite range. Then $H[X;\mu] - I[X:Y;\mu] \le H[X - Y;\mu]$.

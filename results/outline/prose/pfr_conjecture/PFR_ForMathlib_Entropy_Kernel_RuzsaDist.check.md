@@ -19,4 +19,4 @@ English: For kernels $\kappa$ from $T$ to $G$ and $\eta$ from $T'$ to $G$ (with 
 
 ### `ProbabilityTheory.Kernel.rdist_symm`
 Lean: `[Countable T] [MeasurableSingletonClass T] [Countable T'] [MeasurableSingletonClass T'] [MeasurableSingletonClass G] [Countable G] [IsFiniteKernel κ] [IsFiniteKernel η] [IsProbabilityMeasure μ] [IsProbabilityMeasure ν] [FiniteSupport μ] [FiniteSupport ν] : dk[κ ; μ # η ; ν] = dk[η ; ν # κ ; μ]`
-English: The kernel Ruzsa distance is symmetric: $d_k[\kappa;\mu \,\#\, \eta;\nu] = d_k[\eta;\nu \,\#\, \kappa;\mu]$.
+English: Let $T$, $T'$ and $G$ be countable with measurable singletons ($G$ an abelian group). Let $\kappa$ be a finite kernel from $T$ to $G$ and $\eta$ a finite kernel from $T'$ to $G$, and let $\mu$ on $T$ and $\nu$ on $T'$ be probability measures with finite support. Then the kernel Ruzsa distance is symmetric: $d_k[\kappa;\mu \,\#\, \eta;\nu] = d_k[\eta;\nu \,\#\, \kappa;\mu]$.

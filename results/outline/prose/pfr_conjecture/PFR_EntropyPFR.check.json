@@ -1,4 +1,0 @@
-{
-  "tau_strictly_decreases": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], as well as the probability-measure assumptions."},
-  "entropic_PFR_conjecture": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], without which the constant-11 bound is not claimed."}
-}

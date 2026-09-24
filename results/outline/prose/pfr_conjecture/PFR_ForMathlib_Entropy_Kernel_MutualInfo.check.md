@@ -15,4 +15,4 @@ English: For a kernel $\kappa$ from $T$ into a product space $S\times U$ and a m
 
 ### `ProbabilityTheory.Kernel.mutualInfo_nonneg`
 Lean: `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [MeasurableSingletonClass T] [Countable T] [IsFiniteMeasure μ] [FiniteSupport μ] (hκ : κ.AEFiniteKernelSupport μ) : 0 ≤ Ik[κ , μ]`
-English: Let $\kappa$ be a kernel from $T$ into $S \times U$ that has almost everywhere finite kernel support with respect to the measure $\mu$. Then $0 \le I_k[\kappa,\mu]$.
+English: Let $S$, $U$, $T$ have measurable singletons, with $T$ countable. Let $\mu$ be a finite measure on $T$ with finite support, and let $\kappa$ be a kernel from $T$ into $S \times U$ that has almost everywhere finite kernel support with respect to $\mu$. Then $0 \le I_k[\kappa,\mu]$.

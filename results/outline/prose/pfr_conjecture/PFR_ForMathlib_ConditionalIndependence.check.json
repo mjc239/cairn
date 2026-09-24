@@ -1,4 +1,0 @@
-{
-  "ProbabilityTheory.CondIndepFun": {"faithful": true, "issue": ""},
-  "ProbabilityTheory.condIndep_copies": {"faithful": false, "issue": "The English drops the hypotheses that mu is a probability measure, that Y has finite range, and that beta is countable with measurable singletons."}
-}

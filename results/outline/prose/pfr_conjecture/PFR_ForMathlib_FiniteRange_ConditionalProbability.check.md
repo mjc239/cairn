@@ -11,4 +11,4 @@ Use every Lean name exactly as given.
 
 ### `ProbabilityTheory.sum_meas_smul_cond_fiber'`
 Lean: `[MeasurableSingletonClass α] (hX : Measurable X) [FiniteRange X] (μ : Measure Ω) [IsFiniteMeasure μ] : ∑ x ∈ FiniteRange.toFinset X, μ (X ⁻¹' {x}) • μ[|X ⁻¹' {x}] = μ`
-English: (Law of total probability.) Let $X:\Omega\to G$ be a measurable random variable with finite range and $\mu$ a measure on $\Omega$. Then $\sum_{x\in \mathrm{range}(X)} \mu(X^{-1}\{x\})\cdot \mu[\,\cdot \mid X^{-1}\{x\}] = \mu$, where $\mu[\,\cdot\mid A]$ denotes the conditional measure on $A$ and the sum runs over the finite range of $X$ (FiniteRange.toFinset $X$).
+English: (Law of total probability.) Let $\alpha$ have measurable singletons, let $X:\Omega\to \alpha$ be a measurable random variable with finite range, and let $\mu$ be a finite measure on $\Omega$. Then $\sum_{x\in \mathrm{range}(X)} \mu(X^{-1}\{x\})\cdot \mu[\,\cdot \mid X^{-1}\{x\}] = \mu$, where $\mu[\,\cdot\mid A]$ denotes the conditional measure on $A$ and the sum runs over the finite range of $X$ (FiniteRange.toFinset $X$).

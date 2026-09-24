@@ -15,7 +15,7 @@ English: For a measure $\mu$ on a measurable space $S$, the entropy $H_m[\mu]$ i
 
 ### `ProbabilityTheory.measureEntropy_of_isProbabilityMeasure`
 Lean: `(μ : Measure S) [IsZeroOrProbabilityMeasure μ] : Hm[μ] = ∑' (s : S), (μ.real {s}).negMulLog`
-English: For a probability measure $\mu$ on $S$, $H_m[\mu] = \sum_{s\in S} \mathrm{negMulLog}(\mu(\{s\}))$ (a possibly infinite sum, $\mathrm{tsum}$), where $\mathrm{negMulLog}(x) = -x\log x$.
+English: Let $\mu$ be a measure on $S$ that is zero or a probability measure. Then $H_m[\mu] = \sum_{s\in S} \mathrm{negMulLog}(\mu(\{s\}))$ (a possibly infinite sum, $\mathrm{tsum}$, of real numbers), where $\mathrm{negMulLog}(x) = -x\log x$.
 
 ### `ProbabilityTheory.FiniteSupport`
 Lean: `(μ : autoParam (Measure S) FiniteSupport._auto_1) : Prop`
@@ -23,7 +23,7 @@ English: A measure $\mu$ on $S$ has finite support if there exists a finite set 
 
 ### `ProbabilityTheory.integrable_of_finiteSupport`
 Lean: `[MeasurableSingletonClass S] (μ : Measure S) [FiniteSupport μ] [IsFiniteMeasure μ] [Countable S] : Integrable f μ`
-English: If $\mu$ is a measure on $S$ with finite support (under the standing assumptions, including countability of $S$), then every function $f$ on $S$ is integrable with respect to $\mu$.
+English: Let $S$ be a countable space with measurable singletons, and let $\mu$ be a finite measure on $S$ with finite support. Then every function $f$ on $S$ is integrable with respect to $\mu$.
 
 ### `ProbabilityTheory.measureMutualInfo`
 Lean: `(μ : autoParam (Measure (S × T)) measureMutualInfo._auto_1) : ℝ`
@@ -31,11 +31,11 @@ English: For a measure $\mu$ on a product $S\times T$, the mutual information $I
 
 ### `ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite`
 Lean: `(hA : μ (↑A)ᶜ = 0) [IsZeroOrProbabilityMeasure μ] : Hm[μ] = ∑ s ∈ A, (μ.real {s}).negMulLog`
-English: Let $\mu$ be a probability measure on $S$ and $A\subseteq S$ a finite set with $\mu(A^c)=0$. Then $H_m[\mu] = \sum_{s\in A}\mathrm{negMulLog}(\mu(\{s\}))$, where $\mathrm{negMulLog}(x)=-x\log x$.
+English: Let $\mu$ be a measure on $S$ that is zero or a probability measure, and let $A\subseteq S$ be a finite set with $\mu(A^c)=0$. Then $H_m[\mu] = \sum_{s\in A}\mathrm{negMulLog}(\mu(\{s\}))$, where $\mathrm{negMulLog}(x)=-x\log x$.
 
 ### `ProbabilityTheory.measureMutualInfo_nonneg_aux`
 Lean: `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [FiniteSupport μ] [IsZeroOrProbabilityMeasure μ] : 0 ≤ Im[μ] ∧ (Im[μ] = 0 ↔ ∀ (p : S × U), μ.real {p} = (Measure.map Prod.fst μ).real {p.1} * (Measure.map Prod.snd μ).real {p.2})`
-English: For a (finitely supported, under the standing assumptions) measure $\mu$ on $S\times U$: $0 \le I_m[\mu]$, and moreover $I_m[\mu]=0$ if and only if for every $p=(p_1,p_2)\in S\times U$, $\mu(\{p\}) = (\pi_1{}_*\mu)(\{p_1\})\cdot(\pi_2{}_*\mu)(\{p_2\})$, i.e. $\mu$ is the product of its marginals.
+English: Let $S$ and $U$ have measurable singletons, and let $\mu$ be a measure on $S\times U$ with finite support that is zero or a probability measure. Then $0 \le I_m[\mu]$, and moreover $I_m[\mu]=0$ if and only if for every $p=(p_1,p_2)\in S\times U$, $\mu(\{p\}) = (\pi_1{}_*\mu)(\{p_1\})\cdot(\pi_2{}_*\mu)(\{p_2\})$, where $\pi_1,\pi_2$ are the coordinate projections.
 
 ### `ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure`
 Lean: `(h : ¬IsFiniteMeasure μ) : Im[μ] = 0`

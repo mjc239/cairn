@@ -1,7 +1,0 @@
-{
-  "rdist_of_indep_eq_sum_fibre": {"faithful": false, "issue": "The English drops the hypotheses that mu is a probability measure and that Z_1 and Z_2 have finite range."},
-  "sum_of_rdist_eq_step_condMutualInfo": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that mu is a probability measure."},
-  "sum_of_rdist_eq_step_condRuzsaDist": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that mu is a probability measure."},
-  "sum_of_rdist_eq": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that mu is a probability measure."},
-  "sum_of_rdist_eq_char_2": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that mu is a probability measure."}
-}

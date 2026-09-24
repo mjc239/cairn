@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure": {
+  "statement": "Let $\\mu$ be a measure on $S$ that is zero or a probability measure. Then $H_m[\\mu] = \\sum_{s\\in S} \\mathrm{negMulLog}(\\mu(\\{s\\}))$ (a possibly infinite sum, $\\mathrm{tsum}$, of real numbers), where $\\mathrm{negMulLog}(x) = -x\\log x$."
+ },
+ "ProbabilityTheory.integrable_of_finiteSupport": {
+  "statement": "Let $S$ be a countable space with measurable singletons, and let $\\mu$ be a finite measure on $S$ with finite support. Then every function $f$ on $S$ is integrable with respect to $\\mu$."
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite": {
+  "statement": "Let $\\mu$ be a measure on $S$ that is zero or a probability measure, and let $A\\subseteq S$ be a finite set with $\\mu(A^c)=0$. Then $H_m[\\mu] = \\sum_{s\\in A}\\mathrm{negMulLog}(\\mu(\\{s\\}))$, where $\\mathrm{negMulLog}(x)=-x\\log x$."
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg_aux": {
+  "statement": "Let $S$ and $U$ have measurable singletons, and let $\\mu$ be a measure on $S\\times U$ with finite support that is zero or a probability measure. Then $0 \\le I_m[\\mu]$, and moreover $I_m[\\mu]=0$ if and only if for every $p=(p_1,p_2)\\in S\\times U$, $\\mu(\\{p\\}) = (\\pi_1{}_*\\mu)(\\{p_1\\})\\cdot(\\pi_2{}_*\\mu)(\\{p_2\\})$, where $\\pi_1,\\pi_2$ are the coordinate projections."
+ }
+}

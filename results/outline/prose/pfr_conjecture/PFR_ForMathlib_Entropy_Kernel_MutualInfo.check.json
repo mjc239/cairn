@@ -1,4 +1,0 @@
-{
-  "ProbabilityTheory.Kernel.mutualInfo": {"faithful": true, "issue": ""},
-  "ProbabilityTheory.Kernel.mutualInfo_nonneg": {"faithful": false, "issue": "The English drops the hypotheses that mu is a finite measure with finite support and that T is countable (with measurable singletons on S, U, T)."}
-}

@@ -19,7 +19,7 @@ English: For $k \in \mathbb{N}$ and a set of tiles $\mathfrak{P}' \subseteq \mat
 
 ### `ℭ`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) : Set (𝔓 X)`
-English: For $k, n \in \mathbb{N}$, we define the set of tiles $\mathfrak{C}(k, n) \subseteq \mathfrak{P}(X)$; these sets form the partition of $\mathfrak{P}(k)$ by density given in (5.1.7).
+English: Assume the standing data of the proof (ProofData with parameters $a, q, K, \sigma_1, \sigma_2, F, G$) and a tile structure on $X$ with the default parameters $D$, $\kappa$, $S$ and cancellation point. For $k, n \in \mathbb{N}$, we define the set of tiles $\mathfrak{C}(k, n) \subseteq \mathfrak{P}(X)$ as in (5.1.7): the tiles of $\mathfrak{P}(k)$ selected according to their density, indexed by $n$.
 
 ### `𝔐`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) : Set (𝔓 X)`
@@ -31,7 +31,7 @@ English: For $k, n \in \mathbb{N}$ and a tile $p \in \mathfrak{P}(X)$, we define
 
 ### `ℭ₁`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) : Set (𝔓 X)`
-English: For $k, n, j \in \mathbb{N}$, we define the subset $\mathfrak{C}_1(k, n, j)$ of $\mathfrak{C}(k, n)$ as in (5.1.9). Together with $\mathfrak{L}_0(k, n)$ these sets form a partition (of $\mathfrak{C}(k,n)$).
+English: Assume the standing data of the proof (ProofData with parameters $a, q, K, \sigma_1, \sigma_2, F, G$) and a tile structure on $X$ with the default parameters $D$, $\kappa$, $S$ and cancellation point. For $k, n, j \in \mathbb{N}$, we define the set of tiles $\mathfrak{C}_1(k, n, j) \subseteq \mathfrak{P}(X)$, the subset of $\mathfrak{C}(k, n)$ given in (5.1.9).
 
 ### `ℭ₂`
 Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) : Set (𝔓 X)`

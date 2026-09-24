@@ -1,7 +1,0 @@
-{
-  "symmGroup": {"faithful": true, "issue": ""},
-  "sub_mem_symmGroup": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that volume is a probability measure."},
-  "isUniform_sub_const_of_rdist_eq_zero": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that volume is a probability measure."},
-  "exists_isUniform_of_rdist_self_eq_zero": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that volume is a probability measure."},
-  "exists_isUniform_of_rdist_eq_zero": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that the measures are probability measures."}
-}
