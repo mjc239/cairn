@@ -22,6 +22,9 @@ parameter: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`
 - [`docs/scope.md`](docs/scope.md): what we're building first, the phases, the
   benchmark design, risks and open decisions.
 
+**Start here:** [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb) walks through the whole project,
+from parsing a blueprint to the blueprint-free outline. It runs in about 30 s from the committed data.
+
 ## Usage
 
 ```sh
@@ -51,6 +54,7 @@ uv run cairn style path/to/blueprint/src decls.jsonl --project NAME -o results/s
 uv run cairn outline decls.jsonl --model results/outline/key_model.json --detail 0.15 [--root MainTheorem] \
     [--top-down 0.2 --roadmap chapter] -o outline.md
 ./scripts/outline.sh                                             # models, evaluation vs blueprints, example outlines
+uv run jupyter-execute --inplace notebooks/walkthrough.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
 uv run pytest && uv run ruff check python
 ```
 
