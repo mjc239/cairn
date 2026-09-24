@@ -108,3 +108,50 @@ def plot_motivation_frontier(projects: dict[str, dict], path: Path) -> None:
     fig.tight_layout(rect=(0, 0.07, 1, 0.95))
     fig.savefig(path, dpi=150, facecolor=SURFACE)
     plt.close(fig)
+
+
+def plot_style_frontier(projects: dict[str, dict], path: Path) -> None:
+    """Whole-document motivation vs load for the top_down sweep, one line per roadmap setting."""
+    fig, axes = plt.subplots(1, len(projects), figsize=(4.8 * len(projects), 3.8), squeeze=False,
+                             facecolor=SURFACE)
+    colours = {"none": "#2a78d6", "chapter": "#1baf7a", "document": "#eda100"}
+    labels = {"none": "no roadmap", "chapter": "chapter roadmap", "document": "document overview"}
+    for ax, (name, res) in zip(axes.flat, projects.items(), strict=True):
+        ax.set_facecolor(SURFACE)
+        doc = res["document"]
+        for roadmap, colour in colours.items():
+            rows = sorted((r for r in doc["results"] if r["style"]["roadmap"] == roadmap),
+                          key=lambda r: r["style"]["top_down"])
+            xs = [r["motivated"] * 100 for r in rows]
+            ys = [r["mean_open"] for r in rows]
+            ax.plot(xs, ys, color=colour, linewidth=2, marker="o", markersize=4, zorder=2)
+            ax.annotate(labels[roadmap], (xs[-1], ys[-1]), textcoords="offset points", xytext=(4, 4),
+                        fontsize=7.5, color=TEXT_SECONDARY)
+        ends = sorted((r for r in doc["results"] if r["style"]["roadmap"] == "none"),
+                      key=lambda r: r["style"]["top_down"])
+        ax.annotate("top_down = 0", (ends[0]["motivated"] * 100, ends[0]["mean_open"]), textcoords="offset points",
+                    xytext=(-6, 8), fontsize=7.5, color=TEXT_SECONDARY)
+        h = doc["human"]
+        ax.scatter([h["motivated"] * 100], [h["mean_open"]], s=90, color="#eb6834", edgecolor=SURFACE,
+                   linewidth=2, zorder=3)
+        ax.annotate("human", (h["motivated"] * 100, h["mean_open"]), textcoords="offset points", xytext=(8, -12),
+                    fontsize=9, color=TEXT_PRIMARY)
+        ax.set_title(name, color=TEXT_PRIMARY, fontsize=10, loc="left")
+        ax.set_xlabel("lemmas stated after a goal they serve (%)", color=TEXT_SECONDARY, fontsize=8)
+        ax.set_ylabel("mean results held open (whole document)", color=TEXT_SECONDARY, fontsize=8)
+        ax.set_xlim(-5, 115)
+        ax.tick_params(colors=TEXT_SECONDARY, labelsize=8, length=0)
+        ax.grid(color=GRID, linewidth=0.8)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        for side in ("left", "bottom"):
+            ax.spines[side].set_color(GRID)
+    handles = [plt.Line2D([], [], color=c, linewidth=2, marker="o", markersize=4) for c in colours.values()]
+    handles.append(plt.Line2D([], [], color="#eb6834", marker="o", linestyle="", markersize=9))
+    fig.legend(handles, [f"top_down 0 → 1, {labels[k]}" for k in colours] + ["human blueprint"],
+               loc="lower center", ncol=4, frameon=False, fontsize=8, labelcolor=TEXT_SECONDARY)
+    fig.suptitle("Style parameters, whole document: top_down is the efficient lever", color=TEXT_PRIMARY,
+                 fontsize=12, x=0.01, ha="left")
+    fig.tight_layout(rect=(0, 0.07, 1, 0.95))
+    fig.savefig(path, dpi=150, facecolor=SURFACE)
+    plt.close(fig)

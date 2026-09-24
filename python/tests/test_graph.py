@@ -143,3 +143,39 @@ def test_hybrid_order_interpolates_styles():
     assert order[0] == S("g") and order[-1] == P("g")
     assert order[1:3] == [S("a"), P("a")]  # a is not a goal: stated and proved together, bottom-up
     assert motivated_share(g, hybrid_order(g, set(), random.Random(0))) == 0.0
+
+
+def _toy_chapter():
+    from cairn.events import P, S
+
+    # definition d; lemmas a, b; main result g whose proof uses a and b; b's proof uses a; a's statement uses d
+    g = nx.DiGraph([(S("g"), P("g")), (S("a"), P("a")), (S("b"), P("b")),
+                    (S("a"), P("g")), (S("b"), P("g")), (S("a"), P("b")), (S("d"), S("a"))])
+    g.nodes[S("d")]["result"] = "definition"
+    return g
+
+
+@pytest.mark.parametrize("top_down", [0, 0.5, 1])
+@pytest.mark.parametrize("roadmap", ["none", "chapter"])
+@pytest.mark.parametrize("definitions", ["just-in-time", "upfront"])
+def test_arrange_is_always_valid(top_down, roadmap, definitions):
+    from cairn.style import Style, arrange
+
+    g = _toy_chapter()
+    for seed in range(3):
+        order = arrange(g, Style(top_down, roadmap, definitions), random.Random(seed))
+        pos = {e: i for i, e in enumerate(order)}
+        assert sorted(order) == sorted(g) and all(pos[u] < pos[v] for u, v in g.edges)
+
+
+def test_style_parameters_do_what_they_say():
+    from cairn.events import P, S, motivated_share
+    from cairn.style import Style, arrange
+
+    g = _toy_chapter()
+    rng = random.Random(0)
+    assert motivated_share(g, arrange(g, Style(0), rng)) == 0.0
+    assert arrange(g, Style(0, roadmap="chapter"), rng)[0] == S("g")  # main result announced first ...
+    assert arrange(g, Style(0, roadmap="chapter"), rng)[-1] == P("g")  # ... and proved last
+    assert arrange(g, Style(1), rng)[0] == S("g")
+    assert arrange(g, Style(0, definitions="upfront"), rng)[0] == S("d")

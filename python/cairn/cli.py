@@ -105,6 +105,15 @@ def main(argv: list[str] | None = None) -> None:
     pr.add_argument("--project", required=True)
     pr.add_argument("-o", "--out", type=Path, required=True, help="markdown report path")
 
+    ps = sub.add_parser("style", help="sweep exposition style parameters and fit the blueprint's style")
+    ps.add_argument("src", type=Path)
+    ps.add_argument("decls", type=Path)
+    ps.add_argument("--entry", default="content.tex")
+    ps.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    ps.add_argument("--project", required=True)
+    ps.add_argument("--provenance", default="")
+    ps.add_argument("-o", "--out", type=Path, required=True)
+
     pt = sub.add_parser("transfer", help="train the key-declaration model on one project, test on others")
     pt.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
     pt.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
@@ -165,6 +174,16 @@ def main(argv: list[str] | None = None) -> None:
         res = evaluate(bp, decls, runs_of(args.run), runs_of(args.node_run))
         write_event_llm(res, args.out, args.project)
         print(f"wrote {args.out}")
+        return
+
+    if args.cmd == "style":
+        from .formal import load_decls
+        from .style import run as run_style
+
+        res = run_style(bp, load_decls(args.decls), args.out, args.project, args.provenance)
+        f = res["fit"]
+        print(f"best tau: {f['best_tau']['label']} ({f['best_tau']['tau']:+.2f}); "
+              f"closest profile: {f['closest_profile']['label']}")
         return
 
     if args.cmd == "events":

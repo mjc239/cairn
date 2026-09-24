@@ -196,6 +196,13 @@ def transfer_key_nodes(projects: dict[str, tuple[Blueprint, dict[str, FormalDecl
     return out
 
 
+def key_scores(bp: Blueprint, decls: dict[str, FormalDecl]) -> dict[str, float]:
+    """Out-of-fold key-declaration probability for every project declaration (modules held out)."""
+    names, x, y, _ = key_node_matrix(bp, decls)
+    oof, _ = _cross_validated(x, y, [decls[v].module for v in names])
+    return dict(zip(names, oof.tolist(), strict=True))
+
+
 def _cross_validated(x: np.ndarray, y: np.ndarray, groups: list[str]) -> tuple[np.ndarray, list[float]]:
     """Out-of-fold probabilities (5 folds, whole modules held out) and the full-data coefficients."""
 

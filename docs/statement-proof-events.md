@@ -108,15 +108,13 @@ bottom-up and 30.6 top-down. A uniform random order scores 118.9 and 94.3.
    "motivated explanation" and a proof that is easy to follow.
 2. **PFR's human order sits at the bottom-up end of that trade-off,**
    slightly better on load than the heuristic.
-3. **Carleson's human order beats the trade-off curve.** It gets 67%
-   motivation at the load of pure bottom-up, where the heuristics pay about
-   15% extra load for similar motivation. How: goals are announced in the
-   overview section and proved later in the section built for them. Within a
-   section, the reader carries little. At the whole-document level, the
-   announced goals do count as open promises, and the human order still has
-   the lowest load of any strategy we tried. That is your observation: the
-   forward references are there *for* clarity, and they cost the reader
-   almost nothing.
+3. ~~Carleson's human order beats the trade-off curve.~~ **Corrected in
+   [`style.md`](style.md):** chapter-by-chapter scoring never charges a goal
+   announced in one section and proved in another. On the whole document,
+   with chapters intact, a style arrangement reaches 68% motivation at load
+   11.4, against the human's 60% at 12.7. The human order is close to the
+   curve, not below it. The chapter-level table above still holds as
+   measured, but it overstates Carleson's advantage.
 4. **The setting fixes the trade-off, not the sequence.** Which lemma comes
    next inside a goal's proof still follows the paper's argument (τ ≤ 0.11 for
    every heuristic on Carleson).

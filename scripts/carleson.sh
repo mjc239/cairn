@@ -63,3 +63,11 @@ uv run cairn event-llm-eval "$ROOT/data/raw/pfr/blueprint/src" "$PFR_DECLS" --pr
   --run anonymised=$E/pfr/llm/blind-s0 --run anonymised=$E/pfr/llm/blind-s1 \
   --node-run labelled=$P2/llm --node-run labelled=$P2/llm_runs/named-s1 --node-run labelled=$P2/llm_runs/named-s2 \
   --node-run anonymised=$P2/llm_runs/blind-s0 --node-run anonymised=$P2/llm_runs/blind-s1 --node-run anonymised=$P2/llm_runs/blind-s2
+# Parameterised styles: sweep and fit for both projects, and the whole-document frontier figure.
+uv run cairn style "$SRC" "$DECLS" "${COMMON[@]}" -o results/style/carleson
+uv run cairn style "$ROOT/data/raw/pfr/blueprint/src" "$PFR_DECLS" --project PFR -o results/style/pfr \
+  --provenance "teorth/pfr @ ddd44f6ce82e"
+uv run python -c "
+import json; from pathlib import Path; from cairn.plots import plot_style_frontier
+p = {n: json.load(open(f'results/style/{k}/style.json')) for n, k in [('PFR', 'pfr'), ('Carleson', 'carleson')]}
+plot_style_frontier(p, Path('results/cross_project/style_frontier.png'))"

@@ -48,7 +48,7 @@ def event_graph(bp: Blueprint, decls: dict[str, FormalDecl]) -> tuple[nx.DiGraph
     g = nx.DiGraph()
     for v in nodes:
         n = by_id[v]
-        g.add_node(S(v), chapter=n.chapter, kind="statement")
+        g.add_node(S(v), chapter=n.chapter, kind="statement", result=n.kind)
         if n.has_proof:
             g.add_node(P(v), chapter=n.proof_chapter or n.chapter, kind="proof")
             g.add_edge(S(v), P(v))

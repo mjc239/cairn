@@ -13,7 +13,8 @@ Correctness is guaranteed by the formal proof throughout.
 and Carleson. Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase1-pfr.md`](docs/phase1-pfr.md),
 [`docs/phase2-pfr.md`](docs/phase2-pfr.md), the cross-project comparison in
 [`docs/carleson.md`](docs/carleson.md), and the statement/proof model of load vs motivation in
-[`docs/statement-proof-events.md`](docs/statement-proof-events.md).
+[`docs/statement-proof-events.md`](docs/statement-proof-events.md), and parameterised exposition styles in
+[`docs/style.md`](docs/style.md).
 
 - [`docs/idea-notes.md`](docs/idea-notes.md): the original idea notes (motivation,
   challenges, graph formulation, prior work).
@@ -43,6 +44,7 @@ uv run cairn transfer --project A=SRC:DECLS --project B=SRC:DECLS:section -o out
 ./scripts/carleson.sh [--no-lean]                                # all phases on the second project
 uv run cairn events path/to/blueprint/src decls.jsonl --project NAME -o results/events/NAME  # statements vs proofs, motivation
 uv run cairn event-prompts ... -o DIR [--anonymise --no-titles]  # LLM orders S:/P: steps; score with `cairn event-llm-eval`
+uv run cairn style path/to/blueprint/src decls.jsonl --project NAME -o results/style/NAME  # sweep + fit style parameters
 uv run pytest && uv run ruff check python
 ```
 
