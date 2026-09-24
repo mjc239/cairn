@@ -1,0 +1,5247 @@
+{
+  "nodes": [
+    {
+      "id": "thm:euclids_proof",
+      "kind": "theorem",
+      "position": 0,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 3,
+      "title": "Euclid's proof",
+      "labels": [
+        "thm:euclids_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2081"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "chapter01",
+      "proof_leanok": true,
+      "text": "A finite set $\\{p_1, \\dots, p_r\\}$ cannot be the collection of \\emph{all} prime numbers."
+    },
+    {
+      "id": "thm:second_proof",
+      "kind": "theorem",
+      "position": 1,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 21,
+      "title": "Second Proof",
+      "labels": [
+        "thm:second_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2082"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 2,
+      "proof_event": 3,
+      "proof_chapter": "chapter01",
+      "proof_leanok": true,
+      "text": "Any two Fermat numbers $F_n := 2^{2^n} + 1$ are relatively prime."
+    },
+    {
+      "id": "thm:third_proof",
+      "kind": "theorem",
+      "position": 2,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 48,
+      "title": "Third Proof",
+      "labels": [
+        "thm:third_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2083"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 4,
+      "proof_event": 5,
+      "proof_chapter": "chapter01",
+      "proof_leanok": true,
+      "text": "There is no largest prime."
+    },
+    {
+      "id": "thm:fourth_proof",
+      "kind": "theorem",
+      "position": 3,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 67,
+      "title": "Fourth Proof",
+      "labels": [
+        "thm:fourth_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2084"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "chapter01",
+      "proof_leanok": false,
+      "text": "The prime counting function is unbounded"
+    },
+    {
+      "id": "thm:fifth_proof",
+      "kind": "theorem",
+      "position": 4,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 108,
+      "title": "Fifth Proof",
+      "labels": [
+        "thm:fifth_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2085"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "chapter01",
+      "proof_leanok": false,
+      "text": "The set of primes \\(\\mathbb{P}\\) is infinite."
+    },
+    {
+      "id": "thm:sixth_proof",
+      "kind": "theorem",
+      "position": 5,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 147,
+      "title": "Sixth Proof",
+      "labels": [
+        "thm:sixth_proof"
+      ],
+      "lean_decls": [
+        "infinity_of_primes\u2086"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "chapter01",
+      "proof_leanok": false,
+      "text": "The series \\(\\sum_{p\\in\\mathbb{P}}\\frac 1 p\\) diverges."
+    },
+    {
+      "id": "thm:infty_proof",
+      "kind": "theorem",
+      "position": 6,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 192,
+      "title": null,
+      "labels": [
+        "thm:infty_proof"
+      ],
+      "lean_decls": [
+        "Asymptotics.infinitely_many_more_proofs"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 12,
+      "proof_event": 13,
+      "proof_chapter": "chapter01",
+      "proof_leanok": false,
+      "text": "If the sequence \\(S = (s_1, s_2, s_3, \\dots)\\) is almost injective and of subexponential growth, then the set \\(\\mathbb{P}_S\\) of primes that divide some member of $S$ is infinite."
+    },
+    {
+      "id": "thm:infinity_of_primes",
+      "kind": "theorem",
+      "position": 7,
+      "chapter": "chapter01",
+      "source": "chapter/chapter01.tex",
+      "line": 238,
+      "title": "Infinity of primes",
+      "labels": [
+        "thm:infinity_of_primes"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:euclids_proof",
+        "thm:second_proof",
+        "thm:third_proof",
+        "thm:fourth_proof",
+        "thm:fifth_proof",
+        "thm:sixth_proof",
+        "thm:infty_proof"
+      ],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "chapter01",
+      "proof_leanok": false,
+      "text": "There are infinitely many primes. (Six + infinitely many proofs)"
+    },
+    {
+      "id": "thm:bertrands_postulate",
+      "kind": "theorem",
+      "position": 8,
+      "chapter": "chapter02",
+      "source": "chapter/chapter02.tex",
+      "line": 3,
+      "title": "Bertrand's postulate",
+      "labels": [
+        "thm:bertrands_postulate"
+      ],
+      "lean_decls": [
+        "chapter2.exists_prime_lt_and_le_two_mul"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "chapter02",
+      "proof_leanok": true,
+      "text": "For any positive natural number, there is a prime which is greater than it, but no more than twice as large."
+    },
+    {
+      "id": "thm:estimate_integral",
+      "kind": "theorem",
+      "position": 9,
+      "chapter": "chapter02",
+      "source": "chapter/chapter02.tex",
+      "line": 101,
+      "title": null,
+      "labels": [
+        "thm:estimate_integral"
+      ],
+      "lean_decls": [
+        "chapter2.harmonic_number_bounds"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "chapter02",
+      "proof_leanok": false,
+      "text": "For all \\(n \\in \\mathbb{N}\\) \\[ \\log n + \\frac 1 n < H_n < \\log n + 1. \\]"
+    },
+    {
+      "id": "thm:estimate_factorials",
+      "kind": "theorem",
+      "position": 10,
+      "chapter": "chapter02",
+      "source": "chapter/chapter02.tex",
+      "line": 130,
+      "title": null,
+      "labels": [
+        "thm:estimate_factorials"
+      ],
+      "lean_decls": [
+        "chapter2.bound_factorial"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "chapter02",
+      "proof_leanok": false,
+      "text": "For all \\(n \\in \\mathbb{N}\\) \\[ e\\left(\\frac{n}{e}\\right)^n < n! < en\\left(\\frac{n}{e}\\right)^n. \\]"
+    },
+    {
+      "id": "thm:estimate_binomial_coefficient",
+      "kind": "theorem",
+      "position": 11,
+      "chapter": "chapter02",
+      "source": "chapter/chapter02.tex",
+      "line": 163,
+      "title": null,
+      "labels": [
+        "thm:estimate_binomial_coefficient"
+      ],
+      "lean_decls": [
+        "chapter2.bound_binomial_coeff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "chapter02",
+      "proof_leanok": false,
+      "text": "\\[\\binom{n}{k} \\le \\frac{n^k}{k!} \\le \\frac{n^k}{2^{k - 1}}\\]"
+    },
+    {
+      "id": "sylvester",
+      "kind": "theorem",
+      "position": 12,
+      "chapter": "chapter03",
+      "source": "chapter/chapter03.tex",
+      "line": 4,
+      "title": "Sylvester's theorem",
+      "labels": [
+        "sylvester"
+      ],
+      "lean_decls": [
+        "chapter3.sylvester"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "chapter03",
+      "proof_leanok": false,
+      "text": "For all positive natural \\(n, k\\) such that \\(n \\ge 2k\\), at least one of the numbers \\(n, n - 1, \\dots, n - k + 1\\) has a prime divisor $p$ greater than $k$, or, equivalently the binomial coefficient \\(\\binom{n}{k}\\) always has a prime factor \\(p > k\\)."
+    },
+    {
+      "id": "binomial_never_powers",
+      "kind": "theorem",
+      "position": 13,
+      "chapter": "chapter03",
+      "source": "chapter/chapter03.tex",
+      "line": 18,
+      "title": "Binomial coefficients are (almost) never powers",
+      "labels": [
+        "binomial_never_powers"
+      ],
+      "lean_decls": [
+        "chapter3.binomials_coefficients_never_powers"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "sylvester"
+      ],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "chapter03",
+      "proof_leanok": false,
+      "text": "The equation \\(\\binom n k = m ^ l\\) has no integer solutions with \\(l \\ge 2\\) and \\(4 \\le k \\le n - 4\\)."
+    },
+    {
+      "id": "ch04.lemma\u2081",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 3,
+      "title": "Lemma 1",
+      "labels": [
+        "ch04.lemma\u2081"
+      ],
+      "lean_decls": [
+        "ch04.lemma\u2081"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "chapter04",
+      "proof_leanok": false,
+      "text": "For primes \\(p = 4m + 1\\) the equation \\(s^2 \\equiv -1 (\\mod p)\\) has two solutions \\(s \\in \\{1, 2, \\dots, p - 1\\}\\), for \\(p = 2\\) there is one such solution, while for primes of the form \\(p = 4m + 3\\) there is no solution."
+    },
+    {
+      "id": "ch04.lemma2",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 41,
+      "title": "Lemma 2",
+      "labels": [
+        "ch04.lemma2"
+      ],
+      "lean_decls": [
+        "ch04.lemma\u2082"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "chapter04",
+      "proof_leanok": true,
+      "text": "No number \\(n = 4m + 3\\) is a sum of two squares."
+    },
+    {
+      "id": "ch04.proposition1",
+      "kind": "proposition",
+      "position": 16,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 54,
+      "title": "First proof",
+      "labels": [
+        "ch04.proposition1"
+      ],
+      "lean_decls": [
+        "ch04.theorem\u2081"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch04.lemma\u2081"
+      ],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "chapter04",
+      "proof_leanok": false,
+      "text": "Every prime of the form \\(p = 4m + 1\\) is a sum of two squares, that is, it can be written as \\(p = x^2 + y^2\\) for some natural numbers \\(x,y \\in \\mathbb{N}\\)."
+    },
+    {
+      "id": "ch04.proposition2",
+      "kind": "proposition",
+      "position": 17,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 94,
+      "title": "Second proof",
+      "labels": [
+        "ch04.proposition2"
+      ],
+      "lean_decls": [
+        "ch04.theorem\u2082"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "chapter04",
+      "proof_leanok": false,
+      "text": "Every prime of the form \\(p = 4m + 1\\) is a sum of two squares, that is, it can be written as \\(p = x^2 + y^2\\) for some natural numbers \\(x,y \\in \\mathbb{N}\\)."
+    },
+    {
+      "id": "ch04.proposition3",
+      "kind": "proposition",
+      "position": 18,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 173,
+      "title": "Third proof",
+      "labels": [
+        "ch04.proposition3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "chapter04",
+      "proof_leanok": false,
+      "text": "Every prime of the form \\(p = 4m + 1\\) is a sum of two squares, that is, it can be written as \\(p = x^2 + y^2\\) for some natural numbers \\(x,y \\in \\mathbb{N}\\)."
+    },
+    {
+      "id": "sum_of_two_squares",
+      "kind": "theorem",
+      "position": 19,
+      "chapter": "chapter04",
+      "source": "chapter/chapter04.tex",
+      "line": 221,
+      "title": null,
+      "labels": [
+        "sum_of_two_squares"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch04.lemma2",
+        "ch04.proposition1",
+        "ch04.proposition2",
+        "ch04.proposition3"
+      ],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "chapter04",
+      "proof_leanok": false,
+      "text": "A natural number \\(n\\) can be represented as a sum of two squares if and only if every prime factor of the form \\(p = 4m + 3\\) appears with an even exponent in the prime decomposition of \\(n\\)."
+    },
+    {
+      "id": "fermats_little",
+      "kind": "theorem",
+      "position": 20,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 4,
+      "title": "Fermat's little theorem",
+      "labels": [
+        "fermats_little"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.fermat_little"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 40,
+      "proof_event": 41,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "For \\(a \\not\\equiv 0 \\pmod{p}\\), \\[ a^{p - 1} \\equiv 1 \\pmod{p} \\]"
+    },
+    {
+      "id": "euler_criterion",
+      "kind": "theorem",
+      "position": 21,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 22,
+      "title": "Euler's criterion",
+      "labels": [
+        "euler_criterion"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.euler_criterion"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "fermats_little"
+      ],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "For \\(a \\not\\equiv 0 \\pmod{p}\\), \\[ (\\frac{a}{p}) \\equiv a ^{\\frac{p-1}{2}} \\pmod{p} \\]"
+    },
+    {
+      "id": "product_rule",
+      "kind": "theorem",
+      "position": 22,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 44,
+      "title": "Product Rule",
+      "labels": [
+        "product_rule",
+        "eq:product_rule"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.product_rule"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_criterion"
+      ],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "\\begin{equation} (\\frac{ab}{p}) = (\\frac{a}{p}) \\cdot (\\frac{b}{p}) \\end{equation}"
+    },
+    {
+      "id": "gauss_lemma",
+      "kind": "theorem",
+      "position": 23,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 57,
+      "title": "Lemma of Gauss",
+      "labels": [
+        "gauss_lemma"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.lemma_of_Gauss"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_criterion"
+      ],
+      "has_proof": true,
+      "statement_event": 46,
+      "proof_event": 47,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "Suppose $a \\not\\equiv 0 \\pmod{p}$. Take the numbers $1a, 2a, \\dots, \\frac{p-1}{2}a$ and reduce them modulo $p$ to the residue system smallest in absolute value, $ia \\equiv r_i \\pmod{p}$ with $-\\frac{p-1}{2} \\le r_i \\le \\frac{p-1}{2}$ for all $i$. Then \\[ (\\frac{a}{p}) = (-1)^s, \\quad \\text{where } s = \\#\\{i : r_i < 0\\}. \\]"
+    },
+    {
+      "id": "quadratic_reciprocity1",
+      "kind": "theorem",
+      "position": 24,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 87,
+      "title": "Quadratic reciprocity I",
+      "labels": [
+        "quadratic_reciprocity1"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.quadratic_reciprocity_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "gauss_lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 48,
+      "proof_event": 49,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "Let $p$ and $q$ be different odd primes. Then \\[ (\\frac{q}{p})(\\frac{p}{q}) = (-1)^{\\frac{p-1}{2} \\frac{q-1}{2}}. \\]"
+    },
+    {
+      "id": "mult_cyclic",
+      "kind": "theorem",
+      "position": 25,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 122,
+      "title": null,
+      "labels": [
+        "mult_cyclic"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.mult_cyclic"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 50,
+      "proof_event": 51,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "The multiplicative group of a finite field is cyclic."
+    },
+    {
+      "id": "fact_A",
+      "kind": "theorem",
+      "position": 26,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 152,
+      "title": "A",
+      "labels": [
+        "fact_A"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.fact_A"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 52,
+      "proof_event": 53,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "Let $p$ and $q$ be distinct odd primes, and consider the finite field $F$ with $q^{p-1}$ elements. Then for any $a, b \\in F$, $(a + b)^q = a^q + b^q$."
+    },
+    {
+      "id": "fact_B",
+      "kind": "theorem",
+      "position": 27,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 162,
+      "title": "B",
+      "labels": [
+        "fact_B"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.fact_B"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "fermats_little",
+        "mult_cyclic"
+      ],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "For the field $F$ defined in (A), there exists an element $\\zeta \\in F$ of multiplicative order $p$, that is, $\\zeta^p = 1$. Moreover, we have a polynomial decomposition \\[ x^p - 1 = (x - \\zeta) (x - \\zeta^2) \\cdots (x - \\zeta^p). \\]"
+    },
+    {
+      "id": "quadratic_reciprocity2",
+      "kind": "theorem",
+      "position": 28,
+      "chapter": "chapter05",
+      "source": "chapter/chapter05.tex",
+      "line": 176,
+      "title": "Quadratic reciprocity II",
+      "labels": [
+        "quadratic_reciprocity2"
+      ],
+      "lean_decls": [
+        "book.quadratic_reciprocity.quadratic_reciprocity_2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "fact_A",
+        "fact_B"
+      ],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "chapter05",
+      "proof_leanok": false,
+      "text": "Let $p$ and $q$ be different odd primes. Then \\[ (\\frac{q}{p})(\\frac{p}{q}) = (-1)^{\\frac{p-1}{2} \\frac{q-1}{2}}. \\]"
+    },
+    {
+      "id": "root_of_unity",
+      "kind": "theorem",
+      "position": 29,
+      "chapter": "chapter06",
+      "source": "chapter/chapter06.tex",
+      "line": 3,
+      "title": "Roots of unity",
+      "labels": [
+        "root_of_unity"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 58,
+      "proof_event": 59,
+      "proof_chapter": "chapter06",
+      "proof_leanok": false,
+      "text": "The $n$-th roots of unity are \\[ \\lambda_k = e^{\\frac{2k\\pi i}{n}} = \\cos(2k\\pi/n) + i \\sin(2k\\pi/n), \\quad 0 \\le k \\le n - 1. \\]"
+    },
+    {
+      "id": "wedderburn",
+      "kind": "theorem",
+      "position": 30,
+      "chapter": "chapter06",
+      "source": "chapter/chapter06.tex",
+      "line": 30,
+      "title": "Wedderburn's theorem",
+      "labels": [
+        "wedderburn"
+      ],
+      "lean_decls": [
+        "wedderburn"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "chapter06",
+      "proof_leanok": false,
+      "text": "Every finite division ring is commutative."
+    },
+    {
+      "id": "ch7.lemma",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "ch7.lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "chapter07",
+      "proof_leanok": false,
+      "text": "If $A$ is a real symmetric $n \\times n$ matrix that is not diagonal, that is, $\\Od(A) > 0$, then there exists $U \\in O(n)$ such that $\\Od(U^T A U) < \\Od(A)$."
+    },
+    {
+      "id": "diagonalize_real_symmetric",
+      "kind": "theorem",
+      "position": 32,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 78,
+      "title": null,
+      "labels": [
+        "diagonalize_real_symmetric"
+      ],
+      "lean_decls": [
+        "chapter7.Theorem\u2081"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch7.lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 64,
+      "proof_event": 65,
+      "proof_chapter": "chapter07",
+      "proof_leanok": false,
+      "text": "For every real symmetric matrix $A$ there is a real orthogonal matrix $Q$ such that $Q^{T}AQ$ is diagonal."
+    },
+    {
+      "id": "thm:hadamard_inequality",
+      "kind": "theorem",
+      "position": 33,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 100,
+      "title": "Hadamard's inequality",
+      "labels": [
+        "thm:hadamard_inequality"
+      ],
+      "lean_decls": [
+        "chapter7.Theorem\u2082"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "chapter07",
+      "proof_leanok": false,
+      "text": "For any real $n \\times n$ matrix $A = (a_{ij})$ with $|a_{ij}| \\le 1$, \\[ |\\det A| \\le n^{n/2}. \\]"
+    },
+    {
+      "id": "thm:hadamard_order",
+      "kind": "theorem",
+      "position": 34,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 182,
+      "title": null,
+      "labels": [
+        "thm:hadamard_order"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "chapter07",
+      "proof_leanok": false,
+      "text": "If a Hadamard matrix of size $n \\times n$ exists for $n > 2$, then $n$ must be a multiple of $4$."
+    },
+    {
+      "id": "thm:hadamard_existence",
+      "kind": "theorem",
+      "position": 35,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 208,
+      "title": null,
+      "labels": [
+        "thm:hadamard_existence"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 70,
+      "proof_event": 71,
+      "proof_chapter": "chapter07",
+      "proof_leanok": true,
+      "text": "Hadamard matrices exist for all $n = 2^m$."
+    },
+    {
+      "id": "thm:det_greater_n_fact",
+      "kind": "theorem",
+      "position": 36,
+      "chapter": "chapter07",
+      "source": "chapter/chapter07.tex",
+      "line": 233,
+      "title": null,
+      "labels": [
+        "thm:det_greater_n_fact"
+      ],
+      "lean_decls": [
+        "chapter7.Theorem\u2082"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 72,
+      "proof_event": 73,
+      "proof_chapter": "chapter07",
+      "proof_leanok": false,
+      "text": "There exists an $n \\times n$ matrix with entries $\\pm 1$ whose determinant is greater than $\\sqrt{n!}$."
+    },
+    {
+      "id": "e_irrational",
+      "kind": "theorem",
+      "position": 37,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 4,
+      "title": null,
+      "labels": [
+        "e_irrational"
+      ],
+      "lean_decls": [
+        "book.irrational.e_irrational"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 74,
+      "proof_event": 75,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "$e$ is irrational."
+    },
+    {
+      "id": "e_pow_2_irrational",
+      "kind": "theorem",
+      "position": 38,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 37,
+      "title": null,
+      "labels": [
+        "e_pow_2_irrational"
+      ],
+      "lean_decls": [
+        "book.irrational.e_pow_2_irrational"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "e_irrational"
+      ],
+      "has_proof": true,
+      "statement_event": 76,
+      "proof_event": 77,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "$e^2$ is irrational."
+    },
+    {
+      "id": "little_lemma",
+      "kind": "theorem",
+      "position": 39,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 94,
+      "title": "Little Lemma",
+      "labels": [
+        "little_lemma"
+      ],
+      "lean_decls": [
+        "book.irrational.little_lemma"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 78,
+      "proof_event": 79,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "For any $n \\ge 1$ the integer $n!$ contains the prime factor $2$ at most $n-1$ times --- with equality if (and only if) $n$ is a power of two, $n = 2^m$."
+    },
+    {
+      "id": "e_pow_4_irrational",
+      "kind": "theorem",
+      "position": 40,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 110,
+      "title": null,
+      "labels": [
+        "e_pow_4_irrational"
+      ],
+      "lean_decls": [
+        "book.irrational.e_pow_4_irrational"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "little_lemma",
+        "e_pow_2_irrational"
+      ],
+      "has_proof": true,
+      "statement_event": 80,
+      "proof_event": 81,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "$e^4$ is irrational."
+    },
+    {
+      "id": "lem_aux_i",
+      "kind": "lemma",
+      "position": 41,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 164,
+      "title": null,
+      "labels": [
+        "lem_aux_i"
+      ],
+      "lean_decls": [
+        "book.irrational.lem_aux_i"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 82,
+      "proof_event": 83,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "\\upshape For some fixed $n \\ge 1$, let \\[ f(x) = \\frac{x^n (1-x)^n}{n!}. \\] \\begin{enumerate} \\item[(i)] \\itshape The function $f(x)$ is a polynomial of the form $f(x) = \\frac{1}{n!} \\sum_{i=n}^{2n} c_i x^i$, where the coefficients $c_i$ are integers. \\end{enumerate}"
+    },
+    {
+      "id": "lem_aux_ii",
+      "kind": "lemma",
+      "position": 42,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 180,
+      "title": null,
+      "labels": [
+        "lem_aux_ii"
+      ],
+      "lean_decls": [
+        "book.irrational.lem_aux_ii"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 84,
+      "proof_event": 85,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "\\begin{enumerate} \\item[(ii)] For $0 < x < 1$ we have $0 < f(x) < \\frac{1}{n!}$. \\end{enumerate}"
+    },
+    {
+      "id": "lem_aux_iii",
+      "kind": "lemma",
+      "position": 43,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 193,
+      "title": null,
+      "labels": [
+        "lem_aux_iii"
+      ],
+      "lean_decls": [
+        "book.irrational.lem_aux_iii"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 86,
+      "proof_event": 87,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "\\begin{enumerate} \\item[(iii)] The derivatives $f^{(k)}(0)$ and $f^{(k)}(1)$ are integers for all $k \\ge 0$. \\end{enumerate}"
+    },
+    {
+      "id": "e_pow_irrational",
+      "kind": "theorem",
+      "position": 44,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 208,
+      "title": null,
+      "labels": [
+        "e_pow_irrational",
+        "book.irrational.Theorem_1"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem_aux_i",
+        "lem_aux_ii",
+        "lem_aux_iii"
+      ],
+      "has_proof": true,
+      "statement_event": 88,
+      "proof_event": 89,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "$e^r$ is irrational for every $r \\in \\mathbb{Q} \\setminus \\{0\\}$."
+    },
+    {
+      "id": "pi_pow_2_irrational",
+      "kind": "theorem",
+      "position": 45,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 249,
+      "title": null,
+      "labels": [
+        "pi_pow_2_irrational",
+        "book.irrational.Theorem_2"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem_aux_ii",
+        "lem_aux_iii"
+      ],
+      "has_proof": true,
+      "statement_event": 90,
+      "proof_event": 91,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "$\\pi^2$ is irrational."
+    },
+    {
+      "id": "arccos_irrational",
+      "kind": "theorem",
+      "position": 46,
+      "chapter": "chapter08",
+      "source": "chapter/chapter08.tex",
+      "line": 285,
+      "title": null,
+      "labels": [
+        "arccos_irrational",
+        "book.irrational.Theorem_3"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pi_pow_2_irrational"
+      ],
+      "has_proof": true,
+      "statement_event": 92,
+      "proof_event": 93,
+      "proof_chapter": "chapter08",
+      "proof_leanok": false,
+      "text": "For every odd integer \\(n \\ge 3\\), the number \\[ A(n) := \\frac{1}{\\pi} \\arccos \\left(\\frac{1}{\\sqrt{n}}\\right) \\] is irrational."
+    },
+    {
+      "id": "euler_series",
+      "kind": "theorem",
+      "position": 47,
+      "chapter": "chapter09",
+      "source": "chapter/chapter09.tex",
+      "line": 3,
+      "title": "Euler's series: Proof 1",
+      "labels": [
+        "euler_series"
+      ],
+      "lean_decls": [
+        "euler_series"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 94,
+      "proof_event": 95,
+      "proof_chapter": "chapter09",
+      "proof_leanok": false,
+      "text": "\\[ \\sum_{n \\ge 1} \\frac{1}{n^2} = \\frac{\\pi^2}{6} \\]"
+    },
+    {
+      "id": "euler_series_2",
+      "kind": "theorem",
+      "position": 48,
+      "chapter": "chapter09",
+      "source": "chapter/chapter09.tex",
+      "line": 59,
+      "title": "Euler's series: Proof 2",
+      "labels": [
+        "euler_series_2"
+      ],
+      "lean_decls": [
+        "euler_series'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 96,
+      "proof_event": 97,
+      "proof_chapter": "chapter09",
+      "proof_leanok": false,
+      "text": "\\[ \\sum_{k \\ge 0}\\frac{1}{(2k+1)^2} = \\frac{\\pi^2}{8} \\]"
+    },
+    {
+      "id": "euler_series_3",
+      "kind": "theorem",
+      "position": 49,
+      "chapter": "chapter09",
+      "source": "chapter/chapter09.tex",
+      "line": 96,
+      "title": "Euler's series: Proof 3",
+      "labels": [
+        "euler_series_3"
+      ],
+      "lean_decls": [
+        "euler_series_3"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 98,
+      "proof_event": 99,
+      "proof_chapter": "chapter09",
+      "proof_leanok": false,
+      "text": "\\[ \\sum_{n\\ge 1}\\frac{1}{n^2} = \\frac{\\pi^2}{6} \\]"
+    },
+    {
+      "id": "euler_series_4",
+      "kind": "theorem",
+      "position": 50,
+      "chapter": "chapter09",
+      "source": "chapter/chapter09.tex",
+      "line": 189,
+      "title": "Euler's series: Proof 4",
+      "labels": [
+        "euler_series_4"
+      ],
+      "lean_decls": [
+        "euler_series_4"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 100,
+      "proof_event": 101,
+      "proof_chapter": "chapter09",
+      "proof_leanok": false,
+      "text": "\\[ \\sum_{n\\ge 1}\\frac{1}{n^2} = \\frac{\\pi^2}{6} \\]"
+    },
+    {
+      "id": "four_proofs_euler_series",
+      "kind": "theorem",
+      "position": 51,
+      "chapter": "chapter09",
+      "source": "chapter/chapter09.tex",
+      "line": 247,
+      "title": "Four proofs of Euler's series",
+      "labels": [
+        "four_proofs_euler_series"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_series",
+        "euler_series_2",
+        "euler_series_3",
+        "euler_series_4"
+      ],
+      "has_proof": true,
+      "statement_event": 102,
+      "proof_event": 103,
+      "proof_chapter": "chapter09",
+      "proof_leanok": false,
+      "text": "Collecting the proofs from the chapter."
+    },
+    {
+      "id": "pearl_lemma",
+      "kind": "lemma",
+      "position": 52,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 4,
+      "title": "Pearl Lemma",
+      "labels": [
+        "pearl_lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 104,
+      "proof_event": 105,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "If $P$ and $Q$ are equidecomposable, then one can place a positive number of pearls (that is, assign positive integers) to all the segments of the decompositions $P = P_1 \\cup \\cdots \\cup P_n$ and $Q = Q_1 \\cup \\cdots \\cup Q_n$ in such a way that each edge of a piece $P_k$ receives the same number of pearls as the corresponding edge of $Q_k$."
+    },
+    {
+      "id": "cone_lemma",
+      "kind": "lemma",
+      "position": 53,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 33,
+      "title": "Cone Lemma",
+      "labels": [
+        "cone_lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 106,
+      "proof_event": 107,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "If a system of homogeneous linear equations with integer coefficients has a positive \\emph{real} solution, then it also has a positive \\emph{integer} solution."
+    },
+    {
+      "id": "bricard_condition",
+      "kind": "theorem",
+      "position": 54,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 88,
+      "title": "Bricard's condition",
+      "labels": [
+        "bricard_condition"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 108,
+      "proof_event": 109,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "example1",
+      "kind": "theorem",
+      "position": 55,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 96,
+      "title": "Example 1",
+      "labels": [
+        "example1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 110,
+      "proof_event": 111,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "example2",
+      "kind": "theorem",
+      "position": 56,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 104,
+      "title": "Example 2",
+      "labels": [
+        "example2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 112,
+      "proof_event": 113,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "example3",
+      "kind": "theorem",
+      "position": 57,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 112,
+      "title": "Example 3",
+      "labels": [
+        "example3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 114,
+      "proof_event": 115,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "hilberts_third",
+      "kind": "theorem",
+      "position": 58,
+      "chapter": "chapter10",
+      "source": "chapter/chapter10.tex",
+      "line": 120,
+      "title": "Hilbert's third problem",
+      "labels": [
+        "hilberts_third"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pearl_lemma",
+        "cone_lemma",
+        "bricard_condition",
+        "example1",
+        "example2",
+        "example3"
+      ],
+      "has_proof": true,
+      "statement_event": 116,
+      "proof_event": 117,
+      "proof_chapter": "chapter10",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "ch11_theorem1",
+      "kind": "theorem",
+      "position": 59,
+      "chapter": "chapter11",
+      "source": "chapter/chapter11.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch11_theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 118,
+      "proof_event": 119,
+      "proof_chapter": "chapter11",
+      "proof_leanok": false,
+      "text": "In any configuration of \\(n\\) points in the plane, not all on a line, there is a line which contains exactly two of the points."
+    },
+    {
+      "id": "ch11_theorem2",
+      "kind": "theorem",
+      "position": 60,
+      "chapter": "chapter11",
+      "source": "chapter/chapter11.tex",
+      "line": 12,
+      "title": null,
+      "labels": [
+        "ch11_theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 120,
+      "proof_event": 121,
+      "proof_chapter": "chapter11",
+      "proof_leanok": false,
+      "text": "Let \\(P\\) be a set of \\(n\\ge 3\\) points in the plane, not all on a line. Then the set \\(\\mathcal{L}\\) of lines passing through at least two points contains at least \\(n\\) lines."
+    },
+    {
+      "id": "ch11_theorem3",
+      "kind": "theorem",
+      "position": 61,
+      "chapter": "chapter11",
+      "source": "chapter/chapter11.tex",
+      "line": 22,
+      "title": null,
+      "labels": [
+        "ch11_theorem3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 122,
+      "proof_event": 123,
+      "proof_chapter": "chapter11",
+      "proof_leanok": false,
+      "text": "Let \\(X\\) be a set of \\(n\\ge 3\\) elements, and let \\(A_1, \\dots, A_m\\) be proper subsets of \\(X\\), such that every pair of elements of \\(X\\) is contained in precisely one set \\(A_i\\). Then \\(m\\ge n\\) holds."
+    },
+    {
+      "id": "ch11_theorem4",
+      "kind": "theorem",
+      "position": 62,
+      "chapter": "chapter11",
+      "source": "chapter/chapter11.tex",
+      "line": 32,
+      "title": null,
+      "labels": [
+        "ch11_theorem4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 124,
+      "proof_event": 125,
+      "proof_chapter": "chapter11",
+      "proof_leanok": false,
+      "text": "If \\(K_n\\) is decomposed into complete bipartite subgraphs \\(H_1, \\dots, H_m\\), then \\(m \\ge n - 1\\)."
+    },
+    {
+      "id": "slope_problem",
+      "kind": "theorem",
+      "position": 63,
+      "chapter": "chapter12",
+      "source": "chapter/chapter12.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "slope_problem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 126,
+      "proof_event": 127,
+      "proof_chapter": "chapter12",
+      "proof_leanok": false,
+      "text": "If \\(n\\ge 3\\) points in the plane do not lie on one single line, then they determine at least \\(n - 1\\) different slopes, where equality is possible only if \\(n\\) is odd and \\(n \\ge 5\\)."
+    },
+    {
+      "id": "euler_formula",
+      "kind": "theorem",
+      "position": 64,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 3,
+      "title": "Euler's formula",
+      "labels": [
+        "euler_formula"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 128,
+      "proof_event": 129,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "If \\(G\\) is a connected plane graph with \\(n\\) vertices, \\(e\\) edges and \\(f\\) faces, then \\[ n - e + f = 2. \\]"
+    },
+    {
+      "id": "euler_consequence_a",
+      "kind": "proposition",
+      "position": 65,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "euler_consequence_a"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_formula"
+      ],
+      "has_proof": true,
+      "statement_event": 130,
+      "proof_event": 131,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Let \\(G\\) be any simple plane graph with \\(n>2\\) vertices. Then \\(G\\) has at most \\(3*n - 6\\) edges."
+    },
+    {
+      "id": "euler_consequence_b",
+      "kind": "proposition",
+      "position": 66,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 25,
+      "title": null,
+      "labels": [
+        "euler_consequence_b"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_consequence_a"
+      ],
+      "has_proof": true,
+      "statement_event": 132,
+      "proof_event": 133,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Let \\(G\\) be any simple plane graph with \\(n>2\\) vertices. Then \\(G\\) has a vertex of degree at most \\(5\\)."
+    },
+    {
+      "id": "euler_consequence_c",
+      "kind": "proposition",
+      "position": 67,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 35,
+      "title": null,
+      "labels": [
+        "euler_consequence_c"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_formula"
+      ],
+      "has_proof": true,
+      "statement_event": 134,
+      "proof_event": 135,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Let \\(G\\) be any simple plane graph with \\(n>2\\) vertices. If the edges of \\(G\\) are two-colored, then there is a vertex of \\(G\\) with at most two color-changes in the cyclic order of the edges around the vertex."
+    },
+    {
+      "id": "sylvester_gallai2",
+      "kind": "theorem",
+      "position": 68,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 46,
+      "title": "Sylvester-Gallai",
+      "labels": [
+        "sylvester_gallai2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_consequence_b"
+      ],
+      "has_proof": true,
+      "statement_event": 136,
+      "proof_event": 137,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Given any set of \\(n \\ge 3\\) points in the plane, not all on one line, there is always a line that contains exactly two of the points."
+    },
+    {
+      "id": "monochromatic_lines",
+      "kind": "theorem",
+      "position": 69,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 57,
+      "title": "Monochromatic lines",
+      "labels": [
+        "monochromatic_lines"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "euler_consequence_c"
+      ],
+      "has_proof": true,
+      "statement_event": 138,
+      "proof_event": 139,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Given any finite configuration of ``black'' and ``white'' points in the plane, not all on one line, there is always a ``monochromatic'' line: a line that contains at least two points of one color and none of the other."
+    },
+    {
+      "id": "pick_lemma",
+      "kind": "lemma",
+      "position": 70,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 68,
+      "title": null,
+      "labels": [
+        "pick_lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 140,
+      "proof_event": 141,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "Every elementary triangle \\(\\Delta = \\conv\\{p_0, p_1, p_2\\}\\subset \\mathbb{R}^2\\) has area \\(A(\\Delta)=12\\)"
+    },
+    {
+      "id": "pick_theorem",
+      "kind": "theorem",
+      "position": 71,
+      "chapter": "chapter13",
+      "source": "chapter/chapter13.tex",
+      "line": 78,
+      "title": "Pick's theorem",
+      "labels": [
+        "pick_theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pick_lemma",
+        "euler_formula"
+      ],
+      "has_proof": true,
+      "statement_event": 142,
+      "proof_event": 143,
+      "proof_chapter": "chapter13",
+      "proof_leanok": false,
+      "text": "The area of any (not necessarily convex) polygon \\(Q\\subset\\mathbb{R}^2\\) with integral vertices is given by \\[ A(Q) = n_{int} + \\frac{1}{2}n_{bd} - 1 \\] where \\(n_{int}\\) and \\(n_{bd}\\) are the numbers of integral points in the interior respectively on the boundary of \\(Q\\)."
+    },
+    {
+      "id": "arm_lemma",
+      "kind": "lemma",
+      "position": 72,
+      "chapter": "chapter14",
+      "source": "chapter/chapter14.tex",
+      "line": 4,
+      "title": "Cauchy's arm lemma",
+      "labels": [
+        "arm_lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 144,
+      "proof_event": 145,
+      "proof_chapter": "chapter14",
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "cauchy_rigidity",
+      "kind": "theorem",
+      "position": 73,
+      "chapter": "chapter14",
+      "source": "chapter/chapter14.tex",
+      "line": 12,
+      "title": "Cauchy's rigidity",
+      "labels": [
+        "cauchy_rigidity"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "arm_lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 146,
+      "proof_event": 147,
+      "proof_chapter": "chapter14",
+      "proof_leanok": false,
+      "text": "If two \\(3\\)-dimensional convex polyhedra \\(P\\) and \\(P'\\) are combinatorially equivalent with corresponding pairs of adjacent congruent, then also the angels between corresponding pairs of adjacent facets are equal (and thus \\(P\\) is congruent to \\(P'\\))."
+    },
+    {
+      "id": "ch14theorem1",
+      "kind": "theorem",
+      "position": 74,
+      "chapter": "chapter15",
+      "source": "chapter/chapter15.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch14theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 148,
+      "proof_event": 149,
+      "proof_chapter": "chapter15",
+      "proof_leanok": false,
+      "text": "If a link consists of disjoint perfect circles that are pairwise not linked, then the link is trivial"
+    },
+    {
+      "id": "borromean_nontrivial",
+      "kind": "theorem",
+      "position": 75,
+      "chapter": "chapter15",
+      "source": "chapter/chapter15.tex",
+      "line": 12,
+      "title": null,
+      "labels": [
+        "borromean_nontrivial"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 150,
+      "proof_event": 151,
+      "proof_chapter": "chapter15",
+      "proof_leanok": false,
+      "text": "The Borromean rings are nontrivial, and they are also not equivalent to Tait's link No.~18"
+    },
+    {
+      "id": "borromean",
+      "kind": "theorem",
+      "position": 76,
+      "chapter": "chapter15",
+      "source": "chapter/chapter15.tex",
+      "line": 21,
+      "title": null,
+      "labels": [
+        "borromean"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch14theorem1",
+        "borromean_nontrivial"
+      ],
+      "has_proof": true,
+      "statement_event": 152,
+      "proof_event": 153,
+      "proof_chapter": "chapter15",
+      "proof_leanok": false,
+      "text": "The Borromean rings cannot be build from three perfect circles"
+    },
+    {
+      "id": "ch16theorem1",
+      "kind": "theorem",
+      "position": 77,
+      "chapter": "chapter16",
+      "source": "chapter/chapter16.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch16theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 154,
+      "proof_event": 155,
+      "proof_chapter": "chapter16",
+      "proof_leanok": false,
+      "text": "For every \\(d\\ge 2\\), there is a family of \\(2^d\\) pairwise touching \\(d\\)-simplices in \\(\\mathbb{R}^d\\) together with a transversal line that hits the interior of every single on of them."
+    },
+    {
+      "id": "ch16theorem2",
+      "kind": "theorem",
+      "position": 78,
+      "chapter": "chapter16",
+      "source": "chapter/chapter16.tex",
+      "line": 13,
+      "title": null,
+      "labels": [
+        "ch16theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 156,
+      "proof_event": 157,
+      "proof_chapter": "chapter16",
+      "proof_leanok": false,
+      "text": "For all \\(d \\ge 1\\), we have \\(f(d)< 2^{d+1}\\)."
+    },
+    {
+      "id": "ch17theorem1",
+      "kind": "theorem",
+      "position": 79,
+      "chapter": "chapter17",
+      "source": "chapter/chapter17.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch17theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 158,
+      "proof_event": 159,
+      "proof_chapter": "chapter17",
+      "proof_leanok": false,
+      "text": "For every \\(d\\), one has the following chain of inequalities: \\begin{align} 2^d &\\leq_{\\text{(1)}} \\max \\left\\{ \\#S \\,|\\, S \\subseteq \\mathbb{R}^d, \\angle(s_i, s_j, s_k) \\leq \\frac{\\pi}{2} \\text{ for every } \\{s_i, s_j, s_k\\} \\subseteq S \\right\\} \\\\ &\\leq_{\\text{(2)}} \\max \\left\\{ \\#S \\,|\\, S \\subseteq \\mathbb{R}^d \\text{ such that for any two points } \\{s_i, s_j\\} \\subseteq S, \\right. \\nonumber \\\\ &\\qquad\\qquad \\left. \\text{there is a strip } S(i, j) \\text{ that contains } S, \\text{ with } s_i \\text{ and } s_j \\text{ lying in the parallel boundary hyperplanes of } S(i, j) \\right\\} \\\\ &=_{\\text{(3)}} \\max \\left\\{ \\#S \\,|\\, S \\subseteq \\mathbb{R}^d \\text{ such that the translates } P - s_i, s_i \\in S, \\text{ of the convex hull } P := \\text{conv}(S) \\right. \\nonumber \\\\ &\\qquad\\qquad \\left. \\text{intersect in a common point, but they only touch} \\right\\} \\\\ &\\leq_{\\text{(4)}} \\max \\left\\{ \\#S \\,|\\, S \\subseteq \\mathbb{R}^d \\text{ such that the translates } Q + s_i \\text{ of some d-dimensional convex polytope } Q \\subseteq \\mathbb{R}^d \\text{ touch pairwise} \\right\\} \\\\ &=_{\\text{(5)}} \\max \\left\\{ \\#S \\,|\\, S \\subseteq \\mathbb{R}^d \\text{ such that the translates } Q^* + s_i \\text{ of some d-dimensional centrally symmetric convex polytope } Q^* \\subseteq \\mathbb{R}^d \\text{ touch pairwise} \\right\\} \\\\ &\\leq_{\\text{(6)}} 2^d. \\end{align}"
+    },
+    {
+      "id": "ch17theorem2",
+      "kind": "theorem",
+      "position": 80,
+      "chapter": "chapter17",
+      "source": "chapter/chapter17.tex",
+      "line": 21,
+      "title": null,
+      "labels": [
+        "ch17theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 160,
+      "proof_event": 161,
+      "proof_chapter": "chapter17",
+      "proof_leanok": false,
+      "text": "For every \\(d\\ge 2\\), there is a set \\(S\\subset\\{0, 1\\}^d\\) of \\(2\\lfloor\\frac{sqrt{6}}{9}(\\frac{2}{\\sqrt(3)})^d\\rfloor\\) points in \\(\\mathbb{R}^n\\) (vertices of the unit \\(d\\)-cube) that determine only acute angels. In particular, in dimension \\(d = 34\\) there is a set of \\(72 > 2*34 - 1\\) points with only acute angels."
+    },
+    {
+      "id": "borsuk_conjecture",
+      "kind": "theorem",
+      "position": 81,
+      "chapter": "chapter18",
+      "source": "chapter/chapter18.tex",
+      "line": 3,
+      "title": "Borsuk's conjecture",
+      "labels": [
+        "borsuk_conjecture"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 162,
+      "proof_event": 163,
+      "proof_chapter": "chapter18",
+      "proof_leanok": false,
+      "text": "Let $q = p^m$ be a prime power, $n := 4q - 2$, and $d := \\binom{n}{2} = (2q - 1)(4q - 3)$. Then there is a set $S \\subseteq \\{+1, -1\\}^d$ of $2^{n-2}$ points in $\\mathbb{R}^d$ such that every partition of $S$, whose parts have smaller diameter than $S$, has at least \\[ \\frac{2^{n-2}}{\\sum_{i=0}^{q-2} \\binom{n-1}{i}} \\] parts. For $q = 9$ this implies that the Borsuk conjecture is false in dimension $d = 561$. Furthermore, $f(d) > (1.2)\\sqrt{d}$ holds for all large enough $d$."
+    },
+    {
+      "id": "ch19theorem1",
+      "kind": "theorem",
+      "position": 82,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch19theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 164,
+      "proof_event": 165,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "The set of \\(\\mathbb{Q}\\) of rational numbers is countable."
+    },
+    {
+      "id": "ch19theorem2",
+      "kind": "theorem",
+      "position": 83,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 11,
+      "title": null,
+      "labels": [
+        "ch19theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 166,
+      "proof_event": 167,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "The set \\(\\mathbb{R}\\) of real numbers is \\emph{not} countable"
+    },
+    {
+      "id": "ch19theorem3",
+      "kind": "theorem",
+      "position": 84,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 19,
+      "title": null,
+      "labels": [
+        "ch19theorem3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 168,
+      "proof_event": 169,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "The set \\(\\mathbb{R}^2\\) of all ordered pairs of real numbers (that is, the real plane) has the same size as \\(\\mathbb{R}\\)."
+    },
+    {
+      "id": "ch19theorem4",
+      "kind": "theorem",
+      "position": 85,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 28,
+      "title": null,
+      "labels": [
+        "ch19theorem4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 170,
+      "proof_event": 171,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "If each of two sets \\(M\\) and \\(N\\) can be mapped injectively into the other, then there is a bijection from \\(M\\) to \\(N\\), that is \\(|M| = |N|\\)."
+    },
+    {
+      "id": "ch19theorem5",
+      "kind": "theorem",
+      "position": 86,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 37,
+      "title": null,
+      "labels": [
+        "ch19theorem5"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 172,
+      "proof_event": 173,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "If \\(c > \\aleph_1\\), then every family \\(\\{f_\\alpha\\}\\) satisfying \\((P_0)\\) is countable. If, on the other hand, \\(c = \\aleph_1\\), then there exists some family \\(\\{f_\\alpha\\}\\) with property \\(P_0\\) which has size \\(c\\)."
+    },
+    {
+      "id": "ch19proposition1",
+      "kind": "proposition",
+      "position": 87,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 49,
+      "title": null,
+      "labels": [
+        "ch19proposition1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 174,
+      "proof_event": 175,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "Let \\(\\mu\\) be an ordinal number and denote by \\(W_\\mu\\) the set of ordinal numbers smaller than \\(\\mu\\). Then the following holds: \\begin{enumerate} \\item The elements of \\(W_\\mu\\) are pairwise comparable. \\item If we order \\(W_\\mu\\) according to their magnitude, then \\(W_\\mu\\) is well-ordered and has ordinal number \\(\\mu\\). \\end{enumerate}"
+    },
+    {
+      "id": "ch19proposition2",
+      "kind": "proposition",
+      "position": 88,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 63,
+      "title": null,
+      "labels": [
+        "ch19proposition2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 176,
+      "proof_event": 177,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "Any two ordinal numbers \\(\\mu\\) and \\(\\nu\\) satisfy precisely one of the relations \\(\\mu < \\nu\\), \\(\\mu = \\nu\\), or \\(\\mu > \\nu\\)."
+    },
+    {
+      "id": "ch19proposition3",
+      "kind": "proposition",
+      "position": 89,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 72,
+      "title": null,
+      "labels": [
+        "ch19proposition3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 178,
+      "proof_event": 179,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "Every set of ordinal numbers (ordered according to magnitude) is well-ordered."
+    },
+    {
+      "id": "ch19proposition4",
+      "kind": "proposition",
+      "position": 90,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 80,
+      "title": null,
+      "labels": [
+        "ch19proposition4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 180,
+      "proof_event": 181,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "For every cardinal number \\(\\mathfrak{m}\\), there is a definite next larger cardinal number."
+    },
+    {
+      "id": "ch19proposition5",
+      "kind": "proposition",
+      "position": 91,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 88,
+      "title": null,
+      "labels": [
+        "ch19proposition5"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 182,
+      "proof_event": 183,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "Let the infinite set \\(M\\) have cardinality \\(\\mathfrak{m}\\), and let \\(M\\) be well ordered according to the initial ordinal number \\(\\omega_{\\mathfrak{m}}\\). Then \\(M\\) has no last element."
+    },
+    {
+      "id": "ch19proposition6",
+      "kind": "proposition",
+      "position": 92,
+      "chapter": "chapter19",
+      "source": "chapter/chapter19.tex",
+      "line": 99,
+      "title": null,
+      "labels": [
+        "ch19proposition6"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 184,
+      "proof_event": 185,
+      "proof_chapter": "chapter19",
+      "proof_leanok": false,
+      "text": "Suppose \\(\\{A_\\alpha\\}\\) is a family of size \\(\\mathfrak{m}\\) of countable sets \\(A_\\alpha\\), where \\(\\mathfrak{m}\\) is an infinite cardinal. Then the union \\(\\bigcup_\\alpha A_\\alpha\\) has size at most \\(\\mathfrak{m}\\)."
+    },
+    {
+      "id": "ch20theoremI",
+      "kind": "theorem",
+      "position": 93,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch20theoremI"
+      ],
+      "lean_decls": [
+        "cauchy_schwarz_inequality"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 186,
+      "proof_event": 187,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Let $\\langle a, b \\rangle$ be an inner product on a real vector space $V$ (with the norm $|a|^2 := \\langle a, a \\rangle$). Then \\[ \\langle a, b \\rangle^2 \\leq |a|^2 |b|^2 \\] holds for all vectors $a, b \\in V$, with equality if and only if $a$ and $b$ are linearly dependent."
+    },
+    {
+      "id": "ch20theoremIIproof1",
+      "kind": "theorem",
+      "position": 94,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 27,
+      "title": "First proof",
+      "labels": [
+        "ch20theoremIIproof1"
+      ],
+      "lean_decls": [
+        "harmonic_geometric_arithmetic\u2081"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 188,
+      "proof_event": 189,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Let $a_1, \\dots, a_n$ be positive real numbers, then \\[ \\frac{n}{\\frac{1}{a_1}+\\dots+\\frac{1}{a_n}} \\le \\sqrt[n]{a_1a_2\\dots a_n} \\le \\frac{a_1+\\dots+ a_n}{n} \\] with equality in both cases if and only if all $a_i$'s are equal."
+    },
+    {
+      "id": "ch20theoremIIproof2",
+      "kind": "theorem",
+      "position": 95,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 72,
+      "title": "Another Proof",
+      "labels": [
+        "ch20theoremIIproof2"
+      ],
+      "lean_decls": [
+        "harmonic_geometric_arithmetic\u2082"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 190,
+      "proof_event": 191,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Let $a_1, \\dots, a_n$ be positive real numbers, then \\[ \\frac{n}{\\frac{1}{a_1}+\\dots+\\frac{1}{a_n}} \\le \\sqrt[n]{a_1a_2\\dots a_n} \\le \\frac{a_1+\\dots+ a_n}{n} \\] with equality in both cases if and only if all $a_i$'s are equal."
+    },
+    {
+      "id": "ch20theoremIIproof3",
+      "kind": "theorem",
+      "position": 96,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 118,
+      "title": "Still another Proof",
+      "labels": [
+        "ch20theoremIIproof3"
+      ],
+      "lean_decls": [
+        "harmonic_geometric_arithmetic\u2083"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 192,
+      "proof_event": 193,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Let $a_1, \\dots, a_n$ be positive real numbers, then \\[ \\frac{n}{\\frac{1}{a_1}+\\dots+\\frac{1}{a_n}} \\le \\sqrt[n]{a_1a_2\\dots a_n} \\le \\frac{a_1+\\dots+ a_n}{n} \\] with equality in both cases if and only if all $a_i$'s are equal."
+    },
+    {
+      "id": "ch20theorem1",
+      "kind": "theorem",
+      "position": 97,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 153,
+      "title": null,
+      "labels": [
+        "ch20theorem1"
+      ],
+      "lean_decls": [
+        "laguerre_root_bound"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 194,
+      "proof_event": 195,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Suppose all roots of the polynomial $x^n + a_{n-1}x^{n-1} + \\dots + a_0$ are real. Then the roots are contained in the interval with the endpoints \\[ -\\frac{a_{n-1}}{n}\\pm\\frac{n-1}{n}\\sqrt{a_{n-1}^2 - \\frac{2n}{n-1}a_{n-2}}. \\]"
+    },
+    {
+      "id": "ch20theorem2",
+      "kind": "theorem",
+      "position": 98,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 188,
+      "title": null,
+      "labels": [
+        "ch20theorem2"
+      ],
+      "lean_decls": [
+        "erdos_gallai_A_ge_two_thirds_T"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 196,
+      "proof_event": 197,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Let $f(x)$ be a real polynomial of degree $n \\ge 2$ with only real roots, such that $f(x)> 0$ for $ -1 < x < 1$ amd $f(-1) = f(1) = 0$. Then \\[ \\frac{2}{3}T \\le A \\le \\frac{2}{3}R, \\] and equality holds in both cases only for $n=2$."
+    },
+    {
+      "id": "ch20theorem3proof1",
+      "kind": "theorem",
+      "position": 99,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 237,
+      "title": null,
+      "labels": [
+        "ch20theorem3proof1"
+      ],
+      "lean_decls": [
+        "mantel"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 198,
+      "proof_event": 199,
+      "proof_chapter": "chapter20",
+      "proof_leanok": false,
+      "text": "Suppose $G$ is a graph on $n$ vertices without triangles. Then $G$ has at most $\\frac{n^2}{4}$ edges, and equality holds only when $n$ is even and $G$ is the complete bipartite graph $K_{n/2, n/2}$."
+    },
+    {
+      "id": "ch20theorem3proof2",
+      "kind": "theorem",
+      "position": 100,
+      "chapter": "chapter20",
+      "source": "chapter/chapter20.tex",
+      "line": 270,
+      "title": null,
+      "labels": [
+        "ch20theorem3proof2"
+      ],
+      "lean_decls": [
+        "mantel_amgm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 200,
+      "proof_event": 201,
+      "proof_chapter": "chapter20",
+      "proof_leanok": true,
+      "text": "Suppose $G$ is a graph on $n$ vertices without triangles. Then $G$ has at most $\\frac{n^2}{4}$ edges, and equality holds only when $n$ is even and $G$ is the complete bipartite graph $K_{n/2, n/2}$."
+    },
+    {
+      "id": "argand_inequality",
+      "kind": "lemma",
+      "position": 101,
+      "chapter": "chapter21",
+      "source": "chapter/chapter21.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "argand_inequality"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 202,
+      "proof_event": 203,
+      "proof_chapter": "chapter21",
+      "proof_leanok": false,
+      "text": "Let $p(z) = \\sum_{k=0}^n c_k z^k$ be a complex polynomial of degree $n\\ge 1$. If $p(a)\\ne0$, then every disk $D$ around $a$ contains an interior point $b$ with $|p(b)| < |p(a)|$"
+    },
+    {
+      "id": "fundamental_theorem_of_algbra",
+      "kind": "theorem",
+      "position": 102,
+      "chapter": "chapter21",
+      "source": "chapter/chapter21.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "fundamental_theorem_of_algbra"
+      ],
+      "lean_decls": [
+        "fundamental_theorem_of_algebra"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "argand_inequality"
+      ],
+      "has_proof": true,
+      "statement_event": 204,
+      "proof_event": 205,
+      "proof_chapter": "chapter21",
+      "proof_leanok": false,
+      "text": "Every nonconstant polynomial with complex coefficients has at least one root in the field of complex numbers."
+    },
+    {
+      "id": "valuation",
+      "kind": "definition",
+      "position": 103,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 4,
+      "title": "valutaion on $\\mathbb{R}$",
+      "labels": [
+        "valuation"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "valuation_on_reals"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 206,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": ""
+    },
+    {
+      "id": "three_coloring",
+      "kind": "definition",
+      "position": 104,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 9,
+      "title": "Three-coloring of plane",
+      "labels": [
+        "three_coloring"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "valuation"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 207,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "rainbow_triangle",
+      "kind": "definition",
+      "position": 105,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 15,
+      "title": "Rainbow triangle",
+      "labels": [
+        "rainbow_triangle"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "three_coloring"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 208,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "TODO"
+    },
+    {
+      "id": "ch22lemma1",
+      "kind": "lemma",
+      "position": 106,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 22,
+      "title": null,
+      "labels": [
+        "ch22lemma1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 209,
+      "proof_event": 210,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "For any blue point $p_0 = (x_b, y_b)$, green point $(x_g, y_g)$, and red point $(x_r, y_r)$, the $v$-value of the determinant \\[ \\det \\begin{bmatrix} x_b & y_b & 1 \\\\ x_g & y_g & 1 \\\\ x_r & y_r & 1 \\end{bmatrix} \\] is at least $1$."
+    },
+    {
+      "id": "ch22corollary",
+      "kind": "corollary",
+      "position": 107,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 38,
+      "title": null,
+      "labels": [
+        "ch22corollary"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "three_coloring",
+        "rainbow_triangle"
+      ],
+      "proof_uses": [
+        "ch22lemma1"
+      ],
+      "has_proof": true,
+      "statement_event": 211,
+      "proof_event": 212,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "Any line of the plane receives at most two different colors. The area of a rainbow triangle cannot be $0$, and it cannot be $\\frac{1}{n}$ for odd $n$."
+    },
+    {
+      "id": "ch22lemma2",
+      "kind": "lemma",
+      "position": 108,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 50,
+      "title": null,
+      "labels": [
+        "ch22lemma2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 213,
+      "proof_event": 214,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "Every dissection of the unit square $S = [0, 1]^2$ into finitely many triangles contains an odd number of rainbow triangles, and thus at least one."
+    },
+    {
+      "id": "monsky_theorem",
+      "kind": "theorem",
+      "position": 109,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 60,
+      "title": "Monsky's theorem",
+      "labels": [
+        "monsky_theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch22lemma2",
+        "ch22corollary"
+      ],
+      "has_proof": true,
+      "statement_event": 215,
+      "proof_event": 216,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "It is not possible to dissect a square into an odd number of triangles of equal algebra area."
+    },
+    {
+      "id": "valuation_lemma",
+      "kind": "lemma",
+      "position": 110,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 72,
+      "title": null,
+      "labels": [
+        "valuation_lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 217,
+      "proof_event": 218,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "A proper subring $R\\subset K$ is a valuation ring with respect to some valuation $v$ into some ordered group $G$ if and only if $K = R \\cup R^{-1}$."
+    },
+    {
+      "id": "valuation_on_reals",
+      "kind": "theorem",
+      "position": 111,
+      "chapter": "chapter22",
+      "source": "chapter/chapter22.tex",
+      "line": 81,
+      "title": null,
+      "labels": [
+        "valuation_on_reals"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "valuation_lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 219,
+      "proof_event": 220,
+      "proof_chapter": "chapter22",
+      "proof_leanok": false,
+      "text": "The field of real numbers $\\mathbb{R}$ has a non-Archimedean valuation to an ordered abelian group \\[v: \\mathbb{R} \\to \\{0\\} \\cup G\\] such that $v(\\frac{1}{2}) > 1$."
+    },
+    {
+      "id": "ch23theorem1",
+      "kind": "theorem",
+      "position": 112,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch23theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch23theorem2"
+      ],
+      "has_proof": true,
+      "statement_event": 221,
+      "proof_event": 222,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "Let $f(z)$ be a complex polynomial of degree at least 1 and leading coefficient 1. Set $C = \\{ z \\in \\mathbb{C} : |f(z)| \\leq 2 \\}$ and let $\\mathcal{R}$ be the orthogonal projection of $C$ onto the real axis. Then there are intervals $I_1, \\dots, I_t$ on the real line which together cover $\\mathcal{R}$ and satisfy \\[ \\ell(I_1) + \\cdots + \\ell(I_t) \\leq 4. \\]"
+    },
+    {
+      "id": "ch23theorem2",
+      "kind": "theorem",
+      "position": 113,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "ch23theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "chebyshev",
+        "ch23corollary"
+      ],
+      "has_proof": true,
+      "statement_event": 223,
+      "proof_event": 224,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "Let $p(x)$ be a real polynomial of degree $n \\geq 1$ with leading coefficient 1, and all roots real. Then the set $\\mathcal{P} = \\{x \\in \\mathbb{R} : |p(x)| \\leq 2\\}$ can be covered by intervals of total length at most 4."
+    },
+    {
+      "id": "ch23corollary",
+      "kind": "corollary",
+      "position": 114,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 24,
+      "title": null,
+      "labels": [
+        "ch23corollary"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 225,
+      "proof_event": 226,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "Let $p(x)$ be a real polynomial of degree $n \\geq 1$ with leading coefficient 1, and suppose that $|p(x)| \\leq 2$ for all $x$ in the interval $[a, b]$. Then $b - a \\leq 4$."
+    },
+    {
+      "id": "chebyshev",
+      "kind": "theorem",
+      "position": 115,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 34,
+      "title": "Chebyshev's theorem",
+      "labels": [
+        "chebyshev"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch23fact1",
+        "ch23fact2"
+      ],
+      "has_proof": true,
+      "statement_event": 227,
+      "proof_event": 228,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "Let $p(x)$ be a real polynomial of degree $n \\geq 1$ with leading coefficient 1. Then \\[ \\max_{-1 \\leq x \\leq 1} |p(x)| \\geq \\frac{1}{2^{n-1}}. \\]"
+    },
+    {
+      "id": "ch23fact1",
+      "kind": "theorem",
+      "position": 116,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 46,
+      "title": "Fact 1",
+      "labels": [
+        "ch23fact1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 229,
+      "proof_event": 230,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "If $b$ is a multiple root of $p'(x)$, then $b$ is also a root of $p(x)$."
+    },
+    {
+      "id": "ch23fact2",
+      "kind": "theorem",
+      "position": 117,
+      "chapter": "chapter23",
+      "source": "chapter/chapter23.tex",
+      "line": 60,
+      "title": "Fact 2",
+      "labels": [
+        "ch23fact2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 231,
+      "proof_event": 232,
+      "proof_chapter": "chapter23",
+      "proof_leanok": false,
+      "text": "We have $p'(x)^2 \\geq p(x)p''(x)$ for all $x \\in \\mathbb{R}$."
+    },
+    {
+      "id": "vanderwaerden",
+      "kind": "theorem",
+      "position": 118,
+      "chapter": "chapter24",
+      "source": "chapter/chapter24.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "vanderwaerden"
+      ],
+      "lean_decls": [
+        "Matrix.permanent_conjecture"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "gurvit"
+      ],
+      "has_proof": true,
+      "statement_event": 233,
+      "proof_event": 234,
+      "proof_chapter": "chapter24",
+      "proof_leanok": false,
+      "text": "Let $M = (m_{ij})$ be a doubly stochastic $n \\times n$ matrix. Then \\[\\per M \\ge \\frac{n!}{n^n}\\] and equality holds if and only if $m_{ij} = \\frac{1}{n}$"
+    },
+    {
+      "id": "gurvit",
+      "kind": "proposition",
+      "position": 119,
+      "chapter": "chapter24",
+      "source": "chapter/chapter24.tex",
+      "line": 16,
+      "title": "Gurvit's proposition",
+      "labels": [
+        "gurvit"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 235,
+      "proof_event": 236,
+      "proof_chapter": "chapter24",
+      "proof_leanok": false,
+      "text": "If $p(x)\\in \\mathbb{R}_+[x_1, \\dots, x_n]$ is a $H$-stable and homogeneous of degree $n$, then either $p'\\cong 0$, or $p'$ is $H$-stable and homogeneous of degree $n - 1$. In either case \\[ \\mycap(p') \\ge \\mycap\\cdot g(\\deg_np). \\]"
+    },
+    {
+      "id": "ch25theorem",
+      "kind": "theorem",
+      "position": 120,
+      "chapter": "chapter25",
+      "source": "chapter/chapter25.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch25theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 237,
+      "proof_event": 238,
+      "proof_chapter": "chapter25",
+      "proof_leanok": false,
+      "text": "Let $a_1, \\dots, a_n$ be vectors in $\\mathbb{R}^d$, each of length at least 1, and let $R_1, \\dots, R_k$ be $k$ open regions of $\\mathbb{R}^d$, where $|x - y| < 2$ for any $x, y$ that lie in the same region $R_i$. Then the number of linear combinations $\\sum_{i=1}^{n} \\epsilon_i a_i$, $\\epsilon_i \\in \\{1, -1\\}$, that can lie in the union $\\bigcup_i R_i$ of the regions is at most the sum of the $k$ largest binomial coefficients $\\binom{n}{j}$. In particular, we get the bound $\\binom{\\lfloor n/2 \\rfloor}{n}$ for $k = 1$."
+    },
+    {
+      "id": "ch26lemma_a",
+      "kind": "lemma",
+      "position": 121,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 3,
+      "title": "A",
+      "labels": [
+        "ch26lemma_a"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 239,
+      "proof_event": 240,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "The functions $f$ and $g$ are defined for all non-integral values and are continuous there."
+    },
+    {
+      "id": "ch26lemma_b",
+      "kind": "lemma",
+      "position": 122,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 11,
+      "title": "B",
+      "labels": [
+        "ch26lemma_b"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 241,
+      "proof_event": 242,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "Both $f$ and $g$ are \\emph{periodic} of period $1$, that is $f(x + 1) = f(x)$ and $g(x + 1) = g(x)$ hold for all $x\\in \\mathbb{R}\\setminus\\mathbb{Z}$."
+    },
+    {
+      "id": "ch26lemma_c",
+      "kind": "lemma",
+      "position": 123,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 20,
+      "title": "C",
+      "labels": [
+        "ch26lemma_c"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 243,
+      "proof_event": 244,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "Both $f$ and $g$ are \\emph{odd} functions, that is we have $f(-x) = -f(x)$ and $g(-x) = -g(x)$ for all $x\\in \\mathbb{R}\\setminus\\mathbb{Z}$."
+    },
+    {
+      "id": "ch26lemma_d",
+      "kind": "lemma",
+      "position": 124,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 30,
+      "title": "D",
+      "labels": [
+        "ch26lemma_d"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 245,
+      "proof_event": 246,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "The two functions $f$ and $g$ satisfy the same functional equation: $f(\\frac{x}{2}) + f(\\frac{x + 1}{2}) = 2f(x)$ and $g(\\frac{x}{2}) + g(\\frac{x + 1}{2}) = gf(x)$."
+    },
+    {
+      "id": "ch26lemma_e",
+      "kind": "lemma",
+      "position": 125,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 40,
+      "title": "E",
+      "labels": [
+        "ch26lemma_e"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 247,
+      "proof_event": 248,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "By setting $h(x) := 0$ for $x \\in \\mathbb{Z}$, $h$ becomes a continuous function on all of $\\mathbb{R}$ that shares the properties given in \\ref{ch26lemma_b}, \\ref{ch26lemma_c}, \\ref{ch26lemma_d}."
+    },
+    {
+      "id": "ch26",
+      "kind": "theorem",
+      "position": 126,
+      "chapter": "chapter26",
+      "source": "chapter/chapter26.tex",
+      "line": 50,
+      "title": null,
+      "labels": [
+        "ch26"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch26lemma_a",
+        "ch26lemma_b",
+        "ch26lemma_c",
+        "ch26lemma_d",
+        "ch26lemma_e"
+      ],
+      "has_proof": true,
+      "statement_event": 249,
+      "proof_event": 250,
+      "proof_chapter": "chapter26",
+      "proof_leanok": false,
+      "text": "\\[ \\pi\\cot{\\pi x} = \\frac{1}{x} + \\sum_{n = 1}^\\infty \\left(\\frac{1}{x + n} + \\frac{1}{x - n}\\right) \\] for $x\\in \\mathbb{R}\\setminus\\mathbb{Z}$."
+    },
+    {
+      "id": "buffon_needle",
+      "kind": "theorem",
+      "position": 127,
+      "chapter": "chapter27",
+      "source": "chapter/chapter27.tex",
+      "line": 3,
+      "title": "Buffon's needle problem",
+      "labels": [
+        "buffon_needle"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 251,
+      "proof_event": 252,
+      "proof_chapter": "chapter27",
+      "proof_leanok": false,
+      "text": "If a short needle, of length $\\ell$, is dropped on paper that is ruled with equally spaced lines of distance $d \\geq \\ell$, then the probability that the needle comes to lie in a position where it crosses one of the lines is exactly \\[ p = \\frac{2 \\ell}{\\pi d}. \\]"
+    },
+    {
+      "id": "pigeon_hole_principle",
+      "kind": "theorem",
+      "position": 128,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 11,
+      "title": "Pigeon-hole principle",
+      "labels": [
+        "pigeon_hole_principle"
+      ],
+      "lean_decls": [
+        "chapter28.pigeon_hole_principle"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 253,
+      "proof_event": 254,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "If $n$ objects are placed in $r$ boxes, where $r < n$, then at least one of the boxes contains more than one object."
+    },
+    {
+      "id": "ch28claim1",
+      "kind": "theorem",
+      "position": 129,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 36,
+      "title": "Claim",
+      "labels": [
+        "ch28claim1"
+      ],
+      "lean_decls": [
+        "chapter28.claim1_coprime"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pigeon_hole_principle"
+      ],
+      "has_proof": true,
+      "statement_event": 255,
+      "proof_event": 256,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Consider the numbers $1, 2, 3, \\dots, 2n$, and take any $n + 1$ of them. Then there are two among these $n + 1$ numbers which are relatively prime."
+    },
+    {
+      "id": "ch28claim2",
+      "kind": "theorem",
+      "position": 130,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 52,
+      "title": "Claim",
+      "labels": [
+        "ch28claim2"
+      ],
+      "lean_decls": [
+        "chapter28.claim2_divisible"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pigeon_hole_principle"
+      ],
+      "has_proof": true,
+      "statement_event": 257,
+      "proof_event": 258,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Suppose again $A \\subset \\{1, 2, \\dots, 2n\\}$ with $|A| = n+1$. Then there are always two numbers in $A$ such that one divides the other."
+    },
+    {
+      "id": "ch28claim3",
+      "kind": "theorem",
+      "position": 131,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 68,
+      "title": "Claim (Erd\\H{o}s--Szekeres)",
+      "labels": [
+        "ch28claim3"
+      ],
+      "lean_decls": [
+        "chapter28.claim3_erdos_szekeres"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pigeon_hole_principle"
+      ],
+      "has_proof": true,
+      "statement_event": 259,
+      "proof_event": 260,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "In any sequence $a_1, a_2, \\ldots, a_{mn+1}$ of $mn+1$ distinct real numbers, there exists an increasing subsequence \\[ a_{i_1} < a_{i_2} < \\cdots < a_{i_{m+1}} \\quad (i_1 < i_2 < \\cdots < i_{m+1}) \\] of length $m+1$, or a decreasing subsequence \\[ a_{j_1} > a_{j_2} > \\cdots > a_{j_{n+1}} \\quad (j_1 < j_2 < \\cdots < j_{n+1}) \\] of length $n+1$, or both."
+    },
+    {
+      "id": "ch28claim4",
+      "kind": "theorem",
+      "position": 132,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 103,
+      "title": "Claim",
+      "labels": [
+        "ch28claim4"
+      ],
+      "lean_decls": [
+        "chapter28.claim4_contiguous_sum"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "pigeon_hole_principle"
+      ],
+      "has_proof": true,
+      "statement_event": 261,
+      "proof_event": 262,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Suppose we are given $n$ integers $a_1, \\dots, a_n$, which need not be distinct. Then there is always a set of consecutive numbers $a_{k+1}, a_{k+2}, \\dots, a_{\\ell}$ whose sum $\\sum_{i=k+1}^{\\ell} a_i$ is a multiple of $n$."
+    },
+    {
+      "id": "double_counting",
+      "kind": "theorem",
+      "position": 133,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 129,
+      "title": "Double counting",
+      "labels": [
+        "double_counting"
+      ],
+      "lean_decls": [
+        "chapter28.double_counting"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 263,
+      "proof_event": 264,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Suppose that we are given two finite sets $R$ and $C$ and a subset $S \\subseteq R \\times C$. Whenever $(p, q) \\in S$, then we say $p$ and $q$ are incident. If $r_p$ denotes the number of elements that are incident to $p \\in R$, and $c_q$ denotes the number of elements that are incident to $q \\in C$, then \\[ \\sum_{p \\in R} r_p = |S| = \\sum_{q \\in C} c_q. \\tag{3} \\]"
+    },
+    {
+      "id": "ch28_avg_divisors",
+      "kind": "theorem",
+      "position": 134,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 173,
+      "title": "Average number of divisors",
+      "labels": [
+        "ch28_avg_divisors"
+      ],
+      "lean_decls": [
+        "chapter28.sum_divisor_count"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "double_counting"
+      ],
+      "has_proof": true,
+      "statement_event": 265,
+      "proof_event": 266,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "For any positive integer $n$, \\[ \\sum_{j=1}^{n} t(j) = \\sum_{i=1}^{n} \\left\\lfloor \\frac{n}{i} \\right\\rfloor. \\] Consequently, \\[ \\log n - 1 < \\bar{t}(n) \\leq H_n < \\log n + 1, \\] where $H_n = \\sum_{i=1}^{n} \\frac{1}{i}$ is the $n$-th harmonic number."
+    },
+    {
+      "id": "handshaking",
+      "kind": "lemma",
+      "position": 135,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 213,
+      "title": "Handshaking",
+      "labels": [
+        "handshaking"
+      ],
+      "lean_decls": [
+        "chapter28.handshaking"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 267,
+      "proof_event": 268,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Let $G$ be a finite simple graph with vertex set $V$ and edge set $E$ and let $d(v)$ denote the degree of a vertex $v$. Then \\[ \\sum_{v\\in V}d(v) = 2|E|. \\tag{4} \\]"
+    },
+    {
+      "id": "ch28theorem",
+      "kind": "theorem",
+      "position": 136,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 276,
+      "title": "Reiman",
+      "labels": [
+        "ch28theorem"
+      ],
+      "lean_decls": [
+        "chapter28.c4_free_edge_bound"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "double_counting",
+        "handshaking"
+      ],
+      "has_proof": true,
+      "statement_event": 269,
+      "proof_event": 270,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "If the graph $G$ on $n$ vertices contains no $4$-cycles, then \\[ |E| \\leq \\left\\lfloor \\frac{n}{4}\\left(1 + \\sqrt{4n - 3}\\right) \\right\\rfloor. \\tag{6} \\]"
+    },
+    {
+      "id": "ch28_sum_choose",
+      "kind": "theorem",
+      "position": 137,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 293,
+      "title": "Cherry counting",
+      "labels": [
+        "ch28_sum_choose"
+      ],
+      "lean_decls": [
+        "chapter28.sum_choose_deg_le_choose_card"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "double_counting"
+      ],
+      "has_proof": true,
+      "statement_event": 271,
+      "proof_event": 272,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "If the graph $G$ on $n$ vertices contains no $4$-cycles, then \\[ \\sum_{v \\in V} \\binom{d(v)}{2} \\leq \\binom{n}{2}. \\]"
+    },
+    {
+      "id": "sperner",
+      "kind": "lemma",
+      "position": 138,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 329,
+      "title": "Sperner's Lemma",
+      "labels": [
+        "sperner"
+      ],
+      "lean_decls": [
+        "chapter28.sperner_lemma"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "handshaking"
+      ],
+      "has_proof": true,
+      "statement_event": 273,
+      "proof_event": 274,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Suppose that some ``big'' triangle with vertices $V_1, V_2, V_3$ is triangulated (that is, decomposed into a finite number of ``small'' triangles that fit together edge-by-edge). Assume that the vertices in the triangulation get ``colors'' from the set $\\{1, 2, 3\\}$ such that $V_i$ receives the color $i$ (for each $i$), and only the colors $i$ and $j$ are used for vertices along the edge from $V_i$ to $V_j$ (for $i \\neq j$), while the interior vertices are colored arbitrarily with $1$, $2$, or $3$. Then in the triangulation there must be a small ``tricolored'' triangle, which has all three different vertex colors."
+    },
+    {
+      "id": "brouwer",
+      "kind": "theorem",
+      "position": 139,
+      "chapter": "chapter28",
+      "source": "chapter/chapter28.tex",
+      "line": 368,
+      "title": "Brouwer's Fixed Point Theorem (for $n = 2$)",
+      "labels": [
+        "brouwer"
+      ],
+      "lean_decls": [
+        "chapter28.brouwer_fixed_point_2d"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "sperner"
+      ],
+      "has_proof": true,
+      "statement_event": 275,
+      "proof_event": 276,
+      "proof_chapter": "chapter28",
+      "proof_leanok": true,
+      "text": "Every continuous function $f : B^2 \\to B^2$ of a $2$-dimensional ball to itself has a fixed point (a point $x \\in B^2$ with $f(x) = x$)."
+    },
+    {
+      "id": "tiling_rectangles1",
+      "kind": "theorem",
+      "position": 140,
+      "chapter": "chapter29",
+      "source": "chapter/chapter29.tex",
+      "line": 3,
+      "title": "First proof",
+      "labels": [
+        "tiling_rectangles1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 277,
+      "proof_event": 278,
+      "proof_chapter": "chapter29",
+      "proof_leanok": false,
+      "text": "Whenever a rectangle is tiled by rectangles all of which have at least one side of integer length, then the tiled rectangle has at least one side of integer length."
+    },
+    {
+      "id": "tiling_rectangles2",
+      "kind": "theorem",
+      "position": 141,
+      "chapter": "chapter29",
+      "source": "chapter/chapter29.tex",
+      "line": 13,
+      "title": "Second proof",
+      "labels": [
+        "tiling_rectangles2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 279,
+      "proof_event": 280,
+      "proof_chapter": "chapter29",
+      "proof_leanok": false,
+      "text": "Whenever a rectangle is tiled by rectangles all of which have at least one side of integer length, then the tiled rectangle has at least one side of integer length."
+    },
+    {
+      "id": "tiling_rectangles3",
+      "kind": "theorem",
+      "position": 142,
+      "chapter": "chapter29",
+      "source": "chapter/chapter29.tex",
+      "line": 23,
+      "title": "Third proof",
+      "labels": [
+        "tiling_rectangles3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 281,
+      "proof_event": 282,
+      "proof_chapter": "chapter29",
+      "proof_leanok": false,
+      "text": "Whenever a rectangle is tiled by rectangles all of which have at least one side of integer length, then the tiled rectangle has at least one side of integer length."
+    },
+    {
+      "id": "ch30theorem1",
+      "kind": "theorem",
+      "position": 143,
+      "chapter": "chapter30",
+      "source": "chapter/chapter30.tex",
+      "line": 4,
+      "title": "Sperner's theorem",
+      "labels": [
+        "ch30theorem1"
+      ],
+      "lean_decls": [
+        "chapter30.sperner"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 283,
+      "proof_event": 284,
+      "proof_chapter": "chapter30",
+      "proof_leanok": true,
+      "text": "The size of a largest antichain of an $n$-set is $\\binom{n}{\\lfloor n/2\\rfloor}$."
+    },
+    {
+      "id": "ch30lemma",
+      "kind": "lemma",
+      "position": 144,
+      "chapter": "chapter30",
+      "source": "chapter/chapter30.tex",
+      "line": 25,
+      "title": "Katona's arc lemma",
+      "labels": [
+        "ch30lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 285,
+      "proof_event": 286,
+      "proof_chapter": "chapter30",
+      "proof_leanok": false,
+      "text": "Let $n \\ge 2k$, and suppose we are given $t$ distinct arcs $A_1, \\dots A_t$ of length $k$ on a circle of $n$ points, such that any two arcs share at least one point. Then $t \\le k$."
+    },
+    {
+      "id": "ch30theorem2",
+      "kind": "theorem",
+      "position": 145,
+      "chapter": "chapter30",
+      "source": "chapter/chapter30.tex",
+      "line": 39,
+      "title": "Erd\\H{o}s--Ko--Rado",
+      "labels": [
+        "ch30theorem2"
+      ],
+      "lean_decls": [
+        "chapter30.erdos_ko_rado"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch30lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 287,
+      "proof_event": 288,
+      "proof_chapter": "chapter30",
+      "proof_leanok": true,
+      "text": "Let $n \\ge 2k$. The largest size of an intersecting $k$-uniform family in an $n$-set is $\\binom{n - 1}{k - 1}$."
+    },
+    {
+      "id": "ch30theorem3",
+      "kind": "theorem",
+      "position": 146,
+      "chapter": "chapter30",
+      "source": "chapter/chapter30.tex",
+      "line": 59,
+      "title": "Hall's marriage theorem",
+      "labels": [
+        "ch30theorem3"
+      ],
+      "lean_decls": [
+        "chapter30.hall_marriage"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 289,
+      "proof_event": 290,
+      "proof_chapter": "chapter30",
+      "proof_leanok": true,
+      "text": "Let $A_1, \\dots A_n$ be a collection of subsets of a finite set $X$. Then there exists a system of distinct representatives if and only if the union of any $m$ sets $A_i$ contains at least $m$ elements, for $1 \\le m \\le n$."
+    },
+    {
+      "id": "ch30corollary",
+      "kind": "corollary",
+      "position": 147,
+      "chapter": "chapter30",
+      "source": "chapter/chapter30.tex",
+      "line": 83,
+      "title": "$k$ systems of distinct representatives",
+      "labels": [
+        "ch30corollary"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 291,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Suppose the sets $A_1, \\dots, A_n$ all have size $k \\ge 1$ and suppose further that no element is contained in more than $k$ sets. Then there exist $k$ SDR's such that for any $i$ the $k$ representatives of $A_i$ are distinct and thus together form the set $A_i$."
+    },
+    {
+      "id": "ch31lemma",
+      "kind": "lemma",
+      "position": 148,
+      "chapter": "chapter31",
+      "source": "chapter/chapter31.tex",
+      "line": 6,
+      "title": null,
+      "labels": [
+        "ch31lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 292,
+      "proof_event": 293,
+      "proof_chapter": "chapter31",
+      "proof_leanok": false,
+      "text": "Let $\\mathbb{Q} : \\mathfrak{S}_n \\longrightarrow \\mathbb{R}$ be any probability distribution that defines a shuffling process $\\mathbb{Q}^*k$ with a strong uniform stopping rule whose stopping time is $T$. Then for all $k \\geq 0$, \\[ ||\\mathbb{Q}^*k - \\mathbb{U}|| \\leq \\text{Prob}[T > k]. \\]"
+    },
+    {
+      "id": "ch31theorem1",
+      "kind": "theorem",
+      "position": 149,
+      "chapter": "chapter31",
+      "source": "chapter/chapter31.tex",
+      "line": 48,
+      "title": null,
+      "labels": [
+        "ch31theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch31lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 294,
+      "proof_event": 295,
+      "proof_chapter": "chapter31",
+      "proof_leanok": false,
+      "text": "Let $c \\geq 0$ and $k := \\lceil n \\log n + cn \\rceil$. Then after performing $k$ top-in-at-random shuffles on a deck of $n$ cards, the variation distance from the uniform distribution satisfies \\[ d(k) := ||\\text{Top}^*k - \\mathbb{U}|| \\leq e^{-c}. \\]"
+    },
+    {
+      "id": "ch31theorem2",
+      "kind": "theorem",
+      "position": 150,
+      "chapter": "chapter31",
+      "source": "chapter/chapter31.tex",
+      "line": 63,
+      "title": null,
+      "labels": [
+        "ch31theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 296,
+      "proof_event": 297,
+      "proof_chapter": "chapter31",
+      "proof_leanok": false,
+      "text": "After performing $k$ riffle shuffles on a deck of $n$ cards, the variation distance from a uniform distribution satisfies \\[ ||\\text{Rif}^*k - \\mathbb{U}|| \\leq 1 - \\prod_{i=1}^{n-1} \\left( 1 - \\frac{i}{2^k} \\right). \\]"
+    },
+    {
+      "id": "ch32lemma",
+      "kind": "lemma",
+      "position": 151,
+      "chapter": "chapter32",
+      "source": "chapter/chapter32.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch32lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 298,
+      "proof_event": 299,
+      "proof_chapter": "chapter32",
+      "proof_leanok": false,
+      "text": "Let $G = (V, E)$ be a finite weighted acyclic directed graph, $A = \\{A_1, \\dots, A_n\\}$ and $\\mathcal{B} = \\{B_1, \\dots, B_n\\}$ two $n$-sets of vertices, and $M$ the path matrix from $A$ to $\\mathcal{B}$. Then \\[ \\det M = \\sum_{\\mathcal{P} \\text{ vertex-disjoint path system}} \\text{sign}(\\mathcal{P}) \\, w(\\mathcal{P}). \\tag{3} \\]"
+    },
+    {
+      "id": "ch32theorem",
+      "kind": "theorem",
+      "position": 152,
+      "chapter": "chapter32",
+      "source": "chapter/chapter32.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "ch32theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch32lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 300,
+      "proof_event": 301,
+      "proof_chapter": "chapter32",
+      "proof_leanok": false,
+      "text": "Let $G = (V, E)$ be a finite weighted acyclic directed graph, $A = \\{A_1, \\dots, A_n\\}$ and $\\mathcal{B} = \\{B_1, \\dots, B_n\\}$ two $n$-sets of vertices, and $M$ the path matrix from $A$ to $\\mathcal{B}$. Then \\[ \\det M = \\sum_{\\mathcal{P} \\text{ vertex-disjoint path system}} \\text{sign}(\\mathcal{P}) \\, w(\\mathcal{P}). \\tag{3} \\]"
+    },
+    {
+      "id": "cayley_formala_proof1",
+      "kind": "theorem",
+      "position": 153,
+      "chapter": "chapter33",
+      "source": "chapter/chapter33.tex",
+      "line": 3,
+      "title": "First proof (bijection)",
+      "labels": [
+        "cayley_formala_proof1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 302,
+      "proof_event": 303,
+      "proof_chapter": "chapter33",
+      "proof_leanok": false,
+      "text": "There are $n^{n - 2}$ different labeled trees on $n$ nodes."
+    },
+    {
+      "id": "cayley_formala_proof2",
+      "kind": "theorem",
+      "position": 154,
+      "chapter": "chapter33",
+      "source": "chapter/chapter33.tex",
+      "line": 12,
+      "title": "Second proof (Linear Algebra)",
+      "labels": [
+        "cayley_formala_proof2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 304,
+      "proof_event": 305,
+      "proof_chapter": "chapter33",
+      "proof_leanok": false,
+      "text": "There are $n^{n - 2}$ different labeled trees on $n$ nodes."
+    },
+    {
+      "id": "cayley_formala_proof3",
+      "kind": "theorem",
+      "position": 155,
+      "chapter": "chapter33",
+      "source": "chapter/chapter33.tex",
+      "line": 20,
+      "title": "Second proof (Recursion)",
+      "labels": [
+        "cayley_formala_proof3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 306,
+      "proof_event": 307,
+      "proof_chapter": "chapter33",
+      "proof_leanok": false,
+      "text": "There are $n^{n - 2}$ different labeled trees on $n$ nodes."
+    },
+    {
+      "id": "cayley_formala_proof4",
+      "kind": "theorem",
+      "position": 156,
+      "chapter": "chapter33",
+      "source": "chapter/chapter33.tex",
+      "line": 29,
+      "title": "Second proof (Double Counting)",
+      "labels": [
+        "cayley_formala_proof4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "double_counting"
+      ],
+      "has_proof": true,
+      "statement_event": 308,
+      "proof_event": 309,
+      "proof_chapter": "chapter33",
+      "proof_leanok": false,
+      "text": "There are $n^{n - 2}$ different labeled trees on $n$ nodes."
+    },
+    {
+      "id": "ch34theorem",
+      "kind": "theorem",
+      "position": 157,
+      "chapter": "chapter34",
+      "source": "chapter/chapter34.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch34theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 310,
+      "proof_event": 311,
+      "proof_chapter": "chapter34",
+      "proof_leanok": false,
+      "text": "\\[ \\prod_{k\\ge 1}(1 - x^k) = 1 + \\sum_{j\\ge 1}(-1)^j(x^{\\frac{3j^2 - j}{2}} + x^{3j^2 + j}{2}). \\]"
+    },
+    {
+      "id": "ch35lemma1",
+      "kind": "lemma",
+      "position": 158,
+      "chapter": "chapter35",
+      "source": "chapter/chapter35.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "ch35lemma1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 312,
+      "proof_event": 313,
+      "proof_chapter": "chapter35",
+      "proof_leanok": false,
+      "text": "Every nonzero polynomial $p(x) \\in F[x_1, \\dots, x_n]$ of degree $d$ has at most $dq^{n-1}$ roots in $F^n$."
+    },
+    {
+      "id": "ch35lemma2",
+      "kind": "lemma",
+      "position": 159,
+      "chapter": "chapter35",
+      "source": "chapter/chapter35.tex",
+      "line": 36,
+      "title": null,
+      "labels": [
+        "ch35lemma2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 314,
+      "proof_event": 315,
+      "proof_chapter": "chapter35",
+      "proof_leanok": false,
+      "text": "For every set $E \\subseteq F^n$ of size $|E| < \\binom{n+d}{d}$ there is a nonzero polynomial $p(x) \\in F[x_1, \\dots, x_n]$ of degree at most $d$ that vanishes on $E$."
+    },
+    {
+      "id": "kakeya",
+      "kind": "theorem",
+      "position": 160,
+      "chapter": "chapter35",
+      "source": "chapter/chapter35.tex",
+      "line": 65,
+      "title": "finite Kakeya problem",
+      "labels": [
+        "kakeya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch35lemma1",
+        "ch35lemma2"
+      ],
+      "has_proof": true,
+      "statement_event": 316,
+      "proof_event": 317,
+      "proof_chapter": "chapter35",
+      "proof_leanok": false,
+      "text": "Let $K \\subseteq F^n$ be a Kakeya set. Then \\[ |K| \\geq \\binom{|F| + n - 1}{n} \\geq \\frac{|F|^n}{n!}. \\]"
+    },
+    {
+      "id": "ch36lemma1",
+      "kind": "lemma",
+      "position": 161,
+      "chapter": "chapter36",
+      "source": "chapter/chapter36.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch36lemma1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 318,
+      "proof_event": 319,
+      "proof_chapter": "chapter36",
+      "proof_leanok": false,
+      "text": "Any $(r \\times n)$-Latin rectangle, $r < n$, can be extended to an $((r+1) \\times n)$-Latin rectangle and hence can be completed to a Latin square."
+    },
+    {
+      "id": "ch36lemma2",
+      "kind": "lemma",
+      "position": 162,
+      "chapter": "chapter36",
+      "source": "chapter/chapter36.tex",
+      "line": 18,
+      "title": null,
+      "labels": [
+        "ch36lemma2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 320,
+      "proof_event": 321,
+      "proof_chapter": "chapter36",
+      "proof_leanok": false,
+      "text": "Let $P$ be a partial Latin square of order $n$ with at most $n - 1$ cells filled and at most $\\frac{n}{2}$ distinct elements, then $P$ can be completed to a Latin square of order $n$."
+    },
+    {
+      "id": "smetaniuk_theorem",
+      "kind": "theorem",
+      "position": 163,
+      "chapter": "chapter36",
+      "source": "chapter/chapter36.tex",
+      "line": 29,
+      "title": "Smetaniuk's theorem",
+      "labels": [
+        "smetaniuk_theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch36lemma1",
+        "ch36lemma2"
+      ],
+      "has_proof": true,
+      "statement_event": 322,
+      "proof_event": 323,
+      "proof_chapter": "chapter36",
+      "proof_leanok": false,
+      "text": "Any partial Latin square of order $n$ with at most $n - 1$ filled cells can be completed to a Latin square of the same order."
+    },
+    {
+      "id": "ch37theorem1",
+      "kind": "theorem",
+      "position": 164,
+      "chapter": "chapter37",
+      "source": "chapter/chapter37.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch37theorem1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch37fact_a",
+        "ch37fact_b",
+        "ch37fact_c"
+      ],
+      "has_proof": true,
+      "statement_event": 324,
+      "proof_event": 325,
+      "proof_chapter": "chapter37",
+      "proof_leanok": false,
+      "text": "Let $M = (m_{ij})$ be an $n \\times n$ matrix with entries in $\\{0, 1\\}$, and let $d_1, \\dots, d_n$ be the row sums of $M$, that is, $d_i = \\sum_{j=1}^{n} m_{ij}$. Then \\[ \\operatorname{per} M \\leq \\prod_{i=1}^{n} (d_i!)^{1/d_i}. \\]"
+    },
+    {
+      "id": "ch37theorem2",
+      "kind": "theorem",
+      "position": 165,
+      "chapter": "chapter37",
+      "source": "chapter/chapter37.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "ch37theorem2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 326,
+      "proof_event": 327,
+      "proof_chapter": "chapter37",
+      "proof_leanok": false,
+      "text": "The number $L(n)$ of Latin squares of order $n$ is bounded by \\[ \\frac{n!^{2n}}{n^{n^2}} \\le L(n) \\le \\prod_{k=1}^{n}k!^{n/k} \\]"
+    },
+    {
+      "id": "ch37fact_a",
+      "kind": "theorem",
+      "position": 166,
+      "chapter": "chapter37",
+      "source": "chapter/chapter37.tex",
+      "line": 28,
+      "title": "Fact A",
+      "labels": [
+        "ch37fact_a"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 328,
+      "proof_event": 329,
+      "proof_chapter": "chapter37",
+      "proof_leanok": false,
+      "text": "\\[H(X)\\le \\log_2(|\\supp{X}).\\]"
+    },
+    {
+      "id": "ch37fact_b",
+      "kind": "theorem",
+      "position": 167,
+      "chapter": "chapter37",
+      "source": "chapter/chapter37.tex",
+      "line": 36,
+      "title": "Fact B",
+      "labels": [
+        "ch37fact_b"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 330,
+      "proof_event": 331,
+      "proof_chapter": "chapter37",
+      "proof_leanok": false,
+      "text": "\\[H(X, Y) = H(X) + H(Y|X).\\]"
+    },
+    {
+      "id": "ch37fact_c",
+      "kind": "theorem",
+      "position": 168,
+      "chapter": "chapter37",
+      "source": "chapter/chapter37.tex",
+      "line": 44,
+      "title": "Fact B",
+      "labels": [
+        "ch37fact_c"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 332,
+      "proof_event": 333,
+      "proof_chapter": "chapter37",
+      "proof_leanok": false,
+      "text": "\\[H(Y|X)\\le \\sum_{j=1}^d \\Prop(X\\in E_j)\\log_2 j.\\]"
+    },
+    {
+      "id": "ch38definition1",
+      "kind": "definition",
+      "position": 169,
+      "chapter": "chapter38",
+      "source": "chapter/chapter38.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch38definition1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 334,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\vec{G} = (V, E)$ be a directed graph. A \\textit{kernel} $K \\subseteq V$ is a subset of the vertices such that \\begin{itemize} \\item[(i)] $K$ is independent in $G$, and \\item[(ii)] for every $u \\notin K$ there exists a vertex $v \\in K$ with an edge $u \\rightarrow v$. \\end{itemize}"
+    },
+    {
+      "id": "ch38lemma1",
+      "kind": "lemma",
+      "position": 170,
+      "chapter": "chapter38",
+      "source": "chapter/chapter38.tex",
+      "line": 12,
+      "title": null,
+      "labels": [
+        "ch38lemma1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "ch38definition1"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 335,
+      "proof_event": 336,
+      "proof_chapter": "chapter38",
+      "proof_leanok": false,
+      "text": "Let $\\vec{G} = (V, E)$ be a directed graph, and suppose that for each vertex $v \\in V$ we have a color set $C(v)$ that is larger than the outdegree, $|C(v)| \\geq d^+(v) + 1$. If every induced subgraph of $\\vec{G}$ possesses a kernel, then there exists a list coloring of $G$ with a color from $C(v)$ for each $v$."
+    },
+    {
+      "id": "ch38definition2",
+      "kind": "definition",
+      "position": 171,
+      "chapter": "chapter38",
+      "source": "chapter/chapter38.tex",
+      "line": 38,
+      "title": null,
+      "labels": [
+        "ch38definition2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 337,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A matching $M$ of $G = (X \\cup Y, E)$ is called \\textit{stable} if the following condition holds: Whenever $uv \\in E \\setminus M$, $u \\in X$, $v \\in Y$, then either $uy \\in M$ with $y > v$ in $N(u)$ or $xv \\in M$ with $x > u$ in $N(v)$, or both."
+    },
+    {
+      "id": "ch38lemma2",
+      "kind": "lemma",
+      "position": 172,
+      "chapter": "chapter38",
+      "source": "chapter/chapter38.tex",
+      "line": 46,
+      "title": null,
+      "labels": [
+        "ch38lemma2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "ch38definition2"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 338,
+      "proof_event": 339,
+      "proof_chapter": "chapter38",
+      "proof_leanok": false,
+      "text": "A stable matching always exists."
+    },
+    {
+      "id": "ch38theorem",
+      "kind": "theorem",
+      "position": 173,
+      "chapter": "chapter38",
+      "source": "chapter/chapter38.tex",
+      "line": 75,
+      "title": null,
+      "labels": [
+        "ch38theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch38lemma1",
+        "ch38lemma2"
+      ],
+      "has_proof": true,
+      "statement_event": 340,
+      "proof_event": 341,
+      "proof_chapter": "chapter38",
+      "proof_leanok": false,
+      "text": "We have $\\chi_\\ell(S_n) = n$ for all $n$."
+    },
+    {
+      "id": "five_colorable",
+      "kind": "theorem",
+      "position": 174,
+      "chapter": "chapter39",
+      "source": "chapter/chapter39.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "five_colorable"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 342,
+      "proof_event": 343,
+      "proof_chapter": "chapter39",
+      "proof_leanok": false,
+      "text": "All planar graphs $G$ can be $5$-colored: \\[ \\chi_{\\ell}(G)\\le 5. \\]"
+    },
+    {
+      "id": "museum_guards",
+      "kind": "theorem",
+      "position": 175,
+      "chapter": "chapter40",
+      "source": "chapter/chapter40.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "museum_guards"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 344,
+      "proof_event": 345,
+      "proof_chapter": "chapter40",
+      "proof_leanok": false,
+      "text": "For any museum with $n$ walls, $\\lfloor \\frac{n}{3} \\rfloor$ guards suffice."
+    },
+    {
+      "id": "ch41proof1",
+      "kind": "theorem",
+      "position": 176,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 3,
+      "title": "First Proof",
+      "labels": [
+        "ch41proof1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 346,
+      "proof_event": 347,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "If a graph $G = (V, E)$ on $n$ vertices has no $p$-clique, $p \\geq 2$, then \\[ |E| \\leq \\left(1 - \\frac{1}{p - 1}\\right) \\frac{n^2}{2}. \\tag{1} \\]"
+    },
+    {
+      "id": "ch41proof2",
+      "kind": "theorem",
+      "position": 177,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 27,
+      "title": "Second Proof",
+      "labels": [
+        "ch41proof2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 348,
+      "proof_event": 349,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "If a graph $G = (V, E)$ on $n$ vertices has no $p$-clique, $p \\geq 2$, then \\[ |E| \\leq \\left(1 - \\frac{1}{p - 1}\\right) \\frac{n^2}{2}. \\tag{1} \\]"
+    },
+    {
+      "id": "ch41proof3",
+      "kind": "theorem",
+      "position": 178,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 51,
+      "title": "Third Proof",
+      "labels": [
+        "ch41proof3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 350,
+      "proof_event": 351,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "If a graph $G = (V, E)$ on $n$ vertices has no $p$-clique, $p \\geq 2$, then \\[ |E| \\leq \\left(1 - \\frac{1}{p - 1}\\right) \\frac{n^2}{2}. \\tag{1} \\]"
+    },
+    {
+      "id": "ch41proof4",
+      "kind": "theorem",
+      "position": 179,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 102,
+      "title": "Fourth Proof",
+      "labels": [
+        "ch41proof4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 352,
+      "proof_event": 353,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "If a graph $G = (V, E)$ on $n$ vertices has no $p$-clique, $p \\geq 2$, then \\[ |E| \\leq \\left(1 - \\frac{1}{p - 1}\\right) \\frac{n^2}{2}. \\tag{1} \\]"
+    },
+    {
+      "id": "ch41proof5",
+      "kind": "theorem",
+      "position": 180,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 152,
+      "title": "Fifth Proof",
+      "labels": [
+        "ch41proof5"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 354,
+      "proof_event": 355,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "If a graph $G = (V, E)$ on $n$ vertices has no $p$-clique, $p \\geq 2$, then \\[ |E| \\leq \\left(1 - \\frac{1}{p - 1}\\right) \\frac{n^2}{2}. \\tag{1} \\]"
+    },
+    {
+      "id": "turan_graph",
+      "kind": "theorem",
+      "position": 181,
+      "chapter": "chapter41",
+      "source": "chapter/chapter41.tex",
+      "line": 190,
+      "title": "Five proofs of Tur\u00e1n's graph theorem",
+      "labels": [
+        "turan_graph"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ch41proof1",
+        "ch41proof1",
+        "ch41proof1",
+        "ch41proof4",
+        "ch41proof5"
+      ],
+      "has_proof": true,
+      "statement_event": 356,
+      "proof_event": 357,
+      "proof_chapter": "chapter41",
+      "proof_leanok": false,
+      "text": "Collecting the proofs from the chapter..."
+    },
+    {
+      "id": "ch42theorem",
+      "kind": "theorem",
+      "position": 182,
+      "chapter": "chapter42",
+      "source": "chapter/chapter42.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ch42theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 358,
+      "proof_event": 359,
+      "proof_chapter": "chapter42",
+      "proof_leanok": false,
+      "text": "Whenever $T = \\{v^{(1)}, \\dots, v^{(m)}\\}$ is an orthonormal representation of $G$ with constant $\\sigma_T$, then \\[ \\Theta(G) \\leq \\frac{1}{\\sigma_T}. \\]"
+    },
+    {
+      "id": "lyusternik_shnirelman",
+      "kind": "theorem",
+      "position": 183,
+      "chapter": "chapter43",
+      "source": "chapter/chapter43.tex",
+      "line": 3,
+      "title": "Lyusternik\u2013Shnirel'man",
+      "labels": [
+        "lyusternik_shnirelman"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "borsuk_ulam"
+      ],
+      "has_proof": true,
+      "statement_event": 360,
+      "proof_event": 361,
+      "proof_chapter": "chapter43",
+      "proof_leanok": false,
+      "text": "If the $d$-sphere $S^d$ is covered by $d + 1$ sets, \\[ S^d = U_1 \\cup \\dots \\cup U_d \\cup U_{d+1}, \\] such that each of the first $d$ sets $U_1, \\dots, U_d$ is either open or closed, then one of the $d + 1$ sets contains a pair of antipodal points $x^*, -x^*$."
+    },
+    {
+      "id": "gale_theorem",
+      "kind": "theorem",
+      "position": 184,
+      "chapter": "chapter43",
+      "source": "chapter/chapter43.tex",
+      "line": 37,
+      "title": "Gale's theorem",
+      "labels": [
+        "gale_theorem"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 362,
+      "proof_event": 363,
+      "proof_chapter": "chapter43",
+      "proof_leanok": false,
+      "text": "There is an arrangement of $2k + d$ points on $S^d$ such that every open hemisphere contains at least $k$ of these points."
+    },
+    {
+      "id": "kneser_conjecture",
+      "kind": "theorem",
+      "position": 185,
+      "chapter": "chapter43",
+      "source": "chapter/chapter43.tex",
+      "line": 46,
+      "title": "Kneser's conjecture",
+      "labels": [
+        "kneser_conjecture"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lyusternik_shnirelman",
+        "gale_theorem"
+      ],
+      "has_proof": true,
+      "statement_event": 364,
+      "proof_event": 365,
+      "proof_chapter": "chapter43",
+      "proof_leanok": false,
+      "text": "We have \\[ \\chi(K(2k + d, k)) = d + 2. \\]"
+    },
+    {
+      "id": "borsuk_ulam",
+      "kind": "theorem",
+      "position": 186,
+      "chapter": "chapter43",
+      "source": "chapter/chapter43.tex",
+      "line": 83,
+      "title": null,
+      "labels": [
+        "borsuk_ulam"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 366,
+      "proof_event": 367,
+      "proof_chapter": "chapter43",
+      "proof_leanok": false,
+      "text": "For every continuous map $f : S^d \\to \\mathbb{R}^d$ from $d$-sphere to $d$-space, there are antipodal points $x^*$, $-x^*$ that are mapped to the same point $f(x^*) = f(-x^*)$."
+    },
+    {
+      "id": "friendship",
+      "kind": "theorem",
+      "position": 187,
+      "chapter": "chapter44",
+      "source": "chapter/chapter44.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "friendship"
+      ],
+      "lean_decls": [
+        "chapter44.friendship_theorem"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 368,
+      "proof_event": 369,
+      "proof_chapter": "chapter44",
+      "proof_leanok": false,
+      "text": "Suppose that $G$ is a finite graph in which any two vertices have precisely one common neighbor. Then there is a vertex which is adjacent to all other vertices."
+    },
+    {
+      "id": "ch45theorem1",
+      "kind": "theorem",
+      "position": 188,
+      "chapter": "chapter45",
+      "source": "chapter/chapter45.tex",
+      "line": 4,
+      "title": null,
+      "labels": [
+        "ch45theorem1"
+      ],
+      "lean_decls": [
+        "chapter45.theorem_1"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 370,
+      "proof_event": 371,
+      "proof_chapter": "chapter45",
+      "proof_leanok": false,
+      "text": "Every family of at most $2^{d-1}$ $d$-sets is $2$-colorable, that is, $m(d) > 2^{d-1}$."
+    },
+    {
+      "id": "ch45theorem2",
+      "kind": "theorem",
+      "position": 189,
+      "chapter": "chapter45",
+      "source": "chapter/chapter45.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "ch45theorem2"
+      ],
+      "lean_decls": [
+        "chapter45.ramsey_exists"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 372,
+      "proof_event": 373,
+      "proof_chapter": "chapter45",
+      "proof_leanok": false,
+      "text": "Every family of at most $2^{d-1}$ $d$-sets is $2$-colorable, that is, $m(d) > 2^{d-1}$."
+    },
+    {
+      "id": "ch45theorem3",
+      "kind": "theorem",
+      "position": 190,
+      "chapter": "chapter45",
+      "source": "chapter/chapter45.tex",
+      "line": 25,
+      "title": null,
+      "labels": [
+        "ch45theorem3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 374,
+      "proof_event": 375,
+      "proof_chapter": "chapter45",
+      "proof_leanok": false,
+      "text": "For every $k \\geq 2$, there exists a graph $G$ with chromatic number $\\chi(G) > k$ and girth $\\gamma(G) > k$."
+    },
+    {
+      "id": "ch45theorem4",
+      "kind": "theorem",
+      "position": 191,
+      "chapter": "chapter45",
+      "source": "chapter/chapter45.tex",
+      "line": 34,
+      "title": null,
+      "labels": [
+        "ch45theorem4"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 376,
+      "proof_event": 377,
+      "proof_chapter": "chapter45",
+      "proof_leanok": false,
+      "text": "Let $G$ be a simple graph with $n$ vertices and $m$ edges, where $m \\ge 4n$. Then \\[ \\mycr(G) \\ge \\frac{1}{64}\\frac{m^3}{n^2}. \\]"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thm:euclids_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:second_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:third_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fourth_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fifth_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:sixth_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:infty_proof",
+      "target": "thm:infinity_of_primes",
+      "kind": "proof"
+    },
+    {
+      "source": "sylvester",
+      "target": "binomial_never_powers",
+      "kind": "proof"
+    },
+    {
+      "source": "ch04.lemma\u2081",
+      "target": "ch04.proposition1",
+      "kind": "proof"
+    },
+    {
+      "source": "ch04.lemma2",
+      "target": "sum_of_two_squares",
+      "kind": "proof"
+    },
+    {
+      "source": "ch04.proposition1",
+      "target": "sum_of_two_squares",
+      "kind": "proof"
+    },
+    {
+      "source": "ch04.proposition2",
+      "target": "sum_of_two_squares",
+      "kind": "proof"
+    },
+    {
+      "source": "ch04.proposition3",
+      "target": "sum_of_two_squares",
+      "kind": "proof"
+    },
+    {
+      "source": "fermats_little",
+      "target": "euler_criterion",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_criterion",
+      "target": "product_rule",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_criterion",
+      "target": "gauss_lemma",
+      "kind": "proof"
+    },
+    {
+      "source": "gauss_lemma",
+      "target": "quadratic_reciprocity1",
+      "kind": "proof"
+    },
+    {
+      "source": "fermats_little",
+      "target": "fact_B",
+      "kind": "proof"
+    },
+    {
+      "source": "mult_cyclic",
+      "target": "fact_B",
+      "kind": "proof"
+    },
+    {
+      "source": "fact_A",
+      "target": "quadratic_reciprocity2",
+      "kind": "proof"
+    },
+    {
+      "source": "fact_B",
+      "target": "quadratic_reciprocity2",
+      "kind": "proof"
+    },
+    {
+      "source": "ch7.lemma",
+      "target": "diagonalize_real_symmetric",
+      "kind": "proof"
+    },
+    {
+      "source": "e_irrational",
+      "target": "e_pow_2_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "little_lemma",
+      "target": "e_pow_4_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "e_pow_2_irrational",
+      "target": "e_pow_4_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "lem_aux_i",
+      "target": "e_pow_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "lem_aux_ii",
+      "target": "e_pow_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "lem_aux_iii",
+      "target": "e_pow_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "lem_aux_ii",
+      "target": "pi_pow_2_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "lem_aux_iii",
+      "target": "pi_pow_2_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "pi_pow_2_irrational",
+      "target": "arccos_irrational",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_series",
+      "target": "four_proofs_euler_series",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_series_2",
+      "target": "four_proofs_euler_series",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_series_3",
+      "target": "four_proofs_euler_series",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_series_4",
+      "target": "four_proofs_euler_series",
+      "kind": "proof"
+    },
+    {
+      "source": "pearl_lemma",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "cone_lemma",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "bricard_condition",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "example1",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "example2",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "example3",
+      "target": "hilberts_third",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_formula",
+      "target": "euler_consequence_a",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_consequence_a",
+      "target": "euler_consequence_b",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_formula",
+      "target": "euler_consequence_c",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_consequence_b",
+      "target": "sylvester_gallai2",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_consequence_c",
+      "target": "monochromatic_lines",
+      "kind": "proof"
+    },
+    {
+      "source": "pick_lemma",
+      "target": "pick_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "euler_formula",
+      "target": "pick_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "arm_lemma",
+      "target": "cauchy_rigidity",
+      "kind": "proof"
+    },
+    {
+      "source": "ch14theorem1",
+      "target": "borromean",
+      "kind": "proof"
+    },
+    {
+      "source": "borromean_nontrivial",
+      "target": "borromean",
+      "kind": "proof"
+    },
+    {
+      "source": "argand_inequality",
+      "target": "fundamental_theorem_of_algbra",
+      "kind": "proof"
+    },
+    {
+      "source": "valuation_on_reals",
+      "target": "valuation",
+      "kind": "statement"
+    },
+    {
+      "source": "valuation",
+      "target": "three_coloring",
+      "kind": "statement"
+    },
+    {
+      "source": "three_coloring",
+      "target": "rainbow_triangle",
+      "kind": "statement"
+    },
+    {
+      "source": "three_coloring",
+      "target": "ch22corollary",
+      "kind": "statement"
+    },
+    {
+      "source": "rainbow_triangle",
+      "target": "ch22corollary",
+      "kind": "statement"
+    },
+    {
+      "source": "ch22lemma1",
+      "target": "ch22corollary",
+      "kind": "proof"
+    },
+    {
+      "source": "ch22lemma2",
+      "target": "monsky_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "ch22corollary",
+      "target": "monsky_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "valuation_lemma",
+      "target": "valuation_on_reals",
+      "kind": "proof"
+    },
+    {
+      "source": "ch23theorem2",
+      "target": "ch23theorem1",
+      "kind": "proof"
+    },
+    {
+      "source": "chebyshev",
+      "target": "ch23theorem2",
+      "kind": "proof"
+    },
+    {
+      "source": "ch23corollary",
+      "target": "ch23theorem2",
+      "kind": "proof"
+    },
+    {
+      "source": "ch23fact1",
+      "target": "chebyshev",
+      "kind": "proof"
+    },
+    {
+      "source": "ch23fact2",
+      "target": "chebyshev",
+      "kind": "proof"
+    },
+    {
+      "source": "gurvit",
+      "target": "vanderwaerden",
+      "kind": "proof"
+    },
+    {
+      "source": "ch26lemma_a",
+      "target": "ch26",
+      "kind": "proof"
+    },
+    {
+      "source": "ch26lemma_b",
+      "target": "ch26",
+      "kind": "proof"
+    },
+    {
+      "source": "ch26lemma_c",
+      "target": "ch26",
+      "kind": "proof"
+    },
+    {
+      "source": "ch26lemma_d",
+      "target": "ch26",
+      "kind": "proof"
+    },
+    {
+      "source": "ch26lemma_e",
+      "target": "ch26",
+      "kind": "proof"
+    },
+    {
+      "source": "pigeon_hole_principle",
+      "target": "ch28claim1",
+      "kind": "proof"
+    },
+    {
+      "source": "pigeon_hole_principle",
+      "target": "ch28claim2",
+      "kind": "proof"
+    },
+    {
+      "source": "pigeon_hole_principle",
+      "target": "ch28claim3",
+      "kind": "proof"
+    },
+    {
+      "source": "pigeon_hole_principle",
+      "target": "ch28claim4",
+      "kind": "proof"
+    },
+    {
+      "source": "double_counting",
+      "target": "ch28_avg_divisors",
+      "kind": "proof"
+    },
+    {
+      "source": "double_counting",
+      "target": "ch28theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "handshaking",
+      "target": "ch28theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "double_counting",
+      "target": "ch28_sum_choose",
+      "kind": "proof"
+    },
+    {
+      "source": "handshaking",
+      "target": "sperner",
+      "kind": "proof"
+    },
+    {
+      "source": "sperner",
+      "target": "brouwer",
+      "kind": "proof"
+    },
+    {
+      "source": "ch30lemma",
+      "target": "ch30theorem2",
+      "kind": "proof"
+    },
+    {
+      "source": "ch31lemma",
+      "target": "ch31theorem1",
+      "kind": "proof"
+    },
+    {
+      "source": "ch32lemma",
+      "target": "ch32theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "double_counting",
+      "target": "cayley_formala_proof4",
+      "kind": "proof"
+    },
+    {
+      "source": "ch35lemma1",
+      "target": "kakeya",
+      "kind": "proof"
+    },
+    {
+      "source": "ch35lemma2",
+      "target": "kakeya",
+      "kind": "proof"
+    },
+    {
+      "source": "ch36lemma1",
+      "target": "smetaniuk_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "ch36lemma2",
+      "target": "smetaniuk_theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "ch37fact_a",
+      "target": "ch37theorem1",
+      "kind": "proof"
+    },
+    {
+      "source": "ch37fact_b",
+      "target": "ch37theorem1",
+      "kind": "proof"
+    },
+    {
+      "source": "ch37fact_c",
+      "target": "ch37theorem1",
+      "kind": "proof"
+    },
+    {
+      "source": "ch38definition1",
+      "target": "ch38lemma1",
+      "kind": "statement"
+    },
+    {
+      "source": "ch38definition2",
+      "target": "ch38lemma2",
+      "kind": "statement"
+    },
+    {
+      "source": "ch38lemma1",
+      "target": "ch38theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "ch38lemma2",
+      "target": "ch38theorem",
+      "kind": "proof"
+    },
+    {
+      "source": "ch41proof1",
+      "target": "turan_graph",
+      "kind": "proof"
+    },
+    {
+      "source": "ch41proof4",
+      "target": "turan_graph",
+      "kind": "proof"
+    },
+    {
+      "source": "ch41proof5",
+      "target": "turan_graph",
+      "kind": "proof"
+    },
+    {
+      "source": "borsuk_ulam",
+      "target": "lyusternik_shnirelman",
+      "kind": "proof"
+    },
+    {
+      "source": "lyusternik_shnirelman",
+      "target": "kneser_conjecture",
+      "kind": "proof"
+    },
+    {
+      "source": "gale_theorem",
+      "target": "kneser_conjecture",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}
