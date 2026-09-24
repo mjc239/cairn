@@ -20,9 +20,12 @@
   "LeanBanachTarski"
  ],
  "build_minutes": 0.4,
+ "extractor": "extract_deps.lean",
  "decls": 52,
  "theorems": 12,
+ "external_decls": 0,
  "lean_resolved": 0.0,
  "nodes_linked": 0,
- "minutes": 3.3
+ "nodes_linked_external_only": 0,
+ "minutes": 3.2
 }
