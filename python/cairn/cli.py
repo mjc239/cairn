@@ -140,6 +140,8 @@ def main(argv: list[str] | None = None) -> None:
     po.add_argument("--write-prose-prompts", action="store_true", help="write translation prompts into --prose")
     po.add_argument("--write-check-prompts", action="store_true",
                     help="write faithfulness-check prompts for the translations in --prose")
+    po.add_argument("--write-repair-prompts", action="store_true",
+                    help="write repair prompts for the translations the check flagged")
     add_style_args(po)
 
     pz = sub.add_parser("outline-eval", help="compare blueprint-free outlines with a blueprint")
@@ -185,14 +187,16 @@ def main(argv: list[str] | None = None) -> None:
         note = (f"{len(o.named)} results in {len(o.chapter_order)} chapters, "
                 f"selected from {len(decls)} declarations "
                 f"({'detail ' + str(args.detail) if args.count is None else str(args.count) + ' requested'}).")
-        from .prose import coverage, load_prose, write_check_prompts, write_prose_prompts
+        from .prose import coverage, load_prose, write_check_prompts, write_prose_prompts, write_repair_prompts
 
-        if (args.write_prose_prompts or args.write_check_prompts) and not args.prose:
-            ap.error("--write-prose-prompts / --write-check-prompts need --prose DIR")
+        if (args.write_prose_prompts or args.write_check_prompts or args.write_repair_prompts) and not args.prose:
+            ap.error("--write-prose-prompts / --write-check-prompts / --write-repair-prompts need --prose DIR")
         if args.write_prose_prompts:
             print(f"wrote {len(write_prose_prompts(o, decls, args.prose))} prose prompts to {args.prose}")
         if args.write_check_prompts:
             print(f"wrote {len(write_check_prompts(o, decls, args.prose))} check prompts to {args.prose}")
+        if args.write_repair_prompts:
+            print(f"wrote {len(write_repair_prompts(o, decls, args.prose))} repair prompts to {args.prose}")
         prose = load_prose(args.prose)
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(render(o, decls, args.title, style, note, prose))

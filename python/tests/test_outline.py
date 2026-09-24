@@ -44,7 +44,14 @@ def test_build_and_render(style):
 def test_prose_roundtrip(tmp_path):
     import json
 
-    from cairn.prose import coverage, load_prose, strip_namespaces, write_check_prompts, write_prose_prompts
+    from cairn.prose import (
+        coverage,
+        load_prose,
+        strip_namespaces,
+        write_check_prompts,
+        write_prose_prompts,
+        write_repair_prompts,
+    )
 
     d = _decls()
     d["T"].stmt_short = "(h : Foo.P) : Foo.Q"
@@ -65,4 +72,12 @@ def test_prose_roundtrip(tmp_path):
     assert "## 3. The main theorem" in md and "If P then Q." in md and "Apply L." in md
     assert "Translation flagged: drops h" in md and "Lean: `(h : Foo.P) : Foo.Q`" in md
     assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"]}
+    # repair: the flagged item goes back with the checker's issue; the corrected statement overrides the original
+    assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair.md"]
+    assert "Checker's issue: drops h" in (tmp_path / "M_B.repair.md").read_text()
+    (tmp_path / "M_B.repair.json").write_text(json.dumps({"T": {"statement": "If h : P then Q."}}))
+    (tmp_path / "M_B.check.json").write_text(json.dumps({"T": {"faithful": True, "issue": ""}}))
+    prose = load_prose(tmp_path)
+    assert prose["M.B"]["results"]["T"]["statement"] == "If h : P then Q." and prose["M.B"]["results"]["T"]["repaired"]
+    assert coverage(o, prose)["flagged"] == []
     assert strip_namespaces("Foo.P ∧ Bar.Foo.P ∧ Foo.x", ("Foo",)) == "P ∧ Bar.Foo.P ∧ x"

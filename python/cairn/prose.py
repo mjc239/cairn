@@ -8,7 +8,11 @@ Everything goes through files, so any model or API can fill them in:
 2. ``write_check_prompts`` writes ``<chapter>.check.md``, which pairs each Lean statement with its English
    translation. A *separate* reader answers ``<chapter>.check.json``, flagging translations that add, drop,
    strengthen or weaken anything.
-3. ``load_prose`` reads both, and :func:`cairn.outline.render` shows the English next to the Lean statement, with
+3. ``write_repair_prompts`` writes ``<chapter>.repair.md`` for chapters with flagged translations: each flagged
+   result with its Lean statement, the previous English and the checker's issue. A model answers
+   ``<chapter>.repair.json`` with corrected statements, which override the originals; the chapter is then
+   checked again.
+4. ``load_prose`` reads them all, and :func:`cairn.outline.render` shows the English next to the Lean statement, with
    flagged translations marked. The Lean statement always stays in the outline: it is the verified ground truth.
 """
 
@@ -52,6 +56,17 @@ Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypo
 quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
+Use every Lean name exactly as given."""
+
+REPAIR_INSTRUCTIONS = """You are correcting translations of verified Lean statements into mathematical English.
+An independent checker found the English statements below unfaithful to the Lean. For each, write a corrected
+statement in clear mathematical English (LaTeX between $...$), fixing the issue the checker raised. Keep every
+hypothesis the Lean shows, including instance assumptions such as `[Finite G]` or `[IsProbabilityMeasure μ]`
+(say them in words: "$G$ is finite", "$\\mu$ is a probability measure"), and the exact conclusion. Do not add
+claims the Lean does not make. Purely structural instances (e.g. `[AddCommGroup G]`) and implicit arguments are not
+shown and may stay implicit.
+
+Reply with only a JSON object: {"<lean name>": {"statement": "..."}}
 Use every Lean name exactly as given."""
 
 
@@ -154,6 +169,28 @@ def write_check_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> lis
     return paths
 
 
+def write_repair_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> list[Path]:
+    prose = load_prose(prose_dir)
+    nss = open_namespaces(o.named)
+    paths = []
+    for ch, results in _chapters(o).items():
+        entry = prose.get(ch)
+        flagged = [v for v in results if entry and entry["results"].get(v, {}).get("faithful") is False]
+        if not flagged:
+            continue
+        lines = [REPAIR_INSTRUCTIONS, "", f"Namespaces open (prefixes omitted): {', '.join(nss)}.", ""]
+        for v in flagged:
+            r, d = entry["results"][v], decls[v]
+            lines += [f"### `{v}`", f"Lean: `{_clip(statement_of(d, nss), 3000)}`"]
+            if d.doc:
+                lines.append(f"Docstring: {_clip(d.doc, 400)}")
+            lines += [f"Previous English: {r['statement']}", f"Checker's issue: {r.get('issue', '')}", ""]
+        path = Path(prose_dir) / f"{chapter_key(ch)}.repair.md"
+        path.write_text("\n".join(lines))
+        paths.append(path)
+    return paths
+
+
 def load_prose(prose_dir: Path | None) -> dict[str, dict]:
     """Chapter (module) -> {"title", "results": {name: {"statement", "sketch", "faithful", "issue"}}}."""
     if prose_dir is None or not Path(prose_dir).exists():
@@ -169,6 +206,15 @@ def load_prose(prose_dir: Path | None) -> dict[str, dict]:
         m = re.search(r"Lean module `([^`]+)`", prompt.read_text()) if prompt.exists() else None
         module = m.group(1) if m else key
         results = {k: dict(v) for k, v in data.get("results", {}).items()}
+        repair = Path(prose_dir) / f"{key}.repair.json"
+        if repair.exists():
+            try:
+                for k, v in json.loads(repair.read_text()).items():
+                    if k in results and v.get("statement"):
+                        results[k]["statement"] = v["statement"]
+                        results[k]["repaired"] = True
+            except json.JSONDecodeError:
+                pass
         check = Path(prose_dir) / f"{key}.check.json"
         if check.exists():
             try:
