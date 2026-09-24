@@ -65,64 +65,113 @@
       "name length": {
         "auroc": 0.51532926006131,
         "p_at_k": 0.125
+      },
+      "aux-style name": {
+        "auroc": 0.5197253705318222,
+        "p_at_k": 0.1774193548387097
+      },
+      "variant of another declaration": {
+        "auroc": 0.5064843068875328,
+        "p_at_k": 0.14112903225806453
+      },
+      "has variants": {
+        "auroc": 0.5417393199651265,
+        "p_at_k": 0.20161290322580644
+      },
+      "used by exactly one declaration": {
+        "auroc": 0.5217414995640802,
+        "p_at_k": 0.0846774193548387
+      },
+      "used only by its own variants": {
+        "auroc": 0.5243570183086312,
+        "p_at_k": 0.125
       }
     },
     "combined": {
-      "auroc": 0.866743890091965,
-      "average_precision": 0.5994135242223411,
-      "p_at_k": 0.6088709677419355,
-      "coefficients": {
-        "users (in project)": 0.7768115326797563,
-        "uses (in project)": 0.5128758258629064,
-        "pagerank, towards results": 0.5346120729807065,
-        "pagerank, towards utilities": -0.02401231082286689,
-        "betweenness": 0.31711874082388664,
-        "dominated declarations": -0.2246791420412139,
-        "proof size": 0.4738315185735565,
-        "statement size": 0.7644453675356535,
-        "proof / statement size": -0.06969735474392617,
-        "is private": -1.2532624040424527,
-        "is definition": 0.405343455181164,
-        "is instance": -0.42817469086108284,
-        "in ForMathlib/Mathlib module": -0.3818969776775105,
-        "primed name": -0.1674287259524731,
-        "name length": 0.09766787867993873
+      "structural features": {
+        "auroc": 0.866743890091965,
+        "average_precision": 0.5994135242223411,
+        "p_at_k": 0.6088709677419355,
+        "coefficients": {
+          "users (in project)": 0.7768115326797567,
+          "uses (in project)": 0.5128758258629053,
+          "pagerank, towards results": 0.5346120729807159,
+          "pagerank, towards utilities": -0.024012310822864782,
+          "betweenness": 0.3171187408238866,
+          "dominated declarations": -0.22467914204122255,
+          "proof size": 0.47383151857355277,
+          "statement size": 0.7644453675356592,
+          "proof / statement size": -0.06969735474392613,
+          "is private": -1.2532624040424494,
+          "is definition": 0.40534345518115916,
+          "is instance": -0.4281746908610718,
+          "in ForMathlib/Mathlib module": -0.38189697767750796,
+          "primed name": -0.1674287259524731,
+          "name length": 0.09766787867993594
+        }
+      },
+      "+ variant-of features": {
+        "auroc": 0.8586090643192621,
+        "average_precision": 0.6059726664929708,
+        "p_at_k": 0.5967741935483871,
+        "coefficients": {
+          "users (in project)": 0.7138620076097101,
+          "uses (in project)": 0.5715803333959322,
+          "pagerank, towards results": 0.5746627069043598,
+          "pagerank, towards utilities": -0.0001908495371817303,
+          "betweenness": 0.33746766218525676,
+          "dominated declarations": -0.26168379235538264,
+          "proof size": 0.5031518225339701,
+          "statement size": 0.8277874073198673,
+          "proof / statement size": -0.07602024670292398,
+          "is private": -1.2140150020099958,
+          "is definition": 0.4322643730462801,
+          "is instance": -0.4231984383581361,
+          "in ForMathlib/Mathlib module": -0.40425712344759335,
+          "primed name": 0.3529080042418346,
+          "name length": 0.08985445721961981,
+          "aux-style name": -0.3188662693577958,
+          "variant of another declaration": -0.31754544198394963,
+          "has variants": 0.04140595818556869,
+          "used by exactly one declaration": -0.14709838960330732,
+          "used only by its own variants": -0.04898531505481867
+        }
       }
     },
     "random_p_at_k": 0.1766733870967742,
     "top_unlabelled": [
       "averaged_final",
       "ProbabilityTheory.Kernel.chain_rule",
-      "app_ent_PFR'",
-      "weak_PFR_asymm_prelim",
-      "tau_strictly_decreases_aux",
       "ProbabilityTheory.Kernel.entropy_compProd",
+      "app_ent_PFR'",
       "tau_strictly_decreases_aux'",
+      "dist_le_of_sum_zero_cond",
       "dist_of_min_eq_zero'",
       "gen_ineq_aux2",
-      "gen_ineq_aux1",
-      "gen_ineq_10",
-      "new_gen_ineq_aux1",
-      "dist_le_of_sum_zero_cond",
       "ProbabilityTheory.Kernel.entropy_snd_sub_mutualInfo_le_entropy_map_of_injective",
-      "Q_dist"
+      "new_gen_ineq",
+      "gen_ineq_10",
+      "sum_of_rdist_eq_char_2'",
+      "comparison_of_ruzsa_distances",
+      "Q_dist",
+      "gen_ineq_aux1"
     ],
     "bottom_labelled": [
       "ProbabilityTheory.entropy_le_log_card",
       "ProbabilityTheory.entropy_le_log_card_of_mem",
-      "ProbabilityTheory.condEntropy_comp_of_injective",
-      "ProbabilityTheory.mutualInfo_def",
-      "ProbabilityTheory.condEntropy_add_right",
+      "ProbabilityTheory.IsUniform.entropy_eq",
       "Real.sum_mul_log_div_eq_iff",
+      "Finset.addEnergy'",
+      "ProbabilityTheory.condEntropy_add_right",
+      "ProbabilityTheory.mutualInfo_def",
+      "ProbabilityTheory.condEntropy_comp_of_injective",
       "diff_ent_le_rdist'",
       "diff_ent_le_rdist''",
-      "card_of_dual",
-      "condRho_of_translate",
-      "Finset.addEnergy'",
-      "ProbabilityTheory.condEntropy_sub_left",
-      "ProbabilityTheory.entropy_assoc",
-      "hahn_banach",
-      "ProbabilityTheory.condEntropy_sub_right"
+      "diff_rdist_le_1",
+      "ProbabilityTheory.prob_ge_exp_neg_entropy",
+      "diff_rdist_le_2",
+      "ProbabilityTheory.exists_isUniform",
+      "card_of_dual"
     ]
   },
   "clustering": {

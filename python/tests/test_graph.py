@@ -88,3 +88,15 @@ def test_uniform_orders_cover_antichain_evenly():
     assert all(is_topological(g, list(o)) for o in counts)
     assert len(counts) == 12
     assert max(counts.values()) < 2 * min(counts.values())
+
+
+def test_metrics_are_reversal_invariant():
+    # Top-down (goal-first) and bottom-up presentations of the same order are charged the same load,
+    # so bottom-up null models are fair to top-down blueprints.
+    g = nx.gnp_random_graph(30, 0.1, seed=4, directed=True)
+    g = nx.relabel_nodes(nx.DiGraph([(u, v) for u, v in g.edges if u < v]), str)
+    order = random_topological_order(g, random.Random(0))
+    a, b = order_metrics(g, order), order_metrics(g, order[::-1])
+    assert (a.cutwidth, a.mean_cut, a.max_open, a.mean_open, a.mean_edge_length) == (
+        b.cutwidth, b.mean_cut, b.max_open, b.mean_open, b.mean_edge_length)
+    assert b.forward_refs == g.number_of_edges()

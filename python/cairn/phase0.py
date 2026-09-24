@@ -224,14 +224,15 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
         "",
         "**Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):",
         "",
-        "| Scope | n | Human: mean open (Kahn null) | Human: mean open (uniform null) | "
+        "| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | "
         "Human: mean edge length (Kahn) | "
         "Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for r in results:
         lines.append(
-            f"| {r.name} | {r.n_nodes} | {r.percentile('human', 'mean_open'):.0%} | "
+            f"| {r.name} | {r.n_nodes} | {len(r.forward_refs) / max(r.n_edges, 1):.0%} | "
+            f"{r.percentile('human', 'mean_open'):.0%} | "
             f"{r.percentile('human', 'mean_open', 'uniform'):.0%} | {r.percentile('human', 'mean_edge_length'):.0%} | "
             f"{r.orders['human'].mean_open:.1f} / {r.orders['optimised'].mean_open:.1f} / "
             f"{_quantile(r.uniform['mean_open'], 0.5):.1f} | {r.tau_vs_human['optimised']:+.2f} | "

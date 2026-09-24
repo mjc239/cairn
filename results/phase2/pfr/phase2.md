@@ -17,21 +17,27 @@
 | in ForMathlib/Mathlib module | 0.37 | 4% |
 | dominated declarations | 0.62 | 33% |
 | users (in project) | 0.60 | 24% |
+| has variants | 0.54 | 20% |
 | is private | 0.47 | 5% |
+| used only by its own variants | 0.52 | 12% |
 | pagerank, towards utilities | 0.52 | 17% |
+| used by exactly one declaration | 0.52 | 8% |
+| aux-style name | 0.52 | 18% |
 | name length | 0.52 | 12% |
 | is instance | 0.49 | 5% |
 | is definition | 0.49 | 10% |
+| variant of another declaration | 0.51 | 14% |
 | primed name | 0.50 | 13% |
-| **Logistic regression on all of the above** (5-fold, Lean modules held out) | **0.87** | **61%** |
+| **Logistic regression, structural features** (5-fold, Lean modules held out) | **0.87** | **61%** |
+| **Logistic regression, + variant-of features** (5-fold, Lean modules held out) | **0.86** | **60%** |
 
-Average precision of the combined score: 0.60. AUROC below 0.5 means the score points the other way (e.g. heavily used declarations are *less* likely to be named).
+Average precision of the full combined score: 0.61. AUROC below 0.5 means the score points the other way (e.g. heavily used declarations are *less* likely to be named).
 
-Coefficients (standardised log features): is private -1.25, users (in project) +0.78, statement size +0.76, pagerank, towards results +0.53, uses (in project) +0.51, proof size +0.47, is instance -0.43, is definition +0.41, in ForMathlib/Mathlib module -0.38, betweenness +0.32, dominated declarations -0.22, primed name -0.17, name length +0.10, proof / statement size -0.07, pagerank, towards utilities -0.02
+Coefficients (standardised log features): is private -1.21, statement size +0.83, users (in project) +0.71, pagerank, towards results +0.57, uses (in project) +0.57, proof size +0.50, is definition +0.43, is instance -0.42, in ForMathlib/Mathlib module -0.40, primed name +0.35, betweenness +0.34, aux-style name -0.32, variant of another declaration -0.32, dominated declarations -0.26, used by exactly one declaration -0.15, name length +0.09, proof / statement size -0.08, used only by its own variants -0.05, has variants +0.04, pagerank, towards utilities -0.00
 
-Highest-scoring declarations the blueprint does **not** name: `averaged_final`, `ProbabilityTheory.Kernel.chain_rule`, `app_ent_PFR'`, `weak_PFR_asymm_prelim`, `tau_strictly_decreases_aux`, `ProbabilityTheory.Kernel.entropy_compProd`, `tau_strictly_decreases_aux'`, `dist_of_min_eq_zero'`, `gen_ineq_aux2`, `gen_ineq_aux1`.
+Highest-scoring declarations the blueprint does **not** name: `averaged_final`, `ProbabilityTheory.Kernel.chain_rule`, `ProbabilityTheory.Kernel.entropy_compProd`, `app_ent_PFR'`, `tau_strictly_decreases_aux'`, `dist_le_of_sum_zero_cond`, `dist_of_min_eq_zero'`, `gen_ineq_aux2`, `ProbabilityTheory.Kernel.entropy_snd_sub_mutualInfo_le_entropy_map_of_injective`, `new_gen_ineq`.
 
-Lowest-scoring declarations it **does** name: `ProbabilityTheory.entropy_le_log_card`, `ProbabilityTheory.entropy_le_log_card_of_mem`, `ProbabilityTheory.condEntropy_comp_of_injective`, `ProbabilityTheory.mutualInfo_def`, `ProbabilityTheory.condEntropy_add_right`, `Real.sum_mul_log_div_eq_iff`, `diff_ent_le_rdist'`, `diff_ent_le_rdist''`, `card_of_dual`, `condRho_of_translate`.
+Lowest-scoring declarations it **does** name: `ProbabilityTheory.entropy_le_log_card`, `ProbabilityTheory.entropy_le_log_card_of_mem`, `ProbabilityTheory.IsUniform.entropy_eq`, `Real.sum_mul_log_div_eq_iff`, `Finset.addEnergy'`, `ProbabilityTheory.condEntropy_add_right`, `ProbabilityTheory.mutualInfo_def`, `ProbabilityTheory.condEntropy_comp_of_injective`, `diff_ent_le_rdist'`, `diff_ent_le_rdist''`.
 
 ## (a) Recovering chapters from the Lean graph
 

@@ -8,7 +8,7 @@ from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
-from .blueprint import parse_blueprint
+from .blueprint import GROUP_BY, parse_blueprint
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -18,11 +18,13 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("parse", help="parse a blueprint and dump nodes/edges as JSON")
     p.add_argument("src", type=Path, help="blueprint source dir, e.g. <project>/blueprint/src")
     p.add_argument("--entry", default="content.tex")
+    p.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
     p.add_argument("-o", "--out", type=Path)
 
     p0 = sub.add_parser("phase0", help="compare the human order with random and heuristic orders")
     p0.add_argument("src", type=Path)
     p0.add_argument("--entry", default="content.tex")
+    p0.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
     p0.add_argument("--project", required=True, help="name used in report titles")
     p0.add_argument("--provenance", default="", help="e.g. repo URL and commit, recorded in the report")
     p0.add_argument("-o", "--out", type=Path, required=True, help="output directory")
@@ -34,6 +36,7 @@ def main(argv: list[str] | None = None) -> None:
     p1.add_argument("src", type=Path)
     p1.add_argument("decls", type=Path, help="JSONL from lean/extract_deps.lean")
     p1.add_argument("--entry", default="content.tex")
+    p1.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
     p1.add_argument("--project", required=True)
     p1.add_argument("--provenance", default="")
     p1.add_argument("-o", "--out", type=Path, required=True)
@@ -44,6 +47,7 @@ def main(argv: list[str] | None = None) -> None:
     p2.add_argument("src", type=Path)
     p2.add_argument("decls", type=Path, help="JSONL from lean/extract_deps.lean")
     p2.add_argument("--entry", default="content.tex")
+    p2.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
     p2.add_argument("--project", required=True)
     p2.add_argument("--provenance", default="")
     p2.add_argument("-o", "--out", type=Path, required=True)
@@ -54,11 +58,24 @@ def main(argv: list[str] | None = None) -> None:
     pl.add_argument("src", type=Path)
     pl.add_argument("decls", type=Path)
     pl.add_argument("--entry", default="content.tex")
+    pl.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
     pl.add_argument("-o", "--out", type=Path, required=True)
     pl.add_argument("--seed", type=int, default=0)
+    pl.add_argument("--anonymise", action="store_true", help="replace blueprint labels by random ids")
+    pl.add_argument("--no-titles", action="store_true", help="omit result titles")
+
+    pe = sub.add_parser("llm-eval", help="score repeated LLM ordering runs per prompt variant")
+    pe.add_argument("src", type=Path)
+    pe.add_argument("decls", type=Path)
+    pe.add_argument("--entry", default="content.tex")
+    pe.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    pe.add_argument("--run", action="append", required=True, metavar="VARIANT=DIR",
+                    help="a directory of responses; repeat, same VARIANT for repeated runs")
+    pe.add_argument("--project", required=True)
+    pe.add_argument("-o", "--out", type=Path, required=True, help="markdown report path")
 
     args = ap.parse_args(argv)
-    bp = parse_blueprint(args.src, args.entry)
+    bp = parse_blueprint(args.src, args.entry, args.group_by)
 
     if args.cmd == "parse":
         data = {
@@ -74,6 +91,19 @@ def main(argv: list[str] | None = None) -> None:
             print(text)
         return
 
+    if args.cmd == "llm-eval":
+        from .formal import load_decls
+        from .phase2 import evaluate_llm_runs, write_llm_runs_report
+
+        runs: dict[str, list[Path]] = {}
+        for spec in args.run:
+            variant, _, d = spec.partition("=")
+            runs.setdefault(variant, []).append(Path(d))
+        res = evaluate_llm_runs(bp, load_decls(args.decls), runs)
+        write_llm_runs_report(res, args.out, args.project)
+        print(f"wrote {args.out}")
+        return
+
     if args.cmd in ("phase2", "llm-prompts"):
         from .formal import formal_graph, join_blueprint, load_decls, projected_graph
         from .phase2 import analyse as analyse2
@@ -85,7 +115,8 @@ def main(argv: list[str] | None = None) -> None:
             join = join_blueprint(bp, decls)
             nodes = [n.id for n in bp.nodes if n.id in join.node_decls]
             lean_g = projected_graph(bp, formal_graph(decls), join).subgraph(nodes).copy()
-            paths = write_llm_prompts(bp, lean_g, args.out, args.seed)
+            paths = write_llm_prompts(bp, lean_g, args.out, args.seed, anonymise=args.anonymise,
+                                      titles=not args.no_titles)
             print(f"wrote {len(paths)} prompts to {args.out}")
             return
         res = analyse2(bp, decls, args.llm_dir, args.seed)

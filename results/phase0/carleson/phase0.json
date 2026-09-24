@@ -1,0 +1,2258 @@
+{
+  "project": "Carleson",
+  "provenance": "fpvandoorn/carleson @ d966776f60fe (2026-09-23), blueprint/src, chapters = \\section",
+  "scopes": [
+    {
+      "name": "(whole blueprint)",
+      "n_nodes": 180,
+      "n_edges": 220,
+      "forward_refs": [
+        [
+          "exceptional-set-carleson",
+          "classical-carleson"
+        ],
+        [
+          "linearised-metric-Carleson",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "metric-space-Carleson"
+        ],
+        [
+          "int-continuous",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "R-truncation",
+          "linearised-metric-Carleson"
+        ],
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ],
+        [
+          "grid-existence",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-structure",
+          "finitary-Carleson"
+        ],
+        [
+          "tile-sum-operator",
+          "finitary-Carleson"
+        ],
+        [
+          "exceptional-set",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-union",
+          "discrete-Carleson"
+        ],
+        [
+          "forest-complement",
+          "discrete-Carleson"
+        ],
+        [
+          "dens2-antichain",
+          "antichain-operator"
+        ],
+        [
+          "dens1-antichain",
+          "antichain-operator"
+        ],
+        [
+          "forest-row-decomposition",
+          "forest-operator"
+        ],
+        [
+          "row-bound",
+          "forest-operator"
+        ],
+        [
+          "row-correlation",
+          "forest-operator"
+        ],
+        [
+          "disjoint-row-support",
+          "forest-operator"
+        ],
+        [
+          "Lipschitz-Holder-approximation",
+          "Holder-van-der-Corput"
+        ],
+        [
+          "layer-cake-representation",
+          "Hardy-Littlewood"
+        ],
+        [
+          "S-truncation",
+          "R-truncation"
+        ],
+        [
+          "linearized-truncation",
+          "S-truncation"
+        ],
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "antichain-decomposition",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ],
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ],
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "convergence-for-twice-contdiff",
+          "convergence-for-smooth"
+        ],
+        [
+          "partial-Fourier-sums-of-small",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "real-line-metric",
+          "real-Carleson"
+        ],
+        [
+          "real-line-measure",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 180,
+          "forward_refs": 90,
+          "cutwidth": 44,
+          "mean_cut": 22.65921787709497,
+          "max_open": 30,
+          "mean_open": 16.625698324022345,
+          "mean_edge_length": 18.436363636363637
+        },
+        "human_repaired": {
+          "n": 180,
+          "forward_refs": 0,
+          "cutwidth": 41,
+          "mean_cut": 19.01675977653631,
+          "max_open": 36,
+          "mean_open": 14.798882681564246,
+          "mean_edge_length": 15.472727272727273
+        },
+        "just_in_time": {
+          "n": 180,
+          "forward_refs": 0,
+          "cutwidth": 40,
+          "mean_cut": 22.329608938547487,
+          "max_open": 25,
+          "mean_open": 16.195530726256983,
+          "mean_edge_length": 18.168181818181818
+        },
+        "greedy_min_open": {
+          "n": 180,
+          "forward_refs": 0,
+          "cutwidth": 63,
+          "mean_cut": 39.78212290502793,
+          "max_open": 50,
+          "mean_open": 31.28491620111732,
+          "mean_edge_length": 32.36818181818182
+        },
+        "optimised": {
+          "n": 180,
+          "forward_refs": 0,
+          "cutwidth": 31,
+          "mean_cut": 17.178770949720672,
+          "max_open": 22,
+          "mean_open": 13.307262569832401,
+          "mean_edge_length": 13.977272727272727
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.7186840471756673,
+        "just_in_time": -0.2029795158286778,
+        "greedy_min_open": 0.06964618249534449,
+        "optimised": 0.05524518932340161
+      },
+      "random": {
+        "mean_open": {
+          "mean": 43.77690502793296,
+          "p05": 41.46368715083799,
+          "p50": 43.75977653631285,
+          "p95": 45.94972067039106
+        },
+        "max_open": {
+          "mean": 68.26,
+          "p05": 63,
+          "p50": 68,
+          "p95": 73
+        },
+        "mean_cut": {
+          "mean": 51.40868715083799,
+          "p05": 48.20670391061452,
+          "p50": 51.47486033519553,
+          "p95": 54.57541899441341
+        },
+        "cutwidth": {
+          "mean": 79.75,
+          "p05": 73,
+          "p50": 80,
+          "p95": 86
+        },
+        "mean_edge_length": {
+          "mean": 41.827977272727274,
+          "p05": 39.222727272727276,
+          "p50": 41.88181818181818,
+          "p95": 44.404545454545456
+        }
+      },
+      "random_tau_vs_human_mean": -0.08520397268777156,
+      "uniform": {
+        "mean_open": {
+          "p05": 36.944134078212294,
+          "p50": 39.21787709497207,
+          "p95": 41.960893854748605
+        },
+        "max_open": {
+          "p05": 56,
+          "p50": 60,
+          "p95": 66
+        },
+        "mean_cut": {
+          "p05": 47.22346368715084,
+          "p50": 50.10614525139665,
+          "p95": 53.25698324022346
+        },
+        "cutwidth": {
+          "p05": 69,
+          "p50": 74,
+          "p95": 80
+        },
+        "mean_edge_length": {
+          "p05": 38.42272727272727,
+          "p50": 40.768181818181816,
+          "p95": 43.33181818181818
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 27,
+        "just_in_time": 30,
+        "greedy_min_open": 83,
+        "optimised": 47
+      }
+    },
+    {
+      "name": "proof-of-metric-space-carleson-overview",
+      "n_nodes": 9,
+      "n_edges": 1,
+      "forward_refs": [
+        [
+          "discrete-Carleson",
+          "finitary-Carleson"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 9,
+          "forward_refs": 1,
+          "cutwidth": 1,
+          "mean_cut": 0.125,
+          "max_open": 1,
+          "mean_open": 0.125,
+          "mean_edge_length": 1.0
+        },
+        "human_repaired": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.125,
+          "max_open": 1,
+          "mean_open": 0.125,
+          "mean_edge_length": 1.0
+        },
+        "just_in_time": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.125,
+          "max_open": 1,
+          "mean_open": 0.125,
+          "mean_edge_length": 1.0
+        },
+        "greedy_min_open": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.125,
+          "max_open": 1,
+          "mean_open": 0.125,
+          "mean_edge_length": 1.0
+        },
+        "optimised": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 1,
+          "mean_cut": 0.125,
+          "max_open": 1,
+          "mean_open": 0.125,
+          "mean_edge_length": 1.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9444444444444444,
+        "just_in_time": -0.11111111111111116,
+        "greedy_min_open": -0.11111111111111116,
+        "optimised": -0.11111111111111116
+      },
+      "random": {
+        "mean_open": {
+          "mean": 0.342,
+          "p05": 0.125,
+          "p50": 0.25,
+          "p95": 0.75
+        },
+        "max_open": {
+          "mean": 1.0,
+          "p05": 1,
+          "p50": 1,
+          "p95": 1
+        },
+        "mean_cut": {
+          "mean": 0.342,
+          "p05": 0.125,
+          "p50": 0.25,
+          "p95": 0.75
+        },
+        "cutwidth": {
+          "mean": 1.0,
+          "p05": 1,
+          "p50": 1,
+          "p95": 1
+        },
+        "mean_edge_length": {
+          "mean": 2.736,
+          "p05": 1.0,
+          "p50": 2.0,
+          "p95": 6.0
+        }
+      },
+      "random_tau_vs_human_mean": -0.1015,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.125,
+          "p50": 0.375,
+          "p95": 0.875
+        },
+        "max_open": {
+          "p05": 1,
+          "p50": 1,
+          "p95": 1
+        },
+        "mean_cut": {
+          "p05": 0.125,
+          "p50": 0.375,
+          "p95": 0.875
+        },
+        "cutwidth": {
+          "p05": 1,
+          "p50": 1,
+          "p95": 1
+        },
+        "mean_edge_length": {
+          "p05": 1.0,
+          "p50": 3.0,
+          "p95": 7.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.166,
+          "max_open": 0.5,
+          "mean_cut": 0.166,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.166
+        },
+        "human_repaired": {
+          "mean_open": 0.166,
+          "max_open": 0.5,
+          "mean_cut": 0.166,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.166
+        },
+        "just_in_time": {
+          "mean_open": 0.166,
+          "max_open": 0.5,
+          "mean_cut": 0.166,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.166
+        },
+        "greedy_min_open": {
+          "mean_open": 0.166,
+          "max_open": 0.5,
+          "mean_cut": 0.166,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.166
+        },
+        "optimised": {
+          "mean_open": 0.166,
+          "max_open": 0.5,
+          "mean_cut": 0.166,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.166
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.11,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.11
+        },
+        "human_repaired": {
+          "mean_open": 0.11,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.11
+        },
+        "just_in_time": {
+          "mean_open": 0.11,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.11
+        },
+        "greedy_min_open": {
+          "mean_open": 0.11,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.11
+        },
+        "optimised": {
+          "mean_open": 0.11,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.11
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "proof-of-finitary-carleson",
+      "n_nodes": 15,
+      "n_edges": 12,
+      "forward_refs": [
+        [
+          "counting-balls",
+          "grid-existence"
+        ],
+        [
+          "boundary-measure",
+          "grid-existence"
+        ],
+        [
+          "frequency-ball-cover",
+          "tile-structure"
+        ],
+        [
+          "disjoint-frequency-cubes",
+          "tile-structure"
+        ],
+        [
+          "frequency-cube-cover",
+          "tile-structure"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 15,
+          "forward_refs": 5,
+          "cutwidth": 6,
+          "mean_cut": 4.142857142857143,
+          "max_open": 6,
+          "mean_open": 4.142857142857143,
+          "mean_edge_length": 4.833333333333333
+        },
+        "human_repaired": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 1.7142857142857142,
+          "max_open": 3,
+          "mean_open": 1.7142857142857142,
+          "mean_edge_length": 2.0
+        },
+        "just_in_time": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 1.7142857142857142,
+          "max_open": 3,
+          "mean_open": 1.7142857142857142,
+          "mean_edge_length": 2.0
+        },
+        "greedy_min_open": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 1.2857142857142858,
+          "max_open": 3,
+          "mean_open": 1.2857142857142858,
+          "mean_edge_length": 1.5
+        },
+        "optimised": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 1.2142857142857142,
+          "max_open": 3,
+          "mean_open": 1.2142857142857142,
+          "mean_edge_length": 1.4166666666666667
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5619047619047619,
+        "just_in_time": -0.10476190476190483,
+        "greedy_min_open": 0.33333333333333337,
+        "optimised": 0.37142857142857144
+      },
+      "random": {
+        "mean_open": {
+          "mean": 2.8845,
+          "p05": 2.2142857142857144,
+          "p50": 2.857142857142857,
+          "p95": 3.5714285714285716
+        },
+        "max_open": {
+          "mean": 5.396,
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 2.8845,
+          "p05": 2.2142857142857144,
+          "p50": 2.857142857142857,
+          "p95": 3.5714285714285716
+        },
+        "cutwidth": {
+          "mean": 5.396,
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_edge_length": {
+          "mean": 3.36525,
+          "p05": 2.5833333333333335,
+          "p50": 3.3333333333333335,
+          "p95": 4.166666666666667
+        }
+      },
+      "random_tau_vs_human_mean": 0.026400000000000014,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.142857142857143,
+          "p50": 3.0,
+          "p95": 3.9285714285714284
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 2.142857142857143,
+          "p50": 3.0,
+          "p95": 3.9285714285714284
+        },
+        "cutwidth": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_edge_length": {
+          "p05": 2.5,
+          "p50": 3.5,
+          "p95": 4.583333333333333
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.998,
+          "max_open": 0.7505,
+          "mean_cut": 0.998,
+          "cutwidth": 0.7505,
+          "mean_edge_length": 0.998
+        },
+        "human_repaired": {
+          "mean_open": 0.002,
+          "max_open": 0.006,
+          "mean_cut": 0.002,
+          "cutwidth": 0.006,
+          "mean_edge_length": 0.002
+        },
+        "just_in_time": {
+          "mean_open": 0.002,
+          "max_open": 0.006,
+          "mean_cut": 0.002,
+          "cutwidth": 0.006,
+          "mean_edge_length": 0.002
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.006,
+          "mean_cut": 0.0,
+          "cutwidth": 0.006,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.006,
+          "mean_cut": 0.0,
+          "cutwidth": 0.006,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.9925,
+          "max_open": 0.9575,
+          "mean_cut": 0.9925,
+          "cutwidth": 0.9575,
+          "mean_edge_length": 0.9925
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "proof-of-discrete-carleson",
+      "n_nodes": 37,
+      "n_edges": 38,
+      "forward_refs": [
+        [
+          "second-exception",
+          "exceptional-set"
+        ],
+        [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
+          "third-exception",
+          "exceptional-set"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
+          "C-dens1",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "antichain-decomposition",
+          "forest-complement"
+        ],
+        [
+          "C-dens1",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
+          "forest-complement"
+        ],
+        [
+          "L0-antichain",
+          "forest-complement"
+        ],
+        [
+          "L2-antichain",
+          "forest-complement"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 37,
+          "forward_refs": 15,
+          "cutwidth": 17,
+          "mean_cut": 11.722222222222221,
+          "max_open": 16,
+          "mean_open": 10.972222222222221,
+          "mean_edge_length": 11.105263157894736
+        },
+        "human_repaired": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.4166666666666665,
+          "max_open": 7,
+          "mean_open": 3.0277777777777777,
+          "mean_edge_length": 3.236842105263158
+        },
+        "just_in_time": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 4.055555555555555,
+          "max_open": 7,
+          "mean_open": 3.861111111111111,
+          "mean_edge_length": 3.8421052631578947
+        },
+        "greedy_min_open": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 6.027777777777778,
+          "max_open": 10,
+          "mean_open": 5.777777777777778,
+          "mean_edge_length": 5.7105263157894735
+        },
+        "optimised": {
+          "n": 37,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 2.7777777777777777,
+          "max_open": 7,
+          "mean_open": 2.638888888888889,
+          "mean_edge_length": 2.6315789473684212
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.7777777777777778,
+        "just_in_time": -0.4414414414414414,
+        "greedy_min_open": 0.048048048048048075,
+        "optimised": -0.14414414414414423
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.33975,
+          "p05": 7.861111111111111,
+          "p50": 9.38888888888889,
+          "p95": 10.722222222222221
+        },
+        "max_open": {
+          "mean": 14.827,
+          "p05": 12,
+          "p50": 15,
+          "p95": 17
+        },
+        "mean_cut": {
+          "mean": 9.817666666666666,
+          "p05": 8.25,
+          "p50": 9.833333333333334,
+          "p95": 11.25
+        },
+        "cutwidth": {
+          "mean": 15.932,
+          "p05": 13,
+          "p50": 16,
+          "p95": 18
+        },
+        "mean_edge_length": {
+          "mean": 9.300947368421053,
+          "p05": 7.815789473684211,
+          "p50": 9.31578947368421,
+          "p95": 10.657894736842104
+        }
+      },
+      "random_tau_vs_human_mean": -0.01080780780780781,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.583333333333333,
+          "p50": 9.055555555555555,
+          "p95": 10.222222222222221
+        },
+        "max_open": {
+          "p05": 12,
+          "p50": 15,
+          "p95": 16
+        },
+        "mean_cut": {
+          "p05": 8.444444444444445,
+          "p50": 9.75,
+          "p95": 10.88888888888889
+        },
+        "cutwidth": {
+          "p05": 13,
+          "p50": 16,
+          "p95": 17
+        },
+        "mean_edge_length": {
+          "p05": 8.0,
+          "p50": 9.236842105263158,
+          "p95": 10.31578947368421
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.98,
+          "max_open": 0.7915,
+          "mean_cut": 0.992,
+          "cutwidth": 0.7415,
+          "mean_edge_length": 0.992
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.9975,
+          "max_open": 0.85,
+          "mean_cut": 0.995,
+          "cutwidth": 0.8425,
+          "mean_edge_length": 0.995
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "proof-of-the-antichain-operator-proposit",
+      "n_nodes": 13,
+      "n_edges": 13,
+      "forward_refs": [
+        [
+          "tile-correlation",
+          "dens1-antichain"
+        ],
+        [
+          "antichain-tile-count",
+          "dens1-antichain"
+        ],
+        [
+          "correlation-kernel-bound",
+          "tile-correlation"
+        ],
+        [
+          "tile-uncertainty",
+          "tile-correlation"
+        ],
+        [
+          "tile-range-support",
+          "tile-correlation"
+        ],
+        [
+          "global-antichain-density",
+          "antichain-tile-count"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 13,
+          "forward_refs": 6,
+          "cutwidth": 5,
+          "mean_cut": 3.1666666666666665,
+          "max_open": 5,
+          "mean_open": 3.0833333333333335,
+          "mean_edge_length": 2.923076923076923
+        },
+        "human_repaired": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 4,
+          "mean_cut": 2.5833333333333335,
+          "max_open": 4,
+          "mean_open": 2.4166666666666665,
+          "mean_edge_length": 2.3846153846153846
+        },
+        "just_in_time": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 2.5,
+          "max_open": 4,
+          "mean_open": 2.3333333333333335,
+          "mean_edge_length": 2.3076923076923075
+        },
+        "greedy_min_open": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 4,
+          "mean_cut": 2.5833333333333335,
+          "max_open": 4,
+          "mean_open": 2.1666666666666665,
+          "mean_edge_length": 2.3846153846153846
+        },
+        "optimised": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 4,
+          "mean_cut": 2.0,
+          "max_open": 4,
+          "mean_open": 1.8333333333333333,
+          "mean_edge_length": 1.8461538461538463
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5128205128205128,
+        "just_in_time": -0.23076923076923084,
+        "greedy_min_open": -0.10256410256410264,
+        "optimised": 0.07692307692307687
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.3255,
+          "p05": 2.6666666666666665,
+          "p50": 3.3333333333333335,
+          "p95": 3.9166666666666665
+        },
+        "max_open": {
+          "mean": 5.534,
+          "p05": 4,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_cut": {
+          "mean": 3.7439166666666663,
+          "p05": 2.9166666666666665,
+          "p50": 3.8333333333333335,
+          "p95": 4.416666666666667
+        },
+        "cutwidth": {
+          "mean": 6.035,
+          "p05": 4,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_edge_length": {
+          "mean": 3.455923076923077,
+          "p05": 2.6923076923076925,
+          "p50": 3.5384615384615383,
+          "p95": 4.076923076923077
+        }
+      },
+      "random_tau_vs_human_mean": -0.051051282051282044,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.75,
+          "p50": 3.4166666666666665,
+          "p95": 4.0
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_cut": {
+          "p05": 3.1666666666666665,
+          "p50": 3.9166666666666665,
+          "p95": 4.666666666666667
+        },
+        "cutwidth": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_edge_length": {
+          "p05": 2.923076923076923,
+          "p50": 3.6153846153846154,
+          "p95": 4.3076923076923075
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.241,
+          "max_open": 0.295,
+          "mean_cut": 0.1155,
+          "cutwidth": 0.1695,
+          "mean_edge_length": 0.1155
+        },
+        "human_repaired": {
+          "mean_open": 0.014,
+          "max_open": 0.0555,
+          "mean_cut": 0.0095,
+          "cutwidth": 0.0275,
+          "mean_edge_length": 0.0095
+        },
+        "just_in_time": {
+          "mean_open": 0.009,
+          "max_open": 0.0555,
+          "mean_cut": 0.0045,
+          "cutwidth": 0.1695,
+          "mean_edge_length": 0.0045
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0015,
+          "max_open": 0.0555,
+          "mean_cut": 0.0095,
+          "cutwidth": 0.0275,
+          "mean_edge_length": 0.0095
+        },
+        "optimised": {
+          "mean_open": 0.0005,
+          "max_open": 0.0555,
+          "mean_cut": 0.0005,
+          "cutwidth": 0.0275,
+          "mean_edge_length": 0.0005
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.17,
+          "max_open": 0.23,
+          "mean_cut": 0.0675,
+          "cutwidth": 0.1,
+          "mean_edge_length": 0.0675
+        },
+        "human_repaired": {
+          "mean_open": 0.01,
+          "max_open": 0.0325,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.01
+        },
+        "just_in_time": {
+          "mean_open": 0.01,
+          "max_open": 0.0325,
+          "mean_cut": 0.005,
+          "cutwidth": 0.1,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0325,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.01
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0325,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "proof-of-the-forest-operator-proposition",
+      "n_nodes": 39,
+      "n_edges": 45,
+      "forward_refs": [
+        [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "third-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "second-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
+          "nontangential-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-operator-bound",
+          "tree-projection-estimate"
+        ],
+        [
+          "boundary-overlap",
+          "boundary-operator-bound"
+        ],
+        [
+          "local-dens1-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "local-dens2-tree-bound",
+          "densities-tree-bound"
+        ],
+        [
+          "correlation-distant-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "correlation-near-tree-parts",
+          "correlation-separated-trees"
+        ],
+        [
+          "Lipschitz-partition-unity",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "moderate-scale-change",
+          "Lipschitz-partition-unity"
+        ],
+        [
+          "global-tree-control-2",
+          "Holder-correlation-tree"
+        ],
+        [
+          "square-function-count",
+          "bound-for-tree-projection"
+        ],
+        [
+          "thin-scale-impact",
+          "bound-for-tree-projection"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 39,
+          "forward_refs": 19,
+          "cutwidth": 17,
+          "mean_cut": 8.578947368421053,
+          "max_open": 13,
+          "mean_open": 6.368421052631579,
+          "mean_edge_length": 7.2444444444444445
+        },
+        "human_repaired": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 7.394736842105263,
+          "max_open": 10,
+          "mean_open": 5.2894736842105265,
+          "mean_edge_length": 6.2444444444444445
+        },
+        "just_in_time": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 6.0,
+          "max_open": 8,
+          "mean_open": 4.921052631578948,
+          "mean_edge_length": 5.066666666666666
+        },
+        "greedy_min_open": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 7.447368421052632,
+          "max_open": 8,
+          "mean_open": 5.078947368421052,
+          "mean_edge_length": 6.288888888888889
+        },
+        "optimised": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 4.947368421052632,
+          "max_open": 8,
+          "mean_open": 4.0,
+          "mean_edge_length": 4.177777777777778
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.8272604588394062,
+        "just_in_time": 0.04183535762483126,
+        "greedy_min_open": 0.28475033738191635,
+        "optimised": 0.30364372469635625
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.024026315789474,
+          "p05": 7.921052631578948,
+          "p50": 9.105263157894736,
+          "p95": 9.947368421052632
+        },
+        "max_open": {
+          "mean": 16.057,
+          "p05": 13,
+          "p50": 16,
+          "p95": 18
+        },
+        "mean_cut": {
+          "mean": 10.858157894736841,
+          "p05": 9.473684210526315,
+          "p50": 10.894736842105264,
+          "p95": 12.105263157894736
+        },
+        "cutwidth": {
+          "mean": 19.111,
+          "p05": 16,
+          "p50": 19,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "mean": 9.16911111111111,
+          "p05": 8.0,
+          "p50": 9.2,
+          "p95": 10.222222222222221
+        }
+      },
+      "random_tau_vs_human_mean": 0.10876113360323886,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.894736842105263,
+          "p50": 8.921052631578947,
+          "p95": 9.868421052631579
+        },
+        "max_open": {
+          "p05": 13,
+          "p50": 16,
+          "p95": 18
+        },
+        "mean_cut": {
+          "p05": 10.078947368421053,
+          "p50": 11.263157894736842,
+          "p95": 12.736842105263158
+        },
+        "cutwidth": {
+          "p05": 16,
+          "p50": 19,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "p05": 8.511111111111111,
+          "p50": 9.511111111111111,
+          "p95": 10.755555555555556
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.038,
+          "mean_cut": 0.008,
+          "cutwidth": 0.0905,
+          "mean_edge_length": 0.008
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.065,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1275,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "two-sided-metric-space-carleson",
+      "n_nodes": 20,
+      "n_edges": 24,
+      "forward_refs": [
+        [
+          "nontangential-from-simple",
+          "two-sided-metric-space-Carleson"
+        ],
+        [
+          "nontangential-operator-boundary",
+          "nontangential-from-simple"
+        ],
+        [
+          "simple-nontangential-operator",
+          "nontangential-from-simple"
+        ],
+        [
+          "estimate-bad",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "estimate-good",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "Calderon-Zygmund-decomposition",
+          "calderon-zygmund-weak-1-1"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 20,
+          "forward_refs": 6,
+          "cutwidth": 8,
+          "mean_cut": 5.7368421052631575,
+          "max_open": 8,
+          "mean_open": 5.368421052631579,
+          "mean_edge_length": 4.541666666666667
+        },
+        "human_repaired": {
+          "n": 20,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 4.2105263157894735,
+          "max_open": 6,
+          "mean_open": 3.6315789473684212,
+          "mean_edge_length": 3.3333333333333335
+        },
+        "just_in_time": {
+          "n": 20,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.263157894736842,
+          "max_open": 5,
+          "mean_open": 2.6842105263157894,
+          "mean_edge_length": 2.5833333333333335
+        },
+        "greedy_min_open": {
+          "n": 20,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.4210526315789473,
+          "max_open": 5,
+          "mean_open": 2.263157894736842,
+          "mean_edge_length": 2.7083333333333335
+        },
+        "optimised": {
+          "n": 20,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 2.789473684210526,
+          "max_open": 4,
+          "mean_open": 2.0526315789473686,
+          "mean_edge_length": 2.2083333333333335
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.11578947368421055,
+        "just_in_time": -0.042105263157894646,
+        "greedy_min_open": -0.2210526315789474,
+        "optimised": -0.3157894736842106
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.6473684210526316,
+          "p05": 3.210526315789474,
+          "p50": 3.6842105263157894,
+          "p95": 3.9473684210526314
+        },
+        "max_open": {
+          "mean": 5.952,
+          "p05": 6,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 4.43,
+          "p05": 4.105263157894737,
+          "p50": 4.421052631578948,
+          "p95": 4.7368421052631575
+        },
+        "cutwidth": {
+          "mean": 7.963,
+          "p05": 8,
+          "p50": 8,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "mean": 3.5070833333333336,
+          "p05": 3.25,
+          "p50": 3.5,
+          "p95": 3.75
+        }
+      },
+      "random_tau_vs_human_mean": -0.11970526315789473,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.789473684210526,
+          "p50": 3.3684210526315788,
+          "p95": 3.8421052631578947
+        },
+        "max_open": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 3.526315789473684,
+          "p50": 4.315789473684211,
+          "p95": 4.7894736842105265
+        },
+        "cutwidth": {
+          "p05": 7,
+          "p50": 8,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "p05": 2.7916666666666665,
+          "p50": 3.4166666666666665,
+          "p95": 3.7916666666666665
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 1.0,
+          "cutwidth": 0.5185,
+          "mean_edge_length": 1.0
+        },
+        "human_repaired": {
+          "mean_open": 0.3905,
+          "max_open": 0.524,
+          "mean_cut": 0.134,
+          "cutwidth": 0.5185,
+          "mean_edge_length": 0.134
+        },
+        "just_in_time": {
+          "mean_open": 0.001,
+          "max_open": 0.024,
+          "mean_cut": 0.001,
+          "cutwidth": 0.0185,
+          "mean_edge_length": 0.001
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.024,
+          "mean_cut": 0.001,
+          "cutwidth": 0.0185,
+          "mean_edge_length": 0.001
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0185,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 1.0,
+          "cutwidth": 0.63,
+          "mean_edge_length": 1.0
+        },
+        "human_repaired": {
+          "mean_open": 0.825,
+          "max_open": 0.64,
+          "mean_cut": 0.3625,
+          "cutwidth": 0.63,
+          "mean_edge_length": 0.3625
+        },
+        "just_in_time": {
+          "mean_open": 0.0375,
+          "max_open": 0.145,
+          "mean_cut": 0.01,
+          "cutwidth": 0.13,
+          "mean_edge_length": 0.01
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0025,
+          "max_open": 0.145,
+          "mean_cut": 0.025,
+          "cutwidth": 0.13,
+          "mean_edge_length": 0.025
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.13,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "proof-of-the-classical-carleson-theorem",
+      "n_nodes": 36,
+      "n_edges": 41,
+      "forward_refs": [
+        [
+          "convergence-for-twice-contdiff",
+          "convergence-for-smooth"
+        ],
+        [
+          "partial-Fourier-sums-of-small",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
+        ],
+        [
+          "oscillation-control",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "real-line-measure",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-line-metric",
+          "real-Carleson"
+        ],
+        [
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 36,
+          "forward_refs": 17,
+          "cutwidth": 26,
+          "mean_cut": 13.6,
+          "max_open": 22,
+          "mean_open": 12.428571428571429,
+          "mean_edge_length": 11.609756097560975
+        },
+        "human_repaired": {
+          "n": 36,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 10.257142857142858,
+          "max_open": 16,
+          "mean_open": 8.571428571428571,
+          "mean_edge_length": 8.75609756097561
+        },
+        "just_in_time": {
+          "n": 36,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 8.685714285714285,
+          "max_open": 14,
+          "mean_open": 7.685714285714286,
+          "mean_edge_length": 7.414634146341464
+        },
+        "greedy_min_open": {
+          "n": 36,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 8.857142857142858,
+          "max_open": 16,
+          "mean_open": 7.6571428571428575,
+          "mean_edge_length": 7.560975609756097
+        },
+        "optimised": {
+          "n": 36,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 5.428571428571429,
+          "max_open": 13,
+          "mean_open": 4.8,
+          "mean_edge_length": 4.634146341463414
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.5904761904761905,
+        "just_in_time": -0.14920634920634912,
+        "greedy_min_open": -0.053968253968254,
+        "optimised": -0.10476190476190483
+      },
+      "random": {
+        "mean_open": {
+          "mean": 11.074371428571428,
+          "p05": 9.914285714285715,
+          "p50": 11.142857142857142,
+          "p95": 12.057142857142857
+        },
+        "max_open": {
+          "mean": 18.403,
+          "p05": 17,
+          "p50": 19,
+          "p95": 20
+        },
+        "mean_cut": {
+          "mean": 12.450114285714285,
+          "p05": 11.057142857142857,
+          "p50": 12.542857142857143,
+          "p95": 13.657142857142857
+        },
+        "cutwidth": {
+          "mean": 19.524,
+          "p05": 18,
+          "p50": 20,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "mean": 10.628146341463415,
+          "p05": 9.439024390243903,
+          "p50": 10.707317073170731,
+          "p95": 11.658536585365853
+        }
+      },
+      "random_tau_vs_human_mean": -0.1484825396825397,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.6,
+          "p50": 10.857142857142858,
+          "p95": 11.714285714285714
+        },
+        "max_open": {
+          "p05": 16,
+          "p50": 18,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 11.257142857142858,
+          "p50": 12.4,
+          "p95": 13.685714285714285
+        },
+        "cutwidth": {
+          "p05": 17,
+          "p50": 18,
+          "p95": 20
+        },
+        "mean_edge_length": {
+          "p05": 9.609756097560975,
+          "p50": 10.585365853658537,
+          "p95": 11.682926829268293
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.9965,
+          "max_open": 1.0,
+          "mean_cut": 0.946,
+          "cutwidth": 1.0,
+          "mean_edge_length": 0.946
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0065,
+          "cutwidth": 0.0065,
+          "mean_edge_length": 0.0065
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0065,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.9425,
+          "cutwidth": 1.0,
+          "mean_edge_length": 0.9425
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0675,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0675,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

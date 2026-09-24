@@ -1,0 +1,118 @@
+{
+  "variants": {
+    "named": {
+      "runs": [
+        {
+          "run": "results/phase2/pfr/llm",
+          "tau_within_chapters": 0.8484555588582683,
+          "per_chapter": {
+            "entropy": 0.9206349206349207,
+            "distance": 0.7476923076923077,
+            "entropy_pfr": 0.9683794466403162,
+            "improved_exponent": 0.8666666666666667,
+            "approx_hom_pfr": 0.7857142857142857,
+            "weak_pfr": 0.7333333333333334,
+            "torsion": 0.898936170212766,
+            "further_improvement": 0.8662873399715505
+          },
+          "mean_open": 45.405797101449274,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/named-s1",
+          "tau_within_chapters": 0.8515867450479652,
+          "per_chapter": {
+            "entropy": 0.9206349206349207,
+            "distance": 0.7538461538461538,
+            "entropy_pfr": 0.9683794466403162,
+            "improved_exponent": 0.7333333333333334,
+            "approx_hom_pfr": 1.0,
+            "weak_pfr": 0.7333333333333334,
+            "torsion": 0.8368794326241135,
+            "further_improvement": 0.8662873399715505
+          },
+          "mean_open": 45.43478260869565,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/named-s2",
+          "tau_within_chapters": 0.8574300970010961,
+          "per_chapter": {
+            "entropy": 0.9417989417989419,
+            "distance": 0.7476923076923077,
+            "entropy_pfr": 0.9762845849802372,
+            "improved_exponent": 0.7333333333333334,
+            "approx_hom_pfr": 1.0,
+            "weak_pfr": 0.7333333333333334,
+            "torsion": 0.8351063829787234,
+            "further_improvement": 0.8918918918918919
+          },
+          "mean_open": 45.227053140096615,
+          "violations_repaired": 0,
+          "invalid": []
+        }
+      ],
+      "tau_mean": 0.8524908003024431,
+      "tau_sd": 0.004555059894955241
+    },
+    "blind": {
+      "runs": [
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s0",
+          "tau_within_chapters": 0.8250311782177988,
+          "per_chapter": {
+            "entropy": 0.91005291005291,
+            "distance": 0.7538461538461538,
+            "entropy_pfr": 0.9762845849802372,
+            "improved_exponent": 0.7333333333333334,
+            "approx_hom_pfr": 1.0,
+            "weak_pfr": 0.4666666666666667,
+            "torsion": 0.8368794326241135,
+            "further_improvement": 0.9231863442389758
+          },
+          "mean_open": 45.36231884057971,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s1",
+          "tau_within_chapters": 0.8439107375093792,
+          "per_chapter": {
+            "entropy": 0.9312169312169312,
+            "distance": 0.6492307692307693,
+            "entropy_pfr": 0.9604743083003953,
+            "improved_exponent": 0.7333333333333334,
+            "approx_hom_pfr": 1.0,
+            "weak_pfr": 0.7333333333333334,
+            "torsion": 0.8404255319148937,
+            "further_improvement": 0.903271692745377
+          },
+          "mean_open": 45.41545893719807,
+          "violations_repaired": 0,
+          "invalid": []
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s2",
+          "tau_within_chapters": 0.8261625061553247,
+          "per_chapter": {
+            "entropy": 0.873015873015873,
+            "distance": 0.6492307692307693,
+            "entropy_pfr": 0.9604743083003953,
+            "improved_exponent": 0.7333333333333334,
+            "approx_hom_pfr": 1.0,
+            "weak_pfr": 0.7333333333333334,
+            "torsion": 0.7907801418439716,
+            "further_improvement": 0.8691322901849218
+          },
+          "mean_open": 45.28019323671498,
+          "violations_repaired": 0,
+          "invalid": []
+        }
+      ],
+      "tau_mean": 0.8317014739608343,
+      "tau_sd": 0.010588652559411315
+    }
+  }
+}
