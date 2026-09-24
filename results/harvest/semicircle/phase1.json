@@ -1,0 +1,1575 @@
+{
+  "project": "semicircle",
+  "provenance": "fredraj3/SemicircleLaw @ 9f72b2d56258 (2026-09-10), Lean leanprover/lean4:v4.24.0",
+  "stats": {
+    "project_decls": 229,
+    "project_decls_by_kind": {
+      "def": 94,
+      "inductive": 3,
+      "theorem": 132
+    },
+    "formal_edges": 560,
+    "blueprint_nodes": 205,
+    "blueprint_nodes_with_formal_decl": 58,
+    "lean_names_resolved": 59,
+    "lean_names_missing": {},
+    "coverage": 1.0,
+    "labelled_decls": 59,
+    "unlabelled_theorems": 85,
+    "edges": {
+      "author_edges": 75,
+      "lean_edges": 139,
+      "author_direct_in_lean": 48,
+      "author_implied_transitively": 1,
+      "author_absent_from_lean": [
+        [
+          "def:graph_walk_edges",
+          "def:graph_connecting_edges"
+        ],
+        [
+          "def:graph_walk_edges",
+          "def:graph_self_edges"
+        ],
+        [
+          "def:graph_walk_multi_index",
+          "def:graph_edge_count"
+        ],
+        [
+          "def:graph_walk_multi_index",
+          "def:length_of_w_i"
+        ],
+        [
+          "lem:centralMoment_odd_semicircleReal",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_two_mul_semicircleReal",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDFReal_add",
+          "lem:semicircleReal_map_add_const"
+        ],
+        [
+          "lem:semicirclePDFReal_mul",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "lem:semicircleReal_add_const",
+          "lem:centralMoment_odd_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_add_const",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_add_const",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_add_const",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_add",
+          "lem:centralMoment_odd_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_add",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_add",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_add",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_mul",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_mul",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_const_mul",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_map_neg",
+          "lem:semicircleReal_map_sub_const"
+        ],
+        [
+          "lem:semicircleReal_mul_const",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_mul_const",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicircleReal_mul_const",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:variance_fun_id_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:variance_id_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:variance_id_semicircleReal",
+          "lem:memLp_id_semicircleReal'"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "def:graph_walk_edges",
+          "lem:abs_w_i_eq_k"
+        ],
+        [
+          "def:graph_walk_edges",
+          "lem:walk_edge_card_equiv"
+        ],
+        [
+          "def:graph_walk_vertices",
+          "lem:walk_vertex_card_equiv"
+        ],
+        [
+          "def:length_of_w_i",
+          "def:graph_walk_equiv"
+        ],
+        [
+          "def:length_of_w_i",
+          "def:graph_walk_vertices"
+        ],
+        [
+          "def:length_of_w_i",
+          "lem:graph_walk_equiv"
+        ],
+        [
+          "def:length_of_w_i",
+          "lem:walk_vertex_card_equiv"
+        ],
+        [
+          "def:length_of_w_i",
+          "prop:vertex_edge_inequality"
+        ],
+        [
+          "def:loop_walk",
+          "def:graph_connecting_edges"
+        ],
+        [
+          "def:loop_walk",
+          "def:graph_edge_count"
+        ],
+        [
+          "def:loop_walk",
+          "def:graph_self_edges"
+        ],
+        [
+          "def:loop_walk",
+          "def:length_of_w_i"
+        ],
+        [
+          "def:loop_walk",
+          "lem:abs_w_i_eq_k"
+        ],
+        [
+          "def:loop_walk",
+          "lem:graph_walk_equiv"
+        ],
+        [
+          "def:loop_walk",
+          "lem:walk_edge_card_equiv"
+        ],
+        [
+          "def:loop_walk",
+          "lem:walk_vertex_card_equiv"
+        ],
+        [
+          "def:loop_walk",
+          "prop:vertex_edge_inequality"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:centralMoment_odd_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:measurable_semicirclePDF"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:memLp_id_semicircleReal'"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_add_const"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_const_add"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_const_mul"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_add_const"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_const_add"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_const_sub"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_mul_const"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_neg"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_map_sub_const"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:semicircleReal_mul_const"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:toReal_semicirclePDF"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "def:semicirclePDF",
+          "lem:variance_id_semicircleReal"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:measurable_semicirclePDF"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:measurable_semicirclePDFReal"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicirclePDF_def"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicirclePDF_finite"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicirclePDF_ne_top"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicirclePDF_nonneg"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicirclePDF_zero_var"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicircleReal_map_add_const"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:toReal_semicirclePDF"
+        ],
+        [
+          "def:semicirclePDFReal",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_fun_odd_semicircleReal",
+          "lem:centralMoment_odd_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_fun_two_mul_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:integrable_semicirclePDFReal",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:integral_id_semicircleReal",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "lem:integral_id_semicircleReal",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "lem:integral_id_semicircleReal",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:integral_semicirclePDFReal_eq_one",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:integral_semicirclePDFReal_eq_one",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:lintegral_semicirclePDF_eq_one",
+          "lem:memLp_id_semicircleReal'"
+        ],
+        [
+          "lem:lintegral_semicirclePDF_eq_one",
+          "lem:semicircleReal_add_const"
+        ],
+        [
+          "lem:lintegral_semicirclePDF_eq_one",
+          "lem:semicircleReal_const_mul"
+        ],
+        [
+          "lem:lintegral_semicirclePDF_eq_one",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:memLp_id_semicircleReal'"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:semicircleReal_map_add_const"
+        ],
+        [
+          "lem:measurable_semicirclePDF",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "lem:measurable_semicirclePDFReal",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:integrable_semicirclePDFReal"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:integral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:measurable_semicirclePDFReal"
+        ],
+        [
+          "lem:semicirclePDFReal_def",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDFReal_inv_mul",
+          "lem:semicircleReal_map_const_mul"
+        ],
+        [
+          "lem:semicirclePDFReal_nonneg",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:semicirclePDFReal_nonneg",
+          "lem:variance_fun_id_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDFReal_sub",
+          "lem:semicircleReal_map_add_const"
+        ],
+        [
+          "lem:semicirclePDFReal_zero_var",
+          "lem:semicirclePDF_zero_var"
+        ],
+        [
+          "lem:semicirclePDF_finite",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDF_finite",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDF_finite",
+          "lem:integral_id_semicircleReal"
+        ],
+        [
+          "lem:semicirclePDF_zero_var",
+          "lem:memLp_id_semicircleReal'"
+        ],
+        [
+          "lem:stronglyMeasurable_semicirclePDFReal",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:support_semicirclePDF",
+          "lem:memLp_id_semicircleReal'"
+        ],
+        [
+          "lem:toReal_semicirclePDF",
+          "lem:centralMoment_fun_odd_semicircleReal"
+        ],
+        [
+          "lem:toReal_semicirclePDF",
+          "lem:centralMoment_fun_two_mul_semicircleReal"
+        ],
+        [
+          "lem:toReal_semicirclePDF",
+          "lem:integral_id_semicircleReal"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 52,
+    "unreported_top_sources": {
+      "def:semicirclePDF": 21,
+      "def:semicirclePDFReal": 14,
+      "def:loop_walk": 9,
+      "lem:measurable_semicirclePDF": 6,
+      "lem:semicirclePDFReal_def": 6,
+      "def:length_of_w_i": 5,
+      "lem:lintegral_semicirclePDF_eq_one": 4,
+      "lem:integral_id_semicircleReal": 3,
+      "lem:semicirclePDF_finite": 3,
+      "lem:toReal_semicirclePDF": 3
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 58,
+      "n_edges": 75,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 6.666666666666667,
+          "max_open": 7,
+          "mean_open": 3.4210526315789473,
+          "mean_edge_length": 5.066666666666666
+        },
+        "human_repaired": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 6.666666666666667,
+          "max_open": 7,
+          "mean_open": 3.4210526315789473,
+          "mean_edge_length": 5.066666666666666
+        },
+        "just_in_time": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 24,
+          "mean_cut": 16.43859649122807,
+          "max_open": 13,
+          "mean_open": 7.017543859649122,
+          "mean_edge_length": 12.493333333333334
+        },
+        "greedy_min_open": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 6.771929824561403,
+          "max_open": 7,
+          "mean_open": 2.5964912280701755,
+          "mean_edge_length": 5.1466666666666665
+        },
+        "optimised": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 5.5964912280701755,
+          "max_open": 7,
+          "mean_open": 2.2280701754385963,
+          "mean_edge_length": 4.253333333333333
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.11796733212341193,
+        "greedy_min_open": -0.010284331518451317,
+        "optimised": 0.6588021778584392
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.310263157894736,
+          "p05": 4.701754385964913,
+          "p50": 6.421052631578948,
+          "p95": 8.052631578947368
+        },
+        "max_open": {
+          "mean": 10.44,
+          "p05": 8,
+          "p50": 10,
+          "p95": 13
+        },
+        "mean_cut": {
+          "mean": 13.332719298245614,
+          "p05": 10.140350877192983,
+          "p50": 13.526315789473685,
+          "p95": 16.17543859649123
+        },
+        "cutwidth": {
+          "mean": 22.39,
+          "p05": 18,
+          "p50": 22,
+          "p95": 27
+        },
+        "mean_edge_length": {
+          "mean": 10.132866666666667,
+          "p05": 7.706666666666667,
+          "p50": 10.28,
+          "p95": 12.293333333333333
+        }
+      },
+      "random_tau_vs_human_mean": 0.19868723532970356,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.052631578947368,
+          "p50": 10.491228070175438,
+          "p95": 11.824561403508772
+        },
+        "max_open": {
+          "p05": 15,
+          "p50": 18,
+          "p95": 20
+        },
+        "mean_cut": {
+          "p05": 19.63157894736842,
+          "p50": 22.017543859649123,
+          "p95": 24.526315789473685
+        },
+        "cutwidth": {
+          "p05": 30,
+          "p50": 36,
+          "p95": 40
+        },
+        "mean_edge_length": {
+          "p05": 14.92,
+          "p50": 16.733333333333334,
+          "p95": 18.64
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.7925,
+          "max_open": 0.94,
+          "mean_cut": 0.9675,
+          "cutwidth": 0.715,
+          "mean_edge_length": 0.9675
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 10,
+        "greedy_min_open": 5,
+        "optimised": 3
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 58,
+      "n_edges": 139,
+      "forward_refs": [
+        [
+          "lem:integral_semicirclePDFReal_eq_one",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:centralMoment_fun_two_mul_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_fun_odd_semicircleReal",
+          "lem:centralMoment_odd_semicircleReal"
+        ],
+        [
+          "def:length_of_w_i",
+          "def:graph_walk_vertices"
+        ],
+        [
+          "def:length_of_w_i",
+          "prop:vertex_edge_inequality"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 58,
+          "forward_refs": 5,
+          "cutwidth": 54,
+          "mean_cut": 28.19298245614035,
+          "max_open": 17,
+          "mean_open": 8.473684210526315,
+          "mean_edge_length": 11.56115107913669
+        },
+        "human_repaired": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 28.12280701754386,
+          "max_open": 17,
+          "mean_open": 8.298245614035087,
+          "mean_edge_length": 11.532374100719425
+        },
+        "just_in_time": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 66,
+          "mean_cut": 46.35087719298246,
+          "max_open": 17,
+          "mean_open": 11.140350877192983,
+          "mean_edge_length": 19.007194244604317
+        },
+        "greedy_min_open": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 56,
+          "mean_cut": 29.54385964912281,
+          "max_open": 14,
+          "mean_open": 6.473684210526316,
+          "mean_edge_length": 12.115107913669064
+        },
+        "optimised": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 24.842105263157894,
+          "max_open": 14,
+          "mean_open": 5.5964912280701755,
+          "mean_edge_length": 10.18705035971223
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9866908650937689,
+        "just_in_time": 0.3781004234724743,
+        "greedy_min_open": 0.5970961887477314,
+        "optimised": 0.5692679975801573
+      },
+      "random": {
+        "mean_open": {
+          "mean": 10.922368421052632,
+          "p05": 8.982456140350877,
+          "p50": 11.052631578947368,
+          "p95": 12.771929824561404
+        },
+        "max_open": {
+          "mean": 18.695,
+          "p05": 15,
+          "p50": 19,
+          "p95": 21
+        },
+        "mean_cut": {
+          "mean": 43.77473684210527,
+          "p05": 35.45614035087719,
+          "p50": 44.771929824561404,
+          "p95": 49.94736842105263
+        },
+        "cutwidth": {
+          "mean": 71.895,
+          "p05": 59,
+          "p50": 73,
+          "p95": 80
+        },
+        "mean_edge_length": {
+          "mean": 17.950791366906472,
+          "p05": 14.53956834532374,
+          "p50": 18.359712230215827,
+          "p95": 20.48201438848921
+        }
+      },
+      "random_tau_vs_human_mean": 0.1270780399274047,
+      "uniform": {
+        "mean_open": {
+          "p05": 12.298245614035087,
+          "p50": 13.824561403508772,
+          "p95": 15.175438596491228
+        },
+        "max_open": {
+          "p05": 19,
+          "p50": 22,
+          "p95": 25
+        },
+        "mean_cut": {
+          "p05": 48.08771929824562,
+          "p50": 52.63157894736842,
+          "p95": 55.87719298245614
+        },
+        "cutwidth": {
+          "p05": 76,
+          "p50": 82,
+          "p95": 86
+        },
+        "mean_edge_length": {
+          "p05": 19.719424460431654,
+          "p50": 21.58273381294964,
+          "p95": 22.913669064748202
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0275,
+          "max_open": 0.2325,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.01
+        },
+        "human_repaired": {
+          "mean_open": 0.015,
+          "max_open": 0.2325,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.01
+        },
+        "just_in_time": {
+          "mean_open": 0.5425,
+          "max_open": 0.2325,
+          "mean_cut": 0.6325,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.6325
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.02,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.02
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 17,
+        "greedy_min_open": 3,
+        "optimised": 3
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 58,
+      "n_edges": 56,
+      "forward_refs": [
+        [
+          "lem:integral_semicirclePDFReal_eq_one",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:centralMoment_fun_two_mul_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_fun_odd_semicircleReal",
+          "lem:centralMoment_odd_semicircleReal"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 58,
+          "forward_refs": 3,
+          "cutwidth": 27,
+          "mean_cut": 10.929824561403509,
+          "max_open": 15,
+          "mean_open": 6.4035087719298245,
+          "mean_edge_length": 11.125
+        },
+        "human_repaired": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 10.824561403508772,
+          "max_open": 15,
+          "mean_open": 6.333333333333333,
+          "mean_edge_length": 11.017857142857142
+        },
+        "just_in_time": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 23,
+          "mean_cut": 10.859649122807017,
+          "max_open": 11,
+          "mean_open": 6.017543859649122,
+          "mean_edge_length": 11.053571428571429
+        },
+        "greedy_min_open": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 7.192982456140351,
+          "max_open": 13,
+          "mean_open": 4.157894736842105,
+          "mean_edge_length": 7.321428571428571
+        },
+        "optimised": {
+          "n": 58,
+          "forward_refs": 0,
+          "cutwidth": 22,
+          "mean_cut": 5.228070175438597,
+          "max_open": 12,
+          "mean_open": 3.473684210526316,
+          "mean_edge_length": 5.321428571428571
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9963702359346642,
+        "just_in_time": 0.4894131881427707,
+        "greedy_min_open": -0.1566848154869933,
+        "optimised": -0.14337568058076222
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.824561403508771,
+          "p05": 5.824561403508772,
+          "p50": 6.771929824561403,
+          "p95": 8.140350877192983
+        },
+        "max_open": {
+          "mean": 13.955,
+          "p05": 13,
+          "p50": 14,
+          "p95": 15
+        },
+        "mean_cut": {
+          "mean": 12.439649122807019,
+          "p05": 9.807017543859649,
+          "p50": 12.403508771929825,
+          "p95": 15.31578947368421
+        },
+        "cutwidth": {
+          "mean": 26.35,
+          "p05": 24,
+          "p50": 26,
+          "p95": 28
+        },
+        "mean_edge_length": {
+          "mean": 12.661785714285713,
+          "p05": 9.982142857142858,
+          "p50": 12.625,
+          "p95": 15.589285714285714
+        }
+      },
+      "random_tau_vs_human_mean": 0.02104053236539625,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.631578947368421,
+          "p50": 8.578947368421053,
+          "p95": 9.894736842105264
+        },
+        "max_open": {
+          "p05": 12,
+          "p50": 14,
+          "p95": 17
+        },
+        "mean_cut": {
+          "p05": 12.771929824561404,
+          "p50": 14.929824561403509,
+          "p95": 17.333333333333332
+        },
+        "cutwidth": {
+          "p05": 24,
+          "p50": 27,
+          "p95": 29
+        },
+        "mean_edge_length": {
+          "p05": 13.0,
+          "p50": 15.196428571428571,
+          "p95": 17.642857142857142
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.315,
+          "max_open": 0.86,
+          "mean_cut": 0.185,
+          "cutwidth": 0.72,
+          "mean_edge_length": 0.185
+        },
+        "human_repaired": {
+          "mean_open": 0.2825,
+          "max_open": 0.86,
+          "mean_cut": 0.18,
+          "cutwidth": 0.72,
+          "mean_edge_length": 0.18
+        },
+        "just_in_time": {
+          "mean_open": 0.1425,
+          "max_open": 0.0025,
+          "mean_cut": 0.18,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.18
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.16,
+          "mean_cut": 0.0,
+          "cutwidth": 0.33,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.6425,
+          "mean_cut": 0.0,
+          "cutwidth": 0.57,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.6425,
+          "mean_cut": 0.0,
+          "cutwidth": 0.57,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.16,
+          "mean_cut": 0.0,
+          "cutwidth": 0.31,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.045,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 14,
+        "greedy_min_open": 13,
+        "optimised": 13
+      }
+    },
+    {
+      "name": "Lean: SemicircleDistribution",
+      "n_nodes": 42,
+      "n_edges": 111,
+      "forward_refs": [
+        [
+          "lem:integral_semicirclePDFReal_eq_one",
+          "lem:lintegral_semicirclePDFReal_eq_one"
+        ],
+        [
+          "lem:centralMoment_fun_two_mul_semicircleReal",
+          "lem:centralMoment_two_mul_semicircleReal"
+        ],
+        [
+          "lem:centralMoment_fun_odd_semicircleReal",
+          "lem:centralMoment_odd_semicircleReal"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 42,
+          "forward_refs": 3,
+          "cutwidth": 54,
+          "mean_cut": 35.53658536585366,
+          "max_open": 17,
+          "mean_open": 10.585365853658537,
+          "mean_edge_length": 13.126126126126126
+        },
+        "human_repaired": {
+          "n": 42,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 35.34146341463415,
+          "max_open": 17,
+          "mean_open": 10.463414634146341,
+          "mean_edge_length": 13.054054054054054
+        },
+        "just_in_time": {
+          "n": 42,
+          "forward_refs": 0,
+          "cutwidth": 66,
+          "mean_cut": 38.78048780487805,
+          "max_open": 14,
+          "mean_open": 8.609756097560975,
+          "mean_edge_length": 14.324324324324325
+        },
+        "greedy_min_open": {
+          "n": 42,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 37.02439024390244,
+          "max_open": 15,
+          "mean_open": 7.439024390243903,
+          "mean_edge_length": 13.675675675675675
+        },
+        "optimised": {
+          "n": 42,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 31.0,
+          "max_open": 14,
+          "mean_open": 6.878048780487805,
+          "mean_edge_length": 11.45045045045045
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9930313588850174,
+        "just_in_time": 0.32171893147502906,
+        "greedy_min_open": 0.505226480836237,
+        "optimised": 0.49128919860627174
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.542560975609756,
+          "p05": 8.609756097560975,
+          "p50": 9.487804878048781,
+          "p95": 10.609756097560975
+        },
+        "max_open": {
+          "mean": 15.88,
+          "p05": 15,
+          "p50": 16,
+          "p95": 17
+        },
+        "mean_cut": {
+          "mean": 37.99036585365854,
+          "p05": 33.80487804878049,
+          "p50": 38.24390243902439,
+          "p95": 41.707317073170735
+        },
+        "cutwidth": {
+          "mean": 59.37,
+          "p05": 55,
+          "p50": 60,
+          "p95": 63
+        },
+        "mean_edge_length": {
+          "mean": 14.032477477477478,
+          "p05": 12.486486486486486,
+          "p50": 14.126126126126126,
+          "p95": 15.405405405405405
+        }
+      },
+      "random_tau_vs_human_mean": 0.6031358885017422,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.268292682926829,
+          "p50": 10.341463414634147,
+          "p95": 11.439024390243903
+        },
+        "max_open": {
+          "p05": 14,
+          "p50": 17,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 37.41463414634146,
+          "p50": 40.707317073170735,
+          "p95": 42.951219512195124
+        },
+        "cutwidth": {
+          "p05": 61,
+          "p50": 64,
+          "p95": 67
+        },
+        "mean_edge_length": {
+          "p05": 13.81981981981982,
+          "p50": 15.036036036036036,
+          "p95": 15.864864864864865
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.9475,
+          "max_open": 0.855,
+          "mean_cut": 0.17,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.17
+        },
+        "human_repaired": {
+          "mean_open": 0.935,
+          "max_open": 0.855,
+          "mean_cut": 0.155,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.155
+        },
+        "just_in_time": {
+          "mean_open": 0.0575,
+          "max_open": 0.0225,
+          "mean_cut": 0.595,
+          "cutwidth": 1.0,
+          "mean_edge_length": 0.595
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.205,
+          "mean_cut": 0.315,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.315
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0225,
+          "mean_cut": 0.005,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.005
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.645,
+          "max_open": 0.5825,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.56,
+          "max_open": 0.5825,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0375,
+          "mean_cut": 0.14,
+          "cutwidth": 0.845,
+          "mean_edge_length": 0.14
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.125,
+          "mean_cut": 0.02,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.02
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0375,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: LoopWalks",
+      "n_nodes": 14,
+      "n_edges": 28,
+      "forward_refs": [
+        [
+          "def:length_of_w_i",
+          "def:graph_walk_vertices"
+        ],
+        [
+          "def:length_of_w_i",
+          "prop:vertex_edge_inequality"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 14,
+          "forward_refs": 2,
+          "cutwidth": 16,
+          "mean_cut": 11.538461538461538,
+          "max_open": 5,
+          "mean_open": 3.769230769230769,
+          "mean_edge_length": 5.357142857142857
+        },
+        "human_repaired": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 11.846153846153847,
+          "max_open": 5,
+          "mean_open": 3.3846153846153846,
+          "mean_edge_length": 5.5
+        },
+        "just_in_time": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 20,
+          "mean_cut": 12.615384615384615,
+          "max_open": 5,
+          "mean_open": 3.4615384615384617,
+          "mean_edge_length": 5.857142857142857
+        },
+        "greedy_min_open": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.692307692307692,
+          "max_open": 5,
+          "mean_open": 2.769230769230769,
+          "mean_edge_length": 4.964285714285714
+        },
+        "optimised": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.692307692307692,
+          "max_open": 5,
+          "mean_open": 2.769230769230769,
+          "mean_edge_length": 4.964285714285714
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.8241758241758241,
+        "just_in_time": 0.3846153846153846,
+        "greedy_min_open": 0.6043956043956045,
+        "optimised": 0.6043956043956045
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.560769230769231,
+          "p05": 3.076923076923077,
+          "p50": 3.5384615384615383,
+          "p95": 4.153846153846154
+        },
+        "max_open": {
+          "mean": 5.485,
+          "p05": 5,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 12.831153846153846,
+          "p05": 11.461538461538462,
+          "p50": 12.846153846153847,
+          "p95": 14.307692307692308
+        },
+        "cutwidth": {
+          "mean": 18.42,
+          "p05": 17,
+          "p50": 18,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "mean": 5.957321428571429,
+          "p05": 5.321428571428571,
+          "p50": 5.964285714285714,
+          "p95": 6.642857142857143
+        }
+      },
+      "random_tau_vs_human_mean": 0.43846153846153846,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.3846153846153846,
+          "p50": 3.923076923076923,
+          "p95": 4.384615384615385
+        },
+        "max_open": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 12.461538461538462,
+          "p50": 13.615384615384615,
+          "p95": 15.0
+        },
+        "cutwidth": {
+          "p05": 18,
+          "p50": 20,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "p05": 5.785714285714286,
+          "p50": 6.321428571428571,
+          "p95": 6.964285714285714
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.745,
+          "max_open": 0.2575,
+          "mean_cut": 0.0625,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0625
+        },
+        "human_repaired": {
+          "mean_open": 0.3125,
+          "max_open": 0.2575,
+          "mean_cut": 0.1225,
+          "cutwidth": 0.115,
+          "mean_edge_length": 0.1225
+        },
+        "just_in_time": {
+          "mean_open": 0.39,
+          "max_open": 0.2575,
+          "mean_cut": 0.4125,
+          "cutwidth": 0.8775,
+          "mean_edge_length": 0.4125
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0025,
+          "max_open": 0.2575,
+          "mean_cut": 0.0025,
+          "cutwidth": 0.115,
+          "mean_edge_length": 0.0025
+        },
+        "optimised": {
+          "mean_open": 0.0025,
+          "max_open": 0.2575,
+          "mean_cut": 0.0025,
+          "cutwidth": 0.115,
+          "mean_edge_length": 0.0025
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.3575,
+          "max_open": 0.1075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0525,
+          "max_open": 0.1075,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0075
+        },
+        "just_in_time": {
+          "mean_open": 0.09,
+          "max_open": 0.1075,
+          "mean_cut": 0.095,
+          "cutwidth": 0.61,
+          "mean_edge_length": 0.095
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.1075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.1075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

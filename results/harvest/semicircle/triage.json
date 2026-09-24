@@ -1,0 +1,28 @@
+{
+ "name": "semicircle",
+ "repo": "fredraj3/SemicircleLaw",
+ "status": "ok",
+ "stage": "done",
+ "commit": "9f72b2d562583f89b093d05387d942c1ca8c02f4",
+ "commit_date": "2026-09-10",
+ "toolchain": "leanprover/lean4:v4.24.0",
+ "mathlib": "f897ebcf72cd",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 205,
+ "uses_edges": 346,
+ "chapters": 5,
+ "lean_nodes": 58,
+ "leanok_nodes": 62,
+ "libs": [
+  "SemicircleLaw"
+ ],
+ "build_minutes": 4.6,
+ "decls": 229,
+ "theorems": 132,
+ "lean_resolved": 1.0,
+ "nodes_linked": 58,
+ "minutes": 7.4
+}
