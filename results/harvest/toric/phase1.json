@@ -1,0 +1,1174 @@
+{
+  "project": "toric",
+  "provenance": "YaelDillies/Toric @ 6eef2aacaa5e (2026-09-20), Lean leanprover/lean4:v4.35.0-rc2",
+  "stats": {
+    "project_decls": 276,
+    "project_decls_by_kind": {
+      "def": 82,
+      "inductive": 7,
+      "theorem": 187
+    },
+    "formal_edges": 1205,
+    "blueprint_nodes": 145,
+    "blueprint_nodes_with_formal_decl": 25,
+    "lean_names_resolved": 30,
+    "lean_names_missing": {
+      "0-slice-adj": [
+        "CategoryTheory.Over.postAdjunctionRight"
+      ],
+      "0-over-lim": [
+        "CategoryTheory.Limits.PreservesLimitsOfShape.overPost",
+        "CategoryTheory.Limits.PreservesLimitsOfSize.overPost"
+      ],
+      "0-ess-image-over": [
+        "CategoryTheory.Functor.essImage_overPost"
+      ],
+      "0-full-faithful-grp": [
+        "CategoryTheory.Functor.Faithful.mapGrp",
+        "CategoryTheory.Functor.Full.mapGrp"
+      ],
+      "0-grp-equiv": [
+        "CategoryTheory.Equivalence.mapGrp"
+      ],
+      "0-ess-image-grp": [
+        "CategoryTheory.Functor.essImage_mapGrp"
+      ],
+      "0-full-faithful-grp-hom": [
+        "CategoryTheory.Functor.FullyFaithful.homMulEquiv"
+      ],
+      "0-tensor-lin-indep": [
+        "LinearIndependent.tmul_of_isDomain"
+      ],
+      "0-mv-laurent-poly-domain": [
+        "AddMonoidAlgebra.instIsDomainOfIsCancelAddOfUniqueSums"
+      ],
+      "0-aff-mon": [
+        "AddCancelCommMonoid",
+        "AddMonoid.FG",
+        "IsAddTorsionFree"
+      ],
+      "0-embed-aff-mon": [
+        "AffineAddMonoid.embedding",
+        "AffineAddMonoid.embedding_injective"
+      ],
+      "0-aff-mon-alg-domain": [
+        "MonoidAlgebra.finiteType_of_fg"
+      ],
+      "0-irred": [
+        "Irreducible"
+      ],
+      "0-irred-subset-gen": [
+        "addIrreducible_subset_of_addSubmonoidClosure_eq_top"
+      ],
+      "0-irred-finite": [
+        "finite_addIrreducible"
+      ],
+      "0-irred-gen": [
+        "AddSubmonoid.closure_addIrreducible"
+      ],
+      "0-grp-like": [
+        "IsGroupLikeElem"
+      ],
+      "0-grp-like-grp": [
+        "GroupLike.instGroup",
+        "GroupLike.instCommGroup"
+      ],
+      "0-grp-like-map": [
+        "IsGroupLikeElem.map"
+      ],
+      "0-grp-like-grp-alg-of": [
+        "MonoidAlgebra.isGroupLikeElem_of"
+      ],
+      "0-grp-like-grp-alg-span": [
+        "MonoidAlgebra.span_isGroupLikeElem"
+      ],
+      "0-grp-like-lin-indep": [
+        "linearIndepOn_isGroupLikeElem"
+      ],
+      "0-grp-like-grp-alg": [
+        "MonoidAlgebra.isGroupLikeElem_iff_mem_range_of"
+      ],
+      "0-antipode-mul": [
+        "HopfAlgebra.antipode_mul_antidistrib",
+        "HopfAlgebra.antipode_mul_distrib"
+      ],
+      "0-bialg-equiv-comon-alg": [
+        "commBialgCatEquivComonCommAlgCat"
+      ],
+      "0-hopf-alg-equiv-cogrp-alg": [
+        "commHopfAlgCatEquivCogrpCommAlgCat"
+      ],
+      "0-full-faithful-grp-alg": [
+        "MonoidAlgebra.mapDomainBialgHomMulEquiv",
+        "AddMonoidAlgebra.mapDomainBialgHomAddEquiv"
+      ],
+      "1-2-1-cone-hull": [
+        "Submodule.span"
+      ],
+      "1-2-2-convex-hull": [
+        "convexHull"
+      ],
+      "1-2-3-dual-cone": [
+        "PointedCone.dual"
+      ],
+      "1-2-5-face": [
+        "IsExposed"
+      ],
+      "1-2-rel-interior": [
+        "intrinsicInterior"
+      ],
+      "1-2-12-salient-cone": [
+        "ConvexCone.Salient"
+      ],
+      "0-spec-alg": [
+        "AlgebraicGeometry.algSpec"
+      ],
+      "0-full-faithful-spec-alg": [
+        "AlgebraicGeometry.preservesLimitsOfSize_algSpec",
+        "AlgebraicGeometry.algSpec.instFull",
+        "AlgebraicGeometry.algSpec.instFaithful",
+        "AlgebraicGeometry.algSpec.fullyFaithful"
+      ],
+      "0-spec-bialg": [
+        "AlgebraicGeometry.bialgSpec"
+      ],
+      "0-full-faithful-spec-bialg": [
+        "AlgebraicGeometry.bialgSpec.instFull",
+        "AlgebraicGeometry.bialgSpec.instFaithful",
+        "AlgebraicGeometry.bialgSpec.fullyFaithful"
+      ],
+      "0-spec-cocomm-bialg": [
+        "AlgebraicGeometry.isCommMonObj_spec_asOver_spec",
+        "AlgebraicGeometry.instCommGrpObjSpecAsOverSpec"
+      ],
+      "0-spec-hopf": [
+        "AlgebraicGeometry.hopfSpec"
+      ],
+      "0-full-faithful-spec-hopf": [
+        "AlgebraicGeometry.hopfSpec.instFull",
+        "AlgebraicGeometry.hopfSpec.instFaithful",
+        "AlgebraicGeometry.hopfSpec.fullyFaithful"
+      ],
+      "0-ess-image-spec-alg": [
+        "AlgebraicGeometry.essImage_algSpec"
+      ],
+      "0-ess-image-spec-bialg": [
+        "AlgebraicGeometry.essImage_bialgSpec"
+      ],
+      "0-ess-image-spec-hopf": [
+        "AlgebraicGeometry.essImage_hopfSpec"
+      ]
+    },
+    "coverage": 0.33707865168539325,
+    "labelled_decls": 29,
+    "unlabelled_theorems": 178,
+    "edges": {
+      "author_edges": 32,
+      "lean_edges": 60,
+      "author_direct_in_lean": 23,
+      "author_implied_transitively": 5,
+      "author_absent_from_lean": [
+        [
+          "0-diag",
+          "0-full-faithful-diag"
+        ],
+        [
+          "0-diag-spec",
+          "0-char-torus"
+        ],
+        [
+          "0-diag-spec",
+          "0-cochar-torus"
+        ],
+        [
+          "0-grp-alg",
+          "0-diag"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "0-char",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-char-diag",
+          "0-char-cochar-pairing"
+        ],
+        [
+          "0-char-diag",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-char-diag",
+          "0-char-torus"
+        ],
+        [
+          "0-char-torus",
+          "0-char-cochar-pairing"
+        ],
+        [
+          "0-char-torus",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-cochar",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-cochar-diag",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-cochar-diag",
+          "0-cochar-torus"
+        ],
+        [
+          "0-diag",
+          "0-char"
+        ],
+        [
+          "0-diag",
+          "0-char-cochar-pairing"
+        ],
+        [
+          "0-diag",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-diag",
+          "0-char-diag"
+        ],
+        [
+          "0-diag",
+          "0-char-torus"
+        ],
+        [
+          "0-diag",
+          "0-cochar"
+        ],
+        [
+          "0-diag",
+          "0-cochar-diag"
+        ],
+        [
+          "0-diag",
+          "0-cochar-torus"
+        ],
+        [
+          "0-diag",
+          "0-diag-spec"
+        ],
+        [
+          "0-diag",
+          "0-torus"
+        ],
+        [
+          "0-diag",
+          "5-1-tor-hom"
+        ],
+        [
+          "0-diag",
+          "5-1-tor-var"
+        ],
+        [
+          "0-diag-hom",
+          "0-char-diag"
+        ],
+        [
+          "0-diag-hom",
+          "0-cochar-diag"
+        ],
+        [
+          "0-diag-spec",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-grp-alg",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-grp-alg",
+          "0-diag-hom"
+        ],
+        [
+          "0-grp-alg",
+          "0-full-faithful-diag"
+        ],
+        [
+          "0-torus",
+          "0-char-cochar-pairing"
+        ],
+        [
+          "0-torus",
+          "0-char-cochar-pairing-perfect"
+        ],
+        [
+          "0-torus",
+          "0-char-diag"
+        ],
+        [
+          "0-torus",
+          "0-char-torus"
+        ],
+        [
+          "0-torus",
+          "0-cochar-diag"
+        ],
+        [
+          "0-torus",
+          "0-cochar-torus"
+        ],
+        [
+          "0-torus",
+          "0-diag-hom"
+        ],
+        [
+          "0-torus",
+          "0-is-diag"
+        ],
+        [
+          "1-1-10-lat-ideal",
+          "1-1-11-toric-ideal-gen-binomial"
+        ],
+        [
+          "5-1-tor-var",
+          "5-1-tor-hom"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 27,
+    "unreported_top_sources": {
+      "0-diag": 12,
+      "0-torus": 8,
+      "0-char-diag": 3,
+      "0-grp-alg": 3,
+      "0-char-torus": 2,
+      "0-cochar-diag": 2,
+      "0-diag-hom": 2,
+      "0-char": 1,
+      "0-cochar": 1,
+      "0-diag-spec": 1
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 25,
+      "n_edges": 32,
+      "forward_refs": [
+        [
+          "0-torus",
+          "0-diag-spec"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 25,
+          "forward_refs": 1,
+          "cutwidth": 14,
+          "mean_cut": 5.416666666666667,
+          "max_open": 5,
+          "mean_open": 2.6666666666666665,
+          "mean_edge_length": 4.0625
+        },
+        "human_repaired": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 5.291666666666667,
+          "max_open": 5,
+          "mean_open": 2.4166666666666665,
+          "mean_edge_length": 3.96875
+        },
+        "just_in_time": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 7.666666666666667,
+          "max_open": 6,
+          "mean_open": 4.041666666666667,
+          "mean_edge_length": 5.75
+        },
+        "greedy_min_open": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 5.0,
+          "max_open": 4,
+          "mean_open": 2.1666666666666665,
+          "mean_edge_length": 3.75
+        },
+        "optimised": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 4.375,
+          "max_open": 4,
+          "mean_open": 2.0416666666666665,
+          "mean_edge_length": 3.28125
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.98,
+        "just_in_time": 0.2466666666666667,
+        "greedy_min_open": 0.30000000000000004,
+        "optimised": 0.3533333333333334
+      },
+      "random": {
+        "mean_open": {
+          "mean": 4.79875,
+          "p05": 3.7083333333333335,
+          "p50": 4.791666666666667,
+          "p95": 5.875
+        },
+        "max_open": {
+          "mean": 7.78,
+          "p05": 6,
+          "p50": 8,
+          "p95": 10
+        },
+        "mean_cut": {
+          "mean": 9.072916666666666,
+          "p05": 7.375,
+          "p50": 9.0,
+          "p95": 10.791666666666666
+        },
+        "cutwidth": {
+          "mean": 15.37,
+          "p05": 12,
+          "p50": 15,
+          "p95": 19
+        },
+        "mean_edge_length": {
+          "mean": 6.8046875,
+          "p05": 5.53125,
+          "p50": 6.75,
+          "p95": 8.09375
+        }
+      },
+      "random_tau_vs_human_mean": 0.17466666666666664,
+      "uniform": {
+        "mean_open": {
+          "p05": 4.791666666666667,
+          "p50": 5.875,
+          "p95": 6.708333333333333
+        },
+        "max_open": {
+          "p05": 7,
+          "p50": 9,
+          "p95": 11
+        },
+        "mean_cut": {
+          "p05": 9.333333333333334,
+          "p50": 10.875,
+          "p95": 12.291666666666666
+        },
+        "cutwidth": {
+          "p05": 16,
+          "p50": 18,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "p05": 7.0,
+          "p50": 8.15625,
+          "p95": 9.21875
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2575,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2575,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.1275,
+          "max_open": 0.065,
+          "mean_cut": 0.0975,
+          "cutwidth": 0.2575,
+          "mean_edge_length": 0.0975
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.0025,
+          "mean_cut": 0.005,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 7,
+        "just_in_time": 14,
+        "greedy_min_open": 12,
+        "optimised": 8
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 25,
+      "n_edges": 60,
+      "forward_refs": [
+        [
+          "0-torus",
+          "0-is-diag"
+        ],
+        [
+          "0-torus",
+          "0-diag-spec"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 25,
+          "forward_refs": 2,
+          "cutwidth": 28,
+          "mean_cut": 13.708333333333334,
+          "max_open": 10,
+          "mean_open": 4.375,
+          "mean_edge_length": 5.483333333333333
+        },
+        "human_repaired": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 14.75,
+          "max_open": 10,
+          "mean_open": 4.25,
+          "mean_edge_length": 5.9
+        },
+        "just_in_time": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 21.5,
+          "max_open": 10,
+          "mean_open": 4.583333333333333,
+          "mean_edge_length": 8.6
+        },
+        "greedy_min_open": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 18.333333333333332,
+          "max_open": 10,
+          "mean_open": 4.458333333333333,
+          "mean_edge_length": 7.333333333333333
+        },
+        "optimised": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 12.291666666666666,
+          "max_open": 10,
+          "mean_open": 3.8333333333333335,
+          "mean_edge_length": 4.916666666666667
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.96,
+        "just_in_time": 0.1333333333333333,
+        "greedy_min_open": 0.30666666666666664,
+        "optimised": 0.1466666666666666
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.6225,
+          "p05": 5.208333333333333,
+          "p50": 6.666666666666667,
+          "p95": 8.083333333333334
+        },
+        "max_open": {
+          "mean": 10.615,
+          "p05": 10,
+          "p50": 10,
+          "p95": 13
+        },
+        "mean_cut": {
+          "mean": 22.313541666666666,
+          "p05": 17.208333333333332,
+          "p50": 22.416666666666668,
+          "p95": 26.416666666666668
+        },
+        "cutwidth": {
+          "mean": 32.8,
+          "p05": 29,
+          "p50": 33,
+          "p95": 36
+        },
+        "mean_edge_length": {
+          "mean": 8.925416666666667,
+          "p05": 6.883333333333334,
+          "p50": 8.966666666666667,
+          "p95": 10.566666666666666
+        }
+      },
+      "random_tau_vs_human_mean": 0.3182666666666667,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.708333333333333,
+          "p50": 7.958333333333333,
+          "p95": 9.0
+        },
+        "max_open": {
+          "p05": 11,
+          "p50": 13,
+          "p95": 15
+        },
+        "mean_cut": {
+          "p05": 21.375,
+          "p50": 24.416666666666668,
+          "p95": 26.625
+        },
+        "cutwidth": {
+          "p05": 31,
+          "p50": 34,
+          "p95": 37
+        },
+        "mean_edge_length": {
+          "p05": 8.55,
+          "p50": 9.766666666666667,
+          "p95": 10.65
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.32,
+          "mean_cut": 0.365,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.365
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.105,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.105
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.085,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.085
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 7,
+        "just_in_time": 11,
+        "greedy_min_open": 11,
+        "optimised": 9
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 25,
+      "n_edges": 13,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 2.0416666666666665,
+          "max_open": 4,
+          "mean_open": 1.5,
+          "mean_edge_length": 3.769230769230769
+        },
+        "human_repaired": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 2.0416666666666665,
+          "max_open": 4,
+          "mean_open": 1.5,
+          "mean_edge_length": 3.769230769230769
+        },
+        "just_in_time": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 1.7916666666666667,
+          "max_open": 4,
+          "mean_open": 1.5416666666666667,
+          "mean_edge_length": 3.3076923076923075
+        },
+        "greedy_min_open": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 1.2083333333333333,
+          "max_open": 4,
+          "mean_open": 0.8333333333333334,
+          "mean_edge_length": 2.230769230769231
+        },
+        "optimised": {
+          "n": 25,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 1.0833333333333333,
+          "max_open": 4,
+          "mean_open": 0.8333333333333334,
+          "mean_edge_length": 2.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.013333333333333308,
+        "greedy_min_open": 0.07333333333333336,
+        "optimised": 0.020000000000000018
+      },
+      "random": {
+        "mean_open": {
+          "mean": 1.9260416666666667,
+          "p05": 1.3333333333333333,
+          "p50": 1.875,
+          "p95": 2.6666666666666665
+        },
+        "max_open": {
+          "mean": 4.11,
+          "p05": 4,
+          "p50": 4,
+          "p95": 5
+        },
+        "mean_cut": {
+          "mean": 2.3895833333333334,
+          "p05": 1.6666666666666667,
+          "p50": 2.3333333333333335,
+          "p95": 3.4166666666666665
+        },
+        "cutwidth": {
+          "mean": 6.54,
+          "p05": 6,
+          "p50": 6,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "mean": 4.411538461538461,
+          "p05": 3.076923076923077,
+          "p50": 4.3076923076923075,
+          "p95": 6.3076923076923075
+        }
+      },
+      "random_tau_vs_human_mean": 0.1942333333333333,
+      "uniform": {
+        "mean_open": {
+          "p05": 1.875,
+          "p50": 2.5416666666666665,
+          "p95": 3.2083333333333335
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 5
+        },
+        "mean_cut": {
+          "p05": 2.5833333333333335,
+          "p50": 3.5833333333333335,
+          "p95": 4.333333333333333
+        },
+        "cutwidth": {
+          "p05": 6,
+          "p50": 7,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "p05": 4.769230769230769,
+          "p50": 6.615384615384615,
+          "p95": 8.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.13,
+          "max_open": 0.445,
+          "mean_cut": 0.2325,
+          "cutwidth": 0.73,
+          "mean_edge_length": 0.2325
+        },
+        "human_repaired": {
+          "mean_open": 0.13,
+          "max_open": 0.445,
+          "mean_cut": 0.2325,
+          "cutwidth": 0.73,
+          "mean_edge_length": 0.2325
+        },
+        "just_in_time": {
+          "mean_open": 0.1425,
+          "max_open": 0.445,
+          "mean_cut": 0.0875,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0875
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.445,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.445,
+          "mean_cut": 0.0,
+          "cutwidth": 0.26,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.005,
+          "cutwidth": 0.395,
+          "mean_edge_length": 0.005
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.005,
+          "cutwidth": 0.395,
+          "mean_edge_length": 0.005
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.0,
+          "cutwidth": 0.095,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 5,
+        "just_in_time": 16,
+        "greedy_min_open": 17,
+        "optimised": 16
+      }
+    },
+    {
+      "name": "Lean: 4-3-torus",
+      "n_nodes": 10,
+      "n_edges": 27,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 12.333333333333334,
+          "max_open": 7,
+          "mean_open": 4.333333333333333,
+          "mean_edge_length": 4.111111111111111
+        },
+        "human_repaired": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 12.333333333333334,
+          "max_open": 7,
+          "mean_open": 4.333333333333333,
+          "mean_edge_length": 4.111111111111111
+        },
+        "just_in_time": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 10.777777777777779,
+          "max_open": 7,
+          "mean_open": 4.111111111111111,
+          "mean_edge_length": 3.5925925925925926
+        },
+        "greedy_min_open": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 10.777777777777779,
+          "max_open": 7,
+          "mean_open": 4.111111111111111,
+          "mean_edge_length": 3.5925925925925926
+        },
+        "optimised": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 10.555555555555555,
+          "max_open": 7,
+          "mean_open": 4.111111111111111,
+          "mean_edge_length": 3.5185185185185186
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.6888888888888889,
+        "greedy_min_open": 0.6888888888888889,
+        "optimised": 0.7333333333333334
+      },
+      "random": {
+        "mean_open": {
+          "mean": 4.289444444444444,
+          "p05": 4.0,
+          "p50": 4.222222222222222,
+          "p95": 4.666666666666667
+        },
+        "max_open": {
+          "mean": 7.0,
+          "p05": 7,
+          "p50": 7,
+          "p95": 7
+        },
+        "mean_cut": {
+          "mean": 11.940555555555557,
+          "p05": 10.777777777777779,
+          "p50": 12.11111111111111,
+          "p95": 12.666666666666666
+        },
+        "cutwidth": {
+          "mean": 15.62,
+          "p05": 13,
+          "p50": 16,
+          "p95": 16
+        },
+        "mean_edge_length": {
+          "mean": 3.9801851851851855,
+          "p05": 3.5925925925925926,
+          "p50": 4.037037037037037,
+          "p95": 4.222222222222222
+        }
+      },
+      "random_tau_vs_human_mean": 0.8131111111111111,
+      "uniform": {
+        "mean_open": {
+          "p05": 4.0,
+          "p50": 4.333333333333333,
+          "p95": 4.666666666666667
+        },
+        "max_open": {
+          "p05": 7,
+          "p50": 7,
+          "p95": 7
+        },
+        "mean_cut": {
+          "p05": 11.333333333333334,
+          "p50": 12.11111111111111,
+          "p95": 12.666666666666666
+        },
+        "cutwidth": {
+          "p05": 15,
+          "p50": 16,
+          "p95": 16
+        },
+        "mean_edge_length": {
+          "p05": 3.7777777777777777,
+          "p50": 4.037037037037037,
+          "p95": 4.222222222222222
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.69,
+          "max_open": 0.5,
+          "mean_cut": 0.735,
+          "cutwidth": 0.615,
+          "mean_edge_length": 0.735
+        },
+        "human_repaired": {
+          "mean_open": 0.69,
+          "max_open": 0.5,
+          "mean_cut": 0.735,
+          "cutwidth": 0.615,
+          "mean_edge_length": 0.735
+        },
+        "just_in_time": {
+          "mean_open": 0.1125,
+          "max_open": 0.5,
+          "mean_cut": 0.0625,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.0625
+        },
+        "greedy_min_open": {
+          "mean_open": 0.1125,
+          "max_open": 0.5,
+          "mean_cut": 0.0625,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.0625
+        },
+        "optimised": {
+          "mean_open": 0.1125,
+          "max_open": 0.5,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.01
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.545,
+          "max_open": 0.5,
+          "mean_cut": 0.7475,
+          "cutwidth": 0.59,
+          "mean_edge_length": 0.7475
+        },
+        "human_repaired": {
+          "mean_open": 0.545,
+          "max_open": 0.5,
+          "mean_cut": 0.7475,
+          "cutwidth": 0.59,
+          "mean_edge_length": 0.7475
+        },
+        "just_in_time": {
+          "mean_open": 0.1925,
+          "max_open": 0.5,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0075
+        },
+        "greedy_min_open": {
+          "mean_open": 0.1925,
+          "max_open": 0.5,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0075
+        },
+        "optimised": {
+          "mean_open": 0.1925,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}
