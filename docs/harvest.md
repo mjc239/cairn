@@ -1,4 +1,4 @@
-# Blueprint harvest: first 12 projects
+# Blueprint harvest: 20 projects
 
 *Code: `scripts/harvest.py`, `scripts/harvest_projects.toml`, `lean/extract_deps.lean` and
 `lean/extract_deps_legacy.lean`. Per-project results are in
@@ -13,14 +13,26 @@ smallest first. For each one it:
 3. builds with the Mathlib cache and extracts dependencies;
 4. runs Phase 1 (author `\uses` vs Lean).
 
-A project takes 3–10 minutes, and disk use stays bounded.
+A project takes 3–16 minutes, and disk use stays bounded.
 
-The first 12 projects were harvested twice. This page reports the second
-pass, run after three fixes, and compares it with the first.
+The 12 small projects were harvested twice. The sections below report the
+second pass, run after three fixes, and compare it with the first. The 8
+medium projects then ran once with the fixed pipeline, and all succeeded
+([Medium projects](#medium-projects)).
 
-**Not yet harvested:** eight medium projects (APAP, Iwasawa, FormalBook,
-testing lower bounds, sphere eversion, sphere packing, Brownian motion, New
-Foundations). After those come PNT+, FLT and Equational Theories.
+**Where this leaves us:** 19 projects harvested plus one stub skipped, with 3
+large projects to go (PNT+, FLT, Equational Theories). **Nine** of the new
+projects link at least 64% of their blueprint nodes to Lean, as PFR and
+Carleson do:
+- sphere eversion 100%
+- FLT3 98%
+- CLT 80%
+- APAP 76%
+- Brownian motion 74%
+- sphere packing 65%
+- FLT-regular 64%
+- testing lower bounds 51%
+- ABC 57%
 
 ## Fixes between the passes
 
@@ -146,13 +158,97 @@ Phase 0 needs only the blueprint, so the fixes change only zeta3.
 - **Small projects are noisy.** Seven blueprints have 50 nodes or fewer, and
   their chapter gaps rest on one to four chapters.
 
+## Medium projects
+
+8 projects, 7–42k lines of Lean each, all harvested in one pass of about an
+hour. Each took 5–6 minutes, except Brownian motion (16). New Foundations
+(Lean v4.21) used the legacy extractor.
+
+### Linkage
+
+| Project | Lean | Blueprint nodes | `\uses` edges | Chapters | Linked | … only through Mathlib | Stale names |
+|---|---|---:|---:|---:|---:|---:|---:|
+| brownian_motion | v4.33 | 663 | 1608 | 15 | **492 (74%)** | 183 | 1 |
+| testing_lower_bounds | v4.35 | 344 | 867 | 17 | **177 (51%)** | 59 | 0 |
+| formal_book | v4.34 | 192 | 103 | 45 | 69 (36%) | 0 | 0 |
+| con_nf | v4.21 | 159 | 293 | 8 | 55 (35%) | 0 | 6 |
+| sphere_packing | v4.32 | 141 | 246 | 11 | **91 (65%)** | 18 | 0 |
+| sphere_eversion | v4.34 | 73 | 104 | 5 | **73 (100%)** | 10 | 0 |
+| apap | v4.35 | 49 | 74 | 7 | **37 (76%)** | 4 | 0 |
+| iwasawa | v4.33 | 15 | 3 | 5 | 7 (47%) | 0 | 0 |
+
+- **Brownian motion and testing lower bounds are the largest blueprints we
+  have.** They have 3× and 1.6× PFR's nodes, 1,608 and 867 `\uses` edges, and
+  15–17 chapters.
+- **Mathlib linking matters at this scale.** It recovers 183 of Brownian
+  motion's linked nodes and 59 of testing lower bounds'.
+- **Unfinished proofs.** New Foundations annotates only 59 of 159 nodes.
+  FormalBook still has `sorry` in 30 of its 68 blueprint-named theorems.
+- **Iwasawa** has a 15-node blueprint with 3 edges for 10,000 lines of Lean,
+  so it's of little use for either analysis.
+
+### Author `\uses` vs Lean (Phase 1)
+
+| Project | Linked nodes | Author edges | Direct | Implied | Absent | Lean edges | Unreported |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| brownian_motion | 492 | 1058 | 87% | 2% | 11% | 2428 | 62% |
+| testing_lower_bounds | 177 | 316 | 81% | 3% | 16% | 883 | 71% |
+| sphere_packing | 91 | 123 | 79% | 2% | 20% | 315 | 69% |
+| sphere_eversion | 73 | 104 | 88% | 0% | 12% | 265 | 65% |
+| con_nf | 55 | 87 | 72% | 0% | 28% | 519 | 88% |
+| apap | 37 | 43 | 91% | 0% | 9% | 46 | 15% |
+| formal_book | 69 | 23 | 9% | 0% | 91% | 3 | 33% |
+
+- **Agreement is high and consistent with the other projects:** 72–91% of author
+  edges are direct Lean dependencies. Brownian motion matches PFR (87%) with
+  twice as many author edges.
+- **FormalBook is the exception, for a known reason.** 30 of its 68
+  blueprint-named theorems still depend on `sorry`, so their Lean proofs have
+  no dependencies to compare. Its 45 chapters are also independent proofs, with
+  few `\uses` between them.
+- **New Foundations' authors report very little of the Lean graph.** They leave
+  out 88% of Lean edges, the most of any project. Its proofs lean on a large
+  set of technical lemmas the blueprint doesn't name.
+
+### Order vs load (Phase 0)
+
+| Project | Nodes | Forward refs | Mean open: human / optimised / random | Gap (whole) | Chapter gap (n) |
+|---|---:|---:|---|---:|---|
+| brownian_motion | 663 | 15 | 39.7 / 59.1 / 145.1 | −0.23 | 0.18 (14) |
+| testing_lower_bounds | 344 | 28 | 32.8 / 32.0 / 61.7 | 0.03 | 0.49 (12) |
+| formal_book | 192 | 11 | 1.2 / 1.5 / 32.8 | −0.01 | 0.52 (8) |
+| con_nf | 159 | 2 | 15.1 / 14.7 / 29.4 | 0.03 | 0.19 (7) |
+| sphere_packing | 141 | 13 | 15.7 / 15.6 / 33.2 | 0.00 | 0.15 (5) |
+| sphere_eversion | 73 | 11 | 7.9 / 8.3 / 20.4 | −0.03 | 0.45 (4) |
+| apap | 49 | 0 | 5.3 / 5.0 / 11.8 | 0.04 | 0.14 (4) |
+| iwasawa | 15 | 0 | 1.1 / 0.2 / 1.0 | (too small) | — |
+
+- **Whole documents: every medium project is at the load optimum or better**
+  (gap between −0.23 and 0.04). The PFR finding holds across all 19 projects:
+  authors order whole documents almost as tightly as an optimiser.
+- **Our optimiser doesn't scale to Brownian motion.** Its 663-node order is
+  heavier than the authors' (59.1 open against 39.7), so the negative gap there
+  shows the limit of greedy search with local moves, not superhuman authors.
+  The local search needs more restarts, or a better start, on large graphs.
+- **Within chapters, these projects are mostly PFR-like:** APAP 0.14, sphere
+  packing 0.15, Brownian motion 0.18, New Foundations 0.19. Testing lower
+  bounds (0.49), FormalBook (0.52) and sphere eversion (0.45) sit in between.
+  None has Carleson's paper-like chapters (1.26), unlike ABC, Bonn and
+  Chandra–Furst–Lipton in the small batch. Larger projects also give firmer
+  chapter estimates: 4–14 chapters each.
+- **Forward references stay rare:** at most 28 (testing lower bounds), against
+  Carleson's 90.
+
 ## Next
 
-- **Harvest the eight medium projects** with the fixed pipeline.
-- **Use the well-linked projects in the cross-project models.** FLT3, CLT and
-  FLT-regular have 64–98% of nodes linked, and ABC and Toric about half. The
-  key-declaration model and style fits are still trained on PFR and Carleson
-  only. The style and events commands would need to opt in to external
-  records for CLT, Toric and FLT-regular.
+- **Use the well-linked projects in the cross-project models.** At least 9
+  projects now link half or more of their nodes to Lean, and three are bigger
+  than PFR. The key-declaration model and style fits are still trained on PFR
+  and Carleson only. The style and events commands would need to opt in to
+  external records for projects linked through Mathlib.
+- **Make the optimiser scale** (more restarts, or starting from the author's
+  order) before comparing orders on 500+ node blueprints.
+- **The three large projects** (PNT+, FLT, Equational Theories) are next in the
+  manifest. PNT+ built in 33 minutes in the aborted first run.
 - **Check Toric's and Semicircle's absent edges:** trace a sample through
   Mathlib to see whether a deeper reach search would find them.
