@@ -7,6 +7,7 @@ Each outline uses the exposition style fitted to the project's blueprint (closes
 
     uv run python scripts/cross_project.py      # once: unpacks the dumps, writes key_model_all.json
     uv run python scripts/outline_projects.py
+    uv run python scripts/outline_projects.py --save-model apap   # just save apap's leave-one-out model
 
 Writes results/outline/projects/<project>.md (outline at the blueprint's own level of detail) and
 results/outline/projects/eval.{json,md}.
@@ -40,6 +41,7 @@ def fitted_style(name: str) -> Style:
 
 
 def main() -> None:
+    save = sys.argv[sys.argv.index("--save-model") + 1] if "--save-model" in sys.argv else None
     projects = {
         "PFR": (parse_blueprint(ROOT / "data/raw/pfr/blueprint/src", "chapter/main.tex"),
                 load_decls(dump("pfr", "results/phase1/pfr/pfr_decls.jsonl.gz"))),
@@ -48,6 +50,11 @@ def main() -> None:
     }
     projects.update({n: harvested(n) for n in TRAIN})
     OUT.mkdir(parents=True, exist_ok=True)
+    if save:  # the model an outline of `save` should use: trained on the other training projects only
+        path = OUT / f"key_model_without_{save.lower()}.json"
+        KeyModel.fit({n: p for n, p in projects.items() if n != save}).save(path)
+        print(f"wrote {path}")
+        return
     results = {}
     for name, (bp, decls) in projects.items():
         others = {n: p for n, p in projects.items() if n != name}
