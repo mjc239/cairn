@@ -1,0 +1,100 @@
+# Blueprint projects for the harvester (scripts/harvest.py), in harvest order.
+# Each entry: name (directory under results/harvest/), repo (GitHub owner/name), and optionally
+#   commit    pin a commit (default: the default branch's HEAD at harvest time, recorded in triage.json)
+#   group_by  file | chapter | section (default: chosen from the blueprint's structure)
+#   entry     blueprint entry file under blueprint/src (default: content.tex, then chapter/main.tex)
+#   libs      Lean root modules to build and extract (default: the lakefile's lean_libs)
+# Sources: the leanblueprint README's project list (github.com/PatrickMassot/leanblueprint).
+
+[[project]]
+name = "pnt"
+repo = "AlexKontorovich/PrimeNumberTheoremAnd"
+
+[[project]]
+name = "flt_regular"
+repo = "leanprover-community/flt-regular"
+
+[[project]]
+name = "apap"
+repo = "YaelDillies/LeanAPAP"
+
+[[project]]
+name = "clt"
+repo = "RemyDegenne/CLT"
+
+[[project]]
+name = "sphere_eversion"
+repo = "leanprover-community/sphere-eversion"
+
+[[project]]
+name = "formal_book"
+repo = "mo271/FormalBook"
+
+[[project]]
+name = "flt3"
+repo = "pitmonticone/FLT3"
+
+[[project]]
+name = "abc_exceptions"
+repo = "b-mehta/ABC-Exceptions"
+
+[[project]]
+name = "zeta3"
+repo = "ahhwuhu/zeta_3_irrational"
+
+[[project]]
+name = "chandra_furst_lipton"
+repo = "YaelDillies/ChandraFurstLipton"
+
+[[project]]
+name = "cam_combi"
+repo = "YaelDillies/LeanCamCombi"
+
+[[project]]
+name = "brownian_motion"
+repo = "RemyDegenne/brownian-motion"
+
+[[project]]
+name = "testing_lower_bounds"
+repo = "RemyDegenne/testing-lower-bounds"
+
+[[project]]
+name = "semicircle"
+repo = "fredraj3/SemicircleLaw"
+
+[[project]]
+name = "bonn_analysis"
+repo = "fpvandoorn/BonnAnalysis"
+
+[[project]]
+name = "sphere_packing"
+repo = "thefundamentaltheor3m/Sphere-Packing-Lean"
+
+[[project]]
+name = "banach_tarski"
+repo = "bergschaf/lean-banach-tarski"
+
+[[project]]
+name = "con_nf"
+repo = "leanprover-community/con-nf"
+
+[[project]]
+name = "infinity_cosmos"
+repo = "emilyriehl/infinity-cosmos"
+
+[[project]]
+name = "toric"
+repo = "YaelDillies/Toric"
+
+[[project]]
+name = "iwasawa"
+repo = "acmepjz/lean-iwasawa"
+
+# Large; last so a slow build does not hold up the rest.
+[[project]]
+name = "flt"
+repo = "ImperialCollegeLondon/FLT"
+
+[[project]]
+name = "equational_theories"
+repo = "teorth/equational_theories"

@@ -72,11 +72,13 @@ def ppShort (env : Environment) (e : Expr) : IO String := do
 
 def main (args : List String) : IO UInt32 := do
   let root :: prefixes := args
-    | IO.eprintln "usage: extract_deps <RootModule> <ModulePrefix>..."; return 1
-  let prefixes := if prefixes.isEmpty then [root] else prefixes
+    | IO.eprintln "usage: extract_deps <RootModule>[,<RootModule>...] <ModulePrefix>..."; return 1
+  -- `root` may list several modules separated by commas (projects with more than one library).
+  let roots := root.splitOn ","
+  let prefixes := if prefixes.isEmpty then roots else prefixes
   initSearchPath (← findSysroot)
   unsafe enableInitializersExecution
-  let env ← importModules #[{ module := root.toName }] {} (loadExts := true)
+  let env ← importModules (roots.toArray.map fun r => { module := r.toName }) {} (loadExts := true)
   let modNames := env.allImportedModuleNames
   let inProject (m : Name) : Bool := prefixes.any fun p => p.toName.isPrefixOf m
   let stdout ← IO.getStdout
