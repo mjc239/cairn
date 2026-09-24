@@ -20,9 +20,12 @@
   "InfinityCosmos"
  ],
  "build_minutes": 0.6,
+ "extractor": "extract_deps.lean",
  "decls": 381,
  "theorems": 186,
+ "external_decls": 0,
  "lean_resolved": 0.0,
  "nodes_linked": 0,
+ "nodes_linked_external_only": 0,
  "minutes": 3.2
 }
