@@ -1,0 +1,14 @@
+{
+  "Antichain.𝔄_aux": {"faithful": true, "issue": ""},
+  "Antichain.tile_count": {"faithful": true, "issue": ""},
+  "Antichain.global_antichain_density": {"faithful": true, "issue": ""},
+  "Antichain.𝔄'": {"faithful": true, "issue": ""},
+  "Antichain.𝓛": {"faithful": true, "issue": ""},
+  "Antichain.𝓛'": {"faithful": true, "issue": ""},
+  "Antichain.exists_larger_grid": {"faithful": true, "issue": ""},
+  "Antichain.L'": {"faithful": true, "issue": ""},
+  "Antichain.tile_reach": {"faithful": true, "issue": ""},
+  "Antichain.stack_density": {"faithful": true, "issue": ""},
+  "Antichain.p''": {"faithful": true, "issue": ""},
+  "Antichain.pΘ": {"faithful": true, "issue": ""}
+}

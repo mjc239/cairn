@@ -1,0 +1,3 @@
+{
+  "ProbabilityTheory.sum_meas_smul_cond_fiber'": {"faithful": false, "issue": "The English says only that mu is a measure, dropping the hypothesis [IsFiniteMeasure mu]."}
+}

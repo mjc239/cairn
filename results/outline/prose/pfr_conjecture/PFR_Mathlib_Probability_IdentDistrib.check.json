@@ -1,0 +1,5 @@
+{
+  "ProbabilityTheory.independent_copies4_nondep": {"faithful": false, "issue": "The English drops the hypotheses that μ₁, ..., μ₄ are probability measures."},
+  "ProbabilityTheory.independent_copies": {"faithful": false, "issue": "The English drops the hypotheses that μ and μ' are probability measures."},
+  "ProbabilityTheory.independent_copies3_nondep": {"faithful": false, "issue": "The English drops the hypotheses that μ₁, μ₂, μ₃ are probability measures."}
+}

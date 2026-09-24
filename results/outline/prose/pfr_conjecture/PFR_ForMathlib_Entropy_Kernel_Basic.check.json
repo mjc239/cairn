@@ -1,0 +1,22 @@
+{
+ "ProbabilityTheory.Kernel.entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.entropy_prodMkLeft_unit": {
+  "faithful": false,
+  "issue": "Drops the hypotheses [IsZeroOrProbabilityMeasure μ] and [FiniteSupport μ]."
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib": {
+  "faithful": false,
+  "issue": "Drops the hypotheses [IsFiniteMeasure μ] and [FiniteRange X]."
+ },
+ "ProbabilityTheory.Kernel.entropy_compProd": {
+  "faithful": false,
+  "issue": "Drops the hypotheses [IsFiniteMeasure μ], [FiniteSupport μ], [IsZeroOrMarkovKernel κ] and [IsMarkovKernel η]."
+ },
+ "ProbabilityTheory.Kernel.chain_rule": {
+  "faithful": false,
+  "issue": "Drops the hypotheses [IsZeroOrMarkovKernel κ], [IsZeroOrProbabilityMeasure μ] and [FiniteSupport μ]."
+ }
+}

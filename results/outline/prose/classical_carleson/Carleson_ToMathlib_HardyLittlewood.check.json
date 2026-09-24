@@ -1,0 +1,10 @@
+{
+ "hasStrongType_maximalFunction": {
+  "faithful": false,
+  "issue": "Drops the hypotheses that μ is doubling with constant A, finite on compacts and open-positive (and that X is proper), which the constant C_{2.0.6}(A,…) depends on."
+ },
+ "hasStrongType_maximalFunction_one": {
+  "faithful": false,
+  "issue": "Drops the hypotheses that μ is doubling with constant A, finite on compacts and open-positive (and that X is proper), which the constant C_MB(A,p) depends on."
+ }
+}

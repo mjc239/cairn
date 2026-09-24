@@ -1,0 +1,5 @@
+{
+  "ProbabilityTheory.Kernel.rdistm": {"faithful": true, "issue": ""},
+  "ProbabilityTheory.Kernel.rdist": {"faithful": true, "issue": ""},
+  "ProbabilityTheory.Kernel.rdist_symm": {"faithful": false, "issue": "The English states symmetry unconditionally, dropping the finite-kernel, probability-measure and finite-support hypotheses on kappa, eta, mu, nu."}
+}
