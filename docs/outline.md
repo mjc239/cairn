@@ -213,6 +213,63 @@ Caveats:
 - **Translator and checker are the same model family**, as separate
   subagents. They share context isolation but may share blind spots.
 
+## Outlines of the 9 training projects
+
+*Code: `scripts/outline_projects.py`. Outlines and evaluation:
+[`results/outline/projects/`](../results/outline/projects/)
+([`eval.md`](../results/outline/projects/eval.md)).*
+
+With 9 well-linked projects ([`cross_project.md`](cross_project.md)), each
+one can be outlined by a model that has never seen it. The key-declaration
+model is trained on the other 8, and the outline uses the exposition style
+fitted to the project's blueprint. It is evaluated at the blueprint's own
+level of detail, the share of declarations its authors named. The baseline is
+the previous model, trained on PFR and Carleson only (minus the project).
+
+| Project | Detail | Style | Named (theorems) | Theorem precision | Recall | Nodes covered | Chapter NMI | τ within chapters | Baseline: named, theorem precision |
+|---|---:|---|---:|---:|---:|---:|---:|---:|---|
+| PFR | 0.18 | `top_down=0` | 289 (214) | 59% | 60% | 66% | 0.85 | +0.70 | 312, 50% |
+| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 560 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 488, 45% |
+| brownian_motion | 0.15 | `top_down=0` | 437 (264) | 28% | 39% | 39% | 0.78 | +0.58 | 475, 25% |
+| testing_lower_bounds | 0.12 | `top_down=0` | 159 (116) | 26% | 33% | 33% | 0.63 | +0.58 | 167, 24% |
+| sphere_packing | 0.07 | `top_down=0` | 208 (81) | 28% | 54% | 53% | 0.82 | +0.93 | 215, 28% |
+| flt3 | 0.38 | `top_down=0` | 103 (60) | 78% | 58% | 58% | 1.00 | +0.28 | 121, 61% |
+| sphere_eversion | 0.06 | `top_down=0.2` | 224 (43) | 47% | 62% | 65% | 0.62 | +0.50 | 245, 34% |
+| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 80 (43) | 49% | 71% | 91% | 0.92 | +0.70 | 84, 44% |
+| apap | 0.04 | `top_down=0` | 49 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 56, 67% |
+
+*Named counts include the definitions added so that every statement can be read
+(`define_used`), which is why they exceed the detail share.*
+
+- **Selection works well beyond chance on projects it has never seen.** At
+  each blueprint's own detail, precision on named theorems is 1.9–18 times the
+  base rate. The highest lifts are on the most selective blueprints: APAP names
+  4% of its declarations and the outline hits 78%; sphere eversion names 6%
+  and the outline hits 47%.
+- **More training projects make outlines tighter, not broader.** Across all 45
+  project and detail settings, recall is unchanged (mean 57% for both
+  models). Theorem precision rises in 38 settings and falls in 6 (mean 42% vs
+  38%). At the blueprints' own detail, the new model names 3–15% fewer
+  results on 8 of 9 projects, with recall within 2 points. It spends its budget on
+  fewer, better-chosen theorems.
+- **Carleson is the exception.** The new model names more of its declarations
+  as theorems (192 against 148) and loses theorem precision (40% vs 45%),
+  though recall improves (35% vs 31%). Carleson's blueprint names no
+  definitions at all, unlike most training projects, so a model trained on
+  them transfers less well there.
+- **Chapters from Lean modules match the blueprint's chapters** (NMI
+  0.62–1.00). **Order within chapters agrees well** with the authors
+  (τ +0.50 to +0.93) except in FLT3 and Carleson (+0.28, +0.26), whose
+  authors follow the argument rather than the dependency order.
+- **The hardest projects are the largest.** Brownian motion and testing lower
+  bounds reach 26–28% theorem precision and 33–39% recall. Their blueprints
+  name many mid-level lemmas that look structurally like helpers, as in the
+  key-model results.
+- **Readability issue: structure fields.** Projections such as
+  `DualPair.v` are pulled in by `define_used` as named definitions. Folding
+  structure fields into their structure would shorten outlines without losing
+  anything.
+
 ## Limitations and next steps
 
 - ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
@@ -224,5 +281,7 @@ Caveats:
   against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline
   length, may suit readers better.
-- **Only two training projects.** Adding more blueprint projects to
-  `key_model.json` is the most direct way to improve selection.
+- ~~Only two training projects~~. Done: `key_model_all.json` is trained on 9
+  projects (above and [`cross_project.md`](cross_project.md)).
+- **Structure fields as definitions** (above): fold projections into their
+  structure.

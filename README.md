@@ -60,6 +60,7 @@ uv run cairn outline ... --prose DIR --write-check-prompts      # then fill DIR/
 ./scripts/outline.sh                                             # models, evaluation vs blueprints, example outlines
 uv run python scripts/harvest.py [--only NAME ...]              # harvest blueprint projects (scripts/harvest_projects.toml)
 uv run python scripts/cross_project.py                          # key-declaration model: leave one project out, 9 projects
+uv run python scripts/outline_projects.py                        # outline each of the 9 with a model trained on the other 8
 uv run jupyter-execute --inplace notebooks/walkthrough.ipynb notebooks/harvest.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
 uv run pytest && uv run ruff check python
 ```
