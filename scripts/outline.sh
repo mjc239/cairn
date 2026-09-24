@@ -36,7 +36,7 @@ uv run cairn outline data/raw/pfr_decls.jsonl --model $O/key_model_carleson.json
   --title "PFR conjecture: outline of the proof" --prose $O/prose/pfr_conjecture -o $O/pfr_conjecture.md
 uv run cairn outline data/raw/pfr_decls.jsonl --model $O/key_model_carleson.json --root PFR_conjecture --detail 0.25 \
   --top-down 0.6 --roadmap chapter --title "PFR conjecture: outline of the proof (goal-first style)" \
-  -o $O/pfr_conjecture_topdown.md
+  --prose $O/prose/pfr_conjecture -o $O/pfr_conjecture_topdown.md
 uv run cairn outline data/raw/carleson_decls.jsonl --model $O/key_model_pfr.json --root classical_carleson \
   --detail 0.08 --no-define-used --top-down 0.2 --roadmap chapter \
   --title "Classical Carleson theorem: outline of the proof" --prose $O/prose/classical_carleson \
