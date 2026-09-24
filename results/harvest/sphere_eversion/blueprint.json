@@ -1,0 +1,2559 @@
+{
+  "nodes": [
+    {
+      "id": "def:loop",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 13,
+      "title": null,
+      "labels": [
+        "def:loop"
+      ],
+      "lean_decls": [
+        "Loop",
+        "Loop.average",
+        "Loop.support"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A loop is a map defined on the circle $\ud835\udd4a^1 = \u211d/\u2124$ with values in a finite-dimensional vector space. It can also freely be seen as $1$-periodic maps defined on $\u211d$. The average of a loop $\u03b3$ is $\\bar \u03b3 := \\int_{\ud835\udd4a^1} \u03b3(s)\\, ds$. The \\emph{support} of a family $\u03b3$ of loops in $F$ parametrized by $E$ is the closure of the set of $x$ in $E$ such that $\u03b3_x$ is not a constant loop."
+    },
+    {
+      "id": "prop:\u2203_loops",
+      "kind": "proposition",
+      "position": 1,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 29,
+      "title": null,
+      "labels": [
+        "prop:\u2203_loops"
+      ],
+      "lean_decls": [
+        "exist_loops"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:loop"
+      ],
+      "proof_uses": [
+        "lem:\u2203_surrounding_loops",
+        "lem:reparametrization",
+        "lem:exists_cont_diff_of_convex"
+      ],
+      "has_proof": true,
+      "statement_event": 1,
+      "proof_event": 31,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Let $K$ a compact set in $E$. Let $\u03a9$ be an open set in $E \u00d7 F$. Let $\u03b2$ and $g$ be smooth maps from $E$ to $F$. Write $\u03a9_x := \\{ y \u2208 F \\mid (x, y) \u2208 \u03a9\\}$, assume that $\u03b2(x) \u2208 \u03a9_x$ for all $x$, and that $g(x) = \u03b2(x)$ near $K$. If, for every $x$, $g(x)$ is in the convex hull of the connected component of $\u03a9_x$ containing $\u03b2(x)$, then there exists a smooth family of loops \\[ \u03b3 \\co E \u00d7 [0, 1] \u00d7 \ud835\udd4a^1 \u2192 F, (x, t, s) \u21a6 \u03b3^t_x(s) \\] such that, for all $x \u2208 E$, all $t \u2208 \u211d$ and all $s \u2208 \ud835\udd4a^1$, \\begin{itemize} \\item $\u03b3^t_x(s) \u2208 \u03a9_x$ \\item $\u03b3^0_x(s) = \u03b3^t_x(1) = \u03b2(x)$ \\item $\\bar \u03b3^1_x = g(x)$ \\item $\u03b3^t_x(s) = \u03b2(x)$ if $x$ is near $K$. \\end{itemize}"
+    },
+    {
+      "id": "def:surrounds_points",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 85,
+      "title": null,
+      "labels": [
+        "def:surrounds_points"
+      ],
+      "lean_decls": [
+        "SurroundingPts"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 2,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A point $x$ in $E$ is surrounded by points $p_0$, \\dots, $p_d$ if those points are affinely independent and there exist weights $w_i \u2208 (0, 1)$ with sum $1$ such that $x = \\sum_i w_i p_i$."
+    },
+    {
+      "id": "lem:smooth_barycentric_coord",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 105,
+      "title": null,
+      "labels": [
+        "lem:smooth_barycentric_coord"
+      ],
+      "lean_decls": [
+        "smooth_surrounding"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:surrounds_points"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "For every $x$ in $E$ and every collection of points $p \u2208 E^{d+1}$ surrounding $x$, there is a function $w \\co E \u00d7 E^{d+1} \u2192 \u211d^{d+1}$ such that, for every $(y, q)$ in a neighborhood of $(x, p)$, \\begin{itemize} \\item $w$ is smooth at $(y, q)$ \\item $w(y, q) > 0$ \\item $\\sum_{i=0}^d w_i(y, q) = 1$ \\item $y = \\sum_{i=0}^d w_i(y, q)q_i$. \\end{itemize}"
+    },
+    {
+      "id": "prop:surrounded_by_open",
+      "kind": "proposition",
+      "position": 4,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 173,
+      "title": null,
+      "labels": [
+        "prop:surrounded_by_open"
+      ],
+      "lean_decls": [
+        "surrounded_of_convexHull"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:surrounds_points"
+      ],
+      "proof_uses": [
+        "lem:caratheodory",
+        "lem:interior_chab",
+        "lem:int_homothety_cvx"
+      ],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 12,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "If a point $x$ of $E$ lies in the convex hull of an open set $P$, then it is surrounded by some collection of points belonging to $P$."
+    },
+    {
+      "id": "lem:caratheodory",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 184,
+      "title": "Carath\u00e9odory's lemma",
+      "labels": [
+        "lem:caratheodory"
+      ],
+      "lean_decls": [
+        "convexHull_eq_union"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "If a point $x$ of $E$ lies in the convex hull of a set $P$, then $x$ belongs to the convex hull of a finite set of affinely independent points of $P$."
+    },
+    {
+      "id": "lem:interior_chab",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 227,
+      "title": null,
+      "labels": [
+        "lem:interior_chab"
+      ],
+      "lean_decls": [
+        "AffineBasis.interior_convexHull"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Given an affine basis $b$ of $E$, the interior of the convex hull of $b$ is the set of points with strictly positive barycentric coordinates."
+    },
+    {
+      "id": "lem:int_homothety_cvx",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 253,
+      "title": null,
+      "labels": [
+        "lem:int_homothety_cvx"
+      ],
+      "lean_decls": [
+        "Convex.subset_interior_image_homothety_of_one_lt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Given a point $c$ of $E$ and a real number $t$, let: \\[ h^c_t \\co E \\to E \\] be the homothety which dilates about $c$ by a scale of $t$. Suppose $c$ belongs to the interior of a convex subset $C$ of $E$ and $t > 1$, then \\[ C \\subseteq \\Int(h^c_t(C)) \\]"
+    },
+    {
+      "id": "def:surrounds",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 346,
+      "title": null,
+      "labels": [
+        "def:surrounds"
+      ],
+      "lean_decls": [
+        "Loop.Surrounds"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:loop",
+        "def:surrounds_points"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 13,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say a loop $\u03b3$ surrounds a vector $v$ if $v$ is surrounded by a collection of points belonging to the image of $\u03b3$. Also, we fix a base point $0$ in $\ud835\udd4a^1$ and say a loop is based at some point $b$ if $0$ is sent to $b$."
+    },
+    {
+      "id": "lem:loop_of_hull",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 371,
+      "title": null,
+      "labels": [
+        "lem:loop_of_hull"
+      ],
+      "lean_decls": [
+        "surrounding_loop_of_convexHull"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:surrounds"
+      ],
+      "proof_uses": [
+        "prop:surrounded_by_open"
+      ],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "If a vector $v$ is in the convex hull of a connected open subset $O$ then, for every base point $b \u2208 O$, there is a continuous family of loops $\u03b3 \\co [0, 1] \u00d7 \ud835\udd4a^1 \u2192 E, (t, s) \u21a6 \u03b3^t(s)$ such that, for all $t$ and $s$: \\begin{itemize} \\item $\u03b3^t$ is based at $b$ \\item $\u03b3^0(s) = b$ \\item $\u03b3^t(s) \u2208 O$ \\item $\u03b3^1$ surrounds $v$ \\end{itemize}"
+    },
+    {
+      "id": "def:family_surrounds",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 409,
+      "title": null,
+      "labels": [
+        "def:family_surrounds"
+      ],
+      "lean_decls": [
+        "SurroundingFamily"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:surrounds"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 16,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A continuous family of loops $\u03b3 \\co E \u00d7 [0, 1] \u00d7 \ud835\udd4a^1 \u2192 F, (x, t, s) \u21a6 \u03b3^t_x(s)$ surrounds a map $g \\co E \u2192 F$ with base $\u03b2 \\co E \u2192 F$ on $U \u2282 E$ in $\u03a9 \u2282 E \u00d7 F$ if, for every $x$ in $U$, every $t \u2208 [0, 1]$ and every $s \u2208 \ud835\udd4a^1$, \\begin{itemize} \\item $\u03b3^t_x$ is based at $\u03b2(x)$ \\item $\u03b3^0_x(s) = \u03b2(x)$ \\item $\u03b3^1_x$ surrounds $g(x)$ \\item $(x,\u03b3^t_x(s)) \u2208 \u03a9$. \\end{itemize} The space of such families will be denoted by $\\Loop(g, \u03b2, U, \u03a9)$."
+    },
+    {
+      "id": "lem:local_loops",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 434,
+      "title": null,
+      "labels": [
+        "lem:local_loops"
+      ],
+      "lean_decls": [
+        "local_loops"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:family_surrounds"
+      ],
+      "proof_uses": [
+        "lem:loop_of_hull",
+        "lem:smooth_barycentric_coord"
+      ],
+      "has_proof": true,
+      "statement_event": 17,
+      "proof_event": 18,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Assume $\u03a9$ is open over some neighborhood of $x_0$. If $g(x_0)$ is in the convex hull of the connected component of $\u03a9_{x_0}$ containing $\u03b2(x_0)$, then there is a continuous family of loops defined near $x_0$, based at $\u03b2$, taking value in $\u03a9$ and surrounding $g$."
+    },
+    {
+      "id": "lem:satisfied_or_refund",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 467,
+      "title": null,
+      "labels": [
+        "lem:satisfied_or_refund"
+      ],
+      "lean_decls": [
+        "satisfied_or_refund"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:family_surrounds"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "For every set $U \u2282 E$, $\\Loop(g, \u03b2, U, \u03a9)$ is ``path connected'': for every $\u03b3_0$ and $\u03b3_1$ in $\\Loop(g, \u03b2, U, \u03a9)$, there is a continuous map $\u03b4 \\co [0, 1] \u00d7 E \u00d7 [0, 1] \u00d7 \ud835\udd4a^1 \u2192 F, (\u03c4, x, t, s) \u21a6 \u03b4^t_{\u03c4, x}(s)$ which interpolates between $\u03b3_0$ and $\u03b3_1$ in $\\Loop(g, \u03b2, U, \u03a9)$."
+    },
+    {
+      "id": "cor:extend_loops",
+      "kind": "corollary",
+      "position": 13,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 520,
+      "title": null,
+      "labels": [
+        "cor:extend_loops"
+      ],
+      "lean_decls": [
+        "extend_loops"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:satisfied_or_refund"
+      ],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Let $U_0$ and $U_1$ be open sets in $E$. Let $K_0 \u2282 U_0$ and $K_1 \u2282 U_1$ be compact subsets. For any $\u03b3_0 \u2208 \\Loop(U_0, g, \u03b2, \u03a9)$ and $\u03b3_1 \u2208 \\Loop(U_1, g, \u03b2, \u03a9)$, there exists a neighborhood $U$ of $K_0 \u222a K_1$ and there exists $\u03b3 \u2208 \\Loop(U, g, \u03b2, \u03a9)$ which coincides with $\u03b3_0$ near $K_0\\cup U_1^c$."
+    },
+    {
+      "id": "lem:\u2203_surrounding_loops",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 550,
+      "title": null,
+      "labels": [
+        "lem:\u2203_surrounding_loops"
+      ],
+      "lean_decls": [
+        "exists_surrounding_loops"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:local_loops",
+        "cor:extend_loops",
+        "lem:relative_inductive_construction_of_loc"
+      ],
+      "has_proof": true,
+      "statement_event": 23,
+      "proof_event": 24,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "In the setup of \\Cref{prop:\u2203_loops}, assume we have a continuous family $\u03b3$ of loops defined near $K$ which is based at $\u03b2$, surrounds $g$ and such that each $\u03b3_x^t$ takes values in $\u03a9_x$. Then there such a family which is defined on all of $E$ and agrees with $\u03b3$ near $K$."
+    },
+    {
+      "id": "lem:exists_cont_diff_of_convex",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 579,
+      "title": null,
+      "labels": [
+        "lem:exists_cont_diff_of_convex"
+      ],
+      "lean_decls": [
+        "exists_contDiff_of_convex"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 25,
+      "proof_event": 26,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Let $E$ and $F$ be real normed vector spaces. Assume that $E$ is finite dimensional. Let $P$ be a predicate on $E \\times F$ such that for all $x$ in $E$, $\\{y ~|~ P (x, y) \\}$ is convex. Let $n$ be a natural number or $+\\infty$. Assume that every $x$ has a neighbourhood $U$ on which there exists a $\\C^n$ function $f$ such that $\\forall x \u2208 U, P(x, f(x))$. Then there is a global $\\C^n$ function $f$ such that $\\forall x, P(x, f(x))$."
+    },
+    {
+      "id": "lem:exists_cont_diff_of_convex\u2082",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 605,
+      "title": null,
+      "labels": [
+        "lem:exists_cont_diff_of_convex\u2082"
+      ],
+      "lean_decls": [
+        "exists_contDiff_of_convex\u2082"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 27,
+      "proof_event": 28,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Let $E\u2081$, $E\u2082$ and $F$ be real vector spaces. Assume $E\u2081$ and $E\u2082$ are finite dimensional. Let $n$ be a natural number or $+\\infty$. Let $P$ be a property of pairs $(x, f)$ with $x \u2208 E\u2081$ and $f : E\u2082 \u2192 F$. Assume that, for every $x$, the space of functions $f$ such that $P(x, f)$ holds is convex. Assume that for every $x\u2080$ in $E\u2081$ there is a neighborhood $U$ of $x\u2080$ and a function $\u03c6 : E\u2081 \u00d7 E\u2082 \u2192 F$ which is $\\C^n$ on $U \u00d7 E\u2082$ and such that $P(x, \u03c6(x, \\cdot))$ holds for every $x$ in $U$. There there is a global $\\C^n$ function $\u03c6 \\co E\u2081 \u00d7 E\u2082 \u2192 F$ such that $P(x, \u03c6(x, \\cdot))$ holds for every $x$."
+    },
+    {
+      "id": "lem:reparametrization",
+      "kind": "lemma",
+      "position": 17,
+      "chapter": "loops",
+      "source": "loops.tex",
+      "line": 624,
+      "title": null,
+      "labels": [
+        "lem:reparametrization"
+      ],
+      "lean_decls": [
+        "SmoothSurroundingFamily.reparametrize_average"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:surrounds"
+      ],
+      "proof_uses": [
+        "lem:smooth_barycentric_coord",
+        "lem:exists_cont_diff_of_convex\u2082"
+      ],
+      "has_proof": true,
+      "statement_event": 29,
+      "proof_event": 30,
+      "proof_chapter": "loops",
+      "proof_leanok": true,
+      "text": "Let $\u03b3 \\co E \u00d7 \ud835\udd4a^1 \u2192 F$ be a smooth family of loops surrounding a map $g$. There is a smooth family $\u03c6 \\co E \u00d7 \ud835\udd4a^1 \u2192 \ud835\udd4a^1$ such that each $\u03b3_x \u2218 \u03c6_x$ has average $g(x)$ and $\u03c6_x(0) = 0$."
+    },
+    {
+      "id": "def:dual_pair",
+      "kind": "definition",
+      "position": 18,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "def:dual_pair"
+      ],
+      "lean_decls": [
+        "DualPair"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 32,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A dual pair on a vector space $E$ is a pair $(\u03c0, v)$ where $\u03c0$ is a linear form on $E$ and $v$ a vector in $E$ such that $\u03c0(v) = 1$."
+    },
+    {
+      "id": "def:corrugation",
+      "kind": "definition",
+      "position": 19,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 35,
+      "title": "Theilli\u00e8re 2018",
+      "labels": [
+        "def:corrugation"
+      ],
+      "lean_decls": [
+        "corrugation"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:loop"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 33,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The map obtained by corrugation of $f$ in direction $(\u03c0, v)$ using $\u03b3$ with oscillation number $N$ is \\[ x \u21a6 f(x) + \\frac1N \u222b_0^{N\u03c0(x)} \\left[\u03b3_x(s) - \\overline{\u03b3}_x\\right]ds. \\]"
+    },
+    {
+      "id": "prop:theilliere",
+      "kind": "proposition",
+      "position": 20,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 55,
+      "title": "Theilli\u00e8re 2018",
+      "labels": [
+        "prop:theilliere",
+        "CP:C0",
+        "CP:kerpi",
+        "CP:v"
+      ],
+      "lean_decls": [
+        "fderiv_corrugated_map",
+        "corrugation.c0_small_on",
+        "remainder_c0_small_on",
+        "corrugation.support"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:corrugation"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "local_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $f$ be a $\\mathcal{C}^1$ function from $E$ to $F$. Let $(\u03c0, v)$ be a dual pair on $E$. Let $\u03b3 \\co E \u00d7 \ud835\udd4a^1 \u2192 F$ be a $\\mathcal{C}^1$ family of loops such that $\\overline{\u03b3_x} = Df(x)v$ for all $x$. For any compact set $K \u2282 E$ and any positive $\u03b5$, the function $f'$ obtained by corrugation of $f$ in direction $(\u03c0, v)$ using $\u03b3$ with large enough oscillation number $N$ satisfies: \\begin{enumerate} \\item $\u2200 x \u2208 K, \u2016f'(x) - f(x)\u2016 \u2264 \u03b5$ \\item $\u2200 x \u2208 K, \u2016(Df'(x) - Df(x))_{|\\ker \u03c0}\u2016 \u2264 \u03b5$. \\item $\u2200 x \u2208 K, \u2016Df'(x)v - \u03b3(x, N\u03c0(x))\u2016 \u2264 \u03b5$ \\end{enumerate} In addition, all the differences estimated above vanish if $x$ is outside the support of $\u03b3$."
+    },
+    {
+      "id": "def:hol_partial",
+      "kind": "definition",
+      "position": 21,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 101,
+      "title": null,
+      "labels": [
+        "def:hol_partial"
+      ],
+      "lean_decls": [
+        "JetSec.IsPartHolonomicAt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 36,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $E'$ be a linear subspace of $E$. A map $\\F = (f, \u03c6) : E \u2192 F \u00d7 \\Hom(E, F)$ is $E'$--holonomic if, for every $v$ in $E'$ and every $x$, $Df(x)v = \u03c6(x)v$."
+    },
+    {
+      "id": "def:rel_loc",
+      "kind": "definition",
+      "position": 22,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 110,
+      "title": null,
+      "labels": [
+        "def:rel_loc"
+      ],
+      "lean_decls": [
+        "RelLoc"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 37,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A first order differential relation for maps from $E$ to $F$ is a subset $\\Rel$ of $E \u00d7 F \u00d7 \\Hom(E, F)$."
+    },
+    {
+      "id": "def:formal_sol_loc",
+      "kind": "definition",
+      "position": 23,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 121,
+      "title": null,
+      "labels": [
+        "def:formal_sol_loc"
+      ],
+      "lean_decls": [
+        "RelLoc.FormalSol"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rel_loc"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 38,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A formal solution of a differential relation $\\Rel$ is a map $\\F = (f, \u03c6) \\co E \u2192 F \u00d7 \\Hom(E, F)$ such that, for every $x$, $(x, f(x), \u03c6(x))$ is in $\\Rel$."
+    },
+    {
+      "id": "def:htpy_jet_sec_loc",
+      "kind": "definition",
+      "position": 24,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 134,
+      "title": null,
+      "labels": [
+        "def:htpy_jet_sec_loc"
+      ],
+      "lean_decls": [
+        "HtpyJetSec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 39,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A $1$-jet section from $E$ to $F$ is a function from $E$ to $F \u00d7 \\Hom(E, F)$. A homotopy of $1$-jet sections is a smooth map $\\F : \u211d \u00d7 E \u2192 F \u00d7 \\Hom(E, F)$."
+    },
+    {
+      "id": "def:rel_slice",
+      "kind": "definition",
+      "position": 25,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 148,
+      "title": null,
+      "labels": [
+        "def:rel_slice"
+      ],
+      "lean_decls": [
+        "RelMfld.slice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rel_loc"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 40,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For every $\u03c3 = (x, y, \u03c6)$, the slice of $\\Rel$ at $\u03c3$ with respect to $(\u03c0, v)$ is: \\[ \\Rel(\u03c3, \u03c0, v) = \\{w \u2208 F \\;|\\; (x, y, \u03c6 + (w - \u03c6(v)) \u2297 \u03c0) \u2208 \\Rel\\}. \\]"
+    },
+    {
+      "id": "lem:update_lin_map",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 160,
+      "title": null,
+      "labels": [
+        "lem:update_lin_map"
+      ],
+      "lean_decls": [
+        "DualPair.update_ker_pi",
+        "DualPair.update_v",
+        "mem_slice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "local_convex_integration",
+      "proof_leanok": true,
+      "text": "The linear map $\u03c6 + (w - \u03c6(v)) \u2297 \u03c0)$ coincides with $\u03c6$ on $\\ker \u03c0$ and sends $v$ to $w$. If $\\sigma$ belongs to $\\Rel$ then $\u03c6(v)$ belongs to $\\{w \u2208 F, (x, y, \u03c6 + (w - \u03c6(v)) \u2297 \u03c0) \u2208 \\Rel\\}$."
+    },
+    {
+      "id": "def:short_formal_sol",
+      "kind": "definition",
+      "position": 27,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 178,
+      "title": null,
+      "labels": [
+        "def:short_formal_sol"
+      ],
+      "lean_decls": [
+        "RelLoc.FormalSol.IsShortAt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:formal_sol_loc",
+        "def:dual_pair"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 43,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A formal solution $\\F$ of $\\Rel$ is $(\u03c0, v)$--short if, for every $x$, $Df(x)v$ belongs to the interior of the convex hull of $\\Conn_{\u03c6(v)}\\Rel((x, f(x), \u03c6(x)), \u03c0, v)$."
+    },
+    {
+      "id": "lem:integration_step",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 188,
+      "title": null,
+      "labels": [
+        "lem:integration_step"
+      ],
+      "lean_decls": [
+        "StepLandscape.improveStep_rel_t_eq_0",
+        "StepLandscape.improveStep_rel_C",
+        "StepLandscape.improveStep_rel_compl_K\u2081",
+        "StepLandscape.improveStep_c0_close",
+        "StepLandscape.improveStep_part_hol"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:short_formal_sol",
+        "def:hol_partial",
+        "def:htpy_jet_sec_loc"
+      ],
+      "proof_uses": [
+        "prop:\u2203_loops",
+        "prop:theilliere",
+        "lem:update_lin_map"
+      ],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "local_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $\\F$ be a formal solution of $\\Rel$. Let $K_1 \u2282 E$ be a compact subset, and let $K_0$ be a compact subset of the interior of $K_1$. Let $C$ be a closed subset of $E$. Let $E'$ be a linear subspace of $E$ contained in $\\ker \u03c0$. Let $\u03b5$ be a positive real number. Assume $\\Rel$ is open. Assume that $\\F$ is $E'$--holonomic near $K_0$, $(\u03c0, v)$--short, and holonomic near $C$. Then there is a homotopy $\\F_t$ such that: \\begin{enumerate} \\item $\\F_0 = \\F$~; \\item $\\F_t$ is a formal solution of $\\Rel$ for all $t$~; \\item $\\F_t(x) = \\F(x)$ for all $t$ when $x$ is near $C$ or outside $K_1$~; \\item $d(\\bs\\F_t(x), \\bs \\F(x)) \u2264 \u03b5$ for all $t$ and all $x$~; \\item $\\F_1$ is $E' \u2295 \u211dv$--holonomic near $K_0$. \\end{enumerate}"
+    },
+    {
+      "id": "def:ample_subset",
+      "kind": "definition",
+      "position": 29,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 319,
+      "title": null,
+      "labels": [
+        "def:ample_subset"
+      ],
+      "lean_decls": [
+        "AmpleSet"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 46,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A subset $\u03a9$ of a real vector space $E$ is ample if the convex hull of each connected component of $\u03a9$ is the whole $E$."
+    },
+    {
+      "id": "lem:ample_codim_two",
+      "kind": "lemma",
+      "position": 30,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 327,
+      "title": null,
+      "labels": [
+        "lem:ample_codim_two"
+      ],
+      "lean_decls": [
+        "AmpleSet.of_one_lt_codim"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_subset"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "local_convex_integration",
+      "proof_leanok": true,
+      "text": "The complement of a linear subspace of codimension at least 2 is ample."
+    },
+    {
+      "id": "def:ample_relation_loc",
+      "kind": "definition",
+      "position": 31,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 369,
+      "title": null,
+      "labels": [
+        "def:ample_relation_loc"
+      ],
+      "lean_decls": [
+        "RelLoc.IsAmple"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_subset",
+        "def:rel_slice"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 49,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A first order differential relation $\\Rel$ is ample if all its slices are ample."
+    },
+    {
+      "id": "lem:h_principle_open_ample_loc",
+      "kind": "lemma",
+      "position": 32,
+      "chapter": "local_convex_integration",
+      "source": "local_convex_integration.tex",
+      "line": 378,
+      "title": null,
+      "labels": [
+        "lem:h_principle_open_ample_loc"
+      ],
+      "lean_decls": [
+        "RelLoc.FormalSol.improve"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_relation_loc",
+        "def:holonomic_loc"
+      ],
+      "proof_uses": [
+        "lem:integration_step"
+      ],
+      "has_proof": true,
+      "statement_event": 50,
+      "proof_event": 51,
+      "proof_chapter": "local_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $\\F$ be a formal solution of $\\Rel$. Let $K_1 \u2282 E$ be a compact subset, and let $K_0$ be a compact subset of the interior of $K_1$. Assume $\\F$ is holonomic near a closed subset $C$ of $E$. Let $\u03b5$ be a positive real number. If $\\Rel$ is open and ample then there is a homotopy $\\F_t$ such that: \\begin{enumerate} \\item $\\F_0 = \\F$ \\item $\\F_t$ is a formal solution of $\\Rel$ for all $t$~; \\item $\\F_t(x) = \\F(x)$ for all $t$ when $x$ is near $C$ or outside $K_1$. \\item $d(\\bs\\F_t(x), \\bs \\F(x)) \u2264 \u03b5$ for all $t$ and all $x$~; \\item $\\F_1$ is holonomic near $K_0$~; \\item $t \u21a6 F_t$ is constant near $0$ and $1$. \\end{enumerate}"
+    },
+    {
+      "id": "def:update",
+      "kind": "definition",
+      "position": 33,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 22,
+      "title": null,
+      "labels": [
+        "def:update"
+      ],
+      "lean_decls": [
+        "OpenSmoothEmbedding.update"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 52,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given smooth open embeddings $\u03c6 : X \u2192 M$ and $\u03c8 : Y \u2192 N$, the update of a map $f : M \u2192 N$, using a map $g : X \u2192 Y$ is the map from $M$ to $N$ sending $m$ to $\u03c8 \u2218 g \u2218 \u03c6\u207b\u00b9(m)$ if $m \u2208 \u03c6(X)$ and $f(m)$ otherwise."
+    },
+    {
+      "id": "lem:smooth_updating",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 32,
+      "title": null,
+      "labels": [
+        "lem:smooth_updating"
+      ],
+      "lean_decls": [
+        "OpenSmoothEmbedding.contMDiff_update"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:update"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 53,
+      "proof_event": 54,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $\u03c6 : P \u00d7 X \u2192 M$ and $\u03c8 : P \u00d7 Y \u2192 N$ be families of smooth open embeddings. Let $K$ be a set in $X$ whose image in $M$ is closed. Let $f : P \u00d7 M \u2192 N$ and $g : P \u00d7 X \u2192 Y$ be smooth families of maps. If for each $p$ and for every $x$ not in $K$, $f_p(\u03c6(x)) = \u03c8(g_p(x))$ then the family of maps $f_p$ updated using $g_p$ is smooth from $P \u00d7 M$ to $N$."
+    },
+    {
+      "id": "lem:dist_updating",
+      "kind": "lemma",
+      "position": 35,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 52,
+      "title": null,
+      "labels": [
+        "lem:dist_updating"
+      ],
+      "lean_decls": [
+        "OpenSmoothEmbedding.dist_update"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:update"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 55,
+      "proof_event": 56,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $\u03c6 : X \u2192 M$ and $\u03c8 : Y \u2192 N$ be smooth open embeddings. Let $K_X$ and $K_P$ be compact sets in $X$ and $P$. Let $f : P \u00d7 M \u2192 N$ be a continuous family of maps such that, for each $p$, $f_p(\u03c6(X)) \u2282 \u03c8(Y)$. For every continuous function $\u03b5 : M \u2192 \u211d_{> 0}$, there is some positive number $\u03b7$ such that, for every map $g : P \u00d7 X \u2192 Y$ and every $(p, p', x)$ in $K_P \u00d7 K_P \u00d7 K_X$, $d(g_{p'}(x), \u03c8\u207b\u00b9\u2218f_p\u2218\u03c6(x)) < \u03b7$ implies $d(f'_{p'}(\u03c6(x)), f_p(\u03c6(x))) < \u03b5(\u03c6(x))$ where $f'$ is obtained by updating $f$ using $g$."
+    },
+    {
+      "id": "lem:nice_atlas",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 97,
+      "title": null,
+      "labels": [
+        "lem:nice_atlas"
+      ],
+      "lean_decls": [
+        "nice_atlas"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:index_type"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 57,
+      "proof_event": 58,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $M$ be a manifold modelled on the normed space $E$ and $(V_j)_{j \u2208 J}$ a cover of $M$ by open sets. There exists some natural number $N$ and a family of smooth open embeddings $\u03c6 : \\IT{N} \u00d7 E \u2192 M$ such that \\begin{itemize} \\item for each $i$ there is some $j$ such that $\u03c6_i(E) \\subseteq V_j$, \\item $i \u21a6 \u03c6_i(E)$ is a locally-finite collection of sets in $M$, \\item $\u22c3_i \u03c6_i(B_E(0, 1)) = M$ where $B_E(0, 1)$ is the open unit ball in $E$. \\end{itemize}"
+    },
+    {
+      "id": "def:localisation_data",
+      "kind": "definition",
+      "position": 37,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 163,
+      "title": null,
+      "labels": [
+        "def:localisation_data"
+      ],
+      "lean_decls": [
+        "LocalisationData"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:index_type"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 59,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $f : M \u2192 N$ be a continuous map between manifolds. A localisation data for $f$ is a tuple $(E, F, N, \u03b9, \u03c6, \u03c8, j)$ where $E$ and $F$ are normed vector spaces, $N$ is a natural number, $\u03b9$ is a set, $\u03c6 : \\IT{N} \u00d7 E \u2192 M$ and $\u03c8 : \u03b9 \u00d7 F \u2192 N$ are families of smooth open embeddings, and $j : \\IT{N} \u2192 \u03b9$ such that: \\begin{itemize} \\item $\u22c3_i \u03c6_i(B_E) = M$ where $B_E$ is the open unit ball in $E$, \\item $\u22c3_i \u03c8_i(B_F) = N$ where $B_F$ is the open unit ball in $F$, \\item $\u2200 i, f(\u03c6_i(E)) \u2282 \u03c8_{j(i)}(B_F)$ where $B_F$ is the open unit ball in $F$, \\item $i \\mapsto \u03c8_i(F)$ is locally finite. \\end{itemize} Such a tuple will be denoted by $(\u03c6, \u03c8, j)$ for brevity."
+    },
+    {
+      "id": "lem:ex_localisation",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 186,
+      "title": null,
+      "labels": [
+        "lem:ex_localisation"
+      ],
+      "lean_decls": [
+        "stdLocalisationData"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:localisation_data"
+      ],
+      "proof_uses": [
+        "lem:nice_atlas"
+      ],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Any continuous map between manifolds has some localisation data."
+    },
+    {
+      "id": "lem:stability_cover",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 212,
+      "title": null,
+      "labels": [
+        "lem:stability_cover"
+      ],
+      "lean_decls": [
+        "Metric.exists_continuous_real_forall_closedBall_subset"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "In a metric space $X$, let $U : \u03b9 \u2192 \\set{X}$ be a family of open subsets of $X$ and let $K : \u03b9 \u2192 \\set{X}$ be a locally-finite family of closed subsets such that $K_i \u2282 U_i$ for all $i$. There exists a continuous function $\u03b4 : X \u2192 \u211d_{> 0}$ such that: \\[ \u2200 x\\, x',\\; \u2200 i, \\left[x \u2208 K_i \\text{ and } d(x, x') < \u03b4(x)\\right] \u21d2 x' \u2208 U_i. \\]"
+    },
+    {
+      "id": "lem:localisation_stability",
+      "kind": "lemma",
+      "position": 40,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 237,
+      "title": null,
+      "labels": [
+        "lem:localisation_stability"
+      ],
+      "lean_decls": [
+        "localisation_stability"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:localisation_data"
+      ],
+      "proof_uses": [
+        "lem:stability_cover"
+      ],
+      "has_proof": true,
+      "statement_event": 64,
+      "proof_event": 65,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $f : M \u2192 N$ be a continuous map between manifolds, and let $(\u03c6, \u03c8, i)$ be some localisation data for $f$. There exists a continuous positive function $\u03b5 : M \u2192 \u211d_{>0}$ such that: \\[ \u2200 g : M \u2192 N, \\big[\u2200 m,\\; d(f(m), g(m)) < \u03b5(m)\\big] \u21d2 \u2200 i,\\; g(\u03c6_i(E)) \u2282 \u03c8_{j(i)}(F). \\]"
+    },
+    {
+      "id": "def:pull_back_bundle",
+      "kind": "definition",
+      "position": 41,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 273,
+      "title": null,
+      "labels": [
+        "def:pull_back_bundle"
+      ],
+      "lean_decls": [
+        "Bundle.Pullback"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 66,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For every bundle $p : E \u2192 B$ and every map $f \\co B' \u2192 B$, the pull-back bundle $f^*E \u2192 B'$ is defined by $f^*E = \\{(b', e) \u2208 B' \u00d7 E \\;|\\; p(e) = f(b')\\}$ with the obvious projection to $B'$."
+    },
+    {
+      "id": "def:hom_bundle",
+      "kind": "definition",
+      "position": 42,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 283,
+      "title": null,
+      "labels": [
+        "def:hom_bundle"
+      ],
+      "lean_decls": [
+        "Bundle.ContinuousLinearMap.vectorBundle"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 67,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $E \u2192 B$ and $F \u2192 B$ be two vector bundles over some smooth manifold $B$. The bundle $\\Hom(E, F) \u2192 B$ is the set of linear maps from $E_b$ to $F_b$ for some $b$ in $B$, with the obvious projection map."
+    },
+    {
+      "id": "def:one_jet_space",
+      "kind": "definition",
+      "position": 43,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 298,
+      "title": null,
+      "labels": [
+        "def:one_jet_space"
+      ],
+      "lean_decls": [
+        "OneJetBundle"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:pull_back_bundle",
+        "def:hom_bundle"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 68,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $M$ and $N$ be smooth manifolds. Denote by $p_1$ and $p_2$ the projections of $M \u00d7 N$ to $M$ and $N$ respectively. The space $J^1(M, N)$ of $1$-jets of maps from $M$ to $N$ is $Hom(p_1^*TM, p_2^*TN)$"
+    },
+    {
+      "id": "def:one_jet_extension",
+      "kind": "definition",
+      "position": 44,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 317,
+      "title": null,
+      "labels": [
+        "def:one_jet_extension"
+      ],
+      "lean_decls": [
+        "oneJetExt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_space"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 69,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The $1$-jet of a smooth map $f \\co M \u2192 N$ is the map from $m$ to $J^1(M, N)$ defined by $j^1f(m) = (m, f(m), T_mf)$."
+    },
+    {
+      "id": "lem:one_jet_extension_prop",
+      "kind": "lemma",
+      "position": 45,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 331,
+      "title": null,
+      "labels": [
+        "lem:one_jet_extension_prop",
+        "lem:one_jet_smooth",
+        "lem:one_jet_section"
+      ],
+      "lean_decls": [
+        "ContMDiff.oneJetExt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_extension",
+        "def:one_jet_space",
+        "def:one_jet_extension",
+        "def:one_jet_space",
+        "def:one_jet_extension"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 70,
+      "proof_event": 71,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "For every smooth map $f \\co M \u2192 N$, \\begin{enumerate} \\item $j^1f$ is smooth \\item $j^1f$ is a section of $J^1(M, N) \u2192 M$ \\end{enumerate}"
+    },
+    {
+      "id": "def:holonomic_section",
+      "kind": "definition",
+      "position": 46,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 367,
+      "title": null,
+      "labels": [
+        "def:holonomic_section"
+      ],
+      "lean_decls": [
+        "OneJetSec.IsHolonomicAt",
+        "OneJetSec.isHolonomicAt_iff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_space"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 72,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A section $\\F$ of $J^1(M, N) \u2192 M$ is called holonomic if it is the $1$--jet of its base map. Equivalently, $\\F$ is holonomic if there exists $f \\co M \u2192 N$ such that $\\F = j^1f$, since such a map is necessarily $\\bs \\F$."
+    },
+    {
+      "id": "def:rel",
+      "kind": "definition",
+      "position": 47,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 381,
+      "title": null,
+      "labels": [
+        "def:rel"
+      ],
+      "lean_decls": [
+        "RelMfld"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_space"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 73,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A first order differential relation for maps from $M$ to $N$ is a subset $\\Rel$ of $J^1(M, N)$."
+    },
+    {
+      "id": "def:formal_sol",
+      "kind": "definition",
+      "position": 48,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 390,
+      "title": null,
+      "labels": [
+        "def:formal_sol"
+      ],
+      "lean_decls": [
+        "FormalSol"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rel",
+        "def:one_jet_extension"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 74,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A formal solution of a differential relation $\\Rel \u2282 J^1(M, N)$ is a section of $J^1(M, N) \u2192 M$ taking values in $\\Rel$."
+    },
+    {
+      "id": "def:htpy_formal_sol",
+      "kind": "definition",
+      "position": 49,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 400,
+      "title": null,
+      "labels": [
+        "def:htpy_formal_sol"
+      ],
+      "lean_decls": [
+        "HtpyFormalSol"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:formal_sol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 75,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A homotopy of formal solutions of $\\Rel$ is a smooth family of sections $\\F : \u211d \u00d7 M \u2192 J^1(M, N)$ such that each $m \u21a6 \\F(t, m)$ is a formal solution."
+    },
+    {
+      "id": "def:transfer_map",
+      "kind": "definition",
+      "position": 50,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 412,
+      "title": null,
+      "labels": [
+        "def:transfer_map"
+      ],
+      "lean_decls": [
+        "OpenSmoothEmbedding.transfer",
+        "OneJetSec.localize",
+        "RelMfld.localize"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_space"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 76,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given manifolds $M$, $X$, $N$ and $Y$ and smooth open embeddings $g : Y \u2192 N$ and $h : X \u2192 M$ we get a transfer map $\u03c8_{g, h} : J^1(X, Y) \u2192 J^1(M, N)$ defined by \\[ \u03c8_{g, h}(x, y, \u03c6) = (h(x), g(y), T_yg \u2218 \u03c6 \u2218 (T_xh)\u207b\u00b9) \\] and an operator on sections which sends $\\F : M \u2192 J^1(M, N)$ to $\u03a8_{g, h}\\F : X \u2192 J^1(X, Y)$ defined when $\\bs\\F(h(X)) \u2282 g(Y)$ by \\[ \u03a8_{g, h}\\F(x) = (x, g\u207b\u00b9 \u2218 \\bs\\F \u2218 h(x), (T_{g\u207b\u00b9 \u2218 \\bs\\F \u2218 h(x)}g)\u207b\u00b9 \u2218 \\F(h(x))_\u03c6 \u2218 T_xh). \\] Given a relation $\\Rel \u2282 J^1(M, N)$, the induced relation in $J^1(X, Y)$ is $\u03c8_{g, h}\u207b\u00b9\\Rel$."
+    },
+    {
+      "id": "lem:transfer",
+      "kind": "lemma",
+      "position": 51,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 435,
+      "title": null,
+      "labels": [
+        "lem:transfer"
+      ],
+      "lean_decls": [
+        "OneJetSec.localize",
+        "isHolonomicAt_localize_iff",
+        "OneJetSec.localize_mem_iff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:transfer_map",
+        "def:holonomic_section",
+        "def:formal_sol"
+      ],
+      "proof_uses": [
+        "lem:one_jet_extension_prop"
+      ],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "In the situation of the previous definition, given a section $\\F : M \u2192 J^1(M, N)$: \\begin{itemize} \\item $\u03a8_{g, h}(\\F)$ is a smooth section of $J^1(X, Y)$. \\item $\\F$ is holonomic on $s \u2282 h(X) \u2229 \\bs\\F\u207b\u00b9(g(Y))$ if and only if $\u03a8_{g, h}(\\F)$ is holonomic on $h\u207b\u00b9(s)$. \\item $\\F$ is a formal solution of $\\Rel$ on $h(X) \u2229 \\bs\\F\u207b\u00b9(g(Y)$ if and only if $\u03a8_{g, h}(\\F)$ is a formal solution of the induced relation $\u03a8_{g, h}\u207b\u00b9\\Rel$. \\end{itemize}"
+    },
+    {
+      "id": "def:h-princ",
+      "kind": "definition",
+      "position": 52,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 469,
+      "title": null,
+      "labels": [
+        "def:h-princ"
+      ],
+      "lean_decls": [
+        "RelMfld.SatisfiesHPrinciple",
+        "RelMfld.SatisfiesHPrincipleWith"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:htpy_formal_sol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 79,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A first order differential relation $\\Rel \u2282 J^1(M, N)$ satisfies the $h$-principle if every formal solution of $\\Rel$ is homotopic to a holonomic one. It satisfies the parametric $h$-principle if, for every manifold $P$ and every closed set $C$ in $P \u00d7 M$, every family $\\F : P \u00d7 M \u2192 J^1(M, N)$ of formal solutions which are holonomic for $(p, m)$ near $C$ is homotopic to a family of holonomic ones relative to $C$."
+    },
+    {
+      "id": "lem:param_trick",
+      "kind": "lemma",
+      "position": 53,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 496,
+      "title": null,
+      "labels": [
+        "lem:param_trick"
+      ],
+      "lean_decls": [
+        "FamilyOneJetSec.isHolonomicAt_uncurry",
+        "FamilyOneJetSec.uncurry_mem_relativize"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:holonomic_section",
+        "def:formal_sol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 80,
+      "proof_event": 81,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "In the above setup, we have: \\begin{itemize} \\item $\\bar F$ is holonomic at $(x, p)$ if and only if $F_p$ is holonomic at $x$. \\item $F$ is a family of formal solutions of some $\\Rel \u2282 J^1(X, Y)$ if and only if $\\bar F$ is a formal solution of $\\Rel^P := \u03a8^{-1}(\\Rel)$. \\end{itemize}"
+    },
+    {
+      "id": "lem:param_for_free",
+      "kind": "lemma",
+      "position": 54,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 520,
+      "title": null,
+      "labels": [
+        "lem:param_for_free"
+      ],
+      "lean_decls": [
+        "RelMfld.SatisfiesHPrinciple.satisfiesHPrincipleWith"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:h-princ"
+      ],
+      "proof_uses": [
+        "lem:param_trick"
+      ],
+      "has_proof": true,
+      "statement_event": 82,
+      "proof_event": 83,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Let $\\Rel$ be a first order differential relation for maps from $M$ to $N$. If, for every manifold with boundary $P$, $\\Rel^P$ satisfies the $h$-principle then $\\Rel$ satisfies the parametric $h$-principle. Likewise, the $C^0$-dense and relative $h$-principle for all $\\Rel^P$ imply the parametric $C^0$-dense and relative $h$-principle for $\\Rel$."
+    },
+    {
+      "id": "def:ample_relation",
+      "kind": "definition",
+      "position": 55,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 569,
+      "title": null,
+      "labels": [
+        "def:ample_relation"
+      ],
+      "lean_decls": [
+        "RelMfld.Ample"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:one_jet_space",
+        "def:ample_subset"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 84,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A relation $\\Rel$ is ample if, for every $\u03c3 = (x, y, \u03c6)$ in $\\Rel$ and every $(\u03bb, v)$, the slice $\\Rel_{\u03c3, \u03bb, v}$ is ample in $T_yY$."
+    },
+    {
+      "id": "lem:ample_iff_loc",
+      "kind": "lemma",
+      "position": 56,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 578,
+      "title": null,
+      "labels": [
+        "lem:ample_iff_loc"
+      ],
+      "lean_decls": [
+        "RelMfld.Ample.localize"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_relation",
+        "def:transfer_map"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 85,
+      "proof_event": 86,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "Given manifolds $W$, $X$, $Y$ and $Z$ and smooth open embeddings $g : Z \u2192 Y$ and $h : W \u2192 X$, the relation induced (in the sense of \\Cref{def:transfer_map}) in $J^1(W, Z)$ by an ample relation in $J^1(X, Y)$ is ample."
+    },
+    {
+      "id": "lem:open_ample_immersion",
+      "kind": "lemma",
+      "position": 57,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 609,
+      "title": null,
+      "labels": [
+        "lem:open_ample_immersion"
+      ],
+      "lean_decls": [
+        "immersionRel_open_ample"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_relation"
+      ],
+      "proof_uses": [
+        "lem:ample_codim_two"
+      ],
+      "has_proof": true,
+      "statement_event": 87,
+      "proof_event": 88,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "The relation of immersions of $M$ into $N$ in positive codimension is open and ample."
+    },
+    {
+      "id": "thm:open_ample",
+      "kind": "theorem",
+      "position": 58,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 631,
+      "title": "Gromov",
+      "labels": [
+        "thm:open_ample"
+      ],
+      "lean_decls": [
+        "RelMfld.Ample.satisfiesHPrincipleWith"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:param_for_free",
+        "lem:ample_parameter",
+        "lem:transfer",
+        "lem:ex_localisation",
+        "lem:localisation_stability",
+        "lem:smooth_updating",
+        "lem:dist_updating",
+        "lem:inductive_htpy_construction",
+        "lem:ample_iff_loc",
+        "lem:h_principle_open_ample_loc"
+      ],
+      "has_proof": true,
+      "statement_event": 89,
+      "proof_event": 92,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "For any manifolds $X$ and $Y$, any relation $\\Rel \u2282 J^1(X, Y)$ that is open and ample satisfies the full $h$-principle (relative, parametric and $C^0$-dense)."
+    },
+    {
+      "id": "lem:ample_parameter",
+      "kind": "lemma",
+      "position": 59,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 643,
+      "title": null,
+      "labels": [
+        "lem:ample_parameter"
+      ],
+      "lean_decls": [
+        "RelMfld.Ample.relativize"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:ample_relation"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 90,
+      "proof_event": 91,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "If $\\Rel$ is ample then, for any parameter space $P$, $\\Rel^P$ is also ample."
+    },
+    {
+      "id": "thm:sphere_eversion",
+      "kind": "theorem",
+      "position": 60,
+      "chapter": "global_convex_integration",
+      "source": "global_convex_integration.tex",
+      "line": 737,
+      "title": "Smale 1958",
+      "labels": [
+        "thm:sphere_eversion"
+      ],
+      "lean_decls": [
+        "sphere_eversion"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:open_ample",
+        "lem:open_ample_immersion"
+      ],
+      "has_proof": true,
+      "statement_event": 93,
+      "proof_event": 94,
+      "proof_chapter": "global_convex_integration",
+      "proof_leanok": true,
+      "text": "There is a homotopy of immersions of $\ud835\udd4a^2$ into $\u211d^3$ from the inclusion map to the antipodal map $a : q \u21a6 -q$."
+    },
+    {
+      "id": "lem:loc_immersion_rel_open",
+      "kind": "lemma",
+      "position": 61,
+      "chapter": "appendix",
+      "source": "appendix.tex",
+      "line": 21,
+      "title": null,
+      "labels": [
+        "lem:loc_immersion_rel_open"
+      ],
+      "lean_decls": [
+        "loc_immersion_rel_open"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 95,
+      "proof_event": 96,
+      "proof_chapter": "appendix",
+      "proof_leanok": true,
+      "text": "The relation $\\Rel$ above is open."
+    },
+    {
+      "id": "lem:loc_immersion_rel_ample",
+      "kind": "lemma",
+      "position": 62,
+      "chapter": "appendix",
+      "source": "appendix.tex",
+      "line": 50,
+      "title": null,
+      "labels": [
+        "lem:loc_immersion_rel_ample"
+      ],
+      "lean_decls": [
+        "loc_immersion_rel_ample"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:ample_codim_two"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 97,
+      "proof_event": 98,
+      "proof_chapter": "appendix",
+      "proof_leanok": true,
+      "text": "The relation $\\Rel$ above is ample."
+    },
+    {
+      "id": "sphere_eversion_of_loc",
+      "kind": "theorem",
+      "position": 63,
+      "chapter": "appendix",
+      "source": "appendix.tex",
+      "line": 100,
+      "title": "Smale 1958",
+      "labels": [
+        "sphere_eversion_of_loc"
+      ],
+      "lean_decls": [
+        "sphere_eversion_of_loc"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:loc_immersion_rel_open",
+        "lem:loc_immersion_rel_ample",
+        "lem:h_principle_open_ample_loc",
+        "lem:param_trick"
+      ],
+      "has_proof": true,
+      "statement_event": 99,
+      "proof_event": 100,
+      "proof_chapter": "appendix",
+      "proof_leanok": true,
+      "text": "There is a homotopy of immersion of $\ud835\udd4a^2$ into $\u211d^3$ from the inclusion map to the antipodal map $a \\co q \u21a6 -q$."
+    },
+    {
+      "id": "def:index_type",
+      "kind": "definition",
+      "position": 64,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 13,
+      "title": null,
+      "labels": [
+        "def:index_type"
+      ],
+      "lean_decls": [
+        "IndexType"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 101,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For every natural number $N$ we set \\[ \\IT{N} = \\begin{cases} \u2115 \\text{ if $N = 0$}\\\\ \\{0, \\dots, N - 1\\} \\text{otherwise} \\end{cases} \\]"
+    },
+    {
+      "id": "lem:exists_forall_eventually_of_index_type",
+      "kind": "lemma",
+      "position": 65,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 36,
+      "title": null,
+      "labels": [
+        "lem:exists_forall_eventually_of_index_type"
+      ],
+      "lean_decls": [
+        "LocallyFinite.exists_forall_eventually_of_indexType"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:index_type"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 102,
+      "proof_event": 103,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ be a topological space and let $Y$ be any set. Let $f$ be a sequence of functions from $X$ to $Y$ indexed by $\\IT{N}$ for some $N$. Let $V$ be a family of subsets of $X$ indexed by $\\IT{N}$ such that, for every non-maximal $n$, $f_{S(n)}$ coincides with $f_n$ outside $V_{S(n)}$. If $V$ is locally finite then there exists $F \\co X \u2192 Y$ such that, for every $x$ and every sufficiently large $n$, $F$ coincides with $f_n$ near $x$."
+    },
+    {
+      "id": "def:germ",
+      "kind": "definition",
+      "position": 66,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 76,
+      "title": null,
+      "labels": [
+        "def:germ"
+      ],
+      "lean_decls": [
+        "Filter.Germ"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 104,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $X$ be a topological space, $x$ a point in $X$ and $Y$ a set. A germ of function from $X$ to $Y$ at $x$ is an element of the quotient $(X \u2192 Y)_x$ of the set of functions from $X$ to $Y$ by the relation $f \u223c g$ if $f$ and $g$ coincide near $x$. The image of a function $f$ in this quotient will be denoted by $[f]_x$. A local predicate on functions from $X$ to $Y$ is a family $P$ of predicates on the germ set $(X \u2192 Y)_x$ for every $x$ in $X$. We say that a function $f$ satisfies $P$ at $x$ if $P [f]_x$ holds, and $f$ satisfies $P$ if it satisfies $P$ at every point."
+    },
+    {
+      "id": "def:restrict_germ_predicate",
+      "kind": "definition",
+      "position": 67,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 96,
+      "title": null,
+      "labels": [
+        "def:restrict_germ_predicate"
+      ],
+      "lean_decls": [
+        "RestrictGermPredicate"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 105,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $X$ be a topological space, $A$ a subset of $X$, $Y$ a set and $P$ a local predicate on functions from $X$ to $Y$. The restriction of $P$ to $A$ is the local predicate $P_{|A}$ defined by the constraint that a function $f$ satisfies $P_{|A}$ at $x$ if $x \u2208 A$ implies that $f$ satisfies $P$ near $x$."
+    },
+    {
+      "id": "lem:inductive_construction",
+      "kind": "lemma",
+      "position": 68,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 117,
+      "title": null,
+      "labels": [
+        "lem:inductive_construction"
+      ],
+      "lean_decls": [
+        "inductive_construction"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:index_type",
+        "def:germ"
+      ],
+      "proof_uses": [
+        "lem:exists_forall_eventually_of_index_type"
+      ],
+      "has_proof": true,
+      "statement_event": 106,
+      "proof_event": 107,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ be a topological space and $Y$ be any set. Let $U$ be a locally finite family of subsets of $X$ indexed by some $\\IT{N}$. Let $P\u2080$ be a local predicate on functions from $X$ to $Y$, let $i \u21a6 P\u2081^i$ be a family of such predicates, and let $i \u21a6 P\u2082^i$ be a family of predicates on functions from $X$ to $Y$, all families being indexed by $\\IT{N}$. Assume that \\begin{itemize} \\item there exists $f\u2080 \\co X \u2192 Y$ satisfying $P\u2080$ and $P\u2082^0$~; \\item for every $i$ in $\\IT{N}$ and every $f \\co X \u2192 Y$ satisfying $P\u2080$, $P\u2082^i$ and every $P\u2081^j$ for $j < i$, there exists a function $f' \\co X \u2192 Y$ which coincides with $f$ outside $U_i$ and satisfies $P\u2080$ and every $P\u2081^j$ for $j \u2264 i$ as well as $P\u2082^{S(i)}$ unless $i$ is maximal. \\end{itemize} Then there exists $f \\co X \u2192 Y$ which satisfies $P\u2080$ and all $P\u2081^i$'s."
+    },
+    {
+      "id": "lem:inductive_htpy_construction",
+      "kind": "lemma",
+      "position": 69,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 178,
+      "title": null,
+      "labels": [
+        "lem:inductive_htpy_construction"
+      ],
+      "lean_decls": [
+        "inductive_htpy_construction"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:inductive_construction",
+        "def:restrict_germ_predicate"
+      ],
+      "has_proof": true,
+      "statement_event": 108,
+      "proof_event": 109,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ be a topological space and $Y$ be any set. Let $P\u2080$ and $P\u2081$ be local predicates on maps from $X$ to $Y$. Let $P\u2080'$ be a local predicate on maps from $\u211d \u00d7 X \u2192 Y$. Assume that for every $a$, $b$ and $t$ in $\u211d$, every $x$ in $X$ and every $f \\co \u211d \u00d7 X \u2192 Y$, if $f$ satisfies $P\u2082$ at $(at + b, x)$ then $(t, x) \u21a6 f(at+b, x)$ satisfies $P\u2080'$ at $(t, x)$. Let $f\u2080 \\co X \u2192 Y$ be a function satisfying $P\u2080$ and such that $(t, x) \u21a6 f\u2080(x)$ satisfies $P\u2080'$. Let $K$ and $U$ be families of subsets of $X$ indexed by some $\\IT{N}$. Assume that $U$ is locally finite and $K$ covers $X$. Assume that, for every $i$ in $\\IT{N}$ and every $f \\co X \u2192 Y$ satisfying $P\u2080$ and satisfying $P\u2081$ on $\\bigcup_{j < i} K_j$, there exists $F \\co \u211d \u00d7 X \u2192 Y$ such that \\begin{itemize} \\item for all $t$, $F(t, \\cdot)$ satisfies $P\u2080$ \\item $F$ satisfies $P\u2080'$ \\item $F(1, \\cdot)$ satisfies $P\u2081$ on $\\bigcup_{j \u2264 i} K_j$ \\item $F(t, x) = f(x)$ whenever $x$ is not in $U_i$ or $t$ is near $(-\u221e, 0]$ \\item $F(t, x) = F(1, x)$ whenever $t$ is near $[1, +\u221e)$. \\end{itemize} Then there exists $F \\co \u211d \u00d7 X \u2192 Y$ such that \\begin{itemize} \\item for all $t$, $F(t, \\cdot)$ satisfies $P\u2080$ \\item $F$ satisfies $P\u2080'$ \\item $F(0, \\cdot) = f\u2080$ \\item $F(1, \\cdot)$ satisfies $P\u2081$. \\end{itemize}"
+    },
+    {
+      "id": "lem:exists_locally_finite_subcover_of_locally",
+      "kind": "lemma",
+      "position": 70,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 267,
+      "title": null,
+      "labels": [
+        "lem:exists_locally_finite_subcover_of_locally"
+      ],
+      "lean_decls": [
+        "exists_locallyFinite_subcover_of_locally"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 110,
+      "proof_event": 111,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ be a metrizable locally compact second countable topological space. Let $C$ be a closed subset in $X$. Let $P$ be a non-decreasing predicate on subsets of $X$ (meaning that if $U \u2282 V$ and $V$ satisfies $P$ then so does $U$). Assume the empty set satisfies $P$ and every point in $C$ has a neighborhood in $X$ satisfying $P$. Then there exist sequences of subsets $K$ and $W$ indexed by natural numbers such that $K$ covers $C$, $W$ is locally finite and, for every $n$~: \\begin{itemize} \\item $K_n$ is compact \\item $W_n$ is open \\item $K_n \u2282 W_n$ \\item $W_n$ satisfies $P$. \\end{itemize}"
+    },
+    {
+      "id": "lem:inductive_construction_of_loc",
+      "kind": "lemma",
+      "position": 71,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 294,
+      "title": null,
+      "labels": [
+        "lem:inductive_construction_of_loc"
+      ],
+      "lean_decls": [
+        "inductive_construction_of_loc"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:inductive_construction",
+        "lem:exists_locally_finite_subcover_of_locally",
+        "def:restrict_germ_predicate"
+      ],
+      "has_proof": true,
+      "statement_event": 112,
+      "proof_event": 113,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ a second countable locally compact metrizable topological space. Let $P\u2080$, $P\u2080'$ and $P\u2081$ be local predicates on function from $X$ to a set $Y$. Let $f\u2080 \\co X \u2192 Y$ be a function satisfying $P\u2080$ and $P\u2080'$. Assume that \\begin{itemize} \\item For every $x$ in $X$, there exists a function $f \\co X \u2192 Y$ which satisfies $P\u2080$ and satisfies $P\u2081$ near $x$. \\item For every closed subsets $K\u2081$ and $K\u2082$ of $X$ and every open subsets $U\u2081$ and $U\u2082$ containing $K\u2081$ and $K\u2082$, for every function $f\u2081$ and $f\u2082$ satisfying $P\u2080$, if $f\u2081$ satisfies $P\u2080'$ and satisfies $P\u2081$ on $U\u2081$ and if $f\u2082$ satisfies $P\u2081$ on $U\u2082$ then there exists $f$ which satisfies $P\u2080$ and $P\u2080'$, and satisfies $P\u2081$ near $K\u2081 \u222a K\u2082$ and coincides with $f\u2081$ near $K\u2081 \u222a U\u2082^c$. \\end{itemize} Then there exists $f$ which satisfies $P\u2080$, $P\u2080'$ and $P\u2081$."
+    },
+    {
+      "id": "lem:relative_inductive_construction_of_loc",
+      "kind": "lemma",
+      "position": 72,
+      "chapter": "local_to_global",
+      "source": "local_to_global.tex",
+      "line": 344,
+      "title": null,
+      "labels": [
+        "lem:relative_inductive_construction_of_loc"
+      ],
+      "lean_decls": [
+        "relative_inductive_construction_of_loc"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:inductive_construction_of_loc"
+      ],
+      "has_proof": true,
+      "statement_event": 114,
+      "proof_event": 115,
+      "proof_chapter": "local_to_global",
+      "proof_leanok": true,
+      "text": "Let $X$ a second countable locally compact metrizable topological space. Let $P\u2080$ and $P\u2081$ be local predicates on functions from $X$ to a set $Y$. Let $K$ be a closed subset of $X$. Let $f\u2080 \\co X \u2192 Y$ be a function satisfying $P\u2080$ and satisfying $P\u2081$ near $K$. Assume that \\begin{itemize} \\item For every $x$ in $X$, there exists a function $f \\co X \u2192 Y$ which satisfies $P\u2080$ and satisfies $P\u2081$ near $x$. \\item For every closed subsets $K\u2081$ and $K\u2082$ of $X$ and every open subsets $U\u2081$ and $U\u2082$ containing $K\u2081$ and $K\u2082$, for every function $f\u2081$ and $f\u2082$ satisfying $P\u2080$, if $f\u2081$ satisfies $P\u2081$ on $U\u2081$ and if $f\u2082$ satisfies $P\u2081$ on $U\u2081$ then there exists $f$ which satisfies $P\u2080$, and satisfies $P\u2081$ near $K\u2081 \u222a K\u2082$ and coincides with $f\u2081$ near $K\u2081 \u222a U\u2082^c$. \\end{itemize} Then there exists $f$ which satisfies $P\u2080$ and $P\u2081$ and coincides with $f\u2080$ near $K$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "def:loop",
+      "target": "prop:\u2203_loops",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:\u2203_surrounding_loops",
+      "target": "prop:\u2203_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:reparametrization",
+      "target": "prop:\u2203_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:exists_cont_diff_of_convex",
+      "target": "prop:\u2203_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "def:surrounds_points",
+      "target": "lem:smooth_barycentric_coord",
+      "kind": "statement"
+    },
+    {
+      "source": "def:surrounds_points",
+      "target": "prop:surrounded_by_open",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:caratheodory",
+      "target": "prop:surrounded_by_open",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:interior_chab",
+      "target": "prop:surrounded_by_open",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:int_homothety_cvx",
+      "target": "prop:surrounded_by_open",
+      "kind": "proof"
+    },
+    {
+      "source": "def:loop",
+      "target": "def:surrounds",
+      "kind": "statement"
+    },
+    {
+      "source": "def:surrounds_points",
+      "target": "def:surrounds",
+      "kind": "statement"
+    },
+    {
+      "source": "def:surrounds",
+      "target": "lem:loop_of_hull",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:surrounded_by_open",
+      "target": "lem:loop_of_hull",
+      "kind": "proof"
+    },
+    {
+      "source": "def:surrounds",
+      "target": "def:family_surrounds",
+      "kind": "statement"
+    },
+    {
+      "source": "def:family_surrounds",
+      "target": "lem:local_loops",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:loop_of_hull",
+      "target": "lem:local_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:smooth_barycentric_coord",
+      "target": "lem:local_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "def:family_surrounds",
+      "target": "lem:satisfied_or_refund",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:satisfied_or_refund",
+      "target": "cor:extend_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:local_loops",
+      "target": "lem:\u2203_surrounding_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "cor:extend_loops",
+      "target": "lem:\u2203_surrounding_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:relative_inductive_construction_of_loc",
+      "target": "lem:\u2203_surrounding_loops",
+      "kind": "proof"
+    },
+    {
+      "source": "def:surrounds",
+      "target": "lem:reparametrization",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:smooth_barycentric_coord",
+      "target": "lem:reparametrization",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:exists_cont_diff_of_convex\u2082",
+      "target": "lem:reparametrization",
+      "kind": "proof"
+    },
+    {
+      "source": "def:loop",
+      "target": "def:corrugation",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corrugation",
+      "target": "prop:theilliere",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rel_loc",
+      "target": "def:formal_sol_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rel_loc",
+      "target": "def:rel_slice",
+      "kind": "statement"
+    },
+    {
+      "source": "def:formal_sol_loc",
+      "target": "def:short_formal_sol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:dual_pair",
+      "target": "def:short_formal_sol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:short_formal_sol",
+      "target": "lem:integration_step",
+      "kind": "statement"
+    },
+    {
+      "source": "def:hol_partial",
+      "target": "lem:integration_step",
+      "kind": "statement"
+    },
+    {
+      "source": "def:htpy_jet_sec_loc",
+      "target": "lem:integration_step",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:\u2203_loops",
+      "target": "lem:integration_step",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:theilliere",
+      "target": "lem:integration_step",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:update_lin_map",
+      "target": "lem:integration_step",
+      "kind": "proof"
+    },
+    {
+      "source": "def:ample_subset",
+      "target": "lem:ample_codim_two",
+      "kind": "statement"
+    },
+    {
+      "source": "def:ample_subset",
+      "target": "def:ample_relation_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rel_slice",
+      "target": "def:ample_relation_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "def:ample_relation_loc",
+      "target": "lem:h_principle_open_ample_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:integration_step",
+      "target": "lem:h_principle_open_ample_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "def:update",
+      "target": "lem:smooth_updating",
+      "kind": "statement"
+    },
+    {
+      "source": "def:update",
+      "target": "lem:dist_updating",
+      "kind": "statement"
+    },
+    {
+      "source": "def:index_type",
+      "target": "lem:nice_atlas",
+      "kind": "statement"
+    },
+    {
+      "source": "def:index_type",
+      "target": "def:localisation_data",
+      "kind": "statement"
+    },
+    {
+      "source": "def:localisation_data",
+      "target": "lem:ex_localisation",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:nice_atlas",
+      "target": "lem:ex_localisation",
+      "kind": "proof"
+    },
+    {
+      "source": "def:localisation_data",
+      "target": "lem:localisation_stability",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:stability_cover",
+      "target": "lem:localisation_stability",
+      "kind": "proof"
+    },
+    {
+      "source": "def:pull_back_bundle",
+      "target": "def:one_jet_space",
+      "kind": "statement"
+    },
+    {
+      "source": "def:hom_bundle",
+      "target": "def:one_jet_space",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "def:one_jet_extension",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_extension",
+      "target": "lem:one_jet_extension_prop",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "lem:one_jet_extension_prop",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "def:holonomic_section",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "def:rel",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rel",
+      "target": "def:formal_sol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_extension",
+      "target": "def:formal_sol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:formal_sol",
+      "target": "def:htpy_formal_sol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "def:transfer_map",
+      "kind": "statement"
+    },
+    {
+      "source": "def:transfer_map",
+      "target": "lem:transfer",
+      "kind": "statement"
+    },
+    {
+      "source": "def:holonomic_section",
+      "target": "lem:transfer",
+      "kind": "statement"
+    },
+    {
+      "source": "def:formal_sol",
+      "target": "lem:transfer",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:one_jet_extension_prop",
+      "target": "lem:transfer",
+      "kind": "proof"
+    },
+    {
+      "source": "def:htpy_formal_sol",
+      "target": "def:h-princ",
+      "kind": "statement"
+    },
+    {
+      "source": "def:holonomic_section",
+      "target": "lem:param_trick",
+      "kind": "statement"
+    },
+    {
+      "source": "def:formal_sol",
+      "target": "lem:param_trick",
+      "kind": "statement"
+    },
+    {
+      "source": "def:h-princ",
+      "target": "lem:param_for_free",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:param_trick",
+      "target": "lem:param_for_free",
+      "kind": "proof"
+    },
+    {
+      "source": "def:one_jet_space",
+      "target": "def:ample_relation",
+      "kind": "statement"
+    },
+    {
+      "source": "def:ample_subset",
+      "target": "def:ample_relation",
+      "kind": "statement"
+    },
+    {
+      "source": "def:ample_relation",
+      "target": "lem:ample_iff_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "def:transfer_map",
+      "target": "lem:ample_iff_loc",
+      "kind": "statement"
+    },
+    {
+      "source": "def:ample_relation",
+      "target": "lem:open_ample_immersion",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:ample_codim_two",
+      "target": "lem:open_ample_immersion",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:param_for_free",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ample_parameter",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:transfer",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ex_localisation",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:localisation_stability",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:smooth_updating",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:dist_updating",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:inductive_htpy_construction",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ample_iff_loc",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:h_principle_open_ample_loc",
+      "target": "thm:open_ample",
+      "kind": "proof"
+    },
+    {
+      "source": "def:ample_relation",
+      "target": "lem:ample_parameter",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:open_ample",
+      "target": "thm:sphere_eversion",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:open_ample_immersion",
+      "target": "thm:sphere_eversion",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ample_codim_two",
+      "target": "lem:loc_immersion_rel_ample",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:loc_immersion_rel_open",
+      "target": "sphere_eversion_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:loc_immersion_rel_ample",
+      "target": "sphere_eversion_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:h_principle_open_ample_loc",
+      "target": "sphere_eversion_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:param_trick",
+      "target": "sphere_eversion_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "def:index_type",
+      "target": "lem:exists_forall_eventually_of_index_type",
+      "kind": "statement"
+    },
+    {
+      "source": "def:index_type",
+      "target": "lem:inductive_construction",
+      "kind": "statement"
+    },
+    {
+      "source": "def:germ",
+      "target": "lem:inductive_construction",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:exists_forall_eventually_of_index_type",
+      "target": "lem:inductive_construction",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:inductive_construction",
+      "target": "lem:inductive_htpy_construction",
+      "kind": "proof"
+    },
+    {
+      "source": "def:restrict_germ_predicate",
+      "target": "lem:inductive_htpy_construction",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:inductive_construction",
+      "target": "lem:inductive_construction_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:exists_locally_finite_subcover_of_locally",
+      "target": "lem:inductive_construction_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "def:restrict_germ_predicate",
+      "target": "lem:inductive_construction_of_loc",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:inductive_construction_of_loc",
+      "target": "lem:relative_inductive_construction_of_loc",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [
+    [
+      "lem:h_principle_open_ample_loc",
+      "def:holonomic_loc",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": [
+    [
+      "introduction.tex",
+      170
+    ]
+  ]
+}

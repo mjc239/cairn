@@ -1,0 +1,2480 @@
+{
+  "project": "sphere_eversion",
+  "provenance": "leanprover-community/sphere-eversion @ e03dfec32deb (2026-09-10), Lean leanprover/lean4:v4.34.0-rc2",
+  "stats": {
+    "project_decls": 1378,
+    "project_decls_by_kind": {
+      "def": 324,
+      "inductive": 31,
+      "theorem": 1023
+    },
+    "external_decls": 10,
+    "formal_edges": 7219,
+    "blueprint_nodes": 73,
+    "blueprint_nodes_with_formal_decl": 73,
+    "lean_names_resolved": 91,
+    "lean_names_missing": {},
+    "coverage": 1.0,
+    "labelled_decls": 90,
+    "unlabelled_theorems": 974,
+    "edges": {
+      "author_edges": 104,
+      "lean_edges": 265,
+      "author_direct_in_lean": 92,
+      "author_implied_transitively": 0,
+      "author_absent_from_lean": [
+        [
+          "def:formal_sol",
+          "def:htpy_formal_sol"
+        ],
+        [
+          "def:formal_sol",
+          "lem:param_trick"
+        ],
+        [
+          "def:formal_sol",
+          "lem:transfer"
+        ],
+        [
+          "def:hom_bundle",
+          "def:one_jet_space"
+        ],
+        [
+          "def:one_jet_extension",
+          "def:formal_sol"
+        ],
+        [
+          "def:rel_loc",
+          "def:rel_slice"
+        ],
+        [
+          "def:rel_slice",
+          "def:ample_relation_loc"
+        ],
+        [
+          "def:short_formal_sol",
+          "lem:integration_step"
+        ],
+        [
+          "lem:open_ample_immersion",
+          "thm:sphere_eversion"
+        ],
+        [
+          "lem:param_trick",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "lem:satisfied_or_refund",
+          "cor:extend_loops"
+        ],
+        [
+          "lem:smooth_barycentric_coord",
+          "lem:reparametrization"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "def:ample_relation",
+          "thm:open_ample"
+        ],
+        [
+          "def:ample_relation",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:ample_relation_loc",
+          "lem:loc_immersion_rel_ample"
+        ],
+        [
+          "def:ample_relation_loc",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:ample_relation_loc",
+          "thm:open_ample"
+        ],
+        [
+          "def:ample_subset",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:ample_subset",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:ample_subset",
+          "lem:loc_immersion_rel_ample"
+        ],
+        [
+          "def:ample_subset",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:ample_subset",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:ample_subset",
+          "thm:open_ample"
+        ],
+        [
+          "def:ample_subset",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:corrugation",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:corrugation",
+          "lem:integration_step"
+        ],
+        [
+          "def:dual_pair",
+          "def:ample_relation"
+        ],
+        [
+          "def:dual_pair",
+          "def:ample_relation_loc"
+        ],
+        [
+          "def:dual_pair",
+          "def:rel_slice"
+        ],
+        [
+          "def:dual_pair",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:dual_pair",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:dual_pair",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:dual_pair",
+          "lem:integration_step"
+        ],
+        [
+          "def:dual_pair",
+          "lem:loc_immersion_rel_ample"
+        ],
+        [
+          "def:dual_pair",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:dual_pair",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:dual_pair",
+          "prop:theilliere"
+        ],
+        [
+          "def:dual_pair",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:dual_pair",
+          "thm:open_ample"
+        ],
+        [
+          "def:dual_pair",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:family_surrounds",
+          "cor:extend_loops"
+        ],
+        [
+          "def:family_surrounds",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:family_surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:formal_sol",
+          "def:h-princ"
+        ],
+        [
+          "def:formal_sol",
+          "lem:param_for_free"
+        ],
+        [
+          "def:formal_sol",
+          "thm:open_ample"
+        ],
+        [
+          "def:formal_sol",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:formal_sol_loc",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:formal_sol_loc",
+          "lem:integration_step"
+        ],
+        [
+          "def:formal_sol_loc",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:formal_sol_loc",
+          "thm:open_ample"
+        ],
+        [
+          "def:germ",
+          "def:restrict_germ_predicate"
+        ],
+        [
+          "def:germ",
+          "lem:exists_cont_diff_of_convex"
+        ],
+        [
+          "def:germ",
+          "lem:exists_cont_diff_of_convex\u2082"
+        ],
+        [
+          "def:germ",
+          "lem:inductive_construction_of_loc"
+        ],
+        [
+          "def:germ",
+          "lem:inductive_htpy_construction"
+        ],
+        [
+          "def:germ",
+          "lem:relative_inductive_construction_of_loc"
+        ],
+        [
+          "def:germ",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:germ",
+          "thm:open_ample"
+        ],
+        [
+          "def:h-princ",
+          "thm:open_ample"
+        ],
+        [
+          "def:h-princ",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:hol_partial",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:holonomic_section",
+          "def:h-princ"
+        ],
+        [
+          "def:holonomic_section",
+          "lem:param_for_free"
+        ],
+        [
+          "def:holonomic_section",
+          "thm:open_ample"
+        ],
+        [
+          "def:holonomic_section",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:hom_bundle",
+          "thm:open_ample"
+        ],
+        [
+          "def:htpy_formal_sol",
+          "lem:param_for_free"
+        ],
+        [
+          "def:htpy_formal_sol",
+          "thm:open_ample"
+        ],
+        [
+          "def:htpy_formal_sol",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:htpy_jet_sec_loc",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:htpy_jet_sec_loc",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:htpy_jet_sec_loc",
+          "thm:open_ample"
+        ],
+        [
+          "def:index_type",
+          "lem:ex_localisation"
+        ],
+        [
+          "def:index_type",
+          "lem:inductive_construction_of_loc"
+        ],
+        [
+          "def:index_type",
+          "lem:inductive_htpy_construction"
+        ],
+        [
+          "def:index_type",
+          "lem:localisation_stability"
+        ],
+        [
+          "def:index_type",
+          "thm:open_ample"
+        ],
+        [
+          "def:localisation_data",
+          "thm:open_ample"
+        ],
+        [
+          "def:loop",
+          "cor:extend_loops"
+        ],
+        [
+          "def:loop",
+          "def:family_surrounds"
+        ],
+        [
+          "def:loop",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:loop",
+          "lem:integration_step"
+        ],
+        [
+          "def:loop",
+          "lem:local_loops"
+        ],
+        [
+          "def:loop",
+          "lem:loop_of_hull"
+        ],
+        [
+          "def:loop",
+          "lem:reparametrization"
+        ],
+        [
+          "def:loop",
+          "lem:satisfied_or_refund"
+        ],
+        [
+          "def:loop",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:loop",
+          "prop:theilliere"
+        ],
+        [
+          "def:one_jet_extension",
+          "def:holonomic_section"
+        ],
+        [
+          "def:one_jet_extension",
+          "def:transfer_map"
+        ],
+        [
+          "def:one_jet_extension",
+          "lem:transfer"
+        ],
+        [
+          "def:one_jet_extension",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:one_jet_space",
+          "def:formal_sol"
+        ],
+        [
+          "def:one_jet_space",
+          "def:h-princ"
+        ],
+        [
+          "def:one_jet_space",
+          "def:htpy_formal_sol"
+        ],
+        [
+          "def:one_jet_space",
+          "def:rel_slice"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:param_for_free"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:param_trick"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:transfer"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:one_jet_space",
+          "thm:open_ample"
+        ],
+        [
+          "def:one_jet_space",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:ample_relation"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:formal_sol"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:h-princ"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:holonomic_section"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:htpy_formal_sol"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:one_jet_extension"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:rel_slice"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:transfer_map"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:one_jet_extension_prop"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:param_for_free"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:param_trick"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:transfer"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:pull_back_bundle",
+          "thm:open_ample"
+        ],
+        [
+          "def:pull_back_bundle",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:rel",
+          "def:ample_relation"
+        ],
+        [
+          "def:rel",
+          "def:h-princ"
+        ],
+        [
+          "def:rel",
+          "def:htpy_formal_sol"
+        ],
+        [
+          "def:rel",
+          "def:rel_slice"
+        ],
+        [
+          "def:rel",
+          "def:transfer_map"
+        ],
+        [
+          "def:rel",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:rel",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:rel",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:rel",
+          "lem:param_for_free"
+        ],
+        [
+          "def:rel",
+          "lem:param_trick"
+        ],
+        [
+          "def:rel",
+          "lem:transfer"
+        ],
+        [
+          "def:rel",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:rel",
+          "thm:open_ample"
+        ],
+        [
+          "def:rel",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:rel_loc",
+          "def:ample_relation_loc"
+        ],
+        [
+          "def:rel_loc",
+          "def:short_formal_sol"
+        ],
+        [
+          "def:rel_loc",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:rel_loc",
+          "lem:integration_step"
+        ],
+        [
+          "def:rel_loc",
+          "lem:loc_immersion_rel_ample"
+        ],
+        [
+          "def:rel_loc",
+          "lem:loc_immersion_rel_open"
+        ],
+        [
+          "def:rel_loc",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "def:rel_loc",
+          "thm:open_ample"
+        ],
+        [
+          "def:rel_slice",
+          "def:ample_relation"
+        ],
+        [
+          "def:rel_slice",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "def:rel_slice",
+          "lem:ample_parameter"
+        ],
+        [
+          "def:rel_slice",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "def:rel_slice",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:rel_slice",
+          "thm:sphere_eversion"
+        ],
+        [
+          "def:restrict_germ_predicate",
+          "lem:relative_inductive_construction_of_loc"
+        ],
+        [
+          "def:restrict_germ_predicate",
+          "thm:open_ample"
+        ],
+        [
+          "def:short_formal_sol",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "def:surrounds",
+          "cor:extend_loops"
+        ],
+        [
+          "def:surrounds",
+          "lem:local_loops"
+        ],
+        [
+          "def:surrounds",
+          "lem:satisfied_or_refund"
+        ],
+        [
+          "def:surrounds",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:surrounds_points",
+          "cor:extend_loops"
+        ],
+        [
+          "def:surrounds_points",
+          "lem:local_loops"
+        ],
+        [
+          "def:surrounds_points",
+          "lem:loop_of_hull"
+        ],
+        [
+          "def:surrounds_points",
+          "lem:reparametrization"
+        ],
+        [
+          "def:surrounds_points",
+          "lem:satisfied_or_refund"
+        ],
+        [
+          "def:surrounds_points",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:transfer_map",
+          "thm:open_ample"
+        ],
+        [
+          "def:update",
+          "thm:open_ample"
+        ],
+        [
+          "lem:ample_codim_two",
+          "thm:sphere_eversion"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex\u2082",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_locally_finite_subcover_of_locally",
+          "lem:inductive_htpy_construction"
+        ],
+        [
+          "lem:loop_of_hull",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:one_jet_extension_prop",
+          "def:transfer_map"
+        ],
+        [
+          "lem:one_jet_extension_prop",
+          "lem:param_for_free"
+        ],
+        [
+          "lem:one_jet_extension_prop",
+          "lem:param_trick"
+        ],
+        [
+          "lem:one_jet_extension_prop",
+          "thm:sphere_eversion"
+        ],
+        [
+          "lem:smooth_barycentric_coord",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:update_lin_map",
+          "lem:ample_iff_loc"
+        ],
+        [
+          "lem:update_lin_map",
+          "lem:ample_parameter"
+        ],
+        [
+          "lem:update_lin_map",
+          "lem:loc_immersion_rel_ample"
+        ],
+        [
+          "lem:update_lin_map",
+          "lem:open_ample_immersion"
+        ],
+        [
+          "lem:update_lin_map",
+          "sphere_eversion_of_loc"
+        ],
+        [
+          "lem:update_lin_map",
+          "thm:sphere_eversion"
+        ],
+        [
+          "prop:theilliere",
+          "lem:h_principle_open_ample_loc"
+        ],
+        [
+          "prop:\u2203_loops",
+          "lem:h_principle_open_ample_loc"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 156,
+    "unreported_top_sources": {
+      "def:pull_back_bundle": 18,
+      "def:dual_pair": 14,
+      "def:rel": 14,
+      "def:one_jet_space": 13,
+      "def:loop": 10,
+      "def:germ": 8,
+      "def:rel_loc": 8,
+      "def:ample_subset": 7,
+      "def:rel_slice": 6,
+      "def:surrounds_points": 6
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 73,
+      "n_edges": 104,
+      "forward_refs": [
+        [
+          "lem:\u2203_surrounding_loops",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:reparametrization",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:caratheodory",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:interior_chab",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:int_homothety_cvx",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:relative_inductive_construction_of_loc",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:index_type",
+          "lem:nice_atlas"
+        ],
+        [
+          "def:index_type",
+          "def:localisation_data"
+        ],
+        [
+          "lem:ample_parameter",
+          "thm:open_ample"
+        ],
+        [
+          "lem:inductive_htpy_construction",
+          "thm:open_ample"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 73,
+          "forward_refs": 11,
+          "cutwidth": 21,
+          "mean_cut": 9.958333333333334,
+          "max_open": 15,
+          "mean_open": 7.930555555555555,
+          "mean_edge_length": 6.894230769230769
+        },
+        "human_repaired": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 28,
+          "mean_cut": 16.51388888888889,
+          "max_open": 27,
+          "mean_open": 14.930555555555555,
+          "mean_edge_length": 11.432692307692308
+        },
+        "just_in_time": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 30,
+          "mean_cut": 16.63888888888889,
+          "max_open": 25,
+          "mean_open": 12.791666666666666,
+          "mean_edge_length": 11.51923076923077
+        },
+        "greedy_min_open": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 18.22222222222222,
+          "max_open": 20,
+          "mean_open": 13.972222222222221,
+          "mean_edge_length": 12.615384615384615
+        },
+        "optimised": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 18,
+          "mean_cut": 9.875,
+          "max_open": 16,
+          "mean_open": 8.277777777777779,
+          "mean_edge_length": 6.836538461538462
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.7579908675799087,
+        "just_in_time": 0.1430745814307458,
+        "greedy_min_open": 0.15753424657534243,
+        "optimised": 0.25494672754946723
+      },
+      "random": {
+        "mean_open": {
+          "mean": 20.769513888888888,
+          "p05": 18.01388888888889,
+          "p50": 21.01388888888889,
+          "p95": 22.625
+        },
+        "max_open": {
+          "mean": 31.62,
+          "p05": 27,
+          "p50": 31,
+          "p95": 36
+        },
+        "mean_cut": {
+          "mean": 25.42652777777778,
+          "p05": 21.25,
+          "p50": 25.666666666666668,
+          "p95": 28.180555555555557
+        },
+        "cutwidth": {
+          "mean": 37.93,
+          "p05": 32,
+          "p50": 38,
+          "p95": 43
+        },
+        "mean_edge_length": {
+          "mean": 17.60298076923077,
+          "p05": 14.711538461538462,
+          "p50": 17.76923076923077,
+          "p95": 19.509615384615383
+        }
+      },
+      "random_tau_vs_human_mean": 0.16965372907153728,
+      "uniform": {
+        "mean_open": {
+          "p05": 19.0,
+          "p50": 20.583333333333332,
+          "p95": 22.083333333333332
+        },
+        "max_open": {
+          "p05": 29,
+          "p50": 32,
+          "p95": 36
+        },
+        "mean_cut": {
+          "p05": 25.333333333333332,
+          "p50": 27.194444444444443,
+          "p95": 29.22222222222222
+        },
+        "cutwidth": {
+          "p05": 36,
+          "p50": 40,
+          "p95": 43
+        },
+        "mean_edge_length": {
+          "p05": 17.53846153846154,
+          "p50": 18.826923076923077,
+          "p95": 20.23076923076923
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0475,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 11,
+        "just_in_time": 15,
+        "greedy_min_open": 28,
+        "optimised": 15
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 73,
+      "n_edges": 265,
+      "forward_refs": [
+        [
+          "def:surrounds_points",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:smooth_barycentric_coord",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:loop_of_hull",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:family_surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:\u2203_surrounding_loops",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex\u2082",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:reparametrization",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:caratheodory",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:interior_chab",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:int_homothety_cvx",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "def:germ",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "lem:relative_inductive_construction_of_loc",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "def:germ",
+          "lem:exists_cont_diff_of_convex"
+        ],
+        [
+          "def:germ",
+          "lem:exists_cont_diff_of_convex\u2082"
+        ],
+        [
+          "def:pull_back_bundle",
+          "def:rel_slice"
+        ],
+        [
+          "def:one_jet_space",
+          "def:rel_slice"
+        ],
+        [
+          "def:rel",
+          "def:rel_slice"
+        ],
+        [
+          "def:pull_back_bundle",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:one_jet_space",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:rel",
+          "lem:update_lin_map"
+        ],
+        [
+          "def:index_type",
+          "lem:nice_atlas"
+        ],
+        [
+          "def:index_type",
+          "def:localisation_data"
+        ],
+        [
+          "def:index_type",
+          "lem:ex_localisation"
+        ],
+        [
+          "def:index_type",
+          "lem:localisation_stability"
+        ],
+        [
+          "lem:ample_parameter",
+          "thm:open_ample"
+        ],
+        [
+          "def:index_type",
+          "thm:open_ample"
+        ],
+        [
+          "def:germ",
+          "thm:open_ample"
+        ],
+        [
+          "def:restrict_germ_predicate",
+          "thm:open_ample"
+        ],
+        [
+          "lem:inductive_htpy_construction",
+          "thm:open_ample"
+        ],
+        [
+          "lem:exists_locally_finite_subcover_of_locally",
+          "lem:inductive_htpy_construction"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 73,
+          "forward_refs": 32,
+          "cutwidth": 113,
+          "mean_cut": 48.375,
+          "max_open": 34,
+          "mean_open": 16.13888888888889,
+          "mean_edge_length": 13.143396226415094
+        },
+        "human_repaired": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 134,
+          "mean_cut": 74.30555555555556,
+          "max_open": 54,
+          "mean_open": 28.458333333333332,
+          "mean_edge_length": 20.18867924528302
+        },
+        "just_in_time": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 146,
+          "mean_cut": 92.45833333333333,
+          "max_open": 36,
+          "mean_open": 22.680555555555557,
+          "mean_edge_length": 25.120754716981132
+        },
+        "greedy_min_open": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 126,
+          "mean_cut": 85.25,
+          "max_open": 39,
+          "mean_open": 24.15277777777778,
+          "mean_edge_length": 23.162264150943397
+        },
+        "optimised": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 118,
+          "mean_cut": 48.22222222222222,
+          "max_open": 38,
+          "mean_open": 18.01388888888889,
+          "mean_edge_length": 13.10188679245283
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.6339421613394216,
+        "just_in_time": 0.17123287671232879,
+        "greedy_min_open": 0.2374429223744292,
+        "optimised": 0.38584474885844744
+      },
+      "random": {
+        "mean_open": {
+          "mean": 29.328125,
+          "p05": 26.59722222222222,
+          "p50": 29.541666666666668,
+          "p95": 31.34722222222222
+        },
+        "max_open": {
+          "mean": 50.385,
+          "p05": 42,
+          "p50": 52,
+          "p95": 54
+        },
+        "mean_cut": {
+          "mean": 102.33513888888889,
+          "p05": 88.23611111111111,
+          "p50": 102.47222222222223,
+          "p95": 113.81944444444444
+        },
+        "cutwidth": {
+          "mean": 153.11,
+          "p05": 139,
+          "p50": 154,
+          "p95": 167
+        },
+        "mean_edge_length": {
+          "mean": 27.804264150943396,
+          "p05": 23.973584905660378,
+          "p50": 27.841509433962266,
+          "p95": 30.92452830188679
+        }
+      },
+      "random_tau_vs_human_mean": 0.18754946727549465,
+      "uniform": {
+        "mean_open": {
+          "p05": 27.583333333333332,
+          "p50": 29.5,
+          "p95": 30.76388888888889
+        },
+        "max_open": {
+          "p05": 45,
+          "p50": 50,
+          "p95": 53
+        },
+        "mean_cut": {
+          "p05": 109.63888888888889,
+          "p50": 115.59722222222223,
+          "p95": 122.05555555555556
+        },
+        "cutwidth": {
+          "p05": 153,
+          "p50": 161,
+          "p95": 169
+        },
+        "mean_edge_length": {
+          "p05": 29.788679245283017,
+          "p50": 31.40754716981132,
+          "p95": 33.16226415094339
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.25,
+          "max_open": 0.955,
+          "mean_cut": 0.0,
+          "cutwidth": 0.03,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.115,
+          "cutwidth": 0.2275,
+          "mean_edge_length": 0.115
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.01,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.01
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.1875,
+          "max_open": 0.995,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 15,
+        "just_in_time": 18,
+        "greedy_min_open": 36,
+        "optimised": 18
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 73,
+      "n_edges": 59,
+      "forward_refs": [
+        [
+          "lem:smooth_barycentric_coord",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:loop_of_hull",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:\u2203_surrounding_loops",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex\u2082",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:reparametrization",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:caratheodory",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:interior_chab",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:int_homothety_cvx",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:relative_inductive_construction_of_loc",
+          "lem:\u2203_surrounding_loops"
+        ],
+        [
+          "lem:ample_parameter",
+          "thm:open_ample"
+        ],
+        [
+          "lem:inductive_htpy_construction",
+          "thm:open_ample"
+        ],
+        [
+          "lem:exists_locally_finite_subcover_of_locally",
+          "lem:inductive_htpy_construction"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 73,
+          "forward_refs": 13,
+          "cutwidth": 21,
+          "mean_cut": 10.48611111111111,
+          "max_open": 12,
+          "mean_open": 6.138888888888889,
+          "mean_edge_length": 12.796610169491526
+        },
+        "human_repaired": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 28,
+          "mean_cut": 16.958333333333332,
+          "max_open": 24,
+          "mean_open": 11.972222222222221,
+          "mean_edge_length": 20.694915254237287
+        },
+        "just_in_time": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 18,
+          "mean_cut": 9.027777777777779,
+          "max_open": 13,
+          "mean_open": 5.361111111111111,
+          "mean_edge_length": 11.016949152542374
+        },
+        "greedy_min_open": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 8.88888888888889,
+          "max_open": 22,
+          "mean_open": 6.097222222222222,
+          "mean_edge_length": 10.847457627118644
+        },
+        "optimised": {
+          "n": 73,
+          "forward_refs": 0,
+          "cutwidth": 20,
+          "mean_cut": 5.180555555555555,
+          "max_open": 13,
+          "mean_open": 4.125,
+          "mean_edge_length": 6.322033898305085
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.8234398782343988,
+        "just_in_time": 0.15677321156773216,
+        "greedy_min_open": 0.08143074581430743,
+        "optimised": 0.12404870624048703
+      },
+      "random": {
+        "mean_open": {
+          "mean": 12.604652777777778,
+          "p05": 11.069444444444445,
+          "p50": 12.680555555555555,
+          "p95": 14.069444444444445
+        },
+        "max_open": {
+          "mean": 23.3,
+          "p05": 22,
+          "p50": 23,
+          "p95": 25
+        },
+        "mean_cut": {
+          "mean": 18.295277777777777,
+          "p05": 15.208333333333334,
+          "p50": 18.208333333333332,
+          "p95": 21.38888888888889
+        },
+        "cutwidth": {
+          "mean": 30.5,
+          "p05": 28,
+          "p50": 30,
+          "p95": 33
+        },
+        "mean_edge_length": {
+          "mean": 22.3264406779661,
+          "p05": 18.559322033898304,
+          "p50": 22.220338983050848,
+          "p95": 26.10169491525424
+        }
+      },
+      "random_tau_vs_human_mean": 0.09601978691019789,
+      "uniform": {
+        "mean_open": {
+          "p05": 11.402777777777779,
+          "p50": 13.0,
+          "p95": 14.597222222222221
+        },
+        "max_open": {
+          "p05": 19,
+          "p50": 22,
+          "p95": 24
+        },
+        "mean_cut": {
+          "p05": 17.47222222222222,
+          "p50": 20.333333333333332,
+          "p95": 22.5
+        },
+        "cutwidth": {
+          "p05": 26,
+          "p50": 30,
+          "p95": 32
+        },
+        "mean_edge_length": {
+          "p05": 21.322033898305083,
+          "p50": 24.8135593220339,
+          "p95": 27.45762711864407
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.24,
+          "max_open": 0.7625,
+          "mean_cut": 0.2475,
+          "cutwidth": 0.0475,
+          "mean_edge_length": 0.2475
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.085,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.1675,
+          "max_open": 0.9725,
+          "mean_cut": 0.0375,
+          "cutwidth": 0.185,
+          "mean_edge_length": 0.0375
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.58,
+          "mean_cut": 0.0,
+          "cutwidth": 0.035,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 5,
+        "human_repaired": 9,
+        "just_in_time": 33,
+        "greedy_min_open": 42,
+        "optimised": 31
+      }
+    },
+    {
+      "name": "Lean: loops",
+      "n_nodes": 18,
+      "n_edges": 46,
+      "forward_refs": [
+        [
+          "def:surrounds_points",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:smooth_barycentric_coord",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:loop_of_hull",
+          "prop:\u2203_loops"
+        ],
+        [
+          "def:family_surrounds",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:\u2203_surrounding_loops",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:exists_cont_diff_of_convex\u2082",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:reparametrization",
+          "prop:\u2203_loops"
+        ],
+        [
+          "lem:caratheodory",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:interior_chab",
+          "prop:surrounded_by_open"
+        ],
+        [
+          "lem:int_homothety_cvx",
+          "prop:surrounded_by_open"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 18,
+          "forward_refs": 12,
+          "cutwidth": 27,
+          "mean_cut": 18.058823529411764,
+          "max_open": 14,
+          "mean_open": 9.176470588235293,
+          "mean_edge_length": 6.673913043478261
+        },
+        "human_repaired": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 17.529411764705884,
+          "max_open": 10,
+          "mean_open": 5.705882352941177,
+          "mean_edge_length": 6.478260869565218
+        },
+        "just_in_time": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 19.470588235294116,
+          "max_open": 10,
+          "mean_open": 6.411764705882353,
+          "mean_edge_length": 7.195652173913044
+        },
+        "greedy_min_open": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 15.705882352941176,
+          "max_open": 11,
+          "mean_open": 5.823529411764706,
+          "mean_edge_length": 5.804347826086956
+        },
+        "optimised": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 13.117647058823529,
+          "max_open": 10,
+          "mean_open": 5.352941176470588,
+          "mean_edge_length": 4.8478260869565215
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.7516339869281046,
+        "just_in_time": 0.17647058823529416,
+        "greedy_min_open": 0.2549019607843137,
+        "optimised": 0.5294117647058824
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.990882352941177,
+          "p05": 6.235294117647059,
+          "p50": 6.882352941176471,
+          "p95": 7.647058823529412
+        },
+        "max_open": {
+          "mean": 11.165,
+          "p05": 10,
+          "p50": 11,
+          "p95": 12
+        },
+        "mean_cut": {
+          "mean": 18.665882352941175,
+          "p05": 15.411764705882353,
+          "p50": 18.647058823529413,
+          "p95": 21.88235294117647
+        },
+        "cutwidth": {
+          "mean": 30.51,
+          "p05": 28,
+          "p50": 31,
+          "p95": 34
+        },
+        "mean_edge_length": {
+          "mean": 6.898260869565218,
+          "p05": 5.695652173913044,
+          "p50": 6.891304347826087,
+          "p95": 8.08695652173913
+        }
+      },
+      "random_tau_vs_human_mean": 0.19117647058823528,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.0588235294117645,
+          "p50": 6.823529411764706,
+          "p95": 7.470588235294118
+        },
+        "max_open": {
+          "p05": 10,
+          "p50": 11,
+          "p95": 12
+        },
+        "mean_cut": {
+          "p05": 16.941176470588236,
+          "p50": 20.294117647058822,
+          "p95": 22.764705882352942
+        },
+        "cutwidth": {
+          "p05": 28,
+          "p50": 31,
+          "p95": 34
+        },
+        "mean_edge_length": {
+          "p05": 6.260869565217392,
+          "p50": 7.5,
+          "p95": 8.41304347826087
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.39,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.39
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0325,
+          "mean_cut": 0.2825,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.2825
+        },
+        "just_in_time": {
+          "mean_open": 0.0875,
+          "max_open": 0.0325,
+          "mean_cut": 0.6175,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.6175
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.4175,
+          "mean_cut": 0.08,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.08
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0325,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 1.0,
+          "mean_cut": 0.1075,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.1075
+        },
+        "human_repaired": {
+          "mean_open": 0.0125,
+          "max_open": 0.115,
+          "mean_cut": 0.0825,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0825
+        },
+        "just_in_time": {
+          "mean_open": 0.2,
+          "max_open": 0.115,
+          "mean_cut": 0.3025,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.3025
+        },
+        "greedy_min_open": {
+          "mean_open": 0.02,
+          "max_open": 0.59,
+          "mean_cut": 0.015,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.015
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.115,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: local_convex_integration",
+      "n_nodes": 15,
+      "n_edges": 31,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 14.357142857142858,
+          "max_open": 10,
+          "mean_open": 6.571428571428571,
+          "mean_edge_length": 6.483870967741935
+        },
+        "human_repaired": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 21,
+          "mean_cut": 14.357142857142858,
+          "max_open": 10,
+          "mean_open": 6.571428571428571,
+          "mean_edge_length": 6.483870967741935
+        },
+        "just_in_time": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 22,
+          "mean_cut": 12.714285714285714,
+          "max_open": 10,
+          "mean_open": 6.0,
+          "mean_edge_length": 5.741935483870968
+        },
+        "greedy_min_open": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.571428571428571,
+          "max_open": 10,
+          "mean_open": 5.214285714285714,
+          "mean_edge_length": 4.774193548387097
+        },
+        "optimised": {
+          "n": 15,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 10.928571428571429,
+          "max_open": 10,
+          "mean_open": 5.142857142857143,
+          "mean_edge_length": 4.935483870967742
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.37142857142857144,
+        "greedy_min_open": -0.04761904761904767,
+        "optimised": 0.08571428571428574
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.276071428571429,
+          "p05": 5.785714285714286,
+          "p50": 6.285714285714286,
+          "p95": 6.857142857142857
+        },
+        "max_open": {
+          "mean": 10.135,
+          "p05": 10,
+          "p50": 10,
+          "p95": 11
+        },
+        "mean_cut": {
+          "mean": 14.1925,
+          "p05": 12.428571428571429,
+          "p50": 14.214285714285714,
+          "p95": 15.785714285714286
+        },
+        "cutwidth": {
+          "mean": 20.615,
+          "p05": 19,
+          "p50": 21,
+          "p95": 23
+        },
+        "mean_edge_length": {
+          "mean": 6.409516129032259,
+          "p05": 5.612903225806452,
+          "p50": 6.419354838709677,
+          "p95": 7.129032258064516
+        }
+      },
+      "random_tau_vs_human_mean": 0.41904761904761906,
+      "uniform": {
+        "mean_open": {
+          "p05": 5.785714285714286,
+          "p50": 6.357142857142857,
+          "p95": 6.928571428571429
+        },
+        "max_open": {
+          "p05": 10,
+          "p50": 10,
+          "p95": 11
+        },
+        "mean_cut": {
+          "p05": 12.714285714285714,
+          "p50": 14.785714285714286,
+          "p95": 16.428571428571427
+        },
+        "cutwidth": {
+          "p05": 18,
+          "p50": 21,
+          "p95": 23
+        },
+        "mean_edge_length": {
+          "p05": 5.741935483870968,
+          "p50": 6.67741935483871,
+          "p95": 7.419354838709677
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.815,
+          "max_open": 0.4325,
+          "mean_cut": 0.58,
+          "cutwidth": 0.59,
+          "mean_edge_length": 0.58
+        },
+        "human_repaired": {
+          "mean_open": 0.815,
+          "max_open": 0.4325,
+          "mean_cut": 0.58,
+          "cutwidth": 0.59,
+          "mean_edge_length": 0.58
+        },
+        "just_in_time": {
+          "mean_open": 0.2125,
+          "max_open": 0.4325,
+          "mean_cut": 0.07,
+          "cutwidth": 0.81,
+          "mean_edge_length": 0.07
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.4325,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.4325,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1375,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.7125,
+          "max_open": 0.3675,
+          "mean_cut": 0.36,
+          "cutwidth": 0.5575,
+          "mean_edge_length": 0.36
+        },
+        "human_repaired": {
+          "mean_open": 0.7125,
+          "max_open": 0.3675,
+          "mean_cut": 0.36,
+          "cutwidth": 0.5575,
+          "mean_edge_length": 0.36
+        },
+        "just_in_time": {
+          "mean_open": 0.1675,
+          "max_open": 0.3675,
+          "mean_cut": 0.05,
+          "cutwidth": 0.775,
+          "mean_edge_length": 0.05
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.3675,
+          "mean_cut": 0.0,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.3675,
+          "mean_cut": 0.0,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: global_convex_integration",
+      "n_nodes": 28,
+      "n_edges": 101,
+      "forward_refs": [
+        [
+          "lem:ample_parameter",
+          "thm:open_ample"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 28,
+          "forward_refs": 1,
+          "cutwidth": 62,
+          "mean_cut": 30.88888888888889,
+          "max_open": 21,
+          "mean_open": 11.296296296296296,
+          "mean_edge_length": 8.257425742574258
+        },
+        "human_repaired": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 62,
+          "mean_cut": 31.40740740740741,
+          "max_open": 22,
+          "mean_open": 11.666666666666666,
+          "mean_edge_length": 8.396039603960396
+        },
+        "just_in_time": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 41.18518518518518,
+          "max_open": 22,
+          "mean_open": 11.777777777777779,
+          "mean_edge_length": 11.009900990099009
+        },
+        "greedy_min_open": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 56,
+          "mean_cut": 38.81481481481482,
+          "max_open": 22,
+          "mean_open": 11.148148148148149,
+          "mean_edge_length": 10.376237623762377
+        },
+        "optimised": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 60,
+          "mean_cut": 29.40740740740741,
+          "max_open": 22,
+          "mean_open": 10.851851851851851,
+          "mean_edge_length": 7.861386138613861
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9947089947089947,
+        "just_in_time": 0.2751322751322751,
+        "greedy_min_open": 0.4285714285714286,
+        "optimised": 0.8783068783068784
+      },
+      "random": {
+        "mean_open": {
+          "mean": 11.89611111111111,
+          "p05": 11.444444444444445,
+          "p50": 11.814814814814815,
+          "p95": 12.555555555555555
+        },
+        "max_open": {
+          "mean": 22.0,
+          "p05": 22,
+          "p50": 22,
+          "p95": 22
+        },
+        "mean_cut": {
+          "mean": 39.028333333333336,
+          "p05": 32.77777777777778,
+          "p50": 39.18518518518518,
+          "p95": 45.666666666666664
+        },
+        "cutwidth": {
+          "mean": 60.63,
+          "p05": 57,
+          "p50": 61,
+          "p95": 64
+        },
+        "mean_edge_length": {
+          "mean": 10.433316831683168,
+          "p05": 8.762376237623762,
+          "p50": 10.475247524752476,
+          "p95": 12.207920792079207
+        }
+      },
+      "random_tau_vs_human_mean": 0.6355291005291006,
+      "uniform": {
+        "mean_open": {
+          "p05": 11.962962962962964,
+          "p50": 12.481481481481481,
+          "p95": 12.88888888888889
+        },
+        "max_open": {
+          "p05": 22,
+          "p50": 22,
+          "p95": 22
+        },
+        "mean_cut": {
+          "p05": 41.666666666666664,
+          "p50": 45.2962962962963,
+          "p95": 48.25925925925926
+        },
+        "cutwidth": {
+          "p05": 57,
+          "p50": 62,
+          "p95": 65
+        },
+        "mean_edge_length": {
+          "p05": 11.138613861386139,
+          "p50": 12.108910891089108,
+          "p95": 12.900990099009901
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.005,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.715,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.2775,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.715,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.425,
+          "max_open": 0.5,
+          "mean_cut": 0.715,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.715
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.475,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.475
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.3425,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5875,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.005,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5875,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0075,
+          "max_open": 0.5,
+          "mean_cut": 0.03,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.03
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0325,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2975,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: local_to_global",
+      "n_nodes": 9,
+      "n_edges": 18,
+      "forward_refs": [
+        [
+          "lem:exists_locally_finite_subcover_of_locally",
+          "lem:inductive_htpy_construction"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 9,
+          "forward_refs": 1,
+          "cutwidth": 11,
+          "mean_cut": 6.875,
+          "max_open": 5,
+          "mean_open": 3.375,
+          "mean_edge_length": 3.0555555555555554
+        },
+        "human_repaired": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 12,
+          "mean_cut": 7.5,
+          "max_open": 5,
+          "mean_open": 3.375,
+          "mean_edge_length": 3.3333333333333335
+        },
+        "just_in_time": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 13,
+          "mean_cut": 8.625,
+          "max_open": 5,
+          "mean_open": 3.5,
+          "mean_edge_length": 3.8333333333333335
+        },
+        "greedy_min_open": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 12,
+          "mean_cut": 7.875,
+          "max_open": 5,
+          "mean_open": 3.375,
+          "mean_edge_length": 3.5
+        },
+        "optimised": {
+          "n": 9,
+          "forward_refs": 0,
+          "cutwidth": 12,
+          "mean_cut": 7.125,
+          "max_open": 5,
+          "mean_open": 3.25,
+          "mean_edge_length": 3.1666666666666665
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9444444444444444,
+        "just_in_time": 0.6111111111111112,
+        "greedy_min_open": 0.5,
+        "optimised": 0.8333333333333334
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.595625,
+          "p05": 3.375,
+          "p50": 3.5,
+          "p95": 3.875
+        },
+        "max_open": {
+          "mean": 5.53,
+          "p05": 5,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 8.38875,
+          "p05": 7.375,
+          "p50": 8.5,
+          "p95": 9.125
+        },
+        "cutwidth": {
+          "mean": 12.72,
+          "p05": 12,
+          "p50": 13,
+          "p95": 13
+        },
+        "mean_edge_length": {
+          "mean": 3.728333333333333,
+          "p05": 3.2777777777777777,
+          "p50": 3.7777777777777777,
+          "p95": 4.055555555555555
+        }
+      },
+      "random_tau_vs_human_mean": 0.5838888888888889,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.375,
+          "p50": 3.5,
+          "p95": 3.875
+        },
+        "max_open": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 7.25,
+          "p50": 8.375,
+          "p95": 9.125
+        },
+        "cutwidth": {
+          "p05": 12,
+          "p50": 13,
+          "p95": 13
+        },
+        "mean_edge_length": {
+          "p05": 3.2222222222222223,
+          "p50": 3.7222222222222223,
+          "p95": 4.055555555555555
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0875,
+          "max_open": 0.235,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0875,
+          "max_open": 0.235,
+          "mean_cut": 0.1025,
+          "cutwidth": 0.14,
+          "mean_edge_length": 0.1025
+        },
+        "just_in_time": {
+          "mean_open": 0.3525,
+          "max_open": 0.235,
+          "mean_cut": 0.6,
+          "cutwidth": 0.64,
+          "mean_edge_length": 0.6
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0875,
+          "max_open": 0.235,
+          "mean_cut": 0.22,
+          "cutwidth": 0.14,
+          "mean_edge_length": 0.22
+        },
+        "optimised": {
+          "mean_open": 0.01,
+          "max_open": 0.235,
+          "mean_cut": 0.015,
+          "cutwidth": 0.14,
+          "mean_edge_length": 0.015
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.1125,
+          "max_open": 0.1875,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.1125,
+          "max_open": 0.1875,
+          "mean_cut": 0.08,
+          "cutwidth": 0.2,
+          "mean_edge_length": 0.08
+        },
+        "just_in_time": {
+          "mean_open": 0.3425,
+          "max_open": 0.1875,
+          "mean_cut": 0.665,
+          "cutwidth": 0.7,
+          "mean_edge_length": 0.665
+        },
+        "greedy_min_open": {
+          "mean_open": 0.1125,
+          "max_open": 0.1875,
+          "mean_cut": 0.2325,
+          "cutwidth": 0.2,
+          "mean_edge_length": 0.2325
+        },
+        "optimised": {
+          "mean_open": 0.0225,
+          "max_open": 0.1875,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.2,
+          "mean_edge_length": 0.0075
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}
