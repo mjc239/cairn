@@ -1,0 +1,25 @@
+{
+ "name": "flt3",
+ "repo": "pitmonticone/FLT3",
+ "status": "failed",
+ "stage": "extract",
+ "commit": "a199fa0467f86504a9d2f6164b0456608e586821",
+ "commit_date": "2024-08-21",
+ "toolchain": "leanprover/lean4:v4.7.0-rc2",
+ "mathlib": "575260dec33e",
+ "blueprint_dir": "blueprint/src",
+ "entry": "web.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 92,
+ "uses_edges": 232,
+ "chapters": 3,
+ "lean_nodes": 90,
+ "leanok_nodes": 92,
+ "libs": [
+  "FLT3"
+ ],
+ "build_minutes": 3.3,
+ "error": "",
+ "minutes": 4.9
+}

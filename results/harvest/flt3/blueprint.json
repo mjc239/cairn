@@ -1,0 +1,3819 @@
+{
+  "nodes": [
+    {
+      "id": "thm:zeta_sub_one_prime1",
+      "kind": "theorem",
+      "position": 0,
+      "chapter": "1-preliminaries",
+      "source": "chapters/1-preliminaries.tex",
+      "line": 404,
+      "title": null,
+      "labels": [
+        "thm:zeta_sub_one_prime1"
+      ],
+      "lean_decls": [
+        "IsPrimitiveRoot.zeta_sub_one_prime'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "1-preliminaries",
+      "proof_leanok": true,
+      "text": "Let $p \\in \\N$ be prime. \\\\\\\\ If $\\zeta_p$ is a primitive $p$-th root of unity, then $\\zeta_p - 1$ is prime."
+    },
+    {
+      "id": "lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "1-preliminaries",
+      "source": "chapters/1-preliminaries.tex",
+      "line": 416,
+      "title": null,
+      "labels": [
+        "lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime"
+      ],
+      "lean_decls": [
+        "fermatLastTheoremWith_of_fermatLastTheoremWith_coprime"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 2,
+      "proof_event": 3,
+      "proof_chapter": "1-preliminaries",
+      "proof_leanok": true,
+      "text": "Let $R$ be a commutative semiring, domain and normalised $\\gcd$ monoid.\\\\% ASK EXPERTS Let $a, b, c \\in R$. \\\\ Let $n \\in \\N$. \\\\\\\\ Then, to prove Fermat's Last Theorem for exponent $n$ in $R$, one can assume, without loss of generality, that $\\gcd(a,b,c)=1$."
+    },
+    {
+      "id": "lmm:cube_of_castHom_ne_zero",
+      "kind": "lemma",
+      "position": 2,
+      "chapter": "1-preliminaries",
+      "source": "chapters/1-preliminaries.tex",
+      "line": 431,
+      "title": null,
+      "labels": [
+        "lmm:cube_of_castHom_ne_zero"
+      ],
+      "lean_decls": [
+        "cube_of_castHom_ne_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 4,
+      "proof_event": 5,
+      "proof_chapter": "1-preliminaries",
+      "proof_leanok": true,
+      "text": "Let $\\Z_9$ be the ring of integers modulo $9$. \\\\ Let $\\Z_3$ be the ring of integers modulo $3$. \\\\ Let $n \\in \\Z_9$. \\\\ Let $\\phi : \\Z_9 \\to \\Z_3$ be the canonical ring homomorphism. \\\\ Let $\\phi(n) \\neq 0$. \\\\ \\\\ Then $n^3=1 \\lor n^3=8$."
+    },
+    {
+      "id": "thm:mem",
+      "kind": "theorem",
+      "position": 3,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 9,
+      "title": null,
+      "labels": [
+        "thm:mem"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.Units.mem"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $u \\in \\cc{O}^\\times_K$ be a unit. \\\\\\\\ Then $u \\in \\set{1, -1, \\eta, -\\eta, \\eta^2, -\\eta^2}$."
+    },
+    {
+      "id": "thm:not_exists_int_three_dvd_sub",
+      "kind": "theorem",
+      "position": 4,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 42,
+      "title": null,
+      "labels": [
+        "thm:not_exists_int_three_dvd_sub"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $m \\in \\Z$. \\\\\\\\ Then $3 \\notdivides \\eta - m$."
+    },
+    {
+      "id": "lmm:lambda_sq",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 73,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_sq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda^2 = -3 \\eta$."
+    },
+    {
+      "id": "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+      "kind": "theorem",
+      "position": 6,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 94,
+      "title": null,
+      "labels": [
+        "lmm:eq_one_or_neg_one_of_unit_of_congruent"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.eq_one_or_neg_one_of_unit_of_congruent"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:not_exists_int_three_dvd_sub",
+        "thm:mem",
+        "lmm:lambda_sq"
+      ],
+      "has_proof": true,
+      "statement_event": 12,
+      "proof_event": 13,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $u \\in \\cc{O}^\\times_K$ be a unit. \\\\\\\\ If $\\exists m \\in \\Z$ such that $\\lambda^2 \\divides u - m$, then $u = 1 \\lor u = -1$. \\\\ This is a special case of the Kummer's Lemma."
+    },
+    {
+      "id": "lmm:norm_lambda",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 140,
+      "title": null,
+      "labels": [
+        "lmm:norm_lambda"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.norm_lambda"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then the norm of $\\lambda$ is $3$."
+    },
+    {
+      "id": "lmm:norm_lambda_prime",
+      "kind": "lemma",
+      "position": 8,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 160,
+      "title": null,
+      "labels": [
+        "lmm:norm_lambda_prime"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.norm_lambda_prime"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:norm_lambda"
+      ],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then the norm of $\\lambda$ is a prime number."
+    },
+    {
+      "id": "lmm:lambda_dvd_three",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 178,
+      "title": null,
+      "labels": [
+        "lmm:lambda_dvd_three"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_dvd_three"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:norm_lambda"
+      ],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda \\divides 3$."
+    },
+    {
+      "id": "lmm:lambda_prime",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 199,
+      "title": null,
+      "labels": [
+        "lmm:lambda_prime"
+      ],
+      "lean_decls": [
+        "IsPrimitiveRoot.lambda_prime"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:zeta_sub_one_prime1"
+      ],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda$ is prime."
+    },
+    {
+      "id": "lmm:lambda_ne_zero",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 218,
+      "title": null,
+      "labels": [
+        "lmm:lambda_ne_zero"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_ne_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:lambda_prime"
+      ],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda \\neq 0$."
+    },
+    {
+      "id": "lmm:lambda_not_unit",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 236,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_unit"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_not_unit"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:lambda_prime"
+      ],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda$ is not a unit."
+    },
+    {
+      "id": "lmm:card_quot",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 254,
+      "title": null,
+      "labels": [
+        "lmm:card_quot"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.card_quot"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:norm_lambda"
+      ],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $I$ be the ideal generated by $\\lambda$. \\\\\\\\ Then $\\cc{O}_K / I$ has cardinality $3$."
+    },
+    {
+      "id": "lmm:two_ne_zero",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 273,
+      "title": null,
+      "labels": [
+        "lmm:two_ne_zero"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.two_ne_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:norm_lambda"
+      ],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $I$ be the ideal generated by $\\lambda$. \\\\ Let $2 \\in \\cc{O}_K / I$. \\\\\\\\ Then $2 \\neq 0$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_two",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 300,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_two"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_not_dvd_two"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:two_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\\\\\ Then $\\lambda \\notdivides 2$."
+    },
+    {
+      "id": "lmm:univ_quot",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 320,
+      "title": null,
+      "labels": [
+        "lmm:univ_quot"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.univ_quot"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:card_quot",
+        "lmm:two_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $I$ be the ideal generated by $\\lambda$. \\\\\\\\ Then $\\cc{O}_K / I = \\set{0, 1, -1}$."
+    },
+    {
+      "id": "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+      "kind": "lemma",
+      "position": 17,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 348,
+      "title": null,
+      "labels": [
+        "lmm:dvd_or_dvd_sub_one_or_dvd_add_one"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.dvd_or_dvd_sub_one_or_dvd_add_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:univ_quot"
+      ],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ Then $(\\lambda \\divides x) \\lor (\\lambda \\divides x-1) \\lor (\\lambda \\divides x+1)$."
+    },
+    {
+      "id": "lmm:toInteger_cube_eq_one",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 376,
+      "title": null,
+      "labels": [
+        "lmm:toInteger_cube_eq_one"
+      ],
+      "lean_decls": [
+        "IsPrimitiveRoot.toInteger_cube_eq_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\\\\\ Then $\\eta^3 = 1$."
+    },
+    {
+      "id": "lmm:eta_isUnit",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 394,
+      "title": null,
+      "labels": [
+        "lmm:eta_isUnit"
+      ],
+      "lean_decls": [
+        "IsPrimitiveRoot.eta_isUnit"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:toInteger_cube_eq_one"
+      ],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\\\\\ Then $\\eta$ is a unit."
+    },
+    {
+      "id": "lmm:toInteger_eval_cyclo",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 411,
+      "title": null,
+      "labels": [
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "lean_decls": [
+        "IsPrimitiveRoot.toInteger_eval_cyclo"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 40,
+      "proof_event": 41,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\\\\\ Then $\\eta^2 + \\eta + 1 = 0$."
+    },
+    {
+      "id": "lmm:cube_sub_one",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 428,
+      "title": null,
+      "labels": [
+        "lmm:cube_sub_one"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.cube_sub_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:toInteger_cube_eq_one",
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ Then $x^3 - 1 = (x - 1)(x - \\eta)(x - \\eta^ 2)$."
+    },
+    {
+      "id": "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 452,
+      "title": null,
+      "labels": [
+        "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+        "lmm:lambda_dvd_three"
+      ],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ Then $\\lambda \\divides x(x - 1)(x - (\\eta + 1))$."
+    },
+    {
+      "id": "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 490,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:cube_sub_one",
+        "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one"
+      ],
+      "has_proof": true,
+      "statement_event": 46,
+      "proof_event": 47,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ If $\\lambda\\divides x - 1$, then $\\lambda^ 4 \\divides x^3 - 1$."
+    },
+    {
+      "id": "lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 514,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_add_one_of_dvd_add_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one"
+      ],
+      "has_proof": true,
+      "statement_event": 48,
+      "proof_event": 49,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ If $\\lambda \\divides x + 1$, then $\\lambda^4 \\divides x ^ 3 + 1$."
+    },
+    {
+      "id": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "kind": "lemma",
+      "position": 25,
+      "chapter": "2-third_cyclotomic_extensions",
+      "source": "chapters/2-third_cyclotomic_extensions.tex",
+      "line": 537,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+        "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+        "lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one"
+      ],
+      "has_proof": true,
+      "statement_event": 50,
+      "proof_event": 51,
+      "proof_chapter": "2-third_cyclotomic_extensions",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $x \\in \\cc{O}_K$. \\\\\\\\ If $\\lambda \\notdivides x$, then $(\\lambda^4 \\divides x^3 - 1) \\lor (\\lambda^4 \\divides x^3 + 1)$."
+    },
+    {
+      "id": "lmm:cube_of_not_dvd",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 24,
+      "title": null,
+      "labels": [
+        "lmm:cube_of_not_dvd"
+      ],
+      "lean_decls": [
+        "cube_of_not_dvd"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:cube_of_castHom_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 52,
+      "proof_event": 53,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $n \\in \\N$. \\\\ Let $\\left[n \\right] \\in \\Z_9$. \\\\ Let $3 \\notdivides n$. \\\\ \\\\ Then $\\left[n \\right]^3 = 1 \\lor \\left[n \\right]^3 = 8$."
+    },
+    {
+      "id": "thm:fermatLastTheoremThree_case_1",
+      "kind": "theorem",
+      "position": 27,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 39,
+      "title": "Fermat's Last Theorem for 3: Case 1",
+      "labels": [
+        "thm:fermatLastTheoremThree_case_1"
+      ],
+      "lean_decls": [
+        "fermatLastTheoremThree_case_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:cube_of_not_dvd"
+      ],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $a, b, c \\in \\N$. \\\\ Let $3 \\notdivides abc$. \\\\\\\\ Then $a ^ 3 + b ^ 3 \\neq c ^ 3$."
+    },
+    {
+      "id": "lmm:three_dvd_gcd_of_dvd_a_of_dvd_b",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 57,
+      "title": null,
+      "labels": [
+        "lmm:three_dvd_gcd_of_dvd_a_of_dvd_b"
+      ],
+      "lean_decls": [
+        "three_dvd_gcd_of_dvd_a_of_dvd_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $a, b, c \\in \\N$. \\\\ Let $3 \\divides a$ and $3 \\divides b$. \\\\ Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\\\\\ Then $3 \\divides \\gcd(a,b,c)$."
+    },
+    {
+      "id": "lmm:three_dvd_gcd_of_dvd_a_of_dvd_c",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 72,
+      "title": null,
+      "labels": [
+        "lmm:three_dvd_gcd_of_dvd_a_of_dvd_c"
+      ],
+      "lean_decls": [
+        "three_dvd_gcd_of_dvd_a_of_dvd_c"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 58,
+      "proof_event": 59,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $a, b, c \\in \\N$. \\\\ Let $3 \\divides a$ and $3 \\divides c$. \\\\ Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\\\\\ Then $3 \\divides \\gcd(a,b,c)$."
+    },
+    {
+      "id": "lmm:three_dvd_gcd_of_dvd_b_of_dvd_c",
+      "kind": "lemma",
+      "position": 30,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 87,
+      "title": null,
+      "labels": [
+        "lmm:three_dvd_gcd_of_dvd_b_of_dvd_c"
+      ],
+      "lean_decls": [
+        "three_dvd_gcd_of_dvd_b_of_dvd_c"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $a, b, c \\in \\N$. \\\\ Let $3 \\divides b$ and $3 \\divides c$. \\\\ Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\\\\\ Then $3 \\divides \\gcd(a,b,c)$."
+    },
+    {
+      "id": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "theorem",
+      "position": 31,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 117,
+      "title": null,
+      "labels": [
+        "thm:fermatLastTheoremThree_of_three_dvd_only_c"
+      ],
+      "lean_decls": [
+        "fermatLastTheoremThree_of_three_dvd_only_c"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime",
+        "thm:fermatLastTheoremThree_case_1",
+        "lmm:three_dvd_gcd_of_dvd_a_of_dvd_b",
+        "lmm:three_dvd_gcd_of_dvd_a_of_dvd_c",
+        "lmm:three_dvd_gcd_of_dvd_b_of_dvd_c"
+      ],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "To prove \\Cref{thm:fermatLastTheoremThree}, it suffices to prove that $$\\forall a, b, c \\in \\Z, \\text{ if } c \\neq 0 \\text{ and } 3 \\notdivides a \\text{ and } 3 \\notdivides b \\text{ and } 3 \\divides c \\text{ and } \\gcd(a,b)=1, \\text{ then } a^3 + b^3 \\neq c^3.$$ Equivalently, $$\\forall a, b, c \\in \\Z, \\text{ if } c \\neq 0 \\text{ and } 3 \\notdivides a \\text{ and } 3 \\notdivides b \\text{ and } 3 \\divides c \\text{ and } \\gcd(a,b)=1, \\text{ then } a^3 + b^3 \\neq c^3$$ implies \\Cref{thm:fermatLastTheoremThree}."
+    },
+    {
+      "id": "def:Solution1",
+      "kind": "definition",
+      "position": 32,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 167,
+      "title": "Solution'",
+      "labels": [
+        "def:Solution1"
+      ],
+      "lean_decls": [
+        "Solution'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 64,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $a, b, c \\in \\cc{O}_K$ such that $c \\neq 0$ and $\\gcd(a,b)=1$.\\\\ Let $\\lambda \\notdivides a$, $\\lambda \\notdivides b$ and $\\lambda \\divides c$. \\\\\\\\ A \\textit{solution'} is a tuple $S'=(a, b, c, u)$ satisfying the equation $a^3 + b^3 = u c^3.$"
+    },
+    {
+      "id": "def:Solution",
+      "kind": "definition",
+      "position": 33,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 177,
+      "title": "Solution",
+      "labels": [
+        "def:Solution"
+      ],
+      "lean_decls": [
+        "Solution"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 65,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $a, b, c \\in \\cc{O}_K$ such that $c \\neq 0$ and $\\gcd(a,b)=1$.\\\\ Let $\\lambda \\notdivides a$, $\\lambda \\notdivides b$, $\\lambda \\divides c$ and $\\lambda^2 \\divides a+b$. \\\\\\\\ A \\textit{solution} is a tuple $S=(a, b, c, u)$ satisfying the equation $a^3 + b^3 = u c^3$."
+    },
+    {
+      "id": "def:Solution1_Multiplicity",
+      "kind": "definition",
+      "position": 34,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 188,
+      "title": "Multiplicity of Solution'",
+      "labels": [
+        "def:Solution1_Multiplicity"
+      ],
+      "lean_decls": [
+        "Solution'.multiplicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 66,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$. \\\\\\\\ The \\textit{multiplicity} of $S'$ is the largest $n \\in \\N$ such that $\\lambda^n \\divides c$."
+    },
+    {
+      "id": "def:Solution_Multiplicity",
+      "kind": "definition",
+      "position": 35,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 198,
+      "title": "Multiplicity of Solution",
+      "labels": [
+        "def:Solution_Multiplicity"
+      ],
+      "lean_decls": [
+        "Solution.multiplicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 67,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S=(a, b, c, u)$ be a $solution$. \\\\\\\\ The \\textit{multiplicity} of $S$ is the largest $n \\in \\N$ such that $\\lambda^n \\divides c$."
+    },
+    {
+      "id": "def:Solution_Minimal",
+      "kind": "definition",
+      "position": 36,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 208,
+      "title": "Minimal Solution",
+      "labels": [
+        "def:Solution_Minimal"
+      ],
+      "lean_decls": [
+        "Solution.isMinimal"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 68,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S=(a, b, c, u)$ be a $solution$. \\\\\\\\ We say that $S$ is \\textit{minimal} if for all solutions $S_1=(a_1,b_1,c_1,u_1)$, the multiplicity of $S$ is less than or equal to the $multiplicity$ of $S_1$."
+    },
+    {
+      "id": "lmm:multiplicity_lambda_c_finite",
+      "kind": "lemma",
+      "position": 37,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 218,
+      "title": null,
+      "labels": [
+        "lmm:multiplicity_lambda_c_finite"
+      ],
+      "lean_decls": [
+        "Solution'.multiplicity_lambda_c_finite"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_unit"
+      ],
+      "has_proof": true,
+      "statement_event": 69,
+      "proof_event": 70,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$. \\\\\\\\ Then the multiplicity of $S'$ is finite."
+    },
+    {
+      "id": "lmm:exists_minimal",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 232,
+      "title": null,
+      "labels": [
+        "lmm:exists_minimal"
+      ],
+      "lean_decls": [
+        "Solution.exists_minimal"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_Minimal"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 71,
+      "proof_event": 72,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$. \\\\\\\\ Then there is a minimal solution $S_1$."
+    },
+    {
+      "id": "lmm:a_cube_b_cube_same_congr",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 245,
+      "title": null,
+      "labels": [
+        "lmm:a_cube_b_cube_same_congr"
+      ],
+      "lean_decls": [
+        "a_cube_b_cube_same_congr"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+        "lmm:lambda_not_dvd_two"
+      ],
+      "has_proof": true,
+      "statement_event": 73,
+      "proof_event": 74,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$. \\\\\\\\ Then $\\lambda^4 \\divides a^3 - 1 \\land \\lambda^4 \\divides b^3 + 1$ or $\\lambda^4 \\divides a^3 + 1 \\land \\lambda^4 \\divides b^3 - 1$."
+    },
+    {
+      "id": "lmm:lambda_pow_four_dvd_c_cube",
+      "kind": "lemma",
+      "position": 40,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 277,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_four_dvd_c_cube"
+      ],
+      "lean_decls": [
+        "lambda_pow_four_dvd_c_cube"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:a_cube_b_cube_same_congr"
+      ],
+      "has_proof": true,
+      "statement_event": 75,
+      "proof_event": 76,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$. \\\\\\\\ Then $\\lambda^4 \\divides c^3$."
+    },
+    {
+      "id": "lmm:lambda_pow_two_dvd_c",
+      "kind": "lemma",
+      "position": 41,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 291,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_two_dvd_c"
+      ],
+      "lean_decls": [
+        "lambda_pow_two_dvd_c"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:multiplicity_lambda_c_finite",
+        "lmm:lambda_pow_four_dvd_c_cube",
+        "lmm:lambda_prime"
+      ],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$. \\\\\\\\ Then $\\lambda^2 \\divides c$."
+    },
+    {
+      "id": "lmm:Solution1_two_le_multiplicity",
+      "kind": "lemma",
+      "position": 42,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 306,
+      "title": null,
+      "labels": [
+        "lmm:Solution1_two_le_multiplicity"
+      ],
+      "lean_decls": [
+        "Solution'.two_le_multiplicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:lambda_pow_two_dvd_c"
+      ],
+      "has_proof": true,
+      "statement_event": 79,
+      "proof_event": 80,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$ with multiplicity $n$.\\\\\\\\ Then $2 \\leq n$."
+    },
+    {
+      "id": "lmm:Solution_two_le_multiplicity",
+      "kind": "lemma",
+      "position": 43,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 320,
+      "title": null,
+      "labels": [
+        "lmm:Solution_two_le_multiplicity"
+      ],
+      "lean_decls": [
+        "Solution.two_le_multiplicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:Solution1_two_le_multiplicity"
+      ],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $2 \\leq n$."
+    },
+    {
+      "id": "lmm:cube_add_cube_eq_mul",
+      "kind": "lemma",
+      "position": 44,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 334,
+      "title": null,
+      "labels": [
+        "lmm:cube_add_cube_eq_mul"
+      ],
+      "lean_decls": [
+        "cube_add_cube_eq_mul"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:toInteger_cube_eq_one",
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "has_proof": true,
+      "statement_event": 83,
+      "proof_event": 84,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $S'=(a, b, c, u)$ be a $solution'$.\\\\\\\\ Then $a^3 + b^3 = (a + b) (a + \\eta b) (a + \\eta^2 b)$."
+    },
+    {
+      "id": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "kind": "lemma",
+      "position": 45,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 354,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq_dvd_or_dvd_or_dvd"
+      ],
+      "lean_decls": [
+        "lambda_sq_dvd_or_dvd_or_dvd"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:lambda_pow_two_dvd_c",
+        "lmm:cube_add_cube_eq_mul",
+        "lmm:lambda_prime"
+      ],
+      "has_proof": true,
+      "statement_event": 85,
+      "proof_event": 86,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S'=(a, b, c, u)$ be a $solution'$.\\\\\\\\ Then $(\\lambda^2 \\divides a + b) \\lor (\\lambda^2 \\divides a + \\eta b) \\lor (\\lambda^2 \\divides a + \\eta^2 b)$."
+    },
+    {
+      "id": "lmm:ex_dvd_a_add_b",
+      "kind": "lemma",
+      "position": 46,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 391,
+      "title": null,
+      "labels": [
+        "lmm:ex_dvd_a_add_b"
+      ],
+      "lean_decls": [
+        "ex_dvd_a_add_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1"
+      ],
+      "proof_uses": [
+        "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+        "lmm:toInteger_cube_eq_one",
+        "lmm:eta_isUnit"
+      ],
+      "has_proof": true,
+      "statement_event": 87,
+      "proof_event": 88,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'=(a, b, c, u)$ be a $solution'$.\\\\\\\\ Then $\\exists a_1,b_1 \\in \\cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$."
+    },
+    {
+      "id": "lmm:exists_Solution_of_Solution1",
+      "kind": "lemma",
+      "position": 47,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 429,
+      "title": null,
+      "labels": [
+        "lmm:exists_Solution_of_Solution1"
+      ],
+      "lean_decls": [
+        "exists_Solution_of_Solution'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1",
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:ex_dvd_a_add_b"
+      ],
+      "has_proof": true,
+      "statement_event": 89,
+      "proof_event": 90,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S'$ be a $solution'$ with multiplicity $n$.\\\\\\\\ Then there is a $solution\\text{ }S$ with multiplicity $n$."
+    },
+    {
+      "id": "lmm:a_add_eta_b",
+      "kind": "lemma",
+      "position": 48,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 444,
+      "title": null,
+      "labels": [
+        "lmm:a_add_eta_b"
+      ],
+      "lean_decls": [
+        "Solution.a_add_eta_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 91,
+      "proof_event": 92,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $a + \\eta b = (a + b) + \\lambda b$."
+    },
+    {
+      "id": "lmm:lambda_dvd_a_add_eta_mul_b",
+      "kind": "lemma",
+      "position": 49,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 462,
+      "title": null,
+      "labels": [
+        "lmm:lambda_dvd_a_add_eta_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.lambda_dvd_a_add_eta_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:a_add_eta_b"
+      ],
+      "has_proof": true,
+      "statement_event": 93,
+      "proof_event": 94,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $\\lambda \\divides a + \\eta b$."
+    },
+    {
+      "id": "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+      "kind": "lemma",
+      "position": 50,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 482,
+      "title": null,
+      "labels": [
+        "lmm:lambda_dvd_a_add_eta_sq_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.lambda_dvd_a_add_eta_sq_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 95,
+      "proof_event": 96,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $\\lambda \\divides a + \\eta^2 b$."
+    },
+    {
+      "id": "lmm:lambda_sq_not_dvd_a_add_eta_mul_b",
+      "kind": "lemma",
+      "position": 51,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 503,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq_not_dvd_a_add_eta_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.lambda_sq_not_dvd_a_add_eta_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:a_add_eta_b",
+        "lmm:lambda_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 97,
+      "proof_event": 98,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $\\lambda^2 \\notdivides a + \\eta b$."
+    },
+    {
+      "id": "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b",
+      "kind": "lemma",
+      "position": 52,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 527,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.lambda_sq_not_dvd_a_add_eta_sq_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_ne_zero",
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "has_proof": true,
+      "statement_event": 99,
+      "proof_event": 100,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $\\lambda^2 \\notdivides a + \\eta^2 b$."
+    },
+    {
+      "id": "lmm:eta_add_one_inv",
+      "kind": "lemma",
+      "position": 53,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 551,
+      "title": null,
+      "labels": [
+        "lmm:eta_add_one_inv"
+      ],
+      "lean_decls": [
+        "Solution.eta_add_one_inv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "has_proof": true,
+      "statement_event": 101,
+      "proof_event": 102,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ Then $(\\eta + 1) (-\\eta) = 1$."
+    },
+    {
+      "id": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b",
+      "kind": "lemma",
+      "position": 54,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 570,
+      "title": null,
+      "labels": [
+        "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_prime"
+      ],
+      "has_proof": true,
+      "statement_event": 103,
+      "proof_event": 104,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\ Let $p \\in \\cc{O}_K$ be a prime such that $p \\divides a+b$ and $p \\divides a+\\eta b$.\\\\\\\\ Then $p$ is associated with $\\lambda$."
+    },
+    {
+      "id": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "lemma",
+      "position": 55,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 601,
+      "title": null,
+      "labels": [
+        "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_prime",
+        "lmm:toInteger_cube_eq_one",
+        "lmm:eta_isUnit"
+      ],
+      "has_proof": true,
+      "statement_event": 105,
+      "proof_event": 106,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\ Let $p \\in \\cc{O}_K$ be a prime such that $p \\divides a+b$ and $p \\divides a+\\eta^2 b$.\\\\\\\\ Then $p$ is associated with $\\lambda$."
+    },
+    {
+      "id": "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "lemma",
+      "position": 56,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 634,
+      "title": null,
+      "labels": [
+        "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b"
+      ],
+      "lean_decls": [
+        "Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_prime",
+        "lmm:eta_isUnit"
+      ],
+      "has_proof": true,
+      "statement_event": 107,
+      "proof_event": 108,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\ Let $p \\in \\cc{O}_K$ be a prime such that $p \\divides a+\\eta b$ and $p \\divides a+\\eta^2 b$.\\\\\\\\ Then $p$ is associated with $\\lambda$."
+    },
+    {
+      "id": "def:Solution_x_y_z_w",
+      "kind": "definition",
+      "position": 57,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 666,
+      "title": "$x,y,z,w$",
+      "labels": [
+        "def:Solution_x_y_z_w"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 109,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$.\\\\\\\\ We define $x \\in \\cc{O}_K$ such that $a + b = \\lambda^{3n-2} x$.\\\\ We define $y \\in \\cc{O}_K$ such that $a + \\eta b = \\lambda y$.\\\\ We define $z \\in \\cc{O}_K$ such that $a + \\eta^2 b = \\lambda z$.\\\\ We define $w \\in \\cc{O}_K$ such that $c = \\lambda^n w$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_y",
+      "kind": "lemma",
+      "position": 58,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 684,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_y"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_y"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_sq_not_dvd_a_add_eta_mul_b"
+      ],
+      "has_proof": true,
+      "statement_event": 110,
+      "proof_event": 111,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides y$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_z",
+      "kind": "lemma",
+      "position": 59,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 707,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_z"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_z"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b"
+      ],
+      "has_proof": true,
+      "statement_event": 112,
+      "proof_event": 113,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides z$."
+    },
+    {
+      "id": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "lemma",
+      "position": 60,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 729,
+      "title": null,
+      "labels": [
+        "lmm:lambda_pow_dvd_a_add_b"
+      ],
+      "lean_decls": [
+        "Solution.lambda_pow_dvd_a_add_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:cube_add_cube_eq_mul",
+        "lmm:lambda_prime",
+        "lmm:lambda_not_dvd_z",
+        "lmm:lambda_not_dvd_y",
+        "lmm:Solution_two_le_multiplicity",
+        "lmm:lambda_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 114,
+      "proof_event": 115,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $\\lambda^{3n -2} \\divides a + b$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_w",
+      "kind": "lemma",
+      "position": 61,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 756,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_w"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_w"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:multiplicity_lambda_c_finite"
+      ],
+      "has_proof": true,
+      "statement_event": 116,
+      "proof_event": 117,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides w$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_x",
+      "kind": "lemma",
+      "position": 62,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 778,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_x"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_x"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:lambda_dvd_a_add_eta_mul_b",
+        "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+        "lmm:cube_add_cube_eq_mul",
+        "lmm:Solution_two_le_multiplicity",
+        "lmm:lambda_prime",
+        "lmm:lambda_not_dvd_w",
+        "lmm:lambda_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 118,
+      "proof_event": 119,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides x$."
+    },
+    {
+      "id": "lmm:coprime_x_y",
+      "kind": "lemma",
+      "position": 63,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 806,
+      "title": null,
+      "labels": [
+        "lmm:coprime_x_y"
+      ],
+      "lean_decls": [
+        "Solution.coprime_x_y"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_x_y_z_w"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_y",
+        "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b",
+        "lmm:lambda_not_dvd_x"
+      ],
+      "has_proof": true,
+      "statement_event": 120,
+      "proof_event": 121,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $\\gcd(x,y) = 1$."
+    },
+    {
+      "id": "lmm:coprime_x_z",
+      "kind": "lemma",
+      "position": 64,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 828,
+      "title": null,
+      "labels": [
+        "lmm:coprime_x_z"
+      ],
+      "lean_decls": [
+        "Solution.coprime_x_z"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_x_y_z_w"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_z",
+        "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+        "lmm:lambda_not_dvd_x"
+      ],
+      "has_proof": true,
+      "statement_event": 122,
+      "proof_event": 123,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\gcd(x,z) = 1$."
+    },
+    {
+      "id": "lmm:coprime_y_z",
+      "kind": "lemma",
+      "position": 65,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 850,
+      "title": null,
+      "labels": [
+        "lmm:coprime_y_z"
+      ],
+      "lean_decls": [
+        "Solution.coprime_y_z"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_x_y_z_w"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_z",
+        "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+        "lmm:lambda_not_dvd_y"
+      ],
+      "has_proof": true,
+      "statement_event": 124,
+      "proof_event": 125,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\gcd(y, z) = 1$."
+    },
+    {
+      "id": "lmm:mult_minus_two_plus_one_plus_one",
+      "kind": "lemma",
+      "position": 66,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 872,
+      "title": null,
+      "labels": [
+        "lmm:mult_minus_two_plus_one_plus_one"
+      ],
+      "lean_decls": [
+        "Solution.mult_minus_two_plus_one_plus_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:Solution_two_le_multiplicity"
+      ],
+      "has_proof": true,
+      "statement_event": 126,
+      "proof_event": 127,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $3n - 2 + 1 + 1 = 3n$."
+    },
+    {
+      "id": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "lemma",
+      "position": 67,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 887,
+      "title": null,
+      "labels": [
+        "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+      ],
+      "lean_decls": [
+        "Solution.x_mul_y_mul_z_eq_u_w_pow_three"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_x_y_z_w"
+      ],
+      "proof_uses": [
+        "lmm:Solution_two_le_multiplicity",
+        "lmm:lambda_ne_zero",
+        "lmm:cube_add_cube_eq_mul",
+        "def:Solution_x_y_z_w"
+      ],
+      "has_proof": true,
+      "statement_event": 128,
+      "proof_event": 129,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S=(a,b,c,u)$ be a $solution$.\\\\\\\\ Then $x y z = u w^3$."
+    },
+    {
+      "id": "lmm:x_eq_unit_mul_cube",
+      "kind": "lemma",
+      "position": 68,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 904,
+      "title": null,
+      "labels": [
+        "lmm:x_eq_unit_mul_cube"
+      ],
+      "lean_decls": [
+        "Solution.x_eq_unit_mul_cube"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+        "lmm:coprime_x_y",
+        "lmm:coprime_x_z"
+      ],
+      "has_proof": true,
+      "statement_event": 130,
+      "proof_event": 131,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\exists u_1 \\in \\cc{O}^\\times_K$ and $\\exists X \\in \\cc{O}_K$ such that $x = u_1 X^3$."
+    },
+    {
+      "id": "lmm:y_eq_unit_mul_cube",
+      "kind": "lemma",
+      "position": 69,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 923,
+      "title": null,
+      "labels": [
+        "lmm:y_eq_unit_mul_cube"
+      ],
+      "lean_decls": [
+        "Solution.y_eq_unit_mul_cube"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+        "lmm:coprime_x_y",
+        "lmm:coprime_y_z"
+      ],
+      "has_proof": true,
+      "statement_event": 132,
+      "proof_event": 133,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\exists u_2 \\in \\cc{O}^\\times_K$ and $\\exists Y \\in \\cc{O}_K$ such that $y = u_2 Y^3$."
+    },
+    {
+      "id": "lmm:z_eq_unit_mul_cube",
+      "kind": "lemma",
+      "position": 70,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 942,
+      "title": null,
+      "labels": [
+        "lmm:z_eq_unit_mul_cube"
+      ],
+      "lean_decls": [
+        "Solution.z_eq_unit_mul_cube"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+        "lmm:coprime_x_z",
+        "lmm:coprime_y_z"
+      ],
+      "has_proof": true,
+      "statement_event": 134,
+      "proof_event": 135,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\exists u_3 \\in \\cc{O}^\\times_K$ and $\\exists Z \\in \\cc{O}_K$ such that $z = u_3 Z^3$."
+    },
+    {
+      "id": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "kind": "definition",
+      "position": 71,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 961,
+      "title": "$u_1,u_2,u_3,u_4,u_5,X,Y,Z$",
+      "labels": [
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "lmm:x_eq_unit_mul_cube",
+        "lmm:y_eq_unit_mul_cube",
+        "lmm:z_eq_unit_mul_cube"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 136,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ We define $u_1 \\in \\cc{O}^\\times_K$ and $X \\in \\cc{O}_K$ such that $x = u_1 X^3$.\\\\ We define $u_2 \\in \\cc{O}^\\times_K$ and $Y \\in \\cc{O}_K$ such that $y = u_2 Y^3$.\\\\ We define $u_3 \\in \\cc{O}^\\times_K$ and $Z \\in \\cc{O}_K$ such that $z = u_3 Z^3$.\\\\ We define $u_4 = \\eta u_3 u_2^{-1}$.\\\\ We define $u_5 = -\\eta^2 u_1 u_2^{-1}$.\\\\"
+    },
+    {
+      "id": "lmm:X_ne_zero",
+      "kind": "lemma",
+      "position": 72,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 978,
+      "title": null,
+      "labels": [
+        "lmm:X_ne_zero"
+      ],
+      "lean_decls": [
+        "Solution.X_ne_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+        "lmm:lambda_not_dvd_x"
+      ],
+      "has_proof": true,
+      "statement_event": 137,
+      "proof_event": 138,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $X \\neq 0$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_X",
+      "kind": "lemma",
+      "position": 73,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 994,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_X"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_X"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+        "lmm:lambda_not_dvd_x"
+      ],
+      "has_proof": true,
+      "statement_event": 139,
+      "proof_event": 140,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides X$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_Y",
+      "kind": "lemma",
+      "position": 74,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1018,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_Y"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_Y"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_y"
+      ],
+      "has_proof": true,
+      "statement_event": 141,
+      "proof_event": 142,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides Y$."
+    },
+    {
+      "id": "lmm:lambda_not_dvd_Z",
+      "kind": "lemma",
+      "position": 75,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1042,
+      "title": null,
+      "labels": [
+        "lmm:lambda_not_dvd_Z"
+      ],
+      "lean_decls": [
+        "Solution.lambda_not_dvd_Z"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_z"
+      ],
+      "has_proof": true,
+      "statement_event": 143,
+      "proof_event": 144,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda \\notdivides Z$."
+    },
+    {
+      "id": "lmm:coprime_Y_Z",
+      "kind": "lemma",
+      "position": 76,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1066,
+      "title": null,
+      "labels": [
+        "lmm:coprime_Y_Z"
+      ],
+      "lean_decls": [
+        "Solution.coprime_Y_Z"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_Z",
+        "lmm:coprime_y_z"
+      ],
+      "has_proof": true,
+      "statement_event": 145,
+      "proof_event": 146,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $\\gcd(Y, Z) = 1$."
+    },
+    {
+      "id": "lmm:formula1",
+      "kind": "lemma",
+      "position": 77,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1085,
+      "title": null,
+      "labels": [
+        "lmm:formula1"
+      ],
+      "lean_decls": [
+        "Solution.formula1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+        "def:Solution_x_y_z_w",
+        "lmm:toInteger_cube_eq_one",
+        "lmm:toInteger_eval_cyclo"
+      ],
+      "has_proof": true,
+      "statement_event": 147,
+      "proof_event": 148,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $u_1 X^3 \\lambda^{3n-2}+u_2 \\eta Y^3 \\lambda + u_3 \\eta^2 Z^3 \\lambda = 0$."
+    },
+    {
+      "id": "lmm:u\u2084_isUnit",
+      "kind": "lemma",
+      "position": 78,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1116,
+      "title": null,
+      "labels": [
+        "lmm:u\u2084_isUnit"
+      ],
+      "lean_decls": [
+        "Solution.u\u2084'_isUnit"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+        "lmm:eta_isUnit"
+      ],
+      "has_proof": true,
+      "statement_event": 149,
+      "proof_event": 150,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $u_4$ is a unit."
+    },
+    {
+      "id": "lmm:u\u2085_isUnit",
+      "kind": "lemma",
+      "position": 79,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1133,
+      "title": null,
+      "labels": [
+        "lmm:u\u2085_isUnit"
+      ],
+      "lean_decls": [
+        "Solution.u\u2085'_isUnit"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:toInteger_cube_eq_one"
+      ],
+      "has_proof": true,
+      "statement_event": 151,
+      "proof_event": 152,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $u_5$ is a unit."
+    },
+    {
+      "id": "lmm:formula2",
+      "kind": "lemma",
+      "position": 80,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1151,
+      "title": null,
+      "labels": [
+        "lmm:formula2"
+      ],
+      "lean_decls": [
+        "Solution.formula2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:eta_isUnit",
+        "lmm:lambda_ne_zero",
+        "lmm:toInteger_cube_eq_one",
+        "lmm:Solution_two_le_multiplicity",
+        "lmm:formula1"
+      ],
+      "has_proof": true,
+      "statement_event": 153,
+      "proof_event": 154,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $Y^3 + u_4 Z^3 = u_5 (\\lambda^(n-1) X)^3$."
+    },
+    {
+      "id": "lmm:lambda_sq_div_lambda_fourth",
+      "kind": "lemma",
+      "position": 81,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1175,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq_div_lambda_fourth"
+      ],
+      "lean_decls": [
+        "Solution.lambda_sq_div_lambda_fourth"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 155,
+      "proof_event": 156,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$.\\\\\\\\ Then $\\lambda^2 \\divides \\lambda^4$."
+    },
+    {
+      "id": "lmm:lambda_sq_div_new_X_cubed",
+      "kind": "lemma",
+      "position": 82,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1194,
+      "title": null,
+      "labels": [
+        "lmm:lambda_sq_div_new_X_cubed"
+      ],
+      "lean_decls": [
+        "Solution.lambda_sq_div_new_X_cubed"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:Solution_two_le_multiplicity"
+      ],
+      "has_proof": true,
+      "statement_event": 157,
+      "proof_event": 158,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $\\lambda^2 \\divides u_5 (\\lambda^{n - 1} X)^3$."
+    },
+    {
+      "id": "lmm:by_kummer",
+      "kind": "lemma",
+      "position": 83,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1215,
+      "title": null,
+      "labels": [
+        "lmm:by_kummer"
+      ],
+      "lean_decls": [
+        "Solution.by_kummer"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:lambda_sq_div_lambda_fourth",
+        "lmm:lambda_sq_div_new_X_cubed",
+        "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+        "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+        "lmm:lambda_not_dvd_Z",
+        "lmm:lambda_not_dvd_Y",
+        "lmm:formula2"
+      ],
+      "has_proof": true,
+      "statement_event": 159,
+      "proof_event": 160,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$.\\\\\\\\ Then $u_4 \\in \\set{-1,1} \\subset \\cc{O}_K$."
+    },
+    {
+      "id": "lmm:final",
+      "kind": "lemma",
+      "position": 84,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1260,
+      "title": null,
+      "labels": [
+        "lmm:final"
+      ],
+      "lean_decls": [
+        "Solution.final"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z"
+      ],
+      "proof_uses": [
+        "lmm:formula2",
+        "lmm:by_kummer"
+      ],
+      "has_proof": true,
+      "statement_event": 161,
+      "proof_event": 162,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $Y^3 + (u_4 Z)^3 = u_5 (\\lambda^{n-1} X)^3$."
+    },
+    {
+      "id": "def:Solution1_final",
+      "kind": "definition",
+      "position": 85,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1282,
+      "title": "Final Solution'",
+      "labels": [
+        "def:Solution1_final"
+      ],
+      "lean_decls": [
+        "Solution'_final"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution1",
+        "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+        "lmm:Solution_two_le_multiplicity",
+        "lmm:final",
+        "lmm:coprime_Y_Z",
+        "lmm:lambda_not_dvd_Y",
+        "lmm:lambda_not_dvd_Z",
+        "lmm:lambda_ne_zero",
+        "lmm:X_ne_zero"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 163,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\\\ Let $S_f' = (Y,u_4 Z, \\lambda^{n-1} X, u_5)$.\\\\\\\\ Then $S_f'$ is a $solution'$."
+    },
+    {
+      "id": "lmm:Solution1_final_multiplicity",
+      "kind": "lemma",
+      "position": 86,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1300,
+      "title": null,
+      "labels": [
+        "lmm:Solution1_final_multiplicity"
+      ],
+      "lean_decls": [
+        "Solution'_final_multiplicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution1_final"
+      ],
+      "proof_uses": [
+        "lmm:lambda_not_dvd_X",
+        "lmm:lambda_ne_zero"
+      ],
+      "has_proof": true,
+      "statement_event": 164,
+      "proof_event": 165,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $S_f'$ has multiplicity $n-1$."
+    },
+    {
+      "id": "lmm:Solution1_final_multiplicity_lt",
+      "kind": "lemma",
+      "position": 87,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1325,
+      "title": null,
+      "labels": [
+        "lmm:Solution1_final_multiplicity_lt"
+      ],
+      "lean_decls": [
+        "Solution'_final_multiplicity_lt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution",
+        "def:Solution1_final"
+      ],
+      "proof_uses": [
+        "lmm:Solution1_final_multiplicity",
+        "lmm:Solution_two_le_multiplicity"
+      ],
+      "has_proof": true,
+      "statement_event": 166,
+      "proof_event": 167,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then $S_f'$ has multiplicity $m<n$."
+    },
+    {
+      "id": "lmm:exists_Solution_multiplicity_lt",
+      "kind": "theorem",
+      "position": 88,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1339,
+      "title": null,
+      "labels": [
+        "lmm:exists_Solution_multiplicity_lt"
+      ],
+      "lean_decls": [
+        "Solution.exists_Solution_multiplicity_lt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Solution"
+      ],
+      "proof_uses": [
+        "lmm:exists_Solution_of_Solution1",
+        "lmm:Solution1_final_multiplicity_lt"
+      ],
+      "has_proof": true,
+      "statement_event": 168,
+      "proof_event": 169,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $S$ be a $solution$ with multiplicity $n$.\\\\\\\\ Then there is a $solution$ with multiplicity $m<n$."
+    },
+    {
+      "id": "thm:fermatLastTheoremForThreeGen",
+      "kind": "theorem",
+      "position": 89,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1354,
+      "title": "Generalised Fermat's Last Theorem for Exponent $3$",
+      "labels": [
+        "thm:fermatLastTheoremForThreeGen"
+      ],
+      "lean_decls": [
+        "fermatLastTheoremForThreeGen"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:exists_Solution_of_Solution1",
+        "lmm:exists_minimal",
+        "lmm:exists_Solution_multiplicity_lt"
+      ],
+      "has_proof": true,
+      "statement_event": 170,
+      "proof_event": 171,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $K = \\Q(\\zeta_3)$ be the third cyclotomic field. \\\\ Let $\\cc{O}_K = \\Z[\\zeta_3]$ be the ring of integers of $K$. \\\\ Let $\\cc{O}^\\times_K$ be the group of units of $\\cc{O}_K$. \\\\ Let $\\zeta_3 \\in K$ be any primitive third root of unity. \\\\ Let $\\eta \\in \\cc{O}_K$ be the element corresponding to $\\zeta_3 \\in K$. \\\\ Let $\\lambda \\in \\cc{O}_K$ be such that $\\lambda = \\eta -1$. \\\\ Let $a, b, c \\in \\cc{O}_K$ and $u \\in \\cc{O}^\\times_K$ such that $c \\neq 0$ and $\\gcd(a,b)=1$.\\\\ Let $\\lambda \\notdivides a$, $\\lambda \\notdivides b$ and $\\lambda \\divides c$. \\\\\\\\ Then $a^3 + b^3 \\neq u c^3$."
+    },
+    {
+      "id": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "kind": "lemma",
+      "position": 90,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1385,
+      "title": null,
+      "labels": [
+        "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen"
+      ],
+      "lean_decls": [
+        "FermatLastTheoremForThree_of_FermatLastTheoremThreeGen"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+        "lmm:norm_lambda_prime",
+        "lmm:norm_lambda",
+        "lmm:lambda_dvd_three"
+      ],
+      "has_proof": true,
+      "statement_event": 172,
+      "proof_event": 173,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "To prove \\Cref{thm:fermatLastTheoremThree}, it suffices to prove \\Cref{thm:fermatLastTheoremForThreeGen}. \\\\ Equivalently, \\Cref{thm:fermatLastTheoremForThreeGen} implies \\Cref{thm:fermatLastTheoremThree}."
+    },
+    {
+      "id": "thm:fermatLastTheoremThree",
+      "kind": "theorem",
+      "position": 91,
+      "chapter": "3-fermat_last_theorem_3",
+      "source": "chapters/3-fermat_last_theorem_3.tex",
+      "line": 1425,
+      "title": "Fermat's Last Theorem for Exponent $3$",
+      "labels": [
+        "thm:fermatLastTheoremThree"
+      ],
+      "lean_decls": [
+        "fermatLastTheoremThree"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+        "thm:fermatLastTheoremForThreeGen"
+      ],
+      "has_proof": true,
+      "statement_event": 174,
+      "proof_event": 175,
+      "proof_chapter": "3-fermat_last_theorem_3",
+      "proof_leanok": true,
+      "text": "Let $a, b, c \\in \\N$. \\\\ Let $a \\neq 0$, $b \\neq 0$ and $c \\neq 0$. \\\\\\\\ Then $a^3 + b^3 \\neq c^3$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "thm:not_exists_int_three_dvd_sub",
+      "target": "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:mem",
+      "target": "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_sq",
+      "target": "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda",
+      "target": "lmm:norm_lambda_prime",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda",
+      "target": "lmm:lambda_dvd_three",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:zeta_sub_one_prime1",
+      "target": "lmm:lambda_prime",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_ne_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_not_unit",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda",
+      "target": "lmm:card_quot",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda",
+      "target": "lmm:two_ne_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:two_ne_zero",
+      "target": "lmm:lambda_not_dvd_two",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:card_quot",
+      "target": "lmm:univ_quot",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:two_ne_zero",
+      "target": "lmm:univ_quot",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:univ_quot",
+      "target": "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:eta_isUnit",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:cube_sub_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_eval_cyclo",
+      "target": "lmm:cube_sub_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+      "target": "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_dvd_three",
+      "target": "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_sub_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:dvd_or_dvd_sub_one_or_dvd_add_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one",
+      "target": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_of_castHom_ne_zero",
+      "target": "lmm:cube_of_not_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_of_not_dvd",
+      "target": "thm:fermatLastTheoremThree_case_1",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime",
+      "target": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fermatLastTheoremThree_case_1",
+      "target": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:three_dvd_gcd_of_dvd_a_of_dvd_b",
+      "target": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:three_dvd_gcd_of_dvd_a_of_dvd_c",
+      "target": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:three_dvd_gcd_of_dvd_b_of_dvd_c",
+      "target": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "def:Solution1_Multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "def:Solution_Multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "def:Solution_Minimal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:multiplicity_lambda_c_finite",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_unit",
+      "target": "lmm:multiplicity_lambda_c_finite",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:exists_minimal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_Minimal",
+      "target": "lmm:exists_minimal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:a_cube_b_cube_same_congr",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "target": "lmm:a_cube_b_cube_same_congr",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_two",
+      "target": "lmm:a_cube_b_cube_same_congr",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:lambda_pow_four_dvd_c_cube",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:a_cube_b_cube_same_congr",
+      "target": "lmm:lambda_pow_four_dvd_c_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:lambda_pow_two_dvd_c",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:multiplicity_lambda_c_finite",
+      "target": "lmm:lambda_pow_two_dvd_c",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_c_cube",
+      "target": "lmm:lambda_pow_two_dvd_c",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_pow_two_dvd_c",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:Solution1_two_le_multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_pow_two_dvd_c",
+      "target": "lmm:Solution1_two_le_multiplicity",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:Solution_two_le_multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution1_two_le_multiplicity",
+      "target": "lmm:Solution_two_le_multiplicity",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:cube_add_cube_eq_mul",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:cube_add_cube_eq_mul",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_eval_cyclo",
+      "target": "lmm:cube_add_cube_eq_mul",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_pow_two_dvd_c",
+      "target": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_add_cube_eq_mul",
+      "target": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:ex_dvd_a_add_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_sq_dvd_or_dvd_or_dvd",
+      "target": "lmm:ex_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:ex_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:eta_isUnit",
+      "target": "lmm:ex_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "lmm:exists_Solution_of_Solution1",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:exists_Solution_of_Solution1",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:ex_dvd_a_add_b",
+      "target": "lmm:exists_Solution_of_Solution1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:a_add_eta_b",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_dvd_a_add_eta_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:a_add_eta_b",
+      "target": "lmm:lambda_dvd_a_add_eta_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:a_add_eta_b",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_eval_cyclo",
+      "target": "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:eta_add_one_inv",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:toInteger_eval_cyclo",
+      "target": "lmm:eta_add_one_inv",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:eta_isUnit",
+      "target": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:eta_isUnit",
+      "target": "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "def:Solution_x_y_z_w",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_y",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_sq_not_dvd_a_add_eta_mul_b",
+      "target": "lmm:lambda_not_dvd_y",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b",
+      "target": "lmm:lambda_not_dvd_z",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:cube_add_cube_eq_mul",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_z",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_y",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:lambda_pow_dvd_a_add_b",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_w",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:multiplicity_lambda_c_finite",
+      "target": "lmm:lambda_not_dvd_w",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_dvd_a_add_eta_mul_b",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_add_cube_eq_mul",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_prime",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_w",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:lambda_not_dvd_x",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:coprime_x_y",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:coprime_x_y",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_y",
+      "target": "lmm:coprime_x_y",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b",
+      "target": "lmm:coprime_x_y",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_x",
+      "target": "lmm:coprime_x_y",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:coprime_x_z",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:coprime_x_z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_z",
+      "target": "lmm:coprime_x_z",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b",
+      "target": "lmm:coprime_x_z",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_x",
+      "target": "lmm:coprime_x_z",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:coprime_y_z",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:coprime_y_z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_z",
+      "target": "lmm:coprime_y_z",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b",
+      "target": "lmm:coprime_y_z",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_y",
+      "target": "lmm:coprime_y_z",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:mult_minus_two_plus_one_plus_one",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:mult_minus_two_plus_one_plus_one",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:cube_add_cube_eq_mul",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:x_eq_unit_mul_cube",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "target": "lmm:x_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_x_y",
+      "target": "lmm:x_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_x_z",
+      "target": "lmm:x_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:y_eq_unit_mul_cube",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "target": "lmm:y_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_x_y",
+      "target": "lmm:y_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_y_z",
+      "target": "lmm:y_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:z_eq_unit_mul_cube",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:x_mul_y_mul_z_eq_u_w_pow_three",
+      "target": "lmm:z_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_x_z",
+      "target": "lmm:z_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_y_z",
+      "target": "lmm:z_eq_unit_mul_cube",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:x_eq_unit_mul_cube",
+      "target": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:y_eq_unit_mul_cube",
+      "target": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:z_eq_unit_mul_cube",
+      "target": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:X_ne_zero",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:X_ne_zero",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:X_ne_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_x",
+      "target": "lmm:X_ne_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_X",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:lambda_not_dvd_X",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:lambda_not_dvd_X",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_x",
+      "target": "lmm:lambda_not_dvd_X",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_Y",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:lambda_not_dvd_Y",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_y",
+      "target": "lmm:lambda_not_dvd_Y",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_not_dvd_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:lambda_not_dvd_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_z",
+      "target": "lmm:lambda_not_dvd_Z",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:coprime_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:coprime_Y_Z",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_Z",
+      "target": "lmm:coprime_Y_Z",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:coprime_y_z",
+      "target": "lmm:coprime_Y_Z",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:formula1",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:formula1",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:formula1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution_x_y_z_w",
+      "target": "lmm:formula1",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:formula1",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_eval_cyclo",
+      "target": "lmm:formula1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:u\u2084_isUnit",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:u\u2084_isUnit",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:u\u2084_isUnit",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:eta_isUnit",
+      "target": "lmm:u\u2084_isUnit",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:u\u2085_isUnit",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:u\u2085_isUnit",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:u\u2085_isUnit",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:formula2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:formula2",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:eta_isUnit",
+      "target": "lmm:formula2",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:formula2",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:toInteger_cube_eq_one",
+      "target": "lmm:formula2",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:formula2",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:formula1",
+      "target": "lmm:formula2",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_sq_div_lambda_fourth",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:lambda_sq_div_new_X_cubed",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:lambda_sq_div_new_X_cubed",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:lambda_sq_div_new_X_cubed",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:by_kummer",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:by_kummer",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_sq_div_lambda_fourth",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_sq_div_new_X_cubed",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:eq_one_or_neg_one_of_unit_of_congruent",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_Z",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_Y",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:formula2",
+      "target": "lmm:by_kummer",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:final",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "lmm:final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:formula2",
+      "target": "lmm:final",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:by_kummer",
+      "target": "lmm:final",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution1",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution_u1_u2_u3_u4_u5_X_Y_Z",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:final",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:coprime_Y_Z",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_Y",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_Z",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:X_ne_zero",
+      "target": "def:Solution1_final",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:Solution1_final_multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution1_final",
+      "target": "lmm:Solution1_final_multiplicity",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:lambda_not_dvd_X",
+      "target": "lmm:Solution1_final_multiplicity",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_ne_zero",
+      "target": "lmm:Solution1_final_multiplicity",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:Solution1_final_multiplicity_lt",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Solution1_final",
+      "target": "lmm:Solution1_final_multiplicity_lt",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:Solution1_final_multiplicity",
+      "target": "lmm:Solution1_final_multiplicity_lt",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:Solution_two_le_multiplicity",
+      "target": "lmm:Solution1_final_multiplicity_lt",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Solution",
+      "target": "lmm:exists_Solution_multiplicity_lt",
+      "kind": "statement"
+    },
+    {
+      "source": "lmm:exists_Solution_of_Solution1",
+      "target": "lmm:exists_Solution_multiplicity_lt",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:Solution1_final_multiplicity_lt",
+      "target": "lmm:exists_Solution_multiplicity_lt",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:exists_Solution_of_Solution1",
+      "target": "thm:fermatLastTheoremForThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:exists_minimal",
+      "target": "thm:fermatLastTheoremForThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:exists_Solution_multiplicity_lt",
+      "target": "thm:fermatLastTheoremForThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fermatLastTheoremThree_of_three_dvd_only_c",
+      "target": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda_prime",
+      "target": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:norm_lambda",
+      "target": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:lambda_dvd_three",
+      "target": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "kind": "proof"
+    },
+    {
+      "source": "lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen",
+      "target": "thm:fermatLastTheoremThree",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:fermatLastTheoremForThreeGen",
+      "target": "thm:fermatLastTheoremThree",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}
