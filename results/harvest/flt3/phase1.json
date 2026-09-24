@@ -1,0 +1,1767 @@
+{
+  "project": "flt3",
+  "provenance": "pitmonticone/FLT3 @ a199fa0467f8 (2024-08-21), Lean leanprover/lean4:v4.7.0-rc2",
+  "stats": {
+    "project_decls": 235,
+    "project_decls_by_kind": {
+      "def": 71,
+      "inductive": 2,
+      "theorem": 162
+    },
+    "external_decls": 0,
+    "formal_edges": 1000,
+    "blueprint_nodes": 92,
+    "blueprint_nodes_with_formal_decl": 90,
+    "lean_names_resolved": 90,
+    "lean_names_missing": {},
+    "coverage": 1.0,
+    "labelled_decls": 90,
+    "unlabelled_theorems": 78,
+    "edges": {
+      "author_edges": 204,
+      "lean_edges": 368,
+      "author_direct_in_lean": 196,
+      "author_implied_transitively": 5,
+      "author_absent_from_lean": [
+        [
+          "def:Solution",
+          "lmm:eta_add_one_inv"
+        ],
+        [
+          "def:Solution",
+          "lmm:lambda_sq_div_lambda_fourth"
+        ],
+        [
+          "lmm:lambda_ne_zero",
+          "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "def:Solution",
+          "def:Solution1_final"
+        ],
+        [
+          "def:Solution",
+          "thm:fermatLastTheoremForThreeGen"
+        ],
+        [
+          "def:Solution1",
+          "def:Solution"
+        ],
+        [
+          "def:Solution1",
+          "def:Solution_Multiplicity"
+        ],
+        [
+          "def:Solution1",
+          "lmm:Solution1_final_multiplicity"
+        ],
+        [
+          "def:Solution1",
+          "lmm:Solution_two_le_multiplicity"
+        ],
+        [
+          "def:Solution1",
+          "lmm:X_ne_zero"
+        ],
+        [
+          "def:Solution1",
+          "lmm:a_add_eta_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:by_kummer"
+        ],
+        [
+          "def:Solution1",
+          "lmm:coprime_Y_Z"
+        ],
+        [
+          "def:Solution1",
+          "lmm:coprime_x_y"
+        ],
+        [
+          "def:Solution1",
+          "lmm:coprime_x_z"
+        ],
+        [
+          "def:Solution1",
+          "lmm:coprime_y_z"
+        ],
+        [
+          "def:Solution1",
+          "lmm:final"
+        ],
+        [
+          "def:Solution1",
+          "lmm:formula1"
+        ],
+        [
+          "def:Solution1",
+          "lmm:formula2"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_dvd_a_add_eta_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_X"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_Y"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_Z"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_w"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_x"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_y"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_not_dvd_z"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_pow_dvd_a_add_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_sq_not_dvd_a_add_eta_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b"
+        ],
+        [
+          "def:Solution1",
+          "lmm:u\u2084_isUnit"
+        ],
+        [
+          "def:Solution1",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "def:Solution1",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution1",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "def:Solution1",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution1",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution1",
+          "thm:fermatLastTheoremForThreeGen"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "def:Solution_Multiplicity"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "lmm:Solution1_final_multiplicity"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "lmm:Solution1_final_multiplicity_lt"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "lmm:Solution1_two_le_multiplicity"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "lmm:exists_Solution_multiplicity_lt"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "lmm:exists_Solution_of_Solution1"
+        ],
+        [
+          "def:Solution1_Multiplicity",
+          "thm:fermatLastTheoremForThreeGen"
+        ],
+        [
+          "def:Solution1_final",
+          "lmm:exists_Solution_multiplicity_lt"
+        ],
+        [
+          "def:Solution_Minimal",
+          "thm:fermatLastTheoremForThreeGen"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "def:Solution1_final"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "def:Solution_Minimal"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:Solution1_final_multiplicity"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:Solution1_final_multiplicity_lt"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:Solution_two_le_multiplicity"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:X_ne_zero"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:by_kummer"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:coprime_x_y"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:coprime_x_z"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:exists_Solution_multiplicity_lt"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:exists_Solution_of_Solution1"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:exists_minimal"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:final"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:formula1"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:formula2"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:lambda_not_dvd_X"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:lambda_not_dvd_w"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:lambda_not_dvd_x"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:lambda_pow_dvd_a_add_b"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:mult_minus_two_plus_one_plus_one"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "def:Solution_Multiplicity",
+          "thm:fermatLastTheoremForThreeGen"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:coprime_Y_Z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:coprime_x_y"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:coprime_y_z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:final"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:lambda_not_dvd_Y"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:lambda_not_dvd_y"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:lambda_pow_dvd_a_add_b"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:u\u2084_isUnit"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_mul_b",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:coprime_Y_Z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:coprime_x_z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:coprime_y_z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:final"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:lambda_not_dvd_Z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:lambda_not_dvd_z"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:lambda_pow_dvd_a_add_b"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:u\u2084_isUnit"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_dvd_a_add_eta_sq_mul_b",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:Solution1_final_multiplicity"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:X_ne_zero"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:coprime_x_y"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:coprime_x_z"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:final"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:lambda_not_dvd_X"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:lambda_not_dvd_x"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:lambda_pow_dvd_a_add_b",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "def:Solution1_Multiplicity"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:Solution1_two_le_multiplicity"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:lambda_not_dvd_x"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:lambda_pow_dvd_a_add_b"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:x_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:x_mul_y_mul_z_eq_u_w_pow_three"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:y_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "lmm:z_eq_unit_mul_cube"
+        ],
+        [
+          "lmm:u\u2084_isUnit",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:u\u2084_isUnit",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:u\u2084_isUnit",
+          "lmm:final"
+        ],
+        [
+          "lmm:u\u2084_isUnit",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:u\u2085_isUnit",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:u\u2085_isUnit",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:u\u2085_isUnit",
+          "lmm:final"
+        ],
+        [
+          "lmm:u\u2085_isUnit",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:u\u2085_isUnit",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:Solution1_final_multiplicity"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:X_ne_zero"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:final"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:lambda_not_dvd_X"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "lmm:x_eq_unit_mul_cube",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:coprime_Y_Z"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:final"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:lambda_not_dvd_Y"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:lambda_sq_div_new_X_cubed"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:u\u2084_isUnit"
+        ],
+        [
+          "lmm:y_eq_unit_mul_cube",
+          "lmm:u\u2085_isUnit"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "def:Solution1_final"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:by_kummer"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:coprime_Y_Z"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:final"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:formula1"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:formula2"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:lambda_not_dvd_Z"
+        ],
+        [
+          "lmm:z_eq_unit_mul_cube",
+          "lmm:u\u2084_isUnit"
+        ],
+        [
+          "thm:zeta_sub_one_prime1",
+          "lmm:lambda_sq_dvd_or_dvd_or_dvd"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 75,
+    "unreported_top_sources": {
+      "def:Solution1": 37,
+      "def:Solution_Multiplicity": 27,
+      "lmm:lambda_dvd_a_add_eta_mul_b": 18,
+      "lmm:lambda_pow_dvd_a_add_b": 17,
+      "lmm:lambda_dvd_a_add_eta_sq_mul_b": 16,
+      "lmm:x_eq_unit_mul_cube": 10,
+      "lmm:y_eq_unit_mul_cube": 10,
+      "lmm:multiplicity_lambda_c_finite": 8,
+      "lmm:z_eq_unit_mul_cube": 8,
+      "def:Solution1_Multiplicity": 7
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 90,
+      "n_edges": 204,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 93,
+          "mean_cut": 47.26966292134831,
+          "max_open": 25,
+          "mean_open": 15.404494382022472,
+          "mean_edge_length": 20.622549019607842
+        },
+        "human_repaired": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 93,
+          "mean_cut": 47.26966292134831,
+          "max_open": 25,
+          "mean_open": 15.404494382022472,
+          "mean_edge_length": 20.622549019607842
+        },
+        "just_in_time": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 92,
+          "mean_cut": 54.258426966292134,
+          "max_open": 23,
+          "mean_open": 14.292134831460674,
+          "mean_edge_length": 23.67156862745098
+        },
+        "greedy_min_open": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 86,
+          "mean_cut": 50.13483146067416,
+          "max_open": 20,
+          "mean_open": 12.898876404494382,
+          "mean_edge_length": 21.872549019607842
+        },
+        "optimised": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 71,
+          "mean_cut": 28.584269662921347,
+          "max_open": 21,
+          "mean_open": 10.0,
+          "mean_edge_length": 12.470588235294118
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.3023720349563046,
+        "greedy_min_open": 0.550561797752809,
+        "optimised": 0.6414481897627965
+      },
+      "random": {
+        "mean_open": {
+          "mean": 19.276910112359552,
+          "p05": 17.43820224719101,
+          "p50": 19.359550561797754,
+          "p95": 20.876404494382022
+        },
+        "max_open": {
+          "mean": 30.03,
+          "p05": 26,
+          "p50": 30,
+          "p95": 34
+        },
+        "mean_cut": {
+          "mean": 59.55078651685393,
+          "p05": 52.91011235955056,
+          "p50": 60.07865168539326,
+          "p95": 65.01123595505618
+        },
+        "cutwidth": {
+          "mean": 89.085,
+          "p05": 80,
+          "p50": 89,
+          "p95": 98
+        },
+        "mean_edge_length": {
+          "mean": 25.98049019607843,
+          "p05": 23.083333333333332,
+          "p50": 26.21078431372549,
+          "p95": 28.362745098039216
+        }
+      },
+      "random_tau_vs_human_mean": 0.5215705368289638,
+      "uniform": {
+        "mean_open": {
+          "p05": 18.685393258426966,
+          "p50": 20.280898876404493,
+          "p95": 21.50561797752809
+        },
+        "max_open": {
+          "p05": 29,
+          "p50": 32,
+          "p95": 35
+        },
+        "mean_cut": {
+          "p05": 61.57303370786517,
+          "p50": 66.28089887640449,
+          "p95": 69.73033707865169
+        },
+        "cutwidth": {
+          "p05": 89,
+          "p50": 95,
+          "p95": 98
+        },
+        "mean_edge_length": {
+          "p05": 26.862745098039216,
+          "p50": 28.916666666666668,
+          "p95": 30.42156862745098
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.76,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.76,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.105,
+          "cutwidth": 0.7025,
+          "mean_edge_length": 0.105
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.01,
+          "cutwidth": 0.2875,
+          "mean_edge_length": 0.01
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.3075,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.3075,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2175,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 19,
+        "greedy_min_open": 28,
+        "optimised": 19
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 90,
+      "n_edges": 368,
+      "forward_refs": [
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "def:Solution1_Multiplicity"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 90,
+          "forward_refs": 1,
+          "cutwidth": 178,
+          "mean_cut": 87.8314606741573,
+          "max_open": 31,
+          "mean_open": 19.04494382022472,
+          "mean_edge_length": 21.241847826086957
+        },
+        "human_repaired": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 178,
+          "mean_cut": 87.70786516853933,
+          "max_open": 31,
+          "mean_open": 18.97752808988764,
+          "mean_edge_length": 21.21195652173913
+        },
+        "just_in_time": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 168,
+          "mean_cut": 119.82022471910112,
+          "max_open": 28,
+          "mean_open": 16.415730337078653,
+          "mean_edge_length": 28.97826086956522
+        },
+        "greedy_min_open": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 158,
+          "mean_cut": 79.24719101123596,
+          "max_open": 29,
+          "mean_open": 15.662921348314606,
+          "mean_edge_length": 19.16576086956522
+        },
+        "optimised": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 163,
+          "mean_cut": 61.71910112359551,
+          "max_open": 26,
+          "mean_open": 13.337078651685394,
+          "mean_edge_length": 14.92663043478261
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.998501872659176,
+        "just_in_time": 0.5760299625468165,
+        "greedy_min_open": 0.6519350811485642,
+        "optimised": 0.6734082397003746
+      },
+      "random": {
+        "mean_open": {
+          "mean": 21.33432584269663,
+          "p05": 19.46067415730337,
+          "p50": 21.348314606741575,
+          "p95": 23.168539325842698
+        },
+        "max_open": {
+          "mean": 31.305,
+          "p05": 29,
+          "p50": 30,
+          "p95": 36
+        },
+        "mean_cut": {
+          "mean": 112.98286516853932,
+          "p05": 96.0561797752809,
+          "p50": 113.73033707865169,
+          "p95": 127.51685393258427
+        },
+        "cutwidth": {
+          "mean": 179.025,
+          "p05": 167,
+          "p50": 179,
+          "p95": 191
+        },
+        "mean_edge_length": {
+          "mean": 27.324660326086956,
+          "p05": 23.230978260869566,
+          "p50": 27.505434782608695,
+          "p95": 30.839673913043477
+        }
+      },
+      "random_tau_vs_human_mean": 0.6473058676654182,
+      "uniform": {
+        "mean_open": {
+          "p05": 21.696629213483146,
+          "p50": 23.168539325842698,
+          "p95": 24.44943820224719
+        },
+        "max_open": {
+          "p05": 34,
+          "p50": 36,
+          "p95": 38
+        },
+        "mean_cut": {
+          "p05": 112.03370786516854,
+          "p50": 122.89887640449439,
+          "p95": 131.01123595505618
+        },
+        "cutwidth": {
+          "p05": 177,
+          "p50": 185,
+          "p95": 194
+        },
+        "mean_edge_length": {
+          "p05": 27.095108695652176,
+          "p50": 29.722826086956523,
+          "p95": 31.684782608695652
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.01,
+          "max_open": 0.5875,
+          "mean_cut": 0.0,
+          "cutwidth": 0.425,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.01,
+          "max_open": 0.5875,
+          "mean_cut": 0.0,
+          "cutwidth": 0.425,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.7475,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.7475
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0675,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.035,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.08,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.08,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.3225,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.3225
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 19,
+        "greedy_min_open": 25,
+        "optimised": 16
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 90,
+      "n_edges": 238,
+      "forward_refs": [
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "def:Solution1_Multiplicity"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 90,
+          "forward_refs": 1,
+          "cutwidth": 90,
+          "mean_cut": 44.51685393258427,
+          "max_open": 26,
+          "mean_open": 16.03370786516854,
+          "mean_edge_length": 16.647058823529413
+        },
+        "human_repaired": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 90,
+          "mean_cut": 44.58426966292135,
+          "max_open": 26,
+          "mean_open": 16.0,
+          "mean_edge_length": 16.672268907563026
+        },
+        "just_in_time": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 92,
+          "mean_cut": 49.31460674157304,
+          "max_open": 30,
+          "mean_open": 14.539325842696629,
+          "mean_edge_length": 18.441176470588236
+        },
+        "greedy_min_open": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 87,
+          "mean_cut": 55.325842696629216,
+          "max_open": 23,
+          "mean_open": 15.03370786516854,
+          "mean_edge_length": 20.689075630252102
+        },
+        "optimised": {
+          "n": 90,
+          "forward_refs": 0,
+          "cutwidth": 82,
+          "mean_cut": 26.39325842696629,
+          "max_open": 21,
+          "mean_open": 10.617977528089888,
+          "mean_edge_length": 9.869747899159664
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.998501872659176,
+        "just_in_time": 0.2754057428214731,
+        "greedy_min_open": 0.6099875156054931,
+        "optimised": 0.6244694132334582
+      },
+      "random": {
+        "mean_open": {
+          "mean": 19.06050561797753,
+          "p05": 17.685393258426966,
+          "p50": 19.10112359550562,
+          "p95": 20.46067415730337
+        },
+        "max_open": {
+          "mean": 28.285,
+          "p05": 24,
+          "p50": 28,
+          "p95": 32
+        },
+        "mean_cut": {
+          "mean": 58.542078651685394,
+          "p05": 53.08988764044944,
+          "p50": 58.7752808988764,
+          "p95": 64.24719101123596
+        },
+        "cutwidth": {
+          "mean": 87.61,
+          "p05": 84,
+          "p50": 88,
+          "p95": 92
+        },
+        "mean_edge_length": {
+          "mean": 21.891785714285717,
+          "p05": 19.852941176470587,
+          "p50": 21.978991596638654,
+          "p95": 24.025210084033613
+        }
+      },
+      "random_tau_vs_human_mean": 0.5866491885143571,
+      "uniform": {
+        "mean_open": {
+          "p05": 19.51685393258427,
+          "p50": 20.89887640449438,
+          "p95": 22.078651685393258
+        },
+        "max_open": {
+          "p05": 29,
+          "p50": 31,
+          "p95": 34
+        },
+        "mean_cut": {
+          "p05": 56.20224719101124,
+          "p50": 61.764044943820224,
+          "p95": 66.95505617977528
+        },
+        "cutwidth": {
+          "p05": 91,
+          "p50": 97,
+          "p95": 101
+        },
+        "mean_edge_length": {
+          "p05": 21.016806722689076,
+          "p50": 23.096638655462186,
+          "p95": 25.037815126050422
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.215,
+          "mean_cut": 0.0,
+          "cutwidth": 0.825,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.215,
+          "mean_cut": 0.0,
+          "cutwidth": 0.825,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.7075,
+          "mean_cut": 0.005,
+          "cutwidth": 0.95,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.215,
+          "cutwidth": 0.425,
+          "mean_edge_length": 0.215
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.2325,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0925,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0375,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0375
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 3,
+        "human_repaired": 3,
+        "just_in_time": 19,
+        "greedy_min_open": 22,
+        "optimised": 19
+      }
+    },
+    {
+      "name": "Lean: 2-third_cyclotomic_extensions",
+      "n_nodes": 23,
+      "n_edges": 24,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 3.1818181818181817,
+          "max_open": 4,
+          "mean_open": 2.3636363636363638,
+          "mean_edge_length": 2.9166666666666665
+        },
+        "human_repaired": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 3.1818181818181817,
+          "max_open": 4,
+          "mean_open": 2.3636363636363638,
+          "mean_edge_length": 2.9166666666666665
+        },
+        "just_in_time": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 3.6818181818181817,
+          "max_open": 6,
+          "mean_open": 3.0454545454545454,
+          "mean_edge_length": 3.375
+        },
+        "greedy_min_open": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 2.772727272727273,
+          "max_open": 4,
+          "mean_open": 2.272727272727273,
+          "mean_edge_length": 2.5416666666666665
+        },
+        "optimised": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 4,
+          "mean_cut": 2.5,
+          "max_open": 4,
+          "mean_open": 2.0,
+          "mean_edge_length": 2.2916666666666665
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": -0.2569169960474309,
+        "greedy_min_open": 0.5573122529644269,
+        "optimised": 0.01976284584980237
+      },
+      "random": {
+        "mean_open": {
+          "mean": 4.4381818181818184,
+          "p05": 3.227272727272727,
+          "p50": 4.5,
+          "p95": 5.454545454545454
+        },
+        "max_open": {
+          "mean": 7.525,
+          "p05": 5,
+          "p50": 8,
+          "p95": 9
+        },
+        "mean_cut": {
+          "mean": 5.590227272727272,
+          "p05": 4.090909090909091,
+          "p50": 5.636363636363637,
+          "p95": 6.818181818181818
+        },
+        "cutwidth": {
+          "mean": 9.435,
+          "p05": 7,
+          "p50": 10,
+          "p95": 11
+        },
+        "mean_edge_length": {
+          "mean": 5.124375,
+          "p05": 3.75,
+          "p50": 5.166666666666667,
+          "p95": 6.25
+        }
+      },
+      "random_tau_vs_human_mean": 0.4525296442687747,
+      "uniform": {
+        "mean_open": {
+          "p05": 4.409090909090909,
+          "p50": 5.2272727272727275,
+          "p95": 6.181818181818182
+        },
+        "max_open": {
+          "p05": 7,
+          "p50": 8,
+          "p95": 10
+        },
+        "mean_cut": {
+          "p05": 5.636363636363637,
+          "p50": 6.7272727272727275,
+          "p95": 7.909090909090909
+        },
+        "cutwidth": {
+          "p05": 8,
+          "p50": 10,
+          "p95": 12
+        },
+        "mean_edge_length": {
+          "p05": 5.166666666666667,
+          "p50": 6.166666666666667,
+          "p95": 7.25
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0075
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0075
+        },
+        "just_in_time": {
+          "mean_open": 0.03,
+          "max_open": 0.13,
+          "mean_cut": 0.035,
+          "cutwidth": 0.0275,
+          "mean_edge_length": 0.035
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: 3-fermat_last_theorem_3",
+      "n_nodes": 64,
+      "n_edges": 307,
+      "forward_refs": [
+        [
+          "lmm:multiplicity_lambda_c_finite",
+          "def:Solution1_Multiplicity"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 64,
+          "forward_refs": 1,
+          "cutwidth": 155,
+          "mean_cut": 97.15873015873017,
+          "max_open": 25,
+          "mean_open": 13.619047619047619,
+          "mean_edge_length": 19.938110749185668
+        },
+        "human_repaired": {
+          "n": 64,
+          "forward_refs": 0,
+          "cutwidth": 155,
+          "mean_cut": 97.03174603174604,
+          "max_open": 25,
+          "mean_open": 13.571428571428571,
+          "mean_edge_length": 19.912052117263844
+        },
+        "just_in_time": {
+          "n": 64,
+          "forward_refs": 0,
+          "cutwidth": 154,
+          "mean_cut": 92.19047619047619,
+          "max_open": 24,
+          "mean_open": 12.047619047619047,
+          "mean_edge_length": 18.9185667752443
+        },
+        "greedy_min_open": {
+          "n": 64,
+          "forward_refs": 0,
+          "cutwidth": 155,
+          "mean_cut": 86.88888888888889,
+          "max_open": 25,
+          "mean_open": 13.063492063492063,
+          "mean_edge_length": 17.830618892508145
+        },
+        "optimised": {
+          "n": 64,
+          "forward_refs": 0,
+          "cutwidth": 153,
+          "mean_cut": 72.14285714285714,
+          "max_open": 21,
+          "mean_open": 11.825396825396826,
+          "mean_edge_length": 14.80456026058632
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9970238095238095,
+        "just_in_time": 0.5307539682539683,
+        "greedy_min_open": 0.7440476190476191,
+        "optimised": 0.5972222222222222
+      },
+      "random": {
+        "mean_open": {
+          "mean": 15.482777777777779,
+          "p05": 14.333333333333334,
+          "p50": 15.476190476190476,
+          "p95": 16.6984126984127
+        },
+        "max_open": {
+          "mean": 24.915,
+          "p05": 24,
+          "p50": 25,
+          "p95": 25
+        },
+        "mean_cut": {
+          "mean": 99.51896825396825,
+          "p05": 89.71428571428571,
+          "p50": 99.68253968253968,
+          "p95": 109.76190476190476
+        },
+        "cutwidth": {
+          "mean": 155.03,
+          "p05": 148,
+          "p50": 155,
+          "p95": 162
+        },
+        "mean_edge_length": {
+          "mean": 20.422459283387624,
+          "p05": 18.41042345276873,
+          "p50": 20.45602605863192,
+          "p95": 22.52442996742671
+        }
+      },
+      "random_tau_vs_human_mean": 0.682311507936508,
+      "uniform": {
+        "mean_open": {
+          "p05": 15.380952380952381,
+          "p50": 16.317460317460316,
+          "p95": 17.3015873015873
+        },
+        "max_open": {
+          "p05": 24,
+          "p50": 26,
+          "p95": 28
+        },
+        "mean_cut": {
+          "p05": 100.66666666666667,
+          "p50": 106.47619047619048,
+          "p95": 112.46031746031746
+        },
+        "cutwidth": {
+          "p05": 156,
+          "p50": 162,
+          "p95": 165
+        },
+        "mean_edge_length": {
+          "p05": 20.65798045602606,
+          "p50": 21.850162866449512,
+          "p95": 23.078175895765472
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.5425,
+          "mean_cut": 0.36,
+          "cutwidth": 0.4825,
+          "mean_edge_length": 0.36
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.5425,
+          "mean_cut": 0.35,
+          "cutwidth": 0.4825,
+          "mean_edge_length": 0.35
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0425,
+          "mean_cut": 0.12,
+          "cutwidth": 0.4125,
+          "mean_edge_length": 0.12
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.5425,
+          "mean_cut": 0.01,
+          "cutwidth": 0.4825,
+          "mean_edge_length": 0.01
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.325,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.005
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.005
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.11,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.32,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}
