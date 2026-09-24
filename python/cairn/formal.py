@@ -22,6 +22,15 @@ _GENERATED_SUFFIXES = {
 }
 
 
+_BINDER = re.compile(r"\(([^\s():]+) :")
+
+
+def projections(decls: dict[str, FormalDecl]) -> dict[str, str]:
+    """Structure field projections present as declarations, mapped to their structure (``DualPair.v -> DualPair``)."""
+    return {f"{s}.{f}": s for s, d in decls.items() for f in d.fields
+            if f"{s}.{f}" in decls and decls[f"{s}.{f}"].kind != "theorem"}
+
+
 def _components(name: str) -> list[str]:
     # Lean escapes unusual components with «»; dots inside them are not separators.
     return [c.strip("«»") for c in re.findall(r"«[^»]*»|[^.]+", name)]
@@ -72,6 +81,8 @@ class FormalDecl:
     """Short statement: explicit hypotheses and conclusion only."""
     external: bool = False
     """Declared outside the project (e.g. upstreamed to Mathlib) but named by the blueprint."""
+    fields: list[str] = field(default_factory=list)
+    """For a structure (single-constructor inductive): the named explicit fields of its constructor."""
 
 
 def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl]:
@@ -86,6 +97,10 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
     if not external:
         rows = [r for r in rows if not r.get("external")]
     kinds = {r["name"]: r["kind"] for r in rows}
+    ctors: dict[str, list[dict]] = {}
+    for r in rows:
+        if r["kind"] == "constructor":
+            ctors.setdefault(fold_name(r["name"], kinds), []).append(r)
     user_names = {r["user_name"] for r in rows}
     decls: dict[str, FormalDecl] = {}
     for r in rows:
@@ -111,6 +126,9 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
         d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])
         d.value_deps.update(fold_name(x, kinds) for x in r["value_deps"])
         d.value_deps.update(r.get("blueprint_reach", []))
+    for target, rs in ctors.items():
+        if target in decls and len(rs) == 1:  # a structure: its constructor's explicit binders are the fields
+            decls[target].fields = list(dict.fromkeys(_BINDER.findall(rs[0].get("type_pp", ""))))
     for d in decls.values():
         d.type_deps.discard(d.name)
         d.value_deps.discard(d.name)
