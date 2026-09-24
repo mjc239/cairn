@@ -20,9 +20,12 @@
   "Toric"
  ],
  "build_minutes": 1.3,
+ "extractor": "extract_deps.lean",
  "decls": 276,
  "theorems": 187,
- "lean_resolved": 0.337,
- "nodes_linked": 25,
- "minutes": 3.8
+ "external_decls": 59,
+ "lean_resolved": 1.0,
+ "nodes_linked": 67,
+ "nodes_linked_external_only": 42,
+ "minutes": 3.9
 }

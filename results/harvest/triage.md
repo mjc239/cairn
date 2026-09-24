@@ -10,7 +10,7 @@
 | [banach_tarski](https://github.com/bergschaf/lean-banach-tarski) | ok | 30 | 41 | 5 (section) | 52 | 12 | 0% | 0 (0%) | 0.4 | v4.25.0-rc2 |
 | [clt](https://github.com/RemyDegenne/CLT) | ok | 50 | 80 | 6 (file) | 26 | 22 | 89% | 40 (80%) (33) | 0.4 | v4.29.0-rc3 |
 | [cam_combi](https://github.com/YaelDillies/LeanCamCombi) | skipped (stub blueprint) | 0 | 0 | 0 (section) |  |  |  |  |  | v4.35.0-rc2 |
-| [toric](https://github.com/YaelDillies/Toric) | ok | 145 | 245 | 13 (file) | 276 | 187 | 34% | 25 (17%) | 1.3 | v4.35.0-rc2 |
+| [toric](https://github.com/YaelDillies/Toric) | ok | 145 | 245 | 13 (file) | 276 | 187 | 100% | 67 (46%) (42) | 1.3 | v4.35.0-rc2 |
 | [semicircle](https://github.com/fredraj3/SemicircleLaw) | ok | 205 | 346 | 5 (file) | 229 | 132 | 100% | 58 (28%) | 4.6 | v4.24.0 |
 | [flt3](https://github.com/pitmonticone/FLT3) | ok | 92 | 232 | 3 (file) | 235 | 162 | 100% | 90 (98%) | 3.1 | v4.7.0-rc2 |
 | [abc_exceptions](https://github.com/b-mehta/ABC-Exceptions) | failed: extract | 58 | 132 | 4 (chapter) |  |  |  |  | 0.7 | v4.21.0-rc3 |
