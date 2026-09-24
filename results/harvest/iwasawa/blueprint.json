@@ -1,0 +1,420 @@
+{
+  "nodes": [
+    {
+      "id": "Zp-ext-def",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 44,
+      "title": null,
+      "labels": [
+        "Zp-ext-def"
+      ],
+      "lean_decls": [
+        "MvZpExtension",
+        "MvZpExtension.Kn"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "introduction",
+      "proof_leanok": true,
+      "text": "Let $K$ be a field, $p$ be a prime. {\\rm(i)} An extension $K_\\infty/K$ is called a $\\BZ_p$-extension, if it is Galois with $\\Gamma=\\Gal(K_\\infty/K)\\cong\\BZ_p$ as topological groups. {\\rm(ii)} If $K_\\infty/K$ is a $\\BZ_p$-extension, then for any $n\\geq 0$, define $K_n:=K_\\infty^{\\Gamma^{p^n}}$."
+    },
+    {
+      "id": "krull-domain-defn",
+      "kind": "definition",
+      "position": 1,
+      "chapter": "preliminaries-in-commutative-algebra",
+      "source": "content.tex",
+      "line": 253,
+      "title": null,
+      "labels": [
+        "krull-domain-defn"
+      ],
+      "lean_decls": [
+        "IsKrullDomain"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "preliminaries-in-commutative-algebra",
+      "proof_leanok": true,
+      "text": "An integral domain $A$ is called a \\emph{Krull domain} if it satisfies the following properties: \\begin{itemize} \\item $A_\\fp$ is a discrete valuation ring for all height one primes $\\fp$ of $A$, \\item $A=\\bigcap_{\\fp\\in\\Spec(A),\\height(\\fp)=1}A_\\fp$ inside $\\Frac(A)$, \\item any nonzero element of $A$ is contained in only a finitely many height one primes of $A$. \\end{itemize}"
+    },
+    {
+      "id": "char-ideal",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "source": "content.tex",
+      "line": 539,
+      "title": null,
+      "labels": [
+        "char-ideal"
+      ],
+      "lean_decls": [
+        "Module.charIdeal"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "char-ideal-preliminary"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 15,
+      "proof_event": 16,
+      "proof_chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "proof_leanok": true,
+      "text": "Let $A$ be a Noetherian ring, $M$ be a finitely generated torsion $A$-module. The \\emph{characteristic ideal} of $M$, denoted by $\\chaR_A(M)$, or simply $\\chaR(M)$ if there is no risk of confusion, is defined to be $$ \\chaR_A(M):=\\prod_{\\substack{\\fp\\in\\Spec(A)\\\\ \\height(\\fp)=1}}\\fp^{\\ell_{A_\\fp}(M_\\fp)}. $$"
+    },
+    {
+      "id": "pseudo-null",
+      "kind": "definition",
+      "position": 3,
+      "chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "source": "content.tex",
+      "line": 577,
+      "title": null,
+      "labels": [
+        "pseudo-null"
+      ],
+      "lean_decls": [
+        "Module.IsPseudoNull",
+        "LinearMap.IsPseudoIsomorphism",
+        "Module.IsPseudoIsomorphic"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 17,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $A$ be a Noetherian ring. {\\rm(i)} A finitely generated $A$-module $M$ is called a \\emph{pseudo-null} $A$-module, if $M_\\fp=0$ for all prime ideals $\\fp$ of $A$ of height $\\leq 1$. {\\rm(ii)} An $A$-linear homomorphism $f:M\\to N$ between finitely generated $A$-modules is called a \\emph{pseudo-isomorphism} (\\emph{pis} for short), if its kernel and cokernel are pseudo-null $A$-modules. {\\rm(iii)} Two finitely generated $A$-modules $M,N$ are called \\emph{pseudo-isomorphic} (\\emph{pis} for short), denoted by $M\\sim_\\pis N$ or simply $M\\sim N$, if there exists a pseudo-isomorphism from $M$ to $N$."
+    },
+    {
+      "id": "_anon1:structure-of-module-up-to-pseudo-isomorp",
+      "kind": "remark",
+      "position": 4,
+      "chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "source": "content.tex",
+      "line": 599,
+      "title": null,
+      "labels": [
+        "_anon1:structure-of-module-up-to-pseudo-isomorp"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "proof_leanok": true,
+      "text": "We warn the reader that $M\\sim N$ not necessarily implies $N\\sim M$."
+    },
+    {
+      "id": "ht-1-localization-is-PID",
+      "kind": "definition",
+      "position": 5,
+      "chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "source": "content.tex",
+      "line": 681,
+      "title": null,
+      "labels": [
+        "ht-1-localization-is-PID"
+      ],
+      "lean_decls": [
+        "HeightOneLocalizationIsPID"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "structure-of-module-up-to-pseudo-isomorp",
+      "proof_leanok": true,
+      "text": "A Noetherian ring $A$ is called ``height one localizations are PID'', if for any finitely many height one primes $\\fp_1,\\cdots,\\fp_r$ ($r\\geq 1$) of $A$, let $S:=A\\setminus\\bigcup_{i=1}^r\\fp_i$, then $S^{-1}A$ is a PID."
+    },
+    {
+      "id": "Iwasawa-alg-defn",
+      "kind": "definition",
+      "position": 6,
+      "chapter": "structure-of-iwasawa-module",
+      "source": "content.tex",
+      "line": 920,
+      "title": null,
+      "labels": [
+        "Iwasawa-alg-defn"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 29,
+      "proof_event": 30,
+      "proof_chapter": "structure-of-iwasawa-module",
+      "proof_leanok": false,
+      "text": "The \\emph{Iwasawa algebra} is defined as the completed group algebra $$ \\Lambda:=\\BZ_p[[\\Gamma]]:=\\varprojlim_n\\BZ_p[\\Gamma_n], $$ where the transition map $\\BZ_p[\\Gamma_{n+1}]\\to \\BZ_p[\\Gamma_n]$ is induced by the natural projection $\\Gamma_{n+1}\\to\\Gamma_n$. Each $\\BZ_p[\\Gamma_n]$ is a free $\\BZ_p$-module of rank $p^n$, we endow it with the $p$-adic topology, and endow $\\Lambda$ with the subspace topology of the product topology of $\\prod_{n=0}^\\infty\\BZ_p[\\Gamma_n]$."
+    },
+    {
+      "id": "distinguished-polynomial",
+      "kind": "definition",
+      "position": 7,
+      "chapter": "structure-of-iwasawa-module",
+      "source": "content.tex",
+      "line": 1054,
+      "title": null,
+      "labels": [
+        "distinguished-polynomial"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "structure-of-iwasawa-module",
+      "proof_leanok": true,
+      "text": "If $(A,\\fm,k)$ is a local ring, then a polynomial $f(X)=\\sum_{i=0}^na_iX^i\\in A[X]$ is called a \\emph{distinguished polynomial} if $a_n=1$ and $a_i\\in\\fm$ for all $0\\leq i\\leq n-1$. (Mathlib: \\docs{Polynomial.IsDistinguishedAt})"
+    },
+    {
+      "id": "iwasawa-mod-invariants",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "structure-of-iwasawa-module",
+      "source": "content.tex",
+      "line": 1288,
+      "title": null,
+      "labels": [
+        "iwasawa-mod-invariants"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Lambda-module-structure"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "structure-of-iwasawa-module",
+      "proof_leanok": false,
+      "text": "{\\rm(i)} The $\\mu$-invariant of $X$ is defined to be $\\mu(X):=\\sum_{j=1}^sn_j$, and the $\\lambda$-invariant of $X$ is defined to be $\\lambda(X):=\\sum_{i=1}^mb_i\\deg f_i$. {\\rm(ii)} If $f\\in\\BZ_p[[T]]$ is not zero, then define $\\mu(f)$ be the integer such that $f\\in p^{\\mu(f)}\\BZ_p[[T]]$ but $f\\notin p^{1+\\mu(f)}\\BZ_p[[T]]$, define $\\lambda(f)$ be the leading degree of $(p^{-\\mu(f)}f\\bmod p)\\in\\BF_p[[T]]$."
+    },
+    {
+      "id": "conjugate-action",
+      "kind": "definition",
+      "position": 9,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1395,
+      "title": null,
+      "labels": [
+        "conjugate-action"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "arithmetic-of-p-extensions",
+      "proof_leanok": false,
+      "text": "$X$ has a natural, well-defined $\\Gamma$-action, given by $\\sigma\\bullet x =\\widetilde\\sigma x\\widetilde\\sigma^{-1}$ where $\\widetilde\\sigma\\in G$ is any lifting of $\\sigma\\in\\Gamma$."
+    },
+    {
+      "id": "p-primary-part",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1454,
+      "title": null,
+      "labels": [
+        "p-primary-part"
+      ],
+      "lean_decls": [
+        "CommGroup.primaryComponent",
+        "CommGroup.equivPrimeToComponentProdPrimaryComponent"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 50,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $M$ is a finite abelian group, $p$ is a prime, let $M(p)$ be the $p$-primary part of $M$, which is the $p$-Sylow subgroup of $M$, or the subgroup of $M$ consisting of elements whose order is power of $p$. By definition it is a subgroup of $M$, and is also canonically a quotient group of $M$."
+    },
+    {
+      "id": "Zp-ext-Ln",
+      "kind": "definition",
+      "position": 11,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1464,
+      "title": null,
+      "labels": [
+        "Zp-ext-Ln"
+      ],
+      "lean_decls": [
+        "MvZpExtension.Ln"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "Zp-ext-def"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 51,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For each $n\\geq 0$ let $L_n$ be the maximal unramified abelian extension of $K_n$ of exponent $p$. Let $X_n:=\\Gal(L_n/K_n)$."
+    },
+    {
+      "id": "Zp-ext-An",
+      "kind": "definition",
+      "position": 12,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1475,
+      "title": null,
+      "labels": [
+        "Zp-ext-An"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "p-primary-part"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 52,
+      "proof_event": 53,
+      "proof_chapter": "arithmetic-of-p-extensions",
+      "proof_leanok": true,
+      "text": "For each $n\\geq 0$ let $A_n:=\\Cl(K_n)(p)$ be the $p$-primary part of the class group $\\Cl(K_n)$, viewed as a quotient of $\\Cl(K_n)$."
+    },
+    {
+      "id": "Zp-ext-L-inf",
+      "kind": "definition",
+      "position": 13,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1533,
+      "title": null,
+      "labels": [
+        "Zp-ext-L-inf"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Ln-K-Gal",
+        "Ln-mono"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 57,
+      "proof_event": 58,
+      "proof_chapter": "arithmetic-of-p-extensions",
+      "proof_leanok": false,
+      "text": "Let $L_\\infty:=\\bigcup_{n\\geq 0}L_n$. Note that each $L_n$ is Galois over $K$, so $L_\\infty/K$ is also Galois. Let $G=\\Gal(L_\\infty/K)$ and $X_\\infty=\\Gal(L_\\infty/K_\\infty)$."
+    },
+    {
+      "id": "Zp-ext-totally-ramified",
+      "kind": "definition",
+      "position": 14,
+      "chapter": "arithmetic-of-p-extensions",
+      "source": "content.tex",
+      "line": 1619,
+      "title": null,
+      "labels": [
+        "Zp-ext-totally-ramified"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Zp-ext-def"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "arithmetic-of-p-extensions",
+      "proof_leanok": false,
+      "text": "A $\\BZ_p$-extension $K_\\infty/K$ is called totally ramified, if all primes which are ramified in $K_\\infty/K$ are totally ramified. More explicitly, for any prime of $K$, either it is unramified in $K_n/K$ for all $n$, or it is totally ramified in $K_n/K$ for all $n$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "Zp-ext-def",
+      "target": "Zp-ext-Ln",
+      "kind": "statement"
+    },
+    {
+      "source": "p-primary-part",
+      "target": "Zp-ext-An",
+      "kind": "statement"
+    },
+    {
+      "source": "Zp-ext-def",
+      "target": "Zp-ext-totally-ramified",
+      "kind": "statement"
+    }
+  ],
+  "unresolved": [
+    [
+      "char-ideal",
+      "char-ideal-preliminary",
+      "statement"
+    ],
+    [
+      "iwasawa-mod-invariants",
+      "Lambda-module-structure",
+      "statement"
+    ],
+    [
+      "Zp-ext-L-inf",
+      "Ln-K-Gal",
+      "statement"
+    ],
+    [
+      "Zp-ext-L-inf",
+      "Ln-mono",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": []
+}
