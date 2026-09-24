@@ -24,6 +24,8 @@ parameter, short statements and checked English prose: [`docs/outline.md`](docs/
 
 **Start here:** [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb) walks through the whole project,
 from parsing a blueprint to the blueprint-free outline. It runs in about 30 s from the committed data.
+[`notebooks/harvest.ipynb`](notebooks/harvest.ipynb) continues it over the 20 harvested projects: linkage, the
+scalable optimiser, the 9-project key-declaration model and style fits (runs in a few seconds).
 
 ## Usage
 
@@ -56,7 +58,9 @@ uv run cairn outline decls.jsonl --model results/outline/key_model.json --detail
 uv run cairn outline ... --prose DIR --write-prose-prompts      # then fill DIR/*.prose.json (titles, English, sketches)
 uv run cairn outline ... --prose DIR --write-check-prompts      # then fill DIR/*.check.json; render with --prose DIR
 ./scripts/outline.sh                                             # models, evaluation vs blueprints, example outlines
-uv run jupyter-execute --inplace notebooks/walkthrough.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
+uv run python scripts/harvest.py [--only NAME ...]              # harvest blueprint projects (scripts/harvest_projects.toml)
+uv run python scripts/cross_project.py                          # key-declaration model: leave one project out, 9 projects
+uv run jupyter-execute --inplace notebooks/walkthrough.ipynb notebooks/harvest.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
 uv run pytest && uv run ruff check python
 ```
 
