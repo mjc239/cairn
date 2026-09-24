@@ -34,7 +34,7 @@ RESULTS = ROOT / "results" / "harvest"
 WORK = ROOT / "data" / "raw" / "harvest"
 ELAN = Path.home() / ".elan"
 ENV = {**os.environ, "PATH": f"{ELAN / 'bin'}:{os.environ['PATH']}"}
-BUILD_TIMEOUT = 150 * 60
+BUILD_TIMEOUT = 45 * 60
 EXTRACT_TIMEOUT = 60 * 60
 SKIP_LIB = re.compile(r"(?i)^(test|tests|docs?|blueprint|scripts?|archive|counterexamples|bench.*)$")
 
@@ -221,9 +221,12 @@ def harvest(proj: dict, commit_results: bool) -> dict:
             code, tail = run(["lake", "exe", "cache", "get"], cwd=clone, timeout=3600, log_to=logf)
             if code:
                 return fail(row, "cache", tail)
+            if not any((clone / ".lake" / "packages" / "mathlib" / ".lake" / "build").rglob("Mathlib.olean")):
+                return fail(row, "cache", "no prebuilt Mathlib for this version; building it would take hours")
         log(f"{name}: lake build {' '.join(libs)}")
         tb = time.time()
-        code, tail = run(["lake", "build", *libs], cwd=clone, timeout=BUILD_TIMEOUT, log_to=logf)
+        timeout = int(proj.get("build_timeout", BUILD_TIMEOUT // 60)) * 60
+        code, tail = run(["lake", "build", *libs], cwd=clone, timeout=timeout, log_to=logf)
         row["build_minutes"] = round((time.time() - tb) / 60, 1)
         if code:
             return fail(row, "build (timeout)" if code == 124 else "build", tail)
