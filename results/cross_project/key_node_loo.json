@@ -1,0 +1,531 @@
+{
+ "PFR": {
+  "heldout": false,
+  "trained_on": [
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8211902719577017,
+  "p_at_k": 0.5685483870967742,
+  "base_rate": 0.17777777777777778,
+  "positives": 248,
+  "decls": 1395,
+  "baseline": {
+   "trained_on": [
+    "Carleson"
+   ],
+   "auroc": 0.7882994206485361,
+   "p_at_k": 0.5,
+   "base_rate": 0.17777777777777778,
+   "positives": 248,
+   "decls": 1395
+  }
+ },
+ "Carleson": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8589538978794939,
+  "p_at_k": 0.3389830508474576,
+  "base_rate": 0.06896551724137931,
+  "positives": 236,
+  "decls": 3422,
+  "baseline": {
+   "trained_on": [
+    "PFR"
+   ],
+   "auroc": 0.8469642078159745,
+   "p_at_k": 0.2966101694915254,
+   "base_rate": 0.06896551724137931,
+   "positives": 236,
+   "decls": 3422
+  }
+ },
+ "brownian_motion": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.7019682900125706,
+  "p_at_k": 0.30153846153846153,
+  "base_rate": 0.14626462646264626,
+  "positives": 325,
+  "decls": 2222,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6806990795182677,
+   "p_at_k": 0.27692307692307694,
+   "base_rate": 0.14626462646264626,
+   "positives": 325,
+   "decls": 2222
+  }
+ },
+ "testing_lower_bounds": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.6731800164143399,
+  "p_at_k": 0.2619047619047619,
+  "base_rate": 0.12173913043478261,
+  "positives": 126,
+  "decls": 1035,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6297693261389632,
+   "p_at_k": 0.23809523809523808,
+   "base_rate": 0.12173913043478261,
+   "positives": 126,
+   "decls": 1035
+  }
+ },
+ "sphere_packing": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.792470760233918,
+  "p_at_k": 0.33,
+  "base_rate": 0.0681198910081744,
+  "positives": 100,
+  "decls": 1468,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7373172514619883,
+   "p_at_k": 0.3,
+   "base_rate": 0.0681198910081744,
+   "positives": 100,
+   "decls": 1468
+  }
+ },
+ "flt3": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.7279693486590039,
+  "p_at_k": 0.5666666666666667,
+  "base_rate": 0.3829787234042553,
+  "positives": 90,
+  "decls": 235,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6813026819923371,
+   "p_at_k": 0.5444444444444444,
+   "base_rate": 0.3829787234042553,
+   "positives": 90,
+   "decls": 235
+  }
+ },
+ "sphere_eversion": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8581856702619414,
+  "p_at_k": 0.325,
+  "base_rate": 0.05805515239477504,
+  "positives": 80,
+  "decls": 1378,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.816554314329738,
+   "p_at_k": 0.3,
+   "base_rate": 0.05805515239477504,
+   "positives": 80,
+   "decls": 1378
+  }
+ },
+ "abc_exceptions": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "apap"
+  ],
+  "auroc": 0.813147369500564,
+  "p_at_k": 0.4897959183673469,
+  "base_rate": 0.1975806451612903,
+  "positives": 49,
+  "decls": 248,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7662803814993334,
+   "p_at_k": 0.42857142857142855,
+   "base_rate": 0.1975806451612903,
+   "positives": 49,
+   "decls": 248
+  }
+ },
+ "apap": {
+  "heldout": false,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions"
+  ],
+  "auroc": 0.9293317326930772,
+  "p_at_k": 0.6470588235294118,
+  "base_rate": 0.044213263979193757,
+  "positives": 34,
+  "decls": 769,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.8854741896758703,
+   "p_at_k": 0.6764705882352942,
+   "base_rate": 0.044213263979193757,
+   "positives": 34,
+   "decls": 769
+  }
+ },
+ "formal_book": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.5616039126356693,
+  "p_at_k": 0.16176470588235295,
+  "base_rate": 0.1341222879684418,
+  "positives": 68,
+  "decls": 507,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6005627763633927,
+   "p_at_k": 0.17647058823529413,
+   "base_rate": 0.1341222879684418,
+   "positives": 68,
+   "decls": 507
+  }
+ },
+ "semicircle": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.6771684945164507,
+  "p_at_k": 0.4406779661016949,
+  "base_rate": 0.2576419213973799,
+  "positives": 59,
+  "decls": 229,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7249252243270189,
+   "p_at_k": 0.5084745762711864,
+   "base_rate": 0.2576419213973799,
+   "positives": 59,
+   "decls": 229
+  }
+ },
+ "con_nf": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8081654419407611,
+  "p_at_k": 0.08771929824561403,
+  "base_rate": 0.028528528528528527,
+  "positives": 57,
+  "decls": 1998,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7056138543163679,
+   "p_at_k": 0.017543859649122806,
+   "base_rate": 0.028528528528528527,
+   "positives": 57,
+   "decls": 1998
+  }
+ },
+ "toric": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.7125506072874493,
+  "p_at_k": 0.27586206896551724,
+  "base_rate": 0.10507246376811594,
+  "positives": 29,
+  "decls": 276,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.5536786262739076,
+   "p_at_k": 0.13793103448275862,
+   "base_rate": 0.10507246376811594,
+   "positives": 29,
+   "decls": 276
+  }
+ },
+ "chandra_furst_lipton": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.9142857142857143,
+  "p_at_k": 0.8,
+  "base_rate": 0.5172413793103449,
+  "positives": 15,
+  "decls": 29,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6761904761904762,
+   "p_at_k": 0.6,
+   "base_rate": 0.5172413793103449,
+   "positives": 15,
+   "decls": 29
+  }
+ },
+ "flt_regular": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.7311542991755007,
+  "p_at_k": 0.16666666666666666,
+  "base_rate": 0.04067796610169491,
+  "positives": 12,
+  "decls": 295,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.6463486454652532,
+   "p_at_k": 0.08333333333333333,
+   "base_rate": 0.04067796610169491,
+   "positives": 12,
+   "decls": 295
+  }
+ },
+ "iwasawa": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8287234042553191,
+  "p_at_k": 0.1,
+  "base_rate": 0.010526315789473684,
+  "positives": 10,
+  "decls": 950,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.5496808510638298,
+   "p_at_k": 0.0,
+   "base_rate": 0.010526315789473684,
+   "positives": 10,
+   "decls": 950
+  }
+ },
+ "bonn_analysis": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.8113636363636364,
+  "p_at_k": 0.125,
+  "base_rate": 0.020356234096692113,
+  "positives": 8,
+  "decls": 393,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7824675324675325,
+   "p_at_k": 0.25,
+   "base_rate": 0.020356234096692113,
+   "positives": 8,
+   "decls": 393
+  }
+ },
+ "clt": {
+  "heldout": true,
+  "trained_on": [
+   "PFR",
+   "Carleson",
+   "brownian_motion",
+   "testing_lower_bounds",
+   "sphere_packing",
+   "flt3",
+   "sphere_eversion",
+   "abc_exceptions",
+   "apap"
+  ],
+  "auroc": 0.6691729323308271,
+  "p_at_k": 0.2857142857142857,
+  "base_rate": 0.2692307692307692,
+  "positives": 7,
+  "decls": 26,
+  "baseline": {
+   "trained_on": [
+    "PFR",
+    "Carleson"
+   ],
+   "auroc": 0.7518796992481203,
+   "p_at_k": 0.42857142857142855,
+   "base_rate": 0.2692307692307692,
+   "positives": 7,
+   "decls": 26
+  }
+ }
+}

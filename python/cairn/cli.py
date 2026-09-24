@@ -113,6 +113,8 @@ def main(argv: list[str] | None = None) -> None:
     ps.add_argument("--project", required=True)
     ps.add_argument("--provenance", default="")
     ps.add_argument("-o", "--out", type=Path, required=True)
+    ps.add_argument("--external", action="store_true",
+                    help="also count blueprint nodes linked only through Mathlib (dumps made with CAIRN_EXTRA)")
 
     pk = sub.add_parser("key-model", help="train the key-declaration model on blueprint projects, save as JSON")
     pk.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
@@ -285,7 +287,7 @@ def main(argv: list[str] | None = None) -> None:
         from .formal import load_decls
         from .style import run as run_style
 
-        res = run_style(bp, load_decls(args.decls), args.out, args.project, args.provenance)
+        res = run_style(bp, load_decls(args.decls, external=args.external), args.out, args.project, args.provenance)
         f = res["fit"]
         print(f"best tau: {f['best_tau']['label']} ({f['best_tau']['tau']:+.2f}); "
               f"closest profile: {f['closest_profile']['label']}")

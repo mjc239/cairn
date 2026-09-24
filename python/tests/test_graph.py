@@ -179,3 +179,31 @@ def test_style_parameters_do_what_they_say():
     assert arrange(g, Style(0, roadmap="chapter"), rng)[-1] == P("g")  # ... and proved last
     assert arrange(g, Style(1), rng)[0] == S("g")
     assert arrange(g, Style(0, definitions="upfront"), rng)[0] == S("d")
+
+
+def test_open_swap_delta_is_exact_and_local_search_improves_mean_open():
+    from cairn.graph import _open_swap_delta, local_search_order, order_metrics, random_topological_order
+
+    rng = random.Random(3)
+    for t in range(25):
+        n = rng.randint(4, 30)
+        raw = nx.gnp_random_graph(n, 0.2, seed=t, directed=True)
+        g = nx.DiGraph([(f"n{u}", f"n{v}") for u, v in raw.edges if u < v])
+        g.add_nodes_from(f"n{i}" for i in range(n))
+        order = random_topological_order(g, rng)
+        total = order_metrics(g, order).mean_open * (n - 1)
+        preds = {v: list(g.predecessors(v)) for v in g}
+        succs = {v: set(g.successors(v)) for v in g}
+        pos = {v: i for i, v in enumerate(order)}
+        last = {v: max(pos[w] for w in succs[v]) for v in g if succs[v]}
+        for k in range(n - 1):
+            a, b = order[k], order[k + 1]
+            if g.has_edge(a, b):
+                continue
+            swapped = order[:k] + [b, a] + order[k + 2 :]
+            brute = order_metrics(g, swapped).mean_open * (n - 1) - total
+            assert abs(_open_swap_delta(preds, succs, pos, last, a, b) - brute) < 1e-9
+        better = local_search_order(g, order, objective="open")
+        p = {v: i for i, v in enumerate(better)}
+        assert all(p[u] < p[v] for u, v in g.edges)
+        assert order_metrics(g, better).mean_open <= order_metrics(g, order).mean_open + 1e-9

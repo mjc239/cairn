@@ -88,3 +88,11 @@ def test_transfer_key_nodes_runs_both_directions():
     res = transfer_key_nodes({"A": project("A", 30), "B": project("B", 24)})
     assert set(res) == {"A -> B", "B -> A"}
     assert all(0.0 <= r["auroc"] <= 1.0 for r in res.values())
+
+    from cairn.phase2 import leave_one_out_key_nodes
+
+    loo = leave_one_out_key_nodes({"A": project("A", 30), "B": project("B", 24), "C": project("C", 27)},
+                                  test_only={"D": project("D", 21)}, baseline=("A", "B"))
+    assert loo["C"]["trained_on"] == ["A", "B"] and not loo["C"]["heldout"]
+    assert loo["D"]["heldout"] and loo["D"]["trained_on"] == ["A", "B", "C"]
+    assert loo["A"]["baseline"]["trained_on"] == ["B"] and loo["A"]["positives"] == 10

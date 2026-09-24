@@ -105,7 +105,11 @@ def analyse_scope(
     repaired = nearest_topological_order(dag, human)
     jit_runs = [just_in_time_order(dag, rng) for _ in range(restarts)]
     greedy_runs = [greedy_min_open_order(dag, rng) for _ in range(restarts)]
-    optimised_runs = [local_search_order(dag, o) for o in greedy_runs]
+    # Local search on the reported load metric (mean open). "optimised" starts only from greedy orders, so τ against
+    # it compares the author with an independent optimum; "best_known" also searches from the author's own order and
+    # is the reference for how far an order is from the optimum.
+    optimised_runs = [local_search_order(dag, o, objective="open") for o in greedy_runs]
+    from_author = local_search_order(dag, repaired, objective="open")
 
     def mean_open(o):
         return order_metrics(dag, o).mean_open
@@ -113,6 +117,7 @@ def analyse_scope(
     jit = sorted(jit_runs, key=mean_open)[len(jit_runs) // 2]  # median run: JIT is a policy, not an optimiser
     greedy = min(greedy_runs, key=mean_open)
     optimised = min(optimised_runs, key=mean_open)
+    best_known = min([optimised, from_author], key=mean_open)
 
     # Metrics use the full graph so the human order is charged for its forward references.
     orders = {
@@ -121,12 +126,14 @@ def analyse_scope(
         "just_in_time": order_metrics(g, jit),
         "greedy_min_open": order_metrics(g, greedy),
         "optimised": order_metrics(g, optimised),
+        "best_known": order_metrics(g, best_known),
     }
     tau = {
         "human_repaired": kendall_tau(human, repaired),
         "just_in_time": kendall_tau(human, jit),
         "greedy_min_open": kendall_tau(human, greedy),
         "optimised": kendall_tau(human, optimised),
+        "best_known": kendall_tau(human, best_known),
     }
 
     random_metrics: dict[str, list[float]] = {m: [] for m in METRICS}
@@ -146,7 +153,7 @@ def analyse_scope(
 
     chapter = nx.get_node_attributes(g, "chapter")
     named = {"human": human, "human_repaired": repaired, "just_in_time": jit,
-             "greedy_min_open": greedy, "optimised": optimised}
+             "greedy_min_open": greedy, "optimised": optimised, "best_known": best_known}
     runs = {k: 1 + sum(chapter[a] != chapter[b] for a, b in zip(o, o[1:], strict=False)) for k, o in named.items()}
 
     return ScopeResult(
@@ -193,7 +200,8 @@ ORDER_LABELS = {
     "human_repaired": "Human, forward refs repaired",
     "just_in_time": "Just-in-time DFS (median run)",
     "greedy_min_open": "Greedy min-open (best run)",
-    "optimised": "Greedy + local search (best run)",
+    "optimised": "Greedy + local search on mean open (best run)",
+    "best_known": "Best known (local search also from the author's order)",
 }
 
 
@@ -226,7 +234,7 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
         "",
         "| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | "
         "Human: mean edge length (Kahn) | "
-        "Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |",
+        "Mean open: human / best known / uniform median | τ(human, optimised) | τ(human, random) |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for r in results:
@@ -234,7 +242,7 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
             f"| {r.name} | {r.n_nodes} | {len(r.forward_refs) / max(r.n_edges, 1):.0%} | "
             f"{r.percentile('human', 'mean_open'):.0%} | "
             f"{r.percentile('human', 'mean_open', 'uniform'):.0%} | {r.percentile('human', 'mean_edge_length'):.0%} | "
-            f"{r.orders['human'].mean_open:.1f} / {r.orders['optimised'].mean_open:.1f} / "
+            f"{r.orders['human'].mean_open:.1f} / {r.orders['best_known'].mean_open:.1f} / "
             f"{_quantile(r.uniform['mean_open'], 0.5):.1f} | {r.tau_vs_human['optimised']:+.2f} | "
             f"{statistics.fmean(r.random_tau_vs_human):+.2f} |"
         )
