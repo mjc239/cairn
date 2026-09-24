@@ -20,9 +20,12 @@
   "Clt"
  ],
  "build_minutes": 0.4,
+ "extractor": "extract_deps.lean",
  "decls": 26,
  "theorems": 22,
- "lean_resolved": 0.156,
- "nodes_linked": 7,
- "minutes": 3.0
+ "external_decls": 32,
+ "lean_resolved": 0.889,
+ "nodes_linked": 40,
+ "nodes_linked_external_only": 33,
+ "minutes": 3.2
 }
