@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 from collections import Counter
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -82,6 +83,32 @@ class KeyModel:
 # --- selection and folding -----------------------------------------------------------------------
 
 
+_BOILERPLATE_CLASSES = {"Decidable", "DecidablePred", "DecidableRel", "DecidableEq", "Inhabited", "Repr", "ToString",
+                        "Hashable", "BEq", "Coe", "CoeFun", "CoeSort", "CoeOut", "CoeTC", "CoeHead", "CoeTail",
+                        "FunLike", "DFunLike", "SetLike", "EquivLike", "Unique", "Nonempty", "Subsingleton"}
+
+
+def is_boilerplate_instance(d: FormalDecl) -> bool:
+    """An auto-named instance (``instDecidablePred…``) of a plumbing class: decidability, coercions, printing.
+
+    Such instances are never presented as results. Instances of mathematical classes (``instModule``,
+    ``instIsZLatticeE8Lattice``) stay eligible: blueprints do name those.
+    """
+    if not re.match(r"inst[A-Z0-9]", d.name.split(".")[-1]) or d.kind == "theorem":
+        return False
+    depth, cut = 0, 0
+    stmt = d.stmt_short or ""
+    for i, ch in enumerate(stmt):  # the conclusion follows the last top-level " : "
+        if ch in "([{":
+            depth += 1
+        elif ch in ")]}":
+            depth -= 1
+        if depth == 0 and stmt.startswith(" : ", i):
+            cut = i + 3
+    head = stmt[cut:].split(" ")[0].split(".")[-1]
+    return head in _BOILERPLATE_CLASSES
+
+
 def select(decls: dict[str, FormalDecl], fg: nx.DiGraph, scores: dict[str, float], detail: float = 0.15,
            count: int | None = None, roots: list[str] | None = None, define_used: bool = True,
            modules: list[str] | None = None) -> set[str]:
@@ -95,6 +122,7 @@ def select(decls: dict[str, FormalDecl], fg: nx.DiGraph, scores: dict[str, float
         if missing:
             raise KeyError(f"unknown root declarations: {missing}")
         universe &= set(roots).union(*(nx.ancestors(fg, r) for r in roots))
+    universe = {v for v in universe if not is_boilerplate_instance(decls[v])}
     ranked = sorted(universe, key=lambda v: (-scores.get(v, 0.0), v))
     k = count if count is not None else max(1, round(detail * len(universe)))
     named = set(ranked[:k]) | set(roots or [])

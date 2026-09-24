@@ -102,3 +102,18 @@ def test_select_presents_projections_with_their_structure():
     named = select(decls, fg, {"T": 1.0, "Pair.v": 0.5, "Pair": 0.1}, count=1)
     assert named == {"T", "Pair"}  # Pair.v is added for readability, then shown as part of Pair
     assert select(decls, fg, {"Pair.v": 1.0, "T": 0.5, "Pair": 0.1}, count=1, define_used=False) == {"Pair"}
+
+
+def test_boilerplate_instances_are_never_named():
+    from cairn.formal import FormalDecl
+    from cairn.outline import is_boilerplate_instance
+
+    def inst(name, stmt):
+        return FormalDecl(name, "def", "M", 1, stmt_short=stmt)
+
+    assert is_boilerplate_instance(inst("A.instDecidablePredForallFinLProp", "DecidablePred (LProp k m ε f A)"))
+    assert is_boilerplate_instance(inst("BohrSet.instCoeSort", "CoeSort (BohrSet G) (Type u_1)"))
+    assert is_boilerplate_instance(inst("X.instInhabited", "[Fintype G] : Inhabited (X G)"))
+    assert not is_boilerplate_instance(inst("SimpleProcess.instModule", "[OrderBot ι] : Module ℝ (SimpleProcess E)"))
+    assert not is_boilerplate_instance(inst("instIsZLatticeE8Lattice", "IsZLattice ℝ E8Lattice"))
+    assert not is_boilerplate_instance(inst("decidableThing", "DecidablePred p"))  # not auto-named

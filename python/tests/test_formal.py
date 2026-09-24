@@ -94,3 +94,12 @@ def test_structure_fields_and_projections(tmp_path):
     assert decls["Pair"].fields == ["π", "v"]
     assert decls["Two"].fields == []  # two constructors: not a structure
     assert projections(decls) == {"Pair.π": "Pair", "Pair.v": "Pair"}
+
+
+def test_restore_fintype():
+    from cairn.formal import restore_fintype
+
+    assert restore_fintype("(h : p) : q", "∀ {G} [inst : Fintype G], p → q") == "[Fintype G] (h : p) : q"
+    assert restore_fintype("x = 1", "∀ {G} [inst : Fintype G], x = 1") == "[Fintype G] : x = 1"
+    assert restore_fintype("[Fintype G] : x = 1", "[inst : Fintype G] → x = 1") == "[Fintype G] : x = 1"
+    assert restore_fintype("(h : p) : q", "∀ {G} [inst : AddCommGroup G], p → q") == "(h : p) : q"

@@ -85,8 +85,8 @@ def ppType (env : Environment) (e : Expr) : IO String := do
 /-- Short statement: explicit binders, meaningful instance assumptions and the conclusion, e.g.
 `[Finite G] (hA : A.Nonempty) : …`. Implicit binders are dropped, and so are instance binders that only
 equip a variable with structure (`[AddCommGroup G]`, `[MeasurableSpace Ω]`: a class applied to bound
-variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`)
-or mention other terms (`[Module (ZMod 2) G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
+variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`),
+mention other terms (`[Module (ZMod 2) G]`) or say a type is finite (`[Fintype G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
 def ppShort (env : Environment) (e : Expr) : IO String := do
   let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
   let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
@@ -98,7 +98,9 @@ def ppShort (env : Environment) (e : Expr) : IO String := do
         let name := if d.userName.hasMacroScopes then "_" else d.userName.toString
         parts := parts.push s!"({name} : {← Meta.ppExpr d.type})"
       else if d.binderInfo.isInstImplicit then
-        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar)
+        -- `[Fintype G]` is data but says G is finite, so it is kept like `[Finite G]`
+        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar) &&
+          d.type.getAppFn.constName? != some `Fintype
         unless structural do
           parts := parts.push s!"[{← Meta.ppExpr d.type}]"
     let concl := toString (← Meta.ppExpr body)
