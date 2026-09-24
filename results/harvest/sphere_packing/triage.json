@@ -1,0 +1,31 @@
+{
+ "name": "sphere_packing",
+ "repo": "thefundamentaltheor3m/Sphere-Packing-Lean",
+ "status": "ok",
+ "stage": "done",
+ "commit": "9b2ddfc66330f9da18cc8feb0dca2dc01bfa0a85",
+ "commit_date": "2026-09-01",
+ "toolchain": "leanprover/lean4:v4.32.0",
+ "mathlib": "81a5d257c8e4",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 141,
+ "uses_edges": 246,
+ "chapters": 11,
+ "lean_nodes": 91,
+ "leanok_nodes": 92,
+ "libs": [
+  "SpherePacking"
+ ],
+ "build_minutes": 2.6,
+ "extractor": "extract_deps.lean",
+ "decls": 1466,
+ "theorems": 1163,
+ "external_decls": 22,
+ "lean_resolved": 1.0,
+ "nodes_linked": 91,
+ "nodes_linked_external_only": 18,
+ "minutes": 5.6
+}

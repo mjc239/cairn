@@ -1,0 +1,2283 @@
+{
+  "project": "sphere_packing",
+  "provenance": "thefundamentaltheor3m/Sphere-Packing-Lean @ 9b2ddfc66330 (2026-09-01), Lean leanprover/lean4:v4.32.0",
+  "stats": {
+    "project_decls": 1466,
+    "project_decls_by_kind": {
+      "axiom": 2,
+      "def": 294,
+      "inductive": 3,
+      "opaque": 4,
+      "theorem": 1163
+    },
+    "external_decls": 22,
+    "formal_edges": 5315,
+    "blueprint_nodes": 141,
+    "blueprint_nodes_with_formal_decl": 91,
+    "lean_names_resolved": 122,
+    "lean_names_missing": {},
+    "coverage": 1.0,
+    "labelled_decls": 122,
+    "unlabelled_theorems": 1098,
+    "edges": {
+      "author_edges": 123,
+      "lean_edges": 315,
+      "author_direct_in_lean": 97,
+      "author_implied_transitively": 2,
+      "author_absent_from_lean": [
+        [
+          "E8-defs-equivalent",
+          "E8-Lattice"
+        ],
+        [
+          "E8Packing",
+          "E8Packing-covol"
+        ],
+        [
+          "def:E2",
+          "def:FG-definition"
+        ],
+        [
+          "def:E2",
+          "def:serre-der"
+        ],
+        [
+          "def:E2",
+          "lemma:E2-transform-S"
+        ],
+        [
+          "def:E2",
+          "lemma:E2-transform-general"
+        ],
+        [
+          "def:E2",
+          "prop:a-fourier"
+        ],
+        [
+          "def:E2",
+          "thm:serre-der-equiv-action"
+        ],
+        [
+          "def:Ek",
+          "lemma:Ek-Fourier"
+        ],
+        [
+          "def:Ek",
+          "lemma:Ek-is-modular-form"
+        ],
+        [
+          "def:Mk",
+          "lemma:Ek-is-modular-form"
+        ],
+        [
+          "def:Mk",
+          "thm:serre-der-modularity"
+        ],
+        [
+          "def:a-definition",
+          "prop:a-fourier"
+        ],
+        [
+          "def:a-definition",
+          "prop:a-schwartz"
+        ],
+        [
+          "def:disc-definition",
+          "thm:lvl1_dims"
+        ],
+        [
+          "lemma:E2-transform-S",
+          "lemma:E2-transform-general"
+        ],
+        [
+          "lemma:Ek-Fourier",
+          "prop:a-fourier"
+        ],
+        [
+          "lemma:Ek-is-modular-form",
+          "lemma:Qlim"
+        ],
+        [
+          "lemma:automorphy-factor-chain-rule",
+          "lemma:slash-operator-chain-rule"
+        ],
+        [
+          "lemma:disc-E4E6",
+          "thm:lvl1_dims"
+        ],
+        [
+          "lemma:theta-modular",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "lemma:theta-slash-invariant",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "thm:lvl1_dims",
+          "thm:dim-mf-general-level"
+        ],
+        [
+          "thm:serre-der-prod-rule",
+          "lemma:FG-de"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "E8-Lattice",
+          "E8Packing-density"
+        ],
+        [
+          "E8-Lattice",
+          "instDiscreteE8Lattice"
+        ],
+        [
+          "E8-Lattice",
+          "instLatticeE8"
+        ],
+        [
+          "E8-Matrix",
+          "E8-vector-norms"
+        ],
+        [
+          "E8-Matrix",
+          "E8Packing-covol"
+        ],
+        [
+          "E8-Matrix",
+          "E8Packing-density"
+        ],
+        [
+          "E8-Matrix",
+          "instLatticeE8"
+        ],
+        [
+          "E8-Set",
+          "E8-Matrix"
+        ],
+        [
+          "E8-Set",
+          "E8-is-basis"
+        ],
+        [
+          "E8-Set",
+          "E8-vector-norms"
+        ],
+        [
+          "E8-Set",
+          "E8Packing"
+        ],
+        [
+          "E8-Set",
+          "E8Packing-covol"
+        ],
+        [
+          "E8-Set",
+          "E8Packing-density"
+        ],
+        [
+          "E8-Set",
+          "instDiscreteE8Lattice"
+        ],
+        [
+          "E8-Set",
+          "instLatticeE8"
+        ],
+        [
+          "E8-defs-equivalent",
+          "E8Packing-density"
+        ],
+        [
+          "E8-is-basis",
+          "E8Packing-covol"
+        ],
+        [
+          "E8-is-basis",
+          "E8Packing-density"
+        ],
+        [
+          "E8Packing",
+          "E8Packing-density"
+        ],
+        [
+          "E8Packing",
+          "MainTheorem"
+        ],
+        [
+          "IsZLattice",
+          "E8Packing"
+        ],
+        [
+          "IsZLattice",
+          "E8Packing-density"
+        ],
+        [
+          "IsZLattice",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "IsZLattice",
+          "instLatticeE8"
+        ],
+        [
+          "IsZLattice",
+          "lemma:lattice-points-bound"
+        ],
+        [
+          "IsZLattice",
+          "lemma:periodic-points-bounds"
+        ],
+        [
+          "IsZLattice",
+          "theorem:psp-density"
+        ],
+        [
+          "IsZLattice",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "IsZLattice",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "IsZLattice",
+          "thm:Poisson-summation-formula"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "E8Packing"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "E8Packing-density"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "MainTheorem"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "lemma:lattice-points-bound"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "lemma:periodic-points-bounds"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "theorem:psp-density"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "SpherePacking",
+          "E8Packing"
+        ],
+        [
+          "SpherePacking",
+          "E8Packing-density"
+        ],
+        [
+          "SpherePacking",
+          "MainTheorem"
+        ],
+        [
+          "SpherePacking",
+          "SpherePacking.balls"
+        ],
+        [
+          "SpherePacking",
+          "SpherePacking.constant_eq_constant_normalized"
+        ],
+        [
+          "SpherePacking",
+          "SpherePacking.scale_density"
+        ],
+        [
+          "SpherePacking",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "SpherePacking",
+          "SpherePackingConstant"
+        ],
+        [
+          "SpherePacking",
+          "def:Periodic-sphere-packing-constant"
+        ],
+        [
+          "SpherePacking",
+          "lemma:periodic-points-bounds"
+        ],
+        [
+          "SpherePacking",
+          "theorem:psp-density"
+        ],
+        [
+          "SpherePacking",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "SpherePacking",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "SpherePacking.balls",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "SpherePacking.balls",
+          "lemma:sp-finite-density-bound"
+        ],
+        [
+          "SpherePacking.density",
+          "E8Packing-density"
+        ],
+        [
+          "SpherePacking.density",
+          "MainTheorem"
+        ],
+        [
+          "SpherePacking.density",
+          "SpherePacking.scale_density"
+        ],
+        [
+          "SpherePacking.density",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "SpherePacking.finiteDensity",
+          "SpherePacking.scale_density"
+        ],
+        [
+          "SpherePacking.finiteDensity",
+          "theorem:psp-density"
+        ],
+        [
+          "SpherePacking.scale",
+          "SpherePacking.constant_eq_constant_normalized"
+        ],
+        [
+          "SpherePacking.scale",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "SpherePacking.scale_density",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "SpherePackingConstant",
+          "MainTheorem"
+        ],
+        [
+          "SpherePackingConstant",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "SpherePackingConstant",
+          "thm:periodic-packing-optimal"
+        ],
+        [
+          "cor:disc-nonvanishing",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "cor:disc-pos",
+          "prop:Qdec"
+        ],
+        [
+          "cor:theta-pos",
+          "prop:Qdec"
+        ],
+        [
+          "def:E2",
+          "lemma:Qlim"
+        ],
+        [
+          "def:E2",
+          "prop:Qdec"
+        ],
+        [
+          "def:Ek",
+          "def:a-definition"
+        ],
+        [
+          "def:Ek",
+          "lemma:F-G-pos"
+        ],
+        [
+          "def:Ek",
+          "lemma:FG-de"
+        ],
+        [
+          "def:Ek",
+          "lemma:Qlim"
+        ],
+        [
+          "def:Ek",
+          "prop:Qdec"
+        ],
+        [
+          "def:Ek",
+          "prop:a-fourier"
+        ],
+        [
+          "def:Ek",
+          "prop:a-schwartz"
+        ],
+        [
+          "def:Ek",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:FG-definition",
+          "cor:ineqAnew"
+        ],
+        [
+          "def:FG-definition",
+          "cor:ineqBnew"
+        ],
+        [
+          "def:FG-definition",
+          "lemma:F-G-pos"
+        ],
+        [
+          "def:FG-definition",
+          "lemma:FG-de"
+        ],
+        [
+          "def:FG-definition",
+          "lemma:Qlim"
+        ],
+        [
+          "def:FG-definition",
+          "prop:Qdec"
+        ],
+        [
+          "def:Fourier-Transform",
+          "lemma:theta-transform-S-T"
+        ],
+        [
+          "def:Fourier-Transform",
+          "prop:a-fourier"
+        ],
+        [
+          "def:Fourier-Transform",
+          "prop:b-fourier"
+        ],
+        [
+          "def:Fourier-Transform",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "def:Gamma-generators",
+          "cor:theta-pos"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:E2-transform-S"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:E2-transform-general"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:FG-de"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:Qlim"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:dedekind_eta_transformation"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:disc-cuspform"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:theta-slash-invariant"
+        ],
+        [
+          "def:Gamma-generators",
+          "lemma:theta-transform-S-T"
+        ],
+        [
+          "def:Gamma-generators",
+          "prop:b-fourier"
+        ],
+        [
+          "def:Gamma-generators",
+          "prop:b-schwartz"
+        ],
+        [
+          "def:Gamma-generators",
+          "thm:lvl1_dims"
+        ],
+        [
+          "def:Gamma-generators",
+          "thm:nonpos_wt"
+        ],
+        [
+          "def:Gamma-generators",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:H2-H3-H4",
+          "cor:theta-pos"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:F-G-pos"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:FG-de"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:Qlim"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:theta-modular"
+        ],
+        [
+          "def:H2-H3-H4",
+          "lemma:theta-slash-invariant"
+        ],
+        [
+          "def:H2-H3-H4",
+          "prop:Qdec"
+        ],
+        [
+          "def:Mk",
+          "def:Ek"
+        ],
+        [
+          "def:Mk",
+          "def:FG-definition"
+        ],
+        [
+          "def:Mk",
+          "def:a-definition"
+        ],
+        [
+          "def:Mk",
+          "lemma:Ek-Fourier"
+        ],
+        [
+          "def:Mk",
+          "lemma:F-G-pos"
+        ],
+        [
+          "def:Mk",
+          "lemma:FG-de"
+        ],
+        [
+          "def:Mk",
+          "lemma:Qlim"
+        ],
+        [
+          "def:Mk",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "def:Mk",
+          "lemma:theta-modular"
+        ],
+        [
+          "def:Mk",
+          "prop:Qdec"
+        ],
+        [
+          "def:Mk",
+          "prop:a-fourier"
+        ],
+        [
+          "def:Mk",
+          "prop:a-schwartz"
+        ],
+        [
+          "def:Mk",
+          "prop:b-fourier"
+        ],
+        [
+          "def:Mk",
+          "prop:b-schwartz"
+        ],
+        [
+          "def:Mk",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:Periodic-sphere-packing-constant",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:a-fourier"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:a-schwartz"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:a0"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:b-fourier"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:b-schwartz"
+        ],
+        [
+          "def:Schwartz-Space",
+          "prop:b0"
+        ],
+        [
+          "def:Schwartz-Space",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "def:Schwartz-Space",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "def:automorphy-factor",
+          "cor:theta-pos"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:E2-transform-S"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:E2-transform-general"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:FG-de"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:Qlim"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:dedekind_eta_transformation"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:disc-cuspform"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:slash-negI-even-weight"
+        ],
+        [
+          "def:automorphy-factor",
+          "lemma:theta-transform-S-T"
+        ],
+        [
+          "def:automorphy-factor",
+          "thm:nonpos_wt"
+        ],
+        [
+          "def:automorphy-factor",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:automorphy-factor",
+          "thm:serre-der-equiv-action"
+        ],
+        [
+          "def:dedekind_eta",
+          "cor:disc-nonvanishing"
+        ],
+        [
+          "def:dedekind_eta",
+          "lemma:FG-de"
+        ],
+        [
+          "def:dedekind_eta",
+          "lemma:Qlim"
+        ],
+        [
+          "def:dedekind_eta",
+          "lemma:disc-cuspform"
+        ],
+        [
+          "def:dedekind_eta",
+          "prop:Qdec"
+        ],
+        [
+          "def:dedekind_eta",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:derivative",
+          "lemma:F-G-pos"
+        ],
+        [
+          "def:derivative",
+          "lemma:FG-de"
+        ],
+        [
+          "def:derivative",
+          "prop:Qdec"
+        ],
+        [
+          "def:derivative",
+          "thm:ramanujan-formula"
+        ],
+        [
+          "def:derivative",
+          "thm:serre-der-equiv-action"
+        ],
+        [
+          "def:derivative",
+          "thm:serre-der-prod-rule"
+        ],
+        [
+          "def:disc-definition",
+          "def:a-definition"
+        ],
+        [
+          "def:disc-definition",
+          "lemma:FG-de"
+        ],
+        [
+          "def:disc-definition",
+          "prop:Qdec"
+        ],
+        [
+          "def:disc-definition",
+          "prop:a-fourier"
+        ],
+        [
+          "def:disc-definition",
+          "prop:a-schwartz"
+        ],
+        [
+          "def:dual-lattice",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "def:serre-der",
+          "lemma:FG-de"
+        ],
+        [
+          "def:serre-der",
+          "prop:Qdec"
+        ],
+        [
+          "def:th00-th01-th10",
+          "cor:theta-pos"
+        ],
+        [
+          "def:th00-th01-th10",
+          "lemma:FG-de"
+        ],
+        [
+          "def:th00-th01-th10",
+          "lemma:Qlim"
+        ],
+        [
+          "def:th00-th01-th10",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "def:th00-th01-th10",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "def:th00-th01-th10",
+          "lemma:theta-modular"
+        ],
+        [
+          "def:th00-th01-th10",
+          "prop:Qdec"
+        ],
+        [
+          "instDiscreteE8Lattice",
+          "E8Packing"
+        ],
+        [
+          "instDiscreteE8Lattice",
+          "E8Packing-density"
+        ],
+        [
+          "instLatticeE8",
+          "E8Packing"
+        ],
+        [
+          "instLatticeE8",
+          "E8Packing-density"
+        ],
+        [
+          "lemma:F-G-pos",
+          "prop:Qdec"
+        ],
+        [
+          "lemma:FG-de",
+          "prop:Qdec"
+        ],
+        [
+          "lemma:Fourier-transform-is-automorphism",
+          "prop:a-fourier"
+        ],
+        [
+          "lemma:Fourier-transform-is-automorphism",
+          "prop:b-fourier"
+        ],
+        [
+          "lemma:Gamma-1-generators",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:Gamma-1-generators",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "lemma:der-q-series",
+          "lemma:F-G-pos"
+        ],
+        [
+          "lemma:der-q-series",
+          "prop:Qdec"
+        ],
+        [
+          "lemma:disc-E4E6",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:disc-E4E6",
+          "prop:Qdec"
+        ],
+        [
+          "lemma:disc-cuspform",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:disc-cuspform",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "lemma:jacobi-identity",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:slash-negI-even-weight",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:E2-transform-S"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:E2-transform-general"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "lemma:slash-operator-chain-rule",
+          "lemma:theta-transform-S-T"
+        ],
+        [
+          "lemma:theta-modular",
+          "prop:b-fourier"
+        ],
+        [
+          "lemma:theta-modular",
+          "prop:b-schwartz"
+        ],
+        [
+          "lemma:theta-slash-invariant",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:theta-slash-invariant",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "lemma:theta-slash-invariant",
+          "prop:Qdec"
+        ],
+        [
+          "lemma:theta-transform-S-T",
+          "lemma:FG-de"
+        ],
+        [
+          "lemma:theta-transform-S-T",
+          "lemma:jacobi-identity"
+        ],
+        [
+          "lemma:theta-transform-S-T",
+          "lemma:theta-bounded-im-infty"
+        ],
+        [
+          "prop:a-schwartz",
+          "prop:a0"
+        ],
+        [
+          "prop:b-schwartz",
+          "prop:b0"
+        ],
+        [
+          "theorem:psp-density",
+          "thm:Cohn-Elkies-general"
+        ],
+        [
+          "theorem:psp-density",
+          "thm:Cohn-Elkies-periodic"
+        ],
+        [
+          "thm:nonpos_wt",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "thm:nonpos_wt",
+          "thm:lvl1_dims"
+        ],
+        [
+          "thm:serre-der-equiv-action",
+          "lemma:FG-de"
+        ],
+        [
+          "thm:serre-der-equiv-action",
+          "thm:ramanujan-formula"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 155,
+    "unreported_top_sources": {
+      "def:Gamma-generators": 17,
+      "def:Mk": 15,
+      "SpherePacking": 13,
+      "def:automorphy-factor": 12,
+      "IsZLattice": 10,
+      "PeriodicSpherePacking": 9,
+      "def:H2-H3-H4": 9,
+      "E8-Set": 8,
+      "def:Ek": 8,
+      "def:Schwartz-Space": 8
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 91,
+      "n_edges": 123,
+      "forward_refs": [
+        [
+          "def:dedekind_eta",
+          "def:disc-definition"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 91,
+          "forward_refs": 1,
+          "cutwidth": 25,
+          "mean_cut": 11.066666666666666,
+          "max_open": 14,
+          "mean_open": 7.455555555555556,
+          "mean_edge_length": 8.097560975609756
+        },
+        "human_repaired": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 25,
+          "mean_cut": 10.855555555555556,
+          "max_open": 14,
+          "mean_open": 7.411111111111111,
+          "mean_edge_length": 7.943089430894309
+        },
+        "just_in_time": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 17.08888888888889,
+          "max_open": 18,
+          "mean_open": 11.1,
+          "mean_edge_length": 12.504065040650406
+        },
+        "greedy_min_open": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 32,
+          "mean_cut": 19.2,
+          "max_open": 14,
+          "mean_open": 9.577777777777778,
+          "mean_edge_length": 14.048780487804878
+        },
+        "optimised": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 7.877777777777778,
+          "max_open": 12,
+          "mean_open": 5.944444444444445,
+          "mean_edge_length": 5.764227642276423
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.998046398046398,
+        "just_in_time": 0.02710622710622712,
+        "greedy_min_open": 0.25616605616605614,
+        "optimised": -0.18192918192918195
+      },
+      "random": {
+        "mean_open": {
+          "mean": 18.322166666666668,
+          "p05": 16.633333333333333,
+          "p50": 18.344444444444445,
+          "p95": 20.244444444444444
+        },
+        "max_open": {
+          "mean": 30.06,
+          "p05": 27,
+          "p50": 30,
+          "p95": 34
+        },
+        "mean_cut": {
+          "mean": 28.439722222222223,
+          "p05": 25.233333333333334,
+          "p50": 28.77777777777778,
+          "p95": 31.41111111111111
+        },
+        "cutwidth": {
+          "mean": 47.075,
+          "p05": 41,
+          "p50": 47,
+          "p95": 54
+        },
+        "mean_edge_length": {
+          "mean": 20.809552845528454,
+          "p05": 18.463414634146343,
+          "p50": 21.056910569105693,
+          "p95": 22.983739837398375
+        }
+      },
+      "random_tau_vs_human_mean": 0.14272039072039072,
+      "uniform": {
+        "mean_open": {
+          "p05": 19.18888888888889,
+          "p50": 21.08888888888889,
+          "p95": 23.0
+        },
+        "max_open": {
+          "p05": 30,
+          "p50": 33,
+          "p95": 37
+        },
+        "mean_cut": {
+          "p05": 30.955555555555556,
+          "p50": 33.86666666666667,
+          "p95": 36.37777777777778
+        },
+        "cutwidth": {
+          "p05": 47,
+          "p50": 53,
+          "p95": 58
+        },
+        "mean_edge_length": {
+          "p05": 22.650406504065042,
+          "p50": 24.78048780487805,
+          "p95": 26.617886178861788
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 11,
+        "just_in_time": 36,
+        "greedy_min_open": 40,
+        "optimised": 36
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 91,
+      "n_edges": 315,
+      "forward_refs": [
+        [
+          "SpherePacking",
+          "SpherePacking.balls"
+        ],
+        [
+          "IsZLattice",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "PeriodicSpherePacking",
+          "SpherePacking.scale_finiteDensity"
+        ],
+        [
+          "E8Packing",
+          "MainTheorem"
+        ],
+        [
+          "def:dedekind_eta",
+          "def:disc-definition"
+        ],
+        [
+          "cor:disc-nonvanishing",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "thm:nonpos_wt",
+          "lemma:disc-E4E6"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 91,
+          "forward_refs": 7,
+          "cutwidth": 97,
+          "mean_cut": 55.75555555555555,
+          "max_open": 30,
+          "mean_open": 16.41111111111111,
+          "mean_edge_length": 15.93015873015873
+        },
+        "human_repaired": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 97,
+          "mean_cut": 56.9,
+          "max_open": 30,
+          "mean_open": 16.211111111111112,
+          "mean_edge_length": 16.257142857142856
+        },
+        "just_in_time": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 147,
+          "mean_cut": 84.93333333333334,
+          "max_open": 37,
+          "mean_open": 21.622222222222224,
+          "mean_edge_length": 24.266666666666666
+        },
+        "greedy_min_open": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 168,
+          "mean_cut": 99.85555555555555,
+          "max_open": 40,
+          "mean_open": 23.6,
+          "mean_edge_length": 28.530158730158732
+        },
+        "optimised": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 92,
+          "mean_cut": 43.022222222222226,
+          "max_open": 27,
+          "mean_open": 12.766666666666667,
+          "mean_edge_length": 12.292063492063493
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9848595848595849,
+        "just_in_time": 0.03443223443223442,
+        "greedy_min_open": 0.44517704517704515,
+        "optimised": -0.2214896214896216
+      },
+      "random": {
+        "mean_open": {
+          "mean": 30.856166666666667,
+          "p05": 27.955555555555556,
+          "p50": 30.966666666666665,
+          "p95": 33.43333333333333
+        },
+        "max_open": {
+          "mean": 51.525,
+          "p05": 46,
+          "p50": 52,
+          "p95": 56
+        },
+        "mean_cut": {
+          "mean": 119.1293888888889,
+          "p05": 109.24444444444444,
+          "p50": 119.58888888888889,
+          "p95": 129.17777777777778
+        },
+        "cutwidth": {
+          "mean": 178.955,
+          "p05": 163,
+          "p50": 179,
+          "p95": 195
+        },
+        "mean_edge_length": {
+          "mean": 34.036968253968254,
+          "p05": 31.212698412698412,
+          "p50": 34.16825396825397,
+          "p95": 36.907936507936505
+        }
+      },
+      "random_tau_vs_human_mean": 0.2003833943833944,
+      "uniform": {
+        "mean_open": {
+          "p05": 31.144444444444446,
+          "p50": 32.8,
+          "p95": 34.422222222222224
+        },
+        "max_open": {
+          "p05": 50,
+          "p50": 54,
+          "p95": 57
+        },
+        "mean_cut": {
+          "p05": 126.1,
+          "p50": 131.0222222222222,
+          "p95": 136.95555555555555
+        },
+        "cutwidth": {
+          "p05": 184,
+          "p50": 194,
+          "p95": 204
+        },
+        "mean_edge_length": {
+          "p05": 36.02857142857143,
+          "p50": 37.43492063492064,
+          "p95": 39.13015873015873
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.005,
+          "cutwidth": 0.1225,
+          "mean_edge_length": 0.005
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 14,
+        "just_in_time": 45,
+        "greedy_min_open": 53,
+        "optimised": 43
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 91,
+      "n_edges": 111,
+      "forward_refs": [
+        [
+          "SpherePacking",
+          "SpherePacking.balls"
+        ],
+        [
+          "cor:disc-nonvanishing",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "thm:nonpos_wt",
+          "lemma:disc-E4E6"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 91,
+          "forward_refs": 3,
+          "cutwidth": 27,
+          "mean_cut": 15.322222222222223,
+          "max_open": 17,
+          "mean_open": 7.711111111111111,
+          "mean_edge_length": 12.423423423423424
+        },
+        "human_repaired": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 15.477777777777778,
+          "max_open": 17,
+          "mean_open": 7.666666666666667,
+          "mean_edge_length": 12.54954954954955
+        },
+        "just_in_time": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 34,
+          "mean_cut": 18.122222222222224,
+          "max_open": 17,
+          "mean_open": 9.088888888888889,
+          "mean_edge_length": 14.693693693693694
+        },
+        "greedy_min_open": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 37,
+          "mean_cut": 16.744444444444444,
+          "max_open": 23,
+          "mean_open": 8.3,
+          "mean_edge_length": 13.576576576576576
+        },
+        "optimised": {
+          "n": 91,
+          "forward_refs": 0,
+          "cutwidth": 25,
+          "mean_cut": 8.022222222222222,
+          "max_open": 12,
+          "mean_open": 4.111111111111111,
+          "mean_edge_length": 6.504504504504505
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.998046398046398,
+        "just_in_time": -0.25518925518925517,
+        "greedy_min_open": 0.22246642246642245,
+        "optimised": 0.3181929181929182
+      },
+      "random": {
+        "mean_open": {
+          "mean": 16.103833333333334,
+          "p05": 13.755555555555556,
+          "p50": 16.07777777777778,
+          "p95": 18.266666666666666
+        },
+        "max_open": {
+          "mean": 28.675,
+          "p05": 24,
+          "p50": 29,
+          "p95": 32
+        },
+        "mean_cut": {
+          "mean": 32.241166666666665,
+          "p05": 26.866666666666667,
+          "p50": 32.44444444444444,
+          "p95": 37.077777777777776
+        },
+        "cutwidth": {
+          "mean": 52.675,
+          "p05": 46,
+          "p50": 53,
+          "p95": 60
+        },
+        "mean_edge_length": {
+          "mean": 26.14148648648649,
+          "p05": 21.783783783783782,
+          "p50": 26.306306306306308,
+          "p95": 30.063063063063062
+        }
+      },
+      "random_tau_vs_human_mean": 0.17515262515262514,
+      "uniform": {
+        "mean_open": {
+          "p05": 16.677777777777777,
+          "p50": 18.288888888888888,
+          "p95": 19.855555555555554
+        },
+        "max_open": {
+          "p05": 27,
+          "p50": 31,
+          "p95": 34
+        },
+        "mean_cut": {
+          "p05": 35.855555555555554,
+          "p50": 39.4,
+          "p95": 42.27777777777778
+        },
+        "cutwidth": {
+          "p05": 50,
+          "p50": 56,
+          "p95": 60
+        },
+        "mean_edge_length": {
+          "p05": 29.07207207207207,
+          "p50": 31.945945945945947,
+          "p95": 34.27927927927928
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 11,
+        "just_in_time": 52,
+        "greedy_min_open": 45,
+        "optimised": 43
+      }
+    },
+    {
+      "name": "Lean: E8-defs",
+      "n_nodes": 11,
+      "n_edges": 34,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 14.6,
+          "max_open": 9,
+          "mean_open": 5.3,
+          "mean_edge_length": 4.294117647058823
+        },
+        "human_repaired": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 14.6,
+          "max_open": 9,
+          "mean_open": 5.3,
+          "mean_edge_length": 4.294117647058823
+        },
+        "just_in_time": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 18,
+          "mean_cut": 14.1,
+          "max_open": 9,
+          "mean_open": 5.3,
+          "mean_edge_length": 4.147058823529412
+        },
+        "greedy_min_open": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 15.2,
+          "max_open": 9,
+          "mean_open": 5.3,
+          "mean_edge_length": 4.470588235294118
+        },
+        "optimised": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 16,
+          "mean_cut": 13.6,
+          "max_open": 9,
+          "mean_open": 5.4,
+          "mean_edge_length": 4.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.8545454545454545,
+        "greedy_min_open": 0.8909090909090909,
+        "optimised": 0.7818181818181819
+      },
+      "random": {
+        "mean_open": {
+          "mean": 5.3925,
+          "p05": 5.3,
+          "p50": 5.4,
+          "p95": 5.4
+        },
+        "max_open": {
+          "mean": 9.0,
+          "p05": 9,
+          "p50": 9,
+          "p95": 9
+        },
+        "mean_cut": {
+          "mean": 14.742,
+          "p05": 13.8,
+          "p50": 14.8,
+          "p95": 15.2
+        },
+        "cutwidth": {
+          "mean": 18.37,
+          "p05": 16,
+          "p50": 19,
+          "p95": 19
+        },
+        "mean_edge_length": {
+          "mean": 4.3358823529411765,
+          "p05": 4.0588235294117645,
+          "p50": 4.352941176470588,
+          "p95": 4.470588235294118
+        }
+      },
+      "random_tau_vs_human_mean": 0.7656363636363637,
+      "uniform": {
+        "mean_open": {
+          "p05": 5.3,
+          "p50": 5.4,
+          "p95": 5.4
+        },
+        "max_open": {
+          "p05": 9,
+          "p50": 9,
+          "p95": 9
+        },
+        "mean_cut": {
+          "p05": 14.1,
+          "p50": 14.9,
+          "p95": 15.3
+        },
+        "cutwidth": {
+          "p05": 17,
+          "p50": 19,
+          "p95": 19
+        },
+        "mean_edge_length": {
+          "p05": 4.147058823529412,
+          "p50": 4.382352941176471,
+          "p95": 4.5
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0375,
+          "max_open": 0.5,
+          "mean_cut": 0.23,
+          "cutwidth": 0.7025,
+          "mean_edge_length": 0.23
+        },
+        "human_repaired": {
+          "mean_open": 0.0375,
+          "max_open": 0.5,
+          "mean_cut": 0.23,
+          "cutwidth": 0.7025,
+          "mean_edge_length": 0.23
+        },
+        "just_in_time": {
+          "mean_open": 0.0375,
+          "max_open": 0.5,
+          "mean_cut": 0.11,
+          "cutwidth": 0.28,
+          "mean_edge_length": 0.11
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0375,
+          "max_open": 0.5,
+          "mean_cut": 0.9375,
+          "cutwidth": 0.7025,
+          "mean_edge_length": 0.9375
+        },
+        "optimised": {
+          "mean_open": 0.5375,
+          "max_open": 0.5,
+          "mean_cut": 0.0175,
+          "cutwidth": 0.035,
+          "mean_edge_length": 0.0175
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.1175,
+          "max_open": 0.5,
+          "mean_cut": 0.2875,
+          "cutwidth": 0.75,
+          "mean_edge_length": 0.2875
+        },
+        "human_repaired": {
+          "mean_open": 0.1175,
+          "max_open": 0.5,
+          "mean_cut": 0.2875,
+          "cutwidth": 0.75,
+          "mean_edge_length": 0.2875
+        },
+        "just_in_time": {
+          "mean_open": 0.1175,
+          "max_open": 0.5,
+          "mean_cut": 0.065,
+          "cutwidth": 0.29,
+          "mean_edge_length": 0.065
+        },
+        "greedy_min_open": {
+          "mean_open": 0.1175,
+          "max_open": 0.5,
+          "mean_cut": 0.885,
+          "cutwidth": 0.75,
+          "mean_edge_length": 0.885
+        },
+        "optimised": {
+          "mean_open": 0.6175,
+          "max_open": 0.5,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.0225,
+          "mean_edge_length": 0.0075
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: modular-forms",
+      "n_nodes": 39,
+      "n_edges": 93,
+      "forward_refs": [
+        [
+          "def:dedekind_eta",
+          "def:disc-definition"
+        ],
+        [
+          "cor:disc-nonvanishing",
+          "lemma:disc-E4E6"
+        ],
+        [
+          "thm:nonpos_wt",
+          "lemma:disc-E4E6"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 39,
+          "forward_refs": 3,
+          "cutwidth": 45,
+          "mean_cut": 28.263157894736842,
+          "max_open": 13,
+          "mean_open": 8.736842105263158,
+          "mean_edge_length": 11.548387096774194
+        },
+        "human_repaired": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 44,
+          "mean_cut": 27.894736842105264,
+          "max_open": 14,
+          "mean_open": 8.631578947368421,
+          "mean_edge_length": 11.397849462365592
+        },
+        "just_in_time": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 51,
+          "mean_cut": 30.5,
+          "max_open": 14,
+          "mean_open": 8.421052631578947,
+          "mean_edge_length": 12.46236559139785
+        },
+        "greedy_min_open": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 60,
+          "mean_cut": 30.0,
+          "max_open": 13,
+          "mean_open": 7.7631578947368425,
+          "mean_edge_length": 12.258064516129032
+        },
+        "optimised": {
+          "n": 39,
+          "forward_refs": 0,
+          "cutwidth": 42,
+          "mean_cut": 20.68421052631579,
+          "max_open": 12,
+          "mean_open": 6.157894736842105,
+          "mean_edge_length": 8.451612903225806
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9811066126855601,
+        "just_in_time": 0.1632928475033738,
+        "greedy_min_open": 0.1524966261808367,
+        "optimised": 0.20107962213225372
+      },
+      "random": {
+        "mean_open": {
+          "mean": 11.028684210526317,
+          "p05": 9.68421052631579,
+          "p50": 11.078947368421053,
+          "p95": 12.210526315789474
+        },
+        "max_open": {
+          "mean": 19.215,
+          "p05": 17,
+          "p50": 19,
+          "p95": 22
+        },
+        "mean_cut": {
+          "mean": 37.18065789473684,
+          "p05": 32.28947368421053,
+          "p50": 37.526315789473685,
+          "p95": 41.68421052631579
+        },
+        "cutwidth": {
+          "mean": 57.99,
+          "p05": 50,
+          "p50": 58,
+          "p95": 65
+        },
+        "mean_edge_length": {
+          "mean": 15.19209677419355,
+          "p05": 13.193548387096774,
+          "p50": 15.333333333333334,
+          "p95": 17.032258064516128
+        }
+      },
+      "random_tau_vs_human_mean": 0.32987854251012144,
+      "uniform": {
+        "mean_open": {
+          "p05": 11.210526315789474,
+          "p50": 12.210526315789474,
+          "p95": 13.289473684210526
+        },
+        "max_open": {
+          "p05": 18,
+          "p50": 20,
+          "p95": 22
+        },
+        "mean_cut": {
+          "p05": 37.578947368421055,
+          "p50": 40.73684210526316,
+          "p95": 44.3421052631579
+        },
+        "cutwidth": {
+          "p05": 56,
+          "p50": 62,
+          "p95": 67
+        },
+        "mean_edge_length": {
+          "p05": 15.35483870967742,
+          "p50": 16.64516129032258,
+          "p95": 18.118279569892472
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.005,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.02,
+          "cutwidth": 0.085,
+          "mean_edge_length": 0.02
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.005,
+          "cutwidth": 0.6375,
+          "mean_edge_length": 0.005
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.3175,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: construct-a-b",
+      "n_nodes": 8,
+      "n_edges": 4,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 0.8571428571428571,
+          "max_open": 1,
+          "mean_open": 0.5714285714285714,
+          "mean_edge_length": 1.5
+        },
+        "human_repaired": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 0.8571428571428571,
+          "max_open": 1,
+          "mean_open": 0.5714285714285714,
+          "mean_edge_length": 1.5
+        },
+        "just_in_time": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 1.5714285714285714,
+          "max_open": 2,
+          "mean_open": 1.2857142857142858,
+          "mean_edge_length": 2.75
+        },
+        "greedy_min_open": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 0.8571428571428571,
+          "max_open": 1,
+          "mean_open": 0.5714285714285714,
+          "mean_edge_length": 1.5
+        },
+        "optimised": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 0.8571428571428571,
+          "max_open": 1,
+          "mean_open": 0.5714285714285714,
+          "mean_edge_length": 1.5
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": -0.1428571428571428,
+        "greedy_min_open": 0.2142857142857143,
+        "optimised": 0.2142857142857143
+      },
+      "random": {
+        "mean_open": {
+          "mean": 1.0792857142857144,
+          "p05": 0.5714285714285714,
+          "p50": 1.1428571428571428,
+          "p95": 1.5714285714285714
+        },
+        "max_open": {
+          "mean": 1.67,
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "mean": 1.5757142857142856,
+          "p05": 0.8571428571428571,
+          "p50": 1.5714285714285714,
+          "p95": 2.4285714285714284
+        },
+        "cutwidth": {
+          "mean": 3.02,
+          "p05": 2,
+          "p50": 3,
+          "p95": 4
+        },
+        "mean_edge_length": {
+          "mean": 2.7575,
+          "p05": 1.5,
+          "p50": 2.75,
+          "p95": 4.25
+        }
+      },
+      "random_tau_vs_human_mean": 0.275,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.7142857142857143,
+          "p50": 1.2857142857142858,
+          "p95": 1.7142857142857142
+        },
+        "max_open": {
+          "p05": 1,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "p05": 1.0,
+          "p50": 1.8571428571428572,
+          "p95": 2.5714285714285716
+        },
+        "cutwidth": {
+          "p05": 2,
+          "p50": 4,
+          "p95": 4
+        },
+        "mean_edge_length": {
+          "p05": 1.75,
+          "p50": 3.25,
+          "p95": 4.5
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.05,
+          "max_open": 0.165,
+          "mean_cut": 0.05,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.05
+        },
+        "human_repaired": {
+          "mean_open": 0.05,
+          "max_open": 0.165,
+          "mean_cut": 0.05,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.05
+        },
+        "just_in_time": {
+          "mean_open": 0.71,
+          "max_open": 0.665,
+          "mean_cut": 0.4925,
+          "cutwidth": 0.49,
+          "mean_edge_length": 0.4925
+        },
+        "greedy_min_open": {
+          "mean_open": 0.05,
+          "max_open": 0.165,
+          "mean_cut": 0.05,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.05
+        },
+        "optimised": {
+          "mean_open": 0.05,
+          "max_open": 0.165,
+          "mean_cut": 0.05,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.05
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0125,
+          "max_open": 0.0525,
+          "mean_cut": 0.0125,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.0125
+        },
+        "human_repaired": {
+          "mean_open": 0.0125,
+          "max_open": 0.0525,
+          "mean_cut": 0.0125,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.0125
+        },
+        "just_in_time": {
+          "mean_open": 0.49,
+          "max_open": 0.5525,
+          "mean_cut": 0.2425,
+          "cutwidth": 0.2925,
+          "mean_edge_length": 0.2425
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0125,
+          "max_open": 0.0525,
+          "mean_cut": 0.0125,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.0125
+        },
+        "optimised": {
+          "mean_open": 0.0125,
+          "max_open": 0.0525,
+          "mean_cut": 0.0125,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.0125
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}
