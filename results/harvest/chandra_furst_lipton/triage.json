@@ -1,0 +1,31 @@
+{
+ "name": "chandra_furst_lipton",
+ "repo": "YaelDillies/ChandraFurstLipton",
+ "status": "ok",
+ "stage": "done",
+ "commit": "5818428f492b3e1081eecfecfe5eca17aae70f93",
+ "commit_date": "2026-09-20",
+ "toolchain": "leanprover/lean4:v4.35.0-rc2",
+ "mathlib": "065356127b1d",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 31,
+ "uses_edges": 61,
+ "chapters": 5,
+ "lean_nodes": 14,
+ "leanok_nodes": 13,
+ "libs": [
+  "ChandraFurstLipton"
+ ],
+ "build_minutes": 0.1,
+ "extractor": "extract_deps.lean",
+ "decls": 29,
+ "theorems": 15,
+ "external_decls": 0,
+ "lean_resolved": 1.0,
+ "nodes_linked": 14,
+ "nodes_linked_external_only": 0,
+ "minutes": 2.6
+}

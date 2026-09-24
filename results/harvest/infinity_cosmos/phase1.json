@@ -1,0 +1,637 @@
+{
+  "project": "infinity_cosmos",
+  "provenance": "emilyriehl/infinity-cosmos @ 4e1d20ffded8 (2026-08-20), Lean leanprover/lean4:v4.34.0-rc1",
+  "stats": {
+    "project_decls": 381,
+    "project_decls_by_kind": {
+      "def": 169,
+      "inductive": 26,
+      "theorem": 186
+    },
+    "external_decls": 0,
+    "formal_edges": 1812,
+    "blueprint_nodes": 41,
+    "blueprint_nodes_with_formal_decl": 0,
+    "lean_names_resolved": 0,
+    "lean_names_missing": {},
+    "coverage": 0.0,
+    "labelled_decls": 0,
+    "unlabelled_theorems": 186,
+    "edges": {
+      "author_edges": 0,
+      "lean_edges": 0,
+      "author_direct_in_lean": 0,
+      "author_implied_transitively": 0,
+      "author_absent_from_lean": [],
+      "lean_unreported_by_author": []
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 0,
+    "unreported_top_sources": {}
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 0,
+      "n_edges": 0,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 1.0,
+        "greedy_min_open": 1.0,
+        "optimised": 1.0
+      },
+      "random": {
+        "mean_open": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "random_tau_vs_human_mean": 1.0,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 0,
+      "n_edges": 0,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 1.0,
+        "greedy_min_open": 1.0,
+        "optimised": 1.0
+      },
+      "random": {
+        "mean_open": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "random_tau_vs_human_mean": 1.0,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 0,
+      "n_edges": 0,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "n": 0,
+          "forward_refs": 0,
+          "cutwidth": 0,
+          "mean_cut": 0.0,
+          "max_open": 0,
+          "mean_open": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 1.0,
+        "greedy_min_open": 1.0,
+        "optimised": 1.0
+      },
+      "random": {
+        "mean_open": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "mean": 0.0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "mean": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "random_tau_vs_human_mean": 1.0,
+      "uniform": {
+        "mean_open": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "max_open": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_cut": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "cutwidth": {
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "mean_edge_length": {
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "human_repaired": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "just_in_time": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "greedy_min_open": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        },
+        "optimised": {
+          "mean_open": 0.5,
+          "max_open": 0.5,
+          "mean_cut": 0.5,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

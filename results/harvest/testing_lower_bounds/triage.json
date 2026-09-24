@@ -1,0 +1,31 @@
+{
+ "name": "testing_lower_bounds",
+ "repo": "RemyDegenne/testing-lower-bounds",
+ "status": "ok",
+ "stage": "done",
+ "commit": "da2cf0bfba77216f9de65bfd5076dd372cfaa59f",
+ "commit_date": "2026-09-24",
+ "toolchain": "leanprover/lean4:v4.35.0-rc2",
+ "mathlib": "065356127b1d",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 344,
+ "uses_edges": 867,
+ "chapters": 17,
+ "lean_nodes": 177,
+ "leanok_nodes": 132,
+ "libs": [
+  "TestingLowerBounds"
+ ],
+ "build_minutes": 1.3,
+ "extractor": "extract_deps.lean",
+ "decls": 1035,
+ "theorems": 964,
+ "external_decls": 66,
+ "lean_resolved": 1.0,
+ "nodes_linked": 177,
+ "nodes_linked_external_only": 59,
+ "minutes": 5.4
+}

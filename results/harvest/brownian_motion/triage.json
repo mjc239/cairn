@@ -1,0 +1,31 @@
+{
+ "name": "brownian_motion",
+ "repo": "RemyDegenne/brownian-motion",
+ "status": "ok",
+ "stage": "done",
+ "commit": "0d5b6eb928e616d3b1f774ad7d233c167d9f42c9",
+ "commit_date": "2026-09-22",
+ "toolchain": "leanprover/lean4:v4.33.0-rc1",
+ "mathlib": "0434c03386d3",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 663,
+ "uses_edges": 1608,
+ "chapters": 15,
+ "lean_nodes": 492,
+ "leanok_nodes": 361,
+ "libs": [
+  "BrownianMotion"
+ ],
+ "build_minutes": 3.2,
+ "extractor": "extract_deps.lean",
+ "decls": 2222,
+ "theorems": 1931,
+ "external_decls": 190,
+ "lean_resolved": 0.998,
+ "nodes_linked": 492,
+ "nodes_linked_external_only": 183,
+ "minutes": 16.4
+}

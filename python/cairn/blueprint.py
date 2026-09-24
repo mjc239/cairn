@@ -12,6 +12,7 @@ Conventions follow https://github.com/PatrickMassot/leanblueprint:
 
 from __future__ import annotations
 
+import os
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -149,7 +150,8 @@ def _read_flat(path: Path, root: Path, stack: tuple[Path, ...] = ()) -> list[tup
     if path in stack:
         raise ValueError(f"cyclic \\input: {' -> '.join(map(str, (*stack, path)))}")
     text = "\n".join(_COMMENT_RE.sub("", line) for line in path.read_text().splitlines())
-    rel = str(path.relative_to(root))
+    # relpath, not relative_to: generated blueprints (LeanArchitect) \input files outside ``root``
+    rel = os.path.relpath(path, root)
     chunks: list[tuple[str, str, int]] = []
     last = 0
     for m in _INPUT_RE.finditer(text):

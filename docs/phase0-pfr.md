@@ -52,7 +52,11 @@ working-memory load?
    it beats all 1,200 sampled topological orders. Its load is about 40% below
    the uniform median for the whole document.
 2. **It is close to the local optimum.** For the whole document it is within 5%
-   (31.9 vs 30.5). In several chapters it matches or beats our optimiser: in
+   (31.9 vs 30.5). *Correction ([`cross_project.md`](cross_project.md)): that
+   optimiser minimised edge length, not mean open. Optimising mean open
+   directly, and also searching from the author's order, gives 26.2, so the
+   human order is about 22% above the best known. It is still far from random
+   (55.4). Chapter-level numbers barely change.* In several chapters it matches or beats our optimiser: in
    `entropy_pfr` the human order scores 5.1 and the optimiser 5.2.
 3. **Inside a chapter, low load and the human order largely coincide.** The
    order our optimiser finds has τ = 0.74–0.88 with the human order in most

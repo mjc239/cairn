@@ -1,0 +1,1704 @@
+{
+  "nodes": [
+    {
+      "id": "mzi",
+      "kind": "lemma",
+      "position": 0,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 5,
+      "title": "Marcinkiewicz-Zygmund inequality",
+      "labels": [
+        "mzi"
+      ],
+      "lean_decls": [
+        "Real.marcinkiewicz_zygmund'",
+        "Real.marcinkiewicz_zygmund"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $m\\geq 1$. If $f:G\\to\\bbr$ is such that $\\bbe_x f(x)=0$ and $\\abs{f(x)}\\leq 2$ for all $x$ then \\[\\bbe_{x_1,\\ldots,x_n} \\abs{\\sum_{i=1}^n f(x_i)}^{2m} \\leq (4mn)^{m}.\\]"
+    },
+    {
+      "id": "mzi_complex",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 39,
+      "title": "Complex-valued Marcinkiewicz-Zygmund inequality",
+      "labels": [
+        "mzi_complex"
+      ],
+      "lean_decls": [
+        "RCLike.marcinkiewicz_zygmund"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "mzi"
+      ],
+      "has_proof": true,
+      "statement_event": 2,
+      "proof_event": 3,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $m\\geq 1$. If $f:G\\to\\bbc$ is such that $\\bbe_x f(x)=0$ and $\\abs{f(x)}\\leq 2$ for all $x$ then \\[\\bbe_{x_1,\\ldots,x_n} \\abs{\\sum_{i=1}^n f(x_i)}^{2m} \\leq (8mn)^{m}.\\]"
+    },
+    {
+      "id": "random_approx_expect",
+      "kind": "lemma",
+      "position": 2,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 54,
+      "title": null,
+      "labels": [
+        "random_approx_expect"
+      ],
+      "lean_decls": [
+        "AlmostPeriodicity.lemma28"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "mzi_complex"
+      ],
+      "has_proof": true,
+      "statement_event": 4,
+      "proof_event": 5,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon>0$ and $m\\geq 1$. Let $A\\subseteq G$ and $f:G\\to \\bbc$. If $k\\geq 64m\\epsilon^{-2}$ then the set \\[ L = \\{\\tup{a}\\in A^k : \\|\\tfrac{1}{k}\\sum_{i=1}^k f(x-a_i)-\\mu_A\\ast f\\|_{2m} \\le \\epsilon \\| f\\|_{2m}\\}. \\] has size at least $\\lvert A \\rvert^k/2$."
+    },
+    {
+      "id": "aps_in_translates",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 92,
+      "title": null,
+      "labels": [
+        "aps_in_translates"
+      ],
+      "lean_decls": [
+        "AlmostPeriodicity.just_the_triangle_inequality"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $A\\subseteq G$ and $f:G\\to \\bbc$. Let $\\epsilon>0$ and $m\\geq 1$ and $k\\geq 1$. Let \\[ L = \\{\\tup{a}\\in A^k : \\|\\tfrac{1}{k}\\sum_{i=1}^k f(x-a_i) - \\mu_A\\ast f\\|_{2m} \\leq \\epsilon \\| f\\|_{2m}\\}. \\] If $t\\in G$ is such that $\\tup{a}\\in L$ and $\\tup{a}+(t,\\ldots,t)\\in L$ then \\[\\| \\tau_t(\\mu_A\\ast f)-\\mu_A\\ast f\\|_{2m}\\leq 2\\epsilon \\|f\\|_{2m}.\\]"
+    },
+    {
+      "id": "lots_of_diagonals",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 112,
+      "title": null,
+      "labels": [
+        "lots_of_diagonals"
+      ],
+      "lean_decls": [
+        "big_shifts"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $A\\subseteq G$ and $k\\geq 1$ and $L\\subseteq A^k$. Then there exists some $\\tup{a}\\in L$ such that \\[\\#\\{ t\\in G : \\tup{a}+(t,\\ldots,t)\\in L\\}\\geq \\frac{\\lvert L\\rvert}{\\lvert A+S\\rvert^k}\\lvert S\\rvert.\\]"
+    },
+    {
+      "id": "lp_ap",
+      "kind": "theorem",
+      "position": 5,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 126,
+      "title": "$L_p$ almost periodicity",
+      "labels": [
+        "lp_ap"
+      ],
+      "lean_decls": [
+        "AlmostPeriodicity.almost_periodicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "random_approx_expect",
+        "lots_of_diagonals",
+        "aps_in_translates"
+      ],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon\\in (0,1]$ and $m\\geq 1$. Let $K\\geq 2$ and $A,S\\subseteq G$ with $\\lvert A+S\\rvert\\leq K\\lvert A\\rvert$. Let $f:G\\to \\bbc$. There exists $T\\subseteq G$ such that \\[\\lvert T\\rvert \\geq K^{-512m\\epsilon^{-2}}\\lvert S\\rvert\\] such that for any $t\\in T$ we have \\[\\| \\tau_t(\\mu_A\\ast f)-\\mu_A\\ast f\\|_{2m}\\leq \\epsilon \\| f\\|_{2m}.\\]"
+    },
+    {
+      "id": "linfty_ap",
+      "kind": "theorem",
+      "position": 6,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 144,
+      "title": "$L_\\infty$ almost periodicity",
+      "labels": [
+        "linfty_ap"
+      ],
+      "lean_decls": [
+        "AlmostPeriodicity.linfty_almost_periodicity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lp_ap"
+      ],
+      "has_proof": true,
+      "statement_event": 12,
+      "proof_event": 13,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon\\in (0,1]$. Let $K\\geq 2$ and $A,S\\subseteq G$ with $\\lvert A+S\\rvert\\leq K\\lvert A\\rvert$. Let $B,C\\subseteq G$. Let $\\eta=\\min(1,\\lvert C\\rvert/\\lvert B\\rvert)$. There exists $T\\subseteq G$ such that \\[\\lvert T\\rvert \\geq K^{-4096\\lceil \\lo{\\eta}\\rceil\\epsilon^{-2}}\\lvert S\\rvert\\] such that for any $t\\in T$ we have \\[\\| \\tau_t(\\mu_A\\ast 1_B\\ast \\mu_C)-\\mu_A\\ast 1_B\\ast \\mu_C\\|_{\\infty}\\leq \\epsilon.\\]"
+    },
+    {
+      "id": "linfty_ap_boosted",
+      "kind": "theorem",
+      "position": 7,
+      "chapter": "ap",
+      "source": "chapter/ap.tex",
+      "line": 175,
+      "title": null,
+      "labels": [
+        "linfty_ap_boosted"
+      ],
+      "lean_decls": [
+        "AlmostPeriodicity.linfty_almost_periodicity_boosted"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "linfty_ap"
+      ],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "ap",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon\\in (0,1]$ and $k\\geq 1$. Let $K\\geq 2$ and $A,S\\subseteq G$ with $\\lvert A+S\\rvert\\leq K\\lvert A\\rvert$. Let $B,C\\subseteq G$. Let $\\eta=\\min(1,\\lvert C\\rvert/\\lvert B\\rvert)$. There exists $T\\subseteq G$ such that \\[\\lvert T\\rvert \\geq K^{-4096\\lceil \\lo{\\eta}\\rceil k^2\\epsilon^{-2}}\\lvert S\\rvert\\] such that \\[\\| \\mu_T^{(k)}\\ast \\mu_A\\ast 1_B\\ast \\mu_C-\\mu_A\\ast 1_B\\ast \\mu_C\\|_{\\infty}\\leq \\epsilon.\\]"
+    },
+    {
+      "id": "dissociated",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 3,
+      "title": "Dissociation",
+      "labels": [
+        "dissociated"
+      ],
+      "lean_decls": [
+        "AddDissociated"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 16,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say that $A\\subseteq G$ is dissociated if, for any $m\\geq 1$, and any $x\\in G$, there is at most one $A'\\subset A$ of size $\\abs{A'}=m$ such that \\[\\sum_{a\\in A'}a=x.\\]"
+    },
+    {
+      "id": "rudin_exp",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 12,
+      "title": "Rudin's exponential inequality",
+      "labels": [
+        "rudin_exp"
+      ],
+      "lean_decls": [
+        "rudin_exp_ineq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "dissociated"
+      ],
+      "proof_uses": [
+        "mzi_complex"
+      ],
+      "has_proof": true,
+      "statement_event": 17,
+      "proof_event": 18,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "If the discrete Fourier transform of $f : G \\longrightarrow \\C$ has dissociated support, then $$\\E \\exp(\\Re f) \\le \\exp\\left(\\frac{\\norm f_2^2} 2\\right)$$ It follows that \\[\\E_x e^{\\abs{f(x)}} \\le 2e^{\\| f\\|_2^2/2}.\\]"
+    },
+    {
+      "id": "rudin",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 49,
+      "title": "Rudin's inequality",
+      "labels": [
+        "rudin"
+      ],
+      "lean_decls": [
+        "rudin_ineq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "dissociated"
+      ],
+      "proof_uses": [
+        "rudin_exp"
+      ],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "If the discrete Fourier transform of $f : G \\longrightarrow \\C$ has dissociated support and $p \\ge 2$ is an integer, then $\\norm{f}_p \\le 4\\sqrt{pe} \\norm f_2$."
+    },
+    {
+      "id": "large_spec",
+      "kind": "definition",
+      "position": 11,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 71,
+      "title": "Large spectrum",
+      "labels": [
+        "large_spec"
+      ],
+      "lean_decls": [
+        "largeSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 21,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $G$ be a finite abelian group and $f:G\\to\\bbc$. Let $\\eta\\in \\bbr$. The $\\eta$-large spectrum is defined to be \\[\\Delta_\\eta(f) = \\{ \\gamma\\in\\widehat{G} : \\lvert \\widehat{f}(\\gamma)\\rvert \\geq \\eta\\norm{f}_1\\}.\\]"
+    },
+    {
+      "id": "weight_energy",
+      "kind": "definition",
+      "position": 12,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 81,
+      "title": "Weighted energy",
+      "labels": [
+        "weight_energy"
+      ],
+      "lean_decls": [
+        "energy"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 22,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\Delta\\subseteq \\widehat{G}$ and $m\\geq 1$. Let $\\nu:G\\to \\bbc$. Then \\[E_{2m}(\\Delta;\\nu)=\\sum_{\\gamma_1,\\ldots,\\gamma_{2m}\\in \\Delta}\\abs{\\widehat{\\nu}(\\gamma_1+\\cdots-\\gamma_{2m})}.\\]"
+    },
+    {
+      "id": "energy",
+      "kind": "definition",
+      "position": 13,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 90,
+      "title": "Energy",
+      "labels": [
+        "energy"
+      ],
+      "lean_decls": [
+        "boringEnergy"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "weight_energy"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 23,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $G$ be a finite abelian group and $A\\subseteq G$. Let $m\\geq 1$. We define \\[E_{2m}(A)=\\sum_{a_1,\\ldots,a_{2m}\\in A}1_{a_1+\\cdots-a_{2m}=0}.\\]"
+    },
+    {
+      "id": "general_hoelder",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 100,
+      "title": null,
+      "labels": [
+        "general_hoelder"
+      ],
+      "lean_decls": [
+        "general_hoelder"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "large_spec",
+        "weight_energy"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "Let $G$ be a finite abelian group and $f:G\\to\\bbc$. Let $\\nu:G\\to \\bbr_{\\geq 0}$ be such that whenever $\\abs{f}\\neq 0$ we have $\\nu \\geq 1$. Let $\\Delta\\subseteq \\Delta_\\eta(f)$. Then, for any $m\\geq 1$. \\[\\eta^{2m}\\frac{\\norm{f}_1^2}{\\norm{f}_2^2}\\abs{\\Delta}^{2m}\\le E_{2m}(\\Delta;\\nu).\\]"
+    },
+    {
+      "id": "spec_hoelder",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 135,
+      "title": null,
+      "labels": [
+        "spec_hoelder"
+      ],
+      "lean_decls": [
+        "spec_hoelder"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "energy"
+      ],
+      "proof_uses": [
+        "general_hoelder"
+      ],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "Let $G$ be a finite abelian group and $f:G\\to\\bbc$. Let $\\Delta\\subseteq \\Delta_\\eta(f)$. Then, for any $m\\geq 1$. \\[N^{-1}\\eta^{2m}\\frac{\\norm{f}_1^2}{\\norm{f}_2^2}\\abs{\\Delta}^{2m}\\le E_{2m}(\\Delta).\\]"
+    },
+    {
+      "id": "energy_alt",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 151,
+      "title": null,
+      "labels": [
+        "energy_alt"
+      ],
+      "lean_decls": [
+        "boringEnergy_eq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "energy"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "If $A\\subset G$ and $m\\geq 1$ then \\[E_{2m}(A) = \\sum_x 1_A^{(m)}(x)^2.\\]"
+    },
+    {
+      "id": "diss_energy",
+      "kind": "lemma",
+      "position": 17,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 166,
+      "title": null,
+      "labels": [
+        "diss_energy"
+      ],
+      "lean_decls": [
+        "AddDissociated.boringEnergy_le"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "dissociated",
+        "energy"
+      ],
+      "proof_uses": [
+        "energy_alt",
+        "rudin"
+      ],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "If $A\\subseteq G$ is dissociated then $E_{2m}(A) \\le (32e m \\abs{A})^m$."
+    },
+    {
+      "id": "diss_span",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 188,
+      "title": null,
+      "labels": [
+        "diss_span"
+      ],
+      "lean_decls": [
+        "Finset.exists_subset_addSpan_card_le_of_forall_addDissociated"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "dissociated"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "If $A\\subseteq G$ contains no dissociated set with $\\geq K+1$ elements, then there is $A'\\subseteq A$ of size $\\abs{A'}\\le K$ such that \\[A\\subseteq \\left\\{ \\sum_{a\\in A'}c_aa : c_a\\in \\{-1,0,1\\} \\right\\}.\\]"
+    },
+    {
+      "id": "chang",
+      "kind": "theorem",
+      "position": 19,
+      "chapter": "chang",
+      "source": "chapter/chang.tex",
+      "line": 213,
+      "title": "Chang's lemma",
+      "labels": [
+        "chang"
+      ],
+      "lean_decls": [
+        "chang"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "large_spec"
+      ],
+      "proof_uses": [
+        "diss_energy",
+        "diss_span",
+        "spec_hoelder"
+      ],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "chang",
+      "proof_leanok": true,
+      "text": "Let $G$ be a finite abelian group and $f:G\\to \\bbc$. Let $\\eta >0$ and $\\alpha=N^{-1}\\norm{f}_1^2/\\norm{f}_2^2$. There exists some $\\Delta\\subseteq \\Delta_\\eta(f)$ such that \\[\\abs{\\Delta}\\le \\lceil e\\mathcal{L}(\\alpha)\\eta^{-2}\\rceil \\] and \\[\\Delta_\\eta(f)\\subseteq \\left\\{ \\sum_{\\gamma\\in\\Delta}c_\\gamma \\gamma : c_\\gamma\\in \\{-1,0,1\\} \\right\\}.\\]"
+    },
+    {
+      "id": "nonneg_moments",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "unbalancing",
+      "source": "chapter/unbalancing.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "nonneg_moments"
+      ],
+      "lean_decls": [
+        "pow_inner_nonneg"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "unbalancing",
+      "proof_leanok": true,
+      "text": "For any function $f:G\\to\\bbr$ and integer $k\\geq 0$ \\[\\bbe_x f\\circ f(x)^k\\geq 0.\\]"
+    },
+    {
+      "id": "unbalancing",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "unbalancing",
+      "source": "chapter/unbalancing.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "unbalancing"
+      ],
+      "lean_decls": [
+        "unbalancing"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "nonneg_moments"
+      ],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "unbalancing",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon\\in(0,1)$ and $\\nu:G\\to\\bbr_{\\geq 0}$ be some probability measure such that $\\widehat{\\nu}\\geq 0$. Let $f:G\\to\\bbr$. If $\\norm{f\\circ f}_{p(\\nu)}\\geq \\epsilon$ for some $p\\geq 1$ then $\\norm{f\\circ f+1}_{p'(\\nu)}\\geq 1+\\tfrac{1}{2}\\epsilon$ for $p'=120\\epsilon^{-1}\\log(3/\\epsilon)$."
+    },
+    {
+      "id": "drc",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "drc",
+      "source": "chapter/drc.tex",
+      "line": 4,
+      "title": null,
+      "labels": [
+        "drc"
+      ],
+      "lean_decls": [
+        "drc"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 40,
+      "proof_event": 41,
+      "proof_chapter": "drc",
+      "proof_leanok": true,
+      "text": "Let $p\\geq 2$ be an even integer. Let $B_1,B_2\\subseteq G$ and $\\mu=\\mu_{B_1}\\circ\\mu_{B_2}$. For any finite set $A\\subseteq G$ and function $f:G\\to\\bbr_{\\geq 0}$ there exist $A_1\\subseteq B_1$ and $A_2\\subseteq B_2$ such that \\[\\langle \\mu_{A_1}\\circ \\mu_{A_2}, f\\rangle \\norm{\\ind{A}\\circ \\ind{A}}_{p(\\mu)}^p\\leq 2\\langle (\\ind{A}\\circ \\ind{A})^p,f\\rangle_\\mu\\] and \\[\\min\\brac{\\frac{\\abs{A_1}}{\\abs{B_1}},\\frac{\\abs{A_2}}{\\abs{B_2}}}\\geq \\frac{1}{4}\\abs{A}^{-2p}\\norm{\\ind{A}\\circ \\ind{A}}_{p(\\mu)}^{2p}.\\]"
+    },
+    {
+      "id": "sift",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "drc",
+      "source": "chapter/drc.tex",
+      "line": 68,
+      "title": null,
+      "labels": [
+        "sift"
+      ],
+      "lean_decls": [
+        "sifting"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "drc"
+      ],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "drc",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon,\\delta >0$ and $p\\geq \\max(2,\\epsilon^{-1}\\log(2/\\delta))$ be an even integer. Let $B_1,B_2\\subseteq G$, and let $\\mu=\\mu_{B_1}\\circ\\mu_{B_2}$. For any finite set $A\\subseteq G$, if \\[S=\\{ x\\in G: \\ind{A}\\circ \\ind{A}(x)>(1-\\epsilon)\\norm{\\ind{A}\\circ \\ind{A}}_{p(\\mu)}\\},\\] then there are $A_1\\subseteq B_1$ and $A_2\\subseteq B_2$ such that \\[\\langle \\mu_{A_1}\\circ\\mu_{A_2},\\ind{S}\\rangle \\geq 1-\\delta\\] and \\[\\min\\brac{\\frac{\\abs{A_1}}{\\abs{B_1}},\\frac{\\abs{A_2}}{\\abs{B_2}}}\\geq \\frac{1}{4}\\abs{A}^{-2p}\\norm{\\ind{A}\\circ \\ind{A}}_{p(\\mu)}^{2p}.\\]"
+    },
+    {
+      "id": "sift_cor",
+      "kind": "corollary",
+      "position": 24,
+      "chapter": "drc",
+      "source": "chapter/drc.tex",
+      "line": 95,
+      "title": null,
+      "labels": [
+        "sift_cor"
+      ],
+      "lean_decls": [
+        "sifting_cor"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "sift"
+      ],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "drc",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon,\\delta>0$ and $p\\geq \\max(2,\\epsilon^{-1}\\log(2/\\delta))$ be an even integer and $\\mu\\equiv 1/N$. If $A\\subseteq G$ has density $\\alpha$ and \\[S = \\{ x : \\mu_A\\circ \\mu_A(x) \\geq (1-\\epsilon)\\| \\mu_A\\circ \\mu_A\\|_{p(\\mu)}\\}\\] then there are $A_1,A_2\\subseteq G$ such that \\[\\langle \\mu_{A_1}\\circ \\mu_{A_2}, 1_S\\rangle \\geq 1-\\delta\\] and both $A_1$ and $A_2$ have density \\[\\geq \\frac{1}{4}\\alpha^{2p}.\\]"
+    },
+    {
+      "id": "ap_in_ff",
+      "kind": "theorem",
+      "position": 25,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "ap_in_ff"
+      ],
+      "lean_decls": [
+        "ap_in_ff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "chang",
+        "linfty_ap_boosted"
+      ],
+      "has_proof": true,
+      "statement_event": 46,
+      "proof_event": 47,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "If $A_1,A_2,S\\subseteq \\bbf_q^n$ are such that $A_1$ and $A_2$ both have density at least $\\alpha$ then there is a subspace $V$ of codimension \\[\\mathrm{codim}(V)\\leq 2^{27}\\lo(\\alpha)^2\\lo(\\epsilon \\alpha)^2\\epsilon^{-2}\\] such that \\[\\abs{\\langle \\mu_V\\ast \\mu_{A_1}\\ast \\mu_{A_2},\\ind{S}\\rangle-\\langle \\mu_{A_1}\\ast \\mu_{A_2},\\ind{S}\\rangle}\\leq \\epsilon.\\]"
+    },
+    {
+      "id": "ast_le_circ",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 63,
+      "title": null,
+      "labels": [
+        "ast_le_circ"
+      ],
+      "lean_decls": [
+        "cLpNorm_conv_le_cLpNorm_dconv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 48,
+      "proof_event": 49,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "For any function $f:G\\to \\mathbb{C}$ and integer $k\\geq 1$ \\[\\| f\\ast f\\|_{2k}\\leq \\| f\\circ f\\|_{2k}.\\]"
+    },
+    {
+      "id": "ast_expand",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 77,
+      "title": null,
+      "labels": [
+        "ast_expand"
+      ],
+      "lean_decls": [
+        "balance_conv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 50,
+      "proof_event": 51,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "For any function $f$ with $\\sum f(x)=1$ \\[f\\ast f-1/N = (f-1/N)\\ast (f-1/N).\\]"
+    },
+    {
+      "id": "circ_expand",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 90,
+      "title": null,
+      "labels": [
+        "circ_expand"
+      ],
+      "lean_decls": [
+        "balance_dconv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 52,
+      "proof_event": 53,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "For any function $f$ with $\\sum f(x)=1$ \\[f\\circ f-1/N = (f-1/N)\\circ (f-1/N).\\]"
+    },
+    {
+      "id": "global_dichotomy",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 103,
+      "title": null,
+      "labels": [
+        "global_dichotomy"
+      ],
+      "lean_decls": [
+        "global_dichotomy"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "ast_le_circ",
+        "ast_expand",
+        "circ_expand"
+      ],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon >0$ and $\\mu\\equiv 1/N$. If $A,C\\subseteq G$, where $C$ has density at least $\\gamma$, and \\[\\abs{N\\langle \\mu_A\\ast \\mu_A,\\mu_C\\rangle -1}>\\epsilon\\] then, if $f=(\\mu_A-1/N)$, $\\norm{f\\circ f}_{p(\\mu)} \\geq \\epsilon /2N$ for $p=2\\lceil \\lo(\\gamma)\\rceil$."
+    },
+    {
+      "id": "di_in_ff",
+      "kind": "proposition",
+      "position": 30,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 123,
+      "title": null,
+      "labels": [
+        "di_in_ff"
+      ],
+      "lean_decls": [
+        "di_in_ff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "global_dichotomy",
+        "unbalancing",
+        "ap_in_ff",
+        "circ_expand",
+        "sift_cor"
+      ],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "Let $\\epsilon \\in (0,1)$. If $A,C\\subseteq \\bbf_q^n$, where $C$ has density at least $\\gamma$, and \\[\\abs{N\\langle \\mu_A\\ast \\mu_A,\\mu_C\\rangle -1}> \\epsilon\\] then there is a subspace $V$ of codimension \\[\\leq 2^{171}\\epsilon^{-24}\\lo(\\alpha)^4\\lo(\\gamma)^4.\\] such that $\\norm{\\ind{A}\\ast \\mu_V}_\\infty \\geq (1+\\epsilon/32)\\alpha$."
+    },
+    {
+      "id": "no3aps_inner_prod",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 176,
+      "title": null,
+      "labels": [
+        "no3aps_inner_prod"
+      ],
+      "lean_decls": [
+        "ThreeAPFree.wInner_one_mu_ddconv_mu_mu_two_smul_mu"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 58,
+      "proof_event": 59,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "If $A\\subseteq G$ has no non-trivial three-term arithmetic progressions and $G$ has odd order then \\[\\langle \\mu_A\\ast \\mu_A,\\mu_{2\\cdot A}\\rangle = 1/\\abs{A}^2.\\]"
+    },
+    {
+      "id": "ff",
+      "kind": "theorem",
+      "position": 32,
+      "chapter": "ff",
+      "source": "chapter/ff.tex",
+      "line": 191,
+      "title": null,
+      "labels": [
+        "ff"
+      ],
+      "lean_decls": [
+        "ff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "no3aps_inner_prod",
+        "di_in_ff"
+      ],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "ff",
+      "proof_leanok": true,
+      "text": "Let $q$ be an odd prime power. If $A\\subseteq \\mathbb{F}_q^n$ with $\\alpha=\\abs{A}/q^n$ has no non-trivial three-term arithmetic progressions then \\[n \\ll \\lo(\\alpha)^9.\\]"
+    },
+    {
+      "id": "bohr-set",
+      "kind": "definition",
+      "position": 33,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 3,
+      "title": "Bohr sets",
+      "labels": [
+        "bohr-set"
+      ],
+      "lean_decls": [
+        "BohrSet"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 62,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\nu: \\widehat{G} \\to \\mathbb{R}$. The corresponding Bohr set is defined to be \\[\\mathrm{Bohr}(\\nu)=\\left\\{ x\\in G : \\abs{1-\\gamma(x)}\\leq \\nu(\\gamma)\\textrm{ for all }\\gamma\\in\\Gamma\\right\\}.\\] The rank of $\\nu$, denoted by $\\mathrm{rk}(\\nu)$, is defined to be the size of the set of those $\\gamma\\in\\widehat{G}$ such that $\\nu(\\gamma)<2$. (Basic API facts: Bohr sets are symmetric and contain $0$. Also that, without loss of generality, we can assume $\\nu$ takes only values in $\\mathbb{R}_{\\geq 0}$ - I think it might be easier to have the definition allow arbitrary real values, and then switch to non-negative only in proofs where convenient. Or could have the definition only allow non-negative valued functions in the first place.)"
+    },
+    {
+      "id": "bohr-size",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 14,
+      "title": null,
+      "labels": [
+        "bohr-size"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-set"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 63,
+      "proof_event": 64,
+      "proof_chapter": "bohr",
+      "proof_leanok": false,
+      "text": "If $\\rho\\in (0,1)$ and $\\nu:\\widehat{G}\\to \\mathbb{R}$ then \\[\\abs{\\mathrm{Bohr}(\\rho\\cdot \\nu)}\\geq (\\rho/4)^{\\mathrm{rk}(\\nu)}\\abs{\\mathrm{Bohr}(\\nu)}.\\]"
+    },
+    {
+      "id": "bohr-reg-def",
+      "kind": "definition",
+      "position": 35,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 44,
+      "title": "Regularity",
+      "labels": [
+        "bohr-reg-def"
+      ],
+      "lean_decls": [
+        "BohrSet.IsRegular"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-set"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 65,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say $\\nu:\\widehat{G}\\to \\mathbb{R}$ is regular if, with $d=\\mathrm{rk}(\\nu)$, for all $\\kappa\\in\\mathbb{R}$ with $\\abs{\\kappa}\\leq 1/100d$ we have \\[(1-100 d\\abs{\\kappa})\\leq \\frac{\\abs{\\mathrm{Bohr}((1+\\kappa)\\nu)}}{\\abs{\\mathrm{Bohr}(\\nu)}}\\leq(1+ 100 d\\abs{\\kappa})\\]"
+    },
+    {
+      "id": "bohr-regularity",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 53,
+      "title": null,
+      "labels": [
+        "bohr-regularity"
+      ],
+      "lean_decls": [
+        "BohrSet.regularity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "bohr-size"
+      ],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "bohr",
+      "proof_leanok": false,
+      "text": "For any $\\nu:\\widehat{G}\\to \\mathbb{R}$ there exists $\\rho\\in[\\frac{1}{2},1]$ such that $\\rho\\cdot \\nu$ is regular."
+    },
+    {
+      "id": "reg-conv",
+      "kind": "lemma",
+      "position": 37,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 65,
+      "title": null,
+      "labels": [
+        "reg-conv"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "bohr",
+      "proof_leanok": false,
+      "text": "If $B$ is a regular Bohr set of rank $d$ and $\\mu:G\\to\\bbr_{\\geq 0}$ is supported on $B_\\rho$, with $\\rho \\in (0,1)$, then \\[ \\norm{ \\mu_B*\\mu - \\mu_B }_{1} \\ll \\rho d\\norm{\\mu}_1. \\]"
+    },
+    {
+      "id": "bohr-majorise",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 75,
+      "title": null,
+      "labels": [
+        "bohr-majorise"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "reg-conv"
+      ],
+      "has_proof": true,
+      "statement_event": 70,
+      "proof_event": 71,
+      "proof_chapter": "bohr",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $B$ be a regular Bohr set of rank $d$ and $L\\geq 1$ be any integer. If $\\nu:G\\to\\bbr_{\\geq 0}$ is supported on $L B_\\rho$, where $\\rho \\leq c/Ld$, and $\\norm{\\nu}_1=1$, then \\[\\mu_B \\leq 2\\mu_{B_{1+L\\rho}}\\ast \\nu.\\]"
+    },
+    {
+      "id": "bourgain-trick",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "bohr",
+      "source": "chapter/bohr.tex",
+      "line": 86,
+      "title": null,
+      "labels": [
+        "bourgain-trick"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "reg-conv"
+      ],
+      "has_proof": true,
+      "statement_event": 72,
+      "proof_event": 73,
+      "proof_chapter": "bohr",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $B$ be a regular Bohr set of rank $d$, suppose $A\\subseteq B$ has density $\\alpha$, let $\\epsilon>0$, and suppose $B',B''\\subseteq B_\\rho$ where $\\rho\\leq c\\alpha\\epsilon/d$. Then either \\begin{enumerate} \\item there is some translate $A'$ of $A$ such that $\\abs{A'\\cap B'}\\geq (1-\\epsilon)\\alpha\\abs{B'}$ and $\\abs{A'\\cap B''}\\geq (1-\\epsilon)\\alpha \\abs{B''}$, or \\item $\\norm{\\ind{A}\\ast \\mu_{B'}}_\\infty\\geq (1+\\epsilon/2)\\alpha$, or \\item $\\norm{\\ind{A}\\ast \\mu_{B''}}_\\infty \\geq (1+\\epsilon/2)\\alpha$. \\end{enumerate}"
+    },
+    {
+      "id": "th-ap-int",
+      "kind": "theorem",
+      "position": 40,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "th-ap-int"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "linfty_ap",
+        "chang",
+        "bohr-size"
+      ],
+      "has_proof": true,
+      "statement_event": 74,
+      "proof_event": 75,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $\\epsilon>0$ and $B,B'\\subseteq G$ be regular Bohr sets of rank $d$. Suppose that $A_1\\subseteq B$ with density $\\alpha_1$ and $A_2$ is such that there exists $x$ with $A_2\\subseteq B'-x$ with density $\\alpha_2$. Let $S$ be any set with $\\abs{S}\\leq 2\\abs{B}$. There is a regular Bohr set $B''\\subseteq B'$ of rank at most \\[d+O_\\epsilon(\\lo{\\alpha_1}^3\\lo{\\alpha_2})\\] and size \\[\\abs{B''}\\geq \\exp(-O_\\epsilon(d\\lo{\\alpha_1\\alpha_2/d}+\\lo{\\alpha_1}^3\\lo{\\alpha_2}\\lo{\\alpha_1\\alpha_2/d}))\\abs{B'}\\] such that \\[\\abs{\\langle \\mu_{B'}\\ast \\mu_{A_1}\\circ \\mu_{A_2},\\ind{S}\\rangle-\\langle \\mu_{A_1}\\circ \\mu_{A_2},\\ind{S}\\rangle}\\leq \\epsilon.\\]"
+    },
+    {
+      "id": "Lp-orth",
+      "kind": "proposition",
+      "position": 41,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 18,
+      "title": null,
+      "labels": [
+        "Lp-orth"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "reg-conv",
+        "unbalancing"
+      ],
+      "has_proof": true,
+      "statement_event": 76,
+      "proof_event": 77,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $\\epsilon >0$ and $p \\geq 2$ be an integer. Let $B \\subseteq G$ be a regular Bohr set and $A\\subseteq B$ with relative density $\\alpha$. Let $\\nu : G \\to \\bbr_{\\geq 0}$ be supported on $B_\\rho$, where $\\rho \\leq c\\epsilon\\alpha/\\rk(B)$, such that $\\norm{\\nu}_1=1$ and $\\widehat{\\nu}\\geq 0$. If \\[ \\norm{(\\mu_A-\\mu_B) \\circ (\\mu_{A}-\\mu_B)}_{p(\\nu)} \\geq \\epsilon\\, \\mu(B)^{-1}, \\] then there exists $p'\\ll_\\epsilon p$ such that \\[ \\norm{ \\mu_{A}\\circ \\mu_{A}}_{p'(\\nu)} \\geq \\left(1+\\tfrac{1}{4}\\epsilon\\right) \\mu(B)^{-1}. \\]"
+    },
+    {
+      "id": "pos-def-measures",
+      "kind": "proposition",
+      "position": 42,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 32,
+      "title": null,
+      "labels": [
+        "pos-def-measures"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "bohr-majorise"
+      ],
+      "has_proof": true,
+      "statement_event": 78,
+      "proof_event": 79,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $p \\geq 2$ be an even integer. Let $f : G \\to \\bbr$, let $B \\subseteq G$ and $B', B'' \\subseteq B_{c/\\rk(B)}$ all be regular Bohr sets. Then \\[ \\norm{ f\\circ f }_{p(\\mu_{B'}\\circ \\mu_{B'}\\ast \\mu_{B''}\\circ \\mu_{B''})} \\geq \\tfrac{1}{2} \\norm{f*f}_{p(\\mu_B)}. \\]"
+    },
+    {
+      "id": "hoelder-lifting",
+      "kind": "proposition",
+      "position": 43,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 43,
+      "title": null,
+      "labels": [
+        "hoelder-lifting"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 80,
+      "proof_event": 81,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $\\epsilon >0$. Let $B \\subseteq G$ be a regular Bohr set and $A\\subseteq B$ with relative density $\\alpha$, and let $B' \\subseteq B_{c\\epsilon\\alpha/\\rk(B)}$ be a regular Bohr set and $C\\subseteq B'$ with relative density $\\gamma$. Either \\begin{enumerate} \\item $\\abs{ \\langle \\mu_A*\\mu_A, \\mu_{C} \\rangle - \\mu(B)^{-1} } \\leq \\epsilon \\mu(B)^{-1}$ or \\item there is some $p \\ll\\lo{\\gamma}$ such that $\\norm{ (\\mu_A-\\mu_B)*(\\mu_A-\\mu_B)}_{p(\\mu_{B'})} \\geq \\tfrac{1}{2}\\epsilon \\mu(B)^{-1}$. \\end{enumerate}"
+    },
+    {
+      "id": "prop-it",
+      "kind": "proposition",
+      "position": 44,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 57,
+      "title": null,
+      "labels": [
+        "prop-it"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "sift",
+        "th-ap-int"
+      ],
+      "has_proof": true,
+      "statement_event": 82,
+      "proof_event": 83,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $\\epsilon>0$ and $p,k\\geq 1$ be integers such that $(k,\\abs{G})=1$. Let $B,B',B''\\subseteq G$ be regular Bohr sets of rank $d$ such that $B''\\subseteq B'_{c/d}$ and $A\\subseteq B$ with relative density $\\alpha$. If \\[ \\norm{ \\mu_{A}\\circ \\mu_{A}}_{p(\\mu_{k\\cdot B'}\\circ\\mu_{k\\cdot B'}\\ast \\mu_{k\\cdot B''}\\circ \\mu_{k\\cdot B''})} \\geq \\left(1+\\epsilon\\right) \\mu(B)^{-1},\\] then there is a regular Bohr set $B'''\\subseteq B''$ of rank at most \\[\\rk(B''')\\leq d+O_{\\epsilon}(\\lo{\\alpha}^4p^4)\\] and size \\[\\abs{B'''}\\geq \\exp(-O_{\\epsilon}(dp\\lo{\\alpha/d}+\\lo{\\alpha}^5p^5))\\abs{B''}\\] such that \\[ \\norm{ \\mu_{B'''}*\\mu_A }_\\infty \\geq (1+c\\epsilon)\\mu(B)^{-1}. \\]"
+    },
+    {
+      "id": "flat-on-bohr",
+      "kind": "theorem",
+      "position": 45,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 74,
+      "title": null,
+      "labels": [
+        "flat-on-bohr"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "prop-it",
+        "bourgain-trick",
+        "bohr-size"
+      ],
+      "has_proof": true,
+      "statement_event": 84,
+      "proof_event": 85,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let ${\\epsilon,\\delta\\in (0,1)}$ and $p,k\\geq 1$ be integers such that $(k,\\abs{G})=1$. For any $A\\subseteq G$ with density $\\alpha$ there is a regular Bohr set $B$ with \\[ d=\\rk(B) =O_{\\epsilon}\\left(\\lo{\\alpha}^5p^4\\right) \\quad\\text{and}\\quad \\abs{B}\\geq \\exp\\left(-O_{\\epsilon,\\delta}(\\lo{\\alpha}^6p^5\\lo{\\alpha/p})\\right)\\abs{G} \\] and some $A'\\subseteq (A-x)\\cap B$ for some $x \\in G$ such that \\begin{enumerate} \\item $\\abs{A'}\\geq (1-\\epsilon)\\alpha\\abs{B}$, \\item $\\abs{A'\\cap B'}\\geq (1-\\epsilon)\\alpha\\abs{B'}$, where $B'=B_{\\rho}$ is a regular Bohr set with ${\\rho\\in (\\tfrac{1}{2},1)\\cdot c\\delta\\alpha/d}$, and \\item \\[\\norm{\\mu_{A'}\\circ \\mu_{A'}}_{p(\\mu_{k\\cdot B''}\\circ \\mu_{k\\cdot B''}\\ast \\mu_{k\\cdot B'''}\\circ \\mu_{k\\cdot B'''})} <(1+ \\epsilon)\\mu(B)^{-1},\\] for any regular Bohr sets $B'' = B'_{\\rho'}$ and $B'''=B''_{\\rho''}$ satisfying ${\\rho',\\rho''\\in(\\frac{1}{2},1)\\cdot c\\delta\\alpha/d}$. \\end{enumerate}"
+    },
+    {
+      "id": "th-int-gen",
+      "kind": "theorem",
+      "position": 46,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 93,
+      "title": null,
+      "labels": [
+        "th-int-gen"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "bohr-reg-def"
+      ],
+      "proof_uses": [
+        "Lp-orth",
+        "flat-on-bohr",
+        "pos-def-measures"
+      ],
+      "has_proof": true,
+      "statement_event": 86,
+      "proof_event": 87,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "There is a constant $c>0$ such that the following holds. Let $\\delta,\\epsilon\\in (0,1)$, let $p \\geq 1$ and let $k$ be a positive integer such that $(k,\\abs{G})=1$. There is a constant $C=C(\\epsilon,\\delta,k)>0$ such that the following holds. For any finite abelian group $G$ and any subset $A\\subseteq G$ with $\\abs{A}=\\alpha \\abs{G}$ there exists a regular Bohr set $B$ with \\[\\rk(B)\\leq Cp^4\\log(2/\\alpha)^5\\] and \\[\\abs{B}\\geq \\exp\\left(-Cp^5\\log(2p/\\alpha)\\log(2/\\alpha)^6\\right)\\abs{G}\\] and $A' \\subseteq (A-x)\\cap B$ for some $x\\in G$ such that \\begin{enumerate} \\item $\\abs{A'}\\geq (1-\\epsilon)\\alpha \\abs{B}$, \\item $\\abs{A'\\cap B'}\\geq (1-\\epsilon)\\alpha\\abs{B'}$, where $B'=B_{\\rho}$ is a regular Bohr set with $\\rho\\in (\\tfrac{1}{2},1)\\cdot c\\delta\\alpha/dk$, and \\item \\[\\norm{(\\mu_{A'}-\\mu_B)\\ast (\\mu_{A'}- \\mu_B)}_{p(\\mu_{k\\cdot B'})} \\leq \\epsilon\\frac{\\abs{G}}{\\abs{B}}.\\] \\end{enumerate}"
+    },
+    {
+      "id": "main-int-count",
+      "kind": "theorem",
+      "position": 47,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 115,
+      "title": null,
+      "labels": [
+        "main-int-count"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "th-int-gen",
+        "hoelder-lifting"
+      ],
+      "has_proof": true,
+      "statement_event": 88,
+      "proof_event": 89,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "If $A\\subseteq \\{1,\\ldots,N\\}$ has size $\\abs{A}=\\alpha N$, then $A$ contains at least \\[\\exp(-O(\\lo{\\alpha}^{12}))N^2\\] many three-term arithmetic progressions."
+    },
+    {
+      "id": "int",
+      "kind": "theorem",
+      "position": 48,
+      "chapter": "integers",
+      "source": "chapter/integers.tex",
+      "line": 125,
+      "title": "Integer case",
+      "labels": [
+        "int"
+      ],
+      "lean_decls": [
+        "int"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "main-int-count"
+      ],
+      "has_proof": true,
+      "statement_event": 90,
+      "proof_event": 91,
+      "proof_chapter": "integers",
+      "proof_leanok": false,
+      "text": "If $A\\subseteq \\{1,\\ldots,N\\}$ contains no non-trivial three-term arithmetic progressions then \\[\\lvert A\\rvert \\leq \\frac{N}{\\exp(-c(\\log N)^{1/12})}\\]"
+    }
+  ],
+  "edges": [
+    {
+      "source": "mzi",
+      "target": "mzi_complex",
+      "kind": "proof"
+    },
+    {
+      "source": "mzi_complex",
+      "target": "random_approx_expect",
+      "kind": "proof"
+    },
+    {
+      "source": "random_approx_expect",
+      "target": "lp_ap",
+      "kind": "proof"
+    },
+    {
+      "source": "lots_of_diagonals",
+      "target": "lp_ap",
+      "kind": "proof"
+    },
+    {
+      "source": "aps_in_translates",
+      "target": "lp_ap",
+      "kind": "proof"
+    },
+    {
+      "source": "lp_ap",
+      "target": "linfty_ap",
+      "kind": "proof"
+    },
+    {
+      "source": "linfty_ap",
+      "target": "linfty_ap_boosted",
+      "kind": "proof"
+    },
+    {
+      "source": "dissociated",
+      "target": "rudin_exp",
+      "kind": "statement"
+    },
+    {
+      "source": "mzi_complex",
+      "target": "rudin_exp",
+      "kind": "proof"
+    },
+    {
+      "source": "dissociated",
+      "target": "rudin",
+      "kind": "statement"
+    },
+    {
+      "source": "rudin_exp",
+      "target": "rudin",
+      "kind": "proof"
+    },
+    {
+      "source": "weight_energy",
+      "target": "energy",
+      "kind": "statement"
+    },
+    {
+      "source": "large_spec",
+      "target": "general_hoelder",
+      "kind": "statement"
+    },
+    {
+      "source": "weight_energy",
+      "target": "general_hoelder",
+      "kind": "statement"
+    },
+    {
+      "source": "energy",
+      "target": "spec_hoelder",
+      "kind": "statement"
+    },
+    {
+      "source": "general_hoelder",
+      "target": "spec_hoelder",
+      "kind": "proof"
+    },
+    {
+      "source": "energy",
+      "target": "energy_alt",
+      "kind": "statement"
+    },
+    {
+      "source": "dissociated",
+      "target": "diss_energy",
+      "kind": "statement"
+    },
+    {
+      "source": "energy",
+      "target": "diss_energy",
+      "kind": "statement"
+    },
+    {
+      "source": "energy_alt",
+      "target": "diss_energy",
+      "kind": "proof"
+    },
+    {
+      "source": "rudin",
+      "target": "diss_energy",
+      "kind": "proof"
+    },
+    {
+      "source": "dissociated",
+      "target": "diss_span",
+      "kind": "statement"
+    },
+    {
+      "source": "large_spec",
+      "target": "chang",
+      "kind": "statement"
+    },
+    {
+      "source": "diss_energy",
+      "target": "chang",
+      "kind": "proof"
+    },
+    {
+      "source": "diss_span",
+      "target": "chang",
+      "kind": "proof"
+    },
+    {
+      "source": "spec_hoelder",
+      "target": "chang",
+      "kind": "proof"
+    },
+    {
+      "source": "nonneg_moments",
+      "target": "unbalancing",
+      "kind": "proof"
+    },
+    {
+      "source": "drc",
+      "target": "sift",
+      "kind": "proof"
+    },
+    {
+      "source": "sift",
+      "target": "sift_cor",
+      "kind": "proof"
+    },
+    {
+      "source": "chang",
+      "target": "ap_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "linfty_ap_boosted",
+      "target": "ap_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "ast_le_circ",
+      "target": "global_dichotomy",
+      "kind": "proof"
+    },
+    {
+      "source": "ast_expand",
+      "target": "global_dichotomy",
+      "kind": "proof"
+    },
+    {
+      "source": "circ_expand",
+      "target": "global_dichotomy",
+      "kind": "proof"
+    },
+    {
+      "source": "global_dichotomy",
+      "target": "di_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "unbalancing",
+      "target": "di_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "ap_in_ff",
+      "target": "di_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "circ_expand",
+      "target": "di_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "sift_cor",
+      "target": "di_in_ff",
+      "kind": "proof"
+    },
+    {
+      "source": "no3aps_inner_prod",
+      "target": "ff",
+      "kind": "proof"
+    },
+    {
+      "source": "di_in_ff",
+      "target": "ff",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-set",
+      "target": "bohr-size",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-set",
+      "target": "bohr-reg-def",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "bohr-regularity",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-size",
+      "target": "bohr-regularity",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "reg-conv",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "bohr-majorise",
+      "kind": "statement"
+    },
+    {
+      "source": "reg-conv",
+      "target": "bohr-majorise",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "bourgain-trick",
+      "kind": "statement"
+    },
+    {
+      "source": "reg-conv",
+      "target": "bourgain-trick",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "th-ap-int",
+      "kind": "statement"
+    },
+    {
+      "source": "linfty_ap",
+      "target": "th-ap-int",
+      "kind": "proof"
+    },
+    {
+      "source": "chang",
+      "target": "th-ap-int",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-size",
+      "target": "th-ap-int",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "Lp-orth",
+      "kind": "statement"
+    },
+    {
+      "source": "reg-conv",
+      "target": "Lp-orth",
+      "kind": "proof"
+    },
+    {
+      "source": "unbalancing",
+      "target": "Lp-orth",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "pos-def-measures",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-majorise",
+      "target": "pos-def-measures",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "hoelder-lifting",
+      "kind": "statement"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "prop-it",
+      "kind": "statement"
+    },
+    {
+      "source": "sift",
+      "target": "prop-it",
+      "kind": "proof"
+    },
+    {
+      "source": "th-ap-int",
+      "target": "prop-it",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "flat-on-bohr",
+      "kind": "statement"
+    },
+    {
+      "source": "prop-it",
+      "target": "flat-on-bohr",
+      "kind": "proof"
+    },
+    {
+      "source": "bourgain-trick",
+      "target": "flat-on-bohr",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-size",
+      "target": "flat-on-bohr",
+      "kind": "proof"
+    },
+    {
+      "source": "bohr-reg-def",
+      "target": "th-int-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "Lp-orth",
+      "target": "th-int-gen",
+      "kind": "proof"
+    },
+    {
+      "source": "flat-on-bohr",
+      "target": "th-int-gen",
+      "kind": "proof"
+    },
+    {
+      "source": "pos-def-measures",
+      "target": "th-int-gen",
+      "kind": "proof"
+    },
+    {
+      "source": "th-int-gen",
+      "target": "main-int-count",
+      "kind": "proof"
+    },
+    {
+      "source": "hoelder-lifting",
+      "target": "main-int-count",
+      "kind": "proof"
+    },
+    {
+      "source": "main-int-count",
+      "target": "int",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}

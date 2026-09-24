@@ -45,8 +45,9 @@ def analyse(bp: Blueprint, decls: dict[str, FormalDecl], samples: int = 1000, re
     author_g = dependency_graph(bp).subgraph(formalised).copy()
 
     stats = {
-        "project_decls": len(decls),
-        "project_decls_by_kind": dict(sorted(_count(d.kind for d in decls.values()).items())),
+        "project_decls": sum(1 for d in decls.values() if not d.external),
+        "project_decls_by_kind": dict(sorted(_count(d.kind for d in decls.values() if not d.external).items())),
+        "external_decls": sum(1 for d in decls.values() if d.external),
         "formal_edges": fg.number_of_edges(),
         "blueprint_nodes": len(bp.nodes),
         "blueprint_nodes_with_formal_decl": len(formalised),
@@ -54,7 +55,8 @@ def analyse(bp: Blueprint, decls: dict[str, FormalDecl], samples: int = 1000, re
         "lean_names_missing": join.missing,
         "coverage": join.coverage,
         "labelled_decls": len(labelled),
-        "unlabelled_theorems": sum(1 for d in decls.values() if d.kind == "theorem" and d.name not in labelled),
+        "unlabelled_theorems": sum(1 for d in decls.values()
+                                   if d.kind == "theorem" and not d.external and d.name not in labelled),
         "edges": compare_edges(author_g, lean_g),
         "cycles_in_lean_projection": not nx.is_directed_acyclic_graph(lean_g),
     }
@@ -104,7 +106,9 @@ def write_report(stats: dict, results: list[ScopeResult], out_dir: Path, project
         "",
         f"- Project declarations (after folding compiler auxiliaries): {stats['project_decls']} "
         f"({', '.join(f'{k}: {v}' for k, v in stats['project_decls_by_kind'].items())}); "
-        f"{stats['formal_edges']} project-internal dependency edges.",
+        f"{stats['formal_edges']} dependency edges"
+        + (f", including {stats['external_decls']} blueprint-named declarations outside the project "
+           "(e.g. upstreamed to Mathlib)." if stats.get("external_decls") else "."),
         f"- Blueprint `\\lean{{}}` names resolved to project declarations: {stats['lean_names_resolved']} "
         f"({stats['coverage']:.0%}); {stats['blueprint_nodes_with_formal_decl']} of {stats['blueprint_nodes']} "
         "blueprint nodes have at least one.",

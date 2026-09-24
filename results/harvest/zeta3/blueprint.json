@@ -1,0 +1,973 @@
+{
+  "nodes": [
+    {
+      "id": "shiftedLegendre",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 18,
+      "title": null,
+      "labels": [
+        "shiftedLegendre"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\[ P_n(x):=\\frac{1}{n!}\\frac{d^n}{dx^n}[x^n(1-x)^n] \\]"
+    },
+    {
+      "id": "shiftedLegendre_eq_sum",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 23,
+      "title": null,
+      "labels": [
+        "shiftedLegendre_eq_sum"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "shiftedLegendre"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 1,
+      "proof_event": 2,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ P_n(x)=\\sum\\limits_{k=0}^{n}(-1)^k\\binom{n}{k}\\binom{n+k}{n}x^k \\] Hence $P_n(x)$ is integer polynomial."
+    },
+    {
+      "id": "frac_partial_n",
+      "kind": "lemma",
+      "position": 2,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 49,
+      "title": null,
+      "labels": [
+        "frac_partial_n"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For $ 0 < x, z < 1$,, \\[ \\frac{\\partial^n}{\\partial y^n}(\\frac{1}{1 - (1-xy)z}) = \\frac{(-1)^nn!(xz)^n}{(1 - (1-xy)z)^{n+1}} \\]"
+    },
+    {
+      "id": "Legendre_poly_mul_frac_integral",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 58,
+      "title": null,
+      "labels": [
+        "Legendre_poly_mul_frac_integral"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "frac_partial_n",
+        "shiftedLegendre"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 6,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $ 0 < x, z < 1$, one has \\[ \\int_{0}^{1}\\frac{P_n(y)}{1 - (1-xy)z} \\, dx =(-1)^n \\int_{0}^{1} \\frac{(xyz)^n(1-y)^n}{(1 - (1-xy)z)^{n+1}} \\, dx \\]"
+    },
+    {
+      "id": "log_pow_integral",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 68,
+      "title": null,
+      "labels": [
+        "log_pow_integral"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $n \\in \\mathbb{R}, n > -1$, \\[ \\int_{0}^{1} -{\\rm ln}(x) x^n = \\frac{1}{(n + 1)^2} \\, dx \\]"
+    },
+    {
+      "id": "J_rs_eq_sum_aux",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 80,
+      "title": null,
+      "labels": [
+        "J_rs_eq_sum_aux"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "log_pow_integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 9,
+      "proof_event": 10,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $k,s,r \\in \\mathbb{N}$, \\[-\\int_{0}^{1}\\int_{0}^{1} {\\rm ln}(xy)x^{k+r}y^{k+s}\\, dx \\, dy = \\frac{1}{((k+r+1)^2(k+s+1))}+\\frac{1}{((k+r+1)(k+s+1)^2)}\\]"
+    },
+    {
+      "id": "J_rs_eq_tsum",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 95,
+      "title": null,
+      "labels": [
+        "J_rs_eq_tsum"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rs_eq_sum_aux"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $r,s \\in \\mathbb{N}$, \\[ J_rs = \\sum_{k \\in \\mathbb{N}} \\frac{1}{((k+r+1)^2(k+s+1))}+\\frac{1}{((k+r+1)(k+s+1)^2)}\\]"
+    },
+    {
+      "id": "integral_zeta_3",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 110,
+      "title": null,
+      "labels": [
+        "integral_zeta_3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rs_eq_tsum"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 13,
+      "proof_event": 14,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ J_{00} := -\\int_{0}^{1}\\int_{0}^{1} \\frac{{\\rm ln}(xy)}{1-xy} \\, dx \\, dy = 2\\zeta(3) \\]"
+    },
+    {
+      "id": "J_rr",
+      "kind": "lemma",
+      "position": 8,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 119,
+      "title": null,
+      "labels": [
+        "J_rr"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rs_eq_tsum"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 15,
+      "proof_event": 16,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "for all integers $r > 0$ \\[ J_{rr} := -\\int_{0}^{1}\\int_{0}^{1} x^ry^r\\frac{{\\rm ln}(xy)}{1-xy} \\, dx \\, dy = 2\\zeta(3) - 2 \\sum\\limits_{m = 1}^{r}\\frac{1}{m^3} \\]"
+    },
+    {
+      "id": "J_rs",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 129,
+      "title": null,
+      "labels": [
+        "J_rs"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rs_eq_tsum"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 17,
+      "proof_event": 18,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "Let $r$ and $s$ be non-negative integers, with $r \\neq s$, then \\[ J_{rs} := -\\int_{0}^{1}\\int_{0}^{1} x^ry^s\\frac{{\\rm ln}(xy)}{1-xy} \\, dx \\, dy = \\frac{\\sum\\limits_{m = 1}^{r}\\frac{1}{m^2} - \\sum\\limits_{m = 1}^{s}\\frac{1}{m^2}}{r - s} \\]"
+    },
+    {
+      "id": "d_r_3",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 139,
+      "title": null,
+      "labels": [
+        "d_r_3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $r \\in \\mathbb{N}^*, d_n$ is lcm of $\\{1, 2, \\ldots, n\\}.$ \\[ d_{r^3} = (d_r)^3 \\]"
+    },
+    {
+      "id": "Jrr_linear_form",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 148,
+      "title": null,
+      "labels": [
+        "Jrr_linear_form"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rr",
+        "d_r_3"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $r \\in \\mathbb{N}^*$, \\[ J_{rr} = 2 \\zeta(3) - \\frac{z_r}{(d_r)^3} \\] for some $z_r \\in \\mathbb{Z}$."
+    },
+    {
+      "id": "d_r_2",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 159,
+      "title": null,
+      "labels": [
+        "d_r_2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 23,
+      "proof_event": 24,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $r \\in \\mathbb{N}^*, d_n$ is lcm of $\\{1, 2, \\ldots, n\\}.$ \\[ d_{r^2} = (d_r)^2 \\]"
+    },
+    {
+      "id": "Jrs_postive_rational",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 168,
+      "title": null,
+      "labels": [
+        "Jrs_postive_rational"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_rs",
+        "d_r_2",
+        "d_r_3"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 25,
+      "proof_event": 26,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For all $r \\in \\mathbb{N}, r \\neq s$, \\[ J_{rs} = \\frac{z_{rs}}{(d_r)^3}\\] for some $z_{rs} \\in \\mathbb{Z}$."
+    },
+    {
+      "id": "integral1",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 179,
+      "title": null,
+      "labels": [
+        "integral1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 27,
+      "proof_event": 28,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ \\int_{0}^{1} \\frac{1}{1 - (1 - x)z} \\, dz= -\\frac{{\\rm ln}x}{1 - x} \\]"
+    },
+    {
+      "id": "JJ_n",
+      "kind": "definition",
+      "position": 15,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 218,
+      "title": null,
+      "labels": [
+        "JJ_n"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "shiftedLegendre"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 29,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\[ JJ_n := - \\int_{0}^{1}\\int_{0}^{1} P_n(x)P_n(y)\\frac{{\\rm ln}(xy)}{1-xy} \\, dx \\, dy \\]"
+    },
+    {
+      "id": "J_n_integers_an_bn",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 224,
+      "title": null,
+      "labels": [
+        "J_n_integers_an_bn"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "JJ_n",
+        "integral_zeta_3",
+        "Jrr_linear_form",
+        "Jrs_postive_rational",
+        "shiftedLegendre_eq_sum"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For some integers $a_n$ and $b_n$, \\[ JJ_n = \\frac{a_n}{d_n^3} + b_n\\zeta(3) \\]"
+    },
+    {
+      "id": "JJ'_n",
+      "kind": "definition",
+      "position": 17,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 248,
+      "title": null,
+      "labels": [
+        "JJ'_n"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "shiftedLegendre"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 32,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\[ JJ'_n := - \\int_{0}^{1}\\int_{0}^{1}\\int_{0}^{1} (\\frac{x(1-x)y(1-y)z(1-z)}{1-(1-yz)x})^n \\frac{1}{1-(1-yz)x} \\, dx \\, dy \\, dz \\]"
+    },
+    {
+      "id": "bound",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 254,
+      "title": null,
+      "labels": [
+        "bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "Let $D = \\{(x,y,z)|x,y,z\\in (0,1)\\}$, then \\[ \\frac{x(1-x)y(1-y)z(1-z)}{(1-(1-xy)z)} < \\frac{1}{24} \\]"
+    },
+    {
+      "id": "double_integral_eq1",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 277,
+      "title": null,
+      "labels": [
+        "double_integral_eq1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Legendre_poly_mul_frac_integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For $0 < z < 1$, \\[ \\int_{0}^{1}\\int_{0}^{1} P_n(x)P_n(y) \\frac{1}{1 - (1 - xy)z} \\, dx \\, dy = \\int_{0}^{1}\\int_{0}^{1} \\frac{P_n(x)(xyz)^n(1-y)^n}{(1-(1-xy)z)^{n + 1}} \\, dx \\, dy \\]"
+    },
+    {
+      "id": "double_integral_eq2",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 286,
+      "title": null,
+      "labels": [
+        "double_integral_eq2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Legendre_poly_mul_frac_integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 37,
+      "proof_event": 38,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For $0 < x, y < 1$, \\[ \\int_{0}^{1} \\frac{P_n(x)(xyz)^n(1-y)^n}{(1-(1-xy)z)^{n + 1}} \\, dz = \\int_{0}^{1} \\frac{P_n(x)(1-z)^n(1-y)^n}{1-(1-xy)z} \\, dz \\]"
+    },
+    {
+      "id": "double_integral_eq3",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 295,
+      "title": null,
+      "labels": [
+        "double_integral_eq3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "Legendre_poly_mul_frac_integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 39,
+      "proof_event": 40,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For $0 < z < 1$, \\[ \\int_{0}^{1}\\int_{0}^{1} \\frac{P_n(x)(1-y)^n}{1-(1-xy)z} \\, dx \\, dy = \\int_{0}^{1}\\int_{0}^{1} \\frac{(xyz(1-x)(1-y))^n}{(1-(1-xy)z)^{n+1}} \\, dx \\, dy \\]"
+    },
+    {
+      "id": "JJ_eq_form",
+      "kind": "theorem",
+      "position": 22,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 304,
+      "title": null,
+      "labels": [
+        "JJ_eq_form"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "JJ_n",
+        "integral1",
+        "double_integral_eq1",
+        "double_integral_eq2",
+        "double_integral_eq3",
+        "JJ'_n"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ JJ_n = JJ'_n \\]"
+    },
+    {
+      "id": "JJ_pos",
+      "kind": "theorem",
+      "position": 23,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 322,
+      "title": null,
+      "labels": [
+        "JJ_pos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "JJ_eq_form"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ 0 < JJ_n \\]"
+    },
+    {
+      "id": "J_eq_triple",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 332,
+      "title": null,
+      "labels": [
+        "J_eq_triple"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J",
+        "integral1"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "For $r, s \\in \\mathbb{N}$, one has \\[ J_rs = \\int_{0}^{1}\\int_{0}^{1}\\int_{0}^{1} \\frac{y^rz^s}{1-(1-yz)x} \\, dz \\, dy \\, dx \\]"
+    },
+    {
+      "id": "JJ_upper",
+      "kind": "theorem",
+      "position": 25,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 347,
+      "title": null,
+      "labels": [
+        "JJ_upper"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "JJ_eq_form",
+        "JJ'",
+        "J_eq_triple",
+        "integral_zeta_3",
+        "bound"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "\\[ JJ_n \\leqslant (\\frac{1}{24})^n\\cdot 2\\zeta(3) \\]"
+    },
+    {
+      "id": "pi_asymp",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 361,
+      "title": null,
+      "labels": [
+        "pi_asymp"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "One has \\[ \\pi(x) = \\left(1 + o(1)\\right)\\int_2^{x}\\frac{1}{\\log x} \\mathsf{d} x. \\] as $x \\to \\infty$."
+    },
+    {
+      "id": "pi_alt",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 449,
+      "title": null,
+      "labels": [
+        "pi_alt"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "pi_asymp"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "One has \\[ \\pi(x) = (1 + o(1))\\frac{x}{\\log x}\\] as $x \\rightarrow \\infty$."
+    },
+    {
+      "id": "dn_asymptotic",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 459,
+      "title": null,
+      "labels": [
+        "dn_asymptotic"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "pi_alt"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 53,
+      "proof_event": 54,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "Let $n$ be a positive integer. Define $\\pi(n)$ as the number of primes less than (or equal to) $n$. Then, $d_n \\leqslant n^{\\pi(n)} \\sim e^n$."
+    },
+    {
+      "id": "zeta_3_irrational",
+      "kind": "theorem",
+      "position": 29,
+      "chapter": "proof",
+      "source": "content.tex",
+      "line": 468,
+      "title": null,
+      "labels": [
+        "zeta_3_irrational"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "J_n_integers_an_bn",
+        "JJ_upper",
+        "dn_asymptotic"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 55,
+      "proof_event": 56,
+      "proof_chapter": "proof",
+      "proof_leanok": true,
+      "text": "$\\zeta(3)$ is irrational."
+    }
+  ],
+  "edges": [
+    {
+      "source": "shiftedLegendre",
+      "target": "shiftedLegendre_eq_sum",
+      "kind": "statement"
+    },
+    {
+      "source": "frac_partial_n",
+      "target": "Legendre_poly_mul_frac_integral",
+      "kind": "statement"
+    },
+    {
+      "source": "shiftedLegendre",
+      "target": "Legendre_poly_mul_frac_integral",
+      "kind": "statement"
+    },
+    {
+      "source": "log_pow_integral",
+      "target": "J_rs_eq_sum_aux",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rs_eq_sum_aux",
+      "target": "J_rs_eq_tsum",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rs_eq_tsum",
+      "target": "integral_zeta_3",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rs_eq_tsum",
+      "target": "J_rr",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rs_eq_tsum",
+      "target": "J_rs",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rr",
+      "target": "Jrr_linear_form",
+      "kind": "statement"
+    },
+    {
+      "source": "d_r_3",
+      "target": "Jrr_linear_form",
+      "kind": "statement"
+    },
+    {
+      "source": "J_rs",
+      "target": "Jrs_postive_rational",
+      "kind": "statement"
+    },
+    {
+      "source": "d_r_2",
+      "target": "Jrs_postive_rational",
+      "kind": "statement"
+    },
+    {
+      "source": "d_r_3",
+      "target": "Jrs_postive_rational",
+      "kind": "statement"
+    },
+    {
+      "source": "shiftedLegendre",
+      "target": "JJ_n",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ_n",
+      "target": "J_n_integers_an_bn",
+      "kind": "statement"
+    },
+    {
+      "source": "integral_zeta_3",
+      "target": "J_n_integers_an_bn",
+      "kind": "statement"
+    },
+    {
+      "source": "Jrr_linear_form",
+      "target": "J_n_integers_an_bn",
+      "kind": "statement"
+    },
+    {
+      "source": "Jrs_postive_rational",
+      "target": "J_n_integers_an_bn",
+      "kind": "statement"
+    },
+    {
+      "source": "shiftedLegendre_eq_sum",
+      "target": "J_n_integers_an_bn",
+      "kind": "statement"
+    },
+    {
+      "source": "shiftedLegendre",
+      "target": "JJ'_n",
+      "kind": "statement"
+    },
+    {
+      "source": "Legendre_poly_mul_frac_integral",
+      "target": "double_integral_eq1",
+      "kind": "statement"
+    },
+    {
+      "source": "Legendre_poly_mul_frac_integral",
+      "target": "double_integral_eq2",
+      "kind": "statement"
+    },
+    {
+      "source": "Legendre_poly_mul_frac_integral",
+      "target": "double_integral_eq3",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ_n",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "integral1",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "double_integral_eq1",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "double_integral_eq2",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "double_integral_eq3",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ'_n",
+      "target": "JJ_eq_form",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ_eq_form",
+      "target": "JJ_pos",
+      "kind": "statement"
+    },
+    {
+      "source": "integral1",
+      "target": "J_eq_triple",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ_eq_form",
+      "target": "JJ_upper",
+      "kind": "statement"
+    },
+    {
+      "source": "J_eq_triple",
+      "target": "JJ_upper",
+      "kind": "statement"
+    },
+    {
+      "source": "integral_zeta_3",
+      "target": "JJ_upper",
+      "kind": "statement"
+    },
+    {
+      "source": "bound",
+      "target": "JJ_upper",
+      "kind": "statement"
+    },
+    {
+      "source": "pi_asymp",
+      "target": "pi_alt",
+      "kind": "statement"
+    },
+    {
+      "source": "pi_alt",
+      "target": "dn_asymptotic",
+      "kind": "statement"
+    },
+    {
+      "source": "J_n_integers_an_bn",
+      "target": "zeta_3_irrational",
+      "kind": "statement"
+    },
+    {
+      "source": "JJ_upper",
+      "target": "zeta_3_irrational",
+      "kind": "statement"
+    },
+    {
+      "source": "dn_asymptotic",
+      "target": "zeta_3_irrational",
+      "kind": "statement"
+    }
+  ],
+  "unresolved": [
+    [
+      "J_eq_triple",
+      "J",
+      "statement"
+    ],
+    [
+      "JJ_upper",
+      "JJ'",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": []
+}

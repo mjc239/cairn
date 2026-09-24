@@ -1,0 +1,32 @@
+{
+ "name": "con_nf",
+ "repo": "leanprover-community/con-nf",
+ "status": "ok",
+ "stage": "done",
+ "commit": "55b939a3acf947793e252ff330800bfe968cc172",
+ "commit_date": "2025-06-18",
+ "toolchain": "leanprover/lean4:v4.21.0-rc3",
+ "mathlib": "5b77ef3c3fcc",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 159,
+ "uses_edges": 293,
+ "chapters": 8,
+ "lean_nodes": 59,
+ "leanok_nodes": 60,
+ "libs": [
+  "ConNF",
+  "DependencyGraph"
+ ],
+ "build_minutes": 2.0,
+ "extractor": "extract_deps_legacy.lean",
+ "decls": 1998,
+ "theorems": 1400,
+ "external_decls": 0,
+ "lean_resolved": 0.905,
+ "nodes_linked": 55,
+ "nodes_linked_external_only": 0,
+ "minutes": 5.3
+}

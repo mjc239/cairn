@@ -1,0 +1,31 @@
+{
+ "name": "abc_exceptions",
+ "repo": "b-mehta/ABC-Exceptions",
+ "status": "ok",
+ "stage": "done",
+ "commit": "d8ace7bbaa232b2b3df40f1cbd8ff4b45eed16d3",
+ "commit_date": "2025-08-18",
+ "toolchain": "leanprover/lean4:v4.21.0-rc3",
+ "mathlib": "6455ba8ab6d2",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "chapter",
+ "nodes": 58,
+ "uses_edges": 132,
+ "chapters": 4,
+ "lean_nodes": 33,
+ "leanok_nodes": 29,
+ "libs": [
+  "ABCExceptions"
+ ],
+ "build_minutes": 0.7,
+ "extractor": "extract_deps_legacy.lean",
+ "decls": 248,
+ "theorems": 206,
+ "external_decls": 0,
+ "lean_resolved": 1.0,
+ "nodes_linked": 33,
+ "nodes_linked_external_only": 0,
+ "minutes": 3.0
+}

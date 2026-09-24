@@ -1,0 +1,5134 @@
+{
+  "nodes": [
+    {
+      "id": "0-slice-adj",
+      "kind": "proposition",
+      "position": 0,
+      "chapter": "1-1-over-cat",
+      "source": "chapters/1-1-over-cat.tex",
+      "line": 4,
+      "title": "Sliced adjoint functors",
+      "labels": [
+        "0-slice-adj"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Over.postAdjunctionRight"
+      ],
+      "leanok": true,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "1-1-over-cat",
+      "proof_leanok": true,
+      "text": "If $a : F \\vdash G$ is an adjunction between $F : C \\to D$ and $G : D \\to C$ and $X : C$, then there is an adjunction between $F / X : C / X \\to D / F(X)$ and $G / X : D / F(X) \\to C / X$."
+    },
+    {
+      "id": "0-over-lim",
+      "kind": "proposition",
+      "position": 1,
+      "chapter": "1-1-over-cat",
+      "source": "chapters/1-1-over-cat.tex",
+      "line": 21,
+      "title": "Limit-preserving functors lift to over categories",
+      "labels": [
+        "0-over-lim"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Limits.PreservesLimitsOfShape.overPost",
+        "CategoryTheory.Limits.PreservesLimitsOfSize.overPost"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 2,
+      "proof_event": 3,
+      "proof_chapter": "1-1-over-cat",
+      "proof_leanok": true,
+      "text": "Let $J$ be a shape (i.e. a category). Let $\\widetilde J$ denote the category which is the same as $J$, but has an extra object $*$ which is terminal. If $F : C \\to D$ is a functor preserving limits of shape $\\widetilde J$, then the obvious functor $C / X \\to D / F(X)$ preserves limits of shape $J$."
+    },
+    {
+      "id": "0-ess-image-over",
+      "kind": "proposition",
+      "position": 2,
+      "chapter": "1-1-over-cat",
+      "source": "chapters/1-1-over-cat.tex",
+      "line": 38,
+      "title": "Essential image of a sliced functor",
+      "labels": [
+        "0-ess-image-over"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Functor.essImage_overPost"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 4,
+      "proof_event": 5,
+      "proof_chapter": "1-1-over-cat",
+      "proof_leanok": true,
+      "text": "If $F : C \\to D$ is a full functor between cartesian-monoidal categories, then $F / X : C / X \\hom D / F(X)$ has the same essential image as $F$."
+    },
+    {
+      "id": "0-full-faithful-grp",
+      "kind": "proposition",
+      "position": 3,
+      "chapter": "1-2-obj",
+      "source": "chapters/1-2-obj.tex",
+      "line": 7,
+      "title": "Fully faithful product-preserving functors lift to monoid/group objects",
+      "labels": [
+        "0-full-faithful-grp"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Functor.Faithful.mapGrp",
+        "CategoryTheory.Functor.Full.mapGrp"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "1-2-obj",
+      "proof_leanok": true,
+      "text": "If a finite-products-preserving functor $F : C \\to D$ is fully faithful, then so is $\\Grp(F) : \\Grp C \\to \\Grp D$."
+    },
+    {
+      "id": "0-grp-equiv",
+      "kind": "proposition",
+      "position": 4,
+      "chapter": "1-2-obj",
+      "source": "chapters/1-2-obj.tex",
+      "line": 28,
+      "title": "Equivalences lift to monoid/group object categories",
+      "labels": [
+        "0-grp-equiv"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Equivalence.mapGrp"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "1-2-obj",
+      "proof_leanok": true,
+      "text": "If $e : C \\backsimeq D$ is an equivalence of cartesian-monoidal categories, then $\\Grp(e) : \\Grp(C) \\backsimeq \\Grp(D)$ too is an equivalence of categories."
+    },
+    {
+      "id": "0-ess-image-grp",
+      "kind": "proposition",
+      "position": 5,
+      "chapter": "1-2-obj",
+      "source": "chapters/1-2-obj.tex",
+      "line": 45,
+      "title": "Essential image of a functor on monoid/group objects",
+      "labels": [
+        "0-ess-image-grp"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Functor.essImage_mapGrp"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "0-grp-equiv"
+      ],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "1-2-obj",
+      "proof_leanok": true,
+      "text": "If $F : C \\to D$ is a fully faithful functor between cartesian-monoidal categories, then $\\Grp(F) : \\Grp(C) \\hom \\Grp(D)$ has the same essential image as $F$."
+    },
+    {
+      "id": "0-full-faithful-grp-hom",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "1-2-obj",
+      "source": "chapters/1-2-obj.tex",
+      "line": 62,
+      "title": "A fully faithful functor product-preserving is a group isomorphism on hom sets",
+      "labels": [
+        "0-full-faithful-grp-hom"
+      ],
+      "lean_decls": [
+        "CategoryTheory.Functor.FullyFaithful.homMulEquiv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-full-faithful-grp"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 12,
+      "proof_event": 13,
+      "proof_chapter": "1-2-obj",
+      "proof_leanok": true,
+      "text": "If $F : C \\to D$ is a fully faithful functor between cartesian-monoidal categories and $X, G \\in C$ are an object and a group object respectively, then $\\Grp(F) : (X \\hom G) \\hom \\backcong (F(X) \\hom F(G))$ is a group isomorphism."
+    },
+    {
+      "id": "0-comap-mod",
+      "kind": "proposition",
+      "position": 7,
+      "chapter": "1-2-obj",
+      "source": "chapters/1-2-obj.tex",
+      "line": 83,
+      "title": "Pulling back a module object",
+      "labels": [
+        "0-comap-mod"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "1-2-obj",
+      "proof_leanok": false,
+      "text": "Let $M, N$ be two monoid objects in a monoidal category $C$. Let $f : M \\to N$ be a monoid morphism. If $X$ is a $N$-module object, then it is also a $M$-module object."
+    },
+    {
+      "id": "0-tensor-lin-indep",
+      "kind": "lemma",
+      "position": 8,
+      "chapter": "2-1-tensor-product",
+      "source": "chapters/2-1-tensor-product.tex",
+      "line": 4,
+      "title": "The tensor product of linearly independent families",
+      "labels": [
+        "0-tensor-lin-indep"
+      ],
+      "lean_decls": [
+        "LinearIndependent.tmul_of_isDomain"
+      ],
+      "leanok": true,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "2-1-tensor-product",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain and $M, N$ two $R$-semimodules. If $f$ and $g$ are linearly independent families of points in $M$ and $N$, then $(i, j) \\mapsto f i \\ox g j$ is a linearly independent family of points in $M \\ox N$."
+    },
+    {
+      "id": "0-mv-laurent-poly-domain",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 4,
+      "title": "Multivariate Laurent polynomials are an integral domain",
+      "labels": [
+        "0-mv-laurent-poly-domain"
+      ],
+      "lean_decls": [
+        "AddMonoidAlgebra.instIsDomainOfIsCancelAddOfUniqueSums"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "Multivariate Laurent polynomials over an integral domain are an integral domain."
+    },
+    {
+      "id": "0-aff-mon",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 20,
+      "title": "Affine monoid",
+      "labels": [
+        "0-aff-mon"
+      ],
+      "lean_decls": [
+        "AddCancelCommMonoid",
+        "AddMonoid.FG",
+        "IsAddTorsionFree"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 20,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An \\emph{affine monoid} is a finitely generated commutative monoid which is: \\begin{itemize} \\item cancellative: if $a + c = b + c$ then $a = b$, and \\item torsion-free: if $n a = n b$ then $a = b$ (for $n \\geq 1$). \\end{itemize}"
+    },
+    {
+      "id": "0-embed-aff-mon",
+      "kind": "proposition",
+      "position": 11,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 33,
+      "title": "Embedding an affine monoid inside a lattice",
+      "labels": [
+        "0-embed-aff-mon"
+      ],
+      "lean_decls": [
+        "AffineAddMonoid.embedding",
+        "AffineAddMonoid.embedding_injective"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-aff-mon"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "If $M$ is an affine monoid, then $M$ can be embedded inside $\\Z^n$ for some $n$."
+    },
+    {
+      "id": "0-aff-mon-alg-domain",
+      "kind": "proposition",
+      "position": 12,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 49,
+      "title": "Affine monoid algebras are domains",
+      "labels": [
+        "0-aff-mon-alg-domain"
+      ],
+      "lean_decls": [
+        "MonoidAlgebra.finiteType_of_fg"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-aff-mon"
+      ],
+      "proof_uses": [
+        "0-mv-laurent-poly-domain",
+        "0-embed-aff-mon"
+      ],
+      "has_proof": true,
+      "statement_event": 23,
+      "proof_event": 24,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "If $R$ is an integral domain $M$ is an affine monoid, then $R[M]$ is an integral domain and is a finitely generated $R$-algebra."
+    },
+    {
+      "id": "0-irred",
+      "kind": "definition",
+      "position": 13,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 65,
+      "title": "Irreducible element",
+      "labels": [
+        "0-irred"
+      ],
+      "lean_decls": [
+        "Irreducible"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 25,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An element $x$ of a monoid $M$ is \\emph{irreducible} if $x = y + z$ implies $y = 0$ or $z = 0$."
+    },
+    {
+      "id": "0-irred-subset-gen",
+      "kind": "proposition",
+      "position": 14,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 75,
+      "title": "Irreducible elements lie in all sets generating a salient monoid",
+      "labels": [
+        "0-irred-subset-gen"
+      ],
+      "lean_decls": [
+        "addIrreducible_subset_of_addSubmonoidClosure_eq_top"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-irred"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "If $M$ is a monoid with a single unit, and $S$ is a set generating $M$, then $S$ contains all irreducible elements of $M$."
+    },
+    {
+      "id": "0-irred-finite",
+      "kind": "proposition",
+      "position": 15,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 99,
+      "title": "A salient finitely generated monoid has finitely many irreducible elements",
+      "labels": [
+        "0-irred-finite"
+      ],
+      "lean_decls": [
+        "finite_addIrreducible"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-irred"
+      ],
+      "proof_uses": [
+        "0-irred-subset-gen"
+      ],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "If $M$ is a finitely generated monoid with a single unit, then only finitely many elements of $M$ are irreducible."
+    },
+    {
+      "id": "0-irred-gen",
+      "kind": "proposition",
+      "position": 16,
+      "chapter": "2-2-affine-monoids",
+      "source": "chapters/2-2-affine-monoids.tex",
+      "line": 115,
+      "title": "A salient finitely generated cancellative monoid is generated by its irreducible elements",
+      "labels": [
+        "0-irred-gen"
+      ],
+      "lean_decls": [
+        "AddSubmonoid.closure_addIrreducible"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-irred"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "2-2-affine-monoids",
+      "proof_leanok": true,
+      "text": "If $M$ is a finitely generated cancellative monoid with a single unit, then $M$ is generated by its irreducible elements."
+    },
+    {
+      "id": "0-coideal",
+      "kind": "definition",
+      "position": 17,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 7,
+      "title": "Coideal",
+      "labels": [
+        "0-coideal"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 32,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $R$ be a commutative ring and $(C,\\Delta,\\varepsilon)$ be a coalgebra over $R$. An $R$-submodule $I$ of $C$ is a \\emph{coideal} of $C$ if $\\Delta(I) \\subseteq \\bar{I \\otimes_R C} + \\bar{C \\otimes_R I}$ and $\\varepsilon(I)=0$, where $\\bar{\\cdot}$ denotes the image in $C \\otimes_R C$."
+    },
+    {
+      "id": "0-coquot",
+      "kind": "proposition",
+      "position": 18,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 20,
+      "title": "Quotient coalgebra",
+      "labels": [
+        "0-coquot"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-coideal"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $C$ is a coalgebra over $R$ and $I$ is a coideal, the quotient $C /I$ is equipped with a canonical $R$-coalgebra structure."
+    },
+    {
+      "id": "0-coquot-hom",
+      "kind": "proposition",
+      "position": 19,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 37,
+      "title": "Quotient coalgebra map",
+      "labels": [
+        "0-coquot-hom"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-coquot"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $C$ is a coalgebra over $R$ and $I$ is a coideal, the quotient map $C \\to C / I$ is a coalgebra homomorphism."
+    },
+    {
+      "id": "0-biideal",
+      "kind": "definition",
+      "position": 20,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 54,
+      "title": "Bialgebra ideal",
+      "labels": [
+        "0-biideal"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-coideal"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 37,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $B$ be a bialgebra over a commutative ring $R$. A \\emph{bialgebra ideal} $I$ is an ideal which is also a coideal."
+    },
+    {
+      "id": "0-biquot",
+      "kind": "proposition",
+      "position": 21,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 65,
+      "title": "Quotient bialgebra",
+      "labels": [
+        "0-biquot"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-biideal"
+      ],
+      "proof_uses": [
+        "0-coquot"
+      ],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $B$ is a bialgebra over $R$ and $I$ is a bialgebra ideal, the quotient $B / I$ is equipped with a canonical $R$-bialgebra structure."
+    },
+    {
+      "id": "0-biquot-hom",
+      "kind": "proposition",
+      "position": 22,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 82,
+      "title": "Quotient bialgebra map",
+      "labels": [
+        "0-biquot-hom"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-biquot"
+      ],
+      "proof_uses": [
+        "0-coquot-hom"
+      ],
+      "has_proof": true,
+      "statement_event": 40,
+      "proof_event": 41,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $B$ is a bialgebra over $R$ and $I$ is a bialgebra ideal, the quotient map $B \\to B / I$ is a bialgebra homomorphism."
+    },
+    {
+      "id": "0-hopf-ideal",
+      "kind": "definition",
+      "position": 23,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 99,
+      "title": "Hopf ideal",
+      "labels": [
+        "0-hopf-ideal"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-biideal"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 42,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $A$ be a Hopf algebra over a commutative ring $R$. A \\emph{Hopf ideal} $I$ is a bialgebra ideal such that $S(I)=I$."
+    },
+    {
+      "id": "0-hopf-quot",
+      "kind": "proposition",
+      "position": 24,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 109,
+      "title": "Quotient Hopf algebra",
+      "labels": [
+        "0-hopf-quot"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-hopf-ideal"
+      ],
+      "proof_uses": [
+        "0-biquot"
+      ],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $A$ is a Hopf algebra over $R$ and $I$ is a Hopf ideal, the quotient $A / I$ is equipped with a canonical Hopf algebra structure over $R$."
+    },
+    {
+      "id": "0-hopf-quot-hom",
+      "kind": "proposition",
+      "position": 25,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 126,
+      "title": "Quotient Hopf algebra map",
+      "labels": [
+        "0-hopf-quot-hom"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-hopf-quot"
+      ],
+      "proof_uses": [
+        "0-biquot-hom"
+      ],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "If $A$ is a Hopf algebra over $R$ and $I$ is a Hopf ideal, the quotient map $A \\to A / I$ is a Hopf algebra homomorphism."
+    },
+    {
+      "id": "0-grp-alg-free",
+      "kind": "proposition",
+      "position": 26,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 146,
+      "title": "Freeness of group algebras under an injective hom",
+      "labels": [
+        "0-grp-alg-free"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $R$ be a commutative ring. Let $G, H$ be abelian groups and $f : G \\to H$ an injective group hom. Then $R[H]$ is a free $R[G]$-module."
+    },
+    {
+      "id": "0-ker-mon-alg",
+      "kind": "proposition",
+      "position": 27,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 174,
+      "title": "The kernel of a map on direct sums",
+      "labels": [
+        "0-ker-mon-alg"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $G$ be an abelian group generated by a set $S$. Let $A, B$ be arbitrary indexing types and $f : A \\to B$ a function. Write $f^\\oplus : G^{\\oplus A} \\to G^{\\oplus B}$ the pushforward. Then \\[ \\ker f^\\oplus = \\Span\\{gX^a_1 - gX^a_2 | g \\in S, a_1, a_2 \\in A, f(a_1) = f(a_2)\\}. \\]"
+    },
+    {
+      "id": "0-loc-mon-alg",
+      "kind": "proposition",
+      "position": 28,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 218,
+      "title": "Localising a monoid algebra",
+      "labels": [
+        "0-loc-mon-alg"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $R$ be a commutative ring. Let $M$ be a commutative monoid and $M'$ be its localization at some $S \\subseteq M$. Then $R[M']$ is the localization of $R[M]$ at $\\Span \\{X^s | s \\in S\\}$."
+    },
+    {
+      "id": "0-grp-like",
+      "kind": "definition",
+      "position": 29,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 239,
+      "title": "Group-like elements",
+      "labels": [
+        "0-grp-like"
+      ],
+      "lean_decls": [
+        "IsGroupLikeElem"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 53,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An element $a$ of a coalgebra $A$ is \\emph{group-like} if $\\eta(a) = 1$ and $\\Delta(a) = a \\ox a$, where $\\eta$ is the counit and $\\Delta$ is the comultiplication map. We write $\\GrpLike A$ for the set of group-like elements of $A$."
+    },
+    {
+      "id": "0-grp-like-grp",
+      "kind": "proposition",
+      "position": 30,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 252,
+      "title": "Group-like elements form a group",
+      "labels": [
+        "0-grp-like-grp"
+      ],
+      "lean_decls": [
+        "GroupLike.instGroup",
+        "GroupLike.instCommGroup"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "Group-like elements $\\GrpLike A$ of a bialgebra $A$ form a monoid. Group-like elements $\\GrpLike A$ of a Hopf algebra $A$ form a group."
+    },
+    {
+      "id": "0-grp-like-map",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 270,
+      "title": "Bialgebra homs preserve group-like elements",
+      "labels": [
+        "0-grp-like-map"
+      ],
+      "lean_decls": [
+        "IsGroupLikeElem.map"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "Let $f : A \\to B$ be a bi-algebra hom. If $a \\in A$ is group-like, then $f(a)$ is group-like too."
+    },
+    {
+      "id": "0-grp-like-grp-alg-of",
+      "kind": "lemma",
+      "position": 32,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 290,
+      "title": null,
+      "labels": [
+        "0-grp-like-grp-alg-of"
+      ],
+      "lean_decls": [
+        "MonoidAlgebra.isGroupLikeElem_of"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 58,
+      "proof_event": 59,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "If $R$ is a commutative semiring, $A$ is a Hopf algebra over $R$ and $G$ is a group, then every element of the image of $G$ in $A[G]$ is group-like."
+    },
+    {
+      "id": "0-grp-like-grp-alg-span",
+      "kind": "lemma",
+      "position": 33,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 307,
+      "title": null,
+      "labels": [
+        "0-grp-like-grp-alg-span"
+      ],
+      "lean_decls": [
+        "MonoidAlgebra.span_isGroupLikeElem"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-grp-like-grp-alg-of"
+      ],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "If $R$ is a commutative semiring, $A$ is a Hopf algebra over $R$ and $G$ is a group, then the group-like elements in $A[G]$ span $A[G]$ as an $A$-module."
+    },
+    {
+      "id": "0-grp-like-lin-indep",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 326,
+      "title": "Independence of group-like elements",
+      "labels": [
+        "0-grp-like-lin-indep"
+      ],
+      "lean_decls": [
+        "linearIndepOn_isGroupLikeElem"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-tensor-lin-indep"
+      ],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "The group-like elements in a bialgebra $A$ over a domain are linearly independent."
+    },
+    {
+      "id": "0-grp-like-grp-alg",
+      "kind": "lemma",
+      "position": 35,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 366,
+      "title": "Group-like elements in a group algebra",
+      "labels": [
+        "0-grp-like-grp-alg"
+      ],
+      "lean_decls": [
+        "MonoidAlgebra.isGroupLikeElem_iff_mem_range_of"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-grp-like-lin-indep"
+      ],
+      "has_proof": true,
+      "statement_event": 64,
+      "proof_event": 65,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain. The group-like elements of $R[M]$ are exactly the image of $M$."
+    },
+    {
+      "id": "0-grp-alg-grp-like-gc",
+      "kind": "proposition",
+      "position": 36,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 383,
+      "title": "Galois connection between group algebra and group-like elements",
+      "labels": [
+        "0-grp-alg-grp-like-gc"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-grp-like-map",
+        "0-grp-like-grp-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $R$ be a domain, $G$ a commutative group and $A$ a $R$-bialgebra. Then bialgebra homs $R[G] \\to A$ are in bijection with group homs $G \\to \\GrpLike A$."
+    },
+    {
+      "id": "0-grp-like-quot-hopf",
+      "kind": "proposition",
+      "position": 37,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 414,
+      "title": "Quotients by binomial ideals",
+      "labels": [
+        "0-grp-like-quot-hopf"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-like",
+        "0-hopf-ideal"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $A$ be a Hopf algebra, $H$ be a subgroup of $\\GrpLike A$ and \\[ I = \\langle h_1 - h_2 : h_1,h_2 \\in H \\rangle \\] be an ideal. Then $I$ is a Hopf ideal."
+    },
+    {
+      "id": "0-is-diag-bialg",
+      "kind": "definition",
+      "position": 38,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 455,
+      "title": "Diagonalizable bialgebras",
+      "labels": [
+        "0-is-diag-bialg"
+      ],
+      "lean_decls": [
+        "Bialgebra.IsDiagonalisable"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 70,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A bialgebra is called diagonalizable if it is isomorphic to a group algebra."
+    },
+    {
+      "id": "0-is-diag-bialg-group-like-span",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 465,
+      "title": null,
+      "labels": [
+        "0-is-diag-bialg-group-like-span"
+      ],
+      "lean_decls": [
+        "Bialgebra.span_isGroupLikeElem_eq_top_of_isDiagonalisable"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-is-diag-bialg",
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-grp-like-grp-alg-span"
+      ],
+      "has_proof": true,
+      "statement_event": 71,
+      "proof_event": 72,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "A diagonalizable bialgebra is spanned by its group-like elements."
+    },
+    {
+      "id": "0-bialg-bij-of-span-grp-like",
+      "kind": "proposition",
+      "position": 40,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 483,
+      "title": null,
+      "labels": [
+        "0-bialg-bij-of-span-grp-like"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-is-diag-bialg",
+        "0-grp-like-grp"
+      ],
+      "proof_uses": [
+        "0-grp-like-lin-indep"
+      ],
+      "has_proof": true,
+      "statement_event": 73,
+      "proof_event": 74,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "Let $A$ be a bialgebra over a domain $R$, let $G$ be a subgroup of $\\GrpLike(A)$ (which is a monoid by \\ref{0-grp-like-grp}). If $A$ is generated by $G$, then the unique bialgebra morphism from $R[G]$ to $A$ sending each element of $G$ to itself is bijective."
+    },
+    {
+      "id": "0-is-diag-bialg-quot",
+      "kind": "proposition",
+      "position": 41,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 504,
+      "title": "Quotient of a diagonalisable bialgebra is diagonalisable",
+      "labels": [
+        "0-is-diag-bialg-quot"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-is-diag-bialg"
+      ],
+      "proof_uses": [
+        "0-grp-like-grp",
+        "0-bialg-bij-of-span-grp-like"
+      ],
+      "has_proof": true,
+      "statement_event": 75,
+      "proof_event": 76,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": false,
+      "text": "Let $R$ be a domain, $G$ a commutative group, $A$ a $R$-bialgebra and $f : R[G] \\to A$ a surjective bialgebra hom. Then $R[f(G)] \\cong A$ as bialgebras."
+    },
+    {
+      "id": "0-is-diag-bialg-iff-span-group-like",
+      "kind": "corollary",
+      "position": 42,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 527,
+      "title": null,
+      "labels": [
+        "0-is-diag-bialg-iff-span-group-like"
+      ],
+      "lean_decls": [
+        "Bialgebra.isDiagonalisable_iff_span_isGroupLikeElem_eq_top"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-is-diag-bialg",
+        "0-grp-like"
+      ],
+      "proof_uses": [
+        "0-is-diag-bialg-group-like-span",
+        "0-bialg-bij-of-span-grp-like"
+      ],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "A bialgebra over a domain is diagonalizable if and only if it is spanned by its group-like elements."
+    },
+    {
+      "id": "0-antipode-mul",
+      "kind": "proposition",
+      "position": 43,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 560,
+      "title": "The antipode is a antihomomorphism",
+      "labels": [
+        "0-antipode-mul"
+      ],
+      "lean_decls": [
+        "HopfAlgebra.antipode_mul_antidistrib",
+        "HopfAlgebra.antipode_mul_distrib"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 79,
+      "proof_event": 80,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "If $A$ is a $R$-Hopf algebra, then the antipode map $s : A \\to A$ is anti-commutative, ie $s(a * b) = s(b) * s(a)$. If further $A$ is commutative, then $s(a * b) = s(a) * s(b)$."
+    },
+    {
+      "id": "0-bialg-equiv-comon-alg",
+      "kind": "proposition",
+      "position": 44,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 576,
+      "title": "Bialgebras are comonoid objects in the category of algebras",
+      "labels": [
+        "0-bialg-equiv-comon-alg"
+      ],
+      "lean_decls": [
+        "commBialgCatEquivComonCommAlgCat"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "The category of $R$-bialgebras is equivalent to comonoid objects in the category of $R$-algebras."
+    },
+    {
+      "id": "0-hopf-alg-equiv-cogrp-alg",
+      "kind": "proposition",
+      "position": 45,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 592,
+      "title": "Hopf algebras are cogroup objects in the category of algebras",
+      "labels": [
+        "0-hopf-alg-equiv-cogrp-alg"
+      ],
+      "lean_decls": [
+        "commHopfAlgCatEquivCogrpCommAlgCat"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "0-bialg-equiv-comon-alg",
+        "0-antipode-mul"
+      ],
+      "has_proof": true,
+      "statement_event": 83,
+      "proof_event": 84,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "The category of $R$-Hopf algebras is equivalent to cogroup objects in the category of $R$-algebras."
+    },
+    {
+      "id": "0-grp-alg",
+      "kind": "definition",
+      "position": 46,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 609,
+      "title": "The group algebra functor",
+      "labels": [
+        "0-grp-alg"
+      ],
+      "lean_decls": [
+        "commGrpAlg"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 85,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a commutative ring $R$, we have a functor $G \\rightsquigarrow R[G] : \\Grp \\to \\Hopf_R$."
+    },
+    {
+      "id": "0-full-faithful-grp-alg",
+      "kind": "proposition",
+      "position": 47,
+      "chapter": "2-3-hopf-algebras",
+      "source": "chapters/2-3-hopf-algebras.tex",
+      "line": 619,
+      "title": "The group algebra functor is fully faithful",
+      "labels": [
+        "0-full-faithful-grp-alg"
+      ],
+      "lean_decls": [
+        "MonoidAlgebra.mapDomainBialgHomMulEquiv",
+        "AddMonoidAlgebra.mapDomainBialgHomAddEquiv",
+        "commGrpAlg.fullyFaithful",
+        "commGrpAlg.instFull",
+        "commGrpAlg.instFaithful"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-alg"
+      ],
+      "proof_uses": [
+        "0-grp-like-grp-alg",
+        "0-grp-like-map"
+      ],
+      "has_proof": true,
+      "statement_event": 86,
+      "proof_event": 87,
+      "proof_chapter": "2-3-hopf-algebras",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain. The functor $G \\rightsquigarrow R[G]$ from the category of groups to the category of Hopf algebras over $R$ is fully faithful."
+    },
+    {
+      "id": "1-2-1-cone-hull",
+      "kind": "definition",
+      "position": 48,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 8,
+      "title": "Convex cone generated by a set",
+      "labels": [
+        "1-2-1-cone-hull"
+      ],
+      "lean_decls": [
+        "Submodule.span"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 88,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a set $S \\subseteq N$, the {\\bf cone generated by $S$}, aka {\\bf cone hull of $S$}, is $$\\Cone(S) := \\left\\{\\sum_{u \\in S} \\lambda_u u | \\lambda_u \\ge 0\\right\\}$$"
+    },
+    {
+      "id": "1-2-1-polyhedral-cone",
+      "kind": "definition",
+      "position": 49,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 19,
+      "title": "Convex polyhedral cone",
+      "labels": [
+        "1-2-1-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-cone-hull"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 89,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A {\\bf polyhedral cone} is a set that can be written as $\\Cone(S)$ for some finite set $S$."
+    },
+    {
+      "id": "1-2-2-convex-hull",
+      "kind": "definition",
+      "position": 50,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 29,
+      "title": "Convex hull",
+      "labels": [
+        "1-2-2-convex-hull"
+      ],
+      "lean_decls": [
+        "convexHull"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 90,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a set $S \\subseteq N$, the {\\bf convex hull of $S$} is $$\\Conv(S) := \\left\\{\\sum_{u \\in S} \\lambda_u | \\lambda_u \\ge 0, \\sum_u \\lambda_u = 1\\right\\}$$"
+    },
+    {
+      "id": "1-2-2-polytope",
+      "kind": "definition",
+      "position": 51,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 40,
+      "title": "Polytope",
+      "labels": [
+        "1-2-2-polytope"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-2-convex-hull"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 91,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A {\\bf polytope} is a set that can be written as $\\Conv(S)$ for some finite set $S$."
+    },
+    {
+      "id": "1-2-3-dual-cone",
+      "kind": "definition",
+      "position": 52,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 53,
+      "title": "Dual cone",
+      "labels": [
+        "1-2-3-dual-cone"
+      ],
+      "lean_decls": [
+        "PointedCone.dual"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-2-convex-hull"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 92,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a polyhedral cone $\\sigma \\subseteq N$, its {\\bf dual cone} is defined by $$\\sigma^\\vee = \\{m \\in M | \\forall u \\in \\sigma, \\langle m, u\\rangle \\ge 0\\}$$."
+    },
+    {
+      "id": "1-2-4-dual-polyhedral-cone",
+      "kind": "proposition",
+      "position": 53,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 64,
+      "title": "Dual of a polyhedral cone",
+      "labels": [
+        "1-2-4-dual-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-3-dual-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 93,
+      "proof_event": 94,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": true,
+      "text": "If $\\sigma$ is polyhedral, then its dual $\\sigma^\\vee$ is polyhedral too."
+    },
+    {
+      "id": "1-2-dual-cone-add",
+      "kind": "proposition",
+      "position": 54,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 80,
+      "title": "Dual cone of a sumset",
+      "labels": [
+        "1-2-dual-cone-add"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-3-dual-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 95,
+      "proof_event": 96,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma_1, \\sigma_2$ are two cones, then $$(\\sigma_1 + \\sigma_2)^\\vee = \\sigma_1^\\vee \\cap \\sigma_2^\\vee.$$"
+    },
+    {
+      "id": "1-2-4-double-dual-polyhedral-cone",
+      "kind": "proposition",
+      "position": 55,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 97,
+      "title": "Double dual of a polyhedral cone",
+      "labels": [
+        "1-2-4-double-dual-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-3-dual-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 97,
+      "proof_event": 98,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is polyhedral, then $\\sigma^{\\vee\\vee} = \\sigma$."
+    },
+    {
+      "id": "1-2-5-face",
+      "kind": "definition",
+      "position": 56,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 119,
+      "title": "Face of a cone",
+      "labels": [
+        "1-2-5-face"
+      ],
+      "lean_decls": [
+        "IsExposed"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 99,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is a cone, then a subset of $\\sigma$ is a {\\bf face} iff it is the intersection of $\\sigma$ with some halfspace. We write this $\\tau \\preceq \\sigma$. If furthermore $\\tau \\ne \\sigma$, we call $\\tau$ a proper face and write $\\tau \\prec \\sigma$."
+    },
+    {
+      "id": "1-2-5-edge",
+      "kind": "definition",
+      "position": 57,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 129,
+      "title": "Edge of a cone",
+      "labels": [
+        "1-2-5-edge"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 100,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A dimension 1 face of a cone is called an \\emph{edge}."
+    },
+    {
+      "id": "1-2-5-facet",
+      "kind": "definition",
+      "position": 58,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 139,
+      "title": "Facet of a cone",
+      "labels": [
+        "1-2-5-facet"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 101,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A codimension 1 face of a cone is called a \\emph{facet}."
+    },
+    {
+      "id": "1-2-6-face-polyhedral-cone",
+      "kind": "lemma",
+      "position": 59,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 149,
+      "title": "Face of a polyhedral cone",
+      "labels": [
+        "1-2-6-face-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 102,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is a polyhedral cone, then every face of $\\sigma$ is a polyhedral cone."
+    },
+    {
+      "id": "1-2-6-inter-faces",
+      "kind": "lemma",
+      "position": 60,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 159,
+      "title": "Intersection of faces",
+      "labels": [
+        "1-2-6-inter-faces"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 103,
+      "proof_event": 104,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is a polyhedral cone, then the intersection of two faces of $\\sigma$ is a face of $\\sigma$."
+    },
+    {
+      "id": "1-2-6-face-face",
+      "kind": "lemma",
+      "position": 61,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 175,
+      "title": "Face of a face",
+      "labels": [
+        "1-2-6-face-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 105,
+      "proof_event": 106,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "A face of a face of a polyhedral cone $\\sigma$ is again a face of $\\sigma$."
+    },
+    {
+      "id": "1-2-7-face-mem-of-add",
+      "kind": "lemma",
+      "position": 62,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 191,
+      "title": null,
+      "labels": [
+        "1-2-7-face-mem-of-add"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 107,
+      "proof_event": 108,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "Let $\\tau$ be a face of a polyhedral cone $\\sigma$. If $v, w \\in \\sigma$ and $v + w \\in \\tau$, then $v, w \\in \\tau$."
+    },
+    {
+      "id": "1-2-8-dual-cone-inter-halfspaces",
+      "kind": "proposition",
+      "position": 63,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 207,
+      "title": "Dual cone of the intersection of halfspaces",
+      "labels": [
+        "1-2-8-dual-cone-inter-halfspaces"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-cone-hull",
+        "1-2-3-dual-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 109,
+      "proof_event": 110,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma = H_{m_1}^+ \\cap \\dots \\cap H_{m_s}^+$, then $$\\sigma^\\vee = \\Cone(m_1, \\dots, m_s).$$"
+    },
+    {
+      "id": "1-2-8-facet-full-dim-cone",
+      "kind": "proposition",
+      "position": 64,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 224,
+      "title": "Facets of a full dimensional cone",
+      "labels": [
+        "1-2-8-facet-full-dim-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-cone-hull",
+        "1-2-5-facet"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 111,
+      "proof_event": 112,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is a full dimensional cone, then facets of $\\sigma$ are of the form $H_m \\cap \\sigma$."
+    },
+    {
+      "id": "1-2-8-inter-facet",
+      "kind": "proposition",
+      "position": 65,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 240,
+      "title": "Intersection of facets containing a face",
+      "labels": [
+        "1-2-8-inter-facet"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-facet"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 113,
+      "proof_event": 114,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "Every proper face $\\tau \\prec \\sigma$ of a polyhedral cone $\\sigma$ is the intersection of the facets of $\\sigma$ containing $\\tau$."
+    },
+    {
+      "id": "1-2-10-dual-face",
+      "kind": "definition",
+      "position": 66,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 256,
+      "title": "Dual face",
+      "labels": [
+        "1-2-10-dual-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-3-dual-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 115,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a cone $\\sigma$ and a face $\\tau \\preceq \\sigma$, the {\\bf dual face} to $\\tau$ is $$\\tau^* := \\sigma^\\vee \\cap \\tau^\\perp$$"
+    },
+    {
+      "id": "1-2-10-dual-face-face-dual",
+      "kind": "proposition",
+      "position": 67,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 267,
+      "title": "The dual face is a face of the dual",
+      "labels": [
+        "1-2-10-dual-face-face-dual"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-10-dual-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 116,
+      "proof_event": 117,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau \\preceq \\sigma$, then $\\tau^* \\preceq \\sigma^\\vee$."
+    },
+    {
+      "id": "1-2-10-double-dual-face-dual-face",
+      "kind": "proposition",
+      "position": 68,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 283,
+      "title": "The double dual of a face",
+      "labels": [
+        "1-2-10-double-dual-face-dual-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-10-dual-face"
+      ],
+      "proof_uses": [
+        "1-2-4-double-dual-polyhedral-cone"
+      ],
+      "has_proof": true,
+      "statement_event": 118,
+      "proof_event": 119,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau \\preceq \\sigma$, then $\\tau^{**} = \\tau$."
+    },
+    {
+      "id": "1-2-10-dual-face-antitone",
+      "kind": "proposition",
+      "position": 69,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 299,
+      "title": "The dual of a face is antitone",
+      "labels": [
+        "1-2-10-dual-face-antitone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-10-dual-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 120,
+      "proof_event": 121,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau' \\preceq \\tau \\preceq \\sigma$, then $\\tau' \\preceq \\tau$."
+    },
+    {
+      "id": "1-2-10-dim-dual-face",
+      "kind": "proposition",
+      "position": 70,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 315,
+      "title": "The dimension of the dual of a face",
+      "labels": [
+        "1-2-10-dim-dual-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-10-dual-face"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 122,
+      "proof_event": 123,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau \\preceq \\sigma$, then $$\\dim \\tau + \\dim \\tau^* = \\dim N.$$"
+    },
+    {
+      "id": "1-2-rel-interior",
+      "kind": "definition",
+      "position": 71,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 335,
+      "title": "Relative interior",
+      "labels": [
+        "1-2-rel-interior"
+      ],
+      "lean_decls": [
+        "intrinsicInterior"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 124,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf relative interior}, aka {\\bf intrinsic interior}, of a cone $\\sigma$ is the interior of $\\sigma$ as a subset of its span."
+    },
+    {
+      "id": "1-2-rel-interior-inner",
+      "kind": "lemma",
+      "position": 72,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 345,
+      "title": "The relative interior in terms of the inner product",
+      "labels": [
+        "1-2-rel-interior-inner"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-rel-interior"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 125,
+      "proof_event": 126,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "For a cone $\\sigma$, $$u \\in \\Relint(\\sigma) \\iff \\forall m \\in \\sigma^\\vee \\setminus \\sigma^\\perp, \\langle m, u\\rangle > 0$$"
+    },
+    {
+      "id": "1-2-rel-interior-dual-face",
+      "kind": "lemma",
+      "position": 73,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 362,
+      "title": "Relative interior of a dual face",
+      "labels": [
+        "1-2-rel-interior-dual-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-10-dual-face",
+        "1-2-rel-interior"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 127,
+      "proof_event": 128,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau \\preceq \\sigma$ and $m \\in \\sigma^\\vee$, then $$m \\in \\Relint(\\tau^*) \\iff \\tau = H_m \\cap \\sigma$$"
+    },
+    {
+      "id": "1-2-min-face",
+      "kind": "lemma",
+      "position": 74,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 379,
+      "title": "Minimal face of a cone",
+      "labels": [
+        "1-2-min-face"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-face",
+        "1-2-rel-interior"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 129,
+      "proof_event": 130,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma$ is a cone, then $W := \\sigma \\cap (-\\sigma)$ is a subspace. Furthermore, $W = H_m \\cap \\sigma$ whenever $m \\in \\Relint(\\sigma^\\vee)$."
+    },
+    {
+      "id": "1-2-12-salient-cone",
+      "kind": "definition",
+      "position": 75,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 399,
+      "title": "Salient cones",
+      "labels": [
+        "1-2-12-salient-cone"
+      ],
+      "lean_decls": [
+        "ConvexCone.Salient"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 131,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A cone $\\sigma$ is {\\bf salient}, aka {\\bf pointed} or {\\bf strongly convex}, if $\\sigma \\cap (-\\sigma) = \\{0\\}$."
+    },
+    {
+      "id": "1-2-12-salient-cone-tfae",
+      "kind": "proposition",
+      "position": 76,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 409,
+      "title": "Alternative definitions of salient cones",
+      "labels": [
+        "1-2-12-salient-cone-tfae"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-3-dual-cone",
+        "1-2-12-salient-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 132,
+      "proof_event": 133,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "The following are equivalent \\begin{enumerate} \\item $\\sigma$ is salient \\item $\\{0\\} \\preceq \\sigma$ \\item $\\sigma$ contains no positive dimensional subspace \\item $\\dim \\sigma^\\vee = \\dim N$ \\end{enumerate}"
+    },
+    {
+      "id": "1-2-13-separation-lemma",
+      "kind": "lemma",
+      "position": 77,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 434,
+      "title": "Separation lemma",
+      "labels": [
+        "1-2-13-separation-lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-polyhedral-cone",
+        "1-2-5-face"
+      ],
+      "proof_uses": [
+        "1-2-dual-cone-add",
+        "1-2-min-face"
+      ],
+      "has_proof": true,
+      "statement_event": 134,
+      "proof_event": 135,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "Let $\\sigma_1, \\sigma_2$ be polyhedral cones meeting along a common face $\\tau$. Then $$\\tau = H_m \\cap \\sigma_1 = H_m \\cap \\sigma_2$$ for any $m \\in \\Relint(\\sigma_1^\\vee \\cap (-\\sigma_2)^\\vee)$."
+    },
+    {
+      "id": "1-2-14-rat-cone",
+      "kind": "definition",
+      "position": 78,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 458,
+      "title": "Rational cone",
+      "labels": [
+        "1-2-14-rat-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-1-cone-hull"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 136,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A cone $\\sigma \\subseteq N_\\R$ is {\\bf rational} if $\\sigma = \\Cone(S)$ for some finite set $S \\subseteq N$."
+    },
+    {
+      "id": "1-2-14-face-rat-cone",
+      "kind": "lemma",
+      "position": 79,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 468,
+      "title": "Faces of a rational cone",
+      "labels": [
+        "1-2-14-face-rat-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-face",
+        "1-2-14-rat-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 137,
+      "proof_event": 138,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\tau \\preceq \\sigma$ is a face of a rational cone, then $\\tau$ itself is rational."
+    },
+    {
+      "id": "1-2-14-dual-rat-cone",
+      "kind": "lemma",
+      "position": 80,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 484,
+      "title": "The dual of a rational cone",
+      "labels": [
+        "1-2-14-dual-rat-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-3-dual-cone",
+        "1-2-14-rat-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 139,
+      "proof_event": 140,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "$\\sigma^\\vee$ is a rational cone iff $\\sigma$ is."
+    },
+    {
+      "id": "1-2-ray-gen",
+      "kind": "definition",
+      "position": 81,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 500,
+      "title": "Ray generator",
+      "labels": [
+        "1-2-ray-gen"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-5-edge",
+        "1-2-14-rat-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 141,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $\\rho$ is an edge of a rational cone $\\sigma$, then the monoid $\\rho \\cap N$ is generated by a unique element $u_\\rho \\in \\rho \\cap N$, which we call the {\\bf ray generator} of $\\rho$."
+    },
+    {
+      "id": "1-2-min-gen",
+      "kind": "definition",
+      "position": 82,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 510,
+      "title": "Minimal generators",
+      "labels": [
+        "1-2-min-gen"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-ray-gen"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 142,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf minimal generators} of a rational cone $\\sigma$ are the ray generators of its edges."
+    },
+    {
+      "id": "1-2-15-cone-hull-min-gen",
+      "kind": "lemma",
+      "position": 83,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 520,
+      "title": "A rational cone is generated by its minimal generators",
+      "labels": [
+        "1-2-15-cone-hull-min-gen"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-12-salient-cone",
+        "1-2-min-gen"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 143,
+      "proof_event": 144,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "A salient convex rational polyhedral cone is generated by its minimal generators."
+    },
+    {
+      "id": "1-2-16-reg-cone",
+      "kind": "definition",
+      "position": 84,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 536,
+      "title": "Regular cone",
+      "labels": [
+        "1-2-16-reg-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-min-gen"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 145,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A salient rational polyhedral cone $\\sigma$ is {\\bf regular}, aka {\\bf smooth}, if its minimal generators form part of a $\\Z$-basis of $N$."
+    },
+    {
+      "id": "1-2-16-simplicial-cone",
+      "kind": "definition",
+      "position": 85,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 546,
+      "title": "Simplicial cone",
+      "labels": [
+        "1-2-16-simplicial-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-min-gen"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 146,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A salient rational polyhedral cone $\\sigma$ is {\\bf simplicial} if its minimal generators are $\\R$-linearly independent."
+    },
+    {
+      "id": "1-2-17-dual-lat-cone",
+      "kind": "definition",
+      "position": 86,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 559,
+      "title": "Dual lattice of a cone",
+      "labels": [
+        "1-2-17-dual-lat-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-3-dual-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 147,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $\\sigma \\subseteq N_\\R$ is a polyhedral cone, then the lattice points \\[ S_\\sigma := \\sigma^\\vee \\cap M \\] form a monoid."
+    },
+    {
+      "id": "1-2-17-gordan-lemma",
+      "kind": "proposition",
+      "position": 87,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 573,
+      "title": "Gordan's lemma",
+      "labels": [
+        "1-2-17-gordan-lemma"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-17-dual-lat-cone"
+      ],
+      "proof_uses": [
+        "1-2-14-dual-rat-cone"
+      ],
+      "has_proof": true,
+      "statement_event": 148,
+      "proof_event": 149,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "$S_\\sigma$ is finitely generated as a monoid."
+    },
+    {
+      "id": "1-2-18-aff-tor-var-rat-polyhedral-cone",
+      "kind": "definition",
+      "position": 88,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 589,
+      "title": "Affine toric variety of a rational polyhedral cone",
+      "labels": [
+        "1-2-18-aff-tor-var-rat-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "5-1-tor-var",
+        "1-2-17-dual-lat-cone"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 150,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "$U_\\sigma := \\Spec \\bbC[S_\\sigma]$ is an affine toric variety."
+    },
+    {
+      "id": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "theorem",
+      "position": 89,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 599,
+      "title": "Dimension of the affine toric variety of a rational polyhedral cone",
+      "labels": [
+        "1-2-18-dim-aff-tor-var-rat-polyhedral-cone"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-2-12-salient-cone",
+        "1-2-18-aff-tor-var-rat-polyhedral-cone"
+      ],
+      "proof_uses": [
+        "1-1-14-spec-aff-mon-alg",
+        "1-2-12-salient-cone-tfae",
+        "1-2-17-gordan-lemma"
+      ],
+      "has_proof": true,
+      "statement_event": 151,
+      "proof_event": 152,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "\\[ \\dim U_\\sigma = \\dim N \\iff \\text{ the torus of $U_\\sigma$ is } T_N = N \\ox_[\\Z] \\bbC^* \\iff \\sigma \\text{ is salient}. \\]"
+    },
+    {
+      "id": "1-2-22-irred-dual-lat",
+      "kind": "proposition",
+      "position": 90,
+      "chapter": "3-1-cones",
+      "source": "chapters/3-1-cones.tex",
+      "line": 617,
+      "title": "The irreducible elements of the dual lattice of a cone",
+      "labels": [
+        "1-2-22-irred-dual-lat"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-irred",
+        "1-2-min-gen",
+        "1-2-12-salient-cone",
+        "1-2-17-dual-lat-cone"
+      ],
+      "proof_uses": [
+        "0-irred-subset-gen",
+        "0-irred-gen"
+      ],
+      "has_proof": true,
+      "statement_event": 153,
+      "proof_event": 154,
+      "proof_chapter": "3-1-cones",
+      "proof_leanok": false,
+      "text": "If $\\sigma \\subseteq N_\\R$ is salient of maximal dimension, then the irreducible elements of $S_\\sigma$ are precisely the minimal generators of $\\sigma^\\vee$."
+    },
+    {
+      "id": "0-spec-alg",
+      "kind": "definition",
+      "position": 91,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 20,
+      "title": "Spec as a functor on algebras",
+      "labels": [
+        "0-spec-alg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.algSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 155,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Spec is a contravariant functor from the category of $R$-algebras to the category of schemes over $\\Spec_R$."
+    },
+    {
+      "id": "0-full-faithful-spec-alg",
+      "kind": "proposition",
+      "position": 92,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 31,
+      "title": "Spec as a functor on algebras is fully faithful",
+      "labels": [
+        "0-full-faithful-spec-alg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.preservesLimitsOfSize_algSpec",
+        "AlgebraicGeometry.algSpec.instFull",
+        "AlgebraicGeometry.algSpec.instFaithful",
+        "AlgebraicGeometry.algSpec.fullyFaithful"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-alg"
+      ],
+      "proof_uses": [
+        "0-slice-adj",
+        "0-over-lim"
+      ],
+      "has_proof": true,
+      "statement_event": 156,
+      "proof_event": 157,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "Spec is a fully faithful contravariant functor from the category of $R$-algebras to the category of schemes over $\\Spec_R$, preserving all limits."
+    },
+    {
+      "id": "0-spec-bialg",
+      "kind": "definition",
+      "position": 93,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 53,
+      "title": "Spec as a functor on bialgebras",
+      "labels": [
+        "0-spec-bialg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.bialgSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-full-faithful-spec-alg"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 158,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Spec is a contravariant functor from the category of $R$-bialgebras to the category of monoid schemes over $\\Spec_R$."
+    },
+    {
+      "id": "0-full-faithful-spec-bialg",
+      "kind": "proposition",
+      "position": 94,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 64,
+      "title": "Spec as a functor on bialgebras is fully faithful",
+      "labels": [
+        "0-full-faithful-spec-bialg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.bialgSpec.instFull",
+        "AlgebraicGeometry.bialgSpec.instFaithful",
+        "AlgebraicGeometry.bialgSpec.fullyFaithful"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-bialg"
+      ],
+      "proof_uses": [
+        "0-full-faithful-grp",
+        "0-full-faithful-spec-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 159,
+      "proof_event": 160,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "Spec is a fully faithful contravariant functor from the category of $R$-bialgebras to the category of monoid schemes over $\\Spec_R$."
+    },
+    {
+      "id": "0-spec-cocomm-bialg",
+      "kind": "proposition",
+      "position": 95,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 84,
+      "title": "Spec sends cocommutative bialgebras to commutative monoid schemes",
+      "labels": [
+        "0-spec-cocomm-bialg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.isCommMonObj_spec_asOver_spec",
+        "AlgebraicGeometry.instCommGrpObjSpecAsOverSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-hopf"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 161,
+      "proof_event": 162,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "If $A$ is a cocommutative bialgebra over $R$, then $\\Spec A$ is a commutative monoid scheme."
+    },
+    {
+      "id": "0-spec-hopf",
+      "kind": "definition",
+      "position": 96,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 103,
+      "title": "Spec as a functor on Hopf algebras",
+      "labels": [
+        "0-spec-hopf"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.hopfSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-full-faithful-spec-alg"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 163,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Spec is a contravariant functor from the category of $R$-Hopf algebras to the category of group schemes over $\\Spec_R$."
+    },
+    {
+      "id": "0-full-faithful-spec-hopf",
+      "kind": "proposition",
+      "position": 97,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 113,
+      "title": "Spec as a functor on Hopf algebras is fully faithful",
+      "labels": [
+        "0-full-faithful-spec-hopf"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.hopfSpec.instFull",
+        "AlgebraicGeometry.hopfSpec.instFaithful",
+        "AlgebraicGeometry.hopfSpec.fullyFaithful"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-hopf"
+      ],
+      "proof_uses": [
+        "0-full-faithful-grp",
+        "0-full-faithful-spec-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 164,
+      "proof_event": 165,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "Spec is a fully faithful contravariant functor from the category of $R$-Hopf algebras to the category of group schemes over $\\Spec_R$."
+    },
+    {
+      "id": "0-ess-image-spec-alg",
+      "kind": "proposition",
+      "position": 98,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 135,
+      "title": "Essential image of Spec on algebras",
+      "labels": [
+        "0-ess-image-spec-alg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.essImage_algSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-alg"
+      ],
+      "proof_uses": [
+        "0-ess-image-over"
+      ],
+      "has_proof": true,
+      "statement_event": 166,
+      "proof_event": 167,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "The essential image of $\\Spec : \\Ring_R \\to \\Sch_{\\Spec R}$ is precisely affine schemes over $\\Spec R$."
+    },
+    {
+      "id": "0-ess-image-spec-bialg",
+      "kind": "proposition",
+      "position": 99,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 152,
+      "title": "Essential image of Spec on bialgebras",
+      "labels": [
+        "0-ess-image-spec-bialg"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.essImage_bialgSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-bialg"
+      ],
+      "proof_uses": [
+        "0-ess-image-grp",
+        "0-ess-image-spec-alg",
+        "0-full-faithful-spec-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 168,
+      "proof_event": 169,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "The essential image of $\\Spec : \\Bialg_R \\to \\GrpSch_{\\Spec R}$ is precisely affine monoid schemes over $\\Spec R$."
+    },
+    {
+      "id": "0-ess-image-spec-hopf",
+      "kind": "proposition",
+      "position": 100,
+      "chapter": "4-1-affine-group-schemes",
+      "source": "chapters/4-1-affine-group-schemes.tex",
+      "line": 169,
+      "title": "Essential image of Spec on Hopf algebras",
+      "labels": [
+        "0-ess-image-spec-hopf"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.essImage_hopfSpec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-spec-hopf"
+      ],
+      "proof_uses": [
+        "0-ess-image-grp",
+        "0-ess-image-spec-alg",
+        "0-full-faithful-spec-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 170,
+      "proof_event": 171,
+      "proof_chapter": "4-1-affine-group-schemes",
+      "proof_leanok": true,
+      "text": "The essential image of $\\Spec : \\Hopf_R \\to \\GrpSch_{\\Spec R}$ is precisely affine group schemes over $\\Spec R$."
+    },
+    {
+      "id": "0-diag",
+      "kind": "definition",
+      "position": 101,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 4,
+      "title": "The diagonalisable group scheme functor",
+      "labels": [
+        "0-diag"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.Diag"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-grp-alg",
+        "0-hopf-alg-equiv-cogrp-alg",
+        "0-spec-hopf"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 172,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $G$ be a commutative group and $S$ a base scheme. The diagonalisable group scheme $D_S(G)$ is defined as the base-change of $\\Spec \\Z[G]$ to $S$. For a commutative ring $R$, we write $D_R(G) := D_{\\Spec R}(G)$."
+    },
+    {
+      "id": "0-is-diag",
+      "kind": "definition",
+      "position": 102,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 16,
+      "title": "Diagonalisable group schemes",
+      "labels": [
+        "0-is-diag"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.IsDiagonalisable"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 173,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An algebraic group $G$ over $\\Spec R$ is {\\bf diagonalisable} if it is isomorphic to $D_R(G)$ for some commutative group $G$."
+    },
+    {
+      "id": "0-diag-spec",
+      "kind": "lemma",
+      "position": 103,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 26,
+      "title": "The diagonalisable group scheme torus over $\\Spec R$",
+      "labels": [
+        "0-diag-spec"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.diagSpecIso",
+        "AlgebraicGeometry.Scheme.splitTorusIso"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 174,
+      "proof_event": 175,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": true,
+      "text": "Let $R$ be a commutative ring and $M$ an abelian monoid. Then $D_R(M)$ is isomorphic to $\\Spec R[M]$."
+    },
+    {
+      "id": "0-diag-iff-grp-like-span",
+      "kind": "theorem",
+      "position": 104,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 43,
+      "title": null,
+      "labels": [
+        "0-diag-iff-grp-like-span"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.isDiagonalisable_iff_span_isGroupLikeElem_eq_top"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag",
+        "0-is-diag"
+      ],
+      "proof_uses": [
+        "0-grp-like-lin-indep"
+      ],
+      "has_proof": true,
+      "statement_event": 176,
+      "proof_event": 177,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "An algebraic group $G$ over a field $k$ is diagonalizable if and only if $\\Gamma(G)$ is spanned by its group-like elements."
+    },
+    {
+      "id": "0-full-faithful-diag",
+      "kind": "theorem",
+      "position": 105,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 59,
+      "title": null,
+      "labels": [
+        "0-full-faithful-diag"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.full_diagFunctor",
+        "AlgebraicGeometry.Scheme.faithful_diagFunctor"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [
+        "0-full-faithful-spec-hopf",
+        "0-full-faithful-grp-alg"
+      ],
+      "has_proof": true,
+      "statement_event": 178,
+      "proof_event": 179,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain. The functor $D_R(G) := G \\rightsquigarrow \\Spec R[G]$ from the category of groups to the category of group schemes over $\\Spec R$ is fully faithful."
+    },
+    {
+      "id": "0-diag-aff-hom",
+      "kind": "proposition",
+      "position": 106,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 78,
+      "title": "Morphisms between diagonalisable group schemes are affine",
+      "labels": [
+        "0-diag-aff-hom"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 180,
+      "proof_event": 181,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "Let $S$ be a scheme. Let $M, N$ be commutative monoids and $f : M \\to N$ a monoid hom. Then the map $D_S(f) : D_S(N) \\to D_S(M)$ is affine."
+    },
+    {
+      "id": "0-diag-closed-emb",
+      "kind": "proposition",
+      "position": 107,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 97,
+      "title": "Closed embeddings between diagonalisable group schemes",
+      "labels": [
+        "0-diag-closed-emb"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 182,
+      "proof_event": 183,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "Let $S$ be a scheme. Let $M, N$ be commutative monoids and $f : M \\to N$ a surjective monoid hom. Then the map $D_S(f) : D_S(N) \\to D_S(M)$ is a closed embedding."
+    },
+    {
+      "id": "0-diag-faithful-flat",
+      "kind": "proposition",
+      "position": 108,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 117,
+      "title": "Faithfully flat morphisms between diagonalisable group schemes",
+      "labels": [
+        "0-diag-faithful-flat"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [
+        "0-grp-alg-free"
+      ],
+      "has_proof": true,
+      "statement_event": 184,
+      "proof_event": 185,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "Let $S$ be a scheme. Let $G, H$ be abelian groups and $f : G \\to H$ an injective group hom. Then the map $D_S(f) : D_S(H) \\to D_S(G)$ is faithfully flat."
+    },
+    {
+      "id": "0-subgroup-diag",
+      "kind": "proposition",
+      "position": 109,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 138,
+      "title": "A subgroup of a diagonalisable group scheme is a diagonalisable group scheme",
+      "labels": [
+        "0-subgroup-diag"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [
+        "0-is-diag-bialg-quot",
+        "0-ess-image-spec-hopf",
+        "0-full-faithful-spec-hopf",
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 186,
+      "proof_event": 187,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "Let $R$ be a domain. Let $G$ be an abelian group. If $H$ is a closed subgroup of $D_R(G)$, then $H$ is a diagonalisable group scheme."
+    },
+    {
+      "id": "0-diag-tors",
+      "kind": "proposition",
+      "position": 110,
+      "chapter": "4-2-diag",
+      "source": "chapters/4-2-diag.tex",
+      "line": 161,
+      "title": "Diagonalisable group scheme of a torsion group is disconnected",
+      "labels": [
+        "0-diag-tors"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 188,
+      "proof_event": 189,
+      "proof_chapter": "4-2-diag",
+      "proof_leanok": false,
+      "text": "Let $G$ be an abelian group with an element of torsion $n$. Let $R$ be a commutative ring with $n$ invertible. Then $D_R(G)$ is disconnected."
+    },
+    {
+      "id": "0-torus",
+      "kind": "definition",
+      "position": 111,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 4,
+      "title": "The split torus",
+      "labels": [
+        "0-torus"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.SplitTorus",
+        "AlgebraicGeometry.Scheme.Diag.canonicallyOver"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 190,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The split torus $\\G_m^n$ over a scheme $S$ is the pullback of $\\Spec \\Z[x_1^{\\pm 1}, \\dotsc, x_n^{\\pm 1}]$ along the unique map $S \\to \\Spec \\Z$."
+    },
+    {
+      "id": "0-diag-hom",
+      "kind": "lemma",
+      "position": 112,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 14,
+      "title": "Diag is a group isomorphism on hom sets",
+      "labels": [
+        "0-diag-hom"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.diagHomEquiv"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag",
+        "0-full-faithful-grp-hom"
+      ],
+      "has_proof": true,
+      "statement_event": 191,
+      "proof_event": 192,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain. The functor $G \\rightsquigarrow \\Spec R[G]$ from the category of groups to the category of group schemes over $\\Spec R$ is a group isomorphism on hom sets."
+    },
+    {
+      "id": "0-char",
+      "kind": "definition",
+      "position": 113,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 31,
+      "title": "Characters of a group scheme",
+      "labels": [
+        "0-char"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.Char"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 193,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a group scheme $G$ over $S$, the {\\bf character lattice} of $G$ is \\[ X(G) := \\Hom_{\\mathsf{GrpSch}_S}(G, \\G_m). \\] An element of $X(G)$ is called a {\\bf character}."
+    },
+    {
+      "id": "0-cochar",
+      "kind": "definition",
+      "position": 114,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 45,
+      "title": "Cocharacters of a group scheme",
+      "labels": [
+        "0-cochar"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.Cochar"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 194,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a group scheme $G$ over $S$, the {\\bf cocharacter lattice} of $G$ is \\[ X^*(G) := \\Hom_{\\mathsf{GrpSch}_S}(\\G_m, G). \\] An element of $X^*(G)$ is called a {\\bf cocharacter} or {\\bf one-parameter subgroup}."
+    },
+    {
+      "id": "0-char-diag",
+      "kind": "proposition",
+      "position": 115,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 59,
+      "title": "Character lattice of a diagonalisable group scheme",
+      "labels": [
+        "0-char-diag"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.charDiag"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag"
+      ],
+      "has_proof": true,
+      "statement_event": 195,
+      "proof_event": 196,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain and $G$ be a commutative group. Then $X(\\Spec R[G]) = G$."
+    },
+    {
+      "id": "0-cochar-diag",
+      "kind": "proposition",
+      "position": 116,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 79,
+      "title": "Cocharacter lattice of a diagonalisable group scheme",
+      "labels": [
+        "0-cochar-diag"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.cocharDiag"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-cochar"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag"
+      ],
+      "has_proof": true,
+      "statement_event": 197,
+      "proof_event": 198,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "Let $R$ be a domain and $G$ be a commutative group. Then $X^*(\\Spec R[G]) = \\Hom(G, \\Z)$."
+    },
+    {
+      "id": "0-char-torus",
+      "kind": "proposition",
+      "position": 117,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 99,
+      "title": "Character lattice of the torus",
+      "labels": [
+        "0-char-torus"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.charTorus"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag",
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 199,
+      "proof_event": 200,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "Let $G$ be a torus of dimension $n$ over a domain $R$. Then $X(G) = \\Z^n$."
+    },
+    {
+      "id": "0-cochar-torus",
+      "kind": "proposition",
+      "position": 118,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 116,
+      "title": "Cocharacter lattice of the torus",
+      "labels": [
+        "0-cochar-torus"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.cocharTorus"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-cochar"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag",
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 201,
+      "proof_event": 202,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "Let $G$ be a torus of dimension $n$ over a domain $R$. Then $X^*(G) = \\Hom(\\Z^n, \\Z)$."
+    },
+    {
+      "id": "0-char-cochar-pairing",
+      "kind": "definition",
+      "position": 119,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 133,
+      "title": "The character-cocharacter pairing",
+      "labels": [
+        "0-char-cochar-pairing"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.charPairing"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char",
+        "0-cochar"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 203,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $R$ be a domain and $G$ a group scheme over $\\Spec R$. Then there is a $\\Z$-valued perfect pairing between $X(G)$ and $X^*(G)$."
+    },
+    {
+      "id": "0-char-cochar-pairing-perfect",
+      "kind": "proposition",
+      "position": 120,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 144,
+      "title": "The character-cocharacter pairing is perfect",
+      "labels": [
+        "0-char-cochar-pairing-perfect"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.Scheme.isPerfPair_charPairing"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char-cochar-pairing"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 204,
+      "proof_event": 205,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": true,
+      "text": "The character-cocharacter pairing on a torus is perfect."
+    },
+    {
+      "id": "1-1-1-group-hom-torus",
+      "kind": "proposition",
+      "position": 121,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 160,
+      "title": "The image of a torus is a torus",
+      "labels": [
+        "1-1-1-group-hom-torus"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [
+        "0-full-faithful-diag",
+        "0-diag-spec",
+        "0-diag-closed-emb",
+        "0-diag-aff-hom"
+      ],
+      "has_proof": true,
+      "statement_event": 206,
+      "proof_event": 207,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": false,
+      "text": "Let $R$ be a domain. Let $T$ be a split torus over $R$. Let $G$ be a diagonalisable group scheme over $R$ and let $\\phi: T \\to G$ be a homomorphism. Then the (scheme theoretic) image of $\\phi$ is a split torus over $R$ and the maps \\[ T \\xrightarrow{\\hat{\\phi}} \\operatorname{im}\\phi \\xrightarrow{\\iota} G \\] are group homomorphisms, and $\\hat{\\phi}$ is fpqc. Furthermore, if $T = D_R(H), G = D_R(I), \\phi = D_R(f)$ for $H$ a finitely generated free abelian group, $I$ an abelian group, $f : I \\to H$ a group hom, then $\\operatorname{im} \\phi \\cong D_R(\\operatorname{im}(f))$."
+    },
+    {
+      "id": "1-1-1-subgroup-torus",
+      "kind": "proposition",
+      "position": 122,
+      "chapter": "4-3-torus",
+      "source": "chapters/4-3-torus.tex",
+      "line": 192,
+      "title": "A subgroup of a torus is a torus",
+      "labels": [
+        "1-1-1-subgroup-torus"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [
+        "0-subgroup-diag",
+        "0-full-faithful-diag",
+        "0-diag-spec",
+        "0-diag-tors"
+      ],
+      "has_proof": true,
+      "statement_event": 208,
+      "proof_event": 209,
+      "proof_chapter": "4-3-torus",
+      "proof_leanok": false,
+      "text": "Let $R$ be a commutative ring of characteristic zero. Let $T$ be a split torus. If $H \\subseteq T$ is a connected closed subgroup, then $H$ is a split torus."
+    },
+    {
+      "id": "5-1-tor-var",
+      "kind": "definition",
+      "position": 123,
+      "chapter": "5-1-toric-variety",
+      "source": "chapters/5-1-toric-variety.tex",
+      "line": 7,
+      "title": "Toric varieties",
+      "labels": [
+        "5-1-tor-var"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.ToricVariety"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 210,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $T$ be a torus over $k$. A \\emph{toric variety} structure on a scheme $X$ over $k$ consists the following data: \\begin{itemize} \\item a torus $T$ over $k$, \\item a group action $T \\times X \\to X$ over $k$. \\item a dominant open immersion $i : T \\hookrightarrow X$ over $k$ that is $T$-equivariant. \\end{itemize}"
+    },
+    {
+      "id": "5-1-tor-hom",
+      "kind": "definition",
+      "position": 124,
+      "chapter": "5-1-toric-variety",
+      "source": "chapters/5-1-toric-variety.tex",
+      "line": 24,
+      "title": "Torus morphisms, torus isomorphisms",
+      "labels": [
+        "5-1-tor-hom"
+      ],
+      "lean_decls": [
+        "AlgebraicGeometry.ToricVariety"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 211,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $T_1, T_2$ be tori over $k$. Let $X_1, X_2$ be toric varieties with torus $T_1, T_2$ respectively. A \\emph{toric morphism} from $X_1$ to $X_2$ is the data of a $k$-morphism $X_1 \\to X_2$ and a $k$-group homomorphism $T_1 \\to T_2$ that commute with the embeddings $T_1 \\to X_1, T_2 \\to X_2$ and the actions. A \\emph{toric isomorphism} from $X_1$ to $X_2$ is the data of two isomorphisms $X_1 \\cong X_2$ and $T_1 \\cong T_2$ that commute with the embeddings $T_1 \\to X_1, T_2 \\to X_2$."
+    },
+    {
+      "id": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "proposition",
+      "position": 125,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 11,
+      "title": "The diagonalisable group scheme of an affine monoid algebra is an affine toric variety",
+      "labels": [
+        "1-1-aff-tor-var-diag-aff-mon"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-diag",
+        "5-1-tor-var"
+      ],
+      "proof_uses": [
+        "0-aff-mon-alg-domain",
+        "0-loc-mon-alg",
+        "0-comap-mod",
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 212,
+      "proof_event": 213,
+      "proof_chapter": "5-2-affine-toric-variety",
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $G$ be a finitely generated free abelian group. Let $M$ be an affine monoid with Grothendieck group $G$. Then $D_k(M)$ is an affine toric variety over $k$ with torus $D_k(G)$."
+    },
+    {
+      "id": "1-1-char-eigenspace",
+      "kind": "definition",
+      "position": 126,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 46,
+      "title": "The character eigenspace",
+      "labels": [
+        "1-1-char-eigenspace"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 214,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For a finite dimensional representation of a torus $T$ on $W$, the {\\bf character eigenspace} of a character $\\chi \\in X(T)$ is \\[ W_m = \\{w\\in W : t\\cdot w = \\chi(t)\\text{ for all } t\\in T \\}. \\]"
+    },
+    {
+      "id": "1-1-2-char-eigenspace-direct-sum",
+      "kind": "proposition",
+      "position": 127,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 59,
+      "title": "Decomposition into character eigenspaces",
+      "labels": [
+        "1-1-2-char-eigenspace-direct-sum"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-char-eigenspace"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 215,
+      "proof_event": 216,
+      "proof_chapter": "5-2-affine-toric-variety",
+      "proof_leanok": false,
+      "text": "The space decomposes into the direct sum of the character eigenspaces."
+    },
+    {
+      "id": "1-1-tor-act-alg",
+      "kind": "definition",
+      "position": 128,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 73,
+      "title": null,
+      "labels": [
+        "1-1-tor-act-alg"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-torus"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 217,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There is a torus action on the semigroup algebra $\\bbC[M]$: given $t\\in T_N$ and $f\\in \\bbC[M]$ define \\[ t \\cdot f = (p \\mapsto f(t^{-1}p)). \\]"
+    },
+    {
+      "id": "1-1-16-total-red",
+      "kind": "lemma",
+      "position": 129,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 86,
+      "title": null,
+      "labels": [
+        "1-1-16-total-red"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-tor-act-alg"
+      ],
+      "proof_uses": [
+        "1-1-2-char-eigenspace-direct-sum"
+      ],
+      "has_proof": true,
+      "statement_event": 218,
+      "proof_event": 219,
+      "proof_chapter": "5-2-affine-toric-variety",
+      "proof_leanok": false,
+      "text": "Let $A \\subseteq \\bbC[M]$ be a stable subspace, then \\[ A = \\bigoplus_{\\chi^m \\in A} \\bbC \\cdot \\chi^m. \\]"
+    },
+    {
+      "id": "5-2-char-tor-var",
+      "kind": "definition",
+      "position": 130,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 102,
+      "title": "Characters of a toric variety",
+      "labels": [
+        "5-2-char-tor-var"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 220,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $T$ be a torus over $k$. Let $V$ be a toric variety with torus $k$. The \\emph{characters} $X(V)$ of $V$ are defined as the intersection of $X(T)$ with the image of the map $k[V] \\to k[T]$ of coordinate rings induced by the embedding $T \\hookrightarrow V$."
+    },
+    {
+      "id": "5-2-char-tor-var-aff-mon",
+      "kind": "proposition",
+      "position": 131,
+      "chapter": "5-2-affine-toric-variety",
+      "source": "chapters/5-2-affine-toric-variety.tex",
+      "line": 117,
+      "title": "Characters of a toric variety are an affine monoid",
+      "labels": [
+        "5-2-char-tor-var-aff-mon"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "5-2-char-tor-var"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 221,
+      "proof_event": 222,
+      "proof_chapter": "5-2-affine-toric-variety",
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $T$ be a torus over $k$. Let $V$ be a toric variety with torus $k$. Then $X(V)$ is an affine monoid."
+    },
+    {
+      "id": "1-1-10-lat-ideal",
+      "kind": "definition",
+      "position": 132,
+      "chapter": "5-3-toric-ideal",
+      "source": "chapters/5-3-toric-ideal.tex",
+      "line": 11,
+      "title": "Lattice ideal",
+      "labels": [
+        "1-1-10-lat-ideal"
+      ],
+      "lean_decls": [
+        "AddMonoidAlgebra.monoidIdeal"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 223,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $R$ be a ring. Let $G$ be a free abelian group and $M$ an affine monoid whose Grothendieck group is $G$. Let $L \\le G$ be a sublattice. The \\emph{lattice ideal} of $L$ is the $R$-ideal of $R[M]$ defined by \\[ I_L := \\langle X^\\alpha - X^\\beta | \\alpha, \\beta \\in M, \\alpha - \\beta \\in L\\rangle. \\]"
+    },
+    {
+      "id": "1-1-10-tor-ideal",
+      "kind": "definition",
+      "position": 133,
+      "chapter": "5-3-toric-ideal",
+      "source": "chapters/5-3-toric-ideal.tex",
+      "line": 27,
+      "title": null,
+      "labels": [
+        "1-1-10-tor-ideal"
+      ],
+      "lean_decls": [
+        "AddMonoidAlgebra.IsToricIdeal"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-10-lat-ideal"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 224,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $R$ be a ring. Let $M$ be an affine monoid. A \\emph{toric ideal} is a prime lattice $R$-ideal of $R[M]$."
+    },
+    {
+      "id": "1-1-11-toric-ideal-gen-binomial",
+      "kind": "proposition",
+      "position": 134,
+      "chapter": "5-3-toric-ideal",
+      "source": "chapters/5-3-toric-ideal.tex",
+      "line": 38,
+      "title": "An ideal is toric iff it is prime and generated by binomials",
+      "labels": [
+        "1-1-11-toric-ideal-gen-binomial"
+      ],
+      "lean_decls": [
+        "AddMonoidAlgebra.isToricIdeal_iff_exists_span_single_sub_single"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-10-tor-ideal"
+      ],
+      "proof_uses": [
+        "1-1-1-subgroup-torus",
+        "1-1-9-ideal-ya"
+      ],
+      "has_proof": true,
+      "statement_event": 225,
+      "proof_event": 226,
+      "proof_chapter": "5-3-toric-ideal",
+      "proof_leanok": false,
+      "text": "An ideal is toric if and only if it's prime and generated by binomials $X^\\alpha - X^\\beta$."
+    },
+    {
+      "id": "5-3-van-tor-emb",
+      "kind": "proposition",
+      "position": 135,
+      "chapter": "5-3-toric-ideal",
+      "source": "chapters/5-3-toric-ideal.tex",
+      "line": 107,
+      "title": "The vanishing ideal of a closed toric embedding",
+      "labels": [
+        "5-3-van-tor-emb"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-phiAprime",
+        "1-1-7-ya",
+        "1-1-10-lat-ideal"
+      ],
+      "proof_uses": [
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 227,
+      "proof_event": 228,
+      "proof_chapter": "5-3-toric-ideal",
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $V$ be a toric variety over $k$. Let $i : V \\hookrightarrow \\mathbb{A}^n$ be a closed toric embedding. Then the vanishing ideal of $i$ is toric."
+    },
+    {
+      "id": "1-1-phiAprime",
+      "kind": "definition",
+      "position": 136,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 11,
+      "title": null,
+      "labels": [
+        "1-1-phiAprime"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-char"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 229,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S$ be a scheme. Let $G$ be an abelian group. Let $s$ be an arbitrary indexing type, and $\\MCA : s \\to G$ an indexed family. Let $f'_\\MCA$ be the map \\begin{align*} \\Z^{\\oplus s} & \\to G \\\\ e_i & \\mapsto \\MCA_i. \\end{align*} and define $\\Phi'_\\MCA : D_S(G) \\to \\G_m^s$ as the image under $D_S$ of $f'_\\MCA$."
+    },
+    {
+      "id": "1-1-phiA",
+      "kind": "definition",
+      "position": 137,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 28,
+      "title": null,
+      "labels": [
+        "1-1-phiA"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-phiAprime"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 230,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S$ be a scheme. Let $G$ be an abelian group. Let $s$ be an arbitrary indexing type, and $\\MCA : s \\to G$ an indexed family. Let $f_\\MCA$ be the map \\begin{align*} \\N^{\\oplus s} & \\to G \\\\ e_i & \\mapsto \\MCA_i. \\end{align*} and define $\\Phi_\\MCA : D_S(G) \\to \\mathbb A^s$ as the image under $D_S$ of $f_\\MCA$."
+    },
+    {
+      "id": "1-1-7-ya",
+      "kind": "definition",
+      "position": 138,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 45,
+      "title": null,
+      "labels": [
+        "1-1-7-ya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-phiA"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 231,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "$Y_\\MCA$ is the scheme theoretic closure of $\\im \\Phi_\\MCA$ in $\\mathbb A^s$."
+    },
+    {
+      "id": "1-1-8-aff-tor-var-ya",
+      "kind": "proposition",
+      "position": 139,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 55,
+      "title": null,
+      "labels": [
+        "1-1-8-aff-tor-var-ya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-7-ya"
+      ],
+      "proof_uses": [
+        "1-1-1-group-hom-torus"
+      ],
+      "has_proof": true,
+      "statement_event": 232,
+      "proof_event": 233,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "Let the base be $S=\\Spec k$ for a field $k$, then $Y_\\MCA$ is a toric variety."
+    },
+    {
+      "id": "1-1-8-char-ya",
+      "kind": "proposition",
+      "position": 140,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 86,
+      "title": null,
+      "labels": [
+        "1-1-8-char-ya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-7-ya"
+      ],
+      "proof_uses": [
+        "0-char-torus"
+      ],
+      "has_proof": true,
+      "statement_event": 234,
+      "proof_event": 235,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "The character lattice of the torus of $Y_\\MCA$ is $\\Z \\MCA$."
+    },
+    {
+      "id": "1-1-9-ideal-ya",
+      "kind": "proposition",
+      "position": 141,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 103,
+      "title": null,
+      "labels": [
+        "1-1-9-ideal-ya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-phiAprime",
+        "1-1-7-ya",
+        "1-1-10-lat-ideal"
+      ],
+      "proof_uses": [
+        "0-diag-spec"
+      ],
+      "has_proof": true,
+      "statement_event": 236,
+      "proof_event": 237,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "Let $R$ be a commutative ring. Let $G$ be an abelian group. Let $s$ be an arbitrary indexing type, and $\\MCA : s \\to G$ an indexed family. Let $L$ be the kernel of $f'_\\MCA : \\Z^{\\oplus s} \\to G$. Then the ideal of the affine toric variety $Y_\\MCA$ is \\[ I(Y_\\MCA) = I_L. \\]"
+    },
+    {
+      "id": "1-1-14-spec-aff-mon-alg",
+      "kind": "proposition",
+      "position": 142,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 134,
+      "title": null,
+      "labels": [
+        "1-1-14-spec-aff-mon-alg"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-aff-mon",
+        "1-1-7-ya"
+      ],
+      "proof_uses": [
+        "1-1-8-aff-tor-var-ya"
+      ],
+      "has_proof": true,
+      "statement_event": 238,
+      "proof_event": 239,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "If $S$ is an affine monoid and $\\mathcal A$ is a finite set generating $S$ as a monoid, then $\\Spec \\Bbbk[S] = Y_{\\mathcal A}$."
+    },
+    {
+      "id": "1-1-10-tor-ideal-ya",
+      "kind": "proposition",
+      "position": 143,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 150,
+      "title": null,
+      "labels": [
+        "1-1-10-tor-ideal-ya"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "1-1-7-ya",
+        "1-1-9-ideal-ya"
+      ],
+      "proof_uses": [
+        "1-1-9-ideal-ya"
+      ],
+      "has_proof": true,
+      "statement_event": 240,
+      "proof_event": 241,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "The ideal of $Y_\\MCA$ is a toric ideal."
+    },
+    {
+      "id": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "theorem",
+      "position": 144,
+      "chapter": "5-4-ya-construction",
+      "source": "chapters/5-4-ya-construction.tex",
+      "line": 166,
+      "title": "Affine toric varieties come from affine monoids",
+      "labels": [
+        "5-1-aff-tor-var-iso-diag-aff-mon"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "0-aff-mon",
+        "5-1-tor-var",
+        "5-1-tor-hom",
+        "1-1-7-ya",
+        "1-1-10-lat-ideal"
+      ],
+      "proof_uses": [
+        "1-1-tor-act-alg",
+        "1-1-8-aff-tor-var-ya",
+        "1-1-9-ideal-ya",
+        "1-1-14-spec-aff-mon-alg",
+        "1-1-16-total-red",
+        "5-2-char-tor-var-aff-mon"
+      ],
+      "has_proof": true,
+      "statement_event": 242,
+      "proof_event": 243,
+      "proof_chapter": "5-4-ya-construction",
+      "proof_leanok": false,
+      "text": "Let $k$ be a field. Let $T$ be a torus over $k$. Let $V$ be a toric variety with torus $k$. Then there exists a torus isomorphism $V \\cong D_k(X(V))$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "0-grp-equiv",
+      "target": "0-ess-image-grp",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-grp",
+      "target": "0-full-faithful-grp-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-aff-mon",
+      "target": "0-embed-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "0-aff-mon",
+      "target": "0-aff-mon-alg-domain",
+      "kind": "statement"
+    },
+    {
+      "source": "0-mv-laurent-poly-domain",
+      "target": "0-aff-mon-alg-domain",
+      "kind": "proof"
+    },
+    {
+      "source": "0-embed-aff-mon",
+      "target": "0-aff-mon-alg-domain",
+      "kind": "proof"
+    },
+    {
+      "source": "0-irred",
+      "target": "0-irred-subset-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "0-irred",
+      "target": "0-irred-finite",
+      "kind": "statement"
+    },
+    {
+      "source": "0-irred-subset-gen",
+      "target": "0-irred-finite",
+      "kind": "proof"
+    },
+    {
+      "source": "0-irred",
+      "target": "0-irred-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "0-coideal",
+      "target": "0-coquot",
+      "kind": "statement"
+    },
+    {
+      "source": "0-coquot",
+      "target": "0-coquot-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-coideal",
+      "target": "0-biideal",
+      "kind": "statement"
+    },
+    {
+      "source": "0-biideal",
+      "target": "0-biquot",
+      "kind": "statement"
+    },
+    {
+      "source": "0-coquot",
+      "target": "0-biquot",
+      "kind": "proof"
+    },
+    {
+      "source": "0-biquot",
+      "target": "0-biquot-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-coquot-hom",
+      "target": "0-biquot-hom",
+      "kind": "proof"
+    },
+    {
+      "source": "0-biideal",
+      "target": "0-hopf-ideal",
+      "kind": "statement"
+    },
+    {
+      "source": "0-hopf-ideal",
+      "target": "0-hopf-quot",
+      "kind": "statement"
+    },
+    {
+      "source": "0-biquot",
+      "target": "0-hopf-quot",
+      "kind": "proof"
+    },
+    {
+      "source": "0-hopf-quot",
+      "target": "0-hopf-quot-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-biquot-hom",
+      "target": "0-hopf-quot-hom",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-grp",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-map",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-grp-alg-of",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-grp-alg-span",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-grp-alg-of",
+      "target": "0-grp-like-grp-alg-span",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-lin-indep",
+      "kind": "statement"
+    },
+    {
+      "source": "0-tensor-lin-indep",
+      "target": "0-grp-like-lin-indep",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-grp-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-lin-indep",
+      "target": "0-grp-like-grp-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-alg-grp-like-gc",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-map",
+      "target": "0-grp-alg-grp-like-gc",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like-grp-alg",
+      "target": "0-grp-alg-grp-like-gc",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-grp-like-quot-hopf",
+      "kind": "statement"
+    },
+    {
+      "source": "0-hopf-ideal",
+      "target": "0-grp-like-quot-hopf",
+      "kind": "statement"
+    },
+    {
+      "source": "0-is-diag-bialg",
+      "target": "0-is-diag-bialg-group-like-span",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-is-diag-bialg-group-like-span",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-grp-alg-span",
+      "target": "0-is-diag-bialg-group-like-span",
+      "kind": "proof"
+    },
+    {
+      "source": "0-is-diag-bialg",
+      "target": "0-bialg-bij-of-span-grp-like",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-grp",
+      "target": "0-bialg-bij-of-span-grp-like",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-lin-indep",
+      "target": "0-bialg-bij-of-span-grp-like",
+      "kind": "proof"
+    },
+    {
+      "source": "0-is-diag-bialg",
+      "target": "0-is-diag-bialg-quot",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-grp",
+      "target": "0-is-diag-bialg-quot",
+      "kind": "proof"
+    },
+    {
+      "source": "0-bialg-bij-of-span-grp-like",
+      "target": "0-is-diag-bialg-quot",
+      "kind": "proof"
+    },
+    {
+      "source": "0-is-diag-bialg",
+      "target": "0-is-diag-bialg-iff-span-group-like",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like",
+      "target": "0-is-diag-bialg-iff-span-group-like",
+      "kind": "statement"
+    },
+    {
+      "source": "0-is-diag-bialg-group-like-span",
+      "target": "0-is-diag-bialg-iff-span-group-like",
+      "kind": "proof"
+    },
+    {
+      "source": "0-bialg-bij-of-span-grp-like",
+      "target": "0-is-diag-bialg-iff-span-group-like",
+      "kind": "proof"
+    },
+    {
+      "source": "0-bialg-equiv-comon-alg",
+      "target": "0-hopf-alg-equiv-cogrp-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-antipode-mul",
+      "target": "0-hopf-alg-equiv-cogrp-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-alg",
+      "target": "0-full-faithful-grp-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-grp-alg",
+      "target": "0-full-faithful-grp-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-like-map",
+      "target": "0-full-faithful-grp-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-1-cone-hull",
+      "target": "1-2-1-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-2-convex-hull",
+      "target": "1-2-2-polytope",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-2-convex-hull",
+      "target": "1-2-3-dual-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-4-dual-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-4-dual-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-dual-cone-add",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-4-double-dual-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-4-double-dual-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-5-edge",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-5-facet",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-6-face-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-6-face-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-6-inter-faces",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-6-inter-faces",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-6-face-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-6-face-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-7-face-mem-of-add",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-7-face-mem-of-add",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-cone-hull",
+      "target": "1-2-8-dual-cone-inter-halfspaces",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-8-dual-cone-inter-halfspaces",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-cone-hull",
+      "target": "1-2-8-facet-full-dim-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-facet",
+      "target": "1-2-8-facet-full-dim-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-facet",
+      "target": "1-2-8-inter-facet",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-10-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-10-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-10-dual-face",
+      "target": "1-2-10-dual-face-face-dual",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-10-dual-face",
+      "target": "1-2-10-double-dual-face-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-4-double-dual-polyhedral-cone",
+      "target": "1-2-10-double-dual-face-dual-face",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-10-dual-face",
+      "target": "1-2-10-dual-face-antitone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-10-dual-face",
+      "target": "1-2-10-dim-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-rel-interior",
+      "target": "1-2-rel-interior-inner",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-10-dual-face",
+      "target": "1-2-rel-interior-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-rel-interior",
+      "target": "1-2-rel-interior-dual-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-min-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-rel-interior",
+      "target": "1-2-min-face",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-12-salient-cone-tfae",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-12-salient-cone",
+      "target": "1-2-12-salient-cone-tfae",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-1-polyhedral-cone",
+      "target": "1-2-13-separation-lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-13-separation-lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-dual-cone-add",
+      "target": "1-2-13-separation-lemma",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-min-face",
+      "target": "1-2-13-separation-lemma",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-1-cone-hull",
+      "target": "1-2-14-rat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-face",
+      "target": "1-2-14-face-rat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-14-rat-cone",
+      "target": "1-2-14-face-rat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-14-dual-rat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-14-rat-cone",
+      "target": "1-2-14-dual-rat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-5-edge",
+      "target": "1-2-ray-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-14-rat-cone",
+      "target": "1-2-ray-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-ray-gen",
+      "target": "1-2-min-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-12-salient-cone",
+      "target": "1-2-15-cone-hull-min-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-min-gen",
+      "target": "1-2-15-cone-hull-min-gen",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-min-gen",
+      "target": "1-2-16-reg-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-min-gen",
+      "target": "1-2-16-simplicial-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-3-dual-cone",
+      "target": "1-2-17-dual-lat-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-17-dual-lat-cone",
+      "target": "1-2-17-gordan-lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-14-dual-rat-cone",
+      "target": "1-2-17-gordan-lemma",
+      "kind": "proof"
+    },
+    {
+      "source": "5-1-tor-var",
+      "target": "1-2-18-aff-tor-var-rat-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-17-dual-lat-cone",
+      "target": "1-2-18-aff-tor-var-rat-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-12-salient-cone",
+      "target": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-18-aff-tor-var-rat-polyhedral-cone",
+      "target": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-14-spec-aff-mon-alg",
+      "target": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-12-salient-cone-tfae",
+      "target": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "proof"
+    },
+    {
+      "source": "1-2-17-gordan-lemma",
+      "target": "1-2-18-dim-aff-tor-var-rat-polyhedral-cone",
+      "kind": "proof"
+    },
+    {
+      "source": "0-irred",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-min-gen",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-12-salient-cone",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "statement"
+    },
+    {
+      "source": "1-2-17-dual-lat-cone",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "statement"
+    },
+    {
+      "source": "0-irred-subset-gen",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "proof"
+    },
+    {
+      "source": "0-irred-gen",
+      "target": "1-2-22-irred-dual-lat",
+      "kind": "proof"
+    },
+    {
+      "source": "0-spec-alg",
+      "target": "0-full-faithful-spec-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-slice-adj",
+      "target": "0-full-faithful-spec-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-over-lim",
+      "target": "0-full-faithful-spec-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-spec-bialg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-spec-bialg",
+      "target": "0-full-faithful-spec-bialg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-grp",
+      "target": "0-full-faithful-spec-bialg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-full-faithful-spec-bialg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-spec-hopf",
+      "target": "0-spec-cocomm-bialg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-spec-hopf",
+      "kind": "statement"
+    },
+    {
+      "source": "0-spec-hopf",
+      "target": "0-full-faithful-spec-hopf",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-grp",
+      "target": "0-full-faithful-spec-hopf",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-full-faithful-spec-hopf",
+      "kind": "proof"
+    },
+    {
+      "source": "0-spec-alg",
+      "target": "0-ess-image-spec-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-ess-image-over",
+      "target": "0-ess-image-spec-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-spec-bialg",
+      "target": "0-ess-image-spec-bialg",
+      "kind": "statement"
+    },
+    {
+      "source": "0-ess-image-grp",
+      "target": "0-ess-image-spec-bialg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-ess-image-spec-alg",
+      "target": "0-ess-image-spec-bialg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-ess-image-spec-bialg",
+      "kind": "proof"
+    },
+    {
+      "source": "0-spec-hopf",
+      "target": "0-ess-image-spec-hopf",
+      "kind": "statement"
+    },
+    {
+      "source": "0-ess-image-grp",
+      "target": "0-ess-image-spec-hopf",
+      "kind": "proof"
+    },
+    {
+      "source": "0-ess-image-spec-alg",
+      "target": "0-ess-image-spec-hopf",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-alg",
+      "target": "0-ess-image-spec-hopf",
+      "kind": "proof"
+    },
+    {
+      "source": "0-grp-alg",
+      "target": "0-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-hopf-alg-equiv-cogrp-alg",
+      "target": "0-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-spec-hopf",
+      "target": "0-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-is-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-torus",
+      "target": "0-diag-spec",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-iff-grp-like-span",
+      "kind": "statement"
+    },
+    {
+      "source": "0-is-diag",
+      "target": "0-diag-iff-grp-like-span",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-like-lin-indep",
+      "target": "0-diag-iff-grp-like-span",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-full-faithful-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-spec-hopf",
+      "target": "0-full-faithful-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-grp-alg",
+      "target": "0-full-faithful-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-aff-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-closed-emb",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-faithful-flat",
+      "kind": "statement"
+    },
+    {
+      "source": "0-grp-alg-free",
+      "target": "0-diag-faithful-flat",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-subgroup-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-is-diag-bialg-quot",
+      "target": "0-subgroup-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-ess-image-spec-hopf",
+      "target": "0-subgroup-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-spec-hopf",
+      "target": "0-subgroup-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "0-subgroup-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-tors",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "0-diag-tors",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag",
+      "target": "0-diag-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "0-diag-hom",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-grp-hom",
+      "target": "0-diag-hom",
+      "kind": "proof"
+    },
+    {
+      "source": "0-torus",
+      "target": "0-char",
+      "kind": "statement"
+    },
+    {
+      "source": "0-torus",
+      "target": "0-cochar",
+      "kind": "statement"
+    },
+    {
+      "source": "0-char",
+      "target": "0-char-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "0-char-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-cochar",
+      "target": "0-cochar-diag",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "0-cochar-diag",
+      "kind": "proof"
+    },
+    {
+      "source": "0-char",
+      "target": "0-char-torus",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "0-char-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "0-char-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-cochar",
+      "target": "0-cochar-torus",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "0-cochar-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "0-cochar-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-char",
+      "target": "0-char-cochar-pairing",
+      "kind": "statement"
+    },
+    {
+      "source": "0-cochar",
+      "target": "0-char-cochar-pairing",
+      "kind": "statement"
+    },
+    {
+      "source": "0-char-cochar-pairing",
+      "target": "0-char-cochar-pairing-perfect",
+      "kind": "statement"
+    },
+    {
+      "source": "0-torus",
+      "target": "1-1-1-group-hom-torus",
+      "kind": "statement"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "1-1-1-group-hom-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "1-1-1-group-hom-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-closed-emb",
+      "target": "1-1-1-group-hom-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-aff-hom",
+      "target": "1-1-1-group-hom-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-torus",
+      "target": "1-1-1-subgroup-torus",
+      "kind": "statement"
+    },
+    {
+      "source": "0-subgroup-diag",
+      "target": "1-1-1-subgroup-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-full-faithful-diag",
+      "target": "1-1-1-subgroup-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "1-1-1-subgroup-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-tors",
+      "target": "1-1-1-subgroup-torus",
+      "kind": "proof"
+    },
+    {
+      "source": "0-torus",
+      "target": "5-1-tor-var",
+      "kind": "statement"
+    },
+    {
+      "source": "0-torus",
+      "target": "5-1-tor-hom",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "5-1-tor-var",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "0-aff-mon-alg-domain",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "0-loc-mon-alg",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "0-comap-mod",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "1-1-aff-tor-var-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "0-char",
+      "target": "1-1-char-eigenspace",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-char-eigenspace",
+      "target": "1-1-2-char-eigenspace-direct-sum",
+      "kind": "statement"
+    },
+    {
+      "source": "0-torus",
+      "target": "1-1-tor-act-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-tor-act-alg",
+      "target": "1-1-16-total-red",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-2-char-eigenspace-direct-sum",
+      "target": "1-1-16-total-red",
+      "kind": "proof"
+    },
+    {
+      "source": "5-2-char-tor-var",
+      "target": "5-2-char-tor-var-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-10-lat-ideal",
+      "target": "1-1-10-tor-ideal",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-10-tor-ideal",
+      "target": "1-1-11-toric-ideal-gen-binomial",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-1-subgroup-torus",
+      "target": "1-1-11-toric-ideal-gen-binomial",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-9-ideal-ya",
+      "target": "1-1-11-toric-ideal-gen-binomial",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-phiAprime",
+      "target": "5-3-van-tor-emb",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "5-3-van-tor-emb",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-10-lat-ideal",
+      "target": "5-3-van-tor-emb",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "5-3-van-tor-emb",
+      "kind": "proof"
+    },
+    {
+      "source": "0-char",
+      "target": "1-1-phiAprime",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-phiAprime",
+      "target": "1-1-phiA",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-phiA",
+      "target": "1-1-7-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "1-1-8-aff-tor-var-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-1-group-hom-torus",
+      "target": "1-1-8-aff-tor-var-ya",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "1-1-8-char-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "0-char-torus",
+      "target": "1-1-8-char-ya",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-phiAprime",
+      "target": "1-1-9-ideal-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "1-1-9-ideal-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-10-lat-ideal",
+      "target": "1-1-9-ideal-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "0-diag-spec",
+      "target": "1-1-9-ideal-ya",
+      "kind": "proof"
+    },
+    {
+      "source": "0-aff-mon",
+      "target": "1-1-14-spec-aff-mon-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "1-1-14-spec-aff-mon-alg",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-8-aff-tor-var-ya",
+      "target": "1-1-14-spec-aff-mon-alg",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "1-1-10-tor-ideal-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-9-ideal-ya",
+      "target": "1-1-10-tor-ideal-ya",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-9-ideal-ya",
+      "target": "1-1-10-tor-ideal-ya",
+      "kind": "proof"
+    },
+    {
+      "source": "0-aff-mon",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "5-1-tor-var",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "5-1-tor-hom",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-7-ya",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-10-lat-ideal",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "statement"
+    },
+    {
+      "source": "1-1-tor-act-alg",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-8-aff-tor-var-ya",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-9-ideal-ya",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-14-spec-aff-mon-alg",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "1-1-16-total-red",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    },
+    {
+      "source": "5-2-char-tor-var-aff-mon",
+      "target": "5-1-aff-tor-var-iso-diag-aff-mon",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}

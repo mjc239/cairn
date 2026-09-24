@@ -70,11 +70,21 @@ class FormalDecl:
     """Pretty-printed statement (Lean syntax), when the dump has it."""
     stmt_short: str = ""
     """Short statement: explicit hypotheses and conclusion only."""
+    external: bool = False
+    """Declared outside the project (e.g. upstreamed to Mathlib) but named by the blueprint."""
 
 
-def load_decls(path: str | Path) -> dict[str, FormalDecl]:
-    """Load ``extract_deps`` output and fold auxiliaries into user-facing declarations."""
+def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl]:
+    """Load ``extract_deps`` output and fold auxiliaries into user-facing declarations.
+
+    Dumps made with ``--extra`` also hold *external* records: declarations outside the project (typically results
+    upstreamed to Mathlib) that the blueprint names. They are skipped unless ``external`` is set, so blueprint-free
+    analyses see only the project. Their ``blueprint_reach`` (other blueprint-named external declarations reached
+    through non-project constants) counts as a proof dependency.
+    """
     rows = [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
+    if not external:
+        rows = [r for r in rows if not r.get("external")]
     kinds = {r["name"]: r["kind"] for r in rows}
     user_names = {r["user_name"] for r in rows}
     decls: dict[str, FormalDecl] = {}
@@ -95,10 +105,12 @@ def load_decls(path: str | Path) -> dict[str, FormalDecl]:
             d.doc = r.get("doc")
             d.type_pp = r.get("type_pp", "")
             d.stmt_short = r.get("stmt_short", "")
+            d.external = bool(r.get("external"))
         d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])
         d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])
         d.value_deps.update(fold_name(x, kinds) for x in r["value_deps"])
+        d.value_deps.update(r.get("blueprint_reach", []))
     for d in decls.values():
         d.type_deps.discard(d.name)
         d.value_deps.discard(d.name)

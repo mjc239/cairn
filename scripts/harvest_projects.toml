@@ -1,0 +1,129 @@
+# Blueprint projects for the harvester (scripts/harvest.py), in harvest order.
+# Each entry: name (directory under results/harvest/), repo (GitHub owner/name), and optionally
+#   commit    pin a commit (default: the default branch's HEAD at harvest time, recorded in triage.json)
+#   group_by  file | chapter | section (default: chosen from the blueprint's structure)
+#   entry     blueprint entry file under blueprint/src (default: content.tex, then chapter/main.tex)
+#   libs      Lean root modules to build and extract (default: the lakefile's lean_libs)
+#   build_timeout  minutes (default 45)
+# Ordered by size (lines of project Lean code, measured 2026-09-24), largest three last.
+# Sources: the leanblueprint README's project list (github.com/PatrickMassot/leanblueprint).
+
+[[project]]
+name = "chandra_furst_lipton"
+repo = "YaelDillies/ChandraFurstLipton"
+# 216 lines of Lean in 4 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "banach_tarski"
+repo = "bergschaf/lean-banach-tarski"
+# 217 lines of Lean in 6 files, Lean v4.25.0-rc2
+
+[[project]]
+name = "clt"
+repo = "RemyDegenne/CLT"
+# 533 lines of Lean in 6 files, Lean v4.29.0-rc3
+
+[[project]]
+name = "cam_combi"
+repo = "YaelDillies/LeanCamCombi"
+# 1,363 lines of Lean in 21 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "toric"
+repo = "YaelDillies/Toric"
+# 2,070 lines of Lean in 19 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "semicircle"
+repo = "fredraj3/SemicircleLaw"
+# 2,484 lines of Lean in 8 files, Lean v4.24.0
+
+[[project]]
+name = "flt3"
+repo = "pitmonticone/FLT3"
+# 2,820 lines of Lean in 9 files, Lean v4.7.0-rc2
+
+[[project]]
+name = "abc_exceptions"
+repo = "b-mehta/ABC-Exceptions"
+# 3,353 lines of Lean in 5 files, Lean v4.21.0-rc3
+
+[[project]]
+name = "flt_regular"
+repo = "leanprover-community/flt-regular"
+# 3,961 lines of Lean in 28 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "zeta3"
+repo = "ahhwuhu/zeta_3_irrational"
+# Pinned: from 2026-03-20 the live content.tex is an IMO 2025 P4 blueprint, with the zeta(3) one commented out.
+commit = "3afdc9b57881ae1fee158fe16f7bff6b14286305"
+# 4,126 lines of Lean in 8 files, Lean v4.18.0
+
+[[project]]
+name = "infinity_cosmos"
+repo = "emilyriehl/infinity-cosmos"
+# 4,745 lines of Lean in 32 files, Lean v4.34.0-rc1
+
+[[project]]
+name = "bonn_analysis"
+repo = "fpvandoorn/BonnAnalysis"
+# 5,561 lines of Lean in 16 files, Lean v4.10.0-rc1
+
+[[project]]
+name = "apap"
+repo = "YaelDillies/LeanAPAP"
+# 7,241 lines of Lean in 54 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "iwasawa"
+repo = "acmepjz/lean-iwasawa"
+# 9,720 lines of Lean in 40 files, Lean v4.33.0-rc1
+
+[[project]]
+name = "formal_book"
+repo = "mo271/FormalBook"
+# 11,411 lines of Lean in 59 files, Lean v4.34.0-rc2
+
+[[project]]
+name = "testing_lower_bounds"
+repo = "RemyDegenne/testing-lower-bounds"
+# 13,384 lines of Lean in 51 files, Lean v4.35.0-rc2
+
+[[project]]
+name = "sphere_eversion"
+repo = "leanprover-community/sphere-eversion"
+# 14,918 lines of Lean in 65 files, Lean v4.34.0-rc2
+
+[[project]]
+name = "sphere_packing"
+repo = "thefundamentaltheor3m/Sphere-Packing-Lean"
+# 18,061 lines of Lean in 77 files, Lean v4.32.0
+
+[[project]]
+name = "brownian_motion"
+repo = "RemyDegenne/brownian-motion"
+# 29,409 lines of Lean in 97 files, Lean v4.33.0-rc1
+
+[[project]]
+name = "con_nf"
+repo = "leanprover-community/con-nf"
+# 41,728 lines of Lean in 170 files, Lean v4.21.0-rc3
+
+[[project]]
+name = "pnt"
+repo = "AlexKontorovich/PrimeNumberTheoremAnd"
+build_timeout = 120
+# 172,200 lines of Lean in 236 files, Lean v4.33.1
+
+[[project]]
+name = "flt"
+repo = "ImperialCollegeLondon/FLT"
+build_timeout = 120
+# 58,785 lines of Lean in 271 files, Lean v4.35.0-rc1
+
+[[project]]
+name = "equational_theories"
+repo = "teorth/equational_theories"
+build_timeout = 180
+# 163,708 lines of Lean in 1300 files, Lean v4.29.1

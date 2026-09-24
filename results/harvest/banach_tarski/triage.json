@@ -1,0 +1,31 @@
+{
+ "name": "banach_tarski",
+ "repo": "bergschaf/lean-banach-tarski",
+ "status": "ok",
+ "stage": "done",
+ "commit": "1c6bf6edb1dff258a7967a51986f7139bf89a51b",
+ "commit_date": "2025-10-27",
+ "toolchain": "leanprover/lean4:v4.25.0-rc2",
+ "mathlib": "0c8813a616a2",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "section",
+ "nodes": 30,
+ "uses_edges": 41,
+ "chapters": 5,
+ "lean_nodes": 0,
+ "leanok_nodes": 0,
+ "libs": [
+  "LeanBanachTarski"
+ ],
+ "build_minutes": 0.4,
+ "extractor": "extract_deps.lean",
+ "decls": 52,
+ "theorems": 12,
+ "external_decls": 0,
+ "lean_resolved": 0.0,
+ "nodes_linked": 0,
+ "nodes_linked_external_only": 0,
+ "minutes": 3.2
+}

@@ -1,0 +1,3061 @@
+{
+  "project": "con_nf",
+  "provenance": "leanprover-community/con-nf @ 55b939a3acf9 (2025-06-18), Lean leanprover/lean4:v4.21.0-rc3",
+  "stats": {
+    "project_decls": 1998,
+    "project_decls_by_kind": {
+      "constructor": 2,
+      "def": 509,
+      "inductive": 87,
+      "theorem": 1400
+    },
+    "external_decls": 0,
+    "formal_edges": 29622,
+    "blueprint_nodes": 159,
+    "blueprint_nodes_with_formal_decl": 55,
+    "lean_names_resolved": 57,
+    "lean_names_missing": {
+      "prop:Params.minimal": [
+        "ConNF.minimalParams",
+        "ConNF.inaccessibleParams"
+      ],
+      "def:StrApprox.Coherent": [
+        "ConNF.StrApprox.CoherentAt"
+      ],
+      "prop:StrApprox.chain": [
+        "ConNF.StrApprox.exists_isMax"
+      ],
+      "thm:StrApprox.foa": [
+        "ConNF.StrApprox.exists_exactlyApproximates"
+      ],
+      "def:Interference": [
+        "ConNF.Interference"
+      ]
+    },
+    "coverage": 0.9047619047619048,
+    "labelled_decls": 57,
+    "unlabelled_theorems": 1388,
+    "edges": {
+      "author_edges": 87,
+      "lean_edges": 519,
+      "author_direct_in_lean": 63,
+      "author_implied_transitively": 0,
+      "author_absent_from_lean": [
+        [
+          "def:BaseAction.Nice",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:BaseApprox.LE",
+          "def:StrApprox"
+        ],
+        [
+          "def:BaseApprox.LE",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:BaseSupport",
+          "def:BaseAction"
+        ],
+        [
+          "def:Inflexible",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:InflexiblePath",
+          "def:CoherentData"
+        ],
+        [
+          "def:NearLitter",
+          "def:BaseApprox"
+        ],
+        [
+          "def:NearLitter",
+          "def:BasePerm"
+        ],
+        [
+          "def:Small",
+          "def:Enumeration"
+        ],
+        [
+          "def:StrApprox.Approximates",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:StrApprox.Approximates",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:StrApprox.Approximates",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrApprox.Coherent",
+          "def:FlexApprox"
+        ],
+        [
+          "def:StrApprox.Coherent",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrPerm",
+          "def:StrSet"
+        ],
+        [
+          "def:StrPerm",
+          "def:StrSupport"
+        ],
+        [
+          "def:TypedNearLitter",
+          "def:CoherentData"
+        ],
+        [
+          "def:atomGraph",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:nearLitterGraph",
+          "prop:approx_near"
+        ],
+        [
+          "prop:BaseAction.exists_inside",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "prop:StrApprox.addOrbit",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "prop:atomGraph_inv",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "prop:fuzz",
+          "def:InflexiblePath"
+        ],
+        [
+          "prop:nearLitterGraph_permutative",
+          "def:StrApprox.Approximates"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "def:Atom",
+          "def:BaseAction"
+        ],
+        [
+          "def:Atom",
+          "def:BaseAction.Nice"
+        ],
+        [
+          "def:Atom",
+          "def:BaseApprox"
+        ],
+        [
+          "def:Atom",
+          "def:BaseApprox.LE"
+        ],
+        [
+          "def:Atom",
+          "def:BaseSupport"
+        ],
+        [
+          "def:Atom",
+          "def:CoherentData"
+        ],
+        [
+          "def:Atom",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Atom",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Atom",
+          "def:ModelData"
+        ],
+        [
+          "def:Atom",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Atom",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Atom",
+          "def:StrSet"
+        ],
+        [
+          "def:Atom",
+          "def:StrSupport"
+        ],
+        [
+          "def:Atom",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:Atom",
+          "def:Strong"
+        ],
+        [
+          "def:Atom",
+          "def:Tangle"
+        ],
+        [
+          "def:Atom",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Atom",
+          "def:atomGraph"
+        ],
+        [
+          "def:Atom",
+          "def:nearLitterGraph"
+        ],
+        [
+          "def:Atom",
+          "prop:BaseAction.exists_inside"
+        ],
+        [
+          "def:Atom",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:Atom",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:Atom",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:Atom",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:Atom",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Atom",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Atom",
+          "prop:approx_near"
+        ],
+        [
+          "def:Atom",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Atom",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:Atom",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:Atom",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Atom",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Atom",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:Atom",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:BaseAction",
+          "def:FlexApprox"
+        ],
+        [
+          "def:BaseAction",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:BaseAction",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:BaseAction",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:BaseAction",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:BaseAction",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:BaseAction.Nice",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:BaseApprox",
+          "def:FlexApprox"
+        ],
+        [
+          "def:BaseApprox",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:BaseApprox",
+          "def:StrApprox"
+        ],
+        [
+          "def:BaseApprox",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:BaseApprox",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:BaseApprox",
+          "def:nearLitterGraph"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:approx_near"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:BaseApprox",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:BaseApprox",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:BaseApprox.LE",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:BaseApprox.LE",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:BasePerm",
+          "def:CoherentData"
+        ],
+        [
+          "def:BasePerm",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:BasePerm",
+          "def:ModelData"
+        ],
+        [
+          "def:BasePerm",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:BasePerm",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:BasePerm",
+          "def:Tangle"
+        ],
+        [
+          "def:BasePerm",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:BasePerm",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:BasePerm",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:BasePerm",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:BasePerm",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:BasePerm",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:BaseSupport",
+          "def:CoherentData"
+        ],
+        [
+          "def:BaseSupport",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:BaseSupport",
+          "def:Strong"
+        ],
+        [
+          "def:BaseSupport",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:BaseSupport",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:BaseSupport",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:BaseSupport",
+          "prop:exists_strong"
+        ],
+        [
+          "def:BaseSupport",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:CoherentData",
+          "def:FlexApprox"
+        ],
+        [
+          "def:CoherentData",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:CoherentData",
+          "def:Inflexible"
+        ],
+        [
+          "def:CoherentData",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:CoherentData",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:CoherentData",
+          "def:Strong"
+        ],
+        [
+          "def:CoherentData",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:CoherentData",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:CoherentData",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:CoherentData",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:CoherentData",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:CoherentData",
+          "prop:exists_strong"
+        ],
+        [
+          "def:CoherentData",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Enumeration",
+          "def:CoherentData"
+        ],
+        [
+          "def:Enumeration",
+          "def:ModelData"
+        ],
+        [
+          "def:Enumeration",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Enumeration",
+          "def:StrSupport"
+        ],
+        [
+          "def:Enumeration",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:Enumeration",
+          "def:Strong"
+        ],
+        [
+          "def:Enumeration",
+          "def:Tangle"
+        ],
+        [
+          "def:Enumeration",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Enumeration",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Enumeration",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Enumeration",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Enumeration",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:FlexApprox",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:FreedomOfAction",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Inflexible",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Inflexible",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Inflexible",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Inflexible",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Inflexible",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Inflexible",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:InflexiblePath",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:InflexiblePath",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:InflexiblePath",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:InflexiblePath",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:InflexiblePath",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:InflexiblePath",
+          "prop:exists_strong"
+        ],
+        [
+          "def:InflexiblePath",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Litter",
+          "def:BaseAction"
+        ],
+        [
+          "def:Litter",
+          "def:BaseAction.Nice"
+        ],
+        [
+          "def:Litter",
+          "def:BaseApprox"
+        ],
+        [
+          "def:Litter",
+          "def:BaseApprox.LE"
+        ],
+        [
+          "def:Litter",
+          "def:CoherentData"
+        ],
+        [
+          "def:Litter",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Litter",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Litter",
+          "def:Inflexible"
+        ],
+        [
+          "def:Litter",
+          "def:ModelData"
+        ],
+        [
+          "def:Litter",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Litter",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Litter",
+          "def:Strong"
+        ],
+        [
+          "def:Litter",
+          "def:Tangle"
+        ],
+        [
+          "def:Litter",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Litter",
+          "def:atomGraph"
+        ],
+        [
+          "def:Litter",
+          "def:nearLitterGraph"
+        ],
+        [
+          "def:Litter",
+          "prop:BaseAction.exists_inside"
+        ],
+        [
+          "def:Litter",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:Litter",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:Litter",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:Litter",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:Litter",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:Litter",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Litter",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Litter",
+          "prop:approx_near"
+        ],
+        [
+          "def:Litter",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Litter",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:Litter",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:Litter",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Litter",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Litter",
+          "prop:fuzz"
+        ],
+        [
+          "def:Litter",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:Litter",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:ModelData",
+          "def:CoherentData"
+        ],
+        [
+          "def:ModelData",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:ModelData",
+          "def:Inflexible"
+        ],
+        [
+          "def:ModelData",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:ModelData",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:ModelData",
+          "def:Strong"
+        ],
+        [
+          "def:ModelData",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:ModelData",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:ModelData",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:ModelData",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:ModelData",
+          "prop:exists_strong"
+        ],
+        [
+          "def:ModelData",
+          "prop:fuzz"
+        ],
+        [
+          "def:ModelData",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:NearLitter",
+          "def:BaseAction"
+        ],
+        [
+          "def:NearLitter",
+          "def:BaseAction.Nice"
+        ],
+        [
+          "def:NearLitter",
+          "def:CoherentData"
+        ],
+        [
+          "def:NearLitter",
+          "def:FlexApprox"
+        ],
+        [
+          "def:NearLitter",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:NearLitter",
+          "def:ModelData"
+        ],
+        [
+          "def:NearLitter",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:NearLitter",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:NearLitter",
+          "def:StrSupport"
+        ],
+        [
+          "def:NearLitter",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:NearLitter",
+          "def:Strong"
+        ],
+        [
+          "def:NearLitter",
+          "def:Tangle"
+        ],
+        [
+          "def:NearLitter",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:NearLitter",
+          "def:atomGraph"
+        ],
+        [
+          "def:NearLitter",
+          "def:nearLitterGraph"
+        ],
+        [
+          "def:NearLitter",
+          "prop:BaseAction.exists_inside"
+        ],
+        [
+          "def:NearLitter",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:NearLitter",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:NearLitter",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:NearLitter",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:NearLitter",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:NearLitter",
+          "prop:approx_near"
+        ],
+        [
+          "def:NearLitter",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:NearLitter",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:NearLitter",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:NearLitter",
+          "prop:exists_strong"
+        ],
+        [
+          "def:NearLitter",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:NearLitter",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:OrbitRestriction",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:OrbitRestriction",
+          "prop:completing_orbits"
+        ],
+        [
+          "def:OrbitRestriction",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:OrbitRestriction",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Params",
+          "def:Atom"
+        ],
+        [
+          "def:Params",
+          "def:BaseAction"
+        ],
+        [
+          "def:Params",
+          "def:BaseAction.Nice"
+        ],
+        [
+          "def:Params",
+          "def:BaseApprox"
+        ],
+        [
+          "def:Params",
+          "def:BaseApprox.LE"
+        ],
+        [
+          "def:Params",
+          "def:BasePerm"
+        ],
+        [
+          "def:Params",
+          "def:BaseSupport"
+        ],
+        [
+          "def:Params",
+          "def:CoherentData"
+        ],
+        [
+          "def:Params",
+          "def:Enumeration"
+        ],
+        [
+          "def:Params",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Params",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Params",
+          "def:Inflexible"
+        ],
+        [
+          "def:Params",
+          "def:InflexiblePath"
+        ],
+        [
+          "def:Params",
+          "def:ModelData"
+        ],
+        [
+          "def:Params",
+          "def:NearLitter"
+        ],
+        [
+          "def:Params",
+          "def:Path"
+        ],
+        [
+          "def:Params",
+          "def:StrApprox"
+        ],
+        [
+          "def:Params",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Params",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Params",
+          "def:StrPerm"
+        ],
+        [
+          "def:Params",
+          "def:StrSet"
+        ],
+        [
+          "def:Params",
+          "def:StrSupport"
+        ],
+        [
+          "def:Params",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:Params",
+          "def:Strong"
+        ],
+        [
+          "def:Params",
+          "def:Tangle"
+        ],
+        [
+          "def:Params",
+          "def:Tree"
+        ],
+        [
+          "def:Params",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Params",
+          "def:atomGraph"
+        ],
+        [
+          "def:Params",
+          "def:nearLitterGraph"
+        ],
+        [
+          "def:Params",
+          "prop:BaseAction.exists_inside"
+        ],
+        [
+          "def:Params",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:Params",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:Params",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:Params",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:Params",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:Params",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Params",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Params",
+          "prop:approx_near"
+        ],
+        [
+          "def:Params",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Params",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:Params",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:Params",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Params",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Params",
+          "prop:fuzz"
+        ],
+        [
+          "def:Params",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:Params",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Path",
+          "def:CoherentData"
+        ],
+        [
+          "def:Path",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Path",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Path",
+          "def:Inflexible"
+        ],
+        [
+          "def:Path",
+          "def:InflexiblePath"
+        ],
+        [
+          "def:Path",
+          "def:ModelData"
+        ],
+        [
+          "def:Path",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Path",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Path",
+          "def:StrSupport"
+        ],
+        [
+          "def:Path",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:Path",
+          "def:Strong"
+        ],
+        [
+          "def:Path",
+          "def:Tangle"
+        ],
+        [
+          "def:Path",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Path",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:Path",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:Path",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Path",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Path",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Path",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Path",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Path",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Position",
+          "def:CoherentData"
+        ],
+        [
+          "def:Position",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Position",
+          "def:Inflexible"
+        ],
+        [
+          "def:Position",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Position",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Position",
+          "def:Strong"
+        ],
+        [
+          "def:Position",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Position",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Position",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Position",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Position",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Position",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Position",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Small",
+          "def:BaseAction"
+        ],
+        [
+          "def:Small",
+          "def:BaseAction.Nice"
+        ],
+        [
+          "def:Small",
+          "def:BaseApprox"
+        ],
+        [
+          "def:Small",
+          "def:BaseApprox.LE"
+        ],
+        [
+          "def:Small",
+          "def:BasePerm"
+        ],
+        [
+          "def:Small",
+          "def:CoherentData"
+        ],
+        [
+          "def:Small",
+          "def:FlexApprox"
+        ],
+        [
+          "def:Small",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Small",
+          "def:ModelData"
+        ],
+        [
+          "def:Small",
+          "def:NearLitter"
+        ],
+        [
+          "def:Small",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Small",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Small",
+          "def:Tangle"
+        ],
+        [
+          "def:Small",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Small",
+          "def:atomGraph"
+        ],
+        [
+          "def:Small",
+          "prop:BaseAction.exists_inside"
+        ],
+        [
+          "def:Small",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:Small",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:Small",
+          "prop:BaseApprox.addOrbit"
+        ],
+        [
+          "def:Small",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:Small",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Small",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Small",
+          "prop:approx_near"
+        ],
+        [
+          "def:Small",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Small",
+          "prop:atomGraph_inv"
+        ],
+        [
+          "def:Small",
+          "prop:atomGraph_permutative"
+        ],
+        [
+          "def:Small",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Small",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Small",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:Small",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrApprox",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:StrApprox",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:StrApprox",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrApprox",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrApprox.Approximates",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrApprox.Coherent",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:StrApprox.Coherent",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrPerm",
+          "def:CoherentData"
+        ],
+        [
+          "def:StrPerm",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:StrPerm",
+          "def:Inflexible"
+        ],
+        [
+          "def:StrPerm",
+          "def:ModelData"
+        ],
+        [
+          "def:StrPerm",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:StrPerm",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:StrPerm",
+          "def:Strong"
+        ],
+        [
+          "def:StrPerm",
+          "def:Tangle"
+        ],
+        [
+          "def:StrPerm",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:StrPerm",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:StrPerm",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:StrPerm",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrPerm",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:StrPerm",
+          "prop:exists_strong"
+        ],
+        [
+          "def:StrPerm",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrSet",
+          "def:CoherentData"
+        ],
+        [
+          "def:StrSet",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:StrSet",
+          "def:Inflexible"
+        ],
+        [
+          "def:StrSet",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:StrSet",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:StrSet",
+          "def:Strong"
+        ],
+        [
+          "def:StrSet",
+          "def:Tangle"
+        ],
+        [
+          "def:StrSet",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:StrSet",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:StrSet",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:StrSet",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrSet",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:StrSet",
+          "prop:exists_strong"
+        ],
+        [
+          "def:StrSet",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrSupport",
+          "def:CoherentData"
+        ],
+        [
+          "def:StrSupport",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:StrSupport",
+          "def:Tangle"
+        ],
+        [
+          "def:StrSupport",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:StrSupport",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:StrSupport",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:StrSupport",
+          "prop:exists_strong"
+        ],
+        [
+          "def:StrSupport",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:StrSupport.Occurs",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Tangle",
+          "def:CoherentData"
+        ],
+        [
+          "def:Tangle",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:Tangle",
+          "def:Inflexible"
+        ],
+        [
+          "def:Tangle",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:Tangle",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Tangle",
+          "def:Strong"
+        ],
+        [
+          "def:Tangle",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Tangle",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Tangle",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Tangle",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:Tangle",
+          "prop:exists_strong"
+        ],
+        [
+          "def:Tangle",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:Tree",
+          "def:CoherentData"
+        ],
+        [
+          "def:Tree",
+          "def:ModelData"
+        ],
+        [
+          "def:Tree",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:Tree",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:Tree",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:Tree",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:Tree",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:Tree",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:TypeIndex",
+          "def:CoherentData"
+        ],
+        [
+          "def:TypeIndex",
+          "def:FlexApprox"
+        ],
+        [
+          "def:TypeIndex",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:TypeIndex",
+          "def:Inflexible"
+        ],
+        [
+          "def:TypeIndex",
+          "def:InflexiblePath"
+        ],
+        [
+          "def:TypeIndex",
+          "def:Litter"
+        ],
+        [
+          "def:TypeIndex",
+          "def:ModelData"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrApprox"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrPerm"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrSet"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrSupport"
+        ],
+        [
+          "def:TypeIndex",
+          "def:StrSupport.Occurs"
+        ],
+        [
+          "def:TypeIndex",
+          "def:Strong"
+        ],
+        [
+          "def:TypeIndex",
+          "def:Tangle"
+        ],
+        [
+          "def:TypeIndex",
+          "def:Tree"
+        ],
+        [
+          "def:TypeIndex",
+          "def:TypedNearLitter"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:BaseAction.exists_nice"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:BaseAction.exists_outside"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:Strong.smul"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:exists_strong"
+        ],
+        [
+          "def:TypeIndex",
+          "prop:fuzz"
+        ],
+        [
+          "def:TypeIndex",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:atomGraph",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:atomGraph",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:atomGraph",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:atomGraph",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:atomGraph",
+          "prop:approx_near"
+        ],
+        [
+          "def:atomGraph",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:atomGraph",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "def:atomGraph",
+          "thm:StrAction.foa"
+        ],
+        [
+          "def:nearLitterGraph",
+          "def:FreedomOfAction"
+        ],
+        [
+          "def:nearLitterGraph",
+          "def:StrApprox.Approximates"
+        ],
+        [
+          "def:nearLitterGraph",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "def:nearLitterGraph",
+          "prop:FlexApprox.smul_nearLitter_eq"
+        ],
+        [
+          "def:nearLitterGraph",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "def:nearLitterGraph",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:nearLitterGraph",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:BaseAction.exists_inside",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:BaseAction.exists_nice",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:BaseAction.exists_nice",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:BaseAction.exists_outside",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:BaseApprox.addOrbit",
+          "prop:StrApprox.addFlexible"
+        ],
+        [
+          "prop:BaseApprox.addOrbit",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:StrApprox.addFlexible",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:StrApprox.addOrbit",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:approx_near",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:approx_near",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:atomGraph_inv",
+          "prop:nearLitterGraph_permutative"
+        ],
+        [
+          "prop:atomGraph_permutative",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "prop:atomGraph_permutative",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "prop:atomGraph_permutative",
+          "prop:approx_near"
+        ],
+        [
+          "prop:atomGraph_permutative",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:exists_flexApprox",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:funOfDeny",
+          "def:CoherentData"
+        ],
+        [
+          "prop:funOfDeny",
+          "def:TypedNearLitter"
+        ],
+        [
+          "prop:funOfDeny",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "prop:funOfDeny",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:funOfDeny",
+          "prop:exists_strong"
+        ],
+        [
+          "prop:funOfDeny",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:fuzz",
+          "def:CoherentData"
+        ],
+        [
+          "prop:fuzz",
+          "def:Inflexible"
+        ],
+        [
+          "prop:fuzz",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "prop:fuzz",
+          "def:Strong"
+        ],
+        [
+          "prop:fuzz",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "prop:fuzz",
+          "prop:Strong.smul"
+        ],
+        [
+          "prop:fuzz",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:fuzz",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:fuzz",
+          "prop:exists_strong"
+        ],
+        [
+          "prop:fuzz",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:nearLitterGraph_permutative",
+          "def:StrApprox.Coherent"
+        ],
+        [
+          "prop:nearLitterGraph_permutative",
+          "prop:StrApprox.addOrbit"
+        ],
+        [
+          "prop:nearLitterGraph_permutative",
+          "thm:StrAction.foa"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 417,
+    "unreported_top_sources": {
+      "def:Params": 46,
+      "def:Atom": 34,
+      "def:Litter": 33,
+      "def:Small": 30,
+      "def:TypeIndex": 29,
+      "def:NearLitter": 28,
+      "def:Path": 21,
+      "def:BaseApprox": 17,
+      "def:StrPerm": 15,
+      "def:StrSet": 14
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 55,
+      "n_edges": 87,
+      "forward_refs": [
+        [
+          "prop:completing_restricted_orbits",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:exists_flexApprox"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 55,
+          "forward_refs": 2,
+          "cutwidth": 14,
+          "mean_cut": 8.61111111111111,
+          "max_open": 10,
+          "mean_open": 6.018518518518518,
+          "mean_edge_length": 5.344827586206897
+        },
+        "human_repaired": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 8.555555555555555,
+          "max_open": 10,
+          "mean_open": 6.0,
+          "mean_edge_length": 5.310344827586207
+        },
+        "just_in_time": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 10.88888888888889,
+          "max_open": 11,
+          "mean_open": 7.7592592592592595,
+          "mean_edge_length": 6.758620689655173
+        },
+        "greedy_min_open": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 9.74074074074074,
+          "max_open": 10,
+          "mean_open": 6.666666666666667,
+          "mean_edge_length": 6.045977011494253
+        },
+        "optimised": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 7.12962962962963,
+          "max_open": 9,
+          "mean_open": 5.481481481481482,
+          "mean_edge_length": 4.425287356321839
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9784511784511785,
+        "just_in_time": 0.5232323232323233,
+        "greedy_min_open": 0.4127946127946128,
+        "optimised": 0.7212121212121212
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.423055555555555,
+          "p05": 8.75925925925926,
+          "p50": 9.37037037037037,
+          "p95": 10.277777777777779
+        },
+        "max_open": {
+          "mean": 15.62,
+          "p05": 14,
+          "p50": 16,
+          "p95": 18
+        },
+        "mean_cut": {
+          "mean": 12.64212962962963,
+          "p05": 11.703703703703704,
+          "p50": 12.61111111111111,
+          "p95": 13.777777777777779
+        },
+        "cutwidth": {
+          "mean": 19.875,
+          "p05": 18,
+          "p50": 20,
+          "p95": 22
+        },
+        "mean_edge_length": {
+          "mean": 7.84683908045977,
+          "p05": 7.264367816091954,
+          "p50": 7.827586206896552,
+          "p95": 8.551724137931034
+        }
+      },
+      "random_tau_vs_human_mean": 0.44351515151515153,
+      "uniform": {
+        "mean_open": {
+          "p05": 8.88888888888889,
+          "p50": 9.703703703703704,
+          "p95": 10.907407407407407
+        },
+        "max_open": {
+          "p05": 14,
+          "p50": 16,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 13.092592592592593,
+          "p50": 14.12962962962963,
+          "p95": 15.351851851851851
+        },
+        "cutwidth": {
+          "p05": 19,
+          "p50": 22,
+          "p95": 24
+        },
+        "mean_edge_length": {
+          "p05": 8.126436781609195,
+          "p50": 8.770114942528735,
+          "p95": 9.528735632183908
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 5,
+        "just_in_time": 13,
+        "greedy_min_open": 12,
+        "optimised": 7
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 55,
+      "n_edges": 519,
+      "forward_refs": [
+        [
+          "def:OrbitRestriction",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "def:OrbitRestriction",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "def:OrbitRestriction",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:completing_orbits",
+          "thm:StrAction.foa"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 55,
+          "forward_refs": 9,
+          "cutwidth": 313,
+          "mean_cut": 210.40740740740742,
+          "max_open": 44,
+          "mean_open": 22.09259259259259,
+          "mean_edge_length": 21.892100192678228
+        },
+        "human_repaired": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 313,
+          "mean_cut": 218.27777777777777,
+          "max_open": 46,
+          "mean_open": 25.796296296296298,
+          "mean_edge_length": 22.710982658959537
+        },
+        "just_in_time": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 304,
+          "mean_cut": 218.35185185185185,
+          "max_open": 45,
+          "mean_open": 24.166666666666668,
+          "mean_edge_length": 22.71868978805395
+        },
+        "greedy_min_open": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 336,
+          "mean_cut": 228.6851851851852,
+          "max_open": 45,
+          "mean_open": 24.75925925925926,
+          "mean_edge_length": 23.79383429672447
+        },
+        "optimised": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 301,
+          "mean_cut": 187.25925925925927,
+          "max_open": 44,
+          "mean_open": 23.925925925925927,
+          "mean_edge_length": 19.483622350674374
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9703703703703703,
+        "just_in_time": 0.6134680134680135,
+        "greedy_min_open": 0.48282828282828283,
+        "optimised": 0.30774410774410776
+      },
+      "random": {
+        "mean_open": {
+          "mean": 26.08546296296296,
+          "p05": 25.666666666666668,
+          "p50": 26.09259259259259,
+          "p95": 26.462962962962962
+        },
+        "max_open": {
+          "mean": 45.23,
+          "p05": 44,
+          "p50": 45,
+          "p95": 47
+        },
+        "mean_cut": {
+          "mean": 229.1,
+          "p05": 219.24074074074073,
+          "p50": 229.16666666666666,
+          "p95": 237.77777777777777
+        },
+        "cutwidth": {
+          "mean": 321.85,
+          "p05": 306,
+          "p50": 323,
+          "p95": 337
+        },
+        "mean_edge_length": {
+          "mean": 23.836994219653178,
+          "p05": 22.8111753371869,
+          "p50": 23.84393063583815,
+          "p95": 24.739884393063583
+        }
+      },
+      "random_tau_vs_human_mean": 0.4315084175084175,
+      "uniform": {
+        "mean_open": {
+          "p05": 25.537037037037038,
+          "p50": 26.09259259259259,
+          "p95": 26.555555555555557
+        },
+        "max_open": {
+          "p05": 44,
+          "p50": 46,
+          "p95": 48
+        },
+        "mean_cut": {
+          "p05": 231.55555555555554,
+          "p50": 240.03703703703704,
+          "p95": 245.88888888888889
+        },
+        "cutwidth": {
+          "p05": 312,
+          "p50": 329,
+          "p95": 342
+        },
+        "mean_edge_length": {
+          "p05": 24.09248554913295,
+          "p50": 24.97495183044316,
+          "p95": 25.583815028901736
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.0,
+          "cutwidth": 0.18,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0825,
+          "max_open": 0.725,
+          "mean_cut": 0.045,
+          "cutwidth": 0.18,
+          "mean_edge_length": 0.045
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.47,
+          "mean_cut": 0.045,
+          "cutwidth": 0.0275,
+          "mean_edge_length": 0.045
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.47,
+          "mean_cut": 0.465,
+          "cutwidth": 0.9425,
+          "mean_edge_length": 0.465
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.18,
+          "mean_cut": 0.0,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.11,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.19,
+          "max_open": 0.6175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.3375,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.3375,
+          "mean_cut": 0.0,
+          "cutwidth": 0.825,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.11,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 5,
+        "just_in_time": 6,
+        "greedy_min_open": 20,
+        "optimised": 14
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 55,
+      "n_edges": 53,
+      "forward_refs": [
+        [
+          "prop:completing_restricted_orbits",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:exists_flexApprox"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_orbits",
+          "prop:approximates_of_flexApprox"
+        ],
+        [
+          "prop:completing_restricted_orbits",
+          "thm:StrAction.foa"
+        ],
+        [
+          "prop:completing_orbits",
+          "thm:StrAction.foa"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 55,
+          "forward_refs": 6,
+          "cutwidth": 24,
+          "mean_cut": 11.203703703703704,
+          "max_open": 13,
+          "mean_open": 3.9074074074074074,
+          "mean_edge_length": 11.415094339622641
+        },
+        "human_repaired": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 24,
+          "mean_cut": 12.777777777777779,
+          "max_open": 14,
+          "mean_open": 5.111111111111111,
+          "mean_edge_length": 13.018867924528301
+        },
+        "just_in_time": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 25,
+          "mean_cut": 12.74074074074074,
+          "max_open": 13,
+          "mean_open": 3.8703703703703702,
+          "mean_edge_length": 12.981132075471699
+        },
+        "greedy_min_open": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 7.351851851851852,
+          "max_open": 13,
+          "mean_open": 2.9814814814814814,
+          "mean_edge_length": 7.490566037735849
+        },
+        "optimised": {
+          "n": 55,
+          "forward_refs": 0,
+          "cutwidth": 24,
+          "mean_cut": 6.166666666666667,
+          "max_open": 13,
+          "mean_open": 2.5925925925925926,
+          "mean_edge_length": 6.283018867924528
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9703703703703703,
+        "just_in_time": 0.08417508417508412,
+        "greedy_min_open": 0.36296296296296293,
+        "optimised": 0.33198653198653194
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.4164814814814815,
+          "p05": 5.166666666666667,
+          "p50": 6.481481481481482,
+          "p95": 7.518518518518518
+        },
+        "max_open": {
+          "mean": 13.305,
+          "p05": 13,
+          "p50": 13,
+          "p95": 14
+        },
+        "mean_cut": {
+          "mean": 16.503611111111113,
+          "p05": 12.314814814814815,
+          "p50": 16.59259259259259,
+          "p95": 20.40740740740741
+        },
+        "cutwidth": {
+          "mean": 33.225,
+          "p05": 27,
+          "p50": 33,
+          "p95": 38
+        },
+        "mean_edge_length": {
+          "mean": 16.815,
+          "p05": 12.547169811320755,
+          "p50": 16.90566037735849,
+          "p95": 20.79245283018868
+        }
+      },
+      "random_tau_vs_human_mean": 0.20113804713804714,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.537037037037037,
+          "p50": 8.407407407407407,
+          "p95": 9.703703703703704
+        },
+        "max_open": {
+          "p05": 13,
+          "p50": 13,
+          "p95": 14
+        },
+        "mean_cut": {
+          "p05": 18.296296296296298,
+          "p50": 22.25925925925926,
+          "p95": 25.37037037037037
+        },
+        "cutwidth": {
+          "p05": 30,
+          "p50": 35,
+          "p95": 38
+        },
+        "mean_edge_length": {
+          "p05": 18.641509433962263,
+          "p50": 22.67924528301887,
+          "p95": 25.849056603773583
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.3475,
+          "mean_cut": 0.015,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.015
+        },
+        "human_repaired": {
+          "mean_open": 0.045,
+          "max_open": 0.8475,
+          "mean_cut": 0.09,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.09
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.3475,
+          "mean_cut": 0.085,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.085
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.3475,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1225,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.3475,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.3275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.8275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.3275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.3275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.025,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.3275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 5,
+        "just_in_time": 25,
+        "greedy_min_open": 24,
+        "optimised": 25
+      }
+    },
+    {
+      "name": "Lean: environment",
+      "n_nodes": 22,
+      "n_edges": 110,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 63,
+          "mean_cut": 48.142857142857146,
+          "max_open": 19,
+          "mean_open": 10.857142857142858,
+          "mean_edge_length": 9.190909090909091
+        },
+        "human_repaired": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 63,
+          "mean_cut": 48.142857142857146,
+          "max_open": 19,
+          "mean_open": 10.857142857142858,
+          "mean_edge_length": 9.190909090909091
+        },
+        "just_in_time": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 58,
+          "mean_cut": 43.095238095238095,
+          "max_open": 19,
+          "mean_open": 9.904761904761905,
+          "mean_edge_length": 8.227272727272727
+        },
+        "greedy_min_open": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 65,
+          "mean_cut": 47.38095238095238,
+          "max_open": 19,
+          "mean_open": 10.095238095238095,
+          "mean_edge_length": 9.045454545454545
+        },
+        "optimised": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 60,
+          "mean_cut": 42.523809523809526,
+          "max_open": 19,
+          "mean_open": 10.047619047619047,
+          "mean_edge_length": 8.118181818181819
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.6103896103896104,
+        "greedy_min_open": 0.5497835497835497,
+        "optimised": 0.7056277056277056
+      },
+      "random": {
+        "mean_open": {
+          "mean": 10.31690476190476,
+          "p05": 10.095238095238095,
+          "p50": 10.285714285714286,
+          "p95": 10.619047619047619
+        },
+        "max_open": {
+          "mean": 19.0,
+          "p05": 19,
+          "p50": 19,
+          "p95": 19
+        },
+        "mean_cut": {
+          "mean": 47.20642857142857,
+          "p05": 45.523809523809526,
+          "p50": 47.04761904761905,
+          "p95": 49.38095238095238
+        },
+        "cutwidth": {
+          "mean": 64.955,
+          "p05": 63,
+          "p50": 65,
+          "p95": 68
+        },
+        "mean_edge_length": {
+          "mean": 9.012136363636364,
+          "p05": 8.690909090909091,
+          "p50": 8.981818181818182,
+          "p95": 9.427272727272728
+        }
+      },
+      "random_tau_vs_human_mean": 0.5542857142857143,
+      "uniform": {
+        "mean_open": {
+          "p05": 10.095238095238095,
+          "p50": 10.476190476190476,
+          "p95": 10.80952380952381
+        },
+        "max_open": {
+          "p05": 19,
+          "p50": 19,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 46.95238095238095,
+          "p50": 48.666666666666664,
+          "p95": 50.095238095238095
+        },
+        "cutwidth": {
+          "p05": 62,
+          "p50": 65,
+          "p95": 68
+        },
+        "mean_edge_length": {
+          "p05": 8.963636363636363,
+          "p50": 9.290909090909091,
+          "p95": 9.563636363636364
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 1.0,
+          "max_open": 0.5,
+          "mean_cut": 0.7925,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.7925
+        },
+        "human_repaired": {
+          "mean_open": 1.0,
+          "max_open": 0.5,
+          "mean_cut": 0.7925,
+          "cutwidth": 0.0525,
+          "mean_edge_length": 0.7925
+        },
+        "just_in_time": {
+          "mean_open": 0.0025,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0725,
+          "max_open": 0.5,
+          "mean_cut": 0.58,
+          "cutwidth": 0.545,
+          "mean_edge_length": 0.58
+        },
+        "optimised": {
+          "mean_open": 0.03,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.9775,
+          "max_open": 0.5,
+          "mean_cut": 0.29,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.29
+        },
+        "human_repaired": {
+          "mean_open": 0.9775,
+          "max_open": 0.5,
+          "mean_cut": 0.29,
+          "cutwidth": 0.165,
+          "mean_edge_length": 0.29
+        },
+        "just_in_time": {
+          "mean_open": 0.0075,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.07,
+          "max_open": 0.5,
+          "mean_cut": 0.1675,
+          "cutwidth": 0.4975,
+          "mean_edge_length": 0.1675
+        },
+        "optimised": {
+          "mean_open": 0.0325,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: foa",
+      "n_nodes": 26,
+      "n_edges": 101,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 50,
+          "mean_cut": 35.12,
+          "max_open": 21,
+          "mean_open": 11.84,
+          "mean_edge_length": 8.693069306930694
+        },
+        "human_repaired": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 50,
+          "mean_cut": 35.12,
+          "max_open": 21,
+          "mean_open": 11.84,
+          "mean_edge_length": 8.693069306930694
+        },
+        "just_in_time": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 52,
+          "mean_cut": 39.48,
+          "max_open": 20,
+          "mean_open": 11.48,
+          "mean_edge_length": 9.772277227722773
+        },
+        "greedy_min_open": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 53,
+          "mean_cut": 35.96,
+          "max_open": 20,
+          "mean_open": 10.6,
+          "mean_edge_length": 8.900990099009901
+        },
+        "optimised": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 50,
+          "mean_cut": 30.24,
+          "max_open": 20,
+          "mean_open": 10.24,
+          "mean_edge_length": 7.485148514851486
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.6492307692307693,
+        "greedy_min_open": 0.13230769230769235,
+        "optimised": 0.08923076923076922
+      },
+      "random": {
+        "mean_open": {
+          "mean": 11.8046,
+          "p05": 11.04,
+          "p50": 11.84,
+          "p95": 12.4
+        },
+        "max_open": {
+          "mean": 20.38,
+          "p05": 20,
+          "p50": 20,
+          "p95": 22
+        },
+        "mean_cut": {
+          "mean": 42.7316,
+          "p05": 37.36,
+          "p50": 43.32,
+          "p95": 46.44
+        },
+        "cutwidth": {
+          "mean": 60.765,
+          "p05": 57,
+          "p50": 61,
+          "p95": 64
+        },
+        "mean_edge_length": {
+          "mean": 10.577128712871287,
+          "p05": 9.247524752475247,
+          "p50": 10.722772277227723,
+          "p95": 11.495049504950495
+        }
+      },
+      "random_tau_vs_human_mean": 0.3250461538461538,
+      "uniform": {
+        "mean_open": {
+          "p05": 11.44,
+          "p50": 11.88,
+          "p95": 12.32
+        },
+        "max_open": {
+          "p05": 20,
+          "p50": 20,
+          "p95": 22
+        },
+        "mean_cut": {
+          "p05": 42.04,
+          "p50": 45.28,
+          "p95": 48.08
+        },
+        "cutwidth": {
+          "p05": 59,
+          "p50": 63,
+          "p95": 65
+        },
+        "mean_edge_length": {
+          "p05": 10.405940594059405,
+          "p50": 11.207920792079207,
+          "p95": 11.900990099009901
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.505,
+          "max_open": 0.81,
+          "mean_cut": 0.01,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.01
+        },
+        "human_repaired": {
+          "mean_open": 0.505,
+          "max_open": 0.81,
+          "mean_cut": 0.01,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.01
+        },
+        "just_in_time": {
+          "mean_open": 0.22,
+          "max_open": 0.3775,
+          "mean_cut": 0.16,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.16
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.3775,
+          "mean_cut": 0.015,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.015
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.3775,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.41,
+          "max_open": 0.805,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.41,
+          "max_open": 0.805,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0775,
+          "max_open": 0.365,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.365,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.365,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

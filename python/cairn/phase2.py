@@ -17,7 +17,7 @@ import networkx as nx
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import adjusted_rand_score, average_precision_score, normalized_mutual_info_score, roc_auc_score
-from sklearn.model_selection import GroupKFold
+from sklearn.model_selection import GroupKFold, KFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -196,6 +196,40 @@ def transfer_key_nodes(projects: dict[str, tuple[Blueprint, dict[str, FormalDecl
     return out
 
 
+def leave_one_out_key_nodes(train: dict[str, tuple[Blueprint, dict[str, FormalDecl]]],
+                            test_only: dict[str, tuple[Blueprint, dict[str, FormalDecl]]] | None = None,
+                            baseline: tuple[str, ...] = ()) -> dict:
+    """Leave-one-project-out evaluation of the key-declaration model.
+
+    Each project in ``train`` is scored by a model trained on all the *other* training projects; each project in
+    ``test_only`` by a model trained on all of ``train``. With ``baseline`` (training project names), every project
+    is also scored by a model trained on just those (minus the project itself), for comparison.
+    """
+    data = {name: key_node_matrix(bp, decls) for name, (bp, decls) in {**train, **(test_only or {})}.items()}
+
+    def fit(names: list[str]):
+        x = np.vstack([data[n][1] for n in names])
+        y = np.concatenate([data[n][2] for n in names])
+        return make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000)).fit(x, y)
+
+    def score(model, name: str) -> dict:
+        _, x, y, _ = data[name]
+        p = model.predict_proba(x)[:, 1]
+        k = int(y.sum())
+        return {"auroc": float(roc_auc_score(y, p)), "p_at_k": _precision_at_k(y, p, k), "base_rate": float(y.mean()),
+                "positives": k, "decls": len(y)}
+
+    out = {}
+    for name in data:
+        others = [n for n in train if n != name]
+        row = {"heldout": name not in train, "trained_on": others, **score(fit(others), name)}
+        base = [n for n in baseline if n != name]
+        if base:
+            row["baseline"] = {"trained_on": base, **score(fit(base), name)}
+        out[name] = row
+    return out
+
+
 def key_scores(bp: Blueprint, decls: dict[str, FormalDecl]) -> dict[str, float]:
     """Out-of-fold key-declaration probability for every project declaration (modules held out)."""
     names, x, y, _ = key_node_matrix(bp, decls)
@@ -210,7 +244,10 @@ def _cross_validated(x: np.ndarray, y: np.ndarray, groups: list[str]) -> tuple[n
         return make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
 
     oof = np.zeros(len(y))
-    for train, test in GroupKFold(n_splits=5).split(x, y, groups):
+    n_groups = len(set(groups))  # small projects can have fewer than 5 modules
+    splits = GroupKFold(n_splits=min(5, n_groups)).split(x, y, groups) if n_groups >= 2 else \
+        KFold(n_splits=5, shuffle=True, random_state=0).split(x)
+    for train, test in splits:
         oof[test] = model().fit(x[train], y[train]).predict_proba(x[test])[:, 1]
     return oof, model().fit(x, y)[-1].coef_[0].tolist()
 

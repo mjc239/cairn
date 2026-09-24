@@ -1,0 +1,1524 @@
+{
+  "nodes": [
+    {
+      "id": "lem:qcat-1-simplex-htpy",
+      "kind": "lemma",
+      "position": 0,
+      "chapter": "simplicial-sets",
+      "source": "content.tex",
+      "line": 132,
+      "title": "homotopic 1-simplices in a quasi-category",
+      "labels": [
+        "lem:qcat-1-simplex-htpy"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:1-simplex-htpy",
+        "defn:quasi-category"
+      ],
+      "proof_uses": [
+        "defn:quasi-category"
+      ],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "simplicial-sets",
+      "proof_leanok": false,
+      "text": "Parallel 1-sim\\-plices $f$ and $g$ in a quasi-category are homotopic if and only if there exists a 2-simplex of any or equivalently all of the forms displayed in Definition \\ref{defn:1-simplex-htpy}."
+    },
+    {
+      "id": "lem:ho-preserves-small-products",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "the-homotopy-category-of-a-quasi-categor",
+      "source": "content.tex",
+      "line": 220,
+      "title": null,
+      "labels": [
+        "lem:ho-preserves-small-products"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:homotopy-cat"
+      ],
+      "proof_uses": [
+        "lem:htpy-cat-of-qcat",
+        "prop:nerve-reflective",
+        "defn:2-truncated-qcat-htpy-cat"
+      ],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "the-homotopy-category-of-a-quasi-categor",
+      "proof_leanok": false,
+      "text": "The functor $\\ho \\colon \\sSet \\to \\Cat$ preserves finite products."
+    },
+    {
+      "id": "defn:isomorphism",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "the-homotopy-category-of-a-quasi-categor",
+      "source": "content.tex",
+      "line": 230,
+      "title": "isomorphism in a quasi-category",
+      "labels": [
+        "defn:isomorphism"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:simplicial-set"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 5,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A 1-simplex in a quasi-category is an \\textbf{isomorphism}\\footnote{Joyal refers to these maps as ``isomorphisms'' while Lurie refers to them as ``equivalences.'' We prefer, wherever possible, to use the same term for $\\infty$-categorical concepts as for the analogous 1-categorical ones.} just when it represents an isomorphism in the homotopy category. By Lemma \\ref{lem:htpy-cat-of-qcat} this means that $f \\colon a \\to b$ is an isomorphism if and only if there exists a 1-simplex $f^{-1} \\colon b \\to a$ together with a pair of 2-simplices \\begin{center} \\begin{tikzcd}[row sep=small, column sep=small] & b \\arrow[dr, \"f^{-1}\", dashed] & & & & a \\arrow[dr, \"f\"] \\\\ a \\arrow[ur, \"f\"] \\arrow[rr, equals] & & a & & b \\arrow[ur, \"f^{-1}\", dashed] \\arrow[rr, equals] & & b \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "prop:coherent-iso",
+      "kind": "proposition",
+      "position": 3,
+      "chapter": "the-homotopy-category-of-a-quasi-categor",
+      "source": "content.tex",
+      "line": 277,
+      "title": null,
+      "labels": [
+        "prop:coherent-iso"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:isomorphism",
+        "defn:quasi-category",
+        "defn:coherent-isomorphism"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 6,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An arrow $f$ in a quasi-category $A$ is an isomorphism if and only if it extends to a homotopy coherent isomorphism \\begin{center} \\begin{tikzcd} \\cattwo \\arrow[r, \"f\"] \\arrow[d, hook] & A \\\\ \\iso \\arrow[ur, dashed] \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "lem:qcat-htpy-cat-equiv",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "the-homotopy-category-of-a-quasi-categor",
+      "source": "content.tex",
+      "line": 307,
+      "title": null,
+      "labels": [
+        "lem:qcat-htpy-cat-equiv"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:qcat-equivalence",
+        "defn:homotopy-cat"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 7,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "If $f \\colon A \\to B$ is an equivalence of quasi-categories, then the functor $\\ho{f} \\colon \\ho{A} \\to \\ho{B}$ is an equivalence of categories, where the data displayed above defines an equivalence inverse $\\ho{g} \\colon \\ho{B} \\to \\ho{A}$ and natural isomorphisms encoded by the composite\\footnote{Note that $\\ho(A^\\iso) \\ncong (\\ho{A})^\\iso$ in general. Objects in the latter are homotopy classes of isomorphisms in $A$, while objects in the former are homotopy coherent isomorphisms, given by a specified 1-simplex in $A$, a specified inverse 1-simplex, together with an infinite tower of coherence data indexed by the nondegenerate simplices in $\\iso$.} functors \\begin{center} \\begin{tikzcd} \\ho{A} \\arrow[r, \"\\ho{\\alpha}\"] & \\ho(A^\\iso) \\arrow[r] & (\\ho{A})^\\iso & \\ho{B} \\arrow[r, \"\\ho{\\beta}\"] & \\ho(B^\\iso) \\arrow[r] & (\\ho{B})^\\iso \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "defn:n-arrow",
+      "kind": "definition",
+      "position": 5,
+      "chapter": "enriched-limits",
+      "source": "content.tex",
+      "line": 327,
+      "title": null,
+      "labels": [
+        "defn:n-arrow"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:simplicial-category",
+        "defn:simplicial-set"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 8,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For each $n \\geq 0$, an $n$-simplex in $\\cA(x,y)$ is referred to as an $n$-\\textbf{arrow} from $x$ to $y$."
+    },
+    {
+      "id": "lem:cat-of-n-arrows",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "enriched-limits",
+      "source": "content.tex",
+      "line": 332,
+      "title": null,
+      "labels": [
+        "lem:cat-of-n-arrows"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "defn:n-arrow"
+      ],
+      "has_proof": true,
+      "statement_event": 9,
+      "proof_event": 10,
+      "proof_chapter": "enriched-limits",
+      "proof_leanok": false,
+      "text": "For any simplicial category $\\cA$ and $n \\geq 0$, the $n$-arrows assemble into the arrows of an ordinary category $\\cA_n$ with the same set of objects as $\\cA$."
+    },
+    {
+      "id": "lem:cotensor-associativity",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "enriched-limits",
+      "source": "content.tex",
+      "line": 364,
+      "title": null,
+      "labels": [
+        "lem:cotensor-associativity"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:simplicial-cotensors"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "enriched-limits",
+      "proof_leanok": false,
+      "text": "When a simplicial category has cotensors, cotensors are associative: given $A \\in \\cA$ and simplicial sets $U$ and $V$ there are canonical isomorphisms \\[ (A^U)^V \\cong A^{U \\times V} \\cong (A^V)^U.\\]"
+    },
+    {
+      "id": "defn:equivalence",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 394,
+      "title": null,
+      "labels": [
+        "defn:equivalence"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:qcat-equivalence"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 13,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "In an $\\infty$-cosmos $\\cK$, a morphism $f\\colon A \\to B$ is an \\textbf{equivalence} just when the induced map $f_* \\colon\\Fun(X,A) \\we \\Fun(X,B)$ on functor spaces is an equivalence of quasi-categories for all $X \\in \\cK$."
+    },
+    {
+      "id": "defn:trivial-fibration",
+      "kind": "definition",
+      "position": 9,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 399,
+      "title": null,
+      "labels": [
+        "defn:trivial-fibration"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:equivalence"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 14,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "In an $\\infty$-cosmos $\\cK$, a morphism $f\\colon A \\to B$ is a \\textbf{trivial fibration} just when $f$ is both an isofibration and an equivalence."
+    },
+    {
+      "id": "defn:underlying-cat-of-cosmos",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 412,
+      "title": null,
+      "labels": [
+        "defn:underlying-cat-of-cosmos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 15,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The underlying category $\\cK_0$ of an $\\infty$-cosmos $\\cK$ is the category whose objects are the $\\infty$-categories in $\\cK$ and whose morphisms are the $0$-arrows, i.e., the vertices in the functor spaces."
+    },
+    {
+      "id": "lem:trivial-fib-conical",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 421,
+      "title": "trivial fibrations and conical limits",
+      "labels": [
+        "lem:trivial-fib-conical"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:trivial-fibration"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "The trivial fibrations in an $\\infty$-cosmos define a subcategory containing the isomorphisms and are stable under product, pullback, and forming inverse limits of towers."
+    },
+    {
+      "id": "lem:trivial-fib-leibniz",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 431,
+      "title": "trivial fibrations and cotensors",
+      "labels": [
+        "lem:trivial-fib-leibniz"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:trivial-fibration"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "In an $\\infty$-cosmos, the Leibniz cotensors of any trivial fibration with a monomorphism of simplicial sets is a trivial fibration as is the Leibniz cotensor of an isofibration with a map in the class cellularly generated by the inner horn inclusions and the map $\\catone\\inc\\iso$."
+    },
+    {
+      "id": "lem:trivial-fib-representability",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 440,
+      "title": "representable trivial fibrations",
+      "labels": [
+        "lem:trivial-fib-representability"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:qcat-trivial-fibration",
+        "defn:trivial-fibration"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "If $E \\trvfib B$ is a trivial fibration in an $\\infty$-cosmos, then is $\\Fun(X,E)\\trvfib\\Fun(X,B)$ is a trivial fibration of quasi-categories."
+    },
+    {
+      "id": "lem:equiv-htpy-equiv",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 451,
+      "title": "equivalences are homotopy equivalences",
+      "labels": [
+        "lem:equiv-htpy-equiv"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:coherent-isomorphism",
+        "defn:equivalence"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "A map $f \\colon A \\to B$ between $\\infty$-categories in an $\\infty$-cosmos $\\cK$ is an equivalence if and only if it extends to the data of a ``homotopy equivalence'' with the free-living isomorphism $\\iso$ serving as the interval: that is, if there exist maps $g \\colon B \\to A$ \\begin{center} \\begin{tikzcd} & A & & & B \\\\ A \\arrow[ur, equals] \\arrow[dr, \"gf\"'] \\arrow[r, \"\\alpha\"] & A^\\iso \\arrow[u, two heads, \"\\sim\", \"\\ev_0\"'] \\arrow[d, two heads, \"\\sim\"', \"\\ev_1\"] & \\text{and} & B \\arrow[dr, equals] \\arrow[r, \"\\beta\"] \\arrow[ur, \"fg\"] & B^\\iso \\arrow[u, two heads, \"\\sim\", \"\\ev_0\"'] \\arrow[d, two heads, \"\\sim\"', \"\\ev_1\"] \\\\ & A & & & B \\end{tikzcd} \\end{center} in the $\\infty$-cosmos."
+    },
+    {
+      "id": "lem:equivalence-2-of-3",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 469,
+      "title": null,
+      "labels": [
+        "lem:equivalence-2-of-3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:equivalence"
+      ],
+      "proof_uses": [
+        "lem:equiv-htpy-equiv"
+      ],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "The equivalences in an $\\infty$-cosmos are closed under retracts and satisfy the \\textbf{2-of-3 property}: given a composable pair of functors and their composite, if any two of these are equivalences so is the third."
+    },
+    {
+      "id": "lem:brown-fact",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "infinity-cosmoi",
+      "source": "content.tex",
+      "line": 546,
+      "title": "Brown factorization lemma",
+      "labels": [
+        "lem:brown-fact"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:equivalence",
+        "defn:trivial-fibration"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 27,
+      "proof_event": 28,
+      "proof_chapter": "infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "Any functor $f\\colon A \\to B$ in an $\\infty$-cosmos may be factored as an equivalence followed by an isofibration, where this equivalence is constructed as a section of a trivial fibration. \\begin{center} \\begin{tikzcd} & Pf \\arrow[dr, two heads, \"p\"] \\arrow[dl, two heads, bend right, start anchor=190, end anchor=70, \"q\"'] & \\\\ A \\arrow[rr, \"f\"'] \\arrow[ur, bend right=25, start anchor=30, end anchor=230, \"\\sim\", \"s\"' pos = 0.6] & & B \\end{tikzcd} \\end{center} Moreover, $f$ is an equivalence if and only if the isofibration $p$ is a trivial fibration."
+    },
+    {
+      "id": "prop:change-of-base-adjunction",
+      "kind": "proposition",
+      "position": 17,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 636,
+      "title": null,
+      "labels": [
+        "prop:change-of-base-adjunction"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:lax-monoidal-functor",
+        "prop:change-of-base"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 29,
+      "proof_event": 30,
+      "proof_chapter": "change-of-base",
+      "proof_leanok": false,
+      "text": "Any adjunction between cartesian closed categories whose left adjoint preserves finite products induces a change-of-base 2-adjunction \\begin{center} \\begin{tikzcd}[column sep=large] \\cV \\arrow[r, bend left=20, \"F\"] \\arrow[r, phantom, \"\\bot\"] & \\cW \\arrow[l, bend left=20, \"U\"] \\arrow[r, phantom, \"\\rightsquigarrow\"] & {\\cV}\\text{-}\\mathcal{C}at \\arrow[r, bend left=20, start anchor=10, end anchor=170, \"F_*\"] \\arrow[r, phantom, \"\\bot\"] & {\\cW}\\text{-}\\mathcal{C}at \\arrow[l, bend left=20, start anchor=190, end anchor=-10, \"U_*\"] \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "cor:free-underlying-2-adj",
+      "kind": "corollary",
+      "position": 18,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 651,
+      "title": null,
+      "labels": [
+        "cor:free-underlying-2-adj"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:change-of-base-adjunction"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 31,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For any cartesian closed category $\\cV$ with coproducts, the underlying category construction and free category construction define adjoint 2-functors \\begin{center} \\begin{tikzcd}[column sep=large] \\mathcal{C}at \\arrow[r, bend left=20, hook, start anchor=10, end anchor=170] \\arrow[r, phantom, \"\\bot\"] & {\\cV}\\text{-}\\mathcal{C}at \\arrow[l, bend left=20, start anchor=190, end anchor=-10, \"(-)_0\"] \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "lem:enriched-cob-adjunction",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 665,
+      "title": null,
+      "labels": [
+        "lem:enriched-cob-adjunction"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:change-of-base-adjunction"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "change-of-base",
+      "proof_leanok": false,
+      "text": "Any adjunction comprised of finite-product-preserving functors between cartesian closed categories \\begin{center} \\begin{tikzcd}[column sep=large] \\cV \\arrow[r, bend left=20, \"F\"] \\arrow[r, phantom, \"\\bot\"] & \\cW \\arrow[l, bend left=20, \"U\"] \\arrow[r, phantom, \"\\rightsquigarrow\"] & \\cV \\arrow[r, bend left=20, start anchor=20, end anchor=170, \"F\"] \\arrow[r, phantom, \"\\bot\"] & U_*\\cW \\arrow[l, bend left=20, start anchor=190, end anchor=-15, \"U\"] \\end{tikzcd} \\end{center} defines a $\\cV$-enriched adjunction between the $\\cV$-categories $\\cV$ and $U_*\\cW$; i.e., there exists a $\\cV$-natural isomorphism $U\\cW(Fv,w) \\cong \\cV(v,Uw)$."
+    },
+    {
+      "id": "prop:cob-adjunction",
+      "kind": "proposition",
+      "position": 20,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 710,
+      "title": null,
+      "labels": [
+        "prop:cob-adjunction"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:change-of-base-adjunction",
+        "defn:simplicial-cotensors"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "change-of-base",
+      "proof_leanok": false,
+      "text": "Given an adjunction between cartesian closed categories \\begin{center} \\begin{tikzcd}[column sep=large] \\cV \\arrow[r, bend left=20, \"F\"] \\arrow[r, phantom, \"\\bot\"] & \\cW \\arrow[l, bend left=20, \"U\"] \\end{tikzcd} \\end{center} whose left adjoint preserves finite products then if $\\cC$ is co/tensored as a $\\cW$-cat\\-e\\-gory, $U_*\\cC$ is co/tensored as $\\cV$-category with the co/tensor of $c \\in \\cC$ by $v \\in \\cV$ defined by \\[ v \\otimes c \\coloneq Fv \\otimes c \\qquad \\text{and} \\qquad c^v \\coloneq c^{Fv}.\\]"
+    },
+    {
+      "id": "lem:pro-normal-monoidal",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 730,
+      "title": null,
+      "labels": [
+        "lem:pro-normal-monoidal"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "change-of-base",
+      "proof_leanok": false,
+      "text": "The change-of-base 2-functor induced by a finite-product-preserving functor $T \\colon \\cV \\to \\cW$ between cartesian closed categories preserves underlying categories, if and only if, for each $v \\in \\cV$ the composite function on hom-sets \\begin{center} \\begin{tikzcd} \\cV(1,v)_0 \\arrow[r, \"T\"] & \\cW(T1,Tv)_0 \\arrow[r, \"- \\circ \\cong\"] & \\cW(1,Tv)_0 \\end{tikzcd} \\end{center} is a bijection."
+    },
+    {
+      "id": "lem:right-of-monoidal-adj-ucats",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 745,
+      "title": null,
+      "labels": [
+        "lem:right-of-monoidal-adj-ucats"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:change-of-base-adjunction"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "change-of-base",
+      "proof_leanok": false,
+      "text": "Consider a finite-product-preserving adjunction between cartesian closed categories: \\begin{center} \\begin{tikzcd}[column sep=large] \\cV \\arrow[r, bend left=20, \"F\"] \\arrow[r, phantom, \"\\bot\"] & \\cW \\arrow[l, bend left=20, \"U\"] \\end{tikzcd} \\end{center} Then change of base along the right adjoint respects the underlying categories: \\begin{center} \\begin{tikzcd}[sep=1.5 em] {\\cW}\\text{-}\\mathcal{C}at \\arrow[rr, \"U_*\"] \\arrow[dr, \"{(-)_0}\"'] & & {\\cV}\\text{-}\\mathcal{C}at \\arrow[dl, \"(-)_0\"] \\\\ & \\mathcal{C}at \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "ex:nerve-ho-change-of-base",
+      "kind": "example",
+      "position": 23,
+      "chapter": "change-of-base",
+      "source": "content.tex",
+      "line": 767,
+      "title": null,
+      "labels": [
+        "ex:nerve-ho-change-of-base"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:change-of-base-adjunction",
+        "lem:ho-preserves-finite-products"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 40,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Both adjoints of the adjunction \\begin{center} \\begin{tikzcd}[column sep=large] s\\mathcal{S}et \\arrow[r, bend left=20, start anchor=10, end anchor=170, \"\\ho\"] \\arrow[r, phantom, \"\\bot\"] & \\mathcal{C}at \\arrow[l, bend left=20, start anchor=190, end anchor=-10, hook'] \\end{tikzcd} \\end{center} of Proposition \\ref{prop:ho-nerve-adjunction} preserve finite products. Hence, Proposition \\ref{prop:change-of-base-adjunction} induces a change-of-base adjunction defined by the 2-functors \\begin{center} \\begin{tikzcd}[column sep=large] s\\mathcal{C}at \\arrow[r, bend left=20, start anchor=7, end anchor=170, \"\\ho_*\"] \\arrow[r, phantom, \"\\bot\"] &2\\text{-}\\mathcal{C}at\\arrow[l, bend left=20, start anchor=190, end anchor=-5, hook'] \\end{tikzcd} \\end{center} that act identically on objects and act by applying the homotopy category functor or nerve functor, respectively, on homs. The right adjoint, which builds a simplicially enriched category from a 2-category, respects the underlying category: the underlying category of objects and 1-cells is identified with the underlying category of objects and 0-arrows. In this case, the functor $\\ho \\colon \\sSet \\to \\Cat$ commutes with the underlying set functors, so in fact both adjoints preserve underlying categories, as is evident from direct computation. In particular, the homotopy 2-category of an $\\infty$-cosmos has the same underlying 1-category. Since the nerve embedding is fully faithful, 2-categories can be identified as a full subcategory comprised of those simplicial categories whose hom spaces are nerves of categories."
+    },
+    {
+      "id": "prop:qcat-cosmos",
+      "kind": "proposition",
+      "position": 24,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 789,
+      "title": "the $\\infty$-cosmos of quasi-categories",
+      "labels": [
+        "prop:qcat-cosmos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:quasi-category",
+        "defn:equivalence",
+        "defn:trivial-fibration",
+        "defn:qcat-equivalence",
+        "defn:qcat-trivial-fibration"
+      ],
+      "proof_uses": [
+        "defn:qcat-isofibration"
+      ],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "examples-of-infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "The full subcategory $\\qCat\\subset\\sSet$ of quasi-categories defines an $\\infty$-cosmos in which the isofibrations, equivalences, and trivial fibrations coincide with the classes already bearing these names."
+    },
+    {
+      "id": "defn:cat-isofibration",
+      "kind": "definition",
+      "position": 25,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 800,
+      "title": "isofibrations of categories",
+      "labels": [
+        "defn:cat-isofibration"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 43,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An \\textbf{isofibration} between categories is a functor $f \\colon A \\fib B$ satisfying the displayed right lifting property for the inclusion of both endpoints of the free-living isomorphism: \\begin{center} \\begin{tikzcd} \\catone \\arrow[d, hook] \\arrow[r] & A \\arrow[d, \"f\", two heads] \\\\ \\iso \\arrow[r] \\arrow[ur, dashed] & B \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "prop:cat-cosmos",
+      "kind": "proposition",
+      "position": 26,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 811,
+      "title": "the $\\infty$-cosmos of categories",
+      "labels": [
+        "prop:cat-cosmos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:equivalence",
+        "defn:trivial-fibration",
+        "defn:cat-isofibration"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "examples-of-infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "The category $\\Cat$ of 1-cat\\-e\\-go\\-ri\\-es defines an $\\infty$-cosmos whose isofibrations are the isofibrations. The equivalences are the equivalences of categories and the trivial fibrations are \\textbf{surjective equivalences}: equivalences of categories that are also surjective on objects."
+    },
+    {
+      "id": "prop:kan-cosmos",
+      "kind": "proposition",
+      "position": 27,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 839,
+      "title": "the $\\infty$-cosmos of Kan complexes",
+      "labels": [
+        "prop:kan-cosmos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:kan-complex",
+        "defn:equivalence",
+        "defn:trivial-fibration"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 46,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The category $\\Kan$ of Kan complexes defines an $\\infty$-cosmos whose isofibrations are the \\textbf{Kan fibrations}: maps that lift against all horn inclusions $\\Lambda^k[n] \\inc \\Delta[n]$ for $n \\geq 1$ and $0 \\leq k \\leq n$."
+    },
+    {
+      "id": "prop:sliced-cosmoi",
+      "kind": "proposition",
+      "position": 28,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 845,
+      "title": "sliced $\\infty$-cosmoi",
+      "labels": [
+        "prop:sliced-cosmoi",
+        "itm:sliced-objects",
+        "itm:sliced-functor-space",
+        "itm:sliced-isofibrations",
+        "itm:sliced-products",
+        "itm:sliced-pullbacks",
+        "itm:sliced-cotensors",
+        "itm:fibered-equivalence"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos"
+      ],
+      "proof_uses": [
+        "lem:trivial-fib-conical",
+        "lem:brown-fact"
+      ],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "examples-of-infinity-cosmoi",
+      "proof_leanok": false,
+      "text": "For any $\\infty$-cosmos $\\cK$ and any $\\infty$-cat\\-e\\-gory $B \\in \\cK$ there is an \\textbf{$\\infty$-cosmos $\\cK_{/B}$ of isofibrations over $B$} whose \\begin{enumerate} \\item objects are isofibrations $p \\colon E \\fib B$ with codomain $B$ \\item functor spaces, say from $p \\colon E \\fib B$ to $q \\colon F \\fib B$, are defined by pullback \\begin{center} \\begin{tikzcd}[column sep=small] \\Fun_B(p \\colon E \\fib B,q\\colon F\\fib B) \\arrow[r] \\arrow[d, two heads] \\arrow[dr, phantom, \"\\lrcorner\" very near start] & \\Fun(E,F) \\arrow[d, two heads, \"{q_*}\"] \\\\ \\catone \\arrow[r, \"p\"] & \\Fun(E,B) \\end{tikzcd} \\end{center} and abbreviated to $\\Fun_B(E,F)$ when the specified isofibrations are clear from context \\item isofibrations are commutative triangles of isofibrations over $B$ \\begin{center} \\begin{tikzcd}[row sep=small, column sep=small] E \\arrow[rr,two heads, \"r\"] \\arrow[dr, two heads, \"p\"'] & & F \\arrow[dl, two heads, \"q\"] \\\\ & B \\end{tikzcd} \\end{center} \\item terminal object is $\\id \\colon B \\fib B$ and products are defined by the pullback along the diagonal \\begin{center} \\begin{tikzcd} \\times^B_i E_i \\arrow[r] \\arrow[d, two heads] \\arrow[dr, phantom, \"\\lrcorner\" very near start] & \\prod_i E_i \\arrow[d, two heads, \"\\prod_i p_i\"] \\\\ B \\arrow[r, \"\\Delta\"] & \\prod_i B \\end{tikzcd} \\end{center} \\item pullbacks and limits of towers of isofibrations are created by the forgetful functor $\\cK_{/B} \\to \\cK$ \\item simplicial cotensor of $p \\colon E \\fib B$ with $U \\in \\sSet$ is constructed by the pullback \\begin{center} \\begin{tikzcd} U \\pwr_B p \\arrow[d, two heads] \\arrow[r] \\arrow[dr, phantom, \"\\lrcorner\" very near start] & E^U \\arrow[d, two heads, \"p^U\"] \\\\ B \\arrow[r, \"\\Delta\"] & B^U \\end{tikzcd} \\end{center} \\item and in which a map over $B$ \\begin{center} \\begin{tikzcd}[row sep=small, column sep=small] E \\arrow[rr, \"f\"] \\arrow[dr, two heads, \"p\"'] & & F \\arrow[dl, two heads, \"q\"] \\\\ & B \\end{tikzcd} \\end{center} is an equivalence in the $\\infty$-cosmos $\\cK_{/B}$ if and only if $f$ is an equivalence in $\\cK$. \\end{enumerate}"
+    },
+    {
+      "id": "defn:closed-cosmos",
+      "kind": "definition",
+      "position": 29,
+      "chapter": "examples-of-infinity-cosmoi",
+      "source": "content.tex",
+      "line": 905,
+      "title": "cartesian closed $\\infty$-cosmoi",
+      "labels": [
+        "defn:closed-cosmos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 49,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An $\\infty$-cosmos $\\cK$ is \\textbf{cartesian closed} if the product bifunctor $- \\times -\\colon \\cK \\times \\cK \\to \\cK$ extends to a simplicially enriched two-variable adjunction \\[ \\Fun(A \\times B,C) \\cong \\Fun(A,C^B) \\cong \\Fun(B,C^A)\\] in which the right adjoints $(-)^A \\colon \\cK \\to \\cK$ preserve isofibrations for all $A \\in \\cK$."
+    },
+    {
+      "id": "prop:2-cat-as-cat-enriched",
+      "kind": "proposition",
+      "position": 30,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 929,
+      "title": null,
+      "labels": [
+        "prop:2-cat-as-cat-enriched"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 50,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There is an equivalence between categories enriched in categories and strict bicategories. In particular, each can be converted into the other."
+    },
+    {
+      "id": "defn:homotopy-2-cat",
+      "kind": "definition",
+      "position": 31,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 934,
+      "title": "homotopy 2-category",
+      "labels": [
+        "defn:homotopy-2-cat"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:homotopy-cat",
+        "ex:nerve-ho-change-of-base",
+        "prop:2-cat-as-cat-enriched"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 51,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\cK$ be an $\\infty$-cosmos. Its \\textbf{homotopy 2-category} is the 2-category $\\h\\cK$ whose \\begin{itemize} \\item objects are the objects $A, B$ of $\\cK$, i.e., the $\\infty$-categories;\\item 1-cells $f \\colon A \\to B$ are the 0-arrows in the functor space $\\Fun(A,B)$, i.e., the $\\infty$-functors; and \\item 2-cells \\begin{center} \\begin{tikzcd} A \\arrow[r, start anchor=15, end anchor=165, bend left, \"f\"] \\arrow[r, start anchor=345, end anchor=195, bend right, \"g\"'] \\arrow[r, phantom, \"{\\scriptstyle\\Downarrow \\alpha}\"] & B\\end{tikzcd} \\end{center} are homotopy classes of 1-simplices in $\\Fun(A,B)$, which we call \\textbf{$\\infty$-natural transformations}. \\end{itemize} Put another way $\\h\\cK$ is the 2-category with the same objects as $\\cK$ and with hom-categories defined by \\[ \\hFun(A,B) \\coloneq \\ho(\\Fun(A,B)),\\] that is, $\\hFun(A,B)$ is the homotopy category of the quasi-category $\\Fun(A,B)$."
+    },
+    {
+      "id": "defn:underlying-cat-of-2cat",
+      "kind": "definition",
+      "position": 32,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 949,
+      "title": "underlying category of a 2-category",
+      "labels": [
+        "defn:underlying-cat-of-2cat"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 52,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\textbf{underlying category} of a 2-category is defined by simply forgetting its 2-cells. Note that an $\\infty$-cosmos $\\cK$ and its homotopy 2-category $\\h\\cK$ share the same underlying category $\\cK_0$ of $\\infty$-categories and $\\infty$-functors in $\\cK$."
+    },
+    {
+      "id": "lem:underlying-cat-iso",
+      "kind": "lemma",
+      "position": 33,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 954,
+      "title": null,
+      "labels": [
+        "lem:underlying-cat-iso"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:underlying-cat-of-2cat",
+        "defn:underlying-cat",
+        "defn:homotopy-2-cat"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 53,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The underlying category of the homotopy 2-category of an $\\infty$-cosmos is isomorphic to the underlying category of the $\\infty$-cosmos."
+    },
+    {
+      "id": "lem:invertible-2-cell",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 961,
+      "title": null,
+      "labels": [
+        "lem:invertible-2-cell",
+        "itm:2-cell-as-functor",
+        "itm:2-iso-as-functor"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:homotopy-2-cat",
+        "lem:qcat-1-simplex-htpy",
+        "prop:coherent-iso"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "the-homotopy-2-category",
+      "proof_leanok": false,
+      "text": "$\\quad$ \\begin{enumerate} \\item Every 2-cell \\begin{center} \\begin{tikzcd} A \\arrow[r, start anchor=15, end anchor=165, bend left, \"f\"] \\arrow[r, start anchor=345, end anchor=195, bend right, \"g\"'] \\arrow[r, phantom, \"\\scriptstyle\\Downarrow\\alpha\"] & B \\end{tikzcd} \\end{center} in the homotopy 2-category of an $\\infty$-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right \\begin{center} \\begin{tikzcd}[sep=small] & \\catone+\\catone \\arrow[dl, hook'] \\arrow[dr, \"{(f,g)}\"] & & & ~ & A \\arrow[rr, \"\\name{\\alpha}\"] \\arrow[dr, \"{(g,f)}\"'] & & B^\\cattwo \\arrow[dl, \"{(p_1,p_0)}\", two heads] \\\\ \\cattwo \\arrow[rr, \"{\\alpha}\"'] && \\Fun(A,B) &\\arrow[ur, phantom, \"\\leftrightsquigarrow\"] & && B \\times B \\end{tikzcd} \\end{center} and two such maps represent the same 2-cell if and only if they are homotopic as 1-simplices in $\\Fun(A,B)$. \\item Every invertible 2-cell \\begin{center} \\begin{tikzcd}[column sep=large] A \\arrow[r, start anchor=18, end anchor=162, bend left=20, \"f\"] \\arrow[r, start anchor=342, end anchor=198, bend right=20, \"g\"'] \\arrow[r, phantom, \"\\scriptstyle\\cong\\Downarrow\\alpha\"] & B \\end{tikzcd} \\end{center} in the homotopy 2-category of an $\\infty$-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right \\begin{center} \\begin{tikzcd}[sep=small] & \\catone+\\catone \\arrow[dl, hook'] \\arrow[dr, \"{(f,g)}\"] & & & ~ & A \\arrow[rr, \"\\name{\\alpha}\"] \\arrow[dr, \"{(g,f)}\"'] & & B^\\iso \\arrow[dl, \"{(p_1,p_0)}\", two heads] \\\\ \\iso \\arrow[rr, \"{\\alpha}\"'] && \\Fun(A,B) &\\arrow[ur, phantom, \"\\leftrightsquigarrow\"] & && B \\times B \\end{tikzcd} \\end{center} and two such maps represent the same invertible 2-cell if and only if their common restrictions along $\\cattwo \\inc \\iso$ are homotopic as 1-simplices in $\\Fun(A,B)$. \\end{enumerate}"
+    },
+    {
+      "id": "prop:htpy-2-cat-closure",
+      "kind": "proposition",
+      "position": 35,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1011,
+      "title": "cartesian (closure)",
+      "labels": [
+        "prop:htpy-2-cat-closure",
+        "itm:cart-closed"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:closed-cosmos"
+      ],
+      "proof_uses": [
+        "lem:ho-preserves-finite-products"
+      ],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "the-homotopy-2-category",
+      "proof_leanok": false,
+      "text": "$\\quad$ \\begin{enumerate} \\item The homotopy 2-category of any $\\infty$-cosmos has 2-categorical products. \\item The homotopy 2-category of a cartesian closed $\\infty$-cosmos is cartesian closed as a 2-category. \\end{enumerate}"
+    },
+    {
+      "id": "defn:2-cat-equivalence",
+      "kind": "definition",
+      "position": 36,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1034,
+      "title": "equivalence",
+      "labels": [
+        "defn:2-cat-equivalence"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 58,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "An \\textbf{equivalence} in a 2-category is given by \\begin{itemize} \\item a pair of objects $A$ and $B$; \\item a pair of 1-cells $f \\colon A \\to B$ and $g \\colon B \\to A$; and \\item a pair of invertible 2-cells \\begin{center} \\begin{tikzcd}[column sep=large] A \\arrow[r, bend left=25, equals] \\arrow[r, bend right=25, \"gf\"'] \\arrow[r, phantom, \"{\\scriptstyle\\cong\\Downarrow\\alpha}\"] & A & \\text{and} & B \\arrow[r, bend right=25, equals] \\arrow[r, bend left=25, \"fg\"] \\arrow[r, phantom, \"{\\scriptstyle\\cong\\Downarrow\\beta}\"] & B \\end{tikzcd} \\end{center} \\end{itemize} When $A$ and $B$ are \\textbf{equivalent}, we write $A \\simeq B$ and refer to the 1-cells $f$ and $g$ as \\textbf{equivalences}, denoted by ``$\\we$.''"
+    },
+    {
+      "id": "thm:equiv-are-equiv",
+      "kind": "theorem",
+      "position": 37,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1050,
+      "title": "equivalences are equivalences",
+      "labels": [
+        "thm:equiv-are-equiv",
+        "itm:rep-equiv",
+        "itm:2cat-equiv",
+        "itm:htpy-equiv"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:equivalence",
+        "defn:2-cat-equivalence",
+        "defn:homotopy-2-cat"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 59,
+      "proof_event": 60,
+      "proof_chapter": "the-homotopy-2-category",
+      "proof_leanok": false,
+      "text": "In any $\\infty$-cosmos $\\cK$, the following are equivalent and characterize what it means for a functor $f \\colon A \\to B$ between $\\infty$-categories to define an \\textbf{equivalence}. \\begin{enumerate} \\item For all $X \\in \\cK$, the post-composition map $f_* \\colon \\Fun(X,A) \\we \\Fun(X,B)$ defines an equivalence of quasi-categories. \\item There exists a functor $g \\colon B \\to A$ and natural isomorphisms $\\alpha \\colon \\id_A \\cong gf$ and $\\beta \\colon fg \\cong \\id_B$ in the homotopy 2-category. \\item There exists a functor $g \\colon B \\to A$ and maps \\begin{center} \\begin{tikzcd} & A & & & B \\\\ A \\arrow[ur, equals] \\arrow[dr, \"gf\"'] \\arrow[r, \"\\alpha\"] & A^\\iso \\arrow[u, two heads, \"\\sim\", \"\\ev_0\"'] \\arrow[d, two heads, \"\\sim\"', \"\\ev_1\"] &\\text{and} & B \\arrow[dr, equals] \\arrow[r, \"\\beta\"] \\arrow[ur, \"fg\"] & B^\\iso \\arrow[u, two heads, \"\\sim\", \"\\ev_0\"'] \\arrow[d, two heads, \"\\sim\"', \"\\ev_1\"] \\\\ & A & & & B \\end{tikzcd} \\end{center} in the $\\infty$-cosmos $\\cK$. \\end{enumerate}"
+    },
+    {
+      "id": "cor:equiv-invar-fun",
+      "kind": "corollary",
+      "position": 38,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1078,
+      "title": null,
+      "labels": [
+        "cor:equiv-invar-fun"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos"
+      ],
+      "proof_uses": [
+        "thm:equiv-are-equiv"
+      ],
+      "has_proof": true,
+      "statement_event": 61,
+      "proof_event": 62,
+      "proof_chapter": "the-homotopy-2-category",
+      "proof_leanok": false,
+      "text": "Equivalences of $\\infty$-categories $A' \\we A$ and $B \\we B'$ induce an equivalence of functor spaces $\\Fun(A,B) \\we \\Fun(A',B')$."
+    },
+    {
+      "id": "prop:isofib-define-isofib",
+      "kind": "proposition",
+      "position": 39,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1089,
+      "title": "isofibrations are isofibrations",
+      "labels": [
+        "prop:isofib-define-isofib"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 63,
+      "proof_event": 64,
+      "proof_chapter": "the-homotopy-2-category",
+      "proof_leanok": false,
+      "text": "An isofibration $p \\colon E \\fib B$ in an $\\infty$-cosmos $\\cK$ also defines an \\textbf{isofibration} in the homotopy 2-category $\\h\\cK$: given any invertible 2-cell as displayed below-left abutting to $B$ with a specified lift of one of its boundary 1-cells through $p$, there exists an invertible 2-cell abutting to $E$ with this boundary 1-cell as displayed below-right that whiskers with $p$ to the original 2-cell. \\begin{center} \\begin{tikzcd} X \\arrow[r, \"e\"] \\arrow[dr, bend right, \"b\"'] & E \\arrow[d, two heads, \"p\"] \\arrow[dl, phantom, \"{\\scriptstyle\\cong\\Downarrow\\beta}\" near start] &\\arrow[d, phantom, \"=\"] & X \\arrow[rr, start anchor=15, end anchor=165, bend left=20, \"e\"] \\arrow[rr, start anchor=345, end anchor=195, bend right=20, \"\\bar{e}\"', dashed] \\arrow[rr, phantom, \"{\\scriptstyle\\cong\\Downarrow\\gamma}\"] && E \\arrow[d, two heads, \"p\"] \\\\ ~ & B & ~ & & & B \\end{tikzcd} \\end{center}"
+    },
+    {
+      "id": "defn:htpy-cat-of-infinity-cat",
+      "kind": "definition",
+      "position": 40,
+      "chapter": "the-homotopy-2-category",
+      "source": "content.tex",
+      "line": 1112,
+      "title": "homotopy category of an $\\infty$-category",
+      "labels": [
+        "defn:htpy-cat-of-infinity-cat"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:cosmos",
+        "defn:homotopy-cat"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 65,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\textbf{homotopy category} of an $\\infty$-category $A$ in an $\\infty$-cosmos $\\cK$ is defined to be the homotopy category of its underlying quasi-category, that is: \\[ \\ho A \\coloneq \\hFun(1,A) \\coloneq \\ho(\\Fun(1,A)).\\]"
+    }
+  ],
+  "edges": [
+    {
+      "source": "defn:isomorphism",
+      "target": "prop:coherent-iso",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:n-arrow",
+      "target": "lem:cat-of-n-arrows",
+      "kind": "proof"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "defn:trivial-fibration",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "lem:trivial-fib-conical",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "lem:trivial-fib-leibniz",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "lem:trivial-fib-representability",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "lem:equiv-htpy-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "lem:equivalence-2-of-3",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:equiv-htpy-equiv",
+      "target": "lem:equivalence-2-of-3",
+      "kind": "proof"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "lem:brown-fact",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "lem:brown-fact",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:change-of-base-adjunction",
+      "target": "cor:free-underlying-2-adj",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:change-of-base-adjunction",
+      "target": "lem:enriched-cob-adjunction",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:change-of-base-adjunction",
+      "target": "prop:cob-adjunction",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:change-of-base-adjunction",
+      "target": "lem:right-of-monoidal-adj-ucats",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:change-of-base-adjunction",
+      "target": "ex:nerve-ho-change-of-base",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "prop:qcat-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "prop:qcat-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "prop:cat-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "prop:cat-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:cat-isofibration",
+      "target": "prop:cat-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "prop:kan-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:trivial-fibration",
+      "target": "prop:kan-cosmos",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:trivial-fib-conical",
+      "target": "prop:sliced-cosmoi",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:brown-fact",
+      "target": "prop:sliced-cosmoi",
+      "kind": "proof"
+    },
+    {
+      "source": "ex:nerve-ho-change-of-base",
+      "target": "defn:homotopy-2-cat",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:2-cat-as-cat-enriched",
+      "target": "defn:homotopy-2-cat",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:underlying-cat-of-2cat",
+      "target": "lem:underlying-cat-iso",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:homotopy-2-cat",
+      "target": "lem:underlying-cat-iso",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:homotopy-2-cat",
+      "target": "lem:invertible-2-cell",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:qcat-1-simplex-htpy",
+      "target": "lem:invertible-2-cell",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:coherent-iso",
+      "target": "lem:invertible-2-cell",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:closed-cosmos",
+      "target": "prop:htpy-2-cat-closure",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:equivalence",
+      "target": "thm:equiv-are-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:2-cat-equivalence",
+      "target": "thm:equiv-are-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:homotopy-2-cat",
+      "target": "thm:equiv-are-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:equiv-are-equiv",
+      "target": "cor:equiv-invar-fun",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [
+    [
+      "lem:qcat-1-simplex-htpy",
+      "defn:1-simplex-htpy",
+      "statement"
+    ],
+    [
+      "lem:qcat-1-simplex-htpy",
+      "defn:quasi-category",
+      "statement"
+    ],
+    [
+      "lem:qcat-1-simplex-htpy",
+      "defn:quasi-category",
+      "proof"
+    ],
+    [
+      "lem:ho-preserves-small-products",
+      "defn:homotopy-cat",
+      "statement"
+    ],
+    [
+      "lem:ho-preserves-small-products",
+      "lem:htpy-cat-of-qcat",
+      "proof"
+    ],
+    [
+      "lem:ho-preserves-small-products",
+      "prop:nerve-reflective",
+      "proof"
+    ],
+    [
+      "lem:ho-preserves-small-products",
+      "defn:2-truncated-qcat-htpy-cat",
+      "proof"
+    ],
+    [
+      "defn:isomorphism",
+      "defn:simplicial-set",
+      "statement"
+    ],
+    [
+      "prop:coherent-iso",
+      "defn:quasi-category",
+      "statement"
+    ],
+    [
+      "prop:coherent-iso",
+      "defn:coherent-isomorphism",
+      "statement"
+    ],
+    [
+      "lem:qcat-htpy-cat-equiv",
+      "defn:qcat-equivalence",
+      "statement"
+    ],
+    [
+      "lem:qcat-htpy-cat-equiv",
+      "defn:homotopy-cat",
+      "statement"
+    ],
+    [
+      "defn:n-arrow",
+      "defn:simplicial-category",
+      "statement"
+    ],
+    [
+      "defn:n-arrow",
+      "defn:simplicial-set",
+      "statement"
+    ],
+    [
+      "lem:cotensor-associativity",
+      "defn:simplicial-cotensors",
+      "statement"
+    ],
+    [
+      "defn:equivalence",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:equivalence",
+      "defn:qcat-equivalence",
+      "statement"
+    ],
+    [
+      "defn:trivial-fibration",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:underlying-cat-of-cosmos",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "lem:trivial-fib-conical",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "lem:trivial-fib-leibniz",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "lem:trivial-fib-representability",
+      "defn:qcat-trivial-fibration",
+      "statement"
+    ],
+    [
+      "lem:equiv-htpy-equiv",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "lem:equiv-htpy-equiv",
+      "defn:coherent-isomorphism",
+      "statement"
+    ],
+    [
+      "lem:brown-fact",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:change-of-base-adjunction",
+      "defn:lax-monoidal-functor",
+      "statement"
+    ],
+    [
+      "prop:change-of-base-adjunction",
+      "prop:change-of-base",
+      "statement"
+    ],
+    [
+      "prop:cob-adjunction",
+      "defn:simplicial-cotensors",
+      "statement"
+    ],
+    [
+      "ex:nerve-ho-change-of-base",
+      "lem:ho-preserves-finite-products",
+      "statement"
+    ],
+    [
+      "prop:qcat-cosmos",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:qcat-cosmos",
+      "defn:quasi-category",
+      "statement"
+    ],
+    [
+      "prop:qcat-cosmos",
+      "defn:qcat-equivalence",
+      "statement"
+    ],
+    [
+      "prop:qcat-cosmos",
+      "defn:qcat-trivial-fibration",
+      "statement"
+    ],
+    [
+      "prop:qcat-cosmos",
+      "defn:qcat-isofibration",
+      "proof"
+    ],
+    [
+      "prop:cat-cosmos",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:kan-cosmos",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:kan-cosmos",
+      "defn:kan-complex",
+      "statement"
+    ],
+    [
+      "prop:sliced-cosmoi",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:closed-cosmos",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:homotopy-2-cat",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:homotopy-2-cat",
+      "defn:homotopy-cat",
+      "statement"
+    ],
+    [
+      "lem:underlying-cat-iso",
+      "defn:underlying-cat",
+      "statement"
+    ],
+    [
+      "prop:htpy-2-cat-closure",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:htpy-2-cat-closure",
+      "lem:ho-preserves-finite-products",
+      "proof"
+    ],
+    [
+      "thm:equiv-are-equiv",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "cor:equiv-invar-fun",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "prop:isofib-define-isofib",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:htpy-cat-of-infinity-cat",
+      "defn:cosmos",
+      "statement"
+    ],
+    [
+      "defn:htpy-cat-of-infinity-cat",
+      "defn:homotopy-cat",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": []
+}

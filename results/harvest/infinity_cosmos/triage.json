@@ -1,0 +1,31 @@
+{
+ "name": "infinity_cosmos",
+ "repo": "emilyriehl/infinity-cosmos",
+ "status": "ok",
+ "stage": "done",
+ "commit": "4e1d20ffded8cdcc7fb68ce8098996bbc27f4884",
+ "commit_date": "2026-08-20",
+ "toolchain": "leanprover/lean4:v4.34.0-rc1",
+ "mathlib": "1fe0a51a5ecd",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "section",
+ "nodes": 41,
+ "uses_edges": 37,
+ "chapters": 7,
+ "lean_nodes": 0,
+ "leanok_nodes": 0,
+ "libs": [
+  "InfinityCosmos"
+ ],
+ "build_minutes": 0.6,
+ "extractor": "extract_deps.lean",
+ "decls": 381,
+ "theorems": 186,
+ "external_decls": 0,
+ "lean_resolved": 0.0,
+ "nodes_linked": 0,
+ "nodes_linked_external_only": 0,
+ "minutes": 3.2
+}

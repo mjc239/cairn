@@ -1,0 +1,5162 @@
+{
+  "nodes": [
+    {
+      "id": "SpherePacking.balls",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "sphere-packings",
+      "source": "subsections/sphere-packings.tex",
+      "line": 11,
+      "title": null,
+      "labels": [
+        "SpherePacking.balls"
+      ],
+      "lean_decls": [
+        "SpherePacking.balls"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a set $X \\subset \\R^d$ and a real number $r > 0$ (known as the \\emph{separation radius}) such that $\\|x - y\\| \\geq r$ for all distinct $x, y \\in X$, we define the \\emph{sphere packing} $\\Pa(X)$ with centres at $X$ to be the union of all open balls of radius $r$ centred at points in $X$: \\[ \\Pa(X) := \\bigcup_{x \\in X} B_d(x, r) \\]"
+    },
+    {
+      "id": "SpherePacking",
+      "kind": "remark",
+      "position": 1,
+      "chapter": "sphere-packings",
+      "source": "subsections/sphere-packings.tex",
+      "line": 18,
+      "title": null,
+      "labels": [
+        "SpherePacking"
+      ],
+      "lean_decls": [
+        "SpherePacking"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 1,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Note that a sphere packing is uniquely defined from a given set of centres (which, in order to be a valid set of centres, must admit a corresponding separation radius). Therefore, as a conscious choice during the formalisation process, we will define everything that depends on sphere packings in terms of \\verb|SpherePacking|, a \\verb|structure| that bundles all the identifying information of a packing, but not the actual balls themselves. For the purposes of this blueprint, however, we will refrain from making this distinction."
+    },
+    {
+      "id": "SpherePacking.finiteDensity",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "sphere-packings",
+      "source": "subsections/sphere-packings.tex",
+      "line": 24,
+      "title": null,
+      "labels": [
+        "SpherePacking.finiteDensity"
+      ],
+      "lean_decls": [
+        "SpherePacking.finiteDensity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking",
+        "SpherePacking.balls"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 2,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{finite density} of a packing $\\mathcal{P}$ is defined as \\[ \\Delta_{\\mathcal{P}}(R):=\\frac{\\mathrm{Vol}(\\mathcal{P}\\cap B_d(0,R))}{\\mathrm{Vol}(B_d(0,R))},\\quad R>0. \\]"
+    },
+    {
+      "id": "SpherePacking.density",
+      "kind": "definition",
+      "position": 3,
+      "chapter": "sphere-packings",
+      "source": "subsections/sphere-packings.tex",
+      "line": 33,
+      "title": null,
+      "labels": [
+        "SpherePacking.density"
+      ],
+      "lean_decls": [
+        "SpherePacking.density"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking",
+        "SpherePacking.finiteDensity"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 3,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We define the \\emph{density} of a packing $\\mathcal{P}$ as the limit superior \\[ \\Delta_{\\mathcal{P}}:=\\limsup\\limits_{R\\to\\infty}\\Delta_{\\mathcal{P}}(R). \\]"
+    },
+    {
+      "id": "SpherePackingConstant",
+      "kind": "definition",
+      "position": 4,
+      "chapter": "sphere-packings",
+      "source": "subsections/sphere-packings.tex",
+      "line": 42,
+      "title": null,
+      "labels": [
+        "SpherePackingConstant"
+      ],
+      "lean_decls": [
+        "SpherePackingConstant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.balls",
+        "SpherePacking.density"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 4,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{sphere packing constant} is defined as supremum of packing densities over all possible packings: \\[ \\Delta_d:=\\sup\\limits_{\\substack{\\mathcal{P}\\subset\\R^d\\\\ \\scriptscriptstyle\\mathrm{sphere}\\;\\mathrm{packing}}}\\Delta_{\\mathcal{P}}. \\]"
+    },
+    {
+      "id": "SpherePacking.scale",
+      "kind": "definition",
+      "position": 5,
+      "chapter": "sphere-packings-scaling",
+      "source": "subsections/sphere-packings-scaling.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "SpherePacking.scale"
+      ],
+      "lean_decls": [
+        "SpherePacking.scale"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 5,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a sphere packing $\\Pa(X)$ with separation radius $r$, we defined the \\emph{scaled packing} with respect to a real number $c > 0$ to be the packing $\\Pa(cX)$, where $cX = \\setof{cx \\in V}{x \\in X}$ has separation radius $cr$."
+    },
+    {
+      "id": "SpherePacking.scale_finiteDensity",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "sphere-packings-scaling",
+      "source": "subsections/sphere-packings-scaling.tex",
+      "line": 9,
+      "title": null,
+      "labels": [
+        "SpherePacking.scale_finiteDensity"
+      ],
+      "lean_decls": [
+        "SpherePacking.scale_finiteDensity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.finiteDensity",
+        "SpherePacking.scale"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 6,
+      "proof_event": 7,
+      "proof_chapter": "sphere-packings-scaling",
+      "proof_leanok": true,
+      "text": "Let $\\Pa(X)$ be a sphere packing and $c$ a positive real number. Then, for all $R > 0$, \\[ \\Delta_{\\Pa(cX)}(cR) = \\Delta_{\\Pa(X)}(R). \\]"
+    },
+    {
+      "id": "SpherePacking.scale_density",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "sphere-packings-scaling",
+      "source": "subsections/sphere-packings-scaling.tex",
+      "line": 25,
+      "title": null,
+      "labels": [
+        "SpherePacking.scale_density"
+      ],
+      "lean_decls": [
+        "SpherePacking.scale_density"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.scale"
+      ],
+      "proof_uses": [
+        "SpherePacking.scale_finiteDensity"
+      ],
+      "has_proof": true,
+      "statement_event": 8,
+      "proof_event": 9,
+      "proof_chapter": "sphere-packings-scaling",
+      "proof_leanok": true,
+      "text": "Let $\\Pa(X)$ be a sphere packing and $c$ a positive real number. Then, the density of the scaled packing $\\Pa(cX)$ is equal to the density of the original packing $\\Pa(X)$."
+    },
+    {
+      "id": "SpherePacking.constant_eq_constant_normalized",
+      "kind": "lemma",
+      "position": 8,
+      "chapter": "sphere-packings-scaling",
+      "source": "subsections/sphere-packings-scaling.tex",
+      "line": 44,
+      "title": null,
+      "labels": [
+        "SpherePacking.constant_eq_constant_normalized"
+      ],
+      "lean_decls": [
+        "SpherePacking.constant_eq_constant_normalized"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePackingConstant",
+        "SpherePacking.density"
+      ],
+      "proof_uses": [
+        "SpherePacking.scale_density"
+      ],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "sphere-packings-scaling",
+      "proof_leanok": true,
+      "text": "\\[ \\Delta_d = \\sup\\limits_{\\substack{\\Pa \\subset \\R^d \\\\ \\text{sphere packing} \\\\ \\text{sep.~rad.} = 1}} \\Delta_{\\Pa} \\]"
+    },
+    {
+      "id": "IsZLattice",
+      "kind": "definition",
+      "position": 9,
+      "chapter": "lattice-periodic-packings",
+      "source": "subsections/lattice-periodic-packings.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "IsZLattice"
+      ],
+      "lean_decls": [
+        "IsZLattice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 12,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say that an additive subgroup $\\Lambda \\leq \\R^d$ is a \\emph{lattice} if it is discrete and its $\\R$-span contains all the elements of $\\R^d$."
+    },
+    {
+      "id": "def:dual-lattice",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "lattice-periodic-packings",
+      "source": "subsections/lattice-periodic-packings.tex",
+      "line": 11,
+      "title": null,
+      "labels": [
+        "def:dual-lattice"
+      ],
+      "lean_decls": [
+        "LinearMap.BilinForm.dualSubmodule"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 13,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{dual lattice} of a lattice $\\Lambda$ is the set \\[ \\Lambda^* := \\setof{v \\in \\R^d}{\\forall l \\in \\Lambda, \\left\\langle v,l \\right\\rangle \\in \\Z} \\]"
+    },
+    {
+      "id": "PeriodicSpherePacking",
+      "kind": "definition",
+      "position": 11,
+      "chapter": "lattice-periodic-packings",
+      "source": "subsections/lattice-periodic-packings.tex",
+      "line": 28,
+      "title": null,
+      "labels": [
+        "PeriodicSpherePacking"
+      ],
+      "lean_decls": [
+        "PeriodicSpherePacking"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking",
+        "IsZLattice"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 14,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say that a sphere packing $\\Pa(X)$ is ($\\Lambda$-)\\emph{periodic} if there exists a lattice $\\Lambda \\subset \\R^d$ such that for all $x \\in X$ and $y \\in \\Lambda$, $x + y \\in X$ (ie, $X$ is $\\Lambda$-periodic)."
+    },
+    {
+      "id": "def:Periodic-sphere-packing-constant",
+      "kind": "definition",
+      "position": 12,
+      "chapter": "lattice-periodic-packings",
+      "source": "subsections/lattice-periodic-packings.tex",
+      "line": 43,
+      "title": null,
+      "labels": [
+        "def:Periodic-sphere-packing-constant"
+      ],
+      "lean_decls": [
+        "PeriodicSpherePackingConstant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.density",
+        "PeriodicSpherePacking"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 15,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The periodic sphere packing constant is defined to be $$ \\Delta_{d}^{\\text{periodic}} := \\sup_{\\substack{P \\subset \\R^d \\\\ \\text{periodic packing}}} \\Delta_P$$"
+    },
+    {
+      "id": "thm:periodic-packing-optimal",
+      "kind": "theorem",
+      "position": 13,
+      "chapter": "lattice-periodic-packings",
+      "source": "subsections/lattice-periodic-packings.tex",
+      "line": 48,
+      "title": null,
+      "labels": [
+        "thm:periodic-packing-optimal"
+      ],
+      "lean_decls": [
+        "periodic_constant_eq_constant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.density",
+        "def:Periodic-sphere-packing-constant"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "lattice-periodic-packings",
+      "proof_leanok": false,
+      "text": "For all $d$, the periodic sphere packing constant in $\\R^d$ is equal to the sphere packing constant in $\\R^d$."
+    },
+    {
+      "id": "theorem:CE_Main",
+      "kind": "theorem",
+      "position": 14,
+      "chapter": "main-result",
+      "source": "subsections/main-result.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "theorem:CE_Main"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-Lattice",
+        "SpherePackingConstant",
+        "SpherePacking.density",
+        "E8Packing-density",
+        "thm:g",
+        "thm:Cohn-Elkies-general"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "main-result",
+      "proof_leanok": false,
+      "text": "All \\emph{periodic} packing $\\mathcal{P} \\subseteq \\R^8$ has density satisfying $\\Delta_{\\mathcal{P}} \\leq \\Delta_{E_8} = \\frac{\\pi^4}{384}$, the density of the $E_8$ sphere packing (see \\cref{E8Packing})."
+    },
+    {
+      "id": "corollary:upper-bound-E8",
+      "kind": "corollary",
+      "position": 15,
+      "chapter": "main-result",
+      "source": "subsections/main-result.tex",
+      "line": 13,
+      "title": null,
+      "labels": [
+        "corollary:upper-bound-E8"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:periodic-packing-optimal",
+        "theorem:CE_Main"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "main-result",
+      "proof_leanok": false,
+      "text": "All packing $\\mathcal{P} \\subseteq \\R^8$ has density satisfying $\\Delta_{\\mathcal{P}} \\leq \\Delta_{E_8}$."
+    },
+    {
+      "id": "MainTheorem",
+      "kind": "corollary",
+      "position": 16,
+      "chapter": "main-result",
+      "source": "subsections/main-result.tex",
+      "line": 20,
+      "title": null,
+      "labels": [
+        "MainTheorem"
+      ],
+      "lean_decls": [
+        "SpherePacking.MainTheorem"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "corollary:upper-bound-E8"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "main-result",
+      "proof_leanok": false,
+      "text": "$\\Delta_8 = \\Delta_{E_8}$."
+    },
+    {
+      "id": "lemma:sp-finite-density-bound",
+      "kind": "lemma",
+      "position": 17,
+      "chapter": "packings-density",
+      "source": "subsections/packings-density.tex",
+      "line": 7,
+      "title": null,
+      "labels": [
+        "lemma:sp-finite-density-bound"
+      ],
+      "lean_decls": [
+        "SpherePacking.finiteDensity_le",
+        "SpherePacking.finiteDensity_ge"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.finiteDensity"
+      ],
+      "proof_uses": [
+        "SpherePacking"
+      ],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "packings-density",
+      "proof_leanok": true,
+      "text": "For any $R > 0$, \\[ \\left|X \\cap \\mathcal{B}_d\\left(R - \\frac{r}{2}\\right)\\right| \\cdot \\frac{\\mathrm{Vol}\\left(\\mathcal{B}_d\\left(\\frac{r}{2}\\right)\\right)}{\\mathrm{Vol}(\\mathcal{B}_d(R))} \\leq \\Delta_{\\mathcal{P}}(R) \\leq \\left|X \\cap \\mathcal{B}_d\\left(R + \\frac{r}{2}\\right)\\right| \\cdot \\frac{\\mathrm{Vol}\\left(\\mathcal{B}_d\\left(\\frac{r}{2}\\right)\\right)}{\\mathrm{Vol}(\\mathcal{B}_d(R))} \\]"
+    },
+    {
+      "id": "lemma:lattice-points-bound",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "packings-density",
+      "source": "subsections/packings-density.tex",
+      "line": 21,
+      "title": null,
+      "labels": [
+        "lemma:lattice-points-bound"
+      ],
+      "lean_decls": [
+        "PeriodicSpherePacking.aux2_ge'",
+        "PeriodicSpherePacking.aux2_le'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "packings-density",
+      "proof_leanok": true,
+      "text": "For all $R$, we have the following inequality relating the number of lattice points from $\\Lambda$ in a ball with the volume of the ball and the fundamental region $\\mathcal{D}$: \\[ \\frac{\\mathrm{Vol}(\\mathcal{B}_d(R - L))}{\\mathrm{Vol}(\\mathcal{D})} \\leq \\left|\\Lambda \\cap \\mathcal{B}_d(R)\\right| \\leq \\frac{\\mathrm{Vol}(\\mathcal{B}_d(R + L))}{\\mathrm{Vol}(\\mathcal{D})} \\]"
+    },
+    {
+      "id": "lemma:periodic-points-bounds",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "packings-density",
+      "source": "subsections/packings-density.tex",
+      "line": 38,
+      "title": null,
+      "labels": [
+        "lemma:periodic-points-bounds"
+      ],
+      "lean_decls": [
+        "PeriodicSpherePacking.aux_ge",
+        "PeriodicSpherePacking.aux_le"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "packings-density",
+      "proof_leanok": true,
+      "text": "For all $R$, we have the following inequality relating the number of points from $X$ (periodic w.r.t. $\\Lambda$) in a ball with the number of points from $\\Lambda$: \\[ \\left|\\Lambda \\cap \\mathcal{B}_d(R - L)\\right|\\left|X / \\Lambda\\right| \\leq \\left|X \\cap \\mathcal{B}_d(R)\\right| \\leq \\left|\\Lambda \\cap \\mathcal{B}_d(R + L)\\right|\\left|X / \\Lambda\\right| \\]"
+    },
+    {
+      "id": "lemma:volume-ball-ratio-limit",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "packings-density",
+      "source": "subsections/packings-density.tex",
+      "line": 62,
+      "title": null,
+      "labels": [
+        "lemma:volume-ball-ratio-limit"
+      ],
+      "lean_decls": [
+        "volume_ball_ratio_tendsto_nhds_one''"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "packings-density",
+      "proof_leanok": true,
+      "text": "For any constant $C > 0$, we have \\[ \\lim_{R \\to \\infty} \\frac{\\mathrm{Vol}(\\mathcal{B}_d(R))}{\\mathrm{Vol}(\\mathcal{B}_d(R + C))} = 1 \\]"
+    },
+    {
+      "id": "theorem:psp-density",
+      "kind": "theorem",
+      "position": 21,
+      "chapter": "packings-density",
+      "source": "subsections/packings-density.tex",
+      "line": 75,
+      "title": null,
+      "labels": [
+        "theorem:psp-density"
+      ],
+      "lean_decls": [
+        "PeriodicSpherePacking.density_eq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "SpherePacking.density"
+      ],
+      "proof_uses": [
+        "lemma:sp-finite-density-bound",
+        "lemma:lattice-points-bound",
+        "lemma:periodic-points-bounds",
+        "lemma:volume-ball-ratio-limit"
+      ],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "packings-density",
+      "proof_leanok": true,
+      "text": "For a periodic sphere packing $\\mathcal{P} = \\mathcal{P}(X)$ with centers $X$ periodic to the lattice $\\Lambda$ and separation $r$, \\[ \\Delta_{\\mathcal{P}} = |X / \\Lambda| \\cdot \\frac{\\Vol{\\mathcal{B}_d(r / 2)}}{\\Vol{\\R^d / \\Lambda}} \\]"
+    },
+    {
+      "id": "E8-Set",
+      "kind": "definition",
+      "position": 22,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "E8-Set"
+      ],
+      "lean_decls": [
+        "Submodule.E8"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 34,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{($E_8$-lattice, Definition 1)} We define the \\emph{$E_8$-lattice} (as a subset of $\\R^8$) to be $$\\Lambda_8=\\{(x_i)\\in\\Z^8\\cup(\\Z+\\textstyle\\frac12\\displaystyle )^8|\\;\\sum_{i=1}^8x_i\\equiv 0\\;(\\mathrm{mod\\;2})\\}.$$"
+    },
+    {
+      "id": "E8-Matrix",
+      "kind": "definition",
+      "position": 23,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 10,
+      "title": null,
+      "labels": [
+        "E8-Matrix"
+      ],
+      "lean_decls": [
+        "E8Matrix"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 35,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{($E_8$-lattice, Definition 2)} We define the \\emph{$E_8$ basis vectors} to be the set of vectors \\[ \\B_8 = \\left\\{ \\begin{bmatrix} 1 \\\\ -1 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\\\ -1 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 1 \\\\ -1 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 1 \\\\ -1 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 1 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -1/2 \\\\ -1/2 \\\\ -1/2 \\\\ -1/2 \\\\ -1/2 \\\\ -1/2 \\\\ -1/2 \\\\ -1/2 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 1 \\\\ -1 \\\\ 0 \\end{bmatrix} \\right\\} \\]"
+    },
+    {
+      "id": "E8-defs-equivalent",
+      "kind": "theorem",
+      "position": 24,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 42,
+      "title": null,
+      "labels": [
+        "E8-defs-equivalent"
+      ],
+      "lean_decls": [
+        "span_E8Matrix"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-Set",
+        "E8-Matrix"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "The two definitions above coincide, i.e. $\\Lambda_8 = \\mathrm{span}_{\\Z}(\\B_8)$."
+    },
+    {
+      "id": "E8-is-basis",
+      "kind": "lemma",
+      "position": 25,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 59,
+      "title": null,
+      "labels": [
+        "E8-is-basis"
+      ],
+      "lean_decls": [
+        "span_E8Matrix_eq_top"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-Matrix"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 38,
+      "proof_event": 39,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "$B_8$ is a $\\R$-basis of $\\R^8$."
+    },
+    {
+      "id": "E8-Lattice",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 66,
+      "title": null,
+      "labels": [
+        "E8-Lattice"
+      ],
+      "lean_decls": [
+        "E8Lattice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-Set",
+        "E8-defs-equivalent"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 40,
+      "proof_event": 41,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "$\\Lambda_8$ is an additive subgroup of $\\R^8$."
+    },
+    {
+      "id": "E8-vector-norms",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 73,
+      "title": null,
+      "labels": [
+        "E8-vector-norms"
+      ],
+      "lean_decls": [
+        "E8_norm_eq_sqrt_even"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-defs-equivalent"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "All vectors in $\\Lambda_8$ have norm of the form $\\sqrt{2n}$, where $n$ is a nonnegative integer."
+    },
+    {
+      "id": "instDiscreteE8Lattice",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 80,
+      "title": null,
+      "labels": [
+        "instDiscreteE8Lattice"
+      ],
+      "lean_decls": [
+        "instDiscreteE8Lattice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-vector-norms"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "$c\\Lambda_8$ is discrete, i.e. that the subspace topology induced by its inclusion into $\\R^8$ is the discrete topology."
+    },
+    {
+      "id": "instLatticeE8",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 87,
+      "title": null,
+      "labels": [
+        "instLatticeE8"
+      ],
+      "lean_decls": [
+        "instIsZLatticeE8Lattice"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "instDiscreteE8Lattice",
+        "E8-is-basis"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 46,
+      "proof_event": 47,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "$c\\Lambda_8$ is a $\\Z$-lattice, i.e. it is discrete and spans $\\R^8$ over $\\R$."
+    },
+    {
+      "id": "E8Packing",
+      "kind": "definition",
+      "position": 30,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 99,
+      "title": null,
+      "labels": [
+        "E8Packing"
+      ],
+      "lean_decls": [
+        "E8Packing"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8-Lattice",
+        "E8-vector-norms"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 48,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{$E_8$ sphere packing} is the (periodic) sphere packing with separation $\\sqrt{2}$, whose set of centres is $\\Lambda_8$."
+    },
+    {
+      "id": "E8Packing-covol",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 103,
+      "title": null,
+      "labels": [
+        "E8Packing-covol"
+      ],
+      "lean_decls": [
+        "E8Basis_volume"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "E8Packing"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "$\\Vol{\\Lambda_8} = \\mathrm{Covol}(\\R^8 / \\Lambda_8) = 1$."
+    },
+    {
+      "id": "E8Packing-density",
+      "kind": "theorem",
+      "position": 32,
+      "chapter": "E8-defs",
+      "source": "subsections/E8-defs.tex",
+      "line": 110,
+      "title": null,
+      "labels": [
+        "E8Packing-density"
+      ],
+      "lean_decls": [
+        "E8Packing_density"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "theorem:psp-density",
+        "E8Packing-covol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "E8-defs",
+      "proof_leanok": true,
+      "text": "We have $\\Delta_{\\mathcal{P}(E_8)} = \\frac{\\pi^4}{384}$."
+    },
+    {
+      "id": "def:Fourier-Transform",
+      "kind": "definition",
+      "position": 33,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "def:Fourier-Transform"
+      ],
+      "lean_decls": [
+        "FourierTransform.fourier"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 53,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The Fourier transform of an $L^1$-function $f:\\R^d\\to\\C$ is defined as \\[ \\mathcal{F}(f)(y) = \\widehat{f}(y) := \\int_{\\R^d} f(x)e^{-2\\pi i \\langle x, y \\rangle} \\,\\mathrm{d}x, \\quad y \\in \\R^d \\] where $\\langle x, y \\rangle = \\frac12\\|x\\|^2 + \\frac12\\|y\\|^2 - \\frac12\\|x - y\\|^2$ is the standard scalar product in $\\R^d$."
+    },
+    {
+      "id": "lemma:Gaussian-Fourier",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "lemma:Gaussian-Fourier"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Fourier-Transform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "fourier-analysis",
+      "proof_leanok": false,
+      "text": "\\begin{equation} \\mathcal{F}(e^{\\pi i \\|x\\|^2 z})(y) = z^{-4}\\,e^{\\pi i \\|y\\|^2 \\,(\\frac{-1}{z}) }. \\end{equation}"
+    },
+    {
+      "id": "def:Schwartz-Space",
+      "kind": "definition",
+      "position": 35,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 28,
+      "title": null,
+      "labels": [
+        "def:Schwartz-Space"
+      ],
+      "lean_decls": [
+        "SchwartzMap"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 56,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A $C^\\infty$~function $f:\\R^d\\to\\C$ is called a \\emph{Schwartz function} if it decays to zero as $\\|x\\|\\to\\infty$ faster then any inverse power of $\\|x\\|$, and the same holds for all partial derivatives of $f$, ie, if for all $k, n \\in \\N$, there exists a constant $C \\in \\R$ such that for all $x \\in \\R^d$, $\\norm{x}^k \\cdot \\norm{f^{(n)}(x)} \\leq C$, where $f^{(n)}$ denotes the $n$-th derivative of $f$ considered along with the appropriate operator norm. The set of all Schwartz functions from $\\R^d$ to $\\C$ is called the \\emph{Schwartz space}. It is an $\\R$-vector space."
+    },
+    {
+      "id": "lemma:Fourier-transform-is-automorphism",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 32,
+      "title": null,
+      "labels": [
+        "lemma:Fourier-transform-is-automorphism"
+      ],
+      "lean_decls": [
+        "SchwartzMap.fourierTransformCLM"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Fourier-Transform",
+        "def:Schwartz-Space"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 57,
+      "proof_event": 58,
+      "proof_chapter": "fourier-analysis",
+      "proof_leanok": true,
+      "text": "The Fourier transform is a continuous, linear automorphism of the space of Schwartz functions."
+    },
+    {
+      "id": "lemma:inv-power-summable",
+      "kind": "lemma",
+      "position": 37,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 46,
+      "title": null,
+      "labels": [
+        "lemma:inv-power-summable"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 59,
+      "proof_event": 60,
+      "proof_chapter": "fourier-analysis",
+      "proof_leanok": false,
+      "text": "Let $X \\subset \\R^d$ be a set of sphere packing centres of separation $1$ that is periodic with some lattice $\\Lambda \\subset \\R^d$. Then, there exists $k \\in \\N$ sufficiently large such that \\[ \\sum_{x \\in X} \\frac{1}{\\norm{x}^{k}} < \\infty. \\]"
+    },
+    {
+      "id": "lemma:Schwartz-summable",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 71,
+      "title": null,
+      "labels": [
+        "lemma:Schwartz-summable"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Schwartz-Space"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 61,
+      "proof_event": 62,
+      "proof_chapter": "fourier-analysis",
+      "proof_leanok": false,
+      "text": "Let $f : \\R^d \\to \\C$ be a Schwartz function and let $X \\subset \\R^d$ be periodic with respect to some lattice $\\Lambda \\subset \\R^d$. Then, \\[ \\sum_{x \\in X} |f(x)| < \\infty. \\]"
+    },
+    {
+      "id": "thm:Poisson-summation-formula",
+      "kind": "theorem",
+      "position": 39,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 86,
+      "title": "Poisson summation formula",
+      "labels": [
+        "thm:Poisson-summation-formula"
+      ],
+      "lean_decls": [
+        "SchwartzMap.PoissonSummation_Lattices"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Fourier-Transform",
+        "def:Schwartz-Space",
+        "lemma:Schwartz-summable",
+        "lemma:inv-power-summable",
+        "def:dual-lattice"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 63,
+      "proof_event": 64,
+      "proof_chapter": "fourier-analysis",
+      "proof_leanok": false,
+      "text": "Let $\\Lambda$ be a lattice in $\\R^d$, and let $f:\\R^d\\to\\R$ be a Schwartz function. Then, for all $v \\in \\R^d$, \\[ \\sum_{\\ell\\in\\Lambda}f(\\ell + v) = \\frac{1}{\\Vol{\\R^d/\\Lambda}} \\sum_{m\\in\\Lambda^*}\\widehat{f}(m) e^{-2\\pi i \\ang{v, m}}. \\]"
+    },
+    {
+      "id": "thm:smooth-fast-decay-schwartz",
+      "kind": "theorem",
+      "position": 40,
+      "chapter": "fourier-analysis",
+      "source": "subsections/fourier-analysis.tex",
+      "line": 101,
+      "title": null,
+      "labels": [
+        "thm:smooth-fast-decay-schwartz"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 65,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Assume $f : \\R \\to \\C$ is smooth on $[0, \\infty)$ and for all $k, n \\in \\N$, there exists $C \\in \\R$ such that $$ x^{\\frac{k}{2}} \\cdot |f^{(n)}(x)| \\leq C. $$ Then, for all $d \\in \\N$, the function $$ f_d : \\R^d \\to \\C, \\quad f_d(x) := f(\\|x\\|^2) $$ is a Schwartz function."
+    },
+    {
+      "id": "thm:Cohn-Elkies-periodic",
+      "kind": "theorem",
+      "position": 41,
+      "chapter": "cohn-elkies",
+      "source": "subsections/cohn-elkies.tex",
+      "line": 4,
+      "title": "Cohn--Elkies {\\cite{ElkiesCohn}}",
+      "labels": [
+        "thm:Cohn-Elkies-periodic",
+        "eqn:Cohn-Elkies-condition-1",
+        "eqn:Cohn-Elkies-condition-2"
+      ],
+      "lean_decls": [
+        "LinearProgrammingBound'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Fourier-Transform",
+        "SpherePacking.density"
+      ],
+      "proof_uses": [
+        "thm:Poisson-summation-formula"
+      ],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "cohn-elkies",
+      "proof_leanok": true,
+      "text": "Let $X\\subset\\mathbb{R}^d$ be a discrete subset such that $\\|x-y\\|\\geq 1$ for any distinct $x,y\\in X$. Suppose that $X$ is $\\Lambda$-periodic with respect to some lattice $\\Lambda\\subset\\mathbb{R}^d$. Let $f:\\R^d\\to\\R$ be a Schwartz function that is not identically zero and satisfies the following conditions: \\begin{equation}f(x)\\leq 0\\mbox{ for } \\|x\\|\\geq 1\\end{equation} and \\begin{equation}\\widehat{f}(x)\\geq0\\mbox{ for all } x\\in\\R^d.\\end{equation} Then the density of any $\\Lambda$-periodic sphere packing is bounded above by $$\\frac{f(0)}{\\widehat{f}(0)}\\cdot \\mathrm{vol}(B_d(0,1/2)).$$"
+    },
+    {
+      "id": "thm:Cohn-Elkies-general",
+      "kind": "theorem",
+      "position": 42,
+      "chapter": "cohn-elkies",
+      "source": "subsections/cohn-elkies.tex",
+      "line": 36,
+      "title": "Cohn--Elkies {\\cite{ElkiesCohn}}",
+      "labels": [
+        "thm:Cohn-Elkies-general"
+      ],
+      "lean_decls": [
+        "LinearProgrammingBound"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:Cohn-Elkies-periodic",
+        "thm:periodic-packing-optimal"
+      ],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "cohn-elkies",
+      "proof_leanok": true,
+      "text": "Let $f:\\R^d\\to\\R$ be a Schwartz function that is not identically zero and satisfies \\eqref{eqn:Cohn-Elkies-condition-1} and \\eqref{eqn:Cohn-Elkies-condition-2}. Then the density of any $\\Lambda$-periodic sphere packing is bounded above by $$\\frac{f(0)}{\\widehat{f}(0)}\\cdot \\mathrm{vol}(B_d(0,1/2)).$$"
+    },
+    {
+      "id": "thm:g",
+      "kind": "theorem",
+      "position": 43,
+      "chapter": "cohn-elkies",
+      "source": "subsections/cohn-elkies.tex",
+      "line": 44,
+      "title": null,
+      "labels": [
+        "thm:g",
+        "eqn:g1",
+        "eqn:g2",
+        "eqn:g3"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:g1"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 70,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There exists a radial Schwartz function $g:\\R^8\\to\\R$ which satisfies: \\begin{align} g(x)&\\leq 0\\mbox{ for } \\|x\\|\\geq \\sqrt{2} \\\\ \\widehat{g}(x)&\\geq0\\mbox{ for all } x\\in\\R^8\\\\ g(0)&=\\widehat{g}(0)=1. \\end{align}"
+    },
+    {
+      "id": "def:Gamma-1-Action",
+      "kind": "lemma",
+      "position": 44,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 6,
+      "title": null,
+      "labels": [
+        "def:Gamma-1-Action"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 71,
+      "proof_event": 72,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The modular group $\\Gamma_1:=\\mathrm{SL}_2(\\Z)$ acts on $\\h$ by linear fractional transformations $$\\left(\\begin{smallmatrix}a&b\\\\c&d\\end{smallmatrix}\\right)z:=\\frac{az+b}{cz+d}.$$"
+    },
+    {
+      "id": "def:level-N-princ-cong-subgp",
+      "kind": "definition",
+      "position": 45,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "def:level-N-princ-cong-subgp"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 73,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{level $N$ principal congruence subgroup} of $\\Gamma_1$ is $$ \\Gamma(N):=\\left\\{\\left.\\left(\\begin{smallmatrix}a&b\\\\c&d\\end{smallmatrix}\\right)\\in\\Gamma_1\\right|\\left(\\begin{smallmatrix}a&b\\\\c&d\\end{smallmatrix}\\right)\\equiv\\left(\\begin{smallmatrix}1&0\\\\0&1\\end{smallmatrix}\\right)\\;\\mathrm{mod}\\;N\\right\\}. $$"
+    },
+    {
+      "id": "def:congruence-subgroup",
+      "kind": "definition",
+      "position": 46,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 22,
+      "title": null,
+      "labels": [
+        "def:congruence-subgroup"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:level-N-princ-cong-subgp"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 74,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A subgroup $\\Gamma\\subset\\Gamma_1$ is called a \\emph{congruence subgroup} if $\\Gamma(N)\\subset\\Gamma$ for some $N\\in\\N$."
+    },
+    {
+      "id": "def:Gamma-generators",
+      "kind": "definition",
+      "position": 47,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 26,
+      "title": null,
+      "labels": [
+        "def:Gamma-generators"
+      ],
+      "lean_decls": [
+        "ModularGroup.S",
+        "ModularGroup.T",
+        "\u03b1",
+        "\u03b2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:level-N-princ-cong-subgp"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 75,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define the matrices \\[ S = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix} \\in \\Gamma_1, T = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix} \\in \\Gamma_1, \\alpha = \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix} \\in \\Gamma_2 \\subset \\Gamma_1, \\beta = \\begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\end{pmatrix} \\in \\Gamma_2 \\subset \\Gamma_1. \\] It is easily verifiable that $\\alpha = T^2$ and $\\beta = -S\\alpha^{-1}S = -ST^{-2}S$."
+    },
+    {
+      "id": "lemma:Gamma-1-generators",
+      "kind": "lemma",
+      "position": 48,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 41,
+      "title": null,
+      "labels": [
+        "lemma:Gamma-1-generators"
+      ],
+      "lean_decls": [
+        "SL2Z_generate"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Gamma-generators"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 76,
+      "proof_event": 77,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "We have $\\Gamma(1) = \\langle S, T, -I \\rangle$."
+    },
+    {
+      "id": "lemma:Gamma-2-generators",
+      "kind": "lemma",
+      "position": 49,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 49,
+      "title": null,
+      "labels": [
+        "lemma:Gamma-2-generators"
+      ],
+      "lean_decls": [
+        "\u03932_generate"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Gamma-generators"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 78,
+      "proof_event": 79,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "We have $\\Gamma(2) = \\langle \\alpha, \\beta, -I \\rangle$."
+    },
+    {
+      "id": "def:automorphy-factor",
+      "kind": "definition",
+      "position": 50,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 58,
+      "title": null,
+      "labels": [
+        "def:automorphy-factor"
+      ],
+      "lean_decls": [
+        "UpperHalfPlane.denom"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 80,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{automorphy factor} of weight $k$ is defined as $$j_k(z,\\left(\\begin{smallmatrix}a&b\\\\c&d\\end{smallmatrix}\\right)):=(cz+d)^{-k}.$$"
+    },
+    {
+      "id": "lemma:automorphy-factor-chain-rule",
+      "kind": "lemma",
+      "position": 51,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 63,
+      "title": null,
+      "labels": [
+        "lemma:automorphy-factor-chain-rule"
+      ],
+      "lean_decls": [
+        "UpperHalfPlane.denom_cocycle"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:automorphy-factor"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The automorphy factor satisfies the \\emph{chain rule} $$j_k(z,\\gamma_1\\gamma_2)=j_k(z,\\gamma_1)\\,j_k(\\gamma_2z,\\gamma_1). $$"
+    },
+    {
+      "id": "def:slash-operator",
+      "kind": "definition",
+      "position": 52,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 71,
+      "title": null,
+      "labels": [
+        "def:slash-operator"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:automorphy-factor",
+        "def:Gamma-1-Action"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 83,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $F$ be a function on $\\h$ and $\\gamma\\in\\mathrm{SL}_2(\\Z)$. Then the \\emph{slash operator} acts on $F$ by $$(F|_k\\gamma)(z):=j_k(z,\\gamma)\\,F(\\gamma z). $$"
+    },
+    {
+      "id": "lemma:slash-operator-chain-rule",
+      "kind": "lemma",
+      "position": 53,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 76,
+      "title": null,
+      "labels": [
+        "lemma:slash-operator-chain-rule"
+      ],
+      "lean_decls": [
+        "SlashAction.slash_mul"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:automorphy-factor-chain-rule"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 84,
+      "proof_event": 85,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The chain rule implies $$F|_k\\gamma_1\\gamma_2=(F|_k\\gamma_1)|_k\\gamma_2.$$"
+    },
+    {
+      "id": "lemma:slash-negI-even-weight",
+      "kind": "lemma",
+      "position": 54,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 85,
+      "title": null,
+      "labels": [
+        "lemma:slash-negI-even-weight"
+      ],
+      "lean_decls": [
+        "modular_slash_negI_of_even"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:slash-operator"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 86,
+      "proof_event": 87,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "For even $k$, $F|_{k}(-I) = F$."
+    },
+    {
+      "id": "def:Mk",
+      "kind": "definition",
+      "position": 55,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 94,
+      "title": null,
+      "labels": [
+        "def:Mk"
+      ],
+      "lean_decls": [
+        "ModularForm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:congruence-subgroup"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 88,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\Gamma$ denote a subgroup of $\\mathrm{SL}_2(\\mathbb{Z})$, then a modular form of level $\\Gamma$ and weight $k \\in \\mathbb{Z}$ is a function $f : \\mathbb{H} \\to \\mathbb{C}$ such that: \\begin{enumerate} \\item For all $\\gamma \\in \\Gamma$ we have $f\\mid_k \\gamma = f$ (such functions are called slash invariant). \\item $f$ is holomorphic on $\\mathbb{H}$. \\item For all $\\gamma \\in \\mathrm{SL}_2(\\mathbb{Z})$, there exist $A, B \\in \\mathbb{R}$ such that for all $z \\in \\mathbb{H}$, with $ A \\le \\mathrm{Im}(z)$, we have $|(f \\mid_k \\gamma) (z) |\\le B$. Here $| - |$ denotes the standard complex absolute value. \\end{enumerate} This defines a complex vector space which we denote by $M_{k}(\\Gamma)$."
+    },
+    {
+      "id": "def:Ek",
+      "kind": "definition",
+      "position": 56,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 112,
+      "title": null,
+      "labels": [
+        "def:Ek",
+        "eqn:Ek-definition"
+      ],
+      "lean_decls": [
+        "E"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 89,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For an even integer $k\\geq 4$ we define the \\emph{weight $k$ Eisenstein series} as \\begin{equation} E_k(z):=\\frac{1}{2}\\sum_{(c,d)\\in\\Z^2, (c,d)=1}(cz+d)^{-k}.\\end{equation}"
+    },
+    {
+      "id": "lemma:Ek-is-modular-form",
+      "kind": "lemma",
+      "position": 57,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 117,
+      "title": null,
+      "labels": [
+        "lemma:Ek-is-modular-form",
+        "eqn:Ek-trans-S"
+      ],
+      "lean_decls": [
+        "EisensteinSeries.eisensteinSeries_SIF"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Mk",
+        "def:Ek"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 90,
+      "proof_event": 91,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "For all $k$, $E_k\\in M_k(\\Gamma_1)$. Especially, we have \\begin{equation} E_k \\left(-\\frac{1}{z}\\right) = z^k E_k(z). \\end{equation}"
+    },
+    {
+      "id": "lemma:mod_form_poly_growth",
+      "kind": "lemma",
+      "position": 58,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 133,
+      "title": null,
+      "labels": [
+        "lemma:mod_form_poly_growth"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 92,
+      "proof_event": 93,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": ": Let $\\Gamma$ be a finite index subgroup of $\\mathrm{SL}_2(\\Z)$ and $f \\in \\mathcal{M}_k(\\Gamma)$ be a modular form of weight $k$. Then the Fourier coefficients $a_n(f)$ has a polynomial growth, i.e. $|a_n(f)| = O(n^k)$."
+    },
+    {
+      "id": "lemma:Ek-Fourier",
+      "kind": "lemma",
+      "position": 59,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 142,
+      "title": null,
+      "labels": [
+        "lemma:Ek-Fourier",
+        "eqn:Ek-Fourier"
+      ],
+      "lean_decls": [
+        "EisensteinSeries.q_expansion_bernoulli"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Ek"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 94,
+      "proof_event": 95,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The Eisenstein series possesses the Fourier expansion \\begin{equation}E_k(z)=1+\\frac{2}{\\zeta(1-k)}\\sum_{n=1}^\\infty \\sigma_{k-1}(n)\\,e^{2\\pi i z}, \\end{equation} where $\\sigma_{k-1}(n)\\,=\\,\\sum_{d|n} d^{k-1}$. In particular, we have \\begin{align} E_4(z)\\,=\\,& 1+240\\sum_{n=1}^\\infty \\sigma_3(n)\\,e^{2\\pi i n z} \\notag \\\\ E_6(z)\\,=\\,& 1-504\\sum_{n=1}^\\infty \\sigma_5(n)\\,e^{2\\pi i n z}. \\notag \\end{align}"
+    },
+    {
+      "id": "def:disc-definition",
+      "kind": "definition",
+      "position": 60,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 161,
+      "title": null,
+      "labels": [
+        "def:disc-definition",
+        "eqn:disc-definition"
+      ],
+      "lean_decls": [
+        "ModularForm.discriminant",
+        "\u0394_eq_cexp_prod"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:dedekind_eta"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 96,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The \\emph{discriminant form} $\\Delta(z)$ is given by \\begin{equation} \\Delta(z) = e^{2 \\pi i z} \\prod_{n \\ge 1} (1 - e^{2 \\pi i n z})^{24}. \\end{equation}"
+    },
+    {
+      "id": "def:E2",
+      "kind": "definition",
+      "position": 61,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 171,
+      "title": null,
+      "labels": [
+        "def:E2",
+        "eqn:E2"
+      ],
+      "lean_decls": [
+        "E\u2082_eq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 97,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We set \\begin{equation} E_2(z):= 1-24\\sum_{n=1}^\\infty \\sigma_1(n)\\,e^{2\\pi i n z}. \\end{equation}"
+    },
+    {
+      "id": "lemma:E2-transform-S",
+      "kind": "lemma",
+      "position": 62,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 178,
+      "title": null,
+      "labels": [
+        "lemma:E2-transform-S",
+        "eqn:E2-S-transform"
+      ],
+      "lean_decls": [
+        "E\u2082_transform"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:E2"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 98,
+      "proof_event": 99,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "This function is not modular, however it satisfies \\begin{equation} z^{-2}\\,E_2\\left(-\\frac{1}{z}\\right) = E_2(z) -\\frac{6i}{\\pi}\\, \\frac{1}{z}. \\end{equation}"
+    },
+    {
+      "id": "lemma:E2-transform-general",
+      "kind": "lemma",
+      "position": 63,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 190,
+      "title": null,
+      "labels": [
+        "lemma:E2-transform-general",
+        "eqn:E2-transform-general"
+      ],
+      "lean_decls": [
+        "E\u2082_slash_transform"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:E2-transform-S",
+        "def:E2"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 100,
+      "proof_event": 101,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "\\begin{equation} (cz + d)^{-2} E_2\\left(\\frac{az + b}{cx + d}\\right) = E_2(z) - \\frac{6ic}{\\pi (cz + d)}, \\quad \\begin{pmatrix} a & b \\\\ c & d\\end{pmatrix} \\in \\mathrm{SL}_{2}(\\mathbb{Z}). \\end{equation}"
+    },
+    {
+      "id": "def:dedekind_eta",
+      "kind": "definition",
+      "position": 64,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 201,
+      "title": null,
+      "labels": [
+        "def:dedekind_eta"
+      ],
+      "lean_decls": [
+        "ModularForm.eta"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 102,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The Dedekind eta function is defined as $$ \\eta(z) = q^{1/24} \\prod_{n \\ge 1} (1 - q^n) $$ where $q = e^{2\\pi i z}$."
+    },
+    {
+      "id": "lemma:dedekind_eta_transformation",
+      "kind": "lemma",
+      "position": 65,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 209,
+      "title": null,
+      "labels": [
+        "lemma:dedekind_eta_transformation"
+      ],
+      "lean_decls": [
+        "ModularForm.eta_comp_eq_csqrt_I_inv"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:dedekind_eta"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 103,
+      "proof_event": 104,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The Dedekind eta function transforms as $$ \\eta\\left(-\\frac{1}{z}\\right) = \\sqrt{-iz} \\eta(z). $$"
+    },
+    {
+      "id": "lemma:disc-cuspform",
+      "kind": "lemma",
+      "position": 66,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 224,
+      "title": null,
+      "labels": [
+        "lemma:disc-cuspform",
+        "eqn:disc-trans-S"
+      ],
+      "lean_decls": [
+        "CuspForm.discriminant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:disc-definition",
+        "lemma:dedekind_eta_transformation"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 105,
+      "proof_event": 106,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$\\Delta(z) \\in M_{12}(\\Gamma_1)$. Especially, we have \\begin{equation} \\Delta\\left(-\\frac{1}{z}\\right) = z^{12} \\Delta(z). \\end{equation} Also, it vanishes at the unique cusp, i.e. it is a cusp form of level $\\Gamma_1$ and weight $12$."
+    },
+    {
+      "id": "lemma:disc-E4E6",
+      "kind": "lemma",
+      "position": 67,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 239,
+      "title": null,
+      "labels": [
+        "lemma:disc-E4E6"
+      ],
+      "lean_decls": [
+        "ModularForm.discriminant_eq_E\u2084_cube_sub_E\u2086_sq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:disc-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 107,
+      "proof_event": 108,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "We have \\begin{equation} \\Delta(z) = (E_4^3-E_6^2)/1728. \\end{equation}"
+    },
+    {
+      "id": "cor:disc-pos",
+      "kind": "corollary",
+      "position": 68,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 255,
+      "title": null,
+      "labels": [
+        "cor:disc-pos"
+      ],
+      "lean_decls": [
+        "\u0394_imag_axis_pos"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:disc-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 109,
+      "proof_event": 110,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$\\Delta(it) > 0$ for all $t > 0$."
+    },
+    {
+      "id": "cor:disc-nonvanishing",
+      "kind": "corollary",
+      "position": 69,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 266,
+      "title": null,
+      "labels": [
+        "cor:disc-nonvanishing"
+      ],
+      "lean_decls": [
+        "ModularForm.discriminant_ne_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:disc-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 111,
+      "proof_event": 112,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$\\Delta(z) \\neq 0$ for all $z \\in \\h$."
+    },
+    {
+      "id": "thm:nonpos_wt",
+      "kind": "theorem",
+      "position": 70,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 278,
+      "title": null,
+      "labels": [
+        "thm:nonpos_wt"
+      ],
+      "lean_decls": [
+        "ModularFormClass.levelOne_neg_weight_eq_zero",
+        "ModularForm.levelOne_weight_zero_rank_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Mk"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 113,
+      "proof_event": 114,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "Let $k \\in \\Z$ with $k < 0$. Then $M_k(\\Gamma_1) = \\{0\\}$ and moreover $\\dim M_0(\\Gamma(1)) = 1$."
+    },
+    {
+      "id": "thm:lvl1_dims",
+      "kind": "theorem",
+      "position": 71,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 287,
+      "title": null,
+      "labels": [
+        "thm:lvl1_dims"
+      ],
+      "lean_decls": [
+        "ModularForm.dimension_level_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Mk",
+        "lemma:disc-E4E6",
+        "def:disc-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 115,
+      "proof_event": 116,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "Let $k \\in \\Z$ with $k \\ge 0$ and even. Then $\\dim M_k(\\Gamma_1) = \\lfloor k / 12 \\rfloor $ if $k \\equiv 2 \\mod 12$ and $\\dim M_k(\\Gamma_1) = \\lfloor k / 12 \\rfloor + 1$ if $k \\not\\equiv 2 \\mod 12$."
+    },
+    {
+      "id": "thm:dim-mf-general-level",
+      "kind": "theorem",
+      "position": 72,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 302,
+      "title": null,
+      "labels": [
+        "thm:dim-mf-general-level"
+      ],
+      "lean_decls": [
+        "dim_gen_cong_levels"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Mk",
+        "thm:lvl1_dims"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 117,
+      "proof_event": 118,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "Let $\\Gamma$ be a congruence subgroup. Then $M_k(\\Gamma)$ is finite-dimensional."
+    },
+    {
+      "id": "cor:dim-mf",
+      "kind": "corollary",
+      "position": 73,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 319,
+      "title": null,
+      "labels": [
+        "cor:dim-mf",
+        "eqn:dimM2",
+        "eqn:dimM4",
+        "eqn:dimM6",
+        "eqn:dimM8",
+        "eqn:dimS4",
+        "eqn:dimS6",
+        "eqn:dimS8"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Mk",
+        "thm:lvl1_dims"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 119,
+      "proof_event": 120,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "We have \\begin{align} \\dim M_2(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 0, \\\\ \\dim M_4(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 1, \\\\ \\dim M_6(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 1, \\\\ \\dim M_8(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 1, \\\\ \\dim S_4(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 0, \\\\ \\dim S_6(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 0, \\\\ \\dim S_8(\\mathrm{SL}_{2}(\\mathbb{Z})) &= 0. \\end{align}"
+    },
+    {
+      "id": "def:th00-th01-th10",
+      "kind": "definition",
+      "position": 74,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 336,
+      "title": null,
+      "labels": [
+        "def:th00-th01-th10"
+      ],
+      "lean_decls": [
+        "\u0398\u2082",
+        "\u0398\u2083",
+        "\u0398\u2084"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 121,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We define three different theta functions (so called ``Thetanullwerte'') as \\begin{align} \\Theta_{2}(z) = \\theta_{10}(z)\\,=\\, & \\sum_{n\\in\\Z}e^{\\pi i (n+\\frac12)^2 z}. \\notag \\\\ \\Theta_{3}(z) = \\theta_{00}(z)\\,=\\, & \\sum_{n\\in\\Z}e^{\\pi i n^2 z} \\notag \\\\ \\Theta_{4}(z) = \\theta_{01}(z)\\,=\\, & \\sum_{n\\in\\Z}(-1)^n\\,e^{\\pi i n^2 z} \\notag \\\\ \\end{align}"
+    },
+    {
+      "id": "def:H2-H3-H4",
+      "kind": "definition",
+      "position": 75,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 346,
+      "title": null,
+      "labels": [
+        "def:H2-H3-H4",
+        "eqn:H2-H3-H4"
+      ],
+      "lean_decls": [
+        "H\u2082",
+        "H\u2083",
+        "H\u2084"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:th00-th01-th10"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 122,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define \\begin{equation} H_2 = \\Theta_2^4, \\quad H_3 = \\Theta_3^4, \\quad H_4 = \\Theta_4^4. \\end{equation}"
+    },
+    {
+      "id": "lemma:theta-transform-S-T",
+      "kind": "lemma",
+      "position": 76,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 357,
+      "title": null,
+      "labels": [
+        "lemma:theta-transform-S-T",
+        "eqn:H2-transform-S",
+        "eqn:H3-transform-S",
+        "eqn:H4-transform-S",
+        "eqn:H2-transform-T",
+        "eqn:H3-transform-T",
+        "eqn:H4-transform-T"
+      ],
+      "lean_decls": [
+        "H\u2082_T_action",
+        "H\u2083_T_action",
+        "H\u2084_T_action",
+        "H\u2082_S_action",
+        "H\u2083_S_action",
+        "H\u2084_S_action"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:th00-th01-th10",
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 123,
+      "proof_event": 124,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "These elements act on the theta functions in the following way \\begin{align} H_2 | S &= -H_4 \\\\ H_3 | S &= -H_3 \\\\ H_4 | S &= -H_2 \\end{align} and \\begin{align} H_2 | T &= -H_2 \\\\ H_3 | T &= H_4 \\\\ H_4 | T &= H_3 \\end{align}"
+    },
+    {
+      "id": "lemma:theta-slash-invariant",
+      "kind": "lemma",
+      "position": 77,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 407,
+      "title": null,
+      "labels": [
+        "lemma:theta-slash-invariant"
+      ],
+      "lean_decls": [
+        "H\u2082_SIF",
+        "H\u2083_SIF",
+        "H\u2084_SIF"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:slash-operator-chain-rule",
+        "lemma:slash-negI-even-weight",
+        "lemma:theta-transform-S-T",
+        "lemma:Gamma-2-generators"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 125,
+      "proof_event": 126,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$H_{2}$, $H_{3}$, and $H_{4}$ are slash invariant under $\\Gamma(2)$, i.e. for all $\\gamma \\in \\Gamma(2)$ and $i \\in \\{2, 3, 4\\}$, we have $H_i|\\gamma = H_i|\\gamma^{-1} = H_i$."
+    },
+    {
+      "id": "lemma:theta-bounded-im-infty",
+      "kind": "lemma",
+      "position": 78,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 424,
+      "title": null,
+      "labels": [
+        "lemma:theta-bounded-im-infty"
+      ],
+      "lean_decls": [
+        "isBoundedAtImInfty_H_slash"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:theta-slash-invariant",
+        "lemma:Gamma-1-generators"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 127,
+      "proof_event": 128,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "For all $\\gamma \\in \\Gamma_1$, $H_{2}|_2 \\gamma$, $H_{3}|_2 \\gamma$, and $H_{4}|_2 \\gamma$ are holomorphic at $i\\infty$."
+    },
+    {
+      "id": "lemma:theta-modular",
+      "kind": "lemma",
+      "position": 79,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 443,
+      "title": null,
+      "labels": [
+        "lemma:theta-modular"
+      ],
+      "lean_decls": [
+        "H\u2082_MF",
+        "H\u2083_MF",
+        "H\u2084_MF"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:theta-slash-invariant",
+        "lemma:theta-bounded-im-infty"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 129,
+      "proof_event": 130,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$H_{2}$, $H_{3}$, and $H_{4}$ belong to $M_2(\\Gamma(2))$."
+    },
+    {
+      "id": "prop:H2-fourier",
+      "kind": "proposition",
+      "position": 80,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 453,
+      "title": null,
+      "labels": [
+        "prop:H2-fourier"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 131,
+      "proof_event": 132,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "$H_2$ admits a Fourier series of the form \\begin{equation} H_2(z) = \\sum_{n \\ge 1} c_{H_2}(n) e^{\\pi i n z} \\end{equation} for some $c_{H_2}(n) \\in \\R_{\\ge 0}$, with $c_{H_2}(1) = 16$ and $c_{H_2}(n) = O(n^k)$ for some $k \\in \\N$."
+    },
+    {
+      "id": "prop:H3-fourier",
+      "kind": "proposition",
+      "position": 81,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 473,
+      "title": null,
+      "labels": [
+        "prop:H3-fourier"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 133,
+      "proof_event": 134,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "$H_3$ admits a Fourier series of the form \\begin{equation} H_3(z) = \\sum_{n \\ge 0} c_{H_3}(n) e^{\\pi i n z} \\end{equation} for some $c_{H_3}(n) \\in \\R_{\\ge 0}$ with $c_{H_3}(0) = 1$ and $c_{H_3}(n) = O(n^k)$ for some $k \\in \\N$. Especially, $H_3$ is not cuspidal."
+    },
+    {
+      "id": "prop:H4-fourier",
+      "kind": "proposition",
+      "position": 82,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 488,
+      "title": null,
+      "labels": [
+        "prop:H4-fourier"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 135,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "$H_4$ admits a Fourier series of the form \\begin{equation} H_4(z) = \\sum_{n \\ge 0} c_{H_4}(n) e^{\\pi i n z} \\end{equation} for some $c_{H_4}(n) \\in \\R$ with $c_{H_4}(0) = 1$ and $c_{H_4}(n) = O(n^k)$ for some $k \\in \\N$. Especially, $H_4$ is not cuspidal."
+    },
+    {
+      "id": "lemma:jacobi-identity",
+      "kind": "lemma",
+      "position": 83,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 499,
+      "title": null,
+      "labels": [
+        "lemma:jacobi-identity",
+        "eqn:jacobi-identity"
+      ],
+      "lean_decls": [
+        "jacobi_identity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:theta-modular",
+        "cor:dim-mf"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 136,
+      "proof_event": 137,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "These three theta functions satisfy the \\emph{Jacobi identity} \\begin{equation} H_{2} + H_{4} = H_{3} \\Leftrightarrow \\Theta_{2}^4 + \\Theta_{4}^4 = \\Theta_{3}^4. \\end{equation}"
+    },
+    {
+      "id": "lemma:lv1-lv2-identities",
+      "kind": "lemma",
+      "position": 84,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 519,
+      "title": null,
+      "labels": [
+        "lemma:lv1-lv2-identities",
+        "eqn:e4theta",
+        "eqn:e6theta",
+        "eqn:disctheta"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:theta-transform-S-T",
+        "lemma:theta-modular",
+        "lemma:disc-cuspform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 138,
+      "proof_event": 139,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} E_4 &= \\frac{1}{2}(H_{2}^{2} + H_{3}^{2} + H_{4}^{2}) = H_{2}^{2} + H_{2}H_{4} + H_{4}^{2} \\\\ E_6 &= \\frac{1}{2} (H_{2} + H_{3})(H_{3} + H_{4}) (H_{4} - H_{2}) = \\frac{1}{2}(H_2 + 2H_4)(2H_2 + H_4)(H_4 - H_2) \\\\ \\Delta &= \\frac{1}{256} (H_{2}H_{3}H_{4})^2. \\end{align}"
+    },
+    {
+      "id": "cor:theta-pos",
+      "kind": "corollary",
+      "position": 85,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 534,
+      "title": null,
+      "labels": [
+        "cor:theta-pos"
+      ],
+      "lean_decls": [
+        "H\u2082_imag_axis_pos",
+        "H\u2084_imag_axis_pos"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:theta-transform-S-T"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 140,
+      "proof_event": 141,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "$H_2(it)$ and $H_4(it)$ are positive for $t > 0$."
+    },
+    {
+      "id": "def:derivative",
+      "kind": "definition",
+      "position": 86,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 561,
+      "title": null,
+      "labels": [
+        "def:derivative",
+        "eqn:derivative"
+      ],
+      "lean_decls": [
+        "D"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 142,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $F$ be a quasimodular form. We define the (normalized) derivative of $F$ as \\begin{equation} F' = DF := \\frac{1}{2\\pi i} \\frac{\\dd}{\\dd z} F. \\end{equation}"
+    },
+    {
+      "id": "lemma:der-q-series",
+      "kind": "lemma",
+      "position": 87,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 570,
+      "title": null,
+      "labels": [
+        "lemma:der-q-series"
+      ],
+      "lean_decls": [
+        "D_qexp_tsum_pnat"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:derivative"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 143,
+      "proof_event": 144,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "We have an equality of operators $D = q \\frac{\\dd}{\\dd q}$. In particular, the $q$-series of the derivative of a quasimodular form $F(z) = \\sum_{n \\ge n_0} a_n q^n$ is $F'(z) = \\sum_{n \\ge n_0} n a_n q^n$."
+    },
+    {
+      "id": "def:serre-der",
+      "kind": "definition",
+      "position": 88,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 581,
+      "title": null,
+      "labels": [
+        "def:serre-der",
+        "eqn:serre-der"
+      ],
+      "lean_decls": [
+        "serre_D"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:derivative",
+        "def:E2"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 145,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For $k \\in \\mathbb{R}$, define the weight $k$ Serre derivative $\\partial_{k}$ of a modular form $F$ as \\begin{equation} \\partial_{k}F := F' - \\frac{k}{12} E_2 F. \\end{equation}"
+    },
+    {
+      "id": "thm:serre-der-equiv-action",
+      "kind": "theorem",
+      "position": 89,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 588,
+      "title": null,
+      "labels": [
+        "thm:serre-der-equiv-action"
+      ],
+      "lean_decls": [
+        "serre_D_slash_equivariant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:serre-der",
+        "def:E2",
+        "lemma:E2-transform-general"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 146,
+      "proof_event": 147,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "Serre derivative $\\partial_{k}$ is equivariant with the slash action of $\\mathrm{SL}_{2}(\\mathbb{Z})$ in the following sense: \\begin{equation} \\partial_{k} (F|_{k}\\gamma) = (\\partial_{k} F)|_{k+2}\\gamma, \\quad \\forall \\gamma \\in \\mathrm{SL}_{2}(\\mathbb{Z}). \\end{equation}"
+    },
+    {
+      "id": "thm:serre-der-modularity",
+      "kind": "theorem",
+      "position": 90,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 618,
+      "title": null,
+      "labels": [
+        "thm:serre-der-modularity"
+      ],
+      "lean_decls": [
+        "serre_D_slash_invariant"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:serre-der",
+        "def:Mk",
+        "thm:serre-der-equiv-action"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 148,
+      "proof_event": 149,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "Let $F$ be a modular form of weight $k$ and level $\\Gamma$. Then, $\\partial_{k}F$ is a modular form of weight $k + 2$ of the same level."
+    },
+    {
+      "id": "_anon1:modular-forms",
+      "kind": "remark",
+      "position": 91,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 627,
+      "title": null,
+      "labels": [
+        "_anon1:modular-forms"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 150,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "More generally, the following theorem holds: if $F$ is a quasimodular form of weight $k$ and depth $s$, then $\\partial_{k-s}F$ is a quasimodular form of weight $k + 2$ \\emph{and depth $\\le s$} of the same level. We will not prove this here."
+    },
+    {
+      "id": "thm:ramanujan-formula",
+      "kind": "theorem",
+      "position": 92,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 631,
+      "title": null,
+      "labels": [
+        "thm:ramanujan-formula",
+        "eqn:DE2",
+        "eqn:DE4",
+        "eqn:DE6"
+      ],
+      "lean_decls": [
+        "ramanujan_E\u2082",
+        "ramanujan_E\u2084",
+        "ramanujan_E\u2086",
+        "ramanujan_E\u2082'",
+        "ramanujan_E\u2084'",
+        "ramanujan_E\u2086'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:serre-der-modularity",
+        "def:serre-der",
+        "lemma:E2-transform-general",
+        "cor:dim-mf"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 151,
+      "proof_event": 152,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} E_2' &= \\frac{E_2^2 - E_4}{12} \\\\ E_4' &= \\frac{E_2 E_4 - E_6}{3} \\\\ E_6' &= \\frac{E_2 E_6 - E_4^2}{2} \\end{align}"
+    },
+    {
+      "id": "cor:logder-disc-E2",
+      "kind": "corollary",
+      "position": 93,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 656,
+      "title": null,
+      "labels": [
+        "cor:logder-disc-E2",
+        "eqn:logder-disc-E2"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:ramanujan-formula",
+        "def:disc-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 153,
+      "proof_event": 154,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "\\begin{equation} \\Delta' = E_2 \\Delta. \\end{equation}"
+    },
+    {
+      "id": "prop:theta-der",
+      "kind": "proposition",
+      "position": 94,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 669,
+      "title": null,
+      "labels": [
+        "prop:theta-der",
+        "eqn:H2-der",
+        "eqn:H3-der",
+        "eqn:H4-der",
+        "eqn:H2-serre-der",
+        "eqn:H3-serre-der",
+        "eqn:H4-serre-der"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:serre-der",
+        "lemma:theta-transform-S-T",
+        "lemma:jacobi-identity"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 155,
+      "proof_event": 156,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} H_2' &= \\frac{1}{6} (H_{2}^{2} + 2 H_{2} H_{4} + E_2 H_2) \\\\ H_3' &= \\frac{1}{6} (H_{2}^{2} - H_{4}^{2} + E_2 H_3) \\\\ H_4' &= -\\frac{1}{6} (2H_{2} H_{4} + H_{4}^{2} - E_2 H_4) \\end{align} or equivalently, \\begin{align} \\partial_{2} H_{2} &= \\frac{1}{6} (H_{2}^{2} + 2 H_{2} H_{4}) \\\\ \\partial_{2} H_{3} &= \\frac{1}{6} (H_{2}^{2} - H_{4}^{2}) \\\\ \\partial_{2} H_{4} &= -\\frac{1}{6} (2H_{2} H_{4} + H_{4}^{2}) \\end{align}"
+    },
+    {
+      "id": "thm:serre-der-prod-rule",
+      "kind": "theorem",
+      "position": 95,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 715,
+      "title": null,
+      "labels": [
+        "thm:serre-der-prod-rule"
+      ],
+      "lean_decls": [
+        "serre_D_mul"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:serre-der"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 157,
+      "proof_event": 158,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": true,
+      "text": "The Serre derivative satisfies the following product rule: for any quasimodular forms $F$ and $G$, \\begin{equation} \\partial_{w_1 + w_2} (FG) = (\\partial_{w_1}F)G + F (\\partial_{w_2}G). \\end{equation}"
+    },
+    {
+      "id": "thm:anti-serre-der-pos",
+      "kind": "theorem",
+      "position": 96,
+      "chapter": "modular-forms",
+      "source": "subsections/modular-forms.tex",
+      "line": 733,
+      "title": null,
+      "labels": [
+        "thm:anti-serre-der-pos"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:serre-der",
+        "cor:logder-disc-E2"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 159,
+      "proof_event": 160,
+      "proof_chapter": "modular-forms",
+      "proof_leanok": false,
+      "text": "Let $F$ be a holomorphic quasimodular cusp form with real Fourier coefficients. Assume that there exists $k$ such that $(\\partial_{k}F)(it) > 0$ for all $t > 0$. If the first Fourier coefficient of $F$ is positive, then $F(it) > 0$ for all $t > 0$."
+    },
+    {
+      "id": "def:phi4-phi2-phi0",
+      "kind": "definition",
+      "position": 97,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 20,
+      "title": null,
+      "labels": [
+        "def:phi4-phi2-phi0",
+        "eqn: def phi4",
+        "eqn: def phi2",
+        "eqn: def phi0"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Ek",
+        "def:E2"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 161,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\begin{align} \\phi_{-4} &:= \\frac{E_4^2}{\\Delta} \\\\ \\phi_{-2} &:= \\frac{E_4(E_2 E_4 - E_6)}{\\Delta} \\\\ \\phi_{0} &:= \\frac{(E_2 E_4 - E_6)^2}{\\Delta} \\end{align}"
+    },
+    {
+      "id": "lemma:phi0-transform",
+      "kind": "lemma",
+      "position": 98,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 42,
+      "title": null,
+      "labels": [
+        "lemma:phi0-transform",
+        "eqn:phi0-trans-T",
+        "eqn:phi0-trans-S"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:phi4-phi2-phi0",
+        "lemma:Ek-is-modular-form",
+        "lemma:E2-transform-S",
+        "lemma:disc-cuspform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 162,
+      "proof_event": 163,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} \\phi_0(z + 1) &= \\phi_0(z) \\\\ \\phi_0\\left(-\\frac{1}{z}\\right) &= \\phi_0(z)-\\frac{12i}{\\pi}\\,\\frac{1}{z}\\,\\phi_{-2}(z)-\\frac{36}{\\pi^2}\\,\\frac{1}{z^2}\\,\\phi_{-4}(z). \\end{align}"
+    },
+    {
+      "id": "def:a-definition",
+      "kind": "definition",
+      "position": 99,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 69,
+      "title": null,
+      "labels": [
+        "def:a-definition",
+        "eqn:a-rad-definition",
+        "eqn:a-I1",
+        "eqn:a-I2",
+        "eqn:a-I3",
+        "eqn:a-I4",
+        "eqn:a-I5",
+        "eqn:a-I6"
+      ],
+      "lean_decls": [
+        "MagicFunction.a.RealIntegrals.a'",
+        "MagicFunction.a.RadialFunctions.a"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:phi4-phi2-phi0"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 164,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define $a_{\\rad} : \\R \\to \\C$ by \\begin{align} a_\\rad(r) := I_1(r) + I_2(r) + I_3(r) + I_4(r) + I_5(r) + I_6(r) \\end{align} where \\begin{align} I_1(r) &:= \\int_{-1}^{-1 + i} \\phi_0 \\left(\\frac{-1}{z+1}\\right) (z + 1)^2 e^{\\pi i r z} \\dd z \\\\ I_2(r) &:= \\int_{-1 + i}^{i} \\phi_0 \\left(\\frac{-1}{z+1}\\right) (z + 1)^2 e^{\\pi i r z} \\dd z \\\\ I_3(r) &:= \\int_{1}^{1 + i} \\phi_0 \\left(\\frac{-1}{z-1}\\right) (z - 1)^2 e^{\\pi i r z} \\dd z \\\\ I_4(r) &:= \\int_{1 + i}^{i} \\phi_0 \\left(\\frac{-1}{z-1}\\right) (z - 1)^2 e^{\\pi i r z} \\dd z \\\\ I_5(r) &:= -2 \\int_{0}^{i} \\phi_0 \\left(\\frac{-1}{z}\\right) z^2 e^{\\pi i r z} \\dd z \\\\ I_6(r) &:= 2 \\int_{i}^{i\\infty} \\phi_0(z) e^{\\pi i r z} \\dd z \\end{align} Here all the contours are chosen to be straight line segments. Now, define $a(x) := a_{\\rad}(\\|x\\|^2)$ for $x \\in \\R^8$."
+    },
+    {
+      "id": "lemma:mod-div-disc-bound",
+      "kind": "lemma",
+      "position": 100,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 96,
+      "title": null,
+      "labels": [
+        "lemma:mod-div-disc-bound"
+      ],
+      "lean_decls": [
+        "MagicFunction.PolyFourierCoeffBound.DivDiscBoundOfPolyFourierCoeff"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "def:disc-definition"
+      ],
+      "has_proof": true,
+      "statement_event": 165,
+      "proof_event": 166,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": true,
+      "text": "Let $f(z)$ be a holomorphic function with a Fourier expansion \\begin{equation} f(z) = \\sum_{n \\ge n_0} c_f(n) e^{\\pi i n z} \\end{equation} with $c_f(n_0) \\ne 0$. Assume that $c_f(n)$ has a polynomial growth, i.e. $|c_f(n)| = O(n^k)$ for some $k \\in \\N$. Then there exists a constant $C_f > 0$ such that \\begin{equation} \\left|\\frac{f(z)}{\\Delta(z)}\\right| \\le C_f e^{-\\pi (n_0 - 2) \\Im z} \\end{equation} for all $z$ with $\\Im z > 1/2$."
+    },
+    {
+      "id": "cor:phi0-bound",
+      "kind": "corollary",
+      "position": 101,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 131,
+      "title": null,
+      "labels": [
+        "cor:phi0-bound",
+        "eqn:phi0-bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:ramanujan-formula",
+        "lemma:mod-div-disc-bound",
+        "lemma:Ek-Fourier",
+        "lemma:mod_form_poly_growth"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 167,
+      "proof_event": 168,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "There exists a constant $C_0 > 0$ such that \\begin{equation} |\\phi_0(z)| \\le C_0 e^{-2 \\pi \\Im z} \\end{equation} for all $z$ with $\\Im z > 1/2$."
+    },
+    {
+      "id": "cor:phi2-bound",
+      "kind": "corollary",
+      "position": 102,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 152,
+      "title": null,
+      "labels": [
+        "cor:phi2-bound",
+        "eqn:phi2-bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:phi4-phi2-phi0",
+        "lemma:mod-div-disc-bound",
+        "lemma:Ek-Fourier"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 169,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There exists a constant $C_{-2} > 0$ such that \\begin{equation} |\\phi_{-2}(z)| \\le C_{-2} \\end{equation} for all $z$ with $\\Im z > 1/2$."
+    },
+    {
+      "id": "cor:phi4-bound",
+      "kind": "corollary",
+      "position": 103,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 160,
+      "title": null,
+      "labels": [
+        "cor:phi4-bound",
+        "eqn:phi4-bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:phi4-phi2-phi0",
+        "lemma:mod-div-disc-bound",
+        "lemma:Ek-Fourier"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 170,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There exists a constant $C_{-4} > 0$ such that \\begin{equation} |\\phi_{-4}(z)| \\le C_{-4} e^{2 \\pi \\Im z} \\end{equation} for all $z$ with $\\Im z > 1/2$."
+    },
+    {
+      "id": "lem:integral-bound",
+      "kind": "lemma",
+      "position": 104,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 175,
+      "title": null,
+      "labels": [
+        "lem:integral-bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 171,
+      "proof_event": 172,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "For all $n \\in \\N$, there exists a constant $C'$ such that for all $r \\geq 0$, \\begin{align} r^n \\cdot \\int_{1}^{\\infty} e^{-2\\pi s} \\, e^{-\\pi r /s} \\, \\dd s \\leq C' \\end{align}"
+    },
+    {
+      "id": "lem:bound-I1-I3-I5",
+      "kind": "lemma",
+      "position": 105,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 206,
+      "title": null,
+      "labels": [
+        "lem:bound-I1-I3-I5"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 173,
+      "proof_event": 174,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "There exists $C > 0$ such that for all $r \\geq 0$, \\begin{equation} |I_1(r)|, |I_3(r)|, |I_5(r)| \\leq C \\int_1^{\\infty} e^{-2\\pi s} \\, e^{-\\pi r / s} \\, \\dd s. \\end{equation}"
+    },
+    {
+      "id": "lem:bound-I2-I4-I6",
+      "kind": "lemma",
+      "position": 106,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 233,
+      "title": null,
+      "labels": [
+        "lem:bound-I2-I4-I6"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 175,
+      "proof_event": 176,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "There exist $C_1, C_2 > 0$ such that for all $r \\geq 0$, \\begin{equation} |I_2(r)|, |I_4(r)| \\leq C_1 e^{-\\pi r} \\end{equation} and \\begin{equation} |I_6(r)| \\leq C_2 \\frac{e^{-\\pi(r + 2)}}{r + 2} \\end{equation}"
+    },
+    {
+      "id": "prop:a-schwartz",
+      "kind": "proposition",
+      "position": 107,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 265,
+      "title": null,
+      "labels": [
+        "prop:a-schwartz"
+      ],
+      "lean_decls": [
+        "MagicFunction.FourierEigenfunctions.a"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:a-definition",
+        "cor:phi0-bound"
+      ],
+      "proof_uses": [
+        "lem:bound-I1-I3-I5",
+        "lem:bound-I2-I4-I6",
+        "lem:integral-bound",
+        "thm:smooth-fast-decay-schwartz"
+      ],
+      "has_proof": true,
+      "statement_event": 177,
+      "proof_event": 178,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "$a(x)$ is a Schwartz function."
+    },
+    {
+      "id": "prop:a-fourier",
+      "kind": "proposition",
+      "position": 108,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 277,
+      "title": null,
+      "labels": [
+        "prop:a-fourier"
+      ],
+      "lean_decls": [
+        "MagicFunction.a.Fourier.eig_a"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:Ek-Fourier",
+        "def:E2",
+        "def:a-definition",
+        "lemma:Gaussian-Fourier",
+        "prop:a-schwartz"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 179,
+      "proof_event": 180,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "$a(x)$ satisfies \\eqref{eqn:a-fourier}."
+    },
+    {
+      "id": "cor:phi0-near-0-infty",
+      "kind": "corollary",
+      "position": 109,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 314,
+      "title": null,
+      "labels": [
+        "cor:phi0-near-0-infty",
+        "eqn:phi0-near-0",
+        "eqn:phi0-near-infty"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "cor:phi0-bound",
+        "cor:phi2-bound",
+        "cor:phi4-bound",
+        "lemma:phi0-transform"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 181,
+      "proof_event": 182,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} \\phi_0\\left(\\frac{i}{t}\\right) &= O(e^{-2 \\pi / t}) \\quad \\text{as } t \\to 0 \\\\ \\phi_0\\left(\\frac{i}{t}\\right) &= O(t^{-2}e^{2 \\pi t}) \\quad \\text{as } t \\to \\infty. \\\\ \\end{align}"
+    },
+    {
+      "id": "prop:a-double-zeros",
+      "kind": "proposition",
+      "position": 110,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 330,
+      "title": null,
+      "labels": [
+        "prop:a-double-zeros",
+        "eqn: a double zeroes"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "cor:phi0-near-0-infty",
+        "def:a-definition",
+        "cor:disc-nonvanishing"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 183,
+      "proof_event": 184,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "For $r>\\sqrt{2}$ we can express $a(r)$ in the following form \\begin{equation} a(r)=-4\\sin(\\pi r^2/2)^2\\,\\int\\limits_{0}^{i\\infty}\\phi_0\\Big(\\frac{-1}{z}\\Big)\\,z^2\\,e^{\\pi i r^2 \\,z}\\,dz. \\end{equation}"
+    },
+    {
+      "id": "prop:a-another-integral",
+      "kind": "proposition",
+      "position": 111,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 378,
+      "title": null,
+      "labels": [
+        "prop:a-another-integral",
+        "eqn:a-another-integral"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:a-double-zeros",
+        "def:phi4-phi2-phi0",
+        "lemma:phi0-transform",
+        "def:a-definition"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 185,
+      "proof_event": 186,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "For $r\\geq0$ we have \\begin{align}a(r)=&4i\\,\\sin(\\pi r^2/2)^2\\,\\Bigg(\\frac{36}{\\pi^3\\,(r^2-2)}-\\frac{8640}{\\pi^3\\,r^4}+\\frac{18144}{\\pi^3\\,r^2}\\\\ +&\\int\\limits_0^\\infty\\,\\left(t^2\\,\\phi_0\\Big(\\frac{i}{t}\\Big)-\\frac{36}{\\pi^2}\\,e^{2\\pi t}+\\frac{8640}{\\pi}\\,t-\\frac{18144}{\\pi^2}\\right)\\,e^{-\\pi r^2 t}\\,dt \\Bigg) .\\notag\\end{align} The integral converges absolutely for all $r\\in\\R_{\\geq 0}$."
+    },
+    {
+      "id": "prop:a0",
+      "kind": "proposition",
+      "position": 112,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 400,
+      "title": null,
+      "labels": [
+        "prop:a0"
+      ],
+      "lean_decls": [
+        "MagicFunction.a.SpecialValues.a_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:a-another-integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 187,
+      "proof_event": 188,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "We have $a(0) = -\\frac{i}{8640}$."
+    },
+    {
+      "id": "def: h",
+      "kind": "definition",
+      "position": 113,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 413,
+      "title": null,
+      "labels": [
+        "def: h",
+        "eqn: h define"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 189,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "\\begin{equation} h(z) := 128 \\frac{H_3(z) + H_4(z)}{H_2(z)^2}. \\end{equation}"
+    },
+    {
+      "id": "def:psiI-psiT-psiS",
+      "kind": "definition",
+      "position": 114,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 440,
+      "title": null,
+      "labels": [
+        "def:psiI-psiT-psiS",
+        "eqn:psiI-define",
+        "eqn:psiT-define",
+        "eqn:psiS-define"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def: h"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 190,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We define the following three functions \\begin{align} \\psi_I\\,:=\\,&h-h|_{-2}ST \\\\ \\psi_T\\,:=\\,&\\psi_I|_{-2}T \\\\ \\psi_S\\,:=\\,&\\psi_I|_{-2}S. \\end{align}"
+    },
+    {
+      "id": "lemma:psi-new",
+      "kind": "lemma",
+      "position": 115,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 449,
+      "title": null,
+      "labels": [
+        "lemma:psi-new",
+        "eqn:psiI-new",
+        "eqn:psiS-new",
+        "eqn:psiT-new"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 191,
+      "proof_event": 192,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "$\\psi_I(z), \\psi_S(z), \\psi_T(z)$ can be written as \\begin{align} \\psi_I(z) &= \\frac{H_4^3 (5 H_2^2 + 5 H_2 H_4 + 2 H_4^2)}{2\\Delta}, \\\\ \\psi_S(z) &= -\\frac{H_2^3 (2 H_2^2 + 5 H_2 H_4 + 5 H_4^2)}{2 \\Delta}. \\\\ \\psi_T(z) &= \\frac{H_3^3 (5 H_2^2 - 5 H_2 H_3 + 2 H_3^2)}{2 \\Delta} \\end{align}"
+    },
+    {
+      "id": "lemma:psiI-psiT-psiS-fourier",
+      "kind": "lemma",
+      "position": 116,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 479,
+      "title": null,
+      "labels": [
+        "lemma:psiI-psiT-psiS-fourier",
+        "eqn: psi fourier I",
+        "eqn: psi fourier T"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:psi-new"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 193,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The Fourier expansions of these functions are \\begin{align} \\psi_I(z)\\,=\\,&q^{-1} + 144 + O(q^{1/2}) \\\\ \\psi_T(z)\\,=\\,&q^{-1} + 144 + O(q^{1/2}) \\end{align}"
+    },
+    {
+      "id": "def:b-definition",
+      "kind": "definition",
+      "position": 117,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 491,
+      "title": null,
+      "labels": [
+        "def:b-definition",
+        "eqn:b-definition",
+        "eqn:J1",
+        "eqn:J2",
+        "eqn:J3",
+        "eqn:J4",
+        "eqn:J5",
+        "eqn:J6"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:psiI-psiT-psiS"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 194,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define $b_\\rad : \\R \\to \\C$ by \\begin{equation} b_\\rad(r) := J_1(r) + J_2(r) + J_3(r) + J_4(r) + J_5(r) + J_6(r) \\end{equation} where for $r \\in \\R$, \\begin{align} J_1(r) &:= \\int_{-1}^{-1 + i} \\psi_T(z) e^{\\pi i r z} \\, \\dd z, \\\\ J_2(r) &:= \\int_{-1 + i}^{i} \\psi_T(z) e^{\\pi i r z} \\, \\dd z, \\\\ J_3(r) &:= \\int_{1}^{1 + i} \\psi_T(z) e^{\\pi i r z} \\, \\dd z, \\\\ J_4(r) &:= \\int_{1 + i}^{i} \\psi_T(z) e^{\\pi i r z} \\, \\dd z, \\\\ J_5(r) &:= -2 \\int_{0}^{i} \\psi_I(z) e^{\\pi i r z} \\, \\dd z, \\\\ J_6(r) &:= -2 \\int_{i}^{i \\infty} \\psi_S(z) e^{\\pi i r z} \\, \\dd z. \\end{align} Here all the contours are straight line segments. Then we define $b : \\R^8 \\to \\C$ by $b(x) := b_\\rad(\\|x\\|^2)$."
+    },
+    {
+      "id": "lemma:psi-bound",
+      "kind": "lemma",
+      "position": 118,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 532,
+      "title": null,
+      "labels": [
+        "lemma:psi-bound",
+        "eqn:psiI-bound",
+        "eqn:psiT-bound",
+        "eqn:psiS-bound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 195,
+      "proof_event": 196,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "There exist constants $C_I, C_S, C_T > 0$ such that \\begin{align} |\\psi_I(z)| &\\le C_I e^{2\\pi \\Im z}, \\\\ |\\psi_T(z)| &\\le C_T e^{2\\pi \\Im z}, \\\\ |\\psi_S(z)| &\\le C_S e^{- \\pi \\Im z} \\end{align}"
+    },
+    {
+      "id": "lemma:bound-J1-J3-J5",
+      "kind": "lemma",
+      "position": 119,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 544,
+      "title": null,
+      "labels": [
+        "lemma:bound-J1-J3-J5"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 197,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There exist a constant $C > 0$ such that \\begin{align} |J_1(r)|, |J_3(r)|, |J_5(r)| &\\le C \\int_1^{\\infty} e^{-\\pi s} e^{\\pi r / s}\\, \\dd s. \\end{align}"
+    },
+    {
+      "id": "lemma:bound-J2-J4-J6",
+      "kind": "lemma",
+      "position": 120,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 551,
+      "title": null,
+      "labels": [
+        "lemma:bound-J2-J4-J6"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 198,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "There exist $C_1, C_2 > 0$ such that \\begin{align} |J_2(r)|, |J_4(r)| &\\le C_1 e^{-\\pi r} \\\\ |J_6(r)| &\\le C_2 \\frac{e^{\\pi (r + 1)}}{r + 1} \\end{align}"
+    },
+    {
+      "id": "prop:b-schwartz",
+      "kind": "proposition",
+      "position": 121,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 577,
+      "title": null,
+      "labels": [
+        "prop:b-schwartz"
+      ],
+      "lean_decls": [
+        "MagicFunction.FourierEigenfunctions.b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:psi-bound"
+      ],
+      "proof_uses": [
+        "lemma:bound-J1-J3-J5",
+        "lemma:bound-J2-J4-J6",
+        "thm:smooth-fast-decay-schwartz"
+      ],
+      "has_proof": true,
+      "statement_event": 199,
+      "proof_event": 200,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "$b(x)$ is a Schwartz function."
+    },
+    {
+      "id": "prop:b-fourier",
+      "kind": "proposition",
+      "position": 122,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 587,
+      "title": null,
+      "labels": [
+        "prop:b-fourier"
+      ],
+      "lean_decls": [
+        "MagicFunction.b.Fourier.eig_b"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:b-definition",
+        "lemma:Gaussian-Fourier",
+        "def:psiI-psiT-psiS",
+        "prop:b-schwartz"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 201,
+      "proof_event": 202,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "$b(x)$ satisfies \\eqref{eqn:b-fourier}."
+    },
+    {
+      "id": "cor:psiI-near-0-infty",
+      "kind": "corollary",
+      "position": 123,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 639,
+      "title": null,
+      "labels": [
+        "cor:psiI-near-0-infty",
+        "eqn:psiI-near-0",
+        "eqn:psiI-near-infty"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:psi-bound",
+        "def:psiI-psiT-psiS"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 203,
+      "proof_event": 204,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} \\psi_I(it) &= O(t^2 e^{\\pi/t}) \\quad \\text{as } t \\to 0 \\\\ \\psi_I(it) &= O(e^{2 \\pi t}) \\quad \\text{as } t \\to \\infty. \\end{align}"
+    },
+    {
+      "id": "prop:b-double-zeros",
+      "kind": "proposition",
+      "position": 124,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 655,
+      "title": null,
+      "labels": [
+        "prop:b-double-zeros",
+        "eqn: b double zeroes"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:psiI-psiT-psiS-fourier",
+        "def:psiI-psiT-psiS",
+        "cor:psiI-near-0-infty",
+        "cor:disc-nonvanishing"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 205,
+      "proof_event": 206,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "For $r>\\sqrt{2}$ function $b(r)$ can be expressed as \\begin{equation} b(r)=-4\\sin(\\pi r^2/2)^2\\,\\int\\limits_{0}^{i\\infty}\\psi_I(z)\\,e^{\\pi i r^2 \\,z}\\,dz. \\end{equation}"
+    },
+    {
+      "id": "prop:b-another-integral",
+      "kind": "proposition",
+      "position": 125,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 699,
+      "title": null,
+      "labels": [
+        "prop:b-another-integral",
+        "eqn:b-another-integral"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:b-double-zeros",
+        "lemma:psiI-psiT-psiS-fourier",
+        "def:b-definition",
+        "eqn: psi asymptotic"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 207,
+      "proof_event": 208,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "For $r\\geq0$ we have \\begin{equation}b(r)=4i\\,\\sin(\\pi r^2/2)^2\\,\\left(\\frac{144}{\\pi\\,r^2}+\\frac{1}{\\pi\\,(r^2-2)}+\\int\\limits_0^\\infty\\,\\left(\\psi_I(it)-144-e^{2\\pi t}\\right)\\,e^{-\\pi r^2 t}\\,dt\\right).\\end{equation} The integral converges absolutely for all $r\\in\\R_{\\geq 0}$."
+    },
+    {
+      "id": "prop:b0",
+      "kind": "proposition",
+      "position": 126,
+      "chapter": "construct-a-b",
+      "source": "subsections/construct-a-b.tex",
+      "line": 723,
+      "title": null,
+      "labels": [
+        "prop:b0"
+      ],
+      "lean_decls": [
+        "MagicFunction.b.SpecialValues.b_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:b-another-integral"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 209,
+      "proof_event": 210,
+      "proof_chapter": "construct-a-b",
+      "proof_leanok": false,
+      "text": "We have $b(0) = 0$."
+    },
+    {
+      "id": "prop:ineqA",
+      "kind": "proposition",
+      "position": 127,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "prop:ineqA",
+        "eqn:defA",
+        "eqn:ineqA"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:ineqABnew-equiv",
+        "lemma:F-G-phi-psi-identities",
+        "lemma:F-G-pos",
+        "cor:ineqAnew"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 211,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Consider the function $A:(0,\\infty)\\to\\C$ defined as \\begin{equation} A(t):=-t^2\\phi_0(i/t)-\\frac{36}{\\pi^2}\\,\\psi_I(it). \\end{equation} Then \\begin{equation} A(t) < 0 \\end{equation} for all $t > 0$."
+    },
+    {
+      "id": "prop:ineqB",
+      "kind": "proposition",
+      "position": 128,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "prop:ineqB",
+        "eqn:defB",
+        "eqn:ineqB"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:ineqABnew-equiv",
+        "lemma:F-G-phi-psi-identities",
+        "cor:ineqBnew"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 212,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Consider the function $B:(0,\\infty)\\to\\C$ defined as \\begin{equation} B(t) := -t^2\\phi_0(i/t)+\\frac{36}{\\pi^2}\\,\\psi_I(it) \\end{equation} Then \\begin{equation} B(t) > 0 \\end{equation} for all $t > 0$."
+    },
+    {
+      "id": "def:FG-definition",
+      "kind": "definition",
+      "position": 129,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 30,
+      "title": null,
+      "labels": [
+        "def:FG-definition",
+        "eqn:defF",
+        "eqn:defG"
+      ],
+      "lean_decls": [
+        "F",
+        "G"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:E2",
+        "def:Ek",
+        "def:H2-H3-H4"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 213,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define two (quasi) modular forms as \\begin{align} F(z) &= (E_2(z) E_4(z) - E_6(z))^2 \\\\ G(z) &= H_2(z)^{3} (2 H_{2}(z)^{2} + 5 H_{2}(z) H_{4}(z) + 5 H_{4}(z)^{2}). \\end{align}"
+    },
+    {
+      "id": "lemma:F-G-phi-psi-identities",
+      "kind": "lemma",
+      "position": 130,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 38,
+      "title": null,
+      "labels": [
+        "lemma:F-G-phi-psi-identities",
+        "eqn:phi0-F",
+        "eqn:psiS-G"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:FG-definition",
+        "lemma:psi-new"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 214,
+      "proof_event": 215,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "We have \\begin{align} \\phi_0 &= \\frac{F}{\\Delta} \\\\ \\psi_S &= -\\frac{1}{2} \\frac{G}{\\Delta} \\end{align}"
+    },
+    {
+      "id": "lemma:ineqABnew-equiv",
+      "kind": "lemma",
+      "position": 131,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 50,
+      "title": null,
+      "labels": [
+        "lemma:ineqABnew-equiv",
+        "eqn:ineqAnew",
+        "eqn:ineqBnew"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:F-G-phi-psi-identities",
+        "def:psiI-psiT-psiS",
+        "cor:disc-pos"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 216,
+      "proof_event": 217,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "Inequality \\eqref{eqn:ineqA} and \\eqref{eqn:ineqB} are equivalent to \\begin{align} F(it) + \\frac{18}{\\pi^2} G(it) > 0 \\\\ F(it) - \\frac{18}{\\pi^2} G(it) > 0 \\end{align} respectively."
+    },
+    {
+      "id": "lemma:F-G-pos",
+      "kind": "lemma",
+      "position": 132,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 74,
+      "title": null,
+      "labels": [
+        "lemma:F-G-pos"
+      ],
+      "lean_decls": [
+        "F_imag_axis_pos",
+        "G_imag_axis_pos"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:ramanujan-formula",
+        "cor:theta-pos"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 218,
+      "proof_event": 219,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": true,
+      "text": "For all $t > 0$, we have $F(it) > 0$ and $G(it) > 0$."
+    },
+    {
+      "id": "cor:ineqAnew",
+      "kind": "corollary",
+      "position": 133,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 85,
+      "title": null,
+      "labels": [
+        "cor:ineqAnew"
+      ],
+      "lean_decls": [
+        "FG_inequality_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:F-G-pos"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 220,
+      "proof_event": 221,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "\\eqref{eqn:ineqAnew} holds."
+    },
+    {
+      "id": "lemma:FG-de",
+      "kind": "lemma",
+      "position": 134,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 93,
+      "title": null,
+      "labels": [
+        "lemma:FG-de",
+        "eqn:ddf",
+        "eqn:ddg"
+      ],
+      "lean_decls": [
+        "MLDE_F",
+        "MLDE_G"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:ramanujan-formula",
+        "thm:serre-der-prod-rule",
+        "prop:theta-der",
+        "lemma:lv1-lv2-identities"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 222,
+      "proof_event": 223,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "$F$ and $G$ satisfy the following differential equations: \\begin{align} \\partial_{12}\\partial_{10} F - \\frac{5}{6} E_{4} F &= 7200 \\Delta (-E_{2}') \\\\ \\partial_{12}\\partial_{10} G - \\frac{5}{6} E_{4} G &= -640 \\Delta H_{2} \\end{align}"
+    },
+    {
+      "id": "cor:MLDE-pos",
+      "kind": "corollary",
+      "position": 135,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 130,
+      "title": null,
+      "labels": [
+        "cor:MLDE-pos"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:FG-de",
+        "cor:disc-pos",
+        "cor:theta-pos",
+        "def:E2"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 224,
+      "proof_event": 225,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "\\eqref{eqn:ddf} (resp. \\eqref{eqn:ddg}) is positive (resp. negative) on the (positive) imaginary axis."
+    },
+    {
+      "id": "lemma:Qlim",
+      "kind": "lemma",
+      "position": 136,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 155,
+      "title": null,
+      "labels": [
+        "lemma:Qlim"
+      ],
+      "lean_decls": [
+        "FmodG_rightLimitAt_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:E2-transform-S",
+        "lemma:Ek-is-modular-form",
+        "lemma:theta-transform-S-T"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 226,
+      "proof_event": 227,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "We have \\begin{equation} \\lim_{t \\to 0^+} Q(t) = \\frac{18}{\\pi^2}. \\end{equation}"
+    },
+    {
+      "id": "lemma:log-der-inf",
+      "kind": "lemma",
+      "position": 137,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 181,
+      "title": null,
+      "labels": [
+        "lemma:log-der-inf"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:der-q-series"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 228,
+      "proof_event": 229,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "Let $F$ be a quasimodular form where the vanishing order of $F$ at infinity is $n_0 > 0$, i.e. $F(z) = \\sum_{n \\geq n_0} a_n q^{n}$ with $a_{n_0} \\ne 0$. Then \\begin{equation} \\lim_{t \\to \\infty} \\frac{F'(it)}{F(it)} = n_0. \\end{equation}"
+    },
+    {
+      "id": "prop:Qdec",
+      "kind": "proposition",
+      "position": 138,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 194,
+      "title": null,
+      "labels": [
+        "prop:Qdec"
+      ],
+      "lean_decls": [
+        "FmodG_strictAntiOn"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "thm:ramanujan-formula",
+        "thm:serre-der-prod-rule",
+        "cor:MLDE-pos",
+        "thm:anti-serre-der-pos",
+        "lemma:log-der-inf"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 230,
+      "proof_event": 231,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "The function $t \\mapsto Q(t)$ is strictly decreasing."
+    },
+    {
+      "id": "cor:ineqBnew",
+      "kind": "corollary",
+      "position": 139,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 223,
+      "title": null,
+      "labels": [
+        "cor:ineqBnew"
+      ],
+      "lean_decls": [
+        "FG_inequality_2"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:Qlim",
+        "prop:Qdec",
+        "lemma:F-G-pos"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 232,
+      "proof_event": 233,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "\\eqref{eqn:ineqBnew} holds."
+    },
+    {
+      "id": "thm:g1",
+      "kind": "theorem",
+      "position": 140,
+      "chapter": "modform-ineq",
+      "source": "subsections/modform-ineq.tex",
+      "line": 235,
+      "title": null,
+      "labels": [
+        "thm:g1"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "prop:a-fourier",
+        "prop:b-fourier",
+        "prop:a-double-zeros",
+        "prop:b-double-zeros",
+        "prop:ineqA",
+        "prop:ineqB",
+        "prop:a0",
+        "prop:b0"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 234,
+      "proof_event": 235,
+      "proof_chapter": "modform-ineq",
+      "proof_leanok": false,
+      "text": "The function $$g(x):=\\frac{\\pi\\,i}{8640}a(x)+\\frac{i}{240\\pi}\\,b(x)$$ satisfies conditions \\eqref{eqn:g1}--\\eqref{eqn:g3}."
+    }
+  ],
+  "edges": [
+    {
+      "source": "SpherePacking",
+      "target": "SpherePacking.finiteDensity",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.balls",
+      "target": "SpherePacking.finiteDensity",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking",
+      "target": "SpherePacking.density",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.finiteDensity",
+      "target": "SpherePacking.density",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.balls",
+      "target": "SpherePackingConstant",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "SpherePackingConstant",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking",
+      "target": "SpherePacking.scale",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.finiteDensity",
+      "target": "SpherePacking.scale_finiteDensity",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.scale",
+      "target": "SpherePacking.scale_finiteDensity",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.scale",
+      "target": "SpherePacking.scale_density",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.scale_finiteDensity",
+      "target": "SpherePacking.scale_density",
+      "kind": "proof"
+    },
+    {
+      "source": "SpherePackingConstant",
+      "target": "SpherePacking.constant_eq_constant_normalized",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "SpherePacking.constant_eq_constant_normalized",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.scale_density",
+      "target": "SpherePacking.constant_eq_constant_normalized",
+      "kind": "proof"
+    },
+    {
+      "source": "SpherePacking",
+      "target": "PeriodicSpherePacking",
+      "kind": "statement"
+    },
+    {
+      "source": "IsZLattice",
+      "target": "PeriodicSpherePacking",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "def:Periodic-sphere-packing-constant",
+      "kind": "statement"
+    },
+    {
+      "source": "PeriodicSpherePacking",
+      "target": "def:Periodic-sphere-packing-constant",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "thm:periodic-packing-optimal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Periodic-sphere-packing-constant",
+      "target": "thm:periodic-packing-optimal",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-Lattice",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePackingConstant",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "E8Packing-density",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:g",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:Cohn-Elkies-general",
+      "target": "theorem:CE_Main",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:periodic-packing-optimal",
+      "target": "corollary:upper-bound-E8",
+      "kind": "statement"
+    },
+    {
+      "source": "theorem:CE_Main",
+      "target": "corollary:upper-bound-E8",
+      "kind": "statement"
+    },
+    {
+      "source": "corollary:upper-bound-E8",
+      "target": "MainTheorem",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.finiteDensity",
+      "target": "lemma:sp-finite-density-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking",
+      "target": "lemma:sp-finite-density-bound",
+      "kind": "proof"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "theorem:psp-density",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:sp-finite-density-bound",
+      "target": "theorem:psp-density",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:lattice-points-bound",
+      "target": "theorem:psp-density",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:periodic-points-bounds",
+      "target": "theorem:psp-density",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:volume-ball-ratio-limit",
+      "target": "theorem:psp-density",
+      "kind": "proof"
+    },
+    {
+      "source": "E8-Set",
+      "target": "E8-defs-equivalent",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-Matrix",
+      "target": "E8-defs-equivalent",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-Matrix",
+      "target": "E8-is-basis",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-Set",
+      "target": "E8-Lattice",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-defs-equivalent",
+      "target": "E8-Lattice",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-defs-equivalent",
+      "target": "E8-vector-norms",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-vector-norms",
+      "target": "instDiscreteE8Lattice",
+      "kind": "statement"
+    },
+    {
+      "source": "instDiscreteE8Lattice",
+      "target": "instLatticeE8",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-is-basis",
+      "target": "instLatticeE8",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-Lattice",
+      "target": "E8Packing",
+      "kind": "statement"
+    },
+    {
+      "source": "E8-vector-norms",
+      "target": "E8Packing",
+      "kind": "statement"
+    },
+    {
+      "source": "E8Packing",
+      "target": "E8Packing-covol",
+      "kind": "statement"
+    },
+    {
+      "source": "theorem:psp-density",
+      "target": "E8Packing-density",
+      "kind": "statement"
+    },
+    {
+      "source": "E8Packing-covol",
+      "target": "E8Packing-density",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Fourier-Transform",
+      "target": "lemma:Gaussian-Fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Fourier-Transform",
+      "target": "lemma:Fourier-transform-is-automorphism",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Schwartz-Space",
+      "target": "lemma:Fourier-transform-is-automorphism",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Schwartz-Space",
+      "target": "lemma:Schwartz-summable",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Fourier-Transform",
+      "target": "thm:Poisson-summation-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Schwartz-Space",
+      "target": "thm:Poisson-summation-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Schwartz-summable",
+      "target": "thm:Poisson-summation-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:inv-power-summable",
+      "target": "thm:Poisson-summation-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "def:dual-lattice",
+      "target": "thm:Poisson-summation-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Fourier-Transform",
+      "target": "thm:Cohn-Elkies-periodic",
+      "kind": "statement"
+    },
+    {
+      "source": "SpherePacking.density",
+      "target": "thm:Cohn-Elkies-periodic",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:Poisson-summation-formula",
+      "target": "thm:Cohn-Elkies-periodic",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:Cohn-Elkies-periodic",
+      "target": "thm:Cohn-Elkies-general",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:periodic-packing-optimal",
+      "target": "thm:Cohn-Elkies-general",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:g1",
+      "target": "thm:g",
+      "kind": "statement"
+    },
+    {
+      "source": "def:level-N-princ-cong-subgp",
+      "target": "def:congruence-subgroup",
+      "kind": "statement"
+    },
+    {
+      "source": "def:level-N-princ-cong-subgp",
+      "target": "def:Gamma-generators",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Gamma-generators",
+      "target": "lemma:Gamma-1-generators",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Gamma-generators",
+      "target": "lemma:Gamma-2-generators",
+      "kind": "statement"
+    },
+    {
+      "source": "def:automorphy-factor",
+      "target": "lemma:automorphy-factor-chain-rule",
+      "kind": "statement"
+    },
+    {
+      "source": "def:automorphy-factor",
+      "target": "def:slash-operator",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Gamma-1-Action",
+      "target": "def:slash-operator",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:automorphy-factor-chain-rule",
+      "target": "lemma:slash-operator-chain-rule",
+      "kind": "statement"
+    },
+    {
+      "source": "def:slash-operator",
+      "target": "lemma:slash-negI-even-weight",
+      "kind": "statement"
+    },
+    {
+      "source": "def:congruence-subgroup",
+      "target": "def:Mk",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "lemma:Ek-is-modular-form",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Ek",
+      "target": "lemma:Ek-is-modular-form",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Ek",
+      "target": "lemma:Ek-Fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:dedekind_eta",
+      "target": "def:disc-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "lemma:E2-transform-S",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:E2-transform-S",
+      "target": "lemma:E2-transform-general",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "lemma:E2-transform-general",
+      "kind": "statement"
+    },
+    {
+      "source": "def:dedekind_eta",
+      "target": "lemma:dedekind_eta_transformation",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "lemma:disc-cuspform",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:dedekind_eta_transformation",
+      "target": "lemma:disc-cuspform",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "lemma:disc-E4E6",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "cor:disc-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "cor:disc-nonvanishing",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "thm:nonpos_wt",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "thm:lvl1_dims",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc-E4E6",
+      "target": "thm:lvl1_dims",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "thm:lvl1_dims",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "thm:dim-mf-general-level",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:lvl1_dims",
+      "target": "thm:dim-mf-general-level",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "cor:dim-mf",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:lvl1_dims",
+      "target": "cor:dim-mf",
+      "kind": "statement"
+    },
+    {
+      "source": "def:th00-th01-th10",
+      "target": "def:H2-H3-H4",
+      "kind": "statement"
+    },
+    {
+      "source": "def:th00-th01-th10",
+      "target": "lemma:theta-transform-S-T",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "lemma:theta-transform-S-T",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:slash-operator-chain-rule",
+      "target": "lemma:theta-slash-invariant",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:slash-negI-even-weight",
+      "target": "lemma:theta-slash-invariant",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-transform-S-T",
+      "target": "lemma:theta-slash-invariant",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Gamma-2-generators",
+      "target": "lemma:theta-slash-invariant",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-slash-invariant",
+      "target": "lemma:theta-bounded-im-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Gamma-1-generators",
+      "target": "lemma:theta-bounded-im-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-slash-invariant",
+      "target": "lemma:theta-modular",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-bounded-im-infty",
+      "target": "lemma:theta-modular",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "prop:H2-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "prop:H3-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "prop:H4-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-modular",
+      "target": "lemma:jacobi-identity",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:dim-mf",
+      "target": "lemma:jacobi-identity",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-transform-S-T",
+      "target": "lemma:lv1-lv2-identities",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-modular",
+      "target": "lemma:lv1-lv2-identities",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc-cuspform",
+      "target": "lemma:lv1-lv2-identities",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-transform-S-T",
+      "target": "cor:theta-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "def:derivative",
+      "target": "lemma:der-q-series",
+      "kind": "statement"
+    },
+    {
+      "source": "def:derivative",
+      "target": "def:serre-der",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "def:serre-der",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "thm:serre-der-equiv-action",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "thm:serre-der-equiv-action",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:E2-transform-general",
+      "target": "thm:serre-der-equiv-action",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "thm:serre-der-modularity",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Mk",
+      "target": "thm:serre-der-modularity",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:serre-der-equiv-action",
+      "target": "thm:serre-der-modularity",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:serre-der-modularity",
+      "target": "thm:ramanujan-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "thm:ramanujan-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:E2-transform-general",
+      "target": "thm:ramanujan-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:dim-mf",
+      "target": "thm:ramanujan-formula",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:ramanujan-formula",
+      "target": "cor:logder-disc-E2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "cor:logder-disc-E2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "prop:theta-der",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-transform-S-T",
+      "target": "prop:theta-der",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:jacobi-identity",
+      "target": "prop:theta-der",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "thm:serre-der-prod-rule",
+      "kind": "statement"
+    },
+    {
+      "source": "def:serre-der",
+      "target": "thm:anti-serre-der-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:logder-disc-E2",
+      "target": "thm:anti-serre-der-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Ek",
+      "target": "def:phi4-phi2-phi0",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "def:phi4-phi2-phi0",
+      "kind": "statement"
+    },
+    {
+      "source": "def:phi4-phi2-phi0",
+      "target": "lemma:phi0-transform",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Ek-is-modular-form",
+      "target": "lemma:phi0-transform",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:E2-transform-S",
+      "target": "lemma:phi0-transform",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc-cuspform",
+      "target": "lemma:phi0-transform",
+      "kind": "statement"
+    },
+    {
+      "source": "def:phi4-phi2-phi0",
+      "target": "def:a-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "def:disc-definition",
+      "target": "lemma:mod-div-disc-bound",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:ramanujan-formula",
+      "target": "cor:phi0-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:mod-div-disc-bound",
+      "target": "cor:phi0-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Ek-Fourier",
+      "target": "cor:phi0-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:mod_form_poly_growth",
+      "target": "cor:phi0-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:phi4-phi2-phi0",
+      "target": "cor:phi2-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:mod-div-disc-bound",
+      "target": "cor:phi2-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Ek-Fourier",
+      "target": "cor:phi2-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:phi4-phi2-phi0",
+      "target": "cor:phi4-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:mod-div-disc-bound",
+      "target": "cor:phi4-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Ek-Fourier",
+      "target": "cor:phi4-bound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:a-definition",
+      "target": "prop:a-schwartz",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:phi0-bound",
+      "target": "prop:a-schwartz",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:bound-I1-I3-I5",
+      "target": "prop:a-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:bound-I2-I4-I6",
+      "target": "prop:a-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:integral-bound",
+      "target": "prop:a-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:smooth-fast-decay-schwartz",
+      "target": "prop:a-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:Ek-Fourier",
+      "target": "prop:a-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "prop:a-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:a-definition",
+      "target": "prop:a-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Gaussian-Fourier",
+      "target": "prop:a-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a-schwartz",
+      "target": "prop:a-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:phi0-bound",
+      "target": "cor:phi0-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:phi2-bound",
+      "target": "cor:phi0-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:phi4-bound",
+      "target": "cor:phi0-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:phi0-transform",
+      "target": "cor:phi0-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:phi0-near-0-infty",
+      "target": "prop:a-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "def:a-definition",
+      "target": "prop:a-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:disc-nonvanishing",
+      "target": "prop:a-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a-double-zeros",
+      "target": "prop:a-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "def:phi4-phi2-phi0",
+      "target": "prop:a-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:phi0-transform",
+      "target": "prop:a-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "def:a-definition",
+      "target": "prop:a-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a-another-integral",
+      "target": "prop:a0",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "def: h",
+      "kind": "statement"
+    },
+    {
+      "source": "def: h",
+      "target": "def:psiI-psiT-psiS",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psi-new",
+      "target": "lemma:psiI-psiT-psiS-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:psiI-psiT-psiS",
+      "target": "def:b-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psi-bound",
+      "target": "prop:b-schwartz",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:bound-J1-J3-J5",
+      "target": "prop:b-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:bound-J2-J4-J6",
+      "target": "prop:b-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:smooth-fast-decay-schwartz",
+      "target": "prop:b-schwartz",
+      "kind": "proof"
+    },
+    {
+      "source": "def:b-definition",
+      "target": "prop:b-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Gaussian-Fourier",
+      "target": "prop:b-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "def:psiI-psiT-psiS",
+      "target": "prop:b-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b-schwartz",
+      "target": "prop:b-fourier",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psi-bound",
+      "target": "cor:psiI-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "def:psiI-psiT-psiS",
+      "target": "cor:psiI-near-0-infty",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psiI-psiT-psiS-fourier",
+      "target": "prop:b-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "def:psiI-psiT-psiS",
+      "target": "prop:b-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:psiI-near-0-infty",
+      "target": "prop:b-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:disc-nonvanishing",
+      "target": "prop:b-double-zeros",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b-double-zeros",
+      "target": "prop:b-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psiI-psiT-psiS-fourier",
+      "target": "prop:b-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "def:b-definition",
+      "target": "prop:b-another-integral",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b-another-integral",
+      "target": "prop:b0",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:ineqABnew-equiv",
+      "target": "prop:ineqA",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-phi-psi-identities",
+      "target": "prop:ineqA",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-pos",
+      "target": "prop:ineqA",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:ineqAnew",
+      "target": "prop:ineqA",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:ineqABnew-equiv",
+      "target": "prop:ineqB",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-phi-psi-identities",
+      "target": "prop:ineqB",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:ineqBnew",
+      "target": "prop:ineqB",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "def:FG-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Ek",
+      "target": "def:FG-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "def:H2-H3-H4",
+      "target": "def:FG-definition",
+      "kind": "statement"
+    },
+    {
+      "source": "def:FG-definition",
+      "target": "lemma:F-G-phi-psi-identities",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:psi-new",
+      "target": "lemma:F-G-phi-psi-identities",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-phi-psi-identities",
+      "target": "lemma:ineqABnew-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "def:psiI-psiT-psiS",
+      "target": "lemma:ineqABnew-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:disc-pos",
+      "target": "lemma:ineqABnew-equiv",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:ramanujan-formula",
+      "target": "lemma:F-G-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:theta-pos",
+      "target": "lemma:F-G-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-pos",
+      "target": "cor:ineqAnew",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:ramanujan-formula",
+      "target": "lemma:FG-de",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:serre-der-prod-rule",
+      "target": "lemma:FG-de",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:theta-der",
+      "target": "lemma:FG-de",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:lv1-lv2-identities",
+      "target": "lemma:FG-de",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:FG-de",
+      "target": "cor:MLDE-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:disc-pos",
+      "target": "cor:MLDE-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:theta-pos",
+      "target": "cor:MLDE-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "def:E2",
+      "target": "cor:MLDE-pos",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:E2-transform-S",
+      "target": "lemma:Qlim",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Ek-is-modular-form",
+      "target": "lemma:Qlim",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:theta-transform-S-T",
+      "target": "lemma:Qlim",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:der-q-series",
+      "target": "lemma:log-der-inf",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:ramanujan-formula",
+      "target": "prop:Qdec",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:serre-der-prod-rule",
+      "target": "prop:Qdec",
+      "kind": "statement"
+    },
+    {
+      "source": "cor:MLDE-pos",
+      "target": "prop:Qdec",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:anti-serre-der-pos",
+      "target": "prop:Qdec",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:log-der-inf",
+      "target": "prop:Qdec",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:Qlim",
+      "target": "cor:ineqBnew",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:Qdec",
+      "target": "cor:ineqBnew",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:F-G-pos",
+      "target": "cor:ineqBnew",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a-fourier",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b-fourier",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a-double-zeros",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b-double-zeros",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:ineqA",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:ineqB",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:a0",
+      "target": "thm:g1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:b0",
+      "target": "thm:g1",
+      "kind": "statement"
+    }
+  ],
+  "unresolved": [
+    [
+      "prop:b-another-integral",
+      "eqn: psi asymptotic",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": []
+}

@@ -1,0 +1,2310 @@
+{
+  "nodes": [
+    {
+      "id": "def:Nlambda",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 25,
+      "title": null,
+      "labels": [
+        "def:Nlambda"
+      ],
+      "lean_decls": [
+        "countTriples"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "{} For $\\lambda>0$ define $N_\\lambda(X)$ as the number of triples $(a,b,c)\\in \\N^3$ with $a+b=c$, $\\gcd(a,b,c)=1$ and $\\rad(abc) < c^{\\lambda}$."
+    },
+    {
+      "id": "lem:deBruijnRadical",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 36,
+      "title": null,
+      "labels": [
+        "lem:deBruijnRadical",
+        "eq:bruijn"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 1,
+      "proof_event": 2,
+      "proof_chapter": "introduction",
+      "proof_leanok": false,
+      "text": "For any $\\ve>0$, we have \\begin{equation} \\#\\left\\{n\\leq x : \\rad(n)\\leq x^\\lambda\\right\\} \\ll_\\ve x^{\\lambda+\\ve}. \\end{equation}"
+    },
+    {
+      "id": "prop:ABCTrivialBound",
+      "kind": "proposition",
+      "position": 2,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 75,
+      "title": null,
+      "labels": [
+        "prop:ABCTrivialBound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Nlambda"
+      ],
+      "proof_uses": [
+        "lem:deBruijnRadical"
+      ],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "introduction",
+      "proof_leanok": false,
+      "text": "Let $\\lambda>0$. Then $N_\\lambda(X)=O_\\ve( X^{2\\lambda/3+\\ve})$, for any $\\ve>0$."
+    },
+    {
+      "id": "thm:ABCExceptionalBound",
+      "kind": "theorem",
+      "position": 3,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 93,
+      "title": null,
+      "labels": [
+        "thm:ABCExceptionalBound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Nlambda"
+      ],
+      "proof_uses": [
+        "thm:BdExceptionalBound",
+        "lem:NlambdatoSstar"
+      ],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 14,
+      "proof_chapter": "reduction-to-diophantine-equations",
+      "proof_leanok": false,
+      "text": "Let $\\lambda\\in (0, 1.001)$ be fixed. Then $N_\\lambda(X)=O( X^{33/50})$."
+    },
+    {
+      "id": "def:Sabc",
+      "kind": "definition",
+      "position": 4,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 111,
+      "title": null,
+      "labels": [
+        "def:Sabc"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 6,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For $\\alpha,\\beta,\\gamma>0$, define $S_{\\alpha,\\beta,\\gamma}(X)$ as the number of $(a,b,c)\\in \\N^3$ with $\\gcd(a,b,c)=1$ such that \\[ a,b,c\\in [1,X], \\quad a+b=c, \\quad \\rad(a)\\leq X^\\alpha, \\quad \\rad(b)\\leq X^\\beta, \\quad \\rad(c)\\leq X^\\gamma. \\]"
+    },
+    {
+      "id": "lem:TrivialBdforS",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "introduction",
+      "source": "content.tex",
+      "line": 125,
+      "title": null,
+      "labels": [
+        "lem:TrivialBdforS",
+        "eq:trivial"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:deBruijnRadical"
+      ],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "introduction",
+      "proof_leanok": false,
+      "text": "\\begin{equation} S_{\\alpha,\\beta,\\gamma}(X)\\ll_\\ve X^{\\min\\{\\alpha+\\beta , \\alpha+\\gamma , \\beta+\\gamma\\}+\\ve}, \\end{equation} for any $\\ve>0$."
+    },
+    {
+      "id": "def:Sstar",
+      "kind": "definition",
+      "position": 6,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 183,
+      "title": null,
+      "labels": [
+        "def:Sstar"
+      ],
+      "lean_decls": [
+        "refinedCountTriplesStar"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 9,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $S^*_{\\alpha,\\beta,\\gamma}(X)$ to be the number of $(a,b,c)\\in \\mathbb{N}^3$ with $\\gcd(a,b,c)=1$ and \\begin{align*} c\\in [X/2,X],\\quad a+b=c,\\quad \\rad(a)\\sim X^{\\alpha},\\quad \\rad(b)\\sim X^{\\beta},\\quad \\rad(c)\\sim X^{\\gamma}. \\end{align*}"
+    },
+    {
+      "id": "lem:NlambdatoSstar",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 195,
+      "title": null,
+      "labels": [
+        "lem:NlambdatoSstar",
+        "eq:step1"
+      ],
+      "lean_decls": [
+        "countTriples_isBigO_dyadicSup",
+        "countTriples_le_log_pow_mul_sup"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Nlambda",
+        "def:Sstar"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 10,
+      "proof_event": 11,
+      "proof_chapter": "reduction-to-diophantine-equations",
+      "proof_leanok": true,
+      "text": "We have \\begin{equation} N_\\lambda(X)\\ll (\\log X)^4 \\max_{\\substack{ \\alpha,\\beta,\\gamma>0\\\\ \\alpha+\\beta+\\gamma\\leq \\lambda}} S^*_{\\alpha,\\beta,\\gamma}(X). \\end{equation}"
+    },
+    {
+      "id": "thm:BdExceptionalBound",
+      "kind": "theorem",
+      "position": 8,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 225,
+      "title": null,
+      "labels": [
+        "thm:BdExceptionalBound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:BdDiophantineCount"
+      ],
+      "proof_uses": [
+        "thm:ABCExponentNu",
+        "thm:ABCExponentNu",
+        "prop:DiophantineReduction",
+        "def:BdDiophantineCount"
+      ],
+      "has_proof": true,
+      "statement_event": 12,
+      "proof_event": 13,
+      "proof_chapter": "reduction-to-diophantine-equations",
+      "proof_leanok": false,
+      "text": "There exists $\\eps>0$ such that for all $\\mathbf{c}\\in \\mathbb{Z}^3$ and $\\mathbf{X},\\mathbf{Y},\\mathbf{Z}\\in \\mathbb{R}_{>0}^{d}$. we have \\begin{align} B_d({\\bf c, X,Y,Z}) \\ll X^{0.66-\\eps}. \\end{align}"
+    },
+    {
+      "id": "def:BdDiophantineCount",
+      "kind": "definition",
+      "position": 9,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 245,
+      "title": null,
+      "labels": [
+        "def:BdDiophantineCount",
+        "eq:Bk"
+      ],
+      "lean_decls": [
+        "B",
+        "B_finset"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 15,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For $\\mathbf{c}\\in \\mathbb{Z}^3$ and $\\mathbf{X},\\mathbf{Y},\\mathbf{Z}\\in \\mathbb{R}_{>0}^{d}$. we have \\begin{equation} B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}) := \\#\\left\\{(\\mathbf{x},\\mathbf{y},\\mathbf{z})\\in \\mathbb{N}^{3d}\\;:\\; \\begin{array}{l} x_i\\sim X_i,\\,y_i\\sim Y_i,\\,z_i\\sim Z_i \\\\ c_1\\prod_{j\\leq d}x_j^j+c_2\\prod_{j\\leq d}y_j^j=c_3\\prod_{j\\leq d}z_j^j\\\\ \\gcd(c_1\\prod_{j\\leq d}x_j,c_2\\prod_{j\\leq d}y_j , c_3\\prod_{j\\leq d}z_j)=1 \\end{array} \\right\\}. \\end{equation}"
+    },
+    {
+      "id": "lem:DiophantineFactor",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 265,
+      "title": null,
+      "labels": [
+        "lem:DiophantineFactor"
+      ],
+      "lean_decls": [
+        "exists_nice_factorization",
+        "exists_nice_factorization'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "reduction-to-diophantine-equations",
+      "proof_leanok": true,
+      "text": "Let $\\varepsilon\\in (0,1/2)$, and let $2\\leq n\\leq X$ be an integer. Then there exists a factorisation \\begin{align*} n=c\\prod_{j\\leq \\frac{5}{2}\\varepsilon^{-2}}x_j^{j}, \\end{align*} for positive integers $x_j,c$ such that $c\\leq X^{\\varepsilon/2}$, the $x_j$ are pairwise coprime, and \\begin{align*} X^{-\\varepsilon}\\prod_{j\\leq \\frac{5}{2}\\varepsilon^{-2}}x_j \\leq \\rad(n) \\leq X^{\\varepsilon}\\prod_{j\\leq \\frac{5}{2}\\varepsilon^{-2}}x_j. \\end{align*}"
+    },
+    {
+      "id": "prop:DiophantineReduction",
+      "kind": "proposition",
+      "position": 11,
+      "chapter": "reduction-to-diophantine-equations",
+      "source": "content.tex",
+      "line": 317,
+      "title": null,
+      "labels": [
+        "prop:DiophantineReduction",
+        "eq:xiyizi_1",
+        "eq:xiyizi_2"
+      ],
+      "lean_decls": [
+        "refinedCountTriplesStar_isBigO_B"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:BdDiophantineCount",
+        "def:Sstar"
+      ],
+      "proof_uses": [
+        "lem:DiophantineFactor"
+      ],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "reduction-to-diophantine-equations",
+      "proof_leanok": true,
+      "text": "Let $\\alpha,\\beta,\\gamma\\in (0,1]$ be fixed and let $X\\geq 2$. For any $\\varepsilon>0$ there exists an integer $d=d(\\varepsilon)\\geq 1$ such that the following holds. There exist $X_1,\\ldots, X_d,Y_1,\\ldots, Y_d, Z_1,\\ldots, Z_d\\geq 1$ satisfying \\begin{align} X^{\\alpha-\\varepsilon}\\ll_{\\varepsilon} \\prod_{j=1}^{d}X_j\\leq 2 X^{\\alpha+\\varepsilon},\\quad X^{\\beta-\\varepsilon}\\ll_{\\varepsilon}\\prod_{j=1}^{d}Y_j\\leq 2 X^{\\beta+\\varepsilon},\\quad X^{\\gamma-\\varepsilon}\\ll_{\\varepsilon}\\prod_{j=1}^{d}Z_j\\leq 2 X^{\\gamma+\\varepsilon} \\end{align} and \\begin{align} \\prod_{j=1}^d X_j^j \\leq X, \\quad \\prod_{j=1}^d Y_j^j\\leq X,\\quad X^{1-\\varepsilon^2}\\ll_{\\varepsilon} \\prod_{j=1}^d Z_j^j\\leq X \\end{align} and pairwise coprime integers $1\\leq c_1,c_2,c_3\\leq X^{\\varepsilon}$, such that \\begin{align*} S^*_{\\alpha,\\beta,\\gamma}(X) \\ll_{\\varepsilon} X^{\\varepsilon}B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}). \\end{align*}"
+    },
+    {
+      "id": "prop:FourierAnalysis",
+      "kind": "proposition",
+      "position": 12,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 376,
+      "title": "Fourier analysis bound",
+      "labels": [
+        "prop:FourierAnalysis",
+        "eq:Delta"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:BdDiophantineCount"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $d\\geq 1$, $\\varepsilon>0$ and $A\\geq 1$ be fixed. Let \\[ X_1,\\ldots, X_d, Y_1,\\ldots, Y_d,Z_1,\\ldots, Z_d\\geq 1 \\] and put \\begin{equation} \\Delta =\\max_{1\\leq i\\leq d}(X_i Y_i Z_i). \\end{equation} Let $\\mathbf{c}=(c_1,c_2,c_3)\\in \\mathbb{Z}^3$ satisfy $0<|c_1|,|c_2|,|c_3|\\leq \\Delta^A$. Then \\begin{align*} B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}) \\ll \\Delta^\\varepsilon \\frac{\\prod_{j\\leq d} \\big(X_j Y_j Z_j(Y_j+Z_j)\\big)^{\\frac{1}{2}}}{\\max_{i>1}\\prod_{j\\equiv 0\\bmod i}Z_j^{\\frac{1}{2}}}. \\end{align*}"
+    },
+    {
+      "id": "prop:GeometryofNumbers",
+      "kind": "proposition",
+      "position": 13,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 502,
+      "title": "Geometry of numbers bound",
+      "labels": [
+        "prop:GeometryofNumbers"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:HeathBrownGeometry"
+      ],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $d\\geq 1$ and $\\varepsilon>0$ be fixed, and let \\[ X_1,\\ldots, X_d, Y_1,\\ldots, Y_d,Z_1,\\ldots, Z_d\\geq 1. \\] Let $\\mathbf{c}\\in (c_1,c_2,c_3)\\in \\mathbb{Z}^3$ have non-zero and pairwise coprime coordinates. Then for $\\Delta$ as in~\\eqref{eq:Delta}, \\[ B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}) \\ll \\hspace{-0.1cm} \\Delta^{\\varepsilon} \\hspace{-0.3cm} \\min_{I,I',I''\\subset[d]} \\hspace{-0.1cm} \\Big(\\prod_{i\\in I}X_i\\prod_{i\\in I'}Y_i\\prod_{i\\in I''}Z_i\\Big)\\bigg(1 + \\frac{\\prod_{i\\notin I}X_i^i\\prod_{i\\notin I'}Y_i^i\\prod_{i\\notin I''}Z_i^i} {\\max\\{|c_1|\\prod_{i}X_i^i,\\;|c_2|\\prod_{i}Y_i^i,\\;|c_3|\\prod_{i}Z_i^i\\}}\\bigg). \\]"
+    },
+    {
+      "id": "thm:HeathBrownGeometry",
+      "kind": "theorem",
+      "position": 14,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 550,
+      "title": null,
+      "labels": [
+        "thm:HeathBrownGeometry"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $\\gcd(a_1,a_2,a_3)=1$. Then for $X_1,X_2,X_3>1$, we have \\begin{align*} \\#\\left((x_1,x_2,x_3)\\in\\Z^3 \\;:\\; \\gcd(x_1,x_2,x_3)=1,\\, |x_i| \\le X_i ,\\, a_1x_1+a_2x_2+a_3x_3=0\\right) \\ll \\ 1 \\ + \\ & \\frac{X_1X_2X_3}{\\max_i\\{|a_i|X_i\\}}. \\end{align*}"
+    },
+    {
+      "id": "lem:EisensteinCrit",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 566,
+      "title": null,
+      "labels": [
+        "lem:EisensteinCrit"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $r\\geq 1$ and let $g\\in \\C[x]$ be a polynomial which has at least one root of multiplicity $1$. Then the polynomial $g(x)-y^r$ is absolutely irreducible."
+    },
+    {
+      "id": "thm:BombieriPilaforDet",
+      "kind": "theorem",
+      "position": 16,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 599,
+      "title": null,
+      "labels": [
+        "thm:BombieriPilaforDet"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $f(x)$ be a $C^\\infty$ function on a closed subinterval of $[0,N]$, and suppose that$F (x, f ) = 0$, where $F(x, y) \\in \\R[x, y]$ is absolutely irreducible of degree $d \\ge 2$. Suppose that $|f'(x)| \\le 1$. Then \\begin{align*} \\#\\{(x,f(x))\\in \\{1,\\ldots,N\\}^2 \\} \\ll_d (\\log N)^{O(N)} N^{1/d} \\end{align*}"
+    },
+    {
+      "id": "thm:HeathBrownpadicDet",
+      "kind": "theorem",
+      "position": 17,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 613,
+      "title": null,
+      "labels": [
+        "thm:HeathBrownpadicDet"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $F\\in \\Z[x_1 ,\\ldots, x_n]$ be an absolutely irreducible polynomial of degree $d$, and let $\\eps > 0$ and $B_1,\\ldots,B_n \\ge 1$ be given. Define \\begin{align*} B = \\max_{(e_1,\\ldots,e_n)}\\Big( \\prod_{i\\le n} B_i^{e_i} \\Big) \\end{align*} where the maximum is taken over all integer $n$-tuples $(e_1,\\ldots,e_n)$ for which the corresponding monomial $x_1^{e_1}\\cdots x_n^{e_n}$ occurs in $F$ with non-zero coefficient. Then there exists $D = D(n,d,\\eps)$ and an integer $k$ with \\begin{align*} k \\ll_{n,d,\\eps} T^\\eps (\\log \\|F\\|)^{2n-3} \\exp\\Big((n-1)\\Big(\\frac{\\prod_{i\\le n}\\log B_i}{\\log B}\\Big)^{1/(n-1)}\\Big) \\end{align*} satisfying the following: There are $k$ polynomials $F_1,\\ldots,F_k\\in \\Z[x_1 ,\\ldots, x_n]$ coprime to $F$, with $\\deg F_i \\le D$, such that every root of $F(x_1 ,\\ldots, x_n)=0$ with $x_i \\le B_i$ is also a root of $F_j(x_1 ,\\ldots, x_n)=0$, for some $j\\le k$."
+    },
+    {
+      "id": "thm:QuadraticFormsEstimate",
+      "kind": "theorem",
+      "position": 18,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 635,
+      "title": null,
+      "labels": [
+        "thm:QuadraticFormsEstimate"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:DivisorBoundQuadField"
+      ],
+      "has_proof": true,
+      "statement_event": 32,
+      "proof_event": 33,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Given integers $n,a_1,a_2\\neq0$, there are at most $O_{\\eps,D}(|na_1a_2 X_1 X_2|^{\\eps})$ many solutions $(x_1,x_2)\\in\\Z^2$ such that $|x_i|\\le X_i$ and \\begin{align*} n = a_1 x_1^2 + a_2 x_2^2. \\end{align*}"
+    },
+    {
+      "id": "lem:DivisorBoundQuadField",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 653,
+      "title": null,
+      "labels": [
+        "lem:DivisorBoundQuadField"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 34,
+      "proof_event": 35,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $\\eps>0$. Let $D\\ge1$ be a squarefree integer, and set $K=\\mathbb{Q}(\\sqrt{-D})$. Then for all $\\alpha\\in K$, the number of ideals dividing $(\\alpha)$ in $K$ is $O(N_\\alpha^\\eps)$."
+    },
+    {
+      "id": "thm:BombierSchmidtforThueEqs",
+      "kind": "theorem",
+      "position": 20,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 664,
+      "title": null,
+      "labels": [
+        "thm:BombierSchmidtforThueEqs"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:omega"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 36,
+      "proof_event": 37,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Given integers $n,a_1,a_2\\neq0$ and $p\\ge3$, there are at most $O(p^{1+\\omega(|n|)})$ many solutions $(x_1,x_2)\\in\\Z^2$ such that $|x_i|\\le X_i$ and \\begin{align*} n = a_1 x_1^p + a_2 x_2^p. \\end{align*}"
+    },
+    {
+      "id": "def:omega",
+      "kind": "definition",
+      "position": 21,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 678,
+      "title": null,
+      "labels": [
+        "def:omega"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 38,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\omega(n)$ denote the number of distinct prime factors of an integer $n$."
+    },
+    {
+      "id": "lem:omegaUpperBound",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 682,
+      "title": null,
+      "labels": [
+        "lem:omegaUpperBound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:omega"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 39,
+      "proof_event": 40,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "For any $n\\ge2$, we have $\\omega(n) \\ll \\log(3n)/\\log\\log(3n)$."
+    },
+    {
+      "id": "lem:MixedDetMethods",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 689,
+      "title": null,
+      "labels": [
+        "lem:MixedDetMethods"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:EisensteinCrit",
+        "thm:BombieriPilaforDet",
+        "thm:HeathBrownpadicDet"
+      ],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $\\eps>0$ and $D\\geq 1$ and assume that $p,q,r\\in [1,D]$ are integers. Then \\[ N(X,Y,Z)\\ll_{\\ve,D} Z \\min\\left(X^{\\frac{1}{q}}, Y^{\\frac{1}{p}} \\right) (XY)^\\ve, \\] where the implied constant only depends on $\\ve$ and $D$. Furthermore, if $p=q\\geq 2$, then we have \\[ N(X,Y,Z)\\ll_{\\ve,D} Z (|a_1a_2a_3|XYZ)^\\ve. \\]"
+    },
+    {
+      "id": "lem:MixedThueMethods",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 712,
+      "title": null,
+      "labels": [
+        "lem:MixedThueMethods"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:QuadraticFormsEstimate",
+        "thm:BombierSchmidtforThueEqs",
+        "lem:omegaUpperBound"
+      ],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $\\eps>0$ and $D\\geq 1$ and assume that $p=q,r\\in [1,D]$ are integers. Then \\[ N(X,Y,Z)\\ll_{\\ve,D} Z (|a_1a_2a_3|XYZ)^\\ve. \\] where the implied constant only depends on $\\ve$ and $D$."
+    },
+    {
+      "id": "prop:DeterminantMethod",
+      "kind": "proposition",
+      "position": 25,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 733,
+      "title": null,
+      "labels": [
+        "prop:DeterminantMethod"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:MixedDetMethods"
+      ],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $d\\geq 1$, and let \\[ X_1,\\ldots, X_d, Y_1,\\ldots, Y_d,Z_1,\\ldots, Z_d\\geq 1. \\] Let $\\mathbf{c}\\in (c_1,c_2,c_3)\\in \\mathbb{Z}_{\\neq 0}^3$. Then for $\\Delta$ as in~\\eqref{eq:Delta}, we have \\[ B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}) \\ll \\Delta^\\ve \\prod_{j\\leq d} X_j Y_j Z_j \\cdot \\min_{p,q\\geq 1}\\left( (X_p Y_q)^{-1} \\min\\left( X_p^{\\frac{1}{q}} , Y_q^{\\frac{1}{p}}\\right)\\right). \\]"
+    },
+    {
+      "id": "prop:ThueEquations",
+      "kind": "proposition",
+      "position": 26,
+      "chapter": "upper-bounds-for-integer-points",
+      "source": "content.tex",
+      "line": 766,
+      "title": null,
+      "labels": [
+        "prop:ThueEquations"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:MixedThueMethods"
+      ],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "upper-bounds-for-integer-points",
+      "proof_leanok": false,
+      "text": "Let $d\\geq 1$, and let \\[ X_1,\\ldots, X_d, Y_1,\\ldots, Y_d,Z_1,\\ldots, Z_d\\geq 1. \\] Let $\\mathbf{c}\\in (c_1,c_2,c_3)\\in \\mathbb{Z}_{\\neq 0}^3$. Then \\[ B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z}) \\ll \\Delta^\\ve \\prod_{j\\leq d} X_j Y_j Z_j \\cdot \\min_{p\\geq 2} \\prod_{\\substack{j\\leq d \\\\ p\\mid j}} (X_j Y_j)^{-1}, \\] where $\\Delta$ is given by~\\eqref{eq:Delta}."
+    },
+    {
+      "id": "prop:TrivialBoundforSstar",
+      "kind": "proposition",
+      "position": 27,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 815,
+      "title": null,
+      "labels": [
+        "prop:TrivialBoundforSstar"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:Sstar"
+      ],
+      "proof_uses": [
+        "lem:TrivialBdforS"
+      ],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "Let $\\alpha,\\beta,\\gamma>0$, and let $\\varepsilon>0$ be fixed. Then \\[ S^*_{\\alpha,\\beta,\\gamma}(X)\\ll X^{0.66-\\varepsilon^2/2}, \\] unless $\\min\\{\\alpha+\\beta, \\beta+\\gamma,\\gamma+\\alpha\\}\\geq 0.66-\\varepsilon^2$."
+    },
+    {
+      "id": "def:aibici",
+      "kind": "definition",
+      "position": 28,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 840,
+      "title": null,
+      "labels": [
+        "def:aibici"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 51,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define $a_i,b_i,c_i\\in \\R_{\\geq0}$ via \\[ X_i=X^{a_i}, \\quad Y_i=X^{b_i}, \\quad Z_i=X^{c_i}, \\] for $1\\leq i\\leq d$, and $a_i=b_i=c_i=0$ for $i>d$."
+    },
+    {
+      "id": "lem:aibiciconstraints",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 848,
+      "title": null,
+      "labels": [
+        "lem:aibiciconstraints",
+        "eq:oat1"
+      ],
+      "lean_decls": [
+        "baseAssumptions"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:aibici"
+      ],
+      "proof_uses": [
+        "prop:DiophantineReduction"
+      ],
+      "has_proof": true,
+      "statement_event": 52,
+      "proof_event": 53,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{equation} \\sum_{i\\leq d} ia_i \\leq 1, \\quad \\sum_{i\\leq d} ib_i \\leq 1, \\quad 1-\\ve^2\\leq \\sum_{i\\leq d} ic_i \\leq 1. \\end{equation}"
+    },
+    {
+      "id": "lem:Trivialaibici",
+      "kind": "lemma",
+      "position": 30,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 863,
+      "title": null,
+      "labels": [
+        "lem:Trivialaibici",
+        "eq:oat4",
+        "eq:oat3"
+      ],
+      "lean_decls": [
+        "Bound4Point3",
+        "Bound4Point4"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:aibici"
+      ],
+      "proof_uses": [
+        "prop:TrivialBoundforSstar"
+      ],
+      "has_proof": true,
+      "statement_event": 54,
+      "proof_event": 55,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "We have \\begin{equation} \\sum_{i\\leq d} (a_i+b_i)\\geq 0.66-\\varepsilon^2,\\quad \\sum_{i\\leq d} (a_i+c_i)\\geq 0.66-\\varepsilon^2,\\quad \\sum_{i\\leq d} (b_i+c_i) \\geq 0.66-\\varepsilon^2 \\end{equation} and \\begin{equation} \\sum_{i\\leq d} (a_i+b_i+c_i) \\leq 1+\\delta-\\eps. \\end{equation}"
+    },
+    {
+      "id": "def:nu",
+      "kind": "definition",
+      "position": 31,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 881,
+      "title": null,
+      "labels": [
+        "def:nu"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:BdDiophantineCount"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 56,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "It will be convenient to henceforth define \\begin{equation*} \\nu=2\\varepsilon^2+\\frac{\\log B_d(\\mathbf{c},\\mathbf{X},\\mathbf{Y},\\mathbf{Z})}{\\log X}. \\end{equation*}"
+    },
+    {
+      "id": "prop:Eqn4Point5",
+      "kind": "proposition",
+      "position": 32,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 900,
+      "title": null,
+      "labels": [
+        "prop:Eqn4Point5",
+        "eq:oat5"
+      ],
+      "lean_decls": [
+        "Bound4Point5"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:Trivialaibici",
+        "lem:TrivialBdforS"
+      ],
+      "has_proof": true,
+      "statement_event": 57,
+      "proof_event": 58,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{equation} 0.32 - \\delta \\leq \\sum_{i\\leq d} a_i ,~ \\sum_{i\\leq d} b_i ,~ \\sum_{i\\leq d} c_i \\leq 0.34 + \\delta- \\frac{1}{2}\\ve, \\end{equation}"
+    },
+    {
+      "id": "prop:FourierBound",
+      "kind": "proposition",
+      "position": 33,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 933,
+      "title": "Fourier bound",
+      "labels": [
+        "prop:FourierBound"
+      ],
+      "lean_decls": [
+        "FourierBound"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:nu",
+        "def:aibici"
+      ],
+      "proof_uses": [
+        "prop:FourierAnalysis",
+        "lem:Trivialaibici"
+      ],
+      "has_proof": true,
+      "statement_event": 59,
+      "proof_event": 60,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{align*} \\nu & < \\frac{1}{2}\\Big(1+\\delta +\\sum_{i\\leq d} \\max(a_i,b_i) - \\max_{m>1}(a_m,b_m)\\Big). \\end{align*}"
+    },
+    {
+      "id": "prop:GeometryBound",
+      "kind": "proposition",
+      "position": 34,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 951,
+      "title": "Geometry bound",
+      "labels": [
+        "prop:GeometryBound"
+      ],
+      "lean_decls": [
+        "GeometryBound"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:nu",
+        "def:aibici"
+      ],
+      "proof_uses": [
+        "prop:GeometryofNumbers",
+        "lem:Trivialaibici",
+        "lem:aibiciconstraints"
+      ],
+      "has_proof": true,
+      "statement_event": 61,
+      "proof_event": 62,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{align*} \\nu < \\delta + \\min_{I,I',I''\\subset [d]} \\left( \\max\\left( 1 \\,,\\, \\sum_{i\\in I} ia_i +\\sum_{i\\in I'} ib_i + \\sum_{i\\in I''} ic_i\\right) - \\sum_{i\\in I} a_i -\\sum_{i\\in I'} b_i - \\sum_{i\\in I''} c_i\\right). \\end{align*}"
+    },
+    {
+      "id": "prop:DeterminantBound",
+      "kind": "proposition",
+      "position": 35,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 985,
+      "title": "Determinant Bound",
+      "labels": [
+        "prop:DeterminantBound"
+      ],
+      "lean_decls": [
+        "DeterminantBound"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:nu",
+        "def:aibici"
+      ],
+      "proof_uses": [
+        "prop:DeterminantMethod"
+      ],
+      "has_proof": true,
+      "statement_event": 63,
+      "proof_event": 64,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{align*} \\nu < \\min_{p,q\\ge1} \\left( 1+\\delta- a_p - b_q +\\min\\left(\\frac{a_p}{q}, \\frac{b_q}{p}\\right)\\right). \\end{align*}"
+    },
+    {
+      "id": "prop:ThueBound",
+      "kind": "proposition",
+      "position": 36,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1006,
+      "title": "Thue bound",
+      "labels": [
+        "prop:ThueBound"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:aibici",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "prop:ThueEquations",
+        "lem:Trivialaibici"
+      ],
+      "has_proof": true,
+      "statement_event": 65,
+      "proof_event": 66,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": false,
+      "text": "\\begin{align*} \\nu < 1 +\\delta- \\max_{p\\ge2}\\sum_{p\\mid i}(a_i+b_i). \\end{align*}"
+    },
+    {
+      "id": "def:delta",
+      "kind": "definition",
+      "position": 37,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1028,
+      "title": null,
+      "labels": [
+        "def:delta",
+        "eq:ai1/3"
+      ],
+      "lean_decls": [
+        "\u03b4_",
+        "delta_s"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 67,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "It will be convenient to define constants $\\delta_a,\\delta_b,\\delta_c$ via \\begin{equation} \\sum_{i\\leq d} a_i \\, = \\frac{1}{3}-\\delta_a, \\quad \\sum_{i\\leq d} b_i \\, = \\frac{1}{3}-\\delta_b, \\quad \\sum_{i\\leq d} c_i = \\frac{1}{3}-\\delta_c, \\end{equation} together with \\begin{equation*} \\delta_{ab}:=\\delta_a+\\delta_b,\\quad \\delta_{ac}:=\\delta_a+\\delta_c, \\quad \\delta_{bc}:=\\delta_b+\\delta_c, \\end{equation*} and $\\delta_s := \\delta_a+\\delta_b+\\delta_c$."
+    },
+    {
+      "id": "lem:deltaBounds",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1042,
+      "title": null,
+      "labels": [
+        "lem:deltaBounds",
+        "eq:robin2",
+        "eq:robin1",
+        "eq:robin3"
+      ],
+      "lean_decls": [
+        "bound_4_point_8",
+        "bound_4_point_9_lower",
+        "bound_4_point_9_upper",
+        "bound_4_point_10_lower",
+        "bound_4_point_10_upper"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:delta"
+      ],
+      "proof_uses": [
+        "prop:Eqn4Point5",
+        "lem:Trivialaibici"
+      ],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "We have \\begin{equation} \\delta_{ab}, \\delta_{ac}, \\delta_{bc} \\leq 0.00\\overline{6} + \\eps^2, \\end{equation} \\begin{equation} -0.00\\bar 6 - \\delta \\leq \\delta_a,\\delta_b,\\delta_c \\leq 0.01\\bar3+\\delta+\\eps, \\end{equation} and \\begin{equation} -\\delta < \\delta_s \\leq 0.01+\\eps. \\end{equation}"
+    },
+    {
+      "id": "def:s",
+      "kind": "definition",
+      "position": 39,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1080,
+      "title": null,
+      "labels": [
+        "def:s"
+      ],
+      "lean_decls": [
+        "S"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:aibici"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 70,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Define $s_i := a_i + b_i + c_i$."
+    },
+    {
+      "id": "prop:SpecialThue",
+      "kind": "proposition",
+      "position": 40,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1094,
+      "title": null,
+      "labels": [
+        "prop:SpecialThue",
+        "eq:Thue",
+        "eq:Thue2",
+        "eq:sThue"
+      ],
+      "lean_decls": [
+        "bound_4_point_12",
+        "bound_4_point_13",
+        "bound_4_point_14_general",
+        "bound_4_point_14_two_four"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s"
+      ],
+      "proof_uses": [
+        "prop:ThueBound"
+      ],
+      "has_proof": true,
+      "statement_event": 71,
+      "proof_event": 72,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "To show $\\nu \\leq 0.66$, it suffices to assume \\begin{equation} a_j+b_j, \\,a_j+c_j,\\, b_j+c_j < 0.34+\\delta, \\end{equation} for each $j\\geq 2$, and moreover, \\begin{equation} a_2+a_4+b_2+b_4, \\ a_2+a_4+c_2+c_4, \\ b_2+b_4+c_2+c_4 < 0.34+\\delta. \\end{equation} Hence \\begin{equation} s_5,s_3,s_2+s_4 < 0.51+\\frac{3}{2}\\delta. \\end{equation}"
+    },
+    {
+      "id": "lem:SpecialGeometry",
+      "kind": "lemma",
+      "position": 41,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1128,
+      "title": null,
+      "labels": [
+        "lem:SpecialGeometry",
+        "eq:SpecialGeometry"
+      ],
+      "lean_decls": [
+        "bound_4_point_15"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "prop:GeometryBound"
+      ],
+      "has_proof": true,
+      "statement_event": 73,
+      "proof_event": 74,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "We may assume \\begin{equation} s_1+s_2\\leq 0.34 +\\delta. \\end{equation}"
+    },
+    {
+      "id": "lem:SubSumGeometry",
+      "kind": "lemma",
+      "position": 42,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1152,
+      "title": null,
+      "labels": [
+        "lem:SubSumGeometry",
+        "eq:taujdef",
+        "eq:Geotauj",
+        "eq:Geotau3"
+      ],
+      "lean_decls": [
+        "bound_4_point_18"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "prop:GeometryBound"
+      ],
+      "has_proof": true,
+      "statement_event": 75,
+      "proof_event": 76,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "For any $j\\ge3$, allow $\\tau_j$ to be an element \\begin{equation} \\tau_j\\in\\{a_j,b_j,c_j, s_j, a_j+b_j,a_j+c_j,b_j+c_j\\}. \\end{equation} Then \\begin{equation} \\tau_j\\in \\left(0.34-s_1-s_2+\\delta, \\frac{0.66 -s_2-\\delta}{j-1}\\right) \\Longrightarrow \\nu < 0.66 \\end{equation} and \\begin{equation} \\tau_3\\in \\left(0.34-s_1+\\delta, 0.33-\\frac{1}{2}\\delta\\right) \\Longrightarrow \\nu < 0.66. \\end{equation}"
+    },
+    {
+      "id": "lem:ThreeLowerBounds",
+      "kind": "lemma",
+      "position": 43,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1196,
+      "title": null,
+      "labels": [
+        "lem:ThreeLowerBounds",
+        "eq:black1",
+        "eq:s3>s12",
+        "eq:s3>s124"
+      ],
+      "lean_decls": [
+        "bound_4_point_19_first",
+        "bound_4_point_19_second",
+        "bound_4_point_20",
+        "bound_4_point_21"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:aibiciconstraints"
+      ],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "We have \\begin{equation} a_3 \\ge \\frac{1}{3}-4\\delta_a - 3a_1 - 2a_2, \\end{equation} \\begin{equation*} a_3 \\ge \\frac{1}{3}-\\frac{5}{2}\\delta_a - 2a_1 - \\frac{3}{2}a_2 - \\frac{1}{2}a_4. \\end{equation*} Therefore \\begin{equation} s_3 \\ge 1-4\\delta_s - 3s_1 - 2s_2, \\end{equation} and \\begin{equation} s_3 \\ge 1-\\frac{5}{2}\\delta_s - 2s_1 - \\frac{3}{2}s_2 - \\frac{1}{2}s_4. \\end{equation}"
+    },
+    {
+      "id": "lem:Case1Basic",
+      "kind": "lemma",
+      "position": 44,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1242,
+      "title": null,
+      "labels": [
+        "lem:Case1Basic",
+        "eq:s1"
+      ],
+      "lean_decls": [
+        "bound_4_point_22",
+        "case_1_helper"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:SpecialGeometry"
+      ],
+      "has_proof": true,
+      "statement_event": 79,
+      "proof_event": 80,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "If $s_2 \\geq 0.3$, \\begin{equation} s_1 \\leq 0.04+\\delta \\end{equation} and $s_4 < 0.21 +\\frac{3}{2}\\delta.$"
+    },
+    {
+      "id": "lem:Subcase1.1",
+      "kind": "lemma",
+      "position": 45,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1266,
+      "title": null,
+      "labels": [
+        "lem:Subcase1.1"
+      ],
+      "lean_decls": [
+        "subcase_1_point_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:SubSumGeometry",
+        "lem:ThreeLowerBounds",
+        "prop:SpecialThue",
+        "lem:Case1Basic",
+        "lem:deltaBounds"
+      ],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s_2 \\geq 0.3$ and $b_3\\le 0.34-s_1-s_2+\\delta$."
+    },
+    {
+      "id": "lem:Subcase1.2",
+      "kind": "lemma",
+      "position": 46,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1309,
+      "title": null,
+      "labels": [
+        "lem:Subcase1.2"
+      ],
+      "lean_decls": [
+        "subcase_1_point_2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s"
+      ],
+      "proof_uses": [
+        "lem:SpecialGeometry",
+        "lem:SubSumGeometry",
+        "lem:deltaBounds",
+        "prop:FourierBound",
+        "def:delta",
+        "lem:aibiciconstraints",
+        "prop:SpecialThue"
+      ],
+      "has_proof": true,
+      "statement_event": 83,
+      "proof_event": 84,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s_2 \\geq 0.3$ and $b_3 > 0.34-s_1-s_2+\\delta$."
+    },
+    {
+      "id": "lem:Case1",
+      "kind": "lemma",
+      "position": 47,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1403,
+      "title": null,
+      "labels": [
+        "lem:Case1"
+      ],
+      "lean_decls": [
+        "case_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:Subcase1.1",
+        "lem:Subcase1.2"
+      ],
+      "has_proof": true,
+      "statement_event": 85,
+      "proof_event": 86,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s_2 \\geq 0.3$."
+    },
+    {
+      "id": "lem:Case2Basic1",
+      "kind": "lemma",
+      "position": 48,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1416,
+      "title": null,
+      "labels": [
+        "lem:Case2Basic1",
+        "eq:2b3"
+      ],
+      "lean_decls": [
+        "bound_4_point_24"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "prop:SpecialThue"
+      ],
+      "has_proof": true,
+      "statement_event": 87,
+      "proof_event": 88,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "\\begin{equation} b_3 < 0.17+\\frac{\\delta}{2}. \\end{equation}"
+    },
+    {
+      "id": "lem:Case2Basic2",
+      "kind": "lemma",
+      "position": 49,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1433,
+      "title": null,
+      "labels": [
+        "lem:Case2Basic2",
+        "eq:Case2Basic2"
+      ],
+      "lean_decls": [
+        "bound_4_point_25"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:SubSumGeometry",
+        "lem:ThreeLowerBounds"
+      ],
+      "has_proof": true,
+      "statement_event": 89,
+      "proof_event": 90,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "\\begin{equation} a_3 \\geq 0.32 - 4 \\delta_s - s_1 - 2 \\delta. \\end{equation}"
+    },
+    {
+      "id": "lem:Case2",
+      "kind": "lemma",
+      "position": 50,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1468,
+      "title": null,
+      "labels": [
+        "lem:Case2"
+      ],
+      "lean_decls": [
+        "case_2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:Subcase2.3",
+        "lem:Subcase2.4",
+        "lem:Subcase2.5",
+        "lem:Subcase2.6"
+      ],
+      "has_proof": true,
+      "statement_event": 91,
+      "proof_event": 92,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "Assuming \\ref{lem:Subcase2.3}, \\ref{lem:Subcase2.4}, \\ref{lem:Subcase2.5}, \\ref{lem:Subcase2.6}, $\\nu \\leq 0.66$ in the case $s_2 < 0.3$."
+    },
+    {
+      "id": "lem:Subcase2.1",
+      "kind": "lemma",
+      "position": 51,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1490,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.1"
+      ],
+      "lean_decls": [
+        "case_2_subcase_1"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "prop:SpecialThue",
+        "prop:DeterminantBound",
+        "lem:aibiciconstraints",
+        "def:delta",
+        "prop:GeometryBound",
+        "lem:Case2Basic1",
+        "lem:deltaBounds"
+      ],
+      "has_proof": true,
+      "statement_event": 93,
+      "proof_event": 94,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s_2<0.3$ and $a_3\\geq 0.32$."
+    },
+    {
+      "id": "lem:Subcase2.2",
+      "kind": "lemma",
+      "position": 52,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1556,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.2"
+      ],
+      "lean_decls": [
+        "case_2_subcase_2"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:SubSumGeometry",
+        "lem:ThreeLowerBounds",
+        "lem:deltaBounds",
+        "prop:SpecialThue",
+        "lem:Subcase2.1"
+      ],
+      "has_proof": true,
+      "statement_event": 95,
+      "proof_event": 96,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s.2 < 0.3$ and $b_3+c_3<0.33-\\frac{s_2}{2}-\\frac{\\delta}{2}$."
+    },
+    {
+      "id": "lem:Subcase2.3",
+      "kind": "lemma",
+      "position": 53,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1585,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.3"
+      ],
+      "lean_decls": [
+        "case_2_subcase_3"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:Subcase2.2",
+        "lem:Case2Basic2"
+      ],
+      "has_proof": true,
+      "statement_event": 97,
+      "proof_event": 98,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s.2 < 0.3$ and $4s_1+3s_2>0.71$."
+    },
+    {
+      "id": "lem:Subcase2.4",
+      "kind": "lemma",
+      "position": 54,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1605,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.4"
+      ],
+      "lean_decls": [
+        "case_2_subcase_4"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:Subcase2.2",
+        "lem:Case2Basic2",
+        "prop:SpecialThue",
+        "lem:deltaBounds"
+      ],
+      "has_proof": true,
+      "statement_event": 99,
+      "proof_event": 100,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s.2 < 0.3$ and $4s_1+s_2<0.4$."
+    },
+    {
+      "id": "lem:Subcase2.5",
+      "kind": "lemma",
+      "position": 55,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1632,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.5"
+      ],
+      "lean_decls": [
+        "case_2_subcase_5"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:Subcase2.2",
+        "lem:Case2Basic2",
+        "lem:deltaBounds",
+        "lem:SubSumGeometry",
+        "prop:SpecialThue"
+      ],
+      "has_proof": true,
+      "statement_event": 101,
+      "proof_event": 102,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s.2 < 0.3$ and $0.066\\leq s_2\\leq 0.204$."
+    },
+    {
+      "id": "lem:Subcase2.6",
+      "kind": "lemma",
+      "position": 56,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1661,
+      "title": null,
+      "labels": [
+        "lem:Subcase2.6"
+      ],
+      "lean_decls": [
+        "case_2_subcase_6"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:s",
+        "def:nu"
+      ],
+      "proof_uses": [
+        "lem:SubSumGeometry",
+        "lem:Subcase2.3",
+        "lem:Subcase2.4",
+        "lem:Subcase2.5",
+        "lem:Subcase2.1",
+        "lem:ThreeLowerBounds",
+        "lem:deltaBounds",
+        "prop:FourierBound"
+      ],
+      "has_proof": true,
+      "statement_event": 103,
+      "proof_event": 104,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\leq 0.66$ in the case $s_2<0.3$ and $2s_1-s_2>0.025$."
+    },
+    {
+      "id": "thm:ABCExponentNu",
+      "kind": "theorem",
+      "position": 57,
+      "chapter": "combining-the-upper-bounds",
+      "source": "content.tex",
+      "line": 1761,
+      "title": null,
+      "labels": [
+        "thm:ABCExponentNu"
+      ],
+      "lean_decls": [
+        "thm_4_point_3"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:Case1",
+        "lem:Case2"
+      ],
+      "has_proof": true,
+      "statement_event": 105,
+      "proof_event": 106,
+      "proof_chapter": "combining-the-upper-bounds",
+      "proof_leanok": true,
+      "text": "$\\nu \\le 0.66$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "def:Nlambda",
+      "target": "prop:ABCTrivialBound",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:deBruijnRadical",
+      "target": "prop:ABCTrivialBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Nlambda",
+      "target": "thm:ABCExceptionalBound",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:BdExceptionalBound",
+      "target": "thm:ABCExceptionalBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:NlambdatoSstar",
+      "target": "thm:ABCExceptionalBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deBruijnRadical",
+      "target": "lem:TrivialBdforS",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Nlambda",
+      "target": "lem:NlambdatoSstar",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Sstar",
+      "target": "lem:NlambdatoSstar",
+      "kind": "statement"
+    },
+    {
+      "source": "def:BdDiophantineCount",
+      "target": "thm:BdExceptionalBound",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:ABCExponentNu",
+      "target": "thm:BdExceptionalBound",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:DiophantineReduction",
+      "target": "thm:BdExceptionalBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:BdDiophantineCount",
+      "target": "thm:BdExceptionalBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:BdDiophantineCount",
+      "target": "prop:DiophantineReduction",
+      "kind": "statement"
+    },
+    {
+      "source": "def:Sstar",
+      "target": "prop:DiophantineReduction",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:DiophantineFactor",
+      "target": "prop:DiophantineReduction",
+      "kind": "proof"
+    },
+    {
+      "source": "def:BdDiophantineCount",
+      "target": "prop:FourierAnalysis",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:HeathBrownGeometry",
+      "target": "prop:GeometryofNumbers",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:DivisorBoundQuadField",
+      "target": "thm:QuadraticFormsEstimate",
+      "kind": "proof"
+    },
+    {
+      "source": "def:omega",
+      "target": "thm:BombierSchmidtforThueEqs",
+      "kind": "statement"
+    },
+    {
+      "source": "def:omega",
+      "target": "lem:omegaUpperBound",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:EisensteinCrit",
+      "target": "lem:MixedDetMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:BombieriPilaforDet",
+      "target": "lem:MixedDetMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:HeathBrownpadicDet",
+      "target": "lem:MixedDetMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:QuadraticFormsEstimate",
+      "target": "lem:MixedThueMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:BombierSchmidtforThueEqs",
+      "target": "lem:MixedThueMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:omegaUpperBound",
+      "target": "lem:MixedThueMethods",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:MixedDetMethods",
+      "target": "prop:DeterminantMethod",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:MixedThueMethods",
+      "target": "prop:ThueEquations",
+      "kind": "proof"
+    },
+    {
+      "source": "def:Sstar",
+      "target": "prop:TrivialBoundforSstar",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:TrivialBdforS",
+      "target": "prop:TrivialBoundforSstar",
+      "kind": "proof"
+    },
+    {
+      "source": "def:aibici",
+      "target": "lem:aibiciconstraints",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:DiophantineReduction",
+      "target": "lem:aibiciconstraints",
+      "kind": "proof"
+    },
+    {
+      "source": "def:aibici",
+      "target": "lem:Trivialaibici",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:TrivialBoundforSstar",
+      "target": "lem:Trivialaibici",
+      "kind": "proof"
+    },
+    {
+      "source": "def:BdDiophantineCount",
+      "target": "def:nu",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:Trivialaibici",
+      "target": "prop:Eqn4Point5",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:TrivialBdforS",
+      "target": "prop:Eqn4Point5",
+      "kind": "proof"
+    },
+    {
+      "source": "def:nu",
+      "target": "prop:FourierBound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:aibici",
+      "target": "prop:FourierBound",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:FourierAnalysis",
+      "target": "prop:FourierBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Trivialaibici",
+      "target": "prop:FourierBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:nu",
+      "target": "prop:GeometryBound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:aibici",
+      "target": "prop:GeometryBound",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:GeometryofNumbers",
+      "target": "prop:GeometryBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Trivialaibici",
+      "target": "prop:GeometryBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:aibiciconstraints",
+      "target": "prop:GeometryBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:nu",
+      "target": "prop:DeterminantBound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:aibici",
+      "target": "prop:DeterminantBound",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:DeterminantMethod",
+      "target": "prop:DeterminantBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:aibici",
+      "target": "prop:ThueBound",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "prop:ThueBound",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:ThueEquations",
+      "target": "prop:ThueBound",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Trivialaibici",
+      "target": "prop:ThueBound",
+      "kind": "proof"
+    },
+    {
+      "source": "def:delta",
+      "target": "lem:deltaBounds",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:Eqn4Point5",
+      "target": "lem:deltaBounds",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Trivialaibici",
+      "target": "lem:deltaBounds",
+      "kind": "proof"
+    },
+    {
+      "source": "def:aibici",
+      "target": "def:s",
+      "kind": "statement"
+    },
+    {
+      "source": "def:s",
+      "target": "prop:SpecialThue",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:ThueBound",
+      "target": "prop:SpecialThue",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:GeometryBound",
+      "target": "lem:SpecialGeometry",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:GeometryBound",
+      "target": "lem:SubSumGeometry",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:aibiciconstraints",
+      "target": "lem:ThreeLowerBounds",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:SpecialGeometry",
+      "target": "lem:Case1Basic",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase1.1",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase1.1",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Subcase1.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ThreeLowerBounds",
+      "target": "lem:Subcase1.1",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase1.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case1Basic",
+      "target": "lem:Subcase1.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase1.1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase1.2",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:SpecialGeometry",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:FourierBound",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "def:delta",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:aibiciconstraints",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase1.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase1.1",
+      "target": "lem:Case1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase1.2",
+      "target": "lem:Case1",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Case2Basic1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Case2Basic2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ThreeLowerBounds",
+      "target": "lem:Case2Basic2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.3",
+      "target": "lem:Case2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.4",
+      "target": "lem:Case2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.5",
+      "target": "lem:Case2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.6",
+      "target": "lem:Case2",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.1",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.1",
+      "kind": "statement"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:DeterminantBound",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:aibiciconstraints",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:delta",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:GeometryBound",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case2Basic1",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase2.1",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.2",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.2",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Subcase2.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ThreeLowerBounds",
+      "target": "lem:Subcase2.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase2.2",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase2.2",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.1",
+      "target": "lem:Subcase2.2",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.3",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.3",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:Subcase2.2",
+      "target": "lem:Subcase2.3",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case2Basic2",
+      "target": "lem:Subcase2.3",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.4",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.4",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:Subcase2.2",
+      "target": "lem:Subcase2.4",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case2Basic2",
+      "target": "lem:Subcase2.4",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase2.4",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase2.4",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.5",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.5",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:Subcase2.2",
+      "target": "lem:Subcase2.5",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case2Basic2",
+      "target": "lem:Subcase2.5",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase2.5",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Subcase2.5",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:SpecialThue",
+      "target": "lem:Subcase2.5",
+      "kind": "proof"
+    },
+    {
+      "source": "def:s",
+      "target": "lem:Subcase2.6",
+      "kind": "statement"
+    },
+    {
+      "source": "def:nu",
+      "target": "lem:Subcase2.6",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:SubSumGeometry",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.3",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.4",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.5",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Subcase2.1",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:ThreeLowerBounds",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deltaBounds",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "prop:FourierBound",
+      "target": "lem:Subcase2.6",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case1",
+      "target": "thm:ABCExponentNu",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:Case2",
+      "target": "thm:ABCExponentNu",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}

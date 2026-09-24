@@ -21,6 +21,7 @@ LINES = {
     "human": ("#eb6834", "-", "Human (as written)"),
     "human_repaired": ("#eb6834", (0, (3, 2)), "Human, forward refs repaired"),
     "optimised": ("#1baf7a", "-", "Greedy + local search"),
+    "best_known": ("#1baf7a", (0, (3, 2)), "Best known (also from author's order)"),
 }
 METRIC_LABELS = {
     "mean_open": "mean results held open",

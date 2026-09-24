@@ -258,12 +258,20 @@ def greedy_min_open_order(g: nx.DiGraph, rng: random.Random) -> list[str]:
     return order
 
 
-def local_search_order(g: nx.DiGraph, order: list[str], max_sweeps: int = 50) -> list[str]:
-    """Improve total edge length (= mean cut) by moving single nodes within their precedence window.
+def local_search_order(g: nx.DiGraph, order: list[str], max_sweeps: int = 50, objective: str = "length") -> list[str]:
+    """Improve an order by moving single nodes within their precedence window.
 
-    Each move slides a node past neighbours it has no edge with, accumulating the exact change in
-    total length, and keeps the best position found. Stops at a local optimum.
+    Each move slides a node past neighbours it has no edge with, accumulating the exact change in the
+    objective, and keeps the best position found. Stops at a local optimum.
+
+    ``objective="length"``: total edge length (= mean cut). ``objective="open"``: total open span,
+    sum over results of (position of last use - position stated), i.e. ``mean_open * (n - 1)``, the
+    load metric the reports lead with.
     """
+    if objective == "open":
+        return _local_search_open(g, order, max_sweeps)
+    if objective != "length":
+        raise ValueError("objective must be 'length' or 'open'")
     order = list(order)
     nbrs = {v: set(g.predecessors(v)) | set(g.successors(v)) for v in g.nodes}
 
@@ -302,6 +310,63 @@ def local_search_order(g: nx.DiGraph, order: list[str], max_sweeps: int = 50) ->
                 j -= 1
                 if delta < best_delta:
                     best_delta, best_j = delta, j
+            if best_j != i:
+                order.pop(i)
+                order.insert(best_j, x)
+                improved = True
+        if not improved:
+            break
+    return order
+
+
+def _open_swap_delta(preds: dict, succs: dict, pos: dict, last: dict, a: str, b: str) -> int:
+    """Change in total open span when adjacent unrelated ``a`` (at k) and ``b`` (at k + 1) swap.
+
+    ``a`` stated one step later: -1 if anything uses it, and +1 for each predecessor whose last use was ``a``.
+    ``b`` one step earlier: +1 if anything uses it, and -1 for each predecessor ``u`` whose last use was ``b``,
+    unless ``a`` also uses ``u`` (then ``u``'s last use stays at k + 1).
+    """
+    k = pos[a]
+    d = (1 if succs[b] else 0) - (1 if succs[a] else 0)
+    d += sum(1 for u in preds[a] if last[u] == k)
+    d -= sum(1 for u in preds[b] if last[u] == k + 1 and a not in succs[u])
+    return d
+
+
+def _open_do_swap(preds: dict, succs: dict, pos: dict, last: dict, a: str, b: str) -> None:
+    k = pos[a]
+    for u in preds[a]:
+        if last[u] == k:
+            last[u] = k + 1
+    for u in preds[b]:
+        if last[u] == k + 1 and a not in succs[u]:
+            last[u] = k
+    pos[a], pos[b] = k + 1, k
+
+
+def _local_search_open(g: nx.DiGraph, order: list[str], max_sweeps: int) -> list[str]:
+    """``local_search_order`` for the open-span objective, built from exact adjacent-swap deltas."""
+    order = list(order)
+    preds = {v: list(g.predecessors(v)) for v in g.nodes}
+    succs = {v: set(g.successors(v)) for v in g.nodes}
+    nbrs = {v: set(preds[v]) | succs[v] for v in g.nodes}
+    for _ in range(max_sweeps):
+        improved = False
+        for x in list(order):
+            pos = {v: i for i, v in enumerate(order)}
+            last = {v: max(pos[w] for w in succs[v]) for v in g.nodes if succs[v]}
+            i = pos[x]
+            best_delta, best_j = 0, i
+            for step in (1, -1):
+                p, lst, delta, j = dict(pos), dict(last), 0, i
+                while 0 <= j + step < len(order) and order[j + step] not in nbrs[x]:
+                    y = order[j + step]
+                    a, b = (x, y) if step == 1 else (y, x)
+                    delta += _open_swap_delta(preds, succs, p, lst, a, b)
+                    _open_do_swap(preds, succs, p, lst, a, b)
+                    j += step
+                    if delta < best_delta:
+                        best_delta, best_j = delta, j
             if best_j != i:
                 order.pop(i)
                 order.insert(best_j, x)

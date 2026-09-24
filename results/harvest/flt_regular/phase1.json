@@ -1,0 +1,1179 @@
+{
+  "project": "flt_regular",
+  "provenance": "leanprover-community/flt-regular @ 8c3c5a908a63 (2026-08-24), Lean leanprover/lean4:v4.34.0-rc2",
+  "stats": {
+    "project_decls": 295,
+    "project_decls_by_kind": {
+      "def": 62,
+      "inductive": 1,
+      "theorem": 232
+    },
+    "external_decls": 17,
+    "formal_edges": 751,
+    "blueprint_nodes": 45,
+    "blueprint_nodes_with_formal_decl": 29,
+    "lean_names_resolved": 29,
+    "lean_names_missing": {
+      "lemma:diff_of_irr_pol": [
+        "Polynomial.aeval_root_derivative_of_splits"
+      ],
+      "lemma:alg_int_abs_val_one": [
+        "mem_roots_of_unity_of_abs_eq_one"
+      ],
+      "lemma:unit_lemma": [
+        "unit_lemma_gal_conj"
+      ],
+      "lemma:zeta_pow_sub_eq_unit_zeta_sub_one": [
+        "is_primitive_root.zeta_pow_sub_eq_unit_zeta_sub_one"
+      ],
+      "lemma:ideals_mult_to_power": [
+        "ideal.exists_eq_pow_of_mul_eq_pow"
+      ],
+      "lem:exists_alg_int": [
+        "exists_alg_int"
+      ],
+      "Hilbert90": [
+        "Hilbert90"
+      ]
+    },
+    "coverage": 0.8055555555555556,
+    "labelled_decls": 29,
+    "unlabelled_theorems": 221,
+    "edges": {
+      "author_edges": 31,
+      "lean_edges": 40,
+      "author_direct_in_lean": 24,
+      "author_implied_transitively": 1,
+      "author_absent_from_lean": [
+        [
+          "lem:disc_change_of_basis",
+          "lemma:disc_int_basis"
+        ],
+        [
+          "lem:discr_of_cyclo",
+          "theorem:ring_of_ints_of_cyclo"
+        ],
+        [
+          "lemma:alt_definition_of_norm",
+          "lem:lin_indep_iff_disc_ne_zero"
+        ],
+        [
+          "lemma:int_basis_int_disc",
+          "lemma:disc_int_basis"
+        ],
+        [
+          "lemma:trace_of_alg_int_is_int",
+          "lemma:eis_crit_and_alg_ints"
+        ],
+        [
+          "theorem:ring_of_ints_of_cyclo",
+          "lemma:may_assume_coprime"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "defn:is_regular_number",
+          "FLT_regular"
+        ],
+        [
+          "defn:is_regular_number",
+          "lemma:may_assume_coprime"
+        ],
+        [
+          "defn:is_regular_number",
+          "theorem:FLT_case_two"
+        ],
+        [
+          "defn_of_disc",
+          "lem:discr_of_cyclo"
+        ],
+        [
+          "defn_of_disc",
+          "lemma:disc_int_basis"
+        ],
+        [
+          "defn_of_disc",
+          "lemma:num_field_disc_in_terms_of_norm"
+        ],
+        [
+          "defn_of_disc",
+          "theorem:ring_of_ints_of_cyclo"
+        ],
+        [
+          "lem:Hilbert92",
+          "thm:Kummers_lemma"
+        ],
+        [
+          "lem:lin_indep_iff_disc_ne_zero",
+          "lemma:disc_int_basis"
+        ],
+        [
+          "lem:roots_of_unity_in_cyclo",
+          "lem:exists_int_sum_eq_zero"
+        ],
+        [
+          "lemma:cyclo_poly_deg",
+          "lem:dvd_coeff_cycl_integer"
+        ],
+        [
+          "lemma:cyclo_poly_deg",
+          "lemma:cyclo_poly_irr"
+        ],
+        [
+          "lemma:cyclo_poly_deg",
+          "theorem:ring_of_ints_of_cyclo"
+        ],
+        [
+          "lemma:cyclo_poly_irr",
+          "lem:Hilbert92"
+        ],
+        [
+          "lemma:cyclo_poly_irr",
+          "theorem:ring_of_ints_of_cyclo"
+        ],
+        [
+          "lemma:trace_of_alg_int_is_int",
+          "lemma:disc_int_basis"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 7,
+    "unreported_top_sources": {
+      "defn_of_disc": 4,
+      "defn:is_regular_number": 3,
+      "lemma:cyclo_poly_deg": 3,
+      "lemma:cyclo_poly_irr": 2,
+      "lem:Hilbert92": 1,
+      "lem:lin_indep_iff_disc_ne_zero": 1,
+      "lem:roots_of_unity_in_cyclo": 1,
+      "lemma:trace_of_alg_int_is_int": 1
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 29,
+      "n_edges": 31,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.5714285714285716,
+          "max_open": 5,
+          "mean_open": 3.0714285714285716,
+          "mean_edge_length": 3.225806451612903
+        },
+        "human_repaired": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.5714285714285716,
+          "max_open": 5,
+          "mean_open": 3.0714285714285716,
+          "mean_edge_length": 3.225806451612903
+        },
+        "just_in_time": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 6.071428571428571,
+          "max_open": 9,
+          "mean_open": 4.857142857142857,
+          "mean_edge_length": 5.483870967741935
+        },
+        "greedy_min_open": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 5.428571428571429,
+          "max_open": 7,
+          "mean_open": 4.178571428571429,
+          "mean_edge_length": 4.903225806451613
+        },
+        "optimised": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.4285714285714284,
+          "max_open": 6,
+          "mean_open": 2.9642857142857144,
+          "mean_edge_length": 3.096774193548387
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.4236453201970444,
+        "greedy_min_open": 0.3448275862068966,
+        "optimised": 0.5172413793103448
+      },
+      "random": {
+        "mean_open": {
+          "mean": 7.786785714285714,
+          "p05": 7.035714285714286,
+          "p50": 7.821428571428571,
+          "p95": 8.357142857142858
+        },
+        "max_open": {
+          "mean": 12.645,
+          "p05": 11,
+          "p50": 13,
+          "p95": 14
+        },
+        "mean_cut": {
+          "mean": 9.359107142857143,
+          "p05": 8.357142857142858,
+          "p50": 9.357142857142858,
+          "p95": 10.357142857142858
+        },
+        "cutwidth": {
+          "mean": 15.31,
+          "p05": 13,
+          "p50": 15,
+          "p95": 18
+        },
+        "mean_edge_length": {
+          "mean": 8.453387096774193,
+          "p05": 7.548387096774194,
+          "p50": 8.451612903225806,
+          "p95": 9.35483870967742
+        }
+      },
+      "random_tau_vs_human_mean": 0.13133004926108374,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.214285714285714,
+          "p50": 7.321428571428571,
+          "p95": 8.285714285714286
+        },
+        "max_open": {
+          "p05": 10,
+          "p50": 12,
+          "p95": 14
+        },
+        "mean_cut": {
+          "p05": 7.392857142857143,
+          "p50": 8.928571428571429,
+          "p95": 10.392857142857142
+        },
+        "cutwidth": {
+          "p05": 11,
+          "p50": 14,
+          "p95": 16
+        },
+        "mean_edge_length": {
+          "p05": 6.67741935483871,
+          "p50": 8.064516129032258,
+          "p95": 9.387096774193548
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 4,
+        "just_in_time": 9,
+        "greedy_min_open": 11,
+        "optimised": 7
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 29,
+      "n_edges": 40,
+      "forward_refs": [
+        [
+          "defn:is_regular_number",
+          "lemma:may_assume_coprime"
+        ],
+        [
+          "lem:Hilbert92",
+          "thm:Kummers_lemma"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 29,
+          "forward_refs": 2,
+          "cutwidth": 11,
+          "mean_cut": 6.071428571428571,
+          "max_open": 6,
+          "mean_open": 4.035714285714286,
+          "mean_edge_length": 4.25
+        },
+        "human_repaired": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 11,
+          "mean_cut": 6.071428571428571,
+          "max_open": 6,
+          "mean_open": 3.892857142857143,
+          "mean_edge_length": 4.25
+        },
+        "just_in_time": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 9.571428571428571,
+          "max_open": 8,
+          "mean_open": 4.464285714285714,
+          "mean_edge_length": 6.7
+        },
+        "greedy_min_open": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 8.071428571428571,
+          "max_open": 10,
+          "mean_open": 5.035714285714286,
+          "mean_edge_length": 5.65
+        },
+        "optimised": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 11,
+          "mean_cut": 5.464285714285714,
+          "max_open": 6,
+          "mean_open": 3.2857142857142856,
+          "mean_edge_length": 3.825
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9802955665024631,
+        "just_in_time": 0.11822660098522164,
+        "greedy_min_open": 0.5960591133004927,
+        "optimised": 0.7733990147783252
+      },
+      "random": {
+        "mean_open": {
+          "mean": 7.8583928571428565,
+          "p05": 6.642857142857143,
+          "p50": 7.821428571428571,
+          "p95": 9.035714285714286
+        },
+        "max_open": {
+          "mean": 12.81,
+          "p05": 11,
+          "p50": 13,
+          "p95": 15
+        },
+        "mean_cut": {
+          "mean": 13.667321428571428,
+          "p05": 11.178571428571429,
+          "p50": 13.75,
+          "p95": 15.928571428571429
+        },
+        "cutwidth": {
+          "mean": 22.115,
+          "p05": 18,
+          "p50": 22,
+          "p95": 25
+        },
+        "mean_edge_length": {
+          "mean": 9.567124999999999,
+          "p05": 7.825,
+          "p50": 9.625,
+          "p95": 11.15
+        }
+      },
+      "random_tau_vs_human_mean": 0.23958128078817734,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.571428571428571,
+          "p50": 8.5,
+          "p95": 9.392857142857142
+        },
+        "max_open": {
+          "p05": 11,
+          "p50": 13,
+          "p95": 15
+        },
+        "mean_cut": {
+          "p05": 13.428571428571429,
+          "p50": 15.5,
+          "p95": 17.321428571428573
+        },
+        "cutwidth": {
+          "p05": 20,
+          "p50": 23,
+          "p95": 26
+        },
+        "mean_edge_length": {
+          "p05": 9.4,
+          "p50": 10.85,
+          "p95": 12.125
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0125,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 5,
+        "just_in_time": 11,
+        "greedy_min_open": 11,
+        "optimised": 9
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 29,
+      "n_edges": 27,
+      "forward_refs": [
+        [
+          "lem:Hilbert92",
+          "thm:Kummers_lemma"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 29,
+          "forward_refs": 1,
+          "cutwidth": 8,
+          "mean_cut": 3.642857142857143,
+          "max_open": 5,
+          "mean_open": 3.357142857142857,
+          "mean_edge_length": 3.7777777777777777
+        },
+        "human_repaired": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.5,
+          "max_open": 5,
+          "mean_open": 3.2142857142857144,
+          "mean_edge_length": 3.6296296296296298
+        },
+        "just_in_time": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 3.8214285714285716,
+          "max_open": 6,
+          "mean_open": 3.0,
+          "mean_edge_length": 3.962962962962963
+        },
+        "greedy_min_open": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 3.7857142857142856,
+          "max_open": 7,
+          "mean_open": 3.357142857142857,
+          "mean_edge_length": 3.925925925925926
+        },
+        "optimised": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 2.5357142857142856,
+          "max_open": 5,
+          "mean_open": 2.2857142857142856,
+          "mean_edge_length": 2.6296296296296298
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9852216748768473,
+        "just_in_time": -0.09852216748768483,
+        "greedy_min_open": 0.17733990147783252,
+        "optimised": 0.729064039408867
+      },
+      "random": {
+        "mean_open": {
+          "mean": 6.263928571428571,
+          "p05": 5.214285714285714,
+          "p50": 6.178571428571429,
+          "p95": 7.571428571428571
+        },
+        "max_open": {
+          "mean": 10.64,
+          "p05": 9,
+          "p50": 11,
+          "p95": 12
+        },
+        "mean_cut": {
+          "mean": 7.363392857142856,
+          "p05": 5.892857142857143,
+          "p50": 7.392857142857143,
+          "p95": 9.107142857142858
+        },
+        "cutwidth": {
+          "mean": 12.545,
+          "p05": 11,
+          "p50": 13,
+          "p95": 14
+        },
+        "mean_edge_length": {
+          "mean": 7.636111111111111,
+          "p05": 6.111111111111111,
+          "p50": 7.666666666666667,
+          "p95": 9.444444444444445
+        }
+      },
+      "random_tau_vs_human_mean": 0.2621182266009852,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.0,
+          "p50": 7.178571428571429,
+          "p95": 8.178571428571429
+        },
+        "max_open": {
+          "p05": 10,
+          "p50": 12,
+          "p95": 13
+        },
+        "mean_cut": {
+          "p05": 7.214285714285714,
+          "p50": 8.714285714285714,
+          "p95": 9.821428571428571
+        },
+        "cutwidth": {
+          "p05": 11,
+          "p50": 13,
+          "p95": 15
+        },
+        "mean_edge_length": {
+          "p05": 7.481481481481482,
+          "p50": 9.037037037037036,
+          "p95": 10.185185185185185
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 4,
+        "human_repaired": 5,
+        "just_in_time": 11,
+        "greedy_min_open": 17,
+        "optimised": 9
+      }
+    },
+    {
+      "name": "Lean: discriminants-of-number-fields",
+      "n_nodes": 13,
+      "n_edges": 15,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 5.0,
+          "max_open": 4,
+          "mean_open": 3.0,
+          "mean_edge_length": 4.0
+        },
+        "human_repaired": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 5.0,
+          "max_open": 4,
+          "mean_open": 3.0,
+          "mean_edge_length": 4.0
+        },
+        "just_in_time": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 5.0,
+          "max_open": 3,
+          "mean_open": 2.0833333333333335,
+          "mean_edge_length": 4.0
+        },
+        "greedy_min_open": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 8,
+          "mean_cut": 3.9166666666666665,
+          "max_open": 3,
+          "mean_open": 1.75,
+          "mean_edge_length": 3.1333333333333333
+        },
+        "optimised": {
+          "n": 13,
+          "forward_refs": 0,
+          "cutwidth": 9,
+          "mean_cut": 3.75,
+          "max_open": 3,
+          "mean_open": 1.6666666666666667,
+          "mean_edge_length": 3.0
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.05128205128205132,
+        "greedy_min_open": 0.23076923076923073,
+        "optimised": -0.2564102564102564
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.285,
+          "p05": 2.5833333333333335,
+          "p50": 3.3333333333333335,
+          "p95": 4.0
+        },
+        "max_open": {
+          "mean": 5.04,
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 6.204583333333334,
+          "p05": 5.083333333333333,
+          "p50": 6.166666666666667,
+          "p95": 7.666666666666667
+        },
+        "cutwidth": {
+          "mean": 10.49,
+          "p05": 9,
+          "p50": 11,
+          "p95": 12
+        },
+        "mean_edge_length": {
+          "mean": 4.963666666666667,
+          "p05": 4.066666666666666,
+          "p50": 4.933333333333334,
+          "p95": 6.133333333333334
+        }
+      },
+      "random_tau_vs_human_mean": 0.26294871794871794,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.6666666666666665,
+          "p50": 3.5,
+          "p95": 4.083333333333333
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 5.5,
+          "p50": 6.75,
+          "p95": 8.083333333333334
+        },
+        "cutwidth": {
+          "p05": 9,
+          "p50": 10,
+          "p95": 12
+        },
+        "mean_edge_length": {
+          "p05": 4.4,
+          "p50": 5.4,
+          "p95": 6.466666666666667
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.25,
+          "max_open": 0.085,
+          "mean_cut": 0.0475,
+          "cutwidth": 0.085,
+          "mean_edge_length": 0.0475
+        },
+        "human_repaired": {
+          "mean_open": 0.25,
+          "max_open": 0.085,
+          "mean_cut": 0.0475,
+          "cutwidth": 0.085,
+          "mean_edge_length": 0.0475
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.01,
+          "mean_cut": 0.0475,
+          "cutwidth": 0.085,
+          "mean_edge_length": 0.0475
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.085,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.17,
+          "max_open": 0.05,
+          "mean_cut": 0.015,
+          "cutwidth": 0.12,
+          "mean_edge_length": 0.015
+        },
+        "human_repaired": {
+          "mean_open": 0.17,
+          "max_open": 0.05,
+          "mean_cut": 0.015,
+          "cutwidth": 0.12,
+          "mean_edge_length": 0.015
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.015,
+          "cutwidth": 0.12,
+          "mean_edge_length": 0.015
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.12,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: fermats-last-theorem-for-regular-primes",
+      "n_nodes": 10,
+      "n_edges": 12,
+      "forward_refs": [
+        [
+          "defn:is_regular_number",
+          "lemma:may_assume_coprime"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 10,
+          "forward_refs": 1,
+          "cutwidth": 7,
+          "mean_cut": 3.4444444444444446,
+          "max_open": 5,
+          "mean_open": 3.0,
+          "mean_edge_length": 2.5833333333333335
+        },
+        "human_repaired": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.6666666666666665,
+          "max_open": 5,
+          "mean_open": 2.888888888888889,
+          "mean_edge_length": 2.75
+        },
+        "just_in_time": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 4.555555555555555,
+          "max_open": 5,
+          "mean_open": 3.111111111111111,
+          "mean_edge_length": 3.4166666666666665
+        },
+        "greedy_min_open": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.7777777777777777,
+          "max_open": 5,
+          "mean_open": 2.7777777777777777,
+          "mean_edge_length": 2.8333333333333335
+        },
+        "optimised": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 7,
+          "mean_cut": 3.4444444444444446,
+          "max_open": 5,
+          "mean_open": 2.6666666666666665,
+          "mean_edge_length": 2.5833333333333335
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9555555555555556,
+        "just_in_time": 0.6444444444444444,
+        "greedy_min_open": 0.8222222222222222,
+        "optimised": 0.8222222222222222
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.647777777777778,
+          "p05": 3.2222222222222223,
+          "p50": 3.6666666666666665,
+          "p95": 4.0
+        },
+        "max_open": {
+          "mean": 5.955,
+          "p05": 6,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 4.937222222222222,
+          "p05": 4.111111111111111,
+          "p50": 5.0,
+          "p95": 5.888888888888889
+        },
+        "cutwidth": {
+          "mean": 7.525,
+          "p05": 7,
+          "p50": 8,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "mean": 3.702916666666667,
+          "p05": 3.0833333333333335,
+          "p50": 3.75,
+          "p95": 4.416666666666667
+        }
+      },
+      "random_tau_vs_human_mean": 0.40044444444444444,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.2222222222222223,
+          "p50": 3.6666666666666665,
+          "p95": 4.0
+        },
+        "max_open": {
+          "p05": 6,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 4.333333333333333,
+          "p50": 5.222222222222222,
+          "p95": 6.0
+        },
+        "cutwidth": {
+          "p05": 7,
+          "p50": 8,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "p05": 3.25,
+          "p50": 3.9166666666666665,
+          "p95": 4.5
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0125,
+          "max_open": 0.0225,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2375,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0075,
+          "max_open": 0.0225,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2375,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0325,
+          "max_open": 0.0225,
+          "mean_cut": 0.235,
+          "cutwidth": 0.2375,
+          "mean_edge_length": 0.235
+        },
+        "greedy_min_open": {
+          "mean_open": 0.005,
+          "max_open": 0.0225,
+          "mean_cut": 0.0025,
+          "cutwidth": 0.2375,
+          "mean_edge_length": 0.0025
+        },
+        "optimised": {
+          "mean_open": 0.0025,
+          "max_open": 0.0225,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2375,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0275,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1875,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0175,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1875,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.04,
+          "max_open": 0.02,
+          "mean_cut": 0.12,
+          "cutwidth": 0.1875,
+          "mean_edge_length": 0.12
+        },
+        "greedy_min_open": {
+          "mean_open": 0.005,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1875,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.02,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1875,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

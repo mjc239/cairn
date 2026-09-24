@@ -1,0 +1,31 @@
+{
+ "name": "formal_book",
+ "repo": "mo271/FormalBook",
+ "status": "ok",
+ "stage": "done",
+ "commit": "239c3f099c3b49c2ebe677b26bd34b04c4297626",
+ "commit_date": "2026-09-22",
+ "toolchain": "leanprover/lean4:v4.34.0-rc2",
+ "mathlib": "61eda68641d0",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 192,
+ "uses_edges": 103,
+ "chapters": 45,
+ "lean_nodes": 69,
+ "leanok_nodes": 55,
+ "libs": [
+  "FormalBook"
+ ],
+ "build_minutes": 2.7,
+ "extractor": "extract_deps.lean",
+ "decls": 507,
+ "theorems": 341,
+ "external_decls": 0,
+ "lean_resolved": 1.0,
+ "nodes_linked": 69,
+ "nodes_linked_external_only": 0,
+ "minutes": 6.0
+}

@@ -1,0 +1,32 @@
+{
+ "name": "flt_regular",
+ "repo": "leanprover-community/flt-regular",
+ "status": "ok",
+ "stage": "done",
+ "commit": "8c3c5a908a632759f3a72f76f5e5ec1249e3db0d",
+ "commit_date": "2026-08-24",
+ "toolchain": "leanprover/lean4:v4.34.0-rc2",
+ "mathlib": "dbb8420388ea",
+ "note": "blueprint deleted at HEAD; harvested the last commit that has it",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "section",
+ "nodes": 45,
+ "uses_edges": 51,
+ "chapters": 4,
+ "lean_nodes": 36,
+ "leanok_nodes": 44,
+ "libs": [
+  "FltRegular"
+ ],
+ "build_minutes": 1.3,
+ "extractor": "extract_deps.lean",
+ "decls": 295,
+ "theorems": 232,
+ "external_decls": 17,
+ "lean_resolved": 0.806,
+ "nodes_linked": 29,
+ "nodes_linked_external_only": 17,
+ "minutes": 4.2
+}

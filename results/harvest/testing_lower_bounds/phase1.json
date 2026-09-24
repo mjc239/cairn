@@ -1,0 +1,6363 @@
+{
+  "project": "testing_lower_bounds",
+  "provenance": "RemyDegenne/testing-lower-bounds @ da2cf0bfba77 (2026-09-24), Lean leanprover/lean4:v4.35.0-rc2",
+  "stats": {
+    "project_decls": 1035,
+    "project_decls_by_kind": {
+      "def": 69,
+      "inductive": 2,
+      "theorem": 964
+    },
+    "external_decls": 66,
+    "formal_edges": 5177,
+    "blueprint_nodes": 344,
+    "blueprint_nodes_with_formal_decl": 177,
+    "lean_names_resolved": 195,
+    "lean_names_missing": {},
+    "coverage": 1.0,
+    "labelled_decls": 192,
+    "unlabelled_theorems": 854,
+    "edges": {
+      "author_edges": 316,
+      "lean_edges": 883,
+      "author_direct_in_lean": 255,
+      "author_implied_transitively": 10,
+      "author_absent_from_lean": [
+        [
+          "cor:bayesBinaryRisk_eq_abs",
+          "lem:statInfo_eq_integral_abs_sub"
+        ],
+        [
+          "cor:rnDeriv_compProd_right",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "cor:statInfo_eq_integral_abs",
+          "cor:fDiv_statInfoFun_eq_statInfo"
+        ],
+        [
+          "def:KL",
+          "def:hellingerAlpha"
+        ],
+        [
+          "def:KL",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:genBayesEstimator_bayesBinaryRisk"
+        ],
+        [
+          "def:condFDiv",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:condFDiv",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:condHellingerAlpha",
+          "def:condRenyi"
+        ],
+        [
+          "def:condKL",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:derivAtTop",
+          "def:fDiv"
+        ],
+        [
+          "def:eGamma",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "def:fDiv",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "def:sFinite_kernel"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:rnDeriv_unique"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:disintegration"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "def:kernel"
+        ],
+        [
+          "def:riskIncrease",
+          "def:statInfo"
+        ],
+        [
+          "def:sFinite_kernel",
+          "def:kernel_compProd"
+        ],
+        [
+          "def:sFinite_kernel",
+          "def:kernel_parallel_prod"
+        ],
+        [
+          "def:sFinite_kernel",
+          "def:kernel_prod"
+        ],
+        [
+          "lem:DPI_of_DPI_ac",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "lem:condKL_const",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:condKL_eq_condFDiv",
+          "lem:condKL_const"
+        ],
+        [
+          "lem:fDiv_add_smul_right",
+          "lem:fDiv_add_smul_right'"
+        ],
+        [
+          "lem:fDiv_comp_le_compProd_1",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "lem:fDiv_eq_zero_iff",
+          "lem:kl_eq_zero_iff"
+        ],
+        [
+          "lem:fDiv_map_measurableEmbedding",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "lem:fDiv_self",
+          "lem:kl_self"
+        ],
+        [
+          "lem:integrable_fDiv_compProd_iff",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:integrable_llr_compProd_iff",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:kl_eq_zero_iff"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:kl_ge"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:kl_self"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "thm:kl_fst_le"
+        ],
+        [
+          "lem:le_fDiv",
+          "lem:kl_ge"
+        ],
+        [
+          "lem:llr_change_measure",
+          "lem:llr_change_measure_add"
+        ],
+        [
+          "lem:llr_change_measure",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:riskIncrease_comp_del",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "lem:rnDeriv_map_eq_condexp",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "thm:condexp_jensen",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "thm:fDiv_comp_le_condFDiv_2",
+          "thm:fDiv_convex"
+        ],
+        [
+          "thm:fDiv_data_proc_2",
+          "cor:data_proc_event"
+        ],
+        [
+          "thm:fDiv_data_proc_2",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "thm:fDiv_data_proc_2",
+          "thm:kl_data_proc"
+        ],
+        [
+          "thm:fDiv_data_proc_2",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:kl_fst_le"
+        ],
+        [
+          "thm:kl_compProd",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "thm:rnDeriv_chain_compProd",
+          "lem:rnDeriv_compProd"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "cor:fDiv_prod_left_1",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "cor:fDiv_statInfoFun_eq_statInfo",
+          "lem:statInfo_eq_fDiv"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:kl_data_proc"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:KL",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:KL",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "def:KL",
+          "lem:renyiDiv_zero"
+        ],
+        [
+          "def:KL",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "def:KL",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "def:KL",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "def:KL",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:Renyi",
+          "def:condRenyi"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:bayesBinaryRisk_one_one"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:statInfo_eq_sub_inf_event"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:statInfo_le"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:statInfo_self"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "lem:statInfo_symm"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:bayesBinaryRisk",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesRisk_binary"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:bayesInv",
+          "lem:genBayesEstimator_bayesBinaryRisk"
+        ],
+        [
+          "def:bayesInv",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:bayesRisk",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:bayesRisk",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:bayesRisk",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:bayesRisk",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:bayesRisk",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "def:bayesRisk",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:bayesianRisk",
+          "def:bayesEstimator"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesRisk_const"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:bayesianRisk",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:bayesianRisk",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:condFDiv",
+          "lem:condKL_const"
+        ],
+        [
+          "def:condFDiv",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:curvatureMeasure",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:derivAtTop",
+          "cor:bh_kl"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:hellingerAlpha_ne_top_of_lt_one"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:kl_eq_fDiv"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:statInfo_eq_fDiv"
+        ],
+        [
+          "def:derivAtTop",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "def:deterministic_kernel",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:fDiv",
+          "cor:bh_kl"
+        ],
+        [
+          "def:fDiv",
+          "def:condFDiv"
+        ],
+        [
+          "def:fDiv",
+          "lem:condKL_const"
+        ],
+        [
+          "def:fDiv",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:fDiv",
+          "lem:hellingerAlpha_ne_top_of_lt_one"
+        ],
+        [
+          "def:fDiv",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "def:fDiv",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:fDiv",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "def:fDiv",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "def:fDiv",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "def:fDiv",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "def:fDiv",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:fDiv",
+          "thm:kl_pi"
+        ],
+        [
+          "def:fDiv",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:rnDeriv_compProd_right"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:rnDeriv_value"
+        ],
+        [
+          "def:finite_kernel",
+          "def:bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "def:genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:condKL_const"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:rnDeriv_unique"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:disintegration"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:genBayesEstimator",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:genBayesEstimator",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "def:hellingerAlpha",
+          "lem:chernoff_eq_kl"
+        ],
+        [
+          "def:hellingerAlpha",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "def:hellingerAlpha",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "def:hellingerAlpha",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "def:hellingerAlpha",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "def:hellingerAlpha",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:kernel",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:kernel",
+          "cor:rnDeriv_compProd_right"
+        ],
+        [
+          "def:kernel",
+          "cor:rnDeriv_value"
+        ],
+        [
+          "def:kernel",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:kernel",
+          "def:bayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "def:bayesInv"
+        ],
+        [
+          "def:kernel",
+          "def:bayesRisk"
+        ],
+        [
+          "def:kernel",
+          "def:bayesianRisk"
+        ],
+        [
+          "def:kernel",
+          "def:condFDiv"
+        ],
+        [
+          "def:kernel",
+          "def:condHellingerAlpha"
+        ],
+        [
+          "def:kernel",
+          "def:condKL"
+        ],
+        [
+          "def:kernel",
+          "def:condRenyi"
+        ],
+        [
+          "def:kernel",
+          "def:genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "def:kernel_rnDeriv"
+        ],
+        [
+          "def:kernel",
+          "def:measure_compProd"
+        ],
+        [
+          "def:kernel",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:kernel",
+          "def:riskIncrease"
+        ],
+        [
+          "def:kernel",
+          "def:sFinite_kernel"
+        ],
+        [
+          "def:kernel",
+          "def:statInfo"
+        ],
+        [
+          "def:kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_binary"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_const"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:condKL_const"
+        ],
+        [
+          "def:kernel",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:kernel",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:kernel",
+          "lem:genBayesEstimator_bayesBinaryRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:kernel",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:kernel",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:kernel",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:kernel",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:kernel",
+          "lem:rnDeriv_unique"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_eq_sub_inf_event"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_le"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_self"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_symm"
+        ],
+        [
+          "def:kernel",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "def:kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:kernel",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:kernel",
+          "thm:tv_data_proc"
+        ],
+        [
+          "def:kernel_comp",
+          "def:bayesianRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "def:kernel_prod"
+        ],
+        [
+          "def:kernel_comp",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "def:riskIncrease"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:kernel_compProd",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:kernel_compProd",
+          "def:bayesInv"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:disintegration"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "def:kernel_prod"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:markov_kernel",
+          "def:bayesRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_const"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:tv_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:rnDeriv_compProd_right"
+        ],
+        [
+          "def:measure_compProd",
+          "def:bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "def:condRenyi"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:rnDeriv_chain_compProd"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "def:kernel_comp"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesInv_id"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:statInfo_self"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:rnDeriv_compProd_left"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:rnDeriv_value"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesInv_self"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:exists_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:mutuallySingular_compProd"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:rnDeriv_compProd"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:rnDeriv_unique"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:statInfo",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:statInfo",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "def:statInfo",
+          "lem:tv_eq_fDiv"
+        ],
+        [
+          "def:statInfo",
+          "lem:tv_le"
+        ],
+        [
+          "def:statInfo",
+          "lem:tv_nonneg"
+        ],
+        [
+          "def:statInfo",
+          "lem:tv_self"
+        ],
+        [
+          "def:statInfo",
+          "thm:bh_fDiv"
+        ],
+        [
+          "def:statInfo",
+          "thm:tv_data_proc"
+        ],
+        [
+          "def:statInfoFun",
+          "lem:statInfo_eq_fDiv"
+        ],
+        [
+          "def:statInfoFun",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:statInfoFun",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:bayesBinaryRisk_le",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "lem:bayesBinaryRisk_le",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "lem:bayesBinaryRisk_mul",
+          "lem:statInfo_eq_sub_inf_event"
+        ],
+        [
+          "lem:bayesBinaryRisk_mul",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "lem:bayesBinaryRisk_mul",
+          "lem:statInfo_le"
+        ],
+        [
+          "lem:bayesBinaryRisk_self",
+          "lem:statInfo_eq_sub_inf_event"
+        ],
+        [
+          "lem:bayesBinaryRisk_self",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "lem:bayesBinaryRisk_self",
+          "lem:statInfo_le"
+        ],
+        [
+          "lem:bayesRisk_binary",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "lem:convex_taylor",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesInv_comp"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesInv_comp_self"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesInv_self"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "lem:fDiv_add_measure_le",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "lem:fDiv_add_smul_left",
+          "lem:fDiv_add_smul_right'"
+        ],
+        [
+          "lem:fDiv_compProd_right",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:fDiv_eq_add_withDensity_derivAtTop",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "lem:fDiv_eq_add_withDensity_derivAtTop",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:fDiv_eq_add_withDensity_derivAtTop",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "lem:fDiv_map_measurableEmbedding",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "lem:fDiv_map_measurableEmbedding",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:fDiv_map_measurableEmbedding",
+          "thm:fDiv_convex"
+        ],
+        [
+          "lem:fDiv_map_measurableEmbedding",
+          "thm:kl_pi"
+        ],
+        [
+          "lem:fDiv_ne_top_iff",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:fDiv_ne_top_iff",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:fDiv_symm",
+          "thm:bh_fDiv"
+        ],
+        [
+          "lem:genBayesEstimator_bayesBinaryRisk",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "lem:hellingerAlpha_ne_top_of_lt_one",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "lem:hellingerAlpha_ne_top_of_lt_one",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:hellingerAlpha_ne_top_of_lt_one",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "lem:hellingerAlpha_ne_top_of_lt_one",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "cor:bh_kl"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "thm:kl_pi"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "lem:kl_self",
+          "lem:kl_eq_zero_iff"
+        ],
+        [
+          "lem:kl_self",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:kl_self",
+          "thm:kl_pi"
+        ],
+        [
+          "lem:kl_self",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "lem:measurable_measure_fun",
+          "def:deterministic_kernel"
+        ],
+        [
+          "lem:measurable_measure_fun",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "lem:measurable_measure_fun",
+          "lem:rnDeriv_unique"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:rnDeriv_eq_ac_left"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:renyiDiv_zero",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:integral_rpow_rnDeriv_symm"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "cor:rnDeriv_compProd_right"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_fst_le"
+        ],
+        [
+          "lem:statInfo_eq_integral_abs_sub",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "lem:statInfo_eq_sub_min",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "lem:statInfo_le",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "lem:statInfo_le",
+          "lem:statInfo_eq_fDiv"
+        ],
+        [
+          "lem:statInfo_le",
+          "thm:tv_data_proc"
+        ],
+        [
+          "lem:statInfo_symm",
+          "thm:bh_fDiv"
+        ],
+        [
+          "lem:statInfo_symm",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "lem:tv_le",
+          "cor:bh_kl"
+        ],
+        [
+          "lem:tv_nonneg",
+          "cor:bh_kl"
+        ],
+        [
+          "lem:tv_nonneg",
+          "lem:tv_eq_fDiv"
+        ],
+        [
+          "thm:data_proc_bayesRisk",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "thm:disintegration",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "thm:disintegration",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "thm:fDiv_data_proc_3",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_convex"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "thm:fDiv_map_le",
+          "cor:data_proc_event"
+        ],
+        [
+          "thm:fDiv_map_le",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "thm:hellingerAlpha_data_proc",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "thm:isBayesEstimator_genBayesEstimator",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "thm:statInfo_eq_integral",
+          "lem:statInfo_eq_integral_abs_sub"
+        ],
+        [
+          "thm:statInfo_eq_integral",
+          "lem:tv_eq_fDiv"
+        ],
+        [
+          "thm:statInfo_eq_integral",
+          "thm:bh_fDiv"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": false,
+    "unreported_from_definitions": 516,
+    "unreported_top_sources": {
+      "def:kernel": 89,
+      "def:finite_kernel": 55,
+      "def:measure_compProd": 48,
+      "def:markov_kernel": 43,
+      "def:sFinite_kernel": 41,
+      "def:kernel_compProd": 38,
+      "def:measure_measurableSpace": 36,
+      "def:kernel_comp": 31,
+      "def:deterministic_kernel": 24,
+      "def:kernel_parallel_prod": 15
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 177,
+      "n_edges": 316,
+      "forward_refs": [
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:derivAtTop",
+          "def:fDiv"
+        ],
+        [
+          "lem:fDiv_compProd_right",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "cor:rnDeriv_compProd_right",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "lem:rnDeriv_map_eq_condexp",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "thm:condexp_jensen",
+          "thm:fDiv_map_le"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:KL",
+          "cor:bh_kl"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "thm:kl_compProd"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 177,
+          "forward_refs": 15,
+          "cutwidth": 64,
+          "mean_cut": 29.482954545454547,
+          "max_open": 27,
+          "mean_open": 12.517045454545455,
+          "mean_edge_length": 16.420886075949365
+        },
+        "human_repaired": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 103,
+          "mean_cut": 49.64204545454545,
+          "max_open": 29,
+          "mean_open": 17.068181818181817,
+          "mean_edge_length": 27.64873417721519
+        },
+        "just_in_time": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 133,
+          "mean_cut": 90.47727272727273,
+          "max_open": 36,
+          "mean_open": 23.119318181818183,
+          "mean_edge_length": 50.392405063291136
+        },
+        "greedy_min_open": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 96,
+          "mean_cut": 55.47727272727273,
+          "max_open": 26,
+          "mean_open": 14.965909090909092,
+          "mean_edge_length": 30.89873417721519
+        },
+        "optimised": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 65,
+          "mean_cut": 33.72727272727273,
+          "max_open": 16,
+          "mean_open": 9.454545454545455,
+          "mean_edge_length": 18.78481012658228
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.45082177709296356,
+        "just_in_time": 0.047894196199280925,
+        "greedy_min_open": -0.22701592193117626,
+        "optimised": -0.25154083204930666
+      },
+      "random": {
+        "mean_open": {
+          "mean": 27.59,
+          "p05": 23.664772727272727,
+          "p50": 27.744318181818183,
+          "p95": 30.90909090909091
+        },
+        "max_open": {
+          "mean": 44.555,
+          "p05": 37,
+          "p50": 45,
+          "p95": 51
+        },
+        "mean_cut": {
+          "mean": 83.16505681818182,
+          "p05": 71.4034090909091,
+          "p50": 83.3465909090909,
+          "p95": 95.72727272727273
+        },
+        "cutwidth": {
+          "mean": 136.975,
+          "p05": 119,
+          "p50": 136,
+          "p95": 159
+        },
+        "mean_edge_length": {
+          "mean": 46.319778481012655,
+          "p05": 39.76898734177215,
+          "p50": 46.42088607594937,
+          "p95": 53.31645569620253
+        }
+      },
+      "random_tau_vs_human_mean": -0.07971623009758604,
+      "uniform": {
+        "mean_open": {
+          "p05": 32.46022727272727,
+          "p50": 34.71022727272727,
+          "p95": 36.64772727272727
+        },
+        "max_open": {
+          "p05": 48,
+          "p50": 53,
+          "p95": 58
+        },
+        "mean_cut": {
+          "p05": 104.9659090909091,
+          "p50": 110.52272727272727,
+          "p95": 114.94886363636364
+        },
+        "cutwidth": {
+          "p05": 159,
+          "p50": 169,
+          "p95": 178
+        },
+        "mean_edge_length": {
+          "p05": 58.462025316455694,
+          "p50": 61.55696202531646,
+          "p95": 64.02215189873418
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.025,
+          "max_open": 0.0375,
+          "mean_cut": 0.82,
+          "cutwidth": 0.3875,
+          "mean_edge_length": 0.82
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 21,
+        "just_in_time": 90,
+        "greedy_min_open": 76,
+        "optimised": 39
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 177,
+      "n_edges": 883,
+      "forward_refs": [
+        [
+          "def:kernel",
+          "def:bayesianRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "def:bayesianRisk"
+        ],
+        [
+          "def:kernel",
+          "def:bayesRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "def:bayesRisk"
+        ],
+        [
+          "def:kernel",
+          "def:bayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "def:minimaxRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_le_minimaxRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_le_const"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_const"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_const"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:data_proc_bayesRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesRisk_compProd_le_fst"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_ge_inf_bayesInv"
+        ],
+        [
+          "def:kernel",
+          "def:genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "def:genBayesEstimator"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_prod",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesianRisk_genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:bayesInv",
+          "thm:isBayesEstimator_genBayesEstimator"
+        ],
+        [
+          "def:kernel",
+          "def:riskIncrease"
+        ],
+        [
+          "def:kernel_comp",
+          "def:riskIncrease"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "lem:measurable_measure_fun",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:kernel",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesRisk_binary"
+        ],
+        [
+          "def:bayesInv",
+          "lem:bayesRisk_binary"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_mul"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:data_proc_bayesBinaryRisk"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_self"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_le"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_symm"
+        ],
+        [
+          "def:kernel",
+          "lem:genBayesEstimator_bayesBinaryRisk"
+        ],
+        [
+          "def:bayesInv",
+          "lem:genBayesEstimator_bayesBinaryRisk"
+        ],
+        [
+          "def:kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:bayesBinaryRisk_eq_event"
+        ],
+        [
+          "def:kernel",
+          "thm:bayesBinaryRisk_eq"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:kernel_compProd",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:bayesBinaryRisk_eq_abs"
+        ],
+        [
+          "def:kernel",
+          "def:statInfo"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:statInfo_self"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_self"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_le"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_symm"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:kernel",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:data_proc_statInfo"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:kernel",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:deterministic_kernel",
+          "cor:statInfo_data_proc_event"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "thm:statInfo_eq_integral",
+          "lem:statInfo_eq_integral_abs_sub"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "def:kernel",
+          "lem:statInfo_eq_sub_inf_event"
+        ],
+        [
+          "def:kernel",
+          "thm:tv_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:tv_data_proc"
+        ],
+        [
+          "def:kernel",
+          "def:condFDiv"
+        ],
+        [
+          "def:kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:fDiv_compProd_right",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "cor:rnDeriv_compProd_right",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "def:derivAtTop",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:DPI_of_DPI_ac"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:finite_kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:measure_compProd",
+          "cor:fDiv_prod_left_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_3"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "thm:disintegration",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_comp",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "lem:fDiv_comp_le_compProd_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_condFDiv_1"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_1"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_data_proc_2"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:fDiv_comp_le_condFDiv_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:kernel",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:fDiv_fst_le_2"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:deterministic_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:fDiv_compProd_prod_eq"
+        ],
+        [
+          "def:KL",
+          "cor:bh_kl"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "cor:bh_kl"
+        ],
+        [
+          "def:derivAtTop",
+          "cor:bh_kl"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:statInfo_eq_fDiv"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:kl_eq_fDiv"
+        ],
+        [
+          "def:kernel",
+          "def:condKL"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:condKL_eq_condFDiv"
+        ],
+        [
+          "def:kernel",
+          "lem:condKL_const"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:condKL_const"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_fst_le"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:deterministic_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_comp",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_data_proc"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_data_proc"
+        ],
+        [
+          "def:kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_compProd"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_compProd"
+        ],
+        [
+          "def:kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "thm:disintegration",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:finite_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:markov_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:sFinite_kernel",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:kernel_compProd",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:measure_compProd",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:hellingerAlpha_ne_top_of_lt_one"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:integral_rpow_rnDeriv_symm"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "def:kernel",
+          "def:condHellingerAlpha"
+        ],
+        [
+          "def:kernel",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:hellingerAlpha_data_proc"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "def:kernel",
+          "def:condRenyi"
+        ],
+        [
+          "def:measure_compProd",
+          "def:condRenyi"
+        ],
+        [
+          "def:measure_measurableSpace",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:finite_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:markov_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:sFinite_kernel",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:kernel_compProd",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:measure_compProd",
+          "thm:renyi_data_proc"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "def:derivAtTop",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "def:kernel_parallel_prod",
+          "def:kernel_prod"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "def:kernel_rnDeriv",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "cor:rnDeriv_compProd_right"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 177,
+          "forward_refs": 377,
+          "cutwidth": 386,
+          "mean_cut": 221.8806818181818,
+          "max_open": 50,
+          "mean_open": 29.886363636363637,
+          "mean_edge_length": 44.225368063420156
+        },
+        "human_repaired": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 536,
+          "mean_cut": 269.46590909090907,
+          "max_open": 52,
+          "mean_open": 30.943181818181817,
+          "mean_edge_length": 53.71007927519819
+        },
+        "just_in_time": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 593,
+          "mean_cut": 326.64772727272725,
+          "max_open": 60,
+          "mean_open": 40.29545454545455,
+          "mean_edge_length": 65.10758776896942
+        },
+        "greedy_min_open": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 562,
+          "mean_cut": 285.29545454545456,
+          "max_open": 43,
+          "mean_open": 27.255681818181817,
+          "mean_edge_length": 56.86523216308041
+        },
+        "optimised": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 514,
+          "mean_cut": 175.16477272727272,
+          "max_open": 38,
+          "mean_open": 23.068181818181817,
+          "mean_edge_length": 34.91392978482446
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.26592193117616847,
+        "just_in_time": -0.04892141756548529,
+        "greedy_min_open": -0.24319465844889576,
+        "optimised": -0.17257318952234213
+      },
+      "random": {
+        "mean_open": {
+          "mean": 37.35034090909091,
+          "p05": 33.98295454545455,
+          "p50": 37.25,
+          "p95": 40.80681818181818
+        },
+        "max_open": {
+          "mean": 59.945,
+          "p05": 54,
+          "p50": 60,
+          "p95": 65
+        },
+        "mean_cut": {
+          "mean": 347.7685511363636,
+          "p05": 298.21590909090907,
+          "p50": 348.35795454545456,
+          "p95": 393.01704545454544
+        },
+        "cutwidth": {
+          "mean": 579.075,
+          "p05": 534,
+          "p50": 578,
+          "p95": 625
+        },
+        "mean_edge_length": {
+          "mean": 69.31740090600226,
+          "p05": 59.440543601359,
+          "p50": 69.43488108720271,
+          "p95": 78.33635334088335
+        }
+      },
+      "random_tau_vs_human_mean": -0.1094973035439137,
+      "uniform": {
+        "mean_open": {
+          "p05": 44.86931818181818,
+          "p50": 47.46022727272727,
+          "p95": 49.69886363636363
+        },
+        "max_open": {
+          "p05": 67,
+          "p50": 72,
+          "p95": 76
+        },
+        "mean_cut": {
+          "p05": 370.21590909090907,
+          "p50": 392.9375,
+          "p95": 410.72727272727275
+        },
+        "cutwidth": {
+          "p05": 589,
+          "p50": 620,
+          "p95": 647
+        },
+        "mean_edge_length": {
+          "p05": 73.79161947904869,
+          "p50": 78.32049830124575,
+          "p95": 81.86636466591166
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0225,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0725,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.925,
+          "max_open": 0.485,
+          "mean_cut": 0.235,
+          "cutwidth": 0.715,
+          "mean_edge_length": 0.235
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.025,
+          "cutwidth": 0.25,
+          "mean_edge_length": 0.025
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 53,
+        "just_in_time": 83,
+        "greedy_min_open": 75,
+        "optimised": 75
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 177,
+      "n_edges": 194,
+      "forward_refs": [
+        [
+          "lem:exists_bayesInv",
+          "lem:bayesianRisk_bayesInv"
+        ],
+        [
+          "lem:measurable_measure_fun",
+          "lem:riskIncrease_comp_del"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:bayesInv_binary"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:statInfo_eq_sub_min"
+        ],
+        [
+          "thm:statInfo_eq_integral",
+          "lem:statInfo_eq_integral_abs_sub"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "thm:statInfo_eq_integral"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "lem:integrable_fDiv_compProd_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:condFDiv_ne_top_iff"
+        ],
+        [
+          "lem:fDiv_compProd_right",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "cor:rnDeriv_compProd_right",
+          "lem:fDiv_compProd_right"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "thm:fDiv_eq_integral_eGamma"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:fDiv_compProd_left_1"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "thm:fDiv_le_compProd_1"
+        ],
+        [
+          "thm:disintegration",
+          "thm:fDiv_fst_le_1"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_statInfoFun_eq"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:fDiv_phi_data_proc"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_comp_le_compProd_2"
+        ],
+        [
+          "lem:kl_eq_fDiv",
+          "cor:bh_kl"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_fst_le"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_data_proc"
+        ],
+        [
+          "cor:rnDeriv_compProd_left",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:rnDeriv_trim_of_ac",
+          "thm:kl_data_proc"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ae_rnDeriv_ne_zero",
+          "lem:integrable_llr_compProd_iff"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "thm:kl_compProd"
+        ],
+        [
+          "thm:disintegration",
+          "thm:kl_fst_add_condKL"
+        ],
+        [
+          "lem:ac_compProd_iff",
+          "lem:kl_prod_two'"
+        ],
+        [
+          "lem:rnDeriv_chain",
+          "lem:integral_rpow_rnDeriv_symm"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:hellingerAlpha_symm"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyiDiv_eq_top_iff_mutuallySingular_of_lt_one"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_chernoff_bound"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure"
+        ],
+        [
+          "lem:integrable_f_rnDeriv_of_derivAtTop_ne_top",
+          "lem:renyi_change_measure_add"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:eq_bayesInv_of_compProd_eq"
+        ],
+        [
+          "cor:rnDeriv_value",
+          "lem:rnDeriv_bayesInv"
+        ],
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "cor:rnDeriv_compProd_right"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 177,
+          "forward_refs": 47,
+          "cutwidth": 48,
+          "mean_cut": 28.857954545454547,
+          "max_open": 30,
+          "mean_open": 14.556818181818182,
+          "mean_edge_length": 26.18041237113402
+        },
+        "human_repaired": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 62,
+          "mean_cut": 32.41477272727273,
+          "max_open": 28,
+          "mean_open": 15.482954545454545,
+          "mean_edge_length": 29.40721649484536
+        },
+        "just_in_time": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 68,
+          "mean_cut": 37.91477272727273,
+          "max_open": 36,
+          "mean_open": 21.426136363636363,
+          "mean_edge_length": 34.396907216494846
+        },
+        "greedy_min_open": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 59,
+          "mean_cut": 28.27840909090909,
+          "max_open": 22,
+          "mean_open": 10.323863636363637,
+          "mean_edge_length": 25.65463917525773
+        },
+        "optimised": {
+          "n": 177,
+          "forward_refs": 0,
+          "cutwidth": 51,
+          "mean_cut": 16.181818181818183,
+          "max_open": 20,
+          "mean_open": 8.0,
+          "mean_edge_length": 14.68041237113402
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.49974319465844885,
+        "just_in_time": 0.0668977914740626,
+        "greedy_min_open": 0.036979969183358996,
+        "optimised": 0.05688238315356964
+      },
+      "random": {
+        "mean_open": {
+          "mean": 20.162017045454544,
+          "p05": 18.27840909090909,
+          "p50": 20.113636363636363,
+          "p95": 22.267045454545453
+        },
+        "max_open": {
+          "mean": 35.225,
+          "p05": 31,
+          "p50": 35,
+          "p95": 40
+        },
+        "mean_cut": {
+          "mean": 47.00227272727273,
+          "p05": 41.90909090909091,
+          "p50": 47.01704545454545,
+          "p95": 52.78977272727273
+        },
+        "cutwidth": {
+          "mean": 84.595,
+          "p05": 73,
+          "p50": 85,
+          "p95": 96
+        },
+        "mean_edge_length": {
+          "mean": 42.641237113402056,
+          "p05": 38.02061855670103,
+          "p50": 42.654639175257735,
+          "p95": 47.891752577319586
+        }
+      },
+      "random_tau_vs_human_mean": -0.004945428864920384,
+      "uniform": {
+        "mean_open": {
+          "p05": 25.772727272727273,
+          "p50": 27.875,
+          "p95": 29.931818181818183
+        },
+        "max_open": {
+          "p05": 39,
+          "p50": 43,
+          "p95": 46
+        },
+        "mean_cut": {
+          "p05": 55.30681818181818,
+          "p50": 60.07386363636363,
+          "p95": 64.10227272727273
+        },
+        "cutwidth": {
+          "p05": 91,
+          "p50": 99,
+          "p95": 106
+        },
+        "mean_edge_length": {
+          "p05": 50.175257731958766,
+          "p50": 54.5,
+          "p95": 58.154639175257735
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.86,
+          "max_open": 0.645,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 11,
+        "human_repaired": 42,
+        "just_in_time": 107,
+        "greedy_min_open": 107,
+        "optimised": 103
+      }
+    },
+    {
+      "name": "Lean: risk",
+      "n_nodes": 29,
+      "n_edges": 66,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 20.464285714285715,
+          "max_open": 10,
+          "mean_open": 5.5,
+          "mean_edge_length": 8.681818181818182
+        },
+        "human_repaired": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 20.464285714285715,
+          "max_open": 10,
+          "mean_open": 5.5,
+          "mean_edge_length": 8.681818181818182
+        },
+        "just_in_time": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 40,
+          "mean_cut": 25.071428571428573,
+          "max_open": 10,
+          "mean_open": 6.071428571428571,
+          "mean_edge_length": 10.636363636363637
+        },
+        "greedy_min_open": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 30,
+          "mean_cut": 19.142857142857142,
+          "max_open": 9,
+          "mean_open": 4.821428571428571,
+          "mean_edge_length": 8.121212121212121
+        },
+        "optimised": {
+          "n": 29,
+          "forward_refs": 0,
+          "cutwidth": 30,
+          "mean_cut": 17.357142857142858,
+          "max_open": 7,
+          "mean_open": 4.464285714285714,
+          "mean_edge_length": 7.363636363636363
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.4236453201970444,
+        "greedy_min_open": 0.6945812807881773,
+        "optimised": 0.6206896551724138
+      },
+      "random": {
+        "mean_open": {
+          "mean": 7.535,
+          "p05": 6.535714285714286,
+          "p50": 7.571428571428571,
+          "p95": 8.535714285714286
+        },
+        "max_open": {
+          "mean": 12.09,
+          "p05": 10,
+          "p50": 12,
+          "p95": 14
+        },
+        "mean_cut": {
+          "mean": 24.580714285714283,
+          "p05": 21.071428571428573,
+          "p50": 24.75,
+          "p95": 27.571428571428573
+        },
+        "cutwidth": {
+          "mean": 40.24,
+          "p05": 35,
+          "p50": 40,
+          "p95": 45
+        },
+        "mean_edge_length": {
+          "mean": 10.428181818181818,
+          "p05": 8.93939393939394,
+          "p50": 10.5,
+          "p95": 11.696969696969697
+        }
+      },
+      "random_tau_vs_human_mean": 0.4517487684729064,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.0,
+          "p50": 8.071428571428571,
+          "p95": 8.964285714285714
+        },
+        "max_open": {
+          "p05": 11,
+          "p50": 13,
+          "p95": 15
+        },
+        "mean_cut": {
+          "p05": 25.321428571428573,
+          "p50": 28.071428571428573,
+          "p95": 30.178571428571427
+        },
+        "cutwidth": {
+          "p05": 39,
+          "p50": 44,
+          "p95": 47
+        },
+        "mean_edge_length": {
+          "p05": 10.742424242424242,
+          "p50": 11.909090909090908,
+          "p95": 12.803030303030303
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0725,
+          "mean_cut": 0.03,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.03
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0725,
+          "mean_cut": 0.03,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.03
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.0725,
+          "mean_cut": 0.5875,
+          "cutwidth": 0.4675,
+          "mean_edge_length": 0.5875
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.04,
+          "cutwidth": 0.1,
+          "mean_edge_length": 0.04
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: stat_div",
+      "n_nodes": 18,
+      "n_edges": 30,
+      "forward_refs": [
+        [
+          "thm:statInfo_eq_integral",
+          "lem:statInfo_eq_integral_abs_sub"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 18,
+          "forward_refs": 1,
+          "cutwidth": 19,
+          "mean_cut": 13.411764705882353,
+          "max_open": 7,
+          "mean_open": 4.176470588235294,
+          "mean_edge_length": 7.6
+        },
+        "human_repaired": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 19,
+          "mean_cut": 13.352941176470589,
+          "max_open": 6,
+          "mean_open": 4.0588235294117645,
+          "mean_edge_length": 7.566666666666666
+        },
+        "just_in_time": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 11.823529411764707,
+          "max_open": 5,
+          "mean_open": 2.9411764705882355,
+          "mean_edge_length": 6.7
+        },
+        "greedy_min_open": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.823529411764707,
+          "max_open": 4,
+          "mean_open": 2.1176470588235294,
+          "mean_edge_length": 6.133333333333334
+        },
+        "optimised": {
+          "n": 18,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.647058823529411,
+          "max_open": 4,
+          "mean_open": 2.0588235294117645,
+          "mean_edge_length": 6.033333333333333
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9869281045751634,
+        "just_in_time": 0.2287581699346405,
+        "greedy_min_open": 0.2287581699346405,
+        "optimised": 0.17647058823529416
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.791176470588235,
+          "p05": 3.1176470588235294,
+          "p50": 3.764705882352941,
+          "p95": 4.529411764705882
+        },
+        "max_open": {
+          "mean": 6.02,
+          "p05": 5,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_cut": {
+          "mean": 13.335882352941177,
+          "p05": 12.176470588235293,
+          "p50": 13.294117647058824,
+          "p95": 14.705882352941176
+        },
+        "cutwidth": {
+          "mean": 19.275,
+          "p05": 17,
+          "p50": 19,
+          "p95": 22
+        },
+        "mean_edge_length": {
+          "mean": 7.557,
+          "p05": 6.9,
+          "p50": 7.533333333333333,
+          "p95": 8.333333333333334
+        }
+      },
+      "random_tau_vs_human_mean": 0.28830065359477125,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.3529411764705883,
+          "p50": 4.0,
+          "p95": 4.647058823529412
+        },
+        "max_open": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 7
+        },
+        "mean_cut": {
+          "p05": 12.764705882352942,
+          "p50": 14.0,
+          "p95": 15.117647058823529
+        },
+        "cutwidth": {
+          "p05": 18,
+          "p50": 21,
+          "p95": 22
+        },
+        "mean_edge_length": {
+          "p05": 7.233333333333333,
+          "p50": 7.933333333333334,
+          "p95": 8.566666666666666
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.7925,
+          "max_open": 0.855,
+          "mean_cut": 0.5425,
+          "cutwidth": 0.42,
+          "mean_edge_length": 0.5425
+        },
+        "human_repaired": {
+          "mean_open": 0.7225,
+          "max_open": 0.4825,
+          "mean_cut": 0.515,
+          "cutwidth": 0.42,
+          "mean_edge_length": 0.515
+        },
+        "just_in_time": {
+          "mean_open": 0.015,
+          "max_open": 0.135,
+          "mean_cut": 0.0125,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.0125
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.06,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.695,
+          "max_open": 0.83,
+          "mean_cut": 0.24,
+          "cutwidth": 0.1625,
+          "mean_edge_length": 0.24
+        },
+        "human_repaired": {
+          "mean_open": 0.5675,
+          "max_open": 0.3925,
+          "mean_cut": 0.225,
+          "cutwidth": 0.1625,
+          "mean_edge_length": 0.225
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0625,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: f_divergence",
+      "n_nodes": 57,
+      "n_edges": 112,
+      "forward_refs": [
+        [
+          "lem:fDiv_compProd_right",
+          "lem:fDiv_compProd_ne_top_iff"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_le_compProd_2"
+        ],
+        [
+          "thm:fDiv_fst_le_2",
+          "thm:fDiv_comp_le_compProd_2"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 57,
+          "forward_refs": 3,
+          "cutwidth": 51,
+          "mean_cut": 35.642857142857146,
+          "max_open": 12,
+          "mean_open": 6.892857142857143,
+          "mean_edge_length": 17.821428571428573
+        },
+        "human_repaired": {
+          "n": 57,
+          "forward_refs": 0,
+          "cutwidth": 51,
+          "mean_cut": 35.67857142857143,
+          "max_open": 12,
+          "mean_open": 6.892857142857143,
+          "mean_edge_length": 17.839285714285715
+        },
+        "just_in_time": {
+          "n": 57,
+          "forward_refs": 0,
+          "cutwidth": 54,
+          "mean_cut": 37.482142857142854,
+          "max_open": 13,
+          "mean_open": 7.982142857142857,
+          "mean_edge_length": 18.741071428571427
+        },
+        "greedy_min_open": {
+          "n": 57,
+          "forward_refs": 0,
+          "cutwidth": 50,
+          "mean_cut": 33.92857142857143,
+          "max_open": 9,
+          "mean_open": 4.928571428571429,
+          "mean_edge_length": 16.964285714285715
+        },
+        "optimised": {
+          "n": 57,
+          "forward_refs": 0,
+          "cutwidth": 50,
+          "mean_cut": 29.392857142857142,
+          "max_open": 7,
+          "mean_open": 4.0,
+          "mean_edge_length": 14.696428571428571
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9949874686716792,
+        "just_in_time": 0.24310776942355894,
+        "greedy_min_open": 0.30827067669172936,
+        "optimised": 0.24561403508771928
+      },
+      "random": {
+        "mean_open": {
+          "mean": 9.147857142857143,
+          "p05": 7.964285714285714,
+          "p50": 9.214285714285714,
+          "p95": 10.25
+        },
+        "max_open": {
+          "mean": 15.075,
+          "p05": 12,
+          "p50": 15,
+          "p95": 17
+        },
+        "mean_cut": {
+          "mean": 40.73651785714286,
+          "p05": 37.410714285714285,
+          "p50": 40.910714285714285,
+          "p95": 43.625
+        },
+        "cutwidth": {
+          "mean": 62.175,
+          "p05": 56,
+          "p50": 63,
+          "p95": 67
+        },
+        "mean_edge_length": {
+          "mean": 20.36825892857143,
+          "p05": 18.705357142857142,
+          "p50": 20.455357142857142,
+          "p95": 21.8125
+        }
+      },
+      "random_tau_vs_human_mean": 0.3653007518796993,
+      "uniform": {
+        "mean_open": {
+          "p05": 9.910714285714286,
+          "p50": 11.196428571428571,
+          "p95": 12.321428571428571
+        },
+        "max_open": {
+          "p05": 15,
+          "p50": 17,
+          "p95": 19
+        },
+        "mean_cut": {
+          "p05": 42.839285714285715,
+          "p50": 45.32142857142857,
+          "p95": 47.42857142857143
+        },
+        "cutwidth": {
+          "p05": 62,
+          "p50": 68,
+          "p95": 72
+        },
+        "mean_edge_length": {
+          "p05": 21.419642857142858,
+          "p50": 22.660714285714285,
+          "p95": 23.714285714285715
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.04,
+          "mean_cut": 0.015,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.015
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.04,
+          "mean_cut": 0.015,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.015
+        },
+        "just_in_time": {
+          "mean_open": 0.055,
+          "max_open": 0.11,
+          "mean_cut": 0.0575,
+          "cutwidth": 0.01,
+          "mean_edge_length": 0.0575
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: kl_divergence",
+      "n_nodes": 16,
+      "n_edges": 27,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 16,
+          "forward_refs": 0,
+          "cutwidth": 20,
+          "mean_cut": 13.333333333333334,
+          "max_open": 5,
+          "mean_open": 3.533333333333333,
+          "mean_edge_length": 7.407407407407407
+        },
+        "human_repaired": {
+          "n": 16,
+          "forward_refs": 0,
+          "cutwidth": 20,
+          "mean_cut": 13.333333333333334,
+          "max_open": 5,
+          "mean_open": 3.533333333333333,
+          "mean_edge_length": 7.407407407407407
+        },
+        "just_in_time": {
+          "n": 16,
+          "forward_refs": 0,
+          "cutwidth": 17,
+          "mean_cut": 10.933333333333334,
+          "max_open": 5,
+          "mean_open": 2.7333333333333334,
+          "mean_edge_length": 6.074074074074074
+        },
+        "greedy_min_open": {
+          "n": 16,
+          "forward_refs": 0,
+          "cutwidth": 15,
+          "mean_cut": 9.6,
+          "max_open": 4,
+          "mean_open": 2.1333333333333333,
+          "mean_edge_length": 5.333333333333333
+        },
+        "optimised": {
+          "n": 16,
+          "forward_refs": 0,
+          "cutwidth": 14,
+          "mean_cut": 9.2,
+          "max_open": 4,
+          "mean_open": 2.066666666666667,
+          "mean_edge_length": 5.111111111111111
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.31666666666666665,
+        "greedy_min_open": 0.2833333333333333,
+        "optimised": 0.25
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.219,
+          "p05": 2.6,
+          "p50": 3.2,
+          "p95": 3.8666666666666667
+        },
+        "max_open": {
+          "mean": 5.45,
+          "p05": 4,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 11.851333333333335,
+          "p05": 10.4,
+          "p50": 11.866666666666667,
+          "p95": 13.333333333333334
+        },
+        "cutwidth": {
+          "mean": 17.615,
+          "p05": 15,
+          "p50": 18,
+          "p95": 20
+        },
+        "mean_edge_length": {
+          "mean": 6.584074074074074,
+          "p05": 5.777777777777778,
+          "p50": 6.592592592592593,
+          "p95": 7.407407407407407
+        }
+      },
+      "random_tau_vs_human_mean": 0.49316666666666664,
+      "uniform": {
+        "mean_open": {
+          "p05": 3.066666666666667,
+          "p50": 3.6666666666666665,
+          "p95": 4.333333333333333
+        },
+        "max_open": {
+          "p05": 5,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 11.266666666666667,
+          "p50": 12.533333333333333,
+          "p95": 13.866666666666667
+        },
+        "cutwidth": {
+          "p05": 17,
+          "p50": 19,
+          "p95": 21
+        },
+        "mean_edge_length": {
+          "p05": 6.2592592592592595,
+          "p50": 6.962962962962963,
+          "p95": 7.703703703703703
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.765,
+          "max_open": 0.275,
+          "mean_cut": 0.95,
+          "cutwidth": 0.94,
+          "mean_edge_length": 0.95
+        },
+        "human_repaired": {
+          "mean_open": 0.765,
+          "max_open": 0.275,
+          "mean_cut": 0.95,
+          "cutwidth": 0.94,
+          "mean_edge_length": 0.95
+        },
+        "just_in_time": {
+          "mean_open": 0.1125,
+          "max_open": 0.275,
+          "mean_cut": 0.13,
+          "cutwidth": 0.3475,
+          "mean_edge_length": 0.13
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.055,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.005
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.055,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.345,
+          "max_open": 0.12,
+          "mean_cut": 0.85,
+          "cutwidth": 0.7075,
+          "mean_edge_length": 0.85
+        },
+        "human_repaired": {
+          "mean_open": 0.345,
+          "max_open": 0.12,
+          "mean_cut": 0.85,
+          "cutwidth": 0.7075,
+          "mean_edge_length": 0.85
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.12,
+          "mean_cut": 0.0225,
+          "cutwidth": 0.0575,
+          "mean_edge_length": 0.0225
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: kernels",
+      "n_nodes": 22,
+      "n_edges": 96,
+      "forward_refs": [
+        [
+          "def:kernel_parallel_prod",
+          "def:kernel_prod"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 22,
+          "forward_refs": 1,
+          "cutwidth": 64,
+          "mean_cut": 41.0,
+          "max_open": 15,
+          "mean_open": 8.428571428571429,
+          "mean_edge_length": 8.96875
+        },
+        "human_repaired": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 65,
+          "mean_cut": 41.095238095238095,
+          "max_open": 15,
+          "mean_open": 8.380952380952381,
+          "mean_edge_length": 8.989583333333334
+        },
+        "just_in_time": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 69,
+          "mean_cut": 41.57142857142857,
+          "max_open": 14,
+          "mean_open": 8.666666666666666,
+          "mean_edge_length": 9.09375
+        },
+        "greedy_min_open": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 66,
+          "mean_cut": 39.476190476190474,
+          "max_open": 15,
+          "mean_open": 8.19047619047619,
+          "mean_edge_length": 8.635416666666666
+        },
+        "optimised": {
+          "n": 22,
+          "forward_refs": 0,
+          "cutwidth": 60,
+          "mean_cut": 34.857142857142854,
+          "max_open": 14,
+          "mean_open": 8.095238095238095,
+          "mean_edge_length": 7.625
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9913419913419913,
+        "just_in_time": 0.7056277056277056,
+        "greedy_min_open": 0.8268398268398268,
+        "optimised": 0.5584415584415585
+      },
+      "random": {
+        "mean_open": {
+          "mean": 8.85309523809524,
+          "p05": 8.476190476190476,
+          "p50": 8.857142857142858,
+          "p95": 9.285714285714286
+        },
+        "max_open": {
+          "mean": 14.715,
+          "p05": 14,
+          "p50": 15,
+          "p95": 15
+        },
+        "mean_cut": {
+          "mean": 42.58452380952381,
+          "p05": 39.42857142857143,
+          "p50": 42.76190476190476,
+          "p95": 45.333333333333336
+        },
+        "cutwidth": {
+          "mean": 65.045,
+          "p05": 64,
+          "p50": 65,
+          "p95": 68
+        },
+        "mean_edge_length": {
+          "mean": 9.315364583333334,
+          "p05": 8.625,
+          "p50": 9.354166666666666,
+          "p95": 9.916666666666666
+        }
+      },
+      "random_tau_vs_human_mean": 0.668051948051948,
+      "uniform": {
+        "mean_open": {
+          "p05": 8.523809523809524,
+          "p50": 9.0,
+          "p95": 9.523809523809524
+        },
+        "max_open": {
+          "p05": 14,
+          "p50": 15,
+          "p95": 15
+        },
+        "mean_cut": {
+          "p05": 41.285714285714285,
+          "p50": 44.04761904761905,
+          "p95": 46.476190476190474
+        },
+        "cutwidth": {
+          "p05": 61,
+          "p50": 66,
+          "p95": 69
+        },
+        "mean_edge_length": {
+          "p05": 9.03125,
+          "p50": 9.635416666666666,
+          "p95": 10.166666666666666
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.03,
+          "max_open": 0.6425,
+          "mean_cut": 0.2125,
+          "cutwidth": 0.2575,
+          "mean_edge_length": 0.2125
+        },
+        "human_repaired": {
+          "mean_open": 0.0175,
+          "max_open": 0.6425,
+          "mean_cut": 0.22,
+          "cutwidth": 0.51,
+          "mean_edge_length": 0.22
+        },
+        "just_in_time": {
+          "mean_open": 0.255,
+          "max_open": 0.1425,
+          "mean_cut": 0.2675,
+          "cutwidth": 0.995,
+          "mean_edge_length": 0.2675
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.6425,
+          "mean_cut": 0.0625,
+          "cutwidth": 0.715,
+          "mean_edge_length": 0.0625
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.1425,
+          "mean_cut": 0.0,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.015,
+          "max_open": 0.6175,
+          "mean_cut": 0.035,
+          "cutwidth": 0.145,
+          "mean_edge_length": 0.035
+        },
+        "human_repaired": {
+          "mean_open": 0.015,
+          "max_open": 0.6175,
+          "mean_cut": 0.0475,
+          "cutwidth": 0.2625,
+          "mean_edge_length": 0.0475
+        },
+        "just_in_time": {
+          "mean_open": 0.135,
+          "max_open": 0.1175,
+          "mean_cut": 0.0775,
+          "cutwidth": 0.975,
+          "mean_edge_length": 0.0775
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.6175,
+          "mean_cut": 0.005,
+          "cutwidth": 0.4675,
+          "mean_edge_length": 0.005
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.1175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0225,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: rn_deriv",
+      "n_nodes": 14,
+      "n_edges": 13,
+      "forward_refs": [
+        [
+          "lem:mutuallySingular_compProd",
+          "lem:ac_compProd_iff"
+        ],
+        [
+          "lem:rnDeriv_compProd",
+          "cor:rnDeriv_compProd_right"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 14,
+          "forward_refs": 2,
+          "cutwidth": 6,
+          "mean_cut": 3.5384615384615383,
+          "max_open": 4,
+          "mean_open": 2.5384615384615383,
+          "mean_edge_length": 3.5384615384615383
+        },
+        "human_repaired": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 3.4615384615384617,
+          "max_open": 4,
+          "mean_open": 2.3076923076923075,
+          "mean_edge_length": 3.4615384615384617
+        },
+        "just_in_time": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 2.5384615384615383,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 2.5384615384615383
+        },
+        "greedy_min_open": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 2.0,
+          "max_open": 3,
+          "mean_open": 1.3846153846153846,
+          "mean_edge_length": 2.0
+        },
+        "optimised": {
+          "n": 14,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 1.8461538461538463,
+          "max_open": 3,
+          "mean_open": 1.3846153846153846,
+          "mean_edge_length": 1.8461538461538463
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9340659340659341,
+        "just_in_time": 0.05494505494505497,
+        "greedy_min_open": -0.1428571428571428,
+        "optimised": -0.16483516483516492
+      },
+      "random": {
+        "mean_open": {
+          "mean": 3.059230769230769,
+          "p05": 2.4615384615384617,
+          "p50": 3.076923076923077,
+          "p95": 3.769230769230769
+        },
+        "max_open": {
+          "mean": 4.65,
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "mean": 4.298076923076923,
+          "p05": 3.230769230769231,
+          "p50": 4.230769230769231,
+          "p95": 5.384615384615385
+        },
+        "cutwidth": {
+          "mean": 6.965,
+          "p05": 6,
+          "p50": 7,
+          "p95": 8
+        },
+        "mean_edge_length": {
+          "mean": 4.298076923076923,
+          "p05": 3.230769230769231,
+          "p50": 4.230769230769231,
+          "p95": 5.384615384615385
+        }
+      },
+      "random_tau_vs_human_mean": 0.19648351648351647,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.5384615384615383,
+          "p50": 3.3846153846153846,
+          "p95": 4.0
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 6
+        },
+        "mean_cut": {
+          "p05": 3.3846153846153846,
+          "p50": 4.615384615384615,
+          "p95": 5.615384615384615
+        },
+        "cutwidth": {
+          "p05": 6,
+          "p50": 8,
+          "p95": 9
+        },
+        "mean_edge_length": {
+          "p05": 3.3846153846153846,
+          "p50": 4.615384615384615,
+          "p95": 5.615384615384615
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.095,
+          "max_open": 0.23,
+          "mean_cut": 0.125,
+          "cutwidth": 0.155,
+          "mean_edge_length": 0.125
+        },
+        "human_repaired": {
+          "mean_open": 0.0225,
+          "max_open": 0.23,
+          "mean_cut": 0.1075,
+          "cutwidth": 0.155,
+          "mean_edge_length": 0.1075
+        },
+        "just_in_time": {
+          "mean_open": 0.01,
+          "max_open": 0.015,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0125,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.055,
+          "max_open": 0.11,
+          "mean_cut": 0.0725,
+          "cutwidth": 0.0675,
+          "mean_edge_length": 0.0725
+        },
+        "human_repaired": {
+          "mean_open": 0.0125,
+          "max_open": 0.11,
+          "mean_cut": 0.06,
+          "cutwidth": 0.0675,
+          "mean_edge_length": 0.06
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0075,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0075,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

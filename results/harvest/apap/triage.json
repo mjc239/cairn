@@ -1,0 +1,31 @@
+{
+ "name": "apap",
+ "repo": "YaelDillies/LeanAPAP",
+ "status": "ok",
+ "stage": "done",
+ "commit": "3b79412fbe529449c472f0a5f866ee2e3be88b87",
+ "commit_date": "2026-09-20",
+ "toolchain": "leanprover/lean4:v4.35.0-rc2",
+ "mathlib": "065356127b1d",
+ "blueprint_dir": "blueprint/src",
+ "entry": "chapter/main.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 49,
+ "uses_edges": 74,
+ "chapters": 7,
+ "lean_nodes": 37,
+ "leanok_nodes": 37,
+ "libs": [
+  "APAP"
+ ],
+ "build_minutes": 2.0,
+ "extractor": "extract_deps.lean",
+ "decls": 769,
+ "theorems": 706,
+ "external_decls": 4,
+ "lean_resolved": 1.0,
+ "nodes_linked": 37,
+ "nodes_linked_external_only": 4,
+ "minutes": 6.1
+}

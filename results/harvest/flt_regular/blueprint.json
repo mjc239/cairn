@@ -1,0 +1,1463 @@
+{
+  "nodes": [
+    {
+      "id": "lemma:alt_definition_of_norm",
+      "kind": "lemma",
+      "position": 0,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 9,
+      "title": null,
+      "labels": [
+        "lemma:alt_definition_of_norm"
+      ],
+      "lean_decls": [
+        "Algebra.norm_eq_prod_embeddings"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 0,
+      "proof_event": 1,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field, $\\a \\in K$ and let $\\sigma_i$ be the embeddings of $K$ into $\\CC$. Then \\[N_{K/\\QQ}(\\a)=\\prod_i \\sigma_i(\\a) \\]."
+    },
+    {
+      "id": "lemma:alt_definition_of_trace",
+      "kind": "lemma",
+      "position": 1,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 19,
+      "title": null,
+      "labels": [
+        "lemma:alt_definition_of_trace"
+      ],
+      "lean_decls": [
+        "trace_eq_sum_embeddings"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 2,
+      "proof_event": 3,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field, $\\a \\in K$ and let $\\sigma_i$ be the embeddings of $K$ into $\\CC$. Then \\[\\Tr_{K/\\QQ}(\\a) =\\sum_i \\sigma_i(\\a). \\]"
+    },
+    {
+      "id": "defn_of_disc",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 29,
+      "title": null,
+      "labels": [
+        "defn_of_disc"
+      ],
+      "lean_decls": [
+        "Algebra.discr"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 4,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $A,K$ be commutative rings with $K$ and $A$-algebra. let $B=\\{b_1,\\dots,b_n\\}$ be a set of elements in $K$. The discriminant of $B$ is defined as \\[\\Delta(B)= \\det \\left (\\begin{matrix} \\Tr_{K/A}(b_1b_1) &\\cdots& \\Tr_{K/A}(b_1b_n)\\\\ \\vdots & & \\vdots \\\\ \\Tr_{K/A}(b_nb_1) &\\cdots& \\Tr_{K/A}(b_nb_n) \\end{matrix} \\right ).\\]"
+    },
+    {
+      "id": "lem:lin_indep_iff_disc_ne_zero",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 36,
+      "title": null,
+      "labels": [
+        "lem:lin_indep_iff_disc_ne_zero"
+      ],
+      "lean_decls": [
+        "Algebra.discr_not_zero_of_basis"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn_of_disc",
+        "Algebra.discr",
+        "lemma:alt_definition_of_norm"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 6,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $L/K$ be an extension of fields and let $B=\\{b_1,\\dots,b_n\\}$ be a $K$-basis of $L$. Then $\\Delta(B) \\neq 0$."
+    },
+    {
+      "id": "lem:disc_change_of_basis",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 47,
+      "title": null,
+      "labels": [
+        "lem:disc_change_of_basis"
+      ],
+      "lean_decls": [
+        "Algebra.discr_of_matrix_mulVec"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn_of_disc"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field and $B,B'$ bases for $K/\\QQ$. If $P$ denotes the change of basis matrix, then \\[\\Delta(B)=\\det(P)^2 \\Delta(B').\\]"
+    },
+    {
+      "id": "lemma:disc_via_embs",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 58,
+      "title": null,
+      "labels": [
+        "lemma:disc_via_embs"
+      ],
+      "lean_decls": [
+        "Algebra.discr_eq_det_embeddingsMatrixReindex_pow_two"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn_of_disc",
+        "trace_eq_sum_embeddings",
+        "lemma:alt_definition_of_trace"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 9,
+      "proof_event": 10,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field with basis $B=\\{b_1,\\dots,b_n\\}$ and let $\\sigma_1,\\dots,\\sigma_n$ be the embeddings of $K$ into $\\CC$. Now let $M$ be the matrix \\[\\left (\\begin{matrix} \\sigma_1(b_1) &\\cdots& \\sigma_1(b_n)\\\\ \\vdots & & \\vdots \\\\ \\sigma_n(b_1) &\\cdots& \\sigma_n(b_n) \\end{matrix} \\right ).\\] Then \\[\\Delta(B)=\\det(M)^2.\\]"
+    },
+    {
+      "id": "lemma:disc_of_prim_elt_basis",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 70,
+      "title": null,
+      "labels": [
+        "lemma:disc_of_prim_elt_basis"
+      ],
+      "lean_decls": [
+        "Algebra.discr_powerBasis_eq_prod"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn_of_disc",
+        "lemma:disc_via_embs"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field and $B=\\{1,\\a,\\a^2,\\dots,\\a^{n-1}\\}$ for some $\\a \\in K$. Then \\[\\Delta(B)=\\prod_{i < j} (\\sigma_i(\\a)-\\sigma_j(\\a))^2\\] where $\\sigma_i$ are the embeddings of $K $ into $\\CC$. Here $\\Delta(B)$ denotes the discriminant."
+    },
+    {
+      "id": "lemma:diff_of_irr_pol",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 82,
+      "title": null,
+      "labels": [
+        "lemma:diff_of_irr_pol"
+      ],
+      "lean_decls": [
+        "Polynomial.aeval_root_derivative_of_splits"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 13,
+      "proof_event": 14,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $f$ be a monic irreducible polynomial over a number field $K$ and let $\\a$ be one of its roots in $\\CC$. Then \\[f'(\\a)=\\prod_{\\beta \\neq \\a} (\\a-\\beta), \\] where the product is over the roots of $f$ different from $\\a$."
+    },
+    {
+      "id": "lemma:num_field_disc_in_terms_of_norm",
+      "kind": "lemma",
+      "position": 8,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 92,
+      "title": null,
+      "labels": [
+        "lemma:num_field_disc_in_terms_of_norm"
+      ],
+      "lean_decls": [
+        "Algebra.discr_powerBasis_eq_norm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:disc_of_prim_elt_basis",
+        "lemma:alt_definition_of_norm",
+        "lemma:diff_of_irr_pol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 15,
+      "proof_event": 16,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K=\\QQ(\\a)$ be a number field with $n=[K:\\QQ]$ and let $B=\\{1,\\a,\\a^2,\\dots,\\a^{n-1}\\}$. Then \\[\\Delta(B)=(-1)^{\\frac{n(n-1)}{2}}N_{K/\\QQ}(m_\\a'(\\a))\\] where $m_\\a'$ is the derivative of $m_\\a(x)$ (which we recall denotes the minimal polynomial of $\\a$)."
+    },
+    {
+      "id": "lemma:norm_of_alg_int_is_int",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 105,
+      "title": null,
+      "labels": [
+        "lemma:norm_of_alg_int_is_int"
+      ],
+      "lean_decls": [
+        "Algebra.isIntegral_norm"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 17,
+      "proof_event": 18,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "If $K$ is a number field and $\\a \\in \\OO_K$ then $N_{K/\\QQ}(\\a)$ is in $\\ZZ$."
+    },
+    {
+      "id": "lemma:trace_of_alg_int_is_int",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 115,
+      "title": null,
+      "labels": [
+        "lemma:trace_of_alg_int_is_int"
+      ],
+      "lean_decls": [
+        "Algebra.isIntegral_trace"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "If $K$ is a number field and $\\a \\in \\OO_K$ then $\\Tr_{K/\\QQ}(\\a)$ is in $\\ZZ$."
+    },
+    {
+      "id": "lemma:int_basis_int_disc",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 125,
+      "title": null,
+      "labels": [
+        "lemma:int_basis_int_disc"
+      ],
+      "lean_decls": [
+        "Algebra.discr_isIntegral"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn_of_disc",
+        "lemma:trace_of_alg_int_is_int"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number field and $B=\\{b_1,\\dots,b_n\\}$ be elements in $\\OO_K$, then $\\Delta(B) \\in \\ZZ$."
+    },
+    {
+      "id": "lemma:disc_int_basis",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 137,
+      "title": null,
+      "labels": [
+        "lemma:disc_int_basis"
+      ],
+      "lean_decls": [
+        "Algebra.discr_mul_isIntegral_mem_adjoin"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:disc_change_of_basis",
+        "lemma:int_basis_int_disc"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 23,
+      "proof_event": 24,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K = \\QQ(\\alpha)$ be a number field, where $\\alpha$ is an algebraic integer. Let $B = \\{1, \\alpha, \\ldots, \\alpha^{[K : \\QQ] - 1} \\}$ be the basis given by $\\alpha$ and let $x \\in \\mathcal{O}_K$. Then $\\Delta(B)x \\in \\ZZ[\\alpha]$."
+    },
+    {
+      "id": "lemma:eis_crit_and_alg_ints",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "discriminants-of-number-fields",
+      "source": "demo.tex",
+      "line": 149,
+      "title": null,
+      "labels": [
+        "lemma:eis_crit_and_alg_ints"
+      ],
+      "lean_decls": [
+        "mem_adjoin_of_smul_prime_pow_smul_of_minpoly_isEisensteinAt"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:norm_of_alg_int_is_int",
+        "lemma:trace_of_alg_int_is_int"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 25,
+      "proof_event": 26,
+      "proof_chapter": "discriminants-of-number-fields",
+      "proof_leanok": true,
+      "text": "Let $K = \\QQ(\\alpha)$ be a number field, where $\\alpha$ is an algebraic integer with minimal polynomial that is Eisenstein at $p$. Let $x \\in \\mathcal{O}_K$ such that $p^n x \\in \\ZZ[\\alpha]$ for some $n$. Then $x \\in \\ZZ[\\alpha]$."
+    },
+    {
+      "id": "lemma:cyclo_poly_deg",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 162,
+      "title": null,
+      "labels": [
+        "lemma:cyclo_poly_deg"
+      ],
+      "lean_decls": [
+        "Polynomial.degree_cyclotomic"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 27,
+      "proof_event": 28,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "For $n$ any integer, $\\Phi_n$ (the $n$-th cyclotomic polynomial) is a polynomial of degree $\\varphi(n)$ (where $\\varphi$ is Euler's Totient function)."
+    },
+    {
+      "id": "lemma:cyclo_poly_irr",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 173,
+      "title": null,
+      "labels": [
+        "lemma:cyclo_poly_irr"
+      ],
+      "lean_decls": [
+        "Polynomial.cyclotomic.irreducible"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 29,
+      "proof_event": 30,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "For $n$ any integer, $\\Phi_n$ (the $n$-th cyclotomic polynomial) is an irreducible polynomial ."
+    },
+    {
+      "id": "lem:discr_of_cyclo",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 183,
+      "title": null,
+      "labels": [
+        "lem:discr_of_cyclo"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.discr_prime_pow'"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:num_field_disc_in_terms_of_norm",
+        "lemma:cyclo_poly_irr",
+        "lemma:cyclo_poly_deg"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 31,
+      "proof_event": 32,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $\\zeta_p$ be a $p$-th root of unity for $p$ an odd prime, let $\\lam_p=1-\\zeta_p$ and $K=\\QQ(\\zeta_p)$. Then \\[\\Delta(\\{1,\\zeta_p,\\dots,\\zeta_p^{p-2}\\})=\\Delta(\\{1,\\lam_p,\\dots,\\lam_p^{p-2}\\})=(-1)^{\\frac{(p-1)}{2}}p^{p-2}.\\]"
+    },
+    {
+      "id": "theorem:ring_of_ints_of_cyclo",
+      "kind": "theorem",
+      "position": 17,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 201,
+      "title": null,
+      "labels": [
+        "theorem:ring_of_ints_of_cyclo"
+      ],
+      "lean_decls": [
+        "IsCyclotomicExtension.Rat.isIntegralClosure_adjoin_singleton_of_prime_pow"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:discr_of_cyclo",
+        "lemma:eis_crit_and_alg_ints",
+        "lemma:disc_int_basis"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $\\zeta_p$ be a $p$-th root of unity for $p$ an odd prime, let $\\lam_p=1-\\zeta_p$ and $K=\\QQ(\\zeta_p)$. Then $\\OO_K=\\ZZ[\\zeta_p]=\\ZZ[\\lam_p]$."
+    },
+    {
+      "id": "lemma:alg_int_abs_val_one",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 212,
+      "title": null,
+      "labels": [
+        "lemma:alg_int_abs_val_one"
+      ],
+      "lean_decls": [
+        "mem_roots_of_unity_of_abs_eq_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $\\a$ be an algebraic integer all of whose conjugates have absolute value one. Then $\\a$ is a root of unity."
+    },
+    {
+      "id": "lem:roots_of_unity_in_cyclo",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 223,
+      "title": null,
+      "labels": [
+        "lem:roots_of_unity_in_cyclo"
+      ],
+      "lean_decls": [
+        "roots_of_unity_in_cyclo"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 37,
+      "proof_event": 38,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $p$ be a prime, $K=\\QQ(\\zeta_p)$ $\\a \\in K$ such that there exists $n \\in \\NN$ such that $\\a^n=1$, then $\\a =\\pm \\zeta_p^k$ for some $k$."
+    },
+    {
+      "id": "lemma:unit_lemma",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 233,
+      "title": null,
+      "labels": [
+        "lemma:unit_lemma"
+      ],
+      "lean_decls": [
+        "unit_lemma_gal_conj"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:alg_int_abs_val_one",
+        "lem:roots_of_unity_in_cyclo"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 39,
+      "proof_event": 40,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Any unit $u$ in $\\ZZ[\\zeta_p]$ can be written in the form $\\beta \\zeta_p^k $ with $k$ an integer and $\\beta \\in \\RR$."
+    },
+    {
+      "id": "lemma:zeta_pow_sub_eq_unit_zeta_sub_one",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 244,
+      "title": null,
+      "labels": [
+        "lemma:zeta_pow_sub_eq_unit_zeta_sub_one"
+      ],
+      "lean_decls": [
+        "is_primitive_root.zeta_pow_sub_eq_unit_zeta_sub_one"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $p$ be an odd prime, $\\zeta_p$ a primitive $p$-th root of unity and let $K=\\QQ(\\zeta_p)$. Then for any $i,j \\in {0,\\dots,p-1}$ with $i \\ne j$, there exists a unit $u \\in \\mathcal{O}_K^\\times$ such that $\\zeta_p^i-\\zeta_p^j = u (\\zeta_p-1)$."
+    },
+    {
+      "id": "lemma:ideals_mult_to_power",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "cyclotomic-fields",
+      "source": "demo.tex",
+      "line": 255,
+      "title": null,
+      "labels": [
+        "lemma:ideals_mult_to_power"
+      ],
+      "lean_decls": [
+        "ideal.exists_eq_pow_of_mul_eq_pow"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "cyclotomic-fields",
+      "proof_leanok": true,
+      "text": "Let $R$ be a Dedekind domain, $p$ a prime and $\\gotha,\\gothb,\\gothc$ ideals such that \\[\\gotha\\gothb=\\gothc^p\\] and suppose $\\gotha,\\gothb$ are coprime. Then there exist ideals $\\mathfrak{e},\\mathfrak{d}$ such that \\[\\gotha=\\mathfrak{e}^p \\qquad \\gothb=\\mathfrak{d}^p \\qquad \\mathfrak{e}\\mathfrak{d}=\\gothc\\]"
+    },
+    {
+      "id": "lem:flt_ideals_coprime",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 268,
+      "title": null,
+      "labels": [
+        "lem:flt_ideals_coprime"
+      ],
+      "lean_decls": [
+        "fltIdeals_coprime"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:zeta_pow_sub_eq_unit_zeta_sub_one"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p \\geq 5$ be an prime number, $\\zeta_p$ a $p$-th root of unity and $x, y \\in \\ZZ$ coprime. For $i \\neq j$ with $i,j \\in {0,\\dots,p-1}$ we can write \\[(\\zeta_p^i-\\zeta_p^j)=u(1-\\zeta_p)\\] with $u$ a unit in $\\ZZ[\\zeta_p]$. From this it follows that the ideals \\[(x+y),(x+\\zeta_py),(x+\\zeta_p^2y),\\dots,(x+\\zeta_p^{p-1}y)\\] are pairwise coprime."
+    },
+    {
+      "id": "lem:exists_int_sub_pow_prime_dvd",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 281,
+      "title": null,
+      "labels": [
+        "lem:exists_int_sub_pow_prime_dvd"
+      ],
+      "lean_decls": [
+        "exists_int_sub_pow_prime_dvd"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be an prime number, $\\zeta_p$ a $p$-th root of unity and $\\a \\in \\ZZ[\\zeta_p]$. Then $\\a^p$ is congruent to an integer modulo $p$."
+    },
+    {
+      "id": "lem:dvd_coeff_cycl_integer",
+      "kind": "lemma",
+      "position": 25,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 291,
+      "title": null,
+      "labels": [
+        "lem:dvd_coeff_cycl_integer"
+      ],
+      "lean_decls": [
+        "dvd_coeff_cycl_integer"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be an prime number, $\\zeta_p$ a $p$-th root of unity and $ \\a \\in \\ZZ[\\zeta_p]$ with $\\a=\\sum_i a_i \\zeta_p^i$. Let us suppose that there is $i$ such that $a_i = 0$. If $n$ is an integer that divides $\\a$ in $\\ZZ[\\zeta_p]$, then $n$ divides each $a_i$."
+    },
+    {
+      "id": "lem:exists_int_sum_eq_zero",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 301,
+      "title": null,
+      "labels": [
+        "lem:exists_int_sum_eq_zero"
+      ],
+      "lean_decls": [
+        "FltRegular.CaseI.exists_int_sum_eq_zero"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lemma:unit_lemma",
+        "lem:exists_int_sub_pow_prime_dvd"
+      ],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p \\geq 3$ be an prime number, $\\zeta_p$ a $p$-th root of unity and $ \\a \\in \\ZZ[\\zeta_p]$. Let $x$ and $y$ be integers such that $x+y\\zeta_p^i=u \\a^p$ with $u \\in \\ZZ[\\zeta_p]^\\times$ and $\\a \\in \\ZZ[\\zeta_p]$. Then there is an integer $k$ such that \\[x+y\\zeta_p^i-\\zeta_p^{2k}x-\\zeta_p^{2k-i}y \\equiv 0 \\pmod p.\\]"
+    },
+    {
+      "id": "lemma:may_assume_coprime",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 312,
+      "title": null,
+      "labels": [
+        "lemma:may_assume_coprime"
+      ],
+      "lean_decls": [
+        "FltRegular.CaseI.may_assume"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:unit_lemma",
+        "lemma:zeta_pow_sub_eq_unit_zeta_sub_one",
+        "lemma:ideals_mult_to_power",
+        "theorem:ring_of_ints_of_cyclo"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 53,
+      "proof_event": 54,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p \\geq 3$ be an prime number, $\\zeta_p$ a $p$-th root of unity and $K=\\QQ(\\zeta_p)$. Assume that we have $x,y,z \\in \\ZZ$ with $\\gcd(xyz,p)=1$ and such that \\[x^p+y^p=z^p.\\] This is the so called \"case I\". To prove Fermat's last theorem, we may assume that: \\begin{itemize} \\item $p \\geq 5$; \\item $x,y,z$ are pairwise coprime; \\item $x \\not \\equiv y \\mod p$. \\end{itemize}"
+    },
+    {
+      "id": "defn:is_regular_number",
+      "kind": "definition",
+      "position": 28,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 333,
+      "title": null,
+      "labels": [
+        "defn:is_regular_number"
+      ],
+      "lean_decls": [
+        "IsRegularNumber"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 55,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A prime number $p$ is called regular if it does not divide the class number of $\\QQ(\\zeta_p)$."
+    },
+    {
+      "id": "theorem:FLT_case_one",
+      "kind": "theorem",
+      "position": 29,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 339,
+      "title": null,
+      "labels": [
+        "theorem:FLT_case_one"
+      ],
+      "lean_decls": [
+        "FltRegular.caseI"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "defn:is_regular_number",
+        "lem:exists_int_sum_eq_zero",
+        "lem:dvd_coeff_cycl_integer",
+        "lemma:may_assume_coprime",
+        "lem:flt_ideals_coprime"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 56,
+      "proof_event": 57,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be an odd regular prime. Then \\[x^p+y^p=z^p\\] has no solutions with $x,y,z \\in \\ZZ$ and $\\gcd(xyz,p)=1$."
+    },
+    {
+      "id": "thm:Kummers_lemma",
+      "kind": "theorem",
+      "position": 30,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 352,
+      "title": null,
+      "labels": [
+        "thm:Kummers_lemma"
+      ],
+      "lean_decls": [
+        "eq_pow_prime_of_unit_of_congruent"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "Kummer_alt"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 58,
+      "proof_event": 59,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be a regular prime and let $u \\in \\ZZ[\\zeta_p]^\\times$. If $u \\equiv a \\mod p$ for some $a \\in \\ZZ$, then there exists $v \\in \\ZZ[\\zeta_p]^\\times$ such that $u=v^p$."
+    },
+    {
+      "id": "lem:gen_dvd_by_frak_p",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 365,
+      "title": null,
+      "labels": [
+        "lem:gen_dvd_by_frak_p"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 60,
+      "proof_event": 61,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": false,
+      "text": "Let $p$ be a regular odd prime, $x,y,z,\\epsilon \\in \\ZZ[\\zeta_p]$, $\\epsilon$ a unit, and $n \\in \\ZZ_{\\geq 1}$. Assume $x,y,z$ are coprime to $(1-\\zeta_p)$ and that $x^p+y^p+\\epsilon(1-\\zeta_p)^{pn}z^p=0$. Then each of $(x+\\zeta_p^i y)$ is divisible by $(1-\\zeta_p)$ and there is a unique $i_0$ such that $(x+\\zeta_p^{i_0})$ is divisible by $(1-\\zeta_p)^2$."
+    },
+    {
+      "id": "lem:gen_ideal_coprimality",
+      "kind": "lemma",
+      "position": 32,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 376,
+      "title": null,
+      "labels": [
+        "lem:gen_ideal_coprimality"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 62,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $p$ be a regular odd prime, $x,y,z,\\epsilon \\in \\ZZ[\\zeta_p]$, $\\epsilon$ a unit, and $n \\in \\ZZ_{\\geq 1}$. Assume $x,y,z$ are coprime to $(1-\\zeta_p)$, $x^p+y^p+\\epsilon(1-\\zeta_p)^{pn}z^p=0$ and $x+y$ is divisible by $\\mathfrak{p}^2$ and $x+ \\zeta_p^ky$ is only divisible by $\\mathfrak{p}=(1-\\zeta_p)$ (for $0 < k \\leq p-1$). Let $\\mathfrak{m}= \\mathrm{gcd}((x),(y))$. Then: \\begin{enumerate} \\item We can write \\[(x+y)=\\mathfrak{p}^{p(m-1)+1}\\mathfrak{m}\\mathfrak{c}_0\\] and \\[ (x+\\zeta_p^k y)=\\mathfrak{p}\\mathfrak{m}\\mathfrak{c}_k \\] (for $0 < k \\leq p-1$) where $m=n(p-1)$ and with $\\mathfrak{c}_i$ pairwise coprime. \\item Each $\\mathfrak{c}_k=\\mathfrak{a}_k^p$ and $\\mathfrak{a}_k\\mathfrak{a}_0^{-1}$ is principal (as a fractional ideal). \\end{enumerate}"
+    },
+    {
+      "id": "thm:gen_flt_eqn",
+      "kind": "theorem",
+      "position": 33,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 387,
+      "title": null,
+      "labels": [
+        "thm:gen_flt_eqn"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:gen_dvd_by_frak_p",
+        "lem:gen_ideal_coprimality"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 63,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $p$ be a regular odd prime, $\\epsilon \\in \\ZZ[\\zeta_p]^\\times$ and $n \\in \\ZZ_{\\geq 1}$. Then the equation $x^p+y^p+\\epsilon(1-\\zeta_p)^{pn}z^p=0$ has no solutions with $x,y,z \\in \\ZZ[\\zeta_p]$, all non-zero and $xyz$ coprime to $(1-\\zeta_p)$."
+    },
+    {
+      "id": "theorem:FLT_case_two",
+      "kind": "theorem",
+      "position": 34,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 393,
+      "title": null,
+      "labels": [
+        "theorem:FLT_case_two"
+      ],
+      "lean_decls": [
+        "FltRegular.caseII"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lemma:defn:is_regular_number",
+        "thm:Kummers_lemma",
+        "thm:gen_flt_eqn"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 64,
+      "proof_event": 65,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be an odd regular prime. Then \\[x^p+y^p=z^p\\] has no solutions with $x,y,z \\in \\ZZ$ and $p | xyz$."
+    },
+    {
+      "id": "FLT_regular",
+      "kind": "theorem",
+      "position": 35,
+      "chapter": "fermats-last-theorem-for-regular-primes",
+      "source": "demo.tex",
+      "line": 405,
+      "title": null,
+      "labels": [
+        "FLT_regular"
+      ],
+      "lean_decls": [
+        "flt_regular"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "theorem:FLT_case_one",
+        "theorem:FLT_case_two"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "fermats-last-theorem-for-regular-primes",
+      "proof_leanok": true,
+      "text": "Let $p$ be an odd regular prime. Then \\[x^p+y^p=z^p\\] has no solutions with $x,y,z \\in \\ZZ$ and $xyz \\ne 0$."
+    },
+    {
+      "id": "lem:exists_alg_int",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 420,
+      "title": null,
+      "labels": [
+        "lem:exists_alg_int"
+      ],
+      "lean_decls": [
+        "exists_alg_int"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 68,
+      "proof_event": 69,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $K$ be a number fields and $\\a \\in K$. Then there exists a $n \\in \\ZZ\\backslash\\{0\\}$ such that $n \\a$ is an algebraic integer."
+    },
+    {
+      "id": "Hilbert90",
+      "kind": "theorem",
+      "position": 37,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 430,
+      "title": "Hilbert 90",
+      "labels": [
+        "Hilbert90"
+      ],
+      "lean_decls": [
+        "Hilbert90"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:exists_alg_int"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 70,
+      "proof_event": 71,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $K/F$ be a Galois extension of number fields whose Galois group $\\Gal(K/F)$ is cyclic with generator $\\sigma$. If $\\a \\in K$ is such that $N_{K/F}(\\a)=1$, then \\[ \\a =\\beta/ \\sigma(\\beta)\\] for some $\\beta \\in \\OO_K$."
+    },
+    {
+      "id": "lem:Hilbert92",
+      "kind": "theorem",
+      "position": 38,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 448,
+      "title": "Hilbert 92",
+      "labels": [
+        "lem:Hilbert92"
+      ],
+      "lean_decls": [
+        "Hilbert92"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 72,
+      "proof_event": 73,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $K/F$ be a Galois extension of $F=\\QQ(\\zeta_p)$ with Galois group $\\Gal(K/F)$ cyclic with generator $\\sigma$. Then there exists a unit $\\eta \\in \\OO_K$ such that $N_{K/F}(\\eta)=1$ but does not have the form $\\epsilon/\\sigma(\\epsilon)$ for any unit $\\e \\in \\OO_K$."
+    },
+    {
+      "id": "def:rel_different",
+      "kind": "definition",
+      "position": 39,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 468,
+      "title": null,
+      "labels": [
+        "def:rel_different"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 74,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $K, F$ be number fields with $F \\subseteq K$. Let $A$ be an additive subgroup of $K$. Let \\[A^{-1}=\\{ \\a \\in K | \\a A \\in \\OO_K\\}\\] and \\[A^* = \\{ \\a \\in K | \\Tr_{K/F} (\\a A) \\in \\OO_F\\}.\\] The relative different $\\gothd_{K/F}$ of $K/F$ is then defined as $((\\OO_K)^*)^{-1}$ which one checks is an integral ideal in $\\OO_K$. This is also the annihilator of $\\Omega^1_{\\OO_K/\\OO_F}$ if we want to be fancy."
+    },
+    {
+      "id": "lem:diff_ideal_eqn",
+      "kind": "lemma",
+      "position": 40,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 475,
+      "title": null,
+      "labels": [
+        "lem:diff_ideal_eqn"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rel_different"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 75,
+      "proof_event": 76,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $K/F$ be an extension of number fields and let $S$ denote the set of $\\a \\in \\OO_K$ be such that $K=F(\\a)$. Then \\[ \\gothd_{K/F} = \\left (m_{\\a}'(\\a) : \\a \\in S \\right )\\] where $m_\\a$ is denotes the minimal polynomial of $\\a$."
+    },
+    {
+      "id": "lem:diff_ram",
+      "kind": "lemma",
+      "position": 41,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 487,
+      "title": null,
+      "labels": [
+        "lem:diff_ram"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $K/F$ be an extension of number fields with $\\gothp_F, \\gothp_K$ prime ideas in $K,F$ respectively, with $\\gothp_K^e \\parallel \\gothp_F$ for $e >0$. Then $\\gothp_K^{e-1} \\mid \\gothd_{K/F}$ and $\\gothp_K^{e} \\mid \\gothd_{K/F}$ iff $\\gothp_F \\mid e$."
+    },
+    {
+      "id": "lem:loc_ramification",
+      "kind": "lemma",
+      "position": 42,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 498,
+      "title": null,
+      "labels": [
+        "lem:loc_ramification"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 79,
+      "proof_event": 80,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": false,
+      "text": "Let $K$ be a number field, $p$ be a rational prime below $\\gothp$ and let $\\a_0, \\xi$ be in $\\OO_\\gothp^\\times$ (the units of the ring of integers of the completion of $K$ at $\\gothp$) be such that \\[\\a_0^p \\equiv \\xi \\mod \\gothp^{m+r}\\] where $\\gothp^m \\parallel p$ and $r(p-1)>m$. Then there exists an $\\a \\in \\OO_{\\gothp}^\\times$ such that $\\a^p =\\xi$."
+    },
+    {
+      "id": "lem:ramification_lem",
+      "kind": "lemma",
+      "position": 43,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 507,
+      "title": null,
+      "labels": [
+        "lem:ramification_lem"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:loc_ramification",
+        "lem:diff_ideal_eqn",
+        "lem:diff_ram"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $F=\\QQ(\\zeta_p)$ with $\\zeta_p$ a primitive $p$-th root of unity. If $\\xi \\in \\OO_F$ and coprime to $\\lam_p:=1-\\zeta_p$ and if \\[\\xi \\equiv \\a_0^p \\mod \\lam_p^p \\] for some $\\a_0 \\in \\OO_{F_\\gothp}^\\times$ (the ring of integers of the completion of $F$ at $\\lam_p$), then the ideal $(\\lam_p)$ is unramified in $K/F$ where $K=F(\\sqrt[p]{\\xi})$."
+    },
+    {
+      "id": "Kummer_alt",
+      "kind": "lemma",
+      "position": 44,
+      "chapter": "kummers-lemma",
+      "source": "demo.tex",
+      "line": 527,
+      "title": null,
+      "labels": [
+        "Kummer_alt"
+      ],
+      "lean_decls": [],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "lem:ramification_lem",
+        "lem:Hilbert92",
+        "Hilbert90"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 83,
+      "proof_event": 84,
+      "proof_chapter": "kummers-lemma",
+      "proof_leanok": true,
+      "text": "Let $u \\in F$ with $F=\\QQ(\\zeta_p)$ be a unit such that \\[u \\equiv a^p \\mod \\lam_p^p\\] for some $a \\in \\OO_F$. The either $u = \\epsilon^p$ for some $\\epsilon \\in \\OO_F^\\times$ or $p$ divides the class number of $F$."
+    }
+  ],
+  "edges": [
+    {
+      "source": "defn_of_disc",
+      "target": "lem:lin_indep_iff_disc_ne_zero",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:alt_definition_of_norm",
+      "target": "lem:lin_indep_iff_disc_ne_zero",
+      "kind": "statement"
+    },
+    {
+      "source": "defn_of_disc",
+      "target": "lem:disc_change_of_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "defn_of_disc",
+      "target": "lemma:disc_via_embs",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:alt_definition_of_trace",
+      "target": "lemma:disc_via_embs",
+      "kind": "statement"
+    },
+    {
+      "source": "defn_of_disc",
+      "target": "lemma:disc_of_prim_elt_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc_via_embs",
+      "target": "lemma:disc_of_prim_elt_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc_of_prim_elt_basis",
+      "target": "lemma:num_field_disc_in_terms_of_norm",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:alt_definition_of_norm",
+      "target": "lemma:num_field_disc_in_terms_of_norm",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:diff_of_irr_pol",
+      "target": "lemma:num_field_disc_in_terms_of_norm",
+      "kind": "statement"
+    },
+    {
+      "source": "defn_of_disc",
+      "target": "lemma:int_basis_int_disc",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:trace_of_alg_int_is_int",
+      "target": "lemma:int_basis_int_disc",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:disc_change_of_basis",
+      "target": "lemma:disc_int_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:int_basis_int_disc",
+      "target": "lemma:disc_int_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:norm_of_alg_int_is_int",
+      "target": "lemma:eis_crit_and_alg_ints",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:trace_of_alg_int_is_int",
+      "target": "lemma:eis_crit_and_alg_ints",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:num_field_disc_in_terms_of_norm",
+      "target": "lem:discr_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:cyclo_poly_irr",
+      "target": "lem:discr_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:cyclo_poly_deg",
+      "target": "lem:discr_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:discr_of_cyclo",
+      "target": "theorem:ring_of_ints_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:eis_crit_and_alg_ints",
+      "target": "theorem:ring_of_ints_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:disc_int_basis",
+      "target": "theorem:ring_of_ints_of_cyclo",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:alg_int_abs_val_one",
+      "target": "lemma:unit_lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:roots_of_unity_in_cyclo",
+      "target": "lemma:unit_lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:zeta_pow_sub_eq_unit_zeta_sub_one",
+      "target": "lem:flt_ideals_coprime",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:unit_lemma",
+      "target": "lem:exists_int_sum_eq_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:exists_int_sub_pow_prime_dvd",
+      "target": "lem:exists_int_sum_eq_zero",
+      "kind": "proof"
+    },
+    {
+      "source": "lemma:unit_lemma",
+      "target": "lemma:may_assume_coprime",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:zeta_pow_sub_eq_unit_zeta_sub_one",
+      "target": "lemma:may_assume_coprime",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:ideals_mult_to_power",
+      "target": "lemma:may_assume_coprime",
+      "kind": "statement"
+    },
+    {
+      "source": "theorem:ring_of_ints_of_cyclo",
+      "target": "lemma:may_assume_coprime",
+      "kind": "statement"
+    },
+    {
+      "source": "defn:is_regular_number",
+      "target": "theorem:FLT_case_one",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:exists_int_sum_eq_zero",
+      "target": "theorem:FLT_case_one",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:dvd_coeff_cycl_integer",
+      "target": "theorem:FLT_case_one",
+      "kind": "statement"
+    },
+    {
+      "source": "lemma:may_assume_coprime",
+      "target": "theorem:FLT_case_one",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:flt_ideals_coprime",
+      "target": "theorem:FLT_case_one",
+      "kind": "statement"
+    },
+    {
+      "source": "Kummer_alt",
+      "target": "thm:Kummers_lemma",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:gen_dvd_by_frak_p",
+      "target": "thm:gen_flt_eqn",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:gen_ideal_coprimality",
+      "target": "thm:gen_flt_eqn",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:Kummers_lemma",
+      "target": "theorem:FLT_case_two",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:gen_flt_eqn",
+      "target": "theorem:FLT_case_two",
+      "kind": "statement"
+    },
+    {
+      "source": "theorem:FLT_case_one",
+      "target": "FLT_regular",
+      "kind": "statement"
+    },
+    {
+      "source": "theorem:FLT_case_two",
+      "target": "FLT_regular",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:exists_alg_int",
+      "target": "Hilbert90",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rel_different",
+      "target": "lem:diff_ideal_eqn",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:loc_ramification",
+      "target": "lem:ramification_lem",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:diff_ideal_eqn",
+      "target": "lem:ramification_lem",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:diff_ram",
+      "target": "lem:ramification_lem",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:ramification_lem",
+      "target": "Kummer_alt",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:Hilbert92",
+      "target": "Kummer_alt",
+      "kind": "statement"
+    },
+    {
+      "source": "Hilbert90",
+      "target": "Kummer_alt",
+      "kind": "statement"
+    }
+  ],
+  "unresolved": [
+    [
+      "lem:lin_indep_iff_disc_ne_zero",
+      "Algebra.discr",
+      "statement"
+    ],
+    [
+      "lemma:disc_via_embs",
+      "trace_eq_sum_embeddings",
+      "statement"
+    ],
+    [
+      "theorem:FLT_case_two",
+      "lemma:defn:is_regular_number",
+      "statement"
+    ]
+  ],
+  "orphan_proofs": []
+}
