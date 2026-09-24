@@ -54,23 +54,23 @@ declarations):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 107 (60) | 78% | 27% | 30% | 0.82 | 0.44 | 0.85 |
-| 0.10 | 173 (119) | 72% | 44% | 48% | 0.84 | 0.51 | 0.61 |
-| 0.15 | 237 (179) | 61% | 53% | 58% | 0.85 | 0.52 | 0.63 |
-| 0.20 | 298 (238) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
-| 0.30 | 423 (356) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
+| 0.05 | 102 (60) | 78% | 27% | 30% | 0.82 | 0.45 | 0.88 |
+| 0.10 | 167 (119) | 72% | 44% | 48% | 0.84 | 0.51 | 0.61 |
+| 0.15 | 231 (179) | 61% | 53% | 58% | 0.85 | 0.52 | 0.63 |
+| 0.20 | 292 (238) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
+| 0.30 | 417 (356) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
 
 **Carleson** (style `top_down = 0.2` with a chapter roadmap; the blueprint
 names 7% of declarations and no definitions):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 442 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.80 |
-| 0.10 | 573 (218) | 43% | 42% | 51% | 0.71 | 0.44 | 0.29 |
-| 0.15 | 736 (347) | 35% | 54% | 64% | 0.72 | 0.48 | −0.02 |
-| 0.20 | 909 (502) | 29% | 64% | 74% | 0.72 | 0.44 | 0.06 |
+| 0.05 | 421 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.80 |
+| 0.10 | 551 (218) | 43% | 42% | 51% | 0.71 | 0.44 | 0.30 |
+| 0.15 | 713 (347) | 35% | 54% | 64% | 0.72 | 0.47 | −0.03 |
+| 0.20 | 885 (502) | 29% | 64% | 74% | 0.72 | 0.43 | −0.03 |
 
-*(With `--no-define-used`, Carleson's list shrinks to 171–513 results with the
+*(With `--no-define-used`, Carleson's list shrinks to 169–674 results with the
 same recall; PFR's precision is unchanged. Full numbers are in
 `results/outline/*_eval*.json`.)*
 
@@ -100,7 +100,7 @@ same recall; PFR's precision is unchanged. Full numbers are in
 
 ## What the outline looks like
 
-From `pfr_conjecture.md` (`--root PFR_conjecture --detail 0.25`: 134 results
+From `pfr_conjecture.md` (`--root PFR_conjecture --detail 0.25`: 131 results
 out of 1,395 declarations, 24 chapters):
 
 ```
@@ -228,18 +228,19 @@ the previous model, trained on PFR and Carleson only (minus the project).
 
 | Project | Detail | Style | Named (theorems) | Theorem precision | Recall | Nodes covered | Chapter NMI | τ within chapters | Baseline: named, theorem precision |
 |---|---:|---|---:|---:|---:|---:|---:|---:|---|
-| PFR | 0.18 | `top_down=0` | 289 (214) | 59% | 60% | 66% | 0.85 | +0.70 | 312, 50% |
-| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 560 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 488, 45% |
-| brownian_motion | 0.15 | `top_down=0` | 437 (264) | 28% | 39% | 39% | 0.78 | +0.58 | 475, 25% |
-| testing_lower_bounds | 0.12 | `top_down=0` | 159 (116) | 26% | 33% | 33% | 0.63 | +0.58 | 167, 24% |
-| sphere_packing | 0.07 | `top_down=0` | 208 (81) | 28% | 54% | 53% | 0.82 | +0.93 | 215, 28% |
-| flt3 | 0.38 | `top_down=0` | 103 (60) | 78% | 58% | 58% | 1.00 | +0.28 | 121, 61% |
-| sphere_eversion | 0.06 | `top_down=0.2` | 224 (43) | 47% | 62% | 65% | 0.62 | +0.50 | 245, 34% |
-| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 80 (43) | 49% | 71% | 91% | 0.92 | +0.70 | 84, 44% |
-| apap | 0.04 | `top_down=0` | 49 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 56, 67% |
+| PFR | 0.18 | `top_down=0` | 283 (214) | 59% | 60% | 66% | 0.85 | +0.70 | 306, 50% |
+| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 538 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 466, 45% |
+| brownian_motion | 0.15 | `top_down=0` | 429 (264) | 28% | 39% | 39% | 0.78 | +0.58 | 467, 25% |
+| testing_lower_bounds | 0.12 | `top_down=0` | 157 (116) | 26% | 33% | 33% | 0.63 | +0.58 | 165, 24% |
+| sphere_packing | 0.07 | `top_down=0` | 204 (81) | 28% | 54% | 53% | 0.82 | +0.93 | 211, 28% |
+| flt3 | 0.38 | `top_down=0` | 101 (60) | 78% | 58% | 58% | 1.00 | +0.28 | 119, 61% |
+| sphere_eversion | 0.06 | `top_down=0.2` | 199 (43) | 47% | 62% | 65% | 0.62 | +0.50 | 220, 34% |
+| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 78 (43) | 49% | 71% | 91% | 0.92 | +0.70 | 82, 44% |
+| apap | 0.04 | `top_down=0` | 47 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 54, 67% |
 
 *Named counts include the definitions added so that every statement can be read
-(`define_used`), which is why they exceed the detail share.*
+(`define_used`), which is why they exceed the detail share. Structure fields count
+with their structure.*
 
 - **Selection works well beyond chance on projects it has never seen.** At
   each blueprint's own detail, precision on named theorems is 1.9–18 times the
@@ -265,10 +266,13 @@ the previous model, trained on PFR and Carleson only (minus the project).
   bounds reach 26–28% theorem precision and 33–39% recall. Their blueprints
   name many mid-level lemmas that look structurally like helpers, as in the
   key-model results.
-- **Readability issue: structure fields.** Projections such as
-  `DualPair.v` are pulled in by `define_used` as named definitions. Folding
-  structure fields into their structure would shorten outlines without losing
-  anything.
+- **Structure fields are shown with their structure.** Projections such as
+  `DualPair.v` used to be pulled in by `define_used` as named definitions of
+  their own. The loader now reads each structure's fields from its
+  constructor, and selection names the structure instead. This shortens
+  outlines by 2–25 results (sphere eversion 224 → 199, Carleson's example
+  196 → 194) without changing which theorems are chosen: precision and
+  recall are unchanged.
 
 ## Limitations and next steps
 
@@ -283,5 +287,5 @@ the previous model, trained on PFR and Carleson only (minus the project).
   length, may suit readers better.
 - ~~Only two training projects~~. Done: `key_model_all.json` is trained on 9
   projects (above and [`cross_project.md`](cross_project.md)).
-- **Structure fields as definitions** (above): fold projections into their
-  structure.
+- ~~Structure fields as definitions~~. Done: projections are shown with their
+  structure (above).
