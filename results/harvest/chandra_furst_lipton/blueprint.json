@@ -1,0 +1,1151 @@
+{
+  "nodes": [
+    {
+      "id": "def:forget",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 5,
+      "title": "Forgetting a coordinate",
+      "labels": [
+        "def:forget"
+      ],
+      "lean_decls": [
+        "NOF.forget"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For an index $i : [d]$, we define \\begin{align} \\forget_i : G^d & \\to G^{\\{j : [d] \\mid j \\ne i\\}} \\\\ x & \\mapsto j \\mapsto x_j \\end{align}"
+    },
+    {
+      "id": "def:forbidden-pattern",
+      "kind": "definition",
+      "position": 1,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 18,
+      "title": "Forbidden pattern",
+      "labels": [
+        "def:forbidden-pattern"
+      ],
+      "lean_decls": [
+        "NOF.IsForbiddenPatternWithTip",
+        "NOF.IsForbiddenPattern"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 1,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say a tuple $(a_1, \\dots, a_d) : (G^d)^d$ is a {\\bf forbidden pattern with tip $v : G^d$} if $$a_{i, j} = v_j$$ for all $i, j$ distinct. We also simply say $(a_1, \\dots, a_d)$ is a {\\bf forbidden pattern} if it is a forbidden pattern with tip $v$ for some $v$."
+    },
+    {
+      "id": "def:multicorner",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 29,
+      "title": "Multidimensional corner",
+      "labels": [
+        "def:multicorner"
+      ],
+      "lean_decls": [
+        "NOF.IsMultidimCorner"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:forbidden-pattern"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 2,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A {\\bf multidimensional corner} in $d$ dimensions is a tuple of the form $(x, x + ce_1, \\dots, x + ce_d)$ for some $x : G^d$ and $c : G$, where $ce_i$ is the vector of all zeroes except in position $i$ where it is $c$. Such a corner is said to be {\\bf trivial} if $c = 0$."
+    },
+    {
+      "id": "def:corner-free-num",
+      "kind": "definition",
+      "position": 3,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 38,
+      "title": "Corner-free number",
+      "labels": [
+        "def:corner-free-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:multicorner"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 3,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf $d$-dimensional corner-free} number of $G$, denoted $r_d(G)$ is the size of the largest set $A$ in $G^d$ such that $A$ doesn't contain a non-trivial corner."
+    },
+    {
+      "id": "def:corner-color-num",
+      "kind": "definition",
+      "position": 4,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 47,
+      "title": "Corner-coloring number",
+      "labels": [
+        "def:corner-color-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:multicorner"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 4,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf $d$-dimensional corner-coloring number} of $G$, denoted $\\chi_d(G)$, is the smallest number of colors one needs to color $G^d$ such that no non-trivial $d$-dimensional corner is monochromatic."
+    },
+    {
+      "id": "lem:corner-num-lower",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 56,
+      "title": "Lower bound on the corner-coloring number",
+      "labels": [
+        "lem:corner-num-lower"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:corner-free-num",
+        "def:corner-color-num"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 6,
+      "proof_chapter": "0-corner",
+      "proof_leanok": false,
+      "text": "$$r_d(G) \\chi_d(G) \\ge N^d$$"
+    },
+    {
+      "id": "lem:corner-num-upper",
+      "kind": "lemma",
+      "position": 6,
+      "chapter": "0-corner",
+      "source": "chapter/0-corner.tex",
+      "line": 71,
+      "title": "Upper bound on the corner-coloring number",
+      "labels": [
+        "lem:corner-num-upper"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:corner-free-num",
+        "def:corner-color-num"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "0-corner",
+      "proof_leanok": false,
+      "text": "$$r_d(G) \\chi_d(G) \\le 2d N^d \\log N$$"
+    },
+    {
+      "id": "def:protocol",
+      "kind": "definition",
+      "position": 7,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 5,
+      "title": "NOF protocol",
+      "labels": [
+        "def:protocol"
+      ],
+      "lean_decls": [
+        "NOF.Protocol"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 9,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A {\\bf NOF protocol} $P$ consists of maps \\begin{align} \\strat : & [d] \\to G^{d - 1} \\to \\leanList \\Bool \\to \\Bool \\\\ \\guess : & [d] \\to G^{d - 1} \\to \\leanList \\Bool \\to \\Bool \\end{align}"
+    },
+    {
+      "id": "def:broadcast",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 19,
+      "title": "NOF broadcast",
+      "labels": [
+        "def:broadcast"
+      ],
+      "lean_decls": [
+        "NOF.Protocol.broadcast"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:protocol",
+        "def:forget"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 10,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a NOF protocol $P$, the {\\bf NOF broadcast on input $x : G^d$} is inductively defined by \\begin{align} \\broad(x) : \\N & \\to \\leanList \\Bool \\\\ 0 & \\mapsto [] \\\\ t + 1 & \\mapsto \\strat_{t \\% d}(\\forget_{t \\% d}(x), \\broad(x, t)) :: \\broad(x, t) \\end{align}"
+    },
+    {
+      "id": "lem:length-broadcast",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 33,
+      "title": "Length of a broadcast",
+      "labels": [
+        "lem:length-broadcast"
+      ],
+      "lean_decls": [
+        "NOF.Protocol.length_broadcast"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:broadcast"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "1-nof-model",
+      "proof_leanok": true,
+      "text": "For every NOF protocol $P$, every input $x : G^d$ and every time $t$, $\\broad(x, t)$ has length $t$."
+    },
+    {
+      "id": "def:valid-protocol",
+      "kind": "definition",
+      "position": 10,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 46,
+      "title": "Valid NOF protocol",
+      "labels": [
+        "def:valid-protocol"
+      ],
+      "lean_decls": [
+        "NOF.Protocol.IsValid"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:broadcast"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 13,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a function $F : G^d \\to \\Bool$, the NOF protocol $P$ is {\\bf valid in $F$ at time $t$ on input $x$} if all participants correctly guess $F(x)$, namely if $$\\guess_i(\\forget_i(x), \\broad(x, t)) = F(x)$$ for all $i : [d]$."
+    },
+    {
+      "id": "def:trivial-protocol",
+      "kind": "definition",
+      "position": 11,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 57,
+      "title": "The trivial protocol",
+      "labels": [
+        "def:trivial-protocol"
+      ],
+      "lean_decls": [
+        "NOF.Protocol.trivial"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 14,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "For all $F$, we define the {\\bf trivial protocol} by making participant $i$ do \"Send the $t / d$-th bit of the number of participant $i + 1$\" and \"Compute $x_i$ from the binary representation given by participant $i - 1$, then compute $F(x)$\"."
+    },
+    {
+      "id": "lem:trivial-protocol-valid",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 66,
+      "title": "The trivial protocol is valid",
+      "labels": [
+        "lem:trivial-protocol-valid"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:valid-protocol",
+        "def:trivial-protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 15,
+      "proof_event": 16,
+      "proof_chapter": "1-nof-model",
+      "proof_leanok": false,
+      "text": "For all $F$, the trivial protocol for $F$ is valid in time $d\\ceil{\\log_2 n}$."
+    },
+    {
+      "id": "def:det-protocol-complex",
+      "kind": "definition",
+      "position": 13,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 80,
+      "title": "Deterministic complexity of a protocol",
+      "labels": [
+        "def:det-protocol-complex"
+      ],
+      "lean_decls": [
+        "NOF.Protocol.complexity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:valid-protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 17,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf communication complexity of a NOF protocol $P$ for $F$} is the smallest time $t$ such that $P$ is valid in $F$ at time $t$ on all inputs $x$, or $\\infty$ if no such $t$ exists."
+    },
+    {
+      "id": "def:det-fun-complex",
+      "kind": "definition",
+      "position": 14,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 89,
+      "title": "Deterministic complexity of a function",
+      "labels": [
+        "def:det-fun-complex"
+      ],
+      "lean_decls": [
+        "NOF.funComplexity"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-protocol-complex"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 18,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf deterministic communication complexity of a function} $F$, denoted $D(F)$, is the minimum of the communication complexity of $P$ when $P$ ranges over all NOF protocols."
+    },
+    {
+      "id": "lem:trivial-bound-det-fun-complex",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 98,
+      "title": "Trivial bound on the function complexity",
+      "labels": [
+        "lem:trivial-bound-det-fun-complex"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-fun-complex"
+      ],
+      "proof_uses": [
+        "lem:trivial-protocol-valid"
+      ],
+      "has_proof": true,
+      "statement_event": 19,
+      "proof_event": 20,
+      "proof_chapter": "1-nof-model",
+      "proof_leanok": false,
+      "text": "The communication complexity of any function $F$ is at most $d\\ceil{\\log_2 n}$."
+    },
+    {
+      "id": "lem:mono-forbidden-pattern-tip",
+      "kind": "lemma",
+      "position": 16,
+      "chapter": "1-nof-model",
+      "source": "chapter/1-nof-model.tex",
+      "line": 113,
+      "title": "The tip of a monochromatic forbidden pattern",
+      "labels": [
+        "lem:mono-forbidden-pattern-tip"
+      ],
+      "lean_decls": [
+        "NOF.IsForbiddenPatternWithTip.broadcast_eq"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:forbidden-pattern",
+        "def:valid-protocol"
+      ],
+      "proof_uses": [
+        "lem:length-broadcast"
+      ],
+      "has_proof": true,
+      "statement_event": 21,
+      "proof_event": 22,
+      "proof_chapter": "1-nof-model",
+      "proof_leanok": true,
+      "text": "Given $P$ a NOF protocol and a time $t$, if $(a_1, \\dots, a_d)$ is a forbidden pattern with tip $v$ such that $\\broad(a_i, t)$ equals some fixed broadcast history $b$ for all $i$, then $\\broad(v, t) = b$ as well."
+    },
+    {
+      "id": "def:eval",
+      "kind": "definition",
+      "position": 17,
+      "chapter": "2-lower-bound-eval",
+      "source": "chapter/2-lower-bound-eval.tex",
+      "line": 3,
+      "title": "$\\eval$ function",
+      "labels": [
+        "def:eval"
+      ],
+      "lean_decls": [
+        "NOF.eval"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 23,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf $\\eval$ function} is defined by \\begin{align} \\eval : G^d & \\to \\Bool \\\\ x & \\mapsto \\begin{cases} 1 & \\text{ if } \\sum_i x_i = 0 \\\\ 0 & \\text{ else} \\end{cases} \\end{align}"
+    },
+    {
+      "id": "lem:forbidden-pattern-project-multicorner",
+      "kind": "lemma",
+      "position": 18,
+      "chapter": "2-lower-bound-eval",
+      "source": "chapter/2-lower-bound-eval.tex",
+      "line": 18,
+      "title": "Forbidden patterns project to multidimensional corners",
+      "labels": [
+        "lem:forbidden-pattern-project-multicorner"
+      ],
+      "lean_decls": [
+        "NOF.isMultidimCorner_forget_of_isForbiddenPattern"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:forbidden-pattern",
+        "def:multicorner",
+        "def:forget",
+        "def:eval"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "2-lower-bound-eval",
+      "proof_leanok": true,
+      "text": "If $(a_1, \\dots, a_d)$ is a forbidden pattern such that $\\eval(a_i) = 1$ for all $i$, then $$(\\forget_i(a_1), \\dots, \\forget_i(a_d))$$ is a multidimensional corner for all index $i$."
+    },
+    {
+      "id": "lem:mono-forbidden-pattern-trivial",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "2-lower-bound-eval",
+      "source": "chapter/2-lower-bound-eval.tex",
+      "line": 34,
+      "title": "Monochromatic forbidden patterns are trivial",
+      "labels": [
+        "lem:mono-forbidden-pattern-trivial"
+      ],
+      "lean_decls": [
+        "NOF.trivial_of_isForbiddenPattern_of_isValid_eval"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:forbidden-pattern",
+        "def:valid-protocol",
+        "def:eval"
+      ],
+      "proof_uses": [
+        "lem:length-broadcast",
+        "lem:mono-forbidden-pattern-tip"
+      ],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "2-lower-bound-eval",
+      "proof_leanok": true,
+      "text": "Given $P$ a NOF protocol valid in time $t$ for $\\eval$, all monochromatic forbidden patterns are trivial."
+    },
+    {
+      "id": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "theorem",
+      "position": 20,
+      "chapter": "2-lower-bound-eval",
+      "source": "chapter/2-lower-bound-eval.tex",
+      "line": 49,
+      "title": "Lower bound for $D(\\eval)$ in terms of $\\chi_d(G)$",
+      "labels": [
+        "thm:det-fun-complex-eval-ge-corner-color-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-fun-complex",
+        "def:eval",
+        "def:corner-color-num"
+      ],
+      "proof_uses": [
+        "lem:mono-forbidden-pattern-trivial",
+        "lem:forbidden-pattern-project-multicorner"
+      ],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "2-lower-bound-eval",
+      "proof_leanok": false,
+      "text": "$$D(\\eval) \\ge \\lceil\\log_2\\chi_d(G)\\rceil$$"
+    },
+    {
+      "id": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "corollary",
+      "position": 21,
+      "chapter": "2-lower-bound-eval",
+      "source": "chapter/2-lower-bound-eval.tex",
+      "line": 64,
+      "title": "Lower bound for $D(\\eval)$ in terms of $r_d(G)$",
+      "labels": [
+        "cor:det-fun-complex-eval-ge-corner-free-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-fun-complex",
+        "def:eval",
+        "def:corner-free-num"
+      ],
+      "proof_uses": [
+        "thm:det-fun-complex-eval-ge-corner-color-num",
+        "lem:corner-num-lower"
+      ],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "2-lower-bound-eval",
+      "proof_leanok": false,
+      "text": "$$D(\\eval) \\ge d\\log_2\\frac N{r_d(G)}$$"
+    },
+    {
+      "id": "def:non-monochromatic-protocol",
+      "kind": "definition",
+      "position": 22,
+      "chapter": "3-upper-bound-eval",
+      "source": "chapter/3-upper-bound-eval.tex",
+      "line": 3,
+      "title": "The non-monochromatic protocol",
+      "labels": [
+        "def:non-monochromatic-protocol"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 32,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Given a coloring $c : \\{x \\mid \\eval x = 1\\} \\to [C]$, writing $a_i$ the vector whose $j$-th coordinate is $x_j$ except when $j = i$ in which case it is $-\\sum_{j \\ne i} x_j$, we define the {\\bf non-monochromatic protocol for $c$} by making participant $i$ do ``Send the $t / d$-th bit of $c(a_i)$ until time $\\lceil\\log_2\\chi_d(G)\\rceil$, then send $1$ iff $c(a_i)$ agrees with the broadcast from time $1$ to time $\\lceil\\log_2\\chi_d(G)\\rceil$ read as a color'' and ``Send $1$ iff the broadcasts from time $\\lceil\\log_2\\chi_d(G)\\rceil$ to time $\\lceil\\log_2\\chi_d(G)\\rceil + d$ were all $1$''."
+    },
+    {
+      "id": "lem:non-monochromatic-protocol-valid",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "3-upper-bound-eval",
+      "source": "chapter/3-upper-bound-eval.tex",
+      "line": 12,
+      "title": "The non-monochromatic protocol is valid",
+      "labels": [
+        "lem:non-monochromatic-protocol-valid"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:non-monochromatic-protocol",
+        "def:valid-protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "3-upper-bound-eval",
+      "proof_leanok": false,
+      "text": "If $c$ is a coloring such that all monochromatic forbidden patterns are trivial, then the non-monochromatic protocol for $c$ is valid in time $\\lceil\\log_2\\chi_d(G)\\rceil + d$."
+    },
+    {
+      "id": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "theorem",
+      "position": 24,
+      "chapter": "3-upper-bound-eval",
+      "source": "chapter/3-upper-bound-eval.tex",
+      "line": 29,
+      "title": "Upper bound for $D(\\eval)$ in terms of $\\chi_d(G)$",
+      "labels": [
+        "thm:det-fun-complex-eval-le-corner-color-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-fun-complex",
+        "def:eval",
+        "def:corner-color-num"
+      ],
+      "proof_uses": [
+        "lem:non-monochromatic-protocol-valid",
+        "lem:forbidden-pattern-project-multicorner"
+      ],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "3-upper-bound-eval",
+      "proof_leanok": false,
+      "text": "$$D(\\eval) \\le \\lceil\\log_2\\chi_d(G)\\rceil + d$$"
+    },
+    {
+      "id": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "corollary",
+      "position": 25,
+      "chapter": "3-upper-bound-eval",
+      "source": "chapter/3-upper-bound-eval.tex",
+      "line": 44,
+      "title": "Upper bound for $D(\\eval)$ in terms of $r_d(G)$",
+      "labels": [
+        "cor:det-fun-complex-eval-le-corner-free-num"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:det-fun-complex",
+        "def:eval",
+        "def:corner-free-num"
+      ],
+      "proof_uses": [
+        "thm:det-fun-complex-eval-le-corner-color-num",
+        "lem:corner-num-upper"
+      ],
+      "has_proof": true,
+      "statement_event": 37,
+      "proof_event": 38,
+      "proof_chapter": "3-upper-bound-eval",
+      "proof_leanok": false,
+      "text": "$$D(\\eval) \\le 2d\\log_2\\frac N{r_d(G)}$$"
+    },
+    {
+      "id": "def:rand-protocol-complex",
+      "kind": "definition",
+      "position": 26,
+      "chapter": "4-randomised-eval",
+      "source": "chapter/4-randomised-eval.tex",
+      "line": 3,
+      "title": "Randomised complexity of a protocol",
+      "labels": [
+        "def:rand-protocol-complex"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:valid-protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 39,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf communication complexity of a randomised NOF protocol $P$ for $F$ with error $\\epsilon$} is the smallest time $t$ such that $$\\mathbb P(x \\mid P \\text{ is not valid at time } t) \\le \\epsilon$$ or $\\infty$ if no such $t$ exists."
+    },
+    {
+      "id": "def:rand-complex",
+      "kind": "definition",
+      "position": 27,
+      "chapter": "4-randomised-eval",
+      "source": "chapter/4-randomised-eval.tex",
+      "line": 14,
+      "title": "Randomised complexity of a function",
+      "labels": [
+        "def:rand-complex"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rand-protocol-complex"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 40,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf randomised communication complexity of a function $F$ with error $\\epsilon$}, denoted $R_\\epsilon(F)$, is the minimum of the randomised communication complexity of $P$ when $P$ ranges over all randomised NOF protocols."
+    },
+    {
+      "id": "def:rand-eq-test-protocol-eval",
+      "kind": "definition",
+      "position": 28,
+      "chapter": "4-randomised-eval",
+      "source": "chapter/4-randomised-eval.tex",
+      "line": 23,
+      "title": "The randomised equality testing protocol for $\\eval$",
+      "labels": [
+        "def:rand-eq-test-protocol-eval"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 41,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "The {\\bf randomised equality testing protocol for $\\eval$} has domain $\\Omega := (\\Bool^d)^{\\lceil\\log_2\\epsilon^{-1}\\rceil}$ with the uniform measure and is defined by making participant $i$ do ``Compute $$a_{i, k} = \\sum_{j \\ne i} \\omega_{j, k}x_j$$ and send the sum of the digits of $a_{i, t/d}$ mod $2$ at time $t$'' and ``Guess $1$ iff the sum of the digits of $\\omega_i x_i$ + what participant $i$ said is $0$ modulo $2$''."
+    },
+    {
+      "id": "lem:rand-eq-test-protocol-eval-valid",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "4-randomised-eval",
+      "source": "chapter/4-randomised-eval.tex",
+      "line": 32,
+      "title": "The randomised equality testing protocol for $\\eval$ is valid",
+      "labels": [
+        "lem:rand-eq-test-protocol-eval-valid"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:rand-eq-test-protocol-eval",
+        "def:valid-protocol"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 42,
+      "proof_event": 43,
+      "proof_chapter": "4-randomised-eval",
+      "proof_leanok": false,
+      "text": "The randomised equality testing protocol is valid for $\\eval$ at time $2d$."
+    },
+    {
+      "id": "thm:eval-rand-complexity",
+      "kind": "theorem",
+      "position": 30,
+      "chapter": "4-randomised-eval",
+      "source": "chapter/4-randomised-eval.tex",
+      "line": 48,
+      "title": "The randomised complexity of $\\eval$ is constant",
+      "labels": [
+        "thm:eval-rand-complexity"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:eval",
+        "def:rand-complex"
+      ],
+      "proof_uses": [
+        "lem:rand-eq-test-protocol-eval-valid"
+      ],
+      "has_proof": true,
+      "statement_event": 44,
+      "proof_event": 45,
+      "proof_chapter": "4-randomised-eval",
+      "proof_leanok": false,
+      "text": "$$R_\\epsilon(\\eval) \\le 2d\\lceil\\log_2\\epsilon^{-1}\\rceil$$"
+    }
+  ],
+  "edges": [
+    {
+      "source": "def:forbidden-pattern",
+      "target": "def:multicorner",
+      "kind": "statement"
+    },
+    {
+      "source": "def:multicorner",
+      "target": "def:corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:multicorner",
+      "target": "def:corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-free-num",
+      "target": "lem:corner-num-lower",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-color-num",
+      "target": "lem:corner-num-lower",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-free-num",
+      "target": "lem:corner-num-upper",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-color-num",
+      "target": "lem:corner-num-upper",
+      "kind": "statement"
+    },
+    {
+      "source": "def:protocol",
+      "target": "def:broadcast",
+      "kind": "statement"
+    },
+    {
+      "source": "def:forget",
+      "target": "def:broadcast",
+      "kind": "statement"
+    },
+    {
+      "source": "def:broadcast",
+      "target": "lem:length-broadcast",
+      "kind": "statement"
+    },
+    {
+      "source": "def:broadcast",
+      "target": "def:valid-protocol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:protocol",
+      "target": "def:trivial-protocol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "lem:trivial-protocol-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:trivial-protocol",
+      "target": "lem:trivial-protocol-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "def:det-protocol-complex",
+      "kind": "statement"
+    },
+    {
+      "source": "def:det-protocol-complex",
+      "target": "def:det-fun-complex",
+      "kind": "statement"
+    },
+    {
+      "source": "def:det-fun-complex",
+      "target": "lem:trivial-bound-det-fun-complex",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:trivial-protocol-valid",
+      "target": "lem:trivial-bound-det-fun-complex",
+      "kind": "proof"
+    },
+    {
+      "source": "def:forbidden-pattern",
+      "target": "lem:mono-forbidden-pattern-tip",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "lem:mono-forbidden-pattern-tip",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:length-broadcast",
+      "target": "lem:mono-forbidden-pattern-tip",
+      "kind": "proof"
+    },
+    {
+      "source": "def:forbidden-pattern",
+      "target": "lem:forbidden-pattern-project-multicorner",
+      "kind": "statement"
+    },
+    {
+      "source": "def:multicorner",
+      "target": "lem:forbidden-pattern-project-multicorner",
+      "kind": "statement"
+    },
+    {
+      "source": "def:forget",
+      "target": "lem:forbidden-pattern-project-multicorner",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "lem:forbidden-pattern-project-multicorner",
+      "kind": "statement"
+    },
+    {
+      "source": "def:forbidden-pattern",
+      "target": "lem:mono-forbidden-pattern-trivial",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "lem:mono-forbidden-pattern-trivial",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "lem:mono-forbidden-pattern-trivial",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:length-broadcast",
+      "target": "lem:mono-forbidden-pattern-trivial",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:mono-forbidden-pattern-tip",
+      "target": "lem:mono-forbidden-pattern-trivial",
+      "kind": "proof"
+    },
+    {
+      "source": "def:det-fun-complex",
+      "target": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-color-num",
+      "target": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:mono-forbidden-pattern-trivial",
+      "target": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:forbidden-pattern-project-multicorner",
+      "target": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "kind": "proof"
+    },
+    {
+      "source": "def:det-fun-complex",
+      "target": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-free-num",
+      "target": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:det-fun-complex-eval-ge-corner-color-num",
+      "target": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:corner-num-lower",
+      "target": "cor:det-fun-complex-eval-ge-corner-free-num",
+      "kind": "proof"
+    },
+    {
+      "source": "def:protocol",
+      "target": "def:non-monochromatic-protocol",
+      "kind": "statement"
+    },
+    {
+      "source": "def:non-monochromatic-protocol",
+      "target": "lem:non-monochromatic-protocol-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "lem:non-monochromatic-protocol-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:det-fun-complex",
+      "target": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-color-num",
+      "target": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:non-monochromatic-protocol-valid",
+      "target": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:forbidden-pattern-project-multicorner",
+      "target": "thm:det-fun-complex-eval-le-corner-color-num",
+      "kind": "proof"
+    },
+    {
+      "source": "def:det-fun-complex",
+      "target": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "def:corner-free-num",
+      "target": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:det-fun-complex-eval-le-corner-color-num",
+      "target": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:corner-num-upper",
+      "target": "cor:det-fun-complex-eval-le-corner-free-num",
+      "kind": "proof"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "def:rand-protocol-complex",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rand-protocol-complex",
+      "target": "def:rand-complex",
+      "kind": "statement"
+    },
+    {
+      "source": "def:protocol",
+      "target": "def:rand-eq-test-protocol-eval",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rand-eq-test-protocol-eval",
+      "target": "lem:rand-eq-test-protocol-eval-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:valid-protocol",
+      "target": "lem:rand-eq-test-protocol-eval-valid",
+      "kind": "statement"
+    },
+    {
+      "source": "def:eval",
+      "target": "thm:eval-rand-complexity",
+      "kind": "statement"
+    },
+    {
+      "source": "def:rand-complex",
+      "target": "thm:eval-rand-complexity",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:rand-eq-test-protocol-eval-valid",
+      "target": "thm:eval-rand-complexity",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}
