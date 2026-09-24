@@ -56,6 +56,8 @@ repo = "leanprover-community/flt-regular"
 [[project]]
 name = "zeta3"
 repo = "ahhwuhu/zeta_3_irrational"
+# Pinned: from 2026-03-20 the live content.tex is an IMO 2025 P4 blueprint, with the zeta(3) one commented out.
+commit = "3afdc9b57881ae1fee158fe16f7bff6b14286305"
 # 4,126 lines of Lean in 8 files, Lean v4.18.0
 
 [[project]]
