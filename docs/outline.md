@@ -274,6 +274,50 @@ with their structure.*
   196 → 194) without changing which theorems are chosen: precision and
   recall are unchanged.
 
+## Checked prose for a new project: APAP
+
+[`results/outline/apap.md`](../results/outline/apap.md) is the first harvested
+project with English prose. The outline comes from the model trained on the
+other 8 projects, never on APAP (`key_model_without_apap.json`), at the
+blueprint's own detail (0.044): 47 results in 20 chapters. The prose went
+through the same translate, check and repair loop as PFR and Carleson:
+
+| Round | Flagged |
+|---|---:|
+| 1. Translate (2 agents), check (fresh agent, Lean/English pairs only) | 3 of 47 |
+| 2. Repair those 3, re-check their chapters | 0 |
+
+What the checker caught:
+
+- **A real notation error.** In Chang's lemma the Lean takes
+  `Real.log (x)⁻¹`, the log of the inverse. The English had written
+  $\log(x)^{-1}$, which reads as one over the log. The repair writes
+  $\log(1/x)$.
+- **Definition glosses that claimed too much.** The signature of `BohrSet`
+  shows only `Type → Type`, but the English described its fields. The English
+  for `dLpNorm` asserted a normalisation that the signature can't show, and
+  which conflicts with other chapters. The repairs keep to the signature and
+  attribute extra detail to the docstring ("according to its docstring…").
+
+Round 1 flagged far less than PFR (83 of 134). The translation prompts now show
+instance assumptions and allow long statements, which removes most of PFR's
+failures.
+
+**A limitation it exposed.** The short Lean statement keeps instance
+assumptions that are propositions (`[Finite G]`) or carry content
+(`[Module (ZMod q) G]`), but drops data classes on a bare variable. That
+includes `[Fintype G]`, so the Lean line under the main theorem `ff` doesn't
+show that G is finite. The English does say so. Keeping `Fintype`, `Finite`
+and similar classes needs a small extractor change and re-extraction.
+
+**Two readability notes:**
+- An auto-generated instance
+  (`AlmostPeriodicity.instDecidablePredForallFinLProp`) was selected as a
+  named definition. Instances could be folded into what uses them, as
+  structure fields now are.
+- Several sketches go beyond the listed dependencies, as for PFR and Carleson
+  (e.g. "iterated density increment" for `ff`, inferred from helper names).
+
 ## Limitations and next steps
 
 - ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
@@ -287,5 +331,7 @@ with their structure.*
   length, may suit readers better.
 - ~~Only two training projects~~. Done: `key_model_all.json` is trained on 9
   projects (above and [`cross_project.md`](cross_project.md)).
+- **`[Fintype G]` hidden in short statements, and instances named as results**
+  (see APAP above).
 - ~~Structure fields as definitions~~. Done: projections are shown with their
   structure (above).

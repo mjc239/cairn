@@ -1,0 +1,22 @@
+{
+  "changConst": {
+    "faithful": true,
+    "issue": ""
+  },
+  "AddDissociated.boringEnergy_le": {
+    "faithful": true,
+    "issue": ""
+  },
+  "general_hoelder": {
+    "faithful": true,
+    "issue": ""
+  },
+  "spec_hoelder": {
+    "faithful": true,
+    "issue": ""
+  },
+  "chang": {
+    "faithful": false,
+    "issue": "Lean has `Real.log (X)⁻¹`, i.e. log of the inverse, but the English writes `\\log\\left(X\\right)^{-1}`, which reads as the reciprocal of the logarithm."
+  }
+}

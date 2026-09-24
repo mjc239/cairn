@@ -43,3 +43,10 @@ uv run cairn outline data/raw/carleson_decls.jsonl --model $O/key_model_pfr.json
   -o $O/classical_carleson.md
 uv run cairn outline data/raw/pfr_decls.jsonl --model $O/key_model_carleson.json --modules PFR --detail 0.1 \
   --title "PFR project: full outline" -o $O/pfr_full.md
+# A harvested project, outlined with the model trained on the other 8 training projects (never on APAP), with checked
+# English prose (results/outline/prose/apap). Needs the harvested dump: uv run python scripts/cross_project.py, then
+# uv run python scripts/outline_projects.py --save-model apap.
+if [ -f data/raw/harvest/apap/decls.jsonl ]; then
+  uv run cairn outline data/raw/harvest/apap/decls.jsonl --model $O/projects/key_model_without_apap.json --detail 0.044 \
+    --title "LeanAPAP: outline of the formalisation" --prose $O/prose/apap -o $O/apap.md
+fi

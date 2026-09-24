@@ -1,0 +1,42 @@
+You are checking translations of verified Lean statements into mathematical English.
+For each result below, compare the English statement with the Lean statement. The Lean statement shows explicit
+hypotheses and meaningful instance assumptions (e.g. `[Finite G]`); implicit arguments and purely structural
+instances (e.g. `[AddCommGroup G]`) are omitted, and the English may leave them implicit too.
+
+Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
+quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
+
+Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
+Use every Lean name exactly as given.
+
+### `AlmostPeriodicity.LProp`
+Lean: `(k : ℕ) (m : ℕ) (ε : ℝ) (f : G → ℂ) (A : Finset G) (a : Fin k → G) : Prop`
+English: For $k, m \in \mathbb{N}$, $\varepsilon \in \mathbb{R}$, $f : G \to \mathbb{C}$ and a finite set $A \subseteq G$, $\mathrm{LProp}(k,m,\varepsilon,f,A)$ is a predicate on $k$-tuples $a = (a_1,\dots,a_k) \in G^k$; it is the property used to define the set $l(k,m,\varepsilon,f,A)$.
+
+### `AlmostPeriodicity.instDecidablePredForallFinLProp`
+Lean: `DecidablePred (LProp✝ k m ε f A)`
+English: Automatically generated instance: the predicate $\mathrm{LProp}(k,m,\varepsilon,f,A)$ on $k$-tuples is decidable.
+
+### `AlmostPeriodicity.l`
+Lean: `(k : ℕ) (m : ℕ) (ε : ℝ) (f : G → ℂ) (A : Finset G) : Finset (Fin k → G)`
+English: For $k, m \in \mathbb{N}$, $\varepsilon \in \mathbb{R}$, $f : G \to \mathbb{C}$ and a finite set $A \subseteq G$, $l(k,m,\varepsilon,f,A)$ is a finite set of $k$-tuples $a \in G^k$, defined via the predicate $\mathrm{LProp}(k,m,\varepsilon,f,A)$.
+
+### `AlmostPeriodicity.just_the_triangle_inequality`
+Lean: `[DiscreteMeasurableSpace G] (ha : a ∈ l k m ε f A) (ha' : (a + fun x => t) ∈ l k m ε f A) (hk : 0 < k) (hm : 1 ≤ m) : ‖translate (-t) (mu A ∗ᵈ f) - mu A ∗ᵈ f‖_[2 * ↑m] ≤ 2 * ε * ‖f‖_[2 * ↑m]`
+English: Let $G$ carry the discrete measurable structure. Suppose $a \in l(k,m,\varepsilon,f,A)$ and the shifted tuple $(a_1+t,\dots,a_k+t) \in l(k,m,\varepsilon,f,A)$, with $k > 0$ and $m \ge 1$. Then $\|\tau_{-t}(\mu_A \ast f) - \mu_A \ast f\|_{2m} \le 2\varepsilon \|f\|_{2m}$, where $\mu_A$ is the normalised indicator of $A$, $\ast$ is discrete convolution, $\tau_{-t}$ is translation by $-t$ and $\|\cdot\|_{2m}$ is the discrete $L^{2m}$ norm.
+
+### `AlmostPeriodicity.lemma28`
+Lean: `[DiscreteMeasurableSpace G] (hε : 0 < ε) (hm : 1 ≤ m) (hk : 64 * ↑m / ε ^ 2 ≤ ↑k) : ↑A.card ^ k / 2 ≤ ↑(l k m ε f A).card`
+English: Let $G$ carry the discrete measurable structure. If $\varepsilon > 0$, $m \ge 1$ and $64m/\varepsilon^2 \le k$, then $|A|^k/2 \le |l(k,m,\varepsilon,f,A)|$.
+
+### `AlmostPeriodicity.almost_periodicity`
+Lean: `[DiscreteMeasurableSpace G] (ε : ℝ) (hε : 0 < ε) (hε' : ε ≤ 1) (m : ℕ) (f : G → ℂ) (hK₂ : 2 ≤ K) (hK : ↑(A.addConst S) ≤ K) : ∃ T, K ^ (-512 * ↑m / ε ^ 2) * ↑S.card ≤ ↑T.card ∧ ∀ t ∈ T, ‖translate t (mu A ∗ᵈ f) - mu A ∗ᵈ f‖_[2 * ↑m] ≤ ε * ‖f‖_[2 * ↑m]`
+English: Let $G$ carry the discrete measurable structure. Let $0 < \varepsilon \le 1$, $m \in \mathbb{N}$, $f : G \to \mathbb{C}$, and let $K \ge 2$ with $\sigma[A,S] \le K$, where $\sigma[A,S]$ is the additive constant `A.addConst S` of the finite sets $A, S$. Then there is a finite set $T \subseteq G$ with $K^{-512m/\varepsilon^2}|S| \le |T|$ such that for every $t \in T$, $\|\tau_t(\mu_A \ast f) - \mu_A \ast f\|_{2m} \le \varepsilon \|f\|_{2m}$ (with $\mu_A$ the normalised indicator of $A$, $\ast$ discrete convolution, $\tau_t$ translation by $t$).
+
+### `AlmostPeriodicity.linfty_almost_periodicity`
+Lean: `[DiscreteMeasurableSpace G] (ε : ℝ) (hε₀ : 0 < ε) (hε₁ : ε ≤ 1) (hK₂ : 2 ≤ K) (hK : ↑(A.addConst S) ≤ K) (B : Finset G) (C : Finset G) (hB : B.Nonempty) (hC : C.Nonempty) : ∃ T, K ^ (-4096 * ↑⌈1 + Real.log (min 1 (↑C.card / ↑B.card))⁻¹⌉ / ε ^ 2) * ↑S.card ≤ ↑T.card ∧ ∀ t ∈ T, ‖translate t ((mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C‖_[⊤] ≤ ε`
+English: Let $G$ carry the discrete measurable structure. Let $0 < \varepsilon \le 1$, $K \ge 2$ with $\sigma[A,S] \le K$, and let $B, C$ be nonempty finite subsets of $G$. Then there is a finite set $T$ with $K^{-4096\lceil 1 + \log(\min(1, |C|/|B|)^{-1})\rceil/\varepsilon^2}|S| \le |T|$ such that for all $t \in T$, $\|\tau_t F - F\|_\infty \le \varepsilon$, where $F = \mu_A \ast 1_B \ast \mu_C$. Here $\mu_X$ is the normalised indicator of $X$, $\ast$ is discrete convolution, $\tau_t$ is translation by $t$, $\|\cdot\|_{q}$ is the discrete $L^q$ norm, and $\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$). 
+
+### `AlmostPeriodicity.linfty_almost_periodicity_boosted`
+Lean: `[DiscreteMeasurableSpace G] (ε : ℝ) (hε₀ : 0 < ε) (hε₁ : ε ≤ 1) (k : ℕ) (hk : k ≠ 0) (hK₂ : 2 ≤ K) (hK : ↑(A.addConst S) ≤ K) (hS : S.Nonempty) (B : Finset G) (C : Finset G) (hB : B.Nonempty) (hC : C.Nonempty) : ∃ T, K ^ (-4096 * ↑⌈1 + Real.log (min 1 (↑C.card / ↑B.card))⁻¹⌉ * ↑k ^ 2 / ε ^ 2) * ↑S.card ≤ ↑T.card ∧ ‖mu T ∗ᵈ^ k ∗ᵈ ((mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C‖_[⊤] ≤ ε`
+English: Let $G$ carry the discrete measurable structure. Let $0 < \varepsilon \le 1$, $k \in \mathbb{N}$ with $k \ne 0$, $K \ge 2$ with $\sigma[A,S] \le K$, $S$ nonempty, and $B, C$ nonempty finite subsets of $G$. Then there is a finite set $T$ with $K^{-4096\lceil 1 + \log(\min(1, |C|/|B|)^{-1})\rceil k^2/\varepsilon^2}|S| \le |T|$ and $\|\mu_T^{\ast k} \ast F - F\|_\infty \le \varepsilon$, where $F = \mu_A \ast 1_B \ast \mu_C$ and $\mu_T^{\ast k}$ is the $k$-fold convolution power of $\mu_T$. Here $\mu_X$ is the normalised indicator of $X$, $\ast$ is discrete convolution, $\tau_t$ is translation by $t$, $\|\cdot\|_{q}$ is the discrete $L^q$ norm, and $\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$). 

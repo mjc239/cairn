@@ -1,0 +1,5 @@
+{
+  "MeasureTheory.dLpNorm": {
+    "statement": "For an extended nonnegative real $p \\in [0, \\infty]$ and a function $f : \\alpha \\to E$, $\\mathrm{dLpNorm}(p, f)$ is a real number, written $\\|f\\|_p$; according to its docstring, it is an $L^p$ norm of $f$."
+  }
+}

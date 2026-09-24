@@ -1,0 +1,6 @@
+{
+  "BohrSet": {
+    "faithful": false,
+    "issue": "The signature is only `Type → Type`, yet the English asserts specific structure (finite character set, extended-nonnegative-real widths, chord-length membership condition) that cannot be read from it."
+  }
+}
