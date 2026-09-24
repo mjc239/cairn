@@ -111,3 +111,35 @@ def test_goal_first_order_is_top_down():
         pos = {v: i for i, v in enumerate(order)}
         # every non-final result appears after at least one result that uses it
         assert all(any(pos[w] < pos[v] for w in g.successors(v)) for v in g if g.out_degree(v))
+
+
+def test_event_styles_and_motivation():
+    from cairn.events import P, S, bottom_up_order, deferred_goal_first_order, motivated_share
+
+    # goal g's proof uses lemmas a and b; b's proof uses a
+    g = nx.DiGraph([(S("g"), P("g")), (S("a"), P("a")), (S("b"), P("b")),
+                    (S("a"), P("g")), (S("b"), P("g")), (S("a"), P("b"))])
+    rng = random.Random(0)
+    td = deferred_goal_first_order(g, rng)
+    bu = bottom_up_order(g, rng)
+    for order in (td, bu):
+        pos = {e: i for i, e in enumerate(order)}
+        assert sorted(order) == sorted(g) and all(pos[u] < pos[v] for u, v in g.edges)
+    assert td[0] == S("g") and td[-1] == P("g")
+    assert bu[-2:] == [S("g"), P("g")]
+    assert motivated_share(g, td) == 1.0
+    assert motivated_share(g, bu) == 0.0
+
+
+def test_hybrid_order_interpolates_styles():
+    from cairn.events import P, S, goals_by_fan_in, hybrid_order, motivated_share
+
+    g = nx.DiGraph([(S("g"), P("g")), (S("a"), P("a")), (S("b"), P("b")),
+                    (S("a"), P("g")), (S("b"), P("g")), (S("a"), P("b"))])
+    assert goals_by_fan_in(g, 2) == {"g"}
+    order = hybrid_order(g, {"g"}, random.Random(0))
+    pos = {e: i for i, e in enumerate(order)}
+    assert all(pos[u] < pos[v] for u, v in g.edges)
+    assert order[0] == S("g") and order[-1] == P("g")
+    assert order[1:3] == [S("a"), P("a")]  # a is not a goal: stated and proved together, bottom-up
+    assert motivated_share(g, hybrid_order(g, set(), random.Random(0))) == 0.0

@@ -1,6 +1,6 @@
 # Cairn: scope
 
-*Status: Phases 0–2 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md), [`phase2-pfr.md`](phase2-pfr.md)) and repeated on Carleson, with a cross-project comparison in [`carleson.md`](carleson.md). Source notes: [`idea-notes.md`](idea-notes.md).*
+*Status: Phases 0–2 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md), [`phase2-pfr.md`](phase2-pfr.md)) and repeated on Carleson, with a cross-project comparison in [`carleson.md`](carleson.md) and the statement/proof (load vs motivation) model in [`statement-proof-events.md`](statement-proof-events.md). Source notes: [`idea-notes.md`](idea-notes.md).*
 
 ## 1. The question
 

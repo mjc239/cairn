@@ -59,3 +59,52 @@ def plot_null_distributions(results, path: Path, metric: str, project: str) -> N
     fig.tight_layout(rect=(0, 0.06, 1, 0.97))
     fig.savefig(path, dpi=150, facecolor=SURFACE)
     plt.close(fig)
+
+
+def plot_motivation_frontier(projects: dict[str, dict], path: Path) -> None:
+    """Small multiples, one per project: mean open vs motivated share for the style sweep (bottom-up ->
+    hybrid -> top-down), averaged over chapters, with the human order marked."""
+    import statistics
+
+    fig, axes = plt.subplots(1, len(projects), figsize=(4.6 * len(projects), 3.6), squeeze=False,
+                             facecolor=SURFACE)
+    sweep = ["bottom-up, proofs immediately"] + [
+        f"hybrid, goals = proofs using >= {m} results" for m in (6, 4, 3, 2, 1)] + ["top-down, deferred proofs"]
+    for ax, (name, res) in zip(axes.flat, projects.items(), strict=True):
+        ax.set_facecolor(SURFACE)
+        scopes = [v for k, v in res["scopes"].items() if k != "(whole blueprint)"]
+
+        def avg(style, key, scopes=scopes):
+            return statistics.fmean(s[style][key] for s in scopes)
+
+        xs = [avg(s, "motivated") * 100 for s in sweep]
+        ys = [avg(s, "mean_open") for s in sweep]
+        ax.plot(xs, ys, color="#2a78d6", linewidth=2, marker="o", markersize=5, zorder=2)
+        ax.annotate("bottom-up", (xs[0], ys[0]), textcoords="offset points", xytext=(8, 6),
+                    fontsize=8, color=TEXT_SECONDARY)
+        ax.annotate("top-down", (xs[-1], ys[-1]), textcoords="offset points", xytext=(-44, 8),
+                    fontsize=8, color=TEXT_SECONDARY)
+        hx = statistics.fmean(s["human_motivated"] for s in scopes) * 100
+        hy = statistics.fmean(s["human_mean_open"] for s in scopes)
+        ax.scatter([hx], [hy], s=90, color="#eb6834", edgecolor=SURFACE, linewidth=2, zorder=3)
+        ax.annotate("human", (hx, hy), textcoords="offset points", xytext=(10, -10), fontsize=9,
+                    color=TEXT_PRIMARY)
+        ax.set_title(name, color=TEXT_PRIMARY, fontsize=10, loc="left")
+        ax.set_xlabel("lemmas stated after a goal they serve (%)", color=TEXT_SECONDARY, fontsize=8)
+        ax.set_ylabel("mean results held open", color=TEXT_SECONDARY, fontsize=8)
+        ax.set_xlim(-5, 105)
+        ax.tick_params(colors=TEXT_SECONDARY, labelsize=8, length=0)
+        ax.grid(color=GRID, linewidth=0.8)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        for side in ("left", "bottom"):
+            ax.spines[side].set_color(GRID)
+    handles = [plt.Line2D([], [], color="#2a78d6", linewidth=2, marker="o", markersize=5),
+               plt.Line2D([], [], color="#eb6834", marker="o", linestyle="", markersize=9)]
+    fig.legend(handles, ["Style sweep: goals = results whose proof uses ≥ m others (m = ∞ … 1)", "Human blueprint"],
+               loc="lower center", ncol=2, frameon=False, fontsize=8, labelcolor=TEXT_SECONDARY)
+    fig.suptitle("Motivation costs working memory: averaged over chapters", color=TEXT_PRIMARY, fontsize=12,
+                 x=0.01, ha="left")
+    fig.tight_layout(rect=(0, 0.07, 1, 0.95))
+    fig.savefig(path, dpi=150, facecolor=SURFACE)
+    plt.close(fig)

@@ -2920,11 +2920,11 @@
       "n_edges": 27,
       "forward_refs": [
         [
-          "basic-grid-structure",
+          "counting-balls",
           "grid-existence"
         ],
         [
-          "dyadic-property",
+          "basic-grid-structure",
           "grid-existence"
         ],
         [
@@ -2932,11 +2932,11 @@
           "grid-existence"
         ],
         [
-          "boundary-measure",
+          "dyadic-property",
           "grid-existence"
         ],
         [
-          "counting-balls",
+          "boundary-measure",
           "grid-existence"
         ],
         [
@@ -2948,11 +2948,11 @@
           "tile-structure"
         ],
         [
-          "frequency-cube-cover",
+          "disjoint-frequency-cubes",
           "tile-structure"
         ],
         [
-          "disjoint-frequency-cubes",
+          "frequency-cube-cover",
           "tile-structure"
         ]
       ],
@@ -3158,6 +3158,10 @@
       "n_edges": 56,
       "forward_refs": [
         [
+          "first-exception",
+          "exceptional-set"
+        ],
+        [
           "second-exception",
           "exceptional-set"
         ],
@@ -3166,43 +3170,11 @@
           "exceptional-set"
         ],
         [
-          "first-exception",
-          "exceptional-set"
-        ],
-        [
-          "forest-geometry",
-          "forest-union"
-        ],
-        [
-          "C6-forest",
-          "forest-union"
-        ],
-        [
-          "forest-separation",
-          "forest-union"
-        ],
-        [
-          "equivalence-relation",
-          "forest-union"
-        ],
-        [
-          "C-dens1",
-          "forest-union"
-        ],
-        [
-          "forest-inner",
-          "forest-union"
-        ],
-        [
           "wiggle-order-1",
           "forest-union"
         ],
         [
-          "forest-stacking",
-          "forest-union"
-        ],
-        [
-          "forest-convex",
+          "C-dens1",
           "forest-union"
         ],
         [
@@ -3210,15 +3182,43 @@
           "forest-union"
         ],
         [
+          "equivalence-relation",
+          "forest-union"
+        ],
+        [
+          "C6-forest",
+          "forest-union"
+        ],
+        [
+          "forest-geometry",
+          "forest-union"
+        ],
+        [
+          "forest-convex",
+          "forest-union"
+        ],
+        [
+          "forest-separation",
+          "forest-union"
+        ],
+        [
+          "forest-inner",
+          "forest-union"
+        ],
+        [
+          "forest-stacking",
+          "forest-union"
+        ],
+        [
           "C-dens1",
           "forest-complement"
         ],
         [
-          "L2-antichain",
+          "L0-antichain",
           "forest-complement"
         ],
         [
-          "L0-antichain",
+          "L2-antichain",
           "forest-complement"
         ],
         [
@@ -3436,7 +3436,7 @@
           "dens1-antichain"
         ],
         [
-          "tile-uncertainty",
+          "correlation-kernel-bound",
           "tile-correlation"
         ],
         [
@@ -3444,7 +3444,7 @@
           "tile-correlation"
         ],
         [
-          "correlation-kernel-bound",
+          "tile-uncertainty",
           "tile-correlation"
         ],
         [
@@ -3654,6 +3654,10 @@
       "n_edges": 63,
       "forward_refs": [
         [
+          "first-tree-pointwise",
+          "pointwise-tree-estimate"
+        ],
+        [
           "second-tree-pointwise",
           "pointwise-tree-estimate"
         ],
@@ -3662,15 +3666,11 @@
           "pointwise-tree-estimate"
         ],
         [
-          "first-tree-pointwise",
-          "pointwise-tree-estimate"
-        ],
-        [
-          "boundary-operator-bound",
+          "nontangential-operator-bound",
           "tree-projection-estimate"
         ],
         [
-          "nontangential-operator-bound",
+          "boundary-operator-bound",
           "tree-projection-estimate"
         ],
         [
@@ -3678,11 +3678,11 @@
           "boundary-operator-bound"
         ],
         [
-          "local-dens2-tree-bound",
+          "local-dens1-tree-bound",
           "densities-tree-bound"
         ],
         [
-          "local-dens1-tree-bound",
+          "local-dens2-tree-bound",
           "densities-tree-bound"
         ],
         [
@@ -3698,15 +3698,15 @@
           "correlation-distant-tree-parts"
         ],
         [
-          "lower-oscillation-bound",
-          "correlation-distant-tree-parts"
-        ],
-        [
           "Lipschitz-partition-unity",
           "correlation-distant-tree-parts"
         ],
         [
           "Holder-correlation-tree",
+          "correlation-distant-tree-parts"
+        ],
+        [
+          "lower-oscillation-bound",
           "correlation-distant-tree-parts"
         ],
         [
@@ -3730,11 +3730,11 @@
           "Holder-correlation-tree"
         ],
         [
-          "square-function-count",
+          "thin-scale-impact",
           "bound-for-tree-projection"
         ],
         [
-          "thin-scale-impact",
+          "square-function-count",
           "bound-for-tree-projection"
         ]
       ],
@@ -3952,7 +3952,11 @@
           "nontangential-from-simple"
         ],
         [
-          "estimate-good",
+          "maximal-theorem",
+          "calderon-zygmund-weak-1-1"
+        ],
+        [
+          "ball-covering",
           "calderon-zygmund-weak-1-1"
         ],
         [
@@ -3960,11 +3964,7 @@
           "calderon-zygmund-weak-1-1"
         ],
         [
-          "maximal-theorem",
-          "calderon-zygmund-weak-1-1"
-        ],
-        [
-          "ball-covering",
+          "estimate-good",
           "calderon-zygmund-weak-1-1"
         ],
         [
@@ -4174,23 +4174,15 @@
       "n_edges": 70,
       "forward_refs": [
         [
+          "Hilbert-strong-2-2",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "control-approximation-effect"
+        ],
+        [
           "Hilbert-kernel-regularity",
-          "control-approximation-effect"
-        ],
-        [
-          "frequency-ball-doubling",
-          "control-approximation-effect"
-        ],
-        [
-          "real-van-der-Corput",
-          "control-approximation-effect"
-        ],
-        [
-          "real-Carleson-operator-measurable",
-          "control-approximation-effect"
-        ],
-        [
-          "frequency-metric",
           "control-approximation-effect"
         ],
         [
@@ -4198,11 +4190,15 @@
           "control-approximation-effect"
         ],
         [
+          "real-Carleson-operator-measurable",
+          "control-approximation-effect"
+        ],
+        [
           "real-line-doubling",
           "control-approximation-effect"
         ],
         [
-          "Hilbert-strong-2-2",
+          "frequency-metric",
           "control-approximation-effect"
         ],
         [
@@ -4210,15 +4206,11 @@
           "control-approximation-effect"
         ],
         [
-          "integer-ball-cover",
-          "control-approximation-effect"
-        ],
-        [
-          "Hilbert-kernel-bound",
-          "control-approximation-effect"
-        ],
-        [
           "frequency-monotone",
+          "control-approximation-effect"
+        ],
+        [
+          "frequency-ball-doubling",
           "control-approximation-effect"
         ],
         [
@@ -4226,15 +4218,27 @@
           "control-approximation-effect"
         ],
         [
+          "integer-ball-cover",
+          "control-approximation-effect"
+        ],
+        [
+          "real-van-der-Corput",
+          "control-approximation-effect"
+        ],
+        [
+          "Hilbert-strong-2-2",
+          "real-Carleson"
+        ],
+        [
+          "Hilbert-kernel-bound",
+          "real-Carleson"
+        ],
+        [
           "Hilbert-kernel-regularity",
           "real-Carleson"
         ],
         [
-          "frequency-ball-doubling",
-          "real-Carleson"
-        ],
-        [
-          "real-van-der-Corput",
+          "real-line-doubling",
           "real-Carleson"
         ],
         [
@@ -4242,23 +4246,7 @@
           "real-Carleson"
         ],
         [
-          "real-line-doubling",
-          "real-Carleson"
-        ],
-        [
-          "Hilbert-strong-2-2",
-          "real-Carleson"
-        ],
-        [
           "oscillation-control",
-          "real-Carleson"
-        ],
-        [
-          "integer-ball-cover",
-          "real-Carleson"
-        ],
-        [
-          "Hilbert-kernel-bound",
           "real-Carleson"
         ],
         [
@@ -4266,16 +4254,20 @@
           "real-Carleson"
         ],
         [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
           "frequency-ball-growth",
           "real-Carleson"
         ],
         [
-          "Dirichlet-approximation",
-          "Hilbert-strong-2-2"
+          "integer-ball-cover",
+          "real-Carleson"
         ],
         [
-          "real-line-doubling",
-          "Hilbert-strong-2-2"
+          "real-van-der-Corput",
+          "real-Carleson"
         ],
         [
           "modulated-averaged-projection",
@@ -4286,15 +4278,19 @@
           "Hilbert-strong-2-2"
         ],
         [
+          "Dirichlet-approximation",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "real-line-doubling",
+          "Hilbert-strong-2-2"
+        ],
+        [
           "real-line-doubling",
           "Dirichlet-approximation"
         ],
         [
-          "frequency-ball-doubling",
-          "partial-Fourier-sums-of-small"
-        ],
-        [
-          "real-van-der-Corput",
+          "real-line-doubling",
           "partial-Fourier-sums-of-small"
         ],
         [
@@ -4302,15 +4298,7 @@
           "partial-Fourier-sums-of-small"
         ],
         [
-          "real-line-doubling",
-          "partial-Fourier-sums-of-small"
-        ],
-        [
           "oscillation-control",
-          "partial-Fourier-sums-of-small"
-        ],
-        [
-          "integer-ball-cover",
           "partial-Fourier-sums-of-small"
         ],
         [
@@ -4318,7 +4306,19 @@
           "partial-Fourier-sums-of-small"
         ],
         [
+          "frequency-ball-doubling",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
           "frequency-ball-growth",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "integer-ball-cover",
+          "partial-Fourier-sums-of-small"
+        ],
+        [
+          "real-van-der-Corput",
           "partial-Fourier-sums-of-small"
         ]
       ],

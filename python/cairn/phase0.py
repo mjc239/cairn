@@ -99,7 +99,7 @@ def analyse_scope(
 ) -> ScopeResult:
     rng = random.Random(seed)
     pos = {v: i for i, v in enumerate(human)}
-    forward = sorted(((u, v) for u, v in g.edges if pos[u] > pos[v]), key=lambda e: pos[e[1]])
+    forward = sorted(((u, v) for u, v in g.edges if pos[u] > pos[v]), key=lambda e: (pos[e[1]], pos[e[0]]))
     dag, dropped = make_dag(g, human)
 
     repaired = nearest_topological_order(dag, human)

@@ -40,3 +40,12 @@ PFR_DECLS="$ROOT/data/raw/pfr_decls.jsonl"
 uv run cairn transfer -o results/cross_project/key_node_transfer.json \
   --project "PFR=$ROOT/data/raw/pfr/blueprint/src:$PFR_DECLS" \
   --project "Carleson=$SRC:$DECLS:section"
+# Statement/proof events (deferred proofs, motivation vs load) for both projects, and the frontier figure.
+uv run cairn events "$SRC" "$DECLS" "${COMMON[@]}" -o results/events/carleson --samples 300
+uv run cairn events "$ROOT/data/raw/pfr/blueprint/src" "$PFR_DECLS" --project PFR -o results/events/pfr --samples 300 \
+  --provenance "teorth/pfr @ ddd44f6ce82e"
+uv run python -c "
+import json; from pathlib import Path; from cairn.plots import plot_motivation_frontier
+p = {n: json.load(open(f'results/events/{k}/events.json')) for n, k in
+     [('PFR (bottom-up blueprint)', 'pfr'), ('Carleson (paper-style blueprint)', 'carleson')]}
+plot_motivation_frontier(p, Path('results/cross_project/motivation_frontier.png'))"

@@ -50,17 +50,18 @@ would not be penalised. Carleson is not consistently top-down, though: a
 goal-first DFS matches its within-section order at only τ 0.15. It **mixes**
 directions.
 
-### 2. So the working-memory story is PFR-specific
+### 2. ~~So the working-memory story is PFR-specific~~ Corrected: deferred proofs
 
-- **Whole document:** the human order still beats every random order, with a
-  mean load of 16.6 vs 39.2 for a uniform random order, largely because
-  sections stay contiguous.
-- **Within sections:** 4 of the 7 large sections are *worse* than a typical
-  random valid order on load. A paper-style "state, then prove the pieces"
-  narrative keeps many promises open.
+The first analysis treated each result as one point. Within sections it found
+Carleson worse than a random valid order in 4 of 7 sections. **That was an
+artefact.** Carleson states a goal, proves the lemmas it needs, and only then
+proves the goal. That is 37 `\proves{}`-deferred proofs, accounting for 74% of
+its forward references.
 
-"Humans minimise working memory within chapters" held for PFR and does not
-hold for Carleson.
+When statements and proofs are modelled as separate events, the human order
+beats every random valid order on load in 6 of 7 sections. It also turns out
+to sit on a measurable trade-off between working memory and motivation. See
+[`statement-proof-events.md`](statement-proof-events.md).
 
 ### 3. Key declarations generalise; ordering does not
 
@@ -108,7 +109,8 @@ there is little signal to lose.
 
 ## Implications for Cairn
 
-1. **"Readable order" is not one objective.** A tool needs at least two
+1. **"Readable order" is not one objective** (made precise in
+   [`statement-proof-events.md`](statement-proof-events.md): load vs motivation, with one setting between them). A tool needs at least two
    styles:
    - bottom-up (PFR, textbook-like), where load minimisation plus an LLM
      reorder gets close to human choices;

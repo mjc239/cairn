@@ -100,6 +100,10 @@ class Node:
     statement_uses: list[str] = field(default_factory=list)
     proof_uses: list[str] = field(default_factory=list)
     has_proof: bool = False
+    statement_event: int = -1
+    """Index of the statement in the document's sequence of statement and proof environments."""
+    proof_event: int | None = None
+    """Index of the (first) proof environment for this node in that sequence; ``None`` if unproved."""
     proof_leanok: bool = False
     text: str = ""
     """Statement body with blueprint metadata macros removed and whitespace collapsed."""
@@ -184,6 +188,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: s
     nodes: list[Node] = []
     orphan_proofs: list[tuple[str, int]] = []
     anon = 0
+    event = 0  # counts statement and proof environments in document order
     heading = {"chapter": "front-matter", "section": "front-matter"}
     for source, text, first_line in chunks:
         headings = [(h.start(), h.group(1), _slug(h.group(2))) for h in _HEADING_RE.finditer(text)]
@@ -214,6 +219,9 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: s
                 if target is None:
                     orphan_proofs.append((source, start_line))
                     continue
+                if not target.has_proof:
+                    target.proof_event = event
+                event += 1
                 target.has_proof = True
                 target.proof_uses.extend(_split_csv(_macro_args(body, "uses")))
                 target.proof_leanok = target.proof_leanok or _has_flag(body, "leanok")
@@ -229,6 +237,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: s
                     id=node_id,
                     kind=env,
                     position=len(nodes),
+                    statement_event=event,
                     chapter=chapter,
                     source=source,
                     line=start_line,
@@ -241,6 +250,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: s
                     text=_statement_text(body),
                 )
             )
+            event += 1
         for _, level, slug in headings:  # headings after the chunk's last environment
             heading[level] = slug
             if level == "chapter":

@@ -784,11 +784,11 @@
           "grid-existence"
         ],
         [
-          "disjoint-frequency-cubes",
+          "frequency-ball-cover",
           "tile-structure"
         ],
         [
-          "frequency-ball-cover",
+          "disjoint-frequency-cubes",
           "tile-structure"
         ],
         [
@@ -998,7 +998,7 @@
       "n_edges": 38,
       "forward_refs": [
         [
-          "third-exception",
+          "first-exception",
           "exceptional-set"
         ],
         [
@@ -1006,11 +1006,11 @@
           "exceptional-set"
         ],
         [
-          "first-exception",
+          "third-exception",
           "exceptional-set"
         ],
         [
-          "forest-separation",
+          "C-dens1",
           "forest-union"
         ],
         [
@@ -1022,11 +1022,11 @@
           "forest-union"
         ],
         [
-          "C-dens1",
+          "forest-convex",
           "forest-union"
         ],
         [
-          "forest-convex",
+          "forest-separation",
           "forest-union"
         ],
         [
@@ -1038,10 +1038,6 @@
           "forest-union"
         ],
         [
-          "L2-antichain",
-          "forest-complement"
-        ],
-        [
           "C-dens1",
           "forest-complement"
         ],
@@ -1050,11 +1046,15 @@
           "forest-complement"
         ],
         [
-          "L1-L3-antichain",
+          "L0-antichain",
           "forest-complement"
         ],
         [
-          "L0-antichain",
+          "L2-antichain",
+          "forest-complement"
+        ],
+        [
+          "L1-L3-antichain",
           "forest-complement"
         ]
       ],
@@ -1260,11 +1260,11 @@
       "n_edges": 13,
       "forward_refs": [
         [
-          "antichain-tile-count",
+          "tile-correlation",
           "dens1-antichain"
         ],
         [
-          "tile-correlation",
+          "antichain-tile-count",
           "dens1-antichain"
         ],
         [
@@ -1490,11 +1490,11 @@
           "pointwise-tree-estimate"
         ],
         [
-          "third-tree-pointwise",
+          "second-tree-pointwise",
           "pointwise-tree-estimate"
         ],
         [
-          "second-tree-pointwise",
+          "third-tree-pointwise",
           "pointwise-tree-estimate"
         ],
         [
@@ -1518,11 +1518,11 @@
           "densities-tree-bound"
         ],
         [
-          "correlation-near-tree-parts",
+          "correlation-distant-tree-parts",
           "correlation-separated-trees"
         ],
         [
-          "correlation-distant-tree-parts",
+          "correlation-near-tree-parts",
           "correlation-separated-trees"
         ],
         [
@@ -1530,19 +1530,19 @@
           "correlation-distant-tree-parts"
         ],
         [
-          "lower-oscillation-bound",
-          "correlation-distant-tree-parts"
-        ],
-        [
           "Holder-correlation-tree",
           "correlation-distant-tree-parts"
         ],
         [
-          "bound-for-tree-projection",
-          "correlation-near-tree-parts"
+          "lower-oscillation-bound",
+          "correlation-distant-tree-parts"
         ],
         [
           "dyadic-partition-2",
+          "correlation-near-tree-parts"
+        ],
+        [
+          "bound-for-tree-projection",
           "correlation-near-tree-parts"
         ],
         [
@@ -1768,11 +1768,11 @@
           "two-sided-metric-space-Carleson"
         ],
         [
-          "nontangential-operator-boundary",
+          "simple-nontangential-operator",
           "nontangential-from-simple"
         ],
         [
-          "simple-nontangential-operator",
+          "nontangential-operator-boundary",
           "nontangential-from-simple"
         ],
         [
@@ -1780,11 +1780,11 @@
           "calderon-zygmund-weak-1-1"
         ],
         [
-          "estimate-bad",
+          "estimate-good",
           "calderon-zygmund-weak-1-1"
         ],
         [
-          "estimate-good",
+          "estimate-bad",
           "calderon-zygmund-weak-1-1"
         ]
       ],
@@ -1998,43 +1998,7 @@
           "control-approximation-effect"
         ],
         [
-          "real-line-measure",
-          "real-Carleson"
-        ],
-        [
-          "frequency-ball-doubling",
-          "real-Carleson"
-        ],
-        [
-          "real-van-der-Corput",
-          "real-Carleson"
-        ],
-        [
           "Hilbert-strong-2-2",
-          "real-Carleson"
-        ],
-        [
-          "Hilbert-kernel-regularity",
-          "real-Carleson"
-        ],
-        [
-          "frequency-monotone",
-          "real-Carleson"
-        ],
-        [
-          "real-line-metric",
-          "real-Carleson"
-        ],
-        [
-          "integer-ball-cover",
-          "real-Carleson"
-        ],
-        [
-          "frequency-ball-growth",
-          "real-Carleson"
-        ],
-        [
-          "real-line-doubling",
           "real-Carleson"
         ],
         [
@@ -2042,15 +2006,51 @@
           "real-Carleson"
         ],
         [
+          "Hilbert-kernel-regularity",
+          "real-Carleson"
+        ],
+        [
+          "real-line-metric",
+          "real-Carleson"
+        ],
+        [
+          "real-line-measure",
+          "real-Carleson"
+        ],
+        [
+          "real-line-doubling",
+          "real-Carleson"
+        ],
+        [
           "oscillation-control",
           "real-Carleson"
         ],
         [
-          "integrable-bump-convolution",
-          "Hilbert-strong-2-2"
+          "frequency-monotone",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-doubling",
+          "real-Carleson"
+        ],
+        [
+          "frequency-ball-growth",
+          "real-Carleson"
+        ],
+        [
+          "integer-ball-cover",
+          "real-Carleson"
+        ],
+        [
+          "real-van-der-Corput",
+          "real-Carleson"
         ],
         [
           "modulated-averaged-projection",
+          "Hilbert-strong-2-2"
+        ],
+        [
+          "integrable-bump-convolution",
           "Hilbert-strong-2-2"
         ],
         [

@@ -74,6 +74,16 @@ def main(argv: list[str] | None = None) -> None:
     pe.add_argument("--project", required=True)
     pe.add_argument("-o", "--out", type=Path, required=True, help="markdown report path")
 
+    pv = sub.add_parser("events", help="statement/proof event analysis (deferred proofs are not forward refs)")
+    pv.add_argument("src", type=Path)
+    pv.add_argument("decls", type=Path)
+    pv.add_argument("--entry", default="content.tex")
+    pv.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    pv.add_argument("--project", required=True)
+    pv.add_argument("--provenance", default="")
+    pv.add_argument("-o", "--out", type=Path, required=True)
+    pv.add_argument("--samples", type=int, default=1000)
+
     pt = sub.add_parser("transfer", help="train the key-declaration model on one project, test on others")
     pt.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
     pt.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
@@ -110,6 +120,16 @@ def main(argv: list[str] | None = None) -> None:
             args.out.write_text(text)
         else:
             print(text)
+        return
+
+    if args.cmd == "events":
+        from .events import analyse as analyse_events
+        from .events import write_report as write_events
+        from .formal import load_decls
+
+        res = analyse_events(bp, load_decls(args.decls), samples=args.samples)
+        write_events(res, args.out, args.project, args.provenance)
+        print(f"wrote {args.out}/events.md")
         return
 
     if args.cmd == "llm-eval":
