@@ -65,6 +65,9 @@ class FormalDecl:
     value_size: int = 0
     """Size of the proof / body, summed over the declaration and its folded auxiliaries."""
     private: bool = False
+    doc: str | None = None
+    type_pp: str = ""
+    """Pretty-printed statement (Lean syntax), when the dump has it."""
 
 
 def load_decls(path: str | Path) -> dict[str, FormalDecl]:
@@ -87,6 +90,8 @@ def load_decls(path: str | Path) -> dict[str, FormalDecl]:
             d.line = r["line"] if r["line"] is not None else d.line
             d.type_size = r.get("type_size", 0)
             d.private = r["private"]
+            d.doc = r.get("doc")
+            d.type_pp = r.get("type_pp", "")
         d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])
         d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])

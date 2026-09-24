@@ -37,3 +37,23 @@ def test_edges_resolve_aliases_and_kinds():
         ("later", "main", "proof"),
     }
     assert all(k == "statement" for *_, k in bp.edges(("statement",)))
+
+
+def test_group_by_section_and_chapter():
+    bp = parse_blueprint(MINI, "sections.tex", group_by="section")
+    assert [n.chapter for n in bp.nodes] == ["basic-facts", "the-main-result", "gadgets"]
+    bp = parse_blueprint(MINI, "sections.tex", group_by="chapter")
+    assert [n.chapter for n in bp.nodes] == ["widgets", "widgets", "gadgets"]
+    bp = parse_blueprint(MINI, "sections.tex")
+    assert [n.chapter for n in bp.nodes] == ["sections", "tail", "tail"]
+
+
+def test_deferred_proof_records_its_own_section(tmp_path):
+    (tmp_path / "content.tex").write_text(
+        "\\section{Overview}\n\\begin{theorem}\\label{main}Main.\\end{theorem}\n"
+        "\\section{Details}\n\\begin{lemma}\\label{aux}Aux.\\end{lemma}\\begin{proof}Easy.\\end{proof}\n"
+        "\\begin{proof}\\proves{main}\\uses{aux}Done.\\end{proof}\n")
+    bp = parse_blueprint(tmp_path, group_by="section")
+    main, aux = bp.by_id()["main"], bp.by_id()["aux"]
+    assert (main.chapter, main.proof_chapter) == ("overview", "details")
+    assert main.statement_event < aux.statement_event < aux.proof_event < main.proof_event

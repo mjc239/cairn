@@ -12,3 +12,9 @@ SRC="$ROOT/data/raw/pfr/blueprint/src"
 uv run cairn llm-prompts "$SRC" "$DECLS" -o results/phase2/pfr/llm
 uv run cairn phase2 "$SRC" "$DECLS" --project PFR --llm-dir results/phase2/pfr/llm \
   --provenance "teorth/pfr @ ddd44f6ce82e, Lean v4.35.0-rc2" -o results/phase2/pfr "$@"
+# Repeated LLM runs: labelled prompts (seeds 0-2) vs anonymised prompts without titles (seeds 0-2).
+# Regenerate prompts with: cairn llm-prompts ... --seed N [--anonymise --no-titles] -o results/phase2/pfr/llm_runs/<variant>-sN
+R=results/phase2/pfr/llm_runs
+uv run cairn llm-eval "$SRC" "$DECLS" --project PFR -o results/phase2/pfr/llm_runs.md \
+  --run named=results/phase2/pfr/llm --run named=$R/named-s1 --run named=$R/named-s2 \
+  --run blind=$R/blind-s0 --run blind=$R/blind-s1 --run blind=$R/blind-s2

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 import statistics
 from pathlib import Path
 
@@ -23,6 +24,7 @@ from sklearn.preprocessing import StandardScaler
 from .blueprint import Blueprint
 from .formal import FormalDecl, formal_graph, join_blueprint, projected_graph
 from .graph import (
+    goal_first_order,
     greedy_min_open_order,
     just_in_time_order,
     kendall_tau,
@@ -58,12 +60,31 @@ def dominator_subtree_sizes(fg: nx.DiGraph) -> dict[str, int]:
     return {v: size.get(v, 1) - 1 for v in fg.nodes}
 
 
+_AUX_SUFFIX = re.compile(r"(_(aux|prelim|core|helper|step|lemma|tmp|technical|main)\d*|_\d+|'+)+$")
+VARIANT_FEATURES = (
+    "aux-style name",
+    "variant of another declaration",
+    "has variants",
+    "used by exactly one declaration",
+    "used only by its own variants",
+)
+
+
+def _stem(name: str) -> tuple[str, str]:
+    """(namespace, last component with aux-style suffixes removed): ``Foo.bar_aux'`` -> ``("Foo", "bar")``."""
+    ns, _, last = name.rpartition(".")
+    return ns, _AUX_SUFFIX.sub("", last) or last
+
+
 def key_node_features(decls: dict[str, FormalDecl], fg: nx.DiGraph) -> dict[str, dict[str, float]]:
     n = fg.number_of_nodes()
     pr_goal = nx.pagerank(fg)
     pr_use = nx.pagerank(fg.reverse(copy=False))
     betw = nx.betweenness_centrality(fg)
     dom = dominator_subtree_sizes(fg)
+    family: dict[tuple[str, str], set[str]] = {}
+    for v in fg.nodes:
+        family.setdefault(_stem(v), set()).add(v)
     feats = {}
     for v in fg.nodes:
         d = decls[v]
@@ -85,6 +106,17 @@ def key_node_features(decls: dict[str, FormalDecl], fg: nx.DiGraph) -> dict[str,
             "primed name": float(parts[-1].endswith("'")),
             "name length": len(parts[-1]),
         }
+        ns_stem = _stem(v)
+        relatives = family[ns_stem] - {v}
+        users = set(fg.successors(v))
+        feats[v].update({
+            "aux-style name": float(ns_stem[1] != parts[-1]),
+            "variant of another declaration": float(ns_stem[1] != parts[-1] and any(
+                r.rpartition(".")[2] == ns_stem[1] for r in relatives)),
+            "has variants": float(ns_stem[1] == parts[-1] and bool(relatives)),
+            "used by exactly one declaration": float(len(users) == 1),
+            "used only by its own variants": float(bool(users) and users <= relatives),
+        })
     return feats
 
 
@@ -108,32 +140,79 @@ def evaluate_key_nodes(decls: dict[str, FormalDecl], fg: nx.DiGraph, positives: 
     # Combined: logistic regression on log-scaled features, cross-validated with Lean modules held out.
     xl = np.sign(x) * np.log1p(np.abs(x))
     groups = [decls[v].module for v in names]
-    oof = np.zeros(len(names))
-    for train, test in GroupKFold(n_splits=5).split(xl, y, groups):
-        model = make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
-        model.fit(xl[train], y[train])
-        oof[test] = model.predict_proba(xl[test])[:, 1]
-    full = make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000)).fit(xl, y)
-    coef = dict(zip(cols, full[-1].coef_[0].tolist(), strict=True))
-    order = np.argsort(-oof, kind="stable")
+    structural = [j for j, c in enumerate(cols) if c not in VARIANT_FEATURES]
+    combined = {}
+    for label, idx in (("structural features", structural), ("+ variant-of features", list(range(len(cols))))):
+        oof, coef = _cross_validated(xl[:, idx], y, groups)
+        combined[label] = {
+            "auroc": float(roc_auc_score(y, oof)),
+            "average_precision": float(average_precision_score(y, oof)),
+            "p_at_k": _precision_at_k(y, oof, k),
+            "coefficients": dict(zip([cols[j] for j in idx], coef, strict=True)),
+        }
+    order = np.argsort(-oof, kind="stable")  # the last (full) model
     rng = random.Random(seed)
     return {
         "n_decls": len(names),
         "n_positive": k,
         "base_rate": k / len(names),
         "single": single,
-        "combined": {
-            "auroc": float(roc_auc_score(y, oof)),
-            "average_precision": float(average_precision_score(y, oof)),
-            "p_at_k": _precision_at_k(y, oof, k),
-            "coefficients": coef,
-        },
+        "combined": combined,
         "random_p_at_k": statistics.fmean(
             float(y[rng.sample(range(len(names)), k)].mean()) for _ in range(200)
         ),
         "top_unlabelled": [names[i] for i in order if not y[i]][:15],
         "bottom_labelled": [names[i] for i in order[::-1] if y[i]][:15],
     }
+
+
+def key_node_matrix(bp: Blueprint, decls: dict[str, FormalDecl]) -> tuple[list[str], np.ndarray, np.ndarray, list[str]]:
+    """Names, log-scaled feature matrix, labels and feature names for one project."""
+    fg = formal_graph(decls)
+    join = join_blueprint(bp, decls)
+    positives = {d for ds in join.node_decls.values() for d in ds}
+    feats = key_node_features(decls, fg)
+    names = sorted(fg.nodes)
+    cols = list(next(iter(feats.values())).keys())
+    x = np.array([[feats[v][c] for c in cols] for v in names], dtype=float)
+    y = np.array([v in positives for v in names], dtype=float)
+    return names, np.sign(x) * np.log1p(np.abs(x)), y, cols
+
+
+def transfer_key_nodes(projects: dict[str, tuple[Blueprint, dict[str, FormalDecl]]]) -> dict:
+    """Train the key-declaration model on one project, score it on each other project."""
+    data = {name: key_node_matrix(bp, decls) for name, (bp, decls) in projects.items()}
+    out = {}
+    for train, (_, xtr, ytr, _) in data.items():
+        model = make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
+        model.fit(xtr, ytr)
+        for test, (_, xte, yte, _) in data.items():
+            if test == train:
+                continue
+            p = model.predict_proba(xte)[:, 1]
+            out[f"{train} -> {test}"] = {"auroc": float(roc_auc_score(yte, p)),
+                                         "p_at_k": _precision_at_k(yte, p, int(yte.sum())),
+                                         "base_rate": float(yte.mean())}
+    return out
+
+
+def key_scores(bp: Blueprint, decls: dict[str, FormalDecl]) -> dict[str, float]:
+    """Out-of-fold key-declaration probability for every project declaration (modules held out)."""
+    names, x, y, _ = key_node_matrix(bp, decls)
+    oof, _ = _cross_validated(x, y, [decls[v].module for v in names])
+    return dict(zip(names, oof.tolist(), strict=True))
+
+
+def _cross_validated(x: np.ndarray, y: np.ndarray, groups: list[str]) -> tuple[np.ndarray, list[float]]:
+    """Out-of-fold probabilities (5 folds, whole modules held out) and the full-data coefficients."""
+
+    def model():
+        return make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
+
+    oof = np.zeros(len(y))
+    for train, test in GroupKFold(n_splits=5).split(x, y, groups):
+        oof[test] = model().fit(x[train], y[train]).predict_proba(x[test])[:, 1]
+    return oof, model().fit(x, y)[-1].coef_[0].tolist()
 
 
 # --- (a) chapter clustering --------------------------------------------------
@@ -251,6 +330,7 @@ def evaluate_orders(bp: Blueprint, decls, fg, join, lean_g: nx.DiGraph, predicte
         "Human (blueprint)": human,
         "Lean source order": lean_src_nodes,
         "Just-in-time DFS": just_in_time_order(dag, rng),
+        "Goal-first DFS": goal_first_order(dag, rng),
         "Global optimum (greedy + local search)": optimise_order(dag, rng),
         "Cluster-then-order, true chapters": cluster_then_order(dag, chapter, rng, chapters_in_order, node_src),
         "Cluster-then-order, Lean modules": cluster_then_order(dag, predicted_clusters, rng, tie=node_src),
@@ -300,7 +380,17 @@ first time, so that it is as easy as possible to follow. Respect every constrain
 Reply with only a JSON array containing every id exactly once, in your chosen order."""
 
 
-def write_llm_prompts(bp: Blueprint, lean_g: nx.DiGraph, out_dir: Path, seed: int = 0, min_size: int = 8) -> list[Path]:
+_REF_RE = re.compile(r"\\(?:[cC]ref|ref|eqref|autoref)\{([^}]*)\}")
+
+
+def write_llm_prompts(bp: Blueprint, lean_g: nx.DiGraph, out_dir: Path, seed: int = 0, min_size: int = 8,
+                      anonymise: bool = False, titles: bool = True) -> list[Path]:
+    """One prompt per chapter, results shuffled with ``seed``.
+
+    With ``anonymise``, blueprint labels are replaced by random ids (``r017``) everywhere, including
+    ``\\ref``-style cross-references in statements (references outside the chapter become "[another
+    result]"), and the mapping is written to ``<chapter>.ids.json`` so responses can be read back.
+    """
     rng = random.Random(seed)
     by_id = bp.by_id()
     human = [n.id for n in bp.nodes if n.id in lean_g]
@@ -314,13 +404,30 @@ def write_llm_prompts(bp: Blueprint, lean_g: nx.DiGraph, out_dir: Path, seed: in
         shuffled = members[:]
         rng.shuffle(shuffled)
         sub = dag.subgraph(members)
+        if anonymise:
+            codes = rng.sample(range(100, 1000), len(members))
+            alias = {v: f"r{c}" for v, c in zip(shuffled, codes, strict=True)}
+            label_alias = {lab: alias[v] for v in members for lab in by_id[v].labels}
+            (out_dir / f"{ch}.ids.json").write_text(json.dumps({a: v for v, a in alias.items()}, indent=1))
+        else:
+            alias = {v: v for v in members}
+            label_alias = None
+
+        def text_of(n, label_alias=label_alias):
+            if label_alias is None:
+                return n.text
+            return _REF_RE.sub(lambda m: ", ".join(
+                f"`{label_alias[x.strip()]}`" if x.strip() in label_alias else "[another result]"
+                for x in m.group(1).split(",")), n.text)
+
         lines = [LLM_INSTRUCTIONS, "", "## Results", ""]
         for v in shuffled:
             n = by_id[v]
-            title = f" ({n.title})" if n.title else ""
-            lines.append(f"- id `{v}`: {n.kind}{title}. {n.text}")
+            title = f" ({n.title})" if n.title and titles else ""
+            lines.append(f"- id `{alias[v]}`: {n.kind}{title}. {text_of(n)}")
         lines += ["", "## Constraints", ""]
-        lines += [f"- `{u}` before `{v}`" for u, v in sorted(sub.edges)] or ["None."]
+        edges = sorted((alias[u], alias[v]) for u, v in sub.edges)
+        lines += [f"- `{u}` before `{v}`" for u, v in edges] or ["None."]
         path = out_dir / f"{ch}.prompt.md"
         path.write_text("\n".join(lines) + "\n")
         paths.append(path)
@@ -340,6 +447,10 @@ def load_llm_orders(llm_dir: Path, human: list[str], chapter: dict[str, str], da
             continue
         try:
             got = json.loads(resp.read_text())
+            ids = llm_dir / f"{ch}.ids.json"
+            if ids.exists():
+                mapping = json.loads(ids.read_text())
+                got = [mapping.get(x, x) for x in got]
         except json.JSONDecodeError:
             invalid.append(ch)
             order.extend(h)
@@ -360,6 +471,67 @@ def load_llm_orders(llm_dir: Path, human: list[str], chapter: dict[str, str], da
         return None
     return {"order": order, "chapters_answered": answered, "constraint_violations_repaired": repaired,
             "invalid_responses": invalid}
+
+
+def evaluate_llm_runs(bp: Blueprint, decls: dict[str, FormalDecl], runs: dict[str, list[Path]]) -> dict:
+    """Score repeated LLM runs per prompt variant: τ with the human order within chapters, and load."""
+    fg = formal_graph(decls)
+    join = join_blueprint(bp, decls)
+    formalised = [n.id for n in bp.nodes if n.id in join.node_decls]
+    lean_g = projected_graph(bp, fg, join).subgraph(formalised).copy()
+    by_id = bp.by_id()
+    human = formalised
+    chapter = {v: by_id[v].chapter for v in human}
+    dag, _ = make_dag(lean_g, human)
+    out: dict = {"variants": {}}
+    for variant, dirs in runs.items():
+        scores = []
+        for d in dirs:
+            res = load_llm_orders(d, human, chapter, dag)
+            if res is None:
+                continue
+            o = res["order"]
+            per = {}
+            for ch in res["chapters_answered"]:
+                h = [v for v in human if chapter[v] == ch]
+                per[ch] = kendall_tau(h, [v for v in o if chapter[v] == ch])
+            scores.append({"run": str(d), "tau_within_chapters": statistics.fmean(per.values()),
+                           "per_chapter": per, "mean_open": order_metrics(lean_g, o).mean_open,
+                           "violations_repaired": sum(res["constraint_violations_repaired"].values()),
+                           "invalid": res["invalid_responses"]})
+        taus = [r["tau_within_chapters"] for r in scores]
+        out["variants"][variant] = {
+            "runs": scores,
+            "tau_mean": statistics.fmean(taus) if taus else None,
+            "tau_sd": statistics.stdev(taus) if len(taus) > 1 else 0.0,
+        }
+    return out
+
+
+def write_llm_runs_report(res: dict, path: Path, project: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.with_suffix(".json").write_text(json.dumps(res, indent=2))
+    lines = [f"# LLM ordering runs: {project}", "",
+             "τ = Kendall correlation with the human order, averaged over the answered chapters.", "",
+             "| Variant | runs | τ within chapters (mean ± sd) | individual runs | mean open | repaired violations |",
+             "|---|---:|---:|---|---:|---:|"]
+    for name, v in res["variants"].items():
+        runs = v["runs"]
+        if not runs:
+            continue
+        lines.append(f"| {name} | {len(runs)} | {v['tau_mean']:+.2f} ± {v['tau_sd']:.2f} | "
+                     + ", ".join(f"{r['tau_within_chapters']:+.2f}" for r in runs) + " | "
+                     f"{statistics.fmean(r['mean_open'] for r in runs):.1f} | "
+                     f"{sum(r['violations_repaired'] for r in runs)} |")
+    chapters = list(next(r for v in res["variants"].values() for r in v["runs"])["per_chapter"])
+    lines += ["", "Per-chapter τ (mean over runs):", "", "| Variant | " + " | ".join(chapters) + " |",
+              "|---|" + "---:|" * len(chapters)]
+    for name, v in res["variants"].items():
+        if v["runs"]:
+            lines.append(f"| {name} | " + " | ".join(
+                f"{statistics.fmean(r['per_chapter'].get(c, float('nan')) for r in v['runs']):+.2f}"
+                for c in chapters) + " |")
+    path.write_text("\n".join(lines) + "\n")
 
 
 # --- driver + report ----------------------------------------------------------------
@@ -398,13 +570,14 @@ def write_report(res: dict, out_dir: Path, project: str, provenance: str) -> Non
     ]
     for name, m in sorted(k["single"].items(), key=lambda kv: -abs(kv[1]["auroc"] - 0.5)):
         lines.append(f"| {name} | {m['auroc']:.2f} | {m['p_at_k']:.0%} |")
-    c = k["combined"]
+    for label, c in k["combined"].items():
+        lines.append(f"| **Logistic regression, {label}** (5-fold, Lean modules held out) | **{c['auroc']:.2f}** | "
+                     f"**{c['p_at_k']:.0%}** |")
+    c = k["combined"]["+ variant-of features"]
     lines += [
-        f"| **Logistic regression on all of the above** (5-fold, Lean modules held out) | **{c['auroc']:.2f}** | "
-        f"**{c['p_at_k']:.0%}** |",
         "",
-        f"Average precision of the combined score: {c['average_precision']:.2f}. AUROC below 0.5 means the score "
-        "points the other way (e.g. heavily used declarations are *less* likely to be named).",
+        f"Average precision of the full combined score: {c['average_precision']:.2f}. AUROC below 0.5 means the "
+        "score points the other way (e.g. heavily used declarations are *less* likely to be named).",
         "",
         "Coefficients (standardised log features): "
         + ", ".join(f"{n} {w:+.2f}" for n, w in sorted(c["coefficients"].items(), key=lambda kv: -abs(kv[1]))),

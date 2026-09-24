@@ -6,17 +6,17 @@
 
 **Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):
 
-| Scope | n | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| (whole blueprint) | 218 | 0% | 0% | 0% | 31.9 / 30.5 / 55.4 | +0.06 | +0.17 |
-| entropy | 30 | 0% | 0% | 0% | 3.3 / 2.8 / 6.6 | +0.87 | +0.41 |
-| distance | 26 | 0% | 0% | 1% | 5.3 / 3.8 / 7.7 | +0.74 | +0.39 |
-| entropy_pfr | 24 | 0% | 0% | 0% | 5.1 / 5.2 / 7.0 | +0.88 | +0.51 |
-| improved_exponent | 11 | 2% | 0% | 2% | 1.1 / 1.1 / 1.4 | +1.00 | +0.81 |
-| approx_hom_pfr | 8 | 5% | 1% | 5% | 1.9 / 1.9 / 2.6 | +0.93 | +0.53 |
-| weak_pfr | 10 | 1% | 0% | 0% | 2.1 / 2.0 / 2.6 | +0.73 | +0.56 |
-| torsion | 49 | 0% | 0% | 0% | 10.7 / 8.4 / 13.5 | +0.43 | +0.46 |
-| further_improvement | 41 | 0% | 0% | 0% | 6.2 / 5.1 / 9.8 | +0.85 | +0.44 |
+| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| (whole blueprint) | 218 | 0% | 0% | 0% | 0% | 31.9 / 30.5 / 55.4 | +0.06 | +0.17 |
+| entropy | 30 | 0% | 0% | 0% | 0% | 3.3 / 2.8 / 6.6 | +0.87 | +0.41 |
+| distance | 26 | 0% | 0% | 0% | 1% | 5.3 / 3.8 / 7.7 | +0.74 | +0.39 |
+| entropy_pfr | 24 | 0% | 0% | 0% | 0% | 5.1 / 5.2 / 7.0 | +0.88 | +0.51 |
+| improved_exponent | 11 | 0% | 2% | 0% | 2% | 1.1 / 1.1 / 1.4 | +1.00 | +0.81 |
+| approx_hom_pfr | 8 | 0% | 5% | 1% | 5% | 1.9 / 1.9 / 2.6 | +0.93 | +0.53 |
+| weak_pfr | 10 | 0% | 1% | 0% | 0% | 2.1 / 2.0 / 2.6 | +0.73 | +0.56 |
+| torsion | 49 | 0% | 0% | 0% | 0% | 10.7 / 8.4 / 13.5 | +0.43 | +0.46 |
+| further_improvement | 41 | 0% | 0% | 0% | 0% | 6.2 / 5.1 / 9.8 | +0.85 | +0.44 |
 
 ## Whole blueprint: raw metrics
 

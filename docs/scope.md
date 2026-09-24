@@ -1,6 +1,6 @@
 # Cairn: scope
 
-*Status: Phases 0–2 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md), [`phase2-pfr.md`](phase2-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
+*Status: Phases 0–2 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md), [`phase2-pfr.md`](phase2-pfr.md)) and repeated on Carleson, with a cross-project comparison in [`carleson.md`](carleson.md) and the statement/proof (load vs motivation) model in [`statement-proof-events.md`](statement-proof-events.md). Source notes: [`idea-notes.md`](idea-notes.md).*
 
 ## 1. The question
 
@@ -145,13 +145,19 @@ structure with held-out projects, and prose generation over a fixed structure.
 There are only a few dozen serious blueprints, so treat them as an **evaluation
 set**, not a training set.
 
-## 5. Corpus candidates
+## 5. Corpus
 
-Start with PFR: finished, one uniform blueprint, 218 nodes, and a medium-sized Lean project. Then add projects that use
-leanblueprint, for example the PrimeNumberTheoremAnd, FLT, Carleson,
-Sphere Eversion and the Infinitely-many-primes demo. Verify each one's licence,
-toolchain and blueprint conventions before adding it; this list has not been
-checked.
+Done: **PFR** (bottom-up style, one file per chapter) and **Carleson**
+(paper-style narrative, one file split into `\section`s, `--group-by section`).
+
+Surveyed on 2026-09-24 as further candidates (nodes / formalised):
+- sphere-eversion (73 / 73, finished, 5 chapters);
+- LeanAPAP (49 / 37);
+- brownian-motion (663 / 361, in progress);
+- FLT (255 / 165, in progress).
+
+PrimeNumberTheoremAnd and flt-regular use a different blueprint layout that
+the parser doesn't read yet.
 
 ## 6. Repo layout
 

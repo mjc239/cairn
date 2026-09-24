@@ -1,0 +1,209 @@
+You are organising one chapter of a mathematical exposition. Below are its results
+(definitions, lemmas, theorems) in an arbitrary order, each with an id and its statement. Some results use
+others; the constraints list which must come first.
+
+Choose the order in which you would present these results to a mathematician reading the chapter for the
+first time, so that it is as easy as possible to follow. Respect every constraint.
+
+Reply with only a JSON array containing every id exactly once, in your chosen order.
+
+## Results
+
+- id `r101`: definition. A $\tau$-minimizer is a tuple $(X_i)_{1 \leq i \leq m}$ that minimizes the $\tau$-functional among all tuples of $G$-valued random variables.
+- id `r708`: definition. If $X_{[m]} = (X_i)_{1 \leq i \leq m}$ and $Y_{[m]} = (Y_i)_{1 \leq i \leq m}$ are tuples of random variables, with the $X_i$ being $G$-valued (but the $Y_i$ need not be), then we define \begin{equation} D[ X_{[m]} | Y_{[m]} ] = \sum_{(y_i)_{1 \leq i \leq m}} \biggl(\prod_{1 \leq i \leq m} p_{Y_i}(y_i)\biggr) D[ (X_i \,|\, Y_i \mathop{=}y_i)_{1 \leq i \leq m}] \end{equation} where each $y_i$ ranges over the support of $p_{Y_i}$ for $1 \leq i \leq m$.
+- id `r296`: lemma. If $n \geq 1$ and $X, Y_1, \dots, Y_n$ are jointly independent $G$-valued random variables, then $$ d[X; \sum_{i=1}^n Y_i] \leq 2 \sum_{i=1}^n d[X; Y_i].$$
+- id `r815`: lemma. Let $m \ge 2$, and let $X_{[m]}$ be a tuple of $G$-valued random variables. If the $X_i$ all have the same distribution, then $D[X_{[m]}] \leq m d[X_i;X_i]$ for any $1 \leq i \leq m$.
+- id `r442`: lemma. We have $\bbH[W] \leq (2m-1)k + \frac1m \sum_{i=1}^m \bbH[X_i]$.
+- id `r263`: theorem. Suppose that $G$ is a finite abelian group of torsion $m$. Suppose that $X$ is a $G$-valued random variable. Then there exists a subgroup $H \leq G$ such that \[ d[X;U_H] \leq 64 m^3 d[X;X].\]
+- id `r345`: proposition. We have \[ \bbI[Z_1 : Z_2\, |\, W],\ \bbI[Z_2 : Z_3\, |\, W],\ \bbI[Z_1 : Z_3\, |\, W] \leq t \] where \begin{equation} t := m(4m+1) \eta k. \end{equation}
+- id `r328`: corollary. With the notation of the previous lemma, we have \begin{equation} k - D[ X'_{[m]} | Y_{[m]} ] \leq \eta \sum_{i=1}^m d[X_{\sigma(i)};X'_i|Y_i] \end{equation} for any permutation $\sigma : \{1,\dots,m\} \rightarrow \{1,\dots,m\}$.
+- id `r752`: lemma. If $X_{[m]} = (X_i)_{1 \leq i \leq m}$ and $Y_{[m]} = (Y_i)_{1 \leq i \leq m}$ are tuples of random variables, then $D[ X_{[m]} | Y_{[m]} ] \geq 0$.
+- id `r558`: lemma. If $\phi: \{1,\dots,m\} \to \{1,\dots,m\}$ is a bijection, then $D[X_{[m]}] = D[(X_{\phi(j)})_{1 \leq j \leq m}]$.
+- id `r487`: lemma. Let $X,Y,X'$ be independent $G$-valued random variables, with $X'$ a copy of $X$, and let $a$ be an integer. Then $$\bbH[X-(a+1)Y] \leq \bbH[X-aY] + \bbH[X-Y-X'] - \bbH[X]$$ and $$\bbH[X-(a-1)Y] \leq \bbH[X-aY] + \bbH[X-Y-X'] - \bbH[X].$$
+- id `r827`: lemma. If $n \geq 0$ and $X, Y_1, \dots, Y_n$ are jointly independent $G$-valued random variables, then $$\bbH\left[X + \sum_{i=1}^n Y_i\right] - \bbH[X] \leq \sum_{i=1}^n \left(\bbH[X+Y_i] - \bbH[X]\right).$$
+- id `r996`: lemma. We have \begin{equation} Z_1+Z_2+Z_3= 0 \end{equation}
+- id `r789`: proposition. Suppose that $X_{i,j}$, $1 \leq i,j \leq m$, are jointly independent $G$-valued random variables, such that for each $j = 1,\dots,m$, the random variables $(X_{i,j})_{i = 1}^m$ coincide in distribution with some permutation of $X_{[m]}$. Write \[ {\mathcal I} := \bbI[ \bigl(\sum_{i=1}^m X_{i,j}\bigr)_{j =1}^{m} : \bigl(\sum_{j=1}^m X_{i,j}\bigr)_{i = 1}^m \; \big| \; \sum_{i=1}^m \sum_{j = 1}^m X_{i,j} ]. \] Then \begin{equation} {\mathcal I} \leq m(4m+1) \eta k. \end{equation}
+- id `r681`: theorem. Suppose that $G$ is a finite abelian group of torsion $m$. If $A \subset G$ is non-empty and $|A+A| \leq K|A|$, then $A$ can be covered by at most $mK^{256m^3+1}$ translates of a subspace $H$ of $G$ with $|H| \leq |A|$.
+- id `r995`: proposition. If $G$ is finite, then a $\tau$-minimizer exists.
+- id `r524`: proposition. If $(X_i)_{1 \leq i \leq m}$ is a $\tau$-minimizer, then $\sum_{i=1}^m d[X_i; X^0] \leq \frac{2m}{\eta} d[X^0; X^0]$.
+- id `r132`: lemma. Let $X,Y$ be random variables. For any function $f, g$ on the range of $X$, we have $\bbI[f(X) : Y] \leq \bbI[X:Y]$.
+- id `r511`: lemma. We have $\bbI[W : Z_2] \leq 2 (m-1) k$.
+- id `r992`: lemma. Let $X,Y$ be random variables. For any functions $f, g$ on the ranges of $X, Y$ respectively, we have $\bbI[f(X) : g(Y )] \leq \bbI[X : Y]$.
+- id `r818`: lemma. For any such tuple, we have $D[X_{[m]}] \geq 0$.
+- id `r528`: lemma. Let $m$ be a positive integer. Suppose one has a sequence \begin{equation} G_m \to G_{m-1} \to \dots \to G_1 \to G_0 = \{0\} \end{equation} of homomorphisms between abelian groups $G_0,\dots,G_m$, and for each $d=0,\dots,m$, let $\pi_d : G_m \to G_d$ be the homomorphism from $G_m$ to $G_d$ arising from this sequence by composition (so for instance $\pi_m$ is the identity homomorphism and $\pi_0$ is the zero homomorphism). Let $X_{[m]} = (X_i)_{1 \leq i \leq m}$ be a jointly independent tuple of $G_m$-valued random variables. Then \begin{equation} \begin{split} D[ X_{[m]} ] &= \sum_{d=1}^m D[ \pi_d(X_{[m]}) \,|\, \pi_{d-1}(X_{[m]})] \\ &\quad + \sum_{d=1}^{m-1} \bbI[ \sum_i X_i : \pi_d(X_{[m]}) \; \big| \; \pi_d\big(\sum_i X_i\big), \pi_{d-1}(X_{[m]}) ]. \end{split} \end{equation} In particular, by [another result], \begin{align}\nonumber D[ X_{[m]} ] \geq & \sum_{d=1}^m D[ \pi_d(X_{[m]})|\pi_{d-1}(X_{[m]}) ] \\ & + \bbI[ \sum_i X_i : \pi_1(X_{[m]}) \; \big| \; \pi_1\bigl(\sum_i X_i\bigr) ]. \end{align}
+- id `r890`: definition. If $(X_i)_{1 \leq i \leq m}$ is a tuple, we define its $\tau$-functional $$ \tau[ (X_i)_{1 \leq i \leq m}] := D[(X_i)_{1 \leq i \leq m}] + \eta \sum_{i=1}^m d[X_i; X^0].$$
+- id `r778`: lemma. Let $m \ge 2$, and let $X_{[m]}$ be a tuple of $G$-valued random variables. Then $$\sum_{j=1}^m d[X_j;X_j] \leq 2 m D[X_{[m]}].$$
+- id `r826`: lemma. If $X,Y$ are $G$-valued, then $$ d[X ; -Y] \leq 3 d[X;Y].$$
+- id `r147`: lemma. Let $(X_i)_{1 \leq i \leq m}$ and $(Y_j)_{1 \leq j \leq l}$ be tuples of jointly independent random variables (so the $X$'s and $Y$'s are also independent of each other), and let $f: \{1,\dots,l\} \to \{1,\dots,m\}$ be a function, then $$ \bbH[\sum_{j=1}^l Y_j] \leq \bbH[ \sum_{i=1}^m X_i ] + \sum_{j=1}^l (\bbH[ Y_j - X_{f(j)}] - \bbH[X_{f(j)}]).$$
+- id `r269`: lemma. We have $\bbH[Z_2] \leq (8m^2-16m+1) k + \frac{1}{m} \sum_{i=1}^m \bbH[X_i]$.
+- id `r556`: lemma. Let $\pi \colon G \to H$ be a homomorphism of abelian groups and let $X_{[m]}$ be a tuple of jointly independent $G$-valued random variables. Then $D[X_{[m]}]$ is equal to \begin{equation} D[ X_{[m]} | \pi(X_{[m]}) ] +D[ \pi(X_{[m]}) ] + \bbI[ \sum_{i=1}^m X_i : \pi(X_{[m]}) \; \big| \; \pi\bigl(\sum_{i=1}^m X_i\bigr) ] \end{equation} where $\pi(X_{[m]}) := (\pi(X_i))_{1 \leq i \leq m}$.
+- id `r165`: lemma. If $X_{[m]} = (X_i)_{1 \leq i \leq m}$ and $Y_{[m]} = (Y_i)_{1 \leq i \leq m}$ are such that $X_i$ and $Y_i$ have the same distribution for each $i$, then $D[X_{[m]}] = D[Y_{[m]}]$.
+- id `r365`: corollary. Let $G$ be an abelian group and let $m \geq 2$. Suppose that $X_{i,j}$, $1 \leq i, j \leq m$, are independent $G$-valued random variables. Then \begin{align*} &\bbI[ \bigl(\sum_{i=1}^m X_{i,j}\bigr)_{j =1}^{m} : \bigl(\sum_{j=1}^m X_{i,j}\bigr)_{i = 1}^m \; \big| \; \sum_{i=1}^m \sum_{j = 1}^m X_{i,j} ] \\ &\quad \leq \sum_{j=1}^{m-1} \Bigl(D[(X_{i, j})_{i = 1}^m] - D[ (X_{i, j})_{i = 1}^m \; \big| \; (X_{i,j} + \cdots + X_{i,m})_{i =1}^m ]\Bigr) \\ & \qquad\qquad\qquad\qquad + D[(X_{i,m})_{i=1}^m] - D[ \bigl(\sum_{j=1}^m X_{i,j}\bigr)_{i=1}^m ], \end{align*} where all the multidistances here involve the indexing set $\{1,\dots, m\}$.
+- id `r261`: proposition. If $D[X_{[m]}]=0$, then for each $1 \leq i \leq m$ there is a finite subgroup $H_i \leq G$ such that $d[X_i; U_{H_i}] = 0$.
+- id `r557`: lemma. Let $m \ge 2$, and let $X_{[m]}$ be a tuple of independent $G$-valued random variables. Let $W := \sum_{i=1}^m X_i$. Then $$ d[W;-W] \leq 2 D[X_i].$$
+- id `r640`: lemma. If $(X_i)_{1 \leq i \leq m}$ is a $\tau$-minimizer, and $k := D[(X_i)_{1 \leq i \leq m}]$, then for any other tuple $(X'_i)_{1 \leq i \leq m}$, one has $$ k - D[(X'_i)_{1 \leq i \leq m}] \leq \eta \sum_{i=1}^m d[X_i; X'_i].$$
+- id `r598`: lemma. If $(X_i)_{1 \leq i \leq m}$ is a $\tau$-minimizer, and $k := D[(X_i)_{1 \leq i \leq m}]$, then for any other tuples $(X'_i)_{1 \leq i \leq m}$ and $(Y_i)_{1 \leq i \leq m}$ with the $X'_i$ $G$-valued, one has $$ k - D[(X'_i)_{1 \leq i \leq m} | (Y_i)_{1 \leq i \leq m}] \leq \eta \sum_{i=1}^m d[X_i; X'_i|Y_i].$$
+- id `r674`: lemma. Let $X$ be a random variable. Then for any function $f$ on the range of $X$, one has $\bbH[f(X)] \leq \bbH[X]$.
+- id `r718`: definition. Let $m$ be a positive integer, and let $X_{[m]} = (X_i)_{1 \leq i \leq m}$ be an $m$-tuple of $G$-valued random variables $X_i$. Then we define \[ D[X_{[m]}] := \bbH[\sum_{i=1}^m \tilde X_i] - \frac{1}{m} \sum_{i=1}^m \bbH[\tilde X_i], \] where the $\tilde X_i$ are independent copies of the $X_i$.
+- id `r873`: lemma. If the $(X_i,Y_i)$ are independent, \begin{equation} D[ X_{[m]} | Y_{[m]}] := \bbH[\sum_{i=1}^m X_i \big| (Y_j)_{1 \leq j \leq m} ] - \frac{1}{m} \sum_{i=1}^m \bbH[ X_i | Y_i]. \end{equation}
+- id `r100`: lemma. If $n \geq 1$ and $X, Y_1, \dots, Y_n$ are jointly independent $G$-valued random variables, then $$d\left[X; \sum_{i=1}^n Y_i\right] \leq d\left[X; Y_1\right] + \frac{1}{2}\left(\bbH\left[ \sum_{i=1}^n Y_i\right] - \bbH[Y_1]\right).$$
+- id `r139`: lemma. Let $m \ge 2$, and let $X_{[m]}$ be a tuple of $G$-valued random variables. Then $$\sum_{1 \leq j,k \leq m: j \neq k} d[X_j; -X_k] \leq m(m-1) D[X_{[m]}].$$
+- id `r606`: lemma. Let $\pi \colon G \to H$ be a homomorphism of abelian groups. Let $I$ be a finite index set and let $X_{[m]}$ be a tuple of $G$-valued random variables. Let $Y_{[m]}$ be another tuple of random variables (not necessarily $G$-valued). Suppose that the pairs $(X_i, Y_i)$ are jointly independent of one another (but $X_i$ need not be independent of $Y_i$). Then \begin{align}\nonumber D[ X_{[m]} | Y_{[m]} ] &= D[ X_{[m]} \,|\, \pi(X_{[m]}), Y_{[m]}] + D[ \pi(X_{[m]}) \,|\, Y_{[m]}] \\ &\quad\qquad + \bbI[ \sum_{i=1}^m X_i : \pi(X_{[m]}) \; \big| \; \pi\bigl(\sum_{i=1}^m X_i \bigr), Y_{[m]} ]. \end{align}
+- id `r433`: definition. We set $\eta := \frac{1}{32m^3}$.
+- id `r419`: lemma. We have $\sum_{i=1}^m d[X_i;Z_2|W] \leq 4(m^3-m^2) k$.
+- id `r957`: lemma. Let $X,Y$ be independent $G$-valued random variables, and let $a$ be an integer. Then $$\bbH[X-aY] - \bbH[X] \leq 4 |a| d[X;Y].$$
+- id `r578`: lemma. Suppose that $G$ is a finite abelian group of torsion $m$. If $A \subset G$ is non-empty and $|A+A| \leq K|A|$, then $A$ can be covered by at most $K ^ {128m^3+1}|A|^{1/2}/|H|^{1/2}$ translates of a subspace $H$ of $G$ with \begin{equation} |H|/|A| \in [K^{-256m^3}, K^{256m^3}]. \end{equation}
+- id `r151`: lemma. Let $X,Y,Z$. For any functions $f, g$ on the ranges of $X, Y$ respectively, we have $\bbI[f(X) : g(Y )|Z] \leq \bbI[X :Y |Z]$.
+- id `r928`: lemma. If $X_{[m]} = (X_i)_{1 \leq i \leq m}$ are jointly independent, then $D[X_{[m]}] = \bbH[\sum_{i=1}^m X_i] - \frac{1}{m} \sum_{i=1}^m \bbH[X_i]$.
+- id `r942`: lemma. Let $G$ be an abelian group, let $(T_1,T_2,T_3)$ be a $G^3$-valued random variable such that $T_1+T_2+T_3=0$ holds identically, and write \[ \delta := \bbI[T_1 : T_2] + \bbI[T_1 : T_3] + \bbI[T_2 : T_3]. \] Let $Y_1,\dots,Y_n$ be some further $G$-valued random variables and let $\alpha>0$ be a constant. Then there exists a random variable $U$ such that \begin{equation} d[U;U] + \alpha \sum_{i=1}^n d[Y_i;U] \leq \Bigl(2 + \frac{\alpha n}{2} \Bigr) \delta + \alpha \sum_{i=1}^n d[Y_i;T_2]. \end{equation}
+- id `r931`: proposition. We have $k = 0$.
+
+## Constraints
+
+- `r100` before `r419`
+- `r101` before `r263`
+- `r101` before `r328`
+- `r101` before `r345`
+- `r101` before `r524`
+- `r101` before `r598`
+- `r101` before `r640`
+- `r101` before `r789`
+- `r101` before `r931`
+- `r101` before `r995`
+- `r132` before `r992`
+- `r139` before `r778`
+- `r147` before `r789`
+- `r151` before `r345`
+- `r165` before `r139`
+- `r165` before `r269`
+- `r165` before `r345`
+- `r165` before `r442`
+- `r165` before `r511`
+- `r165` before `r606`
+- `r165` before `r789`
+- `r165` before `r815`
+- `r165` before `r818`
+- `r165` before `r873`
+- `r165` before `r995`
+- `r261` before `r263`
+- `r263` before `r578`
+- `r269` before `r419`
+- `r328` before `r789`
+- `r345` before `r931`
+- `r365` before `r789`
+- `r419` before `r931`
+- `r433` before `r101`
+- `r433` before `r263`
+- `r433` before `r269`
+- `r433` before `r328`
+- `r433` before `r345`
+- `r433` before `r419`
+- `r433` before `r442`
+- `r433` before `r511`
+- `r433` before `r524`
+- `r433` before `r598`
+- `r433` before `r640`
+- `r433` before `r789`
+- `r433` before `r890`
+- `r433` before `r931`
+- `r433` before `r995`
+- `r433` before `r996`
+- `r442` before `r511`
+- `r487` before `r957`
+- `r511` before `r419`
+- `r524` before `r263`
+- `r528` before `r365`
+- `r556` before `r606`
+- `r557` before `r269`
+- `r557` before `r442`
+- `r558` before `r328`
+- `r558` before `r789`
+- `r578` before `r681`
+- `r598` before `r328`
+- `r606` before `r528`
+- `r640` before `r598`
+- `r640` before `r789`
+- `r640` before `r931`
+- `r674` before `r826`
+- `r708` before `r328`
+- `r708` before `r365`
+- `r708` before `r528`
+- `r708` before `r556`
+- `r708` before `r598`
+- `r708` before `r606`
+- `r708` before `r752`
+- `r708` before `r789`
+- `r708` before `r873`
+- `r718` before `r139`
+- `r718` before `r165`
+- `r718` before `r261`
+- `r718` before `r263`
+- `r718` before `r269`
+- `r718` before `r328`
+- `r718` before `r345`
+- `r718` before `r365`
+- `r718` before `r419`
+- `r718` before `r442`
+- `r718` before `r511`
+- `r718` before `r524`
+- `r718` before `r528`
+- `r718` before `r556`
+- `r718` before `r557`
+- `r718` before `r558`
+- `r718` before `r598`
+- `r718` before `r606`
+- `r718` before `r640`
+- `r718` before `r708`
+- `r718` before `r752`
+- `r718` before `r778`
+- `r718` before `r789`
+- `r718` before `r815`
+- `r718` before `r818`
+- `r718` before `r873`
+- `r718` before `r890`
+- `r718` before `r928`
+- `r718` before `r931`
+- `r718` before `r995`
+- `r752` before `r528`
+- `r778` before `r261`
+- `r778` before `r419`
+- `r778` before `r789`
+- `r789` before `r345`
+- `r815` before `r524`
+- `r815` before `r931`
+- `r818` before `r419`
+- `r818` before `r524`
+- `r818` before `r752`
+- `r818` before `r931`
+- `r826` before `r957`
+- `r827` before `r147`
+- `r827` before `r269`
+- `r827` before `r296`
+- `r827` before `r442`
+- `r827` before `r815`
+- `r873` before `r365`
+- `r873` before `r556`
+- `r890` before `r101`
+- `r890` before `r328`
+- `r890` before `r345`
+- `r890` before `r524`
+- `r890` before `r640`
+- `r890` before `r789`
+- `r890` before `r995`
+- `r928` before `r139`
+- `r928` before `r269`
+- `r928` before `r365`
+- `r928` before `r442`
+- `r928` before `r511`
+- `r928` before `r556`
+- `r928` before `r557`
+- `r928` before `r789`
+- `r928` before `r815`
+- `r928` before `r818`
+- `r928` before `r873`
+- `r931` before `r263`
+- `r942` before `r931`
+- `r957` before `r269`
+- `r992` before `r151`
+- `r995` before `r263`
+- `r996` before `r931`

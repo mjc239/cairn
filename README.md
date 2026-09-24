@@ -9,14 +9,21 @@ over how to present that DAG: how to **order** the results, **cluster** them,
 **name** them, **elide** routine steps and **augment** them with motivation.
 Correctness is guaranteed by the formal proof throughout.
 
-**Status:** Phases 0 (blueprint graph), 1 (Lean dependency graph) and 2 (baselines) done on PFR.
-Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase1-pfr.md`](docs/phase1-pfr.md),
-[`docs/phase2-pfr.md`](docs/phase2-pfr.md).
+**Status:** Phases 0 (blueprint graph), 1 (Lean dependency graph) and 2 (baselines) done on PFR
+and Carleson. Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase1-pfr.md`](docs/phase1-pfr.md),
+[`docs/phase2-pfr.md`](docs/phase2-pfr.md), the cross-project comparison in
+[`docs/carleson.md`](docs/carleson.md), and the statement/proof model of load vs motivation in
+[`docs/statement-proof-events.md`](docs/statement-proof-events.md), and parameterised exposition styles in
+[`docs/style.md`](docs/style.md). **Blueprint-free outlines** of a Lean development, with a `detail`
+parameter: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`](results/outline/)).
 
 - [`docs/idea-notes.md`](docs/idea-notes.md): the original idea notes (motivation,
   challenges, graph formulation, prior work).
 - [`docs/scope.md`](docs/scope.md): what we're building first, the phases, the
   benchmark design, risks and open decisions.
+
+**Start here:** [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb) walks through the whole project,
+from parsing a blueprint to the blueprint-free outline. It runs in about 30 s from the committed data.
 
 ## Usage
 
@@ -35,6 +42,19 @@ uv run cairn phase1 path/to/project/blueprint/src decls.jsonl --project NAME -o 
 uv run cairn llm-prompts path/to/blueprint/src decls.jsonl -o results/phase2/NAME/llm   # then fill *.response.json
 uv run cairn phase2 path/to/blueprint/src decls.jsonl --project NAME --llm-dir results/phase2/NAME/llm -o results/phase2/NAME
 ./scripts/phase2_pfr.sh                                          # from the committed dump, no Lean needed
+uv run cairn llm-prompts ... --anonymise --no-titles --seed N    # blind LLM prompts; score runs with `cairn llm-eval`
+uv run cairn transfer --project A=SRC:DECLS --project B=SRC:DECLS:section -o out.json   # cross-project key decls
+
+./scripts/carleson.sh [--no-lean]                                # all phases on the second project
+uv run cairn events path/to/blueprint/src decls.jsonl --project NAME -o results/events/NAME  # statements vs proofs, motivation
+uv run cairn event-prompts ... -o DIR [--anonymise --no-titles]  # LLM orders S:/P: steps; score with `cairn event-llm-eval`
+uv run cairn style path/to/blueprint/src decls.jsonl --project NAME -o results/style/NAME  # sweep + fit style parameters
+
+# Blueprint-free outline of any Lean development (the end-to-end tool)
+uv run cairn outline decls.jsonl --model results/outline/key_model.json --detail 0.15 [--root MainTheorem] \
+    [--top-down 0.2 --roadmap chapter] -o outline.md
+./scripts/outline.sh                                             # models, evaluation vs blueprints, example outlines
+uv run jupyter-execute --inplace notebooks/walkthrough.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
 uv run pytest && uv run ruff check python
 ```
 
@@ -42,7 +62,8 @@ In Claude Code on the web, `.claude/hooks/session-start.sh` installs the Python 
 Lean toolchain at session start.
 
 The entry file defaults to `content.tex` and falls back to `chapter/main.tex`
-(pass `--entry` otherwise).
+(pass `--entry` otherwise). For single-file blueprints, `--group-by section` (or `chapter`) treats
+`\section`s as chapters.
 
 ## Plan
 

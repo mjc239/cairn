@@ -1,0 +1,21 @@
+[
+ "S:dimension-def",
+ "S:weak-pfr-int",
+ "S:weak-pfr-symm",
+ "S:weak-pfr-asymm",
+ "P:weak-pfr-int",
+ "P:weak-pfr-symm",
+ "S:app-ent-pfr",
+ "P:app-ent-pfr",
+ "S:pfr-projection'",
+ "P:pfr-projection'",
+ "S:pfr-projection",
+ "P:pfr-projection",
+ "S:torsion-free-doubling",
+ "P:torsion-free-doubling",
+ "S:torsion-dist-shrinking",
+ "P:torsion-dist-shrinking",
+ "S:single-fibres",
+ "P:single-fibres",
+ "P:weak-pfr-asymm"
+]

@@ -1,0 +1,21 @@
+{
+ "r413": "estimate-good",
+ "r172": "estimate-x-shift",
+ "r979": "estimate-bad-partial",
+ "r178": "nontangential-from-simple",
+ "r417": "calderon-zygmund-weak-1-1",
+ "r405": "estimate-bad",
+ "r861": "maximal-theorem",
+ "r262": "Lebesgue-differentiation",
+ "r526": "Cotlar-control",
+ "r678": "small-annulus",
+ "r358": "Cotlar-sets",
+ "r233": "two-sided-metric-space-Carleson",
+ "r108": "nontangential-operator-boundary",
+ "r674": "simple-nontangential-operator",
+ "r999": "geometric-series-estimate",
+ "r970": "Calderon-Zygmund-decomposition",
+ "r138": "Cotlar-estimate",
+ "r704": "estimate-F-set",
+ "r939": "ball-covering"
+}

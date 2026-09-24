@@ -32,6 +32,8 @@ PROOF_ENV = "proof"
 _ENV_RE = re.compile(
     r"\\(begin|end)\{(" + "|".join((*STATEMENT_ENVS, PROOF_ENV)) + r")\}"
 )
+_HEADING_RE = re.compile(r"\\(chapter|section)\*?\s*(?:\[[^\]]*\])?\s*\{((?:[^{}]|\{[^{}]*\})*)\}")
+GROUP_BY = ("file", "chapter", "section")
 _INPUT_RE = re.compile(r"\\(?:input|include)\{([^}]+)\}")
 _COMMENT_RE = re.compile(r"(?<!\\)%.*")
 
@@ -98,6 +100,12 @@ class Node:
     statement_uses: list[str] = field(default_factory=list)
     proof_uses: list[str] = field(default_factory=list)
     has_proof: bool = False
+    statement_event: int = -1
+    """Index of the statement in the document's sequence of statement and proof environments."""
+    proof_event: int | None = None
+    proof_chapter: str | None = None
+    """Chapter (per ``group_by``) where the proof sits; differs from ``chapter`` for proofs deferred elsewhere."""
+    """Index of the (first) proof environment for this node in that sequence; ``None`` if unproved."""
     proof_leanok: bool = False
     text: str = ""
     """Statement body with blueprint metadata macros removed and whitespace collapsed."""
@@ -155,13 +163,24 @@ def _read_flat(path: Path, root: Path, stack: tuple[Path, ...] = ()) -> list[tup
     return chunks
 
 
-def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprint:
+def _slug(title: str) -> str:
+    title = re.sub(r"\\[A-Za-z]+|[{}$\\\"']", "", title)
+    return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:40] or "untitled"
+
+
+def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: str = "file") -> Blueprint:
     """Parse the blueprint rooted at ``src_dir`` (usually ``blueprint/src``).
 
     ``entry`` is the file listing the chapters; leanblueprint templates call it
     ``content.tex``, older projects (e.g. PFR) ``chapter/main.tex``. If ``entry``
     does not exist, ``chapter/main.tex`` is tried.
+
+    ``group_by`` decides what ``Node.chapter`` holds: the source file's stem (``"file"``, right for
+    blueprints with one file per chapter), the enclosing ``\\chapter`` or the enclosing ``\\section``
+    (for single-file blueprints such as Carleson's), as a slug of its title.
     """
+    if group_by not in GROUP_BY:
+        raise ValueError(f"group_by must be one of {GROUP_BY}")
     root = Path(src_dir)
     entry_path = root / entry
     if not entry_path.exists():
@@ -171,10 +190,18 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprin
     nodes: list[Node] = []
     orphan_proofs: list[tuple[str, int]] = []
     anon = 0
+    event = 0  # counts statement and proof environments in document order
+    heading = {"chapter": "front-matter", "section": "front-matter"}
     for source, text, first_line in chunks:
-        chapter = Path(source).stem
+        headings = [(h.start(), h.group(1), _slug(h.group(2))) for h in _HEADING_RE.finditer(text)]
         open_env: tuple[str, int, int] | None = None  # (env, body_start, line)
         for m in _ENV_RE.finditer(text):
+            while headings and headings[0][0] < m.start():
+                _, level, slug = headings.pop(0)
+                heading[level] = slug
+                if level == "chapter":
+                    heading["section"] = slug
+            chapter = Path(source).stem if group_by == "file" else heading[group_by]
             action, env = m.group(1), m.group(2)
             line = first_line + text.count("\n", 0, m.start())
             if action == "begin":
@@ -194,6 +221,10 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprin
                 if target is None:
                     orphan_proofs.append((source, start_line))
                     continue
+                if not target.has_proof:
+                    target.proof_event = event
+                    target.proof_chapter = chapter
+                event += 1
                 target.has_proof = True
                 target.proof_uses.extend(_split_csv(_macro_args(body, "uses")))
                 target.proof_leanok = target.proof_leanok or _has_flag(body, "leanok")
@@ -209,6 +240,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprin
                     id=node_id,
                     kind=env,
                     position=len(nodes),
+                    statement_event=event,
                     chapter=chapter,
                     source=source,
                     line=start_line,
@@ -221,6 +253,11 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprin
                     text=_statement_text(body),
                 )
             )
+            event += 1
+        for _, level, slug in headings:  # headings after the chunk's last environment
+            heading[level] = slug
+            if level == "chapter":
+                heading["section"] = slug
 
     ids = {label for n in nodes for label in n.labels}
     unresolved = [

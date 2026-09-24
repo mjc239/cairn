@@ -43,3 +43,48 @@ def test_load_llm_orders_repairs_and_rejects(tmp_path):
     assert res["order"] == ["x", "y", "z"]
     assert res["constraint_violations_repaired"] == {"c1": 1}
     assert res["invalid_responses"] == ["c2"]
+
+
+def test_anonymised_prompts_hide_labels_and_map_back(tmp_path):
+    from cairn.blueprint import Blueprint, Node
+    from cairn.phase2 import write_llm_prompts
+
+    def node(i, k, text, title=None):
+        return Node(id=i, kind="lemma", position=k, chapter="ch", source="s", line=1, title=title,
+                    labels=[i], text=text)
+
+    nodes = [node(f"secret-{k}", k, f"Statement {k}, see \\Cref{{secret-{(k + 1) % 8}}} and \\ref{{elsewhere}}.",
+                  title=f"Title {k}") for k in range(8)]
+    bp = Blueprint(nodes=nodes, unresolved=[], orphan_proofs=[])
+    g = nx.DiGraph([("secret-0", "secret-1")])
+    g.add_nodes_from(n.id for n in nodes)
+    write_llm_prompts(bp, g, tmp_path, seed=3, anonymise=True, titles=False)
+    prompt = (tmp_path / "ch.prompt.md").read_text()
+    assert "secret" not in prompt and "Title" not in prompt and "\\Cref" not in prompt
+    assert "[another result]" in prompt
+    mapping = json.loads((tmp_path / "ch.ids.json").read_text())
+    inverse = {v: a for a, v in mapping.items()}
+    answer = [inverse[f"secret-{k}"] for k in range(8)]
+    (tmp_path / "ch.response.json").write_text(json.dumps(answer))
+    res = load_llm_orders(tmp_path, [n.id for n in nodes], {n.id: "ch" for n in nodes}, g)
+    assert res["order"] == [f"secret-{k}" for k in range(8)]
+
+
+def test_transfer_key_nodes_runs_both_directions():
+    from cairn.blueprint import Blueprint, Node
+    from cairn.phase2 import transfer_key_nodes
+
+    def project(prefix, n):
+        decls = {}
+        for i in range(n):
+            deps = {f"{prefix}.d{j}" for j in range(i)} if i % 3 == 0 else {f"{prefix}.d{i - 1}"} if i else set()
+            decls[f"{prefix}.d{i}"] = FormalDecl(f"{prefix}.d{i}", "theorem", f"M.{i % 4}", i, value_deps=deps,
+                                                 type_size=10 + i, value_size=50 * (i % 3 == 0) + i)
+        named = [f"{prefix}.d{i}" for i in range(n) if i % 3 == 0]
+        nodes = [Node(id=f"n{i}", kind="lemma", position=i, chapter="c", source="s", line=1, lean_decls=[d])
+                 for i, d in enumerate(named)]
+        return Blueprint(nodes=nodes, unresolved=[], orphan_proofs=[]), decls
+
+    res = transfer_key_nodes({"A": project("A", 30), "B": project("B", 24)})
+    assert set(res) == {"A -> B", "B -> A"}
+    assert all(0.0 <= r["auroc"] <= 1.0 for r in res.values())

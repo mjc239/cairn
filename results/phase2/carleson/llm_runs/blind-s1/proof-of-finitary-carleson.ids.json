@@ -1,0 +1,17 @@
+{
+ "r490": "smaller-boundary",
+ "r802": "transitive-boundary",
+ "r321": "cover-by-cubes",
+ "r532": "small-boundary",
+ "r843": "basic-grid-structure",
+ "r129": "disjoint-frequency-cubes",
+ "r640": "tile-sum-operator",
+ "r327": "tile-structure",
+ "r882": "counting-balls",
+ "r548": "cover-big-ball",
+ "r607": "dyadic-property",
+ "r666": "boundary-measure",
+ "r338": "grid-existence",
+ "r453": "frequency-cube-cover",
+ "r336": "frequency-ball-cover"
+}

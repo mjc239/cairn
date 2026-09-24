@@ -1,0 +1,199 @@
+You are organising one chapter of a mathematical exposition. Below are its results
+(definitions, lemmas, theorems) in an arbitrary order, each with an id and its statement. Some results use
+others; the constraints list which must come first.
+
+Choose the order in which you would present these results to a mathematician reading the chapter for the
+first time, so that it is as easy as possible to follow. Respect every constraint.
+
+Reply with only a JSON array containing every id exactly once, in your chosen order.
+
+## Results
+
+- id `r982`: lemma. If $f$ is injective, then $\rho(X|f(Y))=\rho(X|Y)$.
+- id `r362`: corollary. If $|A+A| \leq K|A|$, then there exist a subgroup $H$ and a subset $c$ of $G$ with $A \subseteq c + H$, such that $|c| \leq K^{5} |A|^{1/2}/|H|^{1/2}$ and $|H|/|A|\in[K^{-8},K^8]$.
+- id `r236`: definition. For any $G$-valued random variable $X$, we define $\rho^-(X)$ to be the infimum of $D_{KL}(X \Vert U_A + T)$, where $U_A$ is uniform on $A$ and $T$ ranges over $G$-valued random variables independent of $U_A$.
+- id `r769`: lemma. $d[X_1;X_1]+d[X_2;X_2]= 2d[X_1;X_2]+(I_2-I_1)$.
+- id `r633`: proposition. If $X_1,X_2$ is a $\phi$-minimizer, then $d[X_1;X_2] = 0$.
+- id `r936`: lemma. If $X,Y$ are independent, then $$ \rho(X | X+Y) \leq \frac{1}{2}(\rho(X)+\rho(Y) + d[X;Y]).$$
+- id `r766`: proposition. For any random variables $Y_1,Y_2$, there exist a subgroup $H$ such that $$ 2\rho(U_H) \leq \rho(Y_1) + \rho(Y_2) + 8 d[Y_1;Y_2].$$
+- id `r760`: lemma. For any $s \in G$, $\rho(X+s) = \rho(X)$.
+- id `r455`: lemma. If $X, Y$ are independent $G$-valued random variables, and $Z$ is another random variable defined on the same sample space as $X$, then $$D_{KL}((X|Z)\Vert Y) = D_{KL}(X\Vert Y) + \bbH[X] - \bbH[X|Z].$$
+- id `r217`: lemma. If $X'$ is a copy of $X$, and $Y'$ is a copy of $Y$, then $D_{KL}(X'\Vert Y') = D_{KL}(X\Vert Y)$.
+- id `r992`: lemma. $D_{KL}(X\Vert Y) \geq 0$.
+- id `r258`: lemma. If $H$ is a finite subgroup of $G$, then $\rho^-(U_H) = \log |A| - \log \max_t |A \cap (H+t)|$.
+- id `r385`: lemma. If $H$ is a finite subgroup of $G$, and $\rho(U_H) \leq r$, then there exists $t$ such that $|A \cap (H+t)| \geq e^{-r} \sqrt{|A||H|}$, and $|H|/|A|\in[e^{-2r},e^{2r}]$.
+- id `r971`: lemma. If $S$ is a finite set, $\sum_{s \in S} w_s = 1$ for some non-negative $w_s$, and ${\bf P}(X=x) = \sum_{s\in S} w_s {\bf P}(X_s=x)$, ${\bf P}(Y=x) = \sum_{s\in S} w_s {\bf P}(Y_s=x)$ for all $x$, then $$D_{KL}(X\Vert Y) \le \sum_{s\in S} w_s D_{KL}(X_s\Vert Y_s).$$
+- id `r119`: lemma. $I_2\le 2\eta d[X_1;X_2] + \frac{\eta}{1-\eta}(2\eta d[X_1;X_2]-I_1)$.
+- id `r143`: lemma. If $X,Y$ are independent, one has $$ \rho^-(X+Y) \leq \rho^-(X)$$ $$ \rho^+(X+Y) \leq \rho^+(X) + \bbH[X+Y] - \bbH[X]$$ and $$ \rho(X+Y) \leq \rho(X) + \frac{1}{2}( \bbH[X+Y] - \bbH[X] ).$$
+- id `r141`: definition. We define $\rho(X|Y) := \sum_y {\bf P}(Y=y) \rho(X|Y=y)$.
+- id `r310`: lemma. For independent random variables $Y_1,Y_2,Y_3,Y_4$ over $G$, define $S:=Y_1+Y_2+Y_3+Y_4$, $T_1:=Y_1+Y_2$, $T_2:=Y_1+Y_3$. Then $$\rho(T_1|T_2,S)+\rho(T_2|T_1,S) - \frac{1}{2}\sum_{i} \rho(Y_i)\le \frac{1}{2}(d[Y_1;Y_2]+d[Y_3;Y_4]+d[Y_1;Y_3]+d[Y_2;Y_4]).$$
+- id `r797`: lemma. If $D_{KL}(X\Vert Y) = 0$, then $Y$ is a copy of $X$.
+- id `r365`: lemma. For any $s\in G$, $\rho(X+s|Y)=\rho(X|Y)$.
+- id `r671`: lemma. $\rho(X)$ depends continuously on the distribution of $X$.
+- id `r422`: lemma. If $G$-valued random variables $T_1,T_2,T_3$ satisfy $T_1+T_2+T_3=0$, then $$d[X_1;X_2]\le 3\bbI[T_1:T_2] + (2\bbH[T_3]-\bbH[T_1]-\bbH[T_2])+ \eta(\rho(T_1|T_3)+\rho(T_2|T_3)-\rho(X_1)-\rho(X_2)).$$
+- id `r475`: definition. Given $G$-valued random variables $X,Y$, define $$ \phi[X;Y] := d[X;Y] + \eta(\rho(X) + \rho(Y))$$ and define a \emph{$\phi$-minimizer} to be a pair of random variables $X,Y$ which minimizes $\phi[X;Y]$.
+- id `r681`: lemma. If $X,Y$ are independent, then $$ \rho(X+Y) \leq \frac{1}{2}(\rho(X)+\rho(Y) + d[X;Y]).$$
+- id `r969`: theorem. If $A \subset {\bf F}_2^n$ is finite non-empty with $|A+A| \leq K|A|$, then there exists a subgroup $H$ of ${\bf F}_2^n$ with $|H| \leq |A|$ such that $A$ can be covered by at most $2K^9$ translates of $H$.
+- id `r966`: lemma. If $X, Y, Z$ are independent $G$-valued random variables, then $$D_{KL}(X+Z\Vert Y+Z) \leq D_{KL}(X\Vert Y).$$
+- id `r867`: lemma. For independent random variables $Y_1,Y_2,Y_3,Y_4$ over $G$, define $T_1:=Y_1+Y_2,T_2:=Y_1+Y_3,T_3:=Y_2+Y_3$ and $S:=Y_1+Y_2+Y_3+Y_4$. Then $$\sum_{1 \leq i<j \leq 3} (\rho(T_i|T_j,S) + \rho(T_j|T_i,S) - \frac{1}{2}\sum_{i} \rho(Y_i))\le \sum_{1\leq i < j \leq 4}d[Y_i;Y_j]$$
+- id `r818`: definition. For any $G$-valued random variable $X$, we define $\rho^+(X) := \rho^-(X) + \bbH(X) - \bbH(U_A)$.
+- id `r722`: definition. We define $\rho(X) := (\rho^+(X) + \rho^-(X))/2$.
+- id `r771`: lemma. If $X,Z$ are defined on the same space, one has $$ \rho^-(X|Z) \leq \rho^-(X) + \bbH[X] - \bbH[X|Z]$$ $$ \rho^+(X|Z) \leq \rho^+(X)$$ and $$ \rho(X|Z) \leq \rho(X) + \frac{1}{2}( \bbH[X] - \bbH[X|Z] ).$$
+- id `r606`: lemma. If $G$-valued random variables $T_1,T_2,T_3$ satisfy $T_1+T_2+T_3=0$, then $$d[X_1;X_2] \leq \sum_{1 \leq i<j \leq 3} \bbI[T_i:T_j] + \frac{\eta}{3} \sum_{1 \leq i<j \leq 3} (\rho(T_i|T_j) + \rho(T_j|T_i) -\rho(X_1)-\rho(X_2))$$
+- id `r829`: lemma. There exists a $\phi$-minimizer.
+- id `r759`: definition. If $X,Y$ are two $G$-valued random variables, the Kullback--Leibler divergence is defined as $$ D_{KL}(X\Vert Y) := \sum_x \mathbf{P}(X=x) \log \frac{\mathbf{P}(X=x)}{\mathbf{P}(Y=x)}.$$
+- id `r569`: lemma. $D_{KL}((X|W)\Vert Y) \geq 0$.
+- id `r755`: lemma. If $f:G \to H$ is an injection, then $D_{KL}(f(X)\Vert f(Y)) = D_{KL}(X\Vert Y)$.
+- id `r545`: corollary. If $|A+A| \leq K|A|$, then there exists a subgroup $H$ and $t\in G$ such that $|A \cap (H+t)| \geq K^{-4} \sqrt{|A||H|}$, and $|H|/|A|\in[K^{-8},K^8]$.
+- id `r481`: corollary. If $H$ is a finite subgroup of $G$, then $\rho^+(U_H) = \log |H| - \log \max_t |A \cap (H+t)|$.
+- id `r650`: lemma. $I_1\le 2\eta d[X_1;X_2]$
+
+## Constraints
+
+- `r119` before `r633`
+- `r141` before `r119`
+- `r141` before `r310`
+- `r141` before `r365`
+- `r141` before `r422`
+- `r141` before `r606`
+- `r141` before `r633`
+- `r141` before `r650`
+- `r141` before `r771`
+- `r141` before `r867`
+- `r141` before `r936`
+- `r141` before `r982`
+- `r143` before `r681`
+- `r143` before `r760`
+- `r217` before `r119`
+- `r217` before `r143`
+- `r217` before `r310`
+- `r217` before `r422`
+- `r217` before `r633`
+- `r217` before `r650`
+- `r217` before `r766`
+- `r217` before `r829`
+- `r217` before `r936`
+- `r236` before `r119`
+- `r236` before `r143`
+- `r236` before `r258`
+- `r236` before `r310`
+- `r236` before `r385`
+- `r236` before `r422`
+- `r236` before `r481`
+- `r236` before `r545`
+- `r236` before `r633`
+- `r236` before `r650`
+- `r236` before `r671`
+- `r236` before `r722`
+- `r236` before `r766`
+- `r236` before `r771`
+- `r236` before `r818`
+- `r236` before `r829`
+- `r236` before `r936`
+- `r258` before `r385`
+- `r258` before `r481`
+- `r310` before `r867`
+- `r362` before `r969`
+- `r385` before `r545`
+- `r422` before `r606`
+- `r422` before `r633`
+- `r455` before `r771`
+- `r475` before `r119`
+- `r475` before `r422`
+- `r475` before `r606`
+- `r475` before `r633`
+- `r475` before `r650`
+- `r475` before `r766`
+- `r475` before `r829`
+- `r481` before `r385`
+- `r545` before `r362`
+- `r633` before `r766`
+- `r650` before `r633`
+- `r671` before `r766`
+- `r671` before `r829`
+- `r681` before `r119`
+- `r681` before `r310`
+- `r681` before `r650`
+- `r722` before `r119`
+- `r722` before `r141`
+- `r722` before `r143`
+- `r722` before `r310`
+- `r722` before `r365`
+- `r722` before `r385`
+- `r722` before `r422`
+- `r722` before `r475`
+- `r722` before `r545`
+- `r722` before `r606`
+- `r722` before `r633`
+- `r722` before `r650`
+- `r722` before `r671`
+- `r722` before `r681`
+- `r722` before `r760`
+- `r722` before `r766`
+- `r722` before `r771`
+- `r722` before `r829`
+- `r722` before `r867`
+- `r722` before `r936`
+- `r722` before `r982`
+- `r755` before `r966`
+- `r759` before `r119`
+- `r759` before `r143`
+- `r759` before `r217`
+- `r759` before `r236`
+- `r759` before `r258`
+- `r759` before `r310`
+- `r759` before `r385`
+- `r759` before `r422`
+- `r759` before `r455`
+- `r759` before `r545`
+- `r759` before `r569`
+- `r759` before `r633`
+- `r759` before `r650`
+- `r759` before `r671`
+- `r759` before `r755`
+- `r759` before `r766`
+- `r759` before `r771`
+- `r759` before `r797`
+- `r759` before `r829`
+- `r759` before `r936`
+- `r759` before `r966`
+- `r759` before `r971`
+- `r759` before `r992`
+- `r760` before `r365`
+- `r760` before `r766`
+- `r760` before `r936`
+- `r766` before `r545`
+- `r769` before `r119`
+- `r769` before `r633`
+- `r771` before `r310`
+- `r771` before `r936`
+- `r818` before `r119`
+- `r818` before `r143`
+- `r818` before `r310`
+- `r818` before `r385`
+- `r818` before `r422`
+- `r818` before `r481`
+- `r818` before `r545`
+- `r818` before `r633`
+- `r818` before `r650`
+- `r818` before `r671`
+- `r818` before `r722`
+- `r818` before `r766`
+- `r818` before `r771`
+- `r818` before `r829`
+- `r818` before `r936`
+- `r829` before `r766`
+- `r867` before `r633`
+- `r936` before `r119`
+- `r936` before `r310`
+- `r936` before `r650`
+- `r966` before `r143`
+- `r971` before `r966`
+- `r982` before `r310`
+- `r992` before `r143`
+- `r992` before `r258`
+- `r992` before `r385`
+- `r992` before `r545`
+- `r992` before `r569`
+- `r992` before `r671`
+- `r992` before `r771`
