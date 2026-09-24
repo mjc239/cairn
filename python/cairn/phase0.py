@@ -147,7 +147,7 @@ def analyse_scope(
     chapter = nx.get_node_attributes(g, "chapter")
     named = {"human": human, "human_repaired": repaired, "just_in_time": jit,
              "greedy_min_open": greedy, "optimised": optimised}
-    runs = {k: 1 + sum(chapter[a] != chapter[b] for a, b in zip(o, o[1:])) for k, o in named.items()}
+    runs = {k: 1 + sum(chapter[a] != chapter[b] for a, b in zip(o, o[1:], strict=False)) for k, o in named.items()}
 
     return ScopeResult(
         name=name,
@@ -218,12 +218,14 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
         "",
         f"{whole.n_nodes} nodes, {whole.n_edges} dependency edges. "
         f"Null models per scope: {len(whole.random['mean_open'])} randomised-Kahn topological orders (biased towards "
-        f"opening many results early) and {len(whole.uniform['mean_open'])} approximately uniform ones (Karzanov–Khachiyan MCMC). "
+        f"opening many results early) and {len(whole.uniform['mean_open'])} approximately uniform ones "
+        "(Karzanov–Khachiyan MCMC). "
         "All metrics: lower is better.",
         "",
         "**Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):",
         "",
-        "| Scope | n | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | "
+        "| Scope | n | Human: mean open (Kahn null) | Human: mean open (uniform null) | "
+        "Human: mean edge length (Kahn) | "
         "Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |",
         "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
@@ -235,7 +237,14 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
             f"{_quantile(r.uniform['mean_open'], 0.5):.1f} | {r.tau_vs_human['optimised']:+.2f} | "
             f"{statistics.fmean(r.random_tau_vs_human):+.2f} |"
         )
-    lines += ["", "## Whole blueprint: raw metrics", "", "| Order | fwd refs | mean open | max open | mean cut | cutwidth | mean edge length | τ vs human | chapter runs |", "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    lines += [
+        "",
+        "## Whole blueprint: raw metrics",
+        "",
+        "| Order | fwd refs | mean open | max open | mean cut | cutwidth | mean edge length | τ vs human "
+        "| chapter runs |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ]
     for key, m in whole.orders.items():
         tau = whole.tau_vs_human.get(key, 1.0)
         lines.append(
@@ -244,13 +253,15 @@ def _markdown(results: list[ScopeResult], project: str, provenance: str) -> str:
         )
     rnd = whole.random
     lines.append(
-        f"| Random topological (median) | 0 | {_quantile(rnd['mean_open'], .5):.1f} | {_quantile(rnd['max_open'], .5):.0f} | "
+        f"| Random topological (median) | 0 | {_quantile(rnd['mean_open'], .5):.1f} | "
+        f"{_quantile(rnd['max_open'], .5):.0f} | "
         f"{_quantile(rnd['mean_cut'], .5):.1f} | {_quantile(rnd['cutwidth'], .5):.0f} | "
         f"{_quantile(rnd['mean_edge_length'], .5):.1f} | {statistics.fmean(whole.random_tau_vs_human):+.2f} | |"
     )
     uni = whole.uniform
     lines.append(
-        f"| Uniform topological (median) | 0 | {_quantile(uni['mean_open'], .5):.1f} | {_quantile(uni['max_open'], .5):.0f} | "
+        f"| Uniform topological (median) | 0 | {_quantile(uni['mean_open'], .5):.1f} | "
+        f"{_quantile(uni['max_open'], .5):.0f} | "
         f"{_quantile(uni['mean_cut'], .5):.1f} | {_quantile(uni['cutwidth'], .5):.0f} | "
         f"{_quantile(uni['mean_edge_length'], .5):.1f} | | |"
     )

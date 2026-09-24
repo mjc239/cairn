@@ -4,7 +4,6 @@ and re-run the Phase 0 ordering analysis on the Lean-derived graph."""
 from __future__ import annotations
 
 import json
-import statistics
 from pathlib import Path
 
 import networkx as nx
@@ -133,7 +132,8 @@ def write_report(stats: dict, results: list[ScopeResult], out_dir: Path, project
         "",
         "Share of random orders better than the human order (0% = human beats all):",
         "",
-        "| Scope | n | edges | Kahn null | uniform null | mean open: human / optimised / uniform median | τ(human, optimised) |",
+        "| Scope | n | edges | Kahn null | uniform null | mean open: human / optimised / uniform median "
+        "| τ(human, optimised) |",
         "|---|---:|---:|---:|---:|---:|---:|",
     ]
     for r in results:

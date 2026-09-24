@@ -34,7 +34,7 @@ def plot_null_distributions(results, path: Path, metric: str, project: str) -> N
     cols = min(3, k)
     rows = math.ceil(k / cols)
     fig, axes = plt.subplots(rows, cols, figsize=(4.2 * cols, 2.9 * rows), squeeze=False, facecolor=SURFACE)
-    for ax, r in zip(axes.flat, results):
+    for ax, r in zip(axes.flat, results, strict=False):
         ax.set_facecolor(SURFACE)
         xs = r.random[metric]
         ax.hist(xs, bins=30, color=NULL_FILL, edgecolor=SURFACE, linewidth=1)

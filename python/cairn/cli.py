@@ -59,7 +59,8 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.cmd == "phase1":
         from .formal import load_decls
-        from .phase1 import analyse, write_report as write_phase1
+        from .phase1 import analyse
+        from .phase1 import write_report as write_phase1
 
         decls = load_decls(args.decls)
         stats, results, _ = analyse(bp, decls, samples=args.samples, seed=args.seed)

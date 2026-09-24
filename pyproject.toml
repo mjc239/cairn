@@ -13,7 +13,7 @@ dependencies = [
 cairn = "cairn.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "ruff>=0.6"]
 
 [build-system]
 requires = ["hatchling"]
@@ -24,3 +24,10 @@ packages = ["python/cairn"]
 
 [tool.pytest.ini_options]
 testpaths = ["python/tests"]
+
+[tool.ruff]
+line-length = 120
+src = ["python"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
