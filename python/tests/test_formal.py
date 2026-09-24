@@ -70,3 +70,27 @@ def test_compare_edges_classifies():
     assert e["author_implied_transitively"] == 1  # a->c via b
     assert e["author_absent_from_lean"] == [("x", "c")]
     assert e["lean_unreported_by_author"] == [("b", "c"), ("d", "c")]
+
+
+def test_structure_fields_and_projections(tmp_path):
+    import json
+
+    from cairn.formal import load_decls, projections
+
+    def row(name, kind, type_pp="", type_deps=(), value_deps=()):
+        return {"name": name, "user_name": name, "private": False, "module": "M", "kind": kind, "line": 1,
+                "type_size": 1, "value_size": 1, "type_pp": type_pp, "type_deps": list(type_deps),
+                "value_deps": list(value_deps)}
+
+    rows = [row("Pair", "inductive"),
+            row("Pair.mk", "constructor", "{E : Type} → (π : E → ℝ) → (v : E) → π v = 1 → Pair E"),
+            row("Pair.π", "def", type_deps=["Pair"]), row("Pair.v", "def", type_deps=["Pair"]),
+            row("Pair.spanV", "def", type_deps=["Pair"]),
+            row("Two", "inductive"), row("Two.a", "constructor", "(x : ℕ) → Two"), row("Two.b", "constructor"),
+            row("Two.x", "def")]
+    path = tmp_path / "d.jsonl"
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+    decls = load_decls(path)
+    assert decls["Pair"].fields == ["π", "v"]
+    assert decls["Two"].fields == []  # two constructors: not a structure
+    assert projections(decls) == {"Pair.π": "Pair", "Pair.v": "Pair"}

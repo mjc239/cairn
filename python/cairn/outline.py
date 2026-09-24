@@ -27,7 +27,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
 from .events import P, S, node_of
-from .formal import FormalDecl, formal_graph
+from .formal import FormalDecl, formal_graph, projections
 from .graph import make_dag
 from .phase2 import key_node_features, key_node_matrix, lean_source_order
 from .style import Style, arrange_document
@@ -106,7 +106,9 @@ def select(decls: dict[str, FormalDecl], fg: nx.DiGraph, scores: dict[str, float
                 if u in universe and u not in named and decls[u].kind != "theorem":
                     named.add(u)
                     frontier.append(u)
-    return named
+    # A structure's field projections (`DualPair.v`) are presented with the structure, not as results of their own.
+    proj = {p: s for p, s in projections(decls).items() if s in universe}
+    return {proj.get(v, v) for v in named}
 
 
 def fold(fg: nx.DiGraph, named: set[str]) -> tuple[nx.DiGraph, dict[str, list[str]]]:

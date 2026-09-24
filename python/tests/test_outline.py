@@ -85,3 +85,20 @@ def test_prose_roundtrip(tmp_path):
     (tmp_path / "M_B.repair2.json").write_text(json.dumps({"T": {"statement": "If h : P holds then Q."}}))
     assert load_prose(tmp_path)["M.B"]["results"]["T"]["statement"] == "If h : P holds then Q."
     assert strip_namespaces("Foo.P ∧ Bar.Foo.P ∧ Foo.x", ("Foo",)) == "P ∧ Bar.Foo.P ∧ x"
+
+
+def test_select_presents_projections_with_their_structure():
+    import networkx as nx
+
+    from cairn.formal import FormalDecl
+    from cairn.outline import select
+
+    decls = {
+        "Pair": FormalDecl("Pair", "inductive", "M", 1, fields=["v"]),
+        "Pair.v": FormalDecl("Pair.v", "def", "M", 2, type_deps={"Pair"}),
+        "T": FormalDecl("T", "theorem", "M", 3, type_deps={"Pair.v", "Pair"}),
+    }
+    fg = nx.DiGraph([("Pair", "Pair.v"), ("Pair.v", "T"), ("Pair", "T")])
+    named = select(decls, fg, {"T": 1.0, "Pair.v": 0.5, "Pair": 0.1}, count=1)
+    assert named == {"T", "Pair"}  # Pair.v is added for readability, then shown as part of Pair
+    assert select(decls, fg, {"Pair.v": 1.0, "T": 0.5, "Pair": 0.1}, count=1, define_used=False) == {"Pair"}
