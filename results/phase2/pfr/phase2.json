@@ -1,0 +1,307 @@
+{
+  "project": "PFR",
+  "provenance": "teorth/pfr @ ddd44f6ce82e, Lean v4.35.0-rc2",
+  "key_nodes": {
+    "n_decls": 1395,
+    "n_positive": 248,
+    "base_rate": 0.17777777777777778,
+    "single": {
+      "users (in project)": {
+        "auroc": 0.5991471440222741,
+        "p_at_k": 0.23790322580645162
+      },
+      "uses (in project)": {
+        "auroc": 0.7931314509098069,
+        "p_at_k": 0.49193548387096775
+      },
+      "pagerank, towards results": {
+        "auroc": 0.7651798520685097,
+        "p_at_k": 0.5201612903225806
+      },
+      "pagerank, towards utilities": {
+        "auroc": 0.5225307253142841,
+        "p_at_k": 0.1693548387096774
+      },
+      "betweenness": {
+        "auroc": 0.7937589644795681,
+        "p_at_k": 0.5282258064516129
+      },
+      "dominated declarations": {
+        "auroc": 0.6248787158646679,
+        "p_at_k": 0.33064516129032256
+      },
+      "proof size": {
+        "auroc": 0.7585320752594426,
+        "p_at_k": 0.4596774193548387
+      },
+      "statement size": {
+        "auroc": 0.7409757572348624,
+        "p_at_k": 0.4435483870967742
+      },
+      "proof / statement size": {
+        "auroc": 0.6977827853868437,
+        "p_at_k": 0.3629032258064516
+      },
+      "is private": {
+        "auroc": 0.468613775065388,
+        "p_at_k": 0.05241935483870968
+      },
+      "is definition": {
+        "auroc": 0.49057323452484747,
+        "p_at_k": 0.10080645161290322
+      },
+      "is instance": {
+        "auroc": 0.4899738448125545,
+        "p_at_k": 0.05241935483870968
+      },
+      "in ForMathlib/Mathlib module": {
+        "auroc": 0.3684612031386225,
+        "p_at_k": 0.036290322580645164
+      },
+      "primed name": {
+        "auroc": 0.4980928509154316,
+        "p_at_k": 0.12903225806451613
+      },
+      "name length": {
+        "auroc": 0.51532926006131,
+        "p_at_k": 0.125
+      }
+    },
+    "combined": {
+      "auroc": 0.866743890091965,
+      "average_precision": 0.5994135242223411,
+      "p_at_k": 0.6088709677419355,
+      "coefficients": {
+        "users (in project)": 0.7768115326797563,
+        "uses (in project)": 0.5128758258629064,
+        "pagerank, towards results": 0.5346120729807065,
+        "pagerank, towards utilities": -0.02401231082286689,
+        "betweenness": 0.31711874082388664,
+        "dominated declarations": -0.2246791420412139,
+        "proof size": 0.4738315185735565,
+        "statement size": 0.7644453675356535,
+        "proof / statement size": -0.06969735474392617,
+        "is private": -1.2532624040424527,
+        "is definition": 0.405343455181164,
+        "is instance": -0.42817469086108284,
+        "in ForMathlib/Mathlib module": -0.3818969776775105,
+        "primed name": -0.1674287259524731,
+        "name length": 0.09766787867993873
+      }
+    },
+    "random_p_at_k": 0.1766733870967742,
+    "top_unlabelled": [
+      "averaged_final",
+      "ProbabilityTheory.Kernel.chain_rule",
+      "app_ent_PFR'",
+      "weak_PFR_asymm_prelim",
+      "tau_strictly_decreases_aux",
+      "ProbabilityTheory.Kernel.entropy_compProd",
+      "tau_strictly_decreases_aux'",
+      "dist_of_min_eq_zero'",
+      "gen_ineq_aux2",
+      "gen_ineq_aux1",
+      "gen_ineq_10",
+      "new_gen_ineq_aux1",
+      "dist_le_of_sum_zero_cond",
+      "ProbabilityTheory.Kernel.entropy_snd_sub_mutualInfo_le_entropy_map_of_injective",
+      "Q_dist"
+    ],
+    "bottom_labelled": [
+      "ProbabilityTheory.entropy_le_log_card",
+      "ProbabilityTheory.entropy_le_log_card_of_mem",
+      "ProbabilityTheory.condEntropy_comp_of_injective",
+      "ProbabilityTheory.mutualInfo_def",
+      "ProbabilityTheory.condEntropy_add_right",
+      "Real.sum_mul_log_div_eq_iff",
+      "diff_ent_le_rdist'",
+      "diff_ent_le_rdist''",
+      "card_of_dual",
+      "condRho_of_translate",
+      "Finset.addEnergy'",
+      "ProbabilityTheory.condEntropy_sub_left",
+      "ProbabilityTheory.entropy_assoc",
+      "hahn_banach",
+      "ProbabilityTheory.condEntropy_sub_right"
+    ]
+  },
+  "clustering": {
+    "Lean module of the node's declaration": {
+      "clusters": 28,
+      "ari": 0.601273261816812,
+      "nmi": 0.8274989163814254
+    },
+    "Louvain communities (Lean graph)": {
+      "clusters": 8,
+      "ari": 0.48445054995480363,
+      "nmi": 0.5817018282595784
+    },
+    "Greedy modularity (Lean graph)": {
+      "clusters": 8,
+      "ari": 0.3491108799232298,
+      "nmi": 0.5597319152569764
+    },
+    "Random (chapter sizes kept)": {
+      "clusters": 13,
+      "ari": -0.0003213212033882318,
+      "nmi": 0.13851335791608937
+    }
+  },
+  "ordering": {
+    "orders": {
+      "Human (blueprint)": {
+        "tau_whole": 1.0,
+        "tau_within_chapters": 1.0,
+        "mean_open": 45.53623188405797,
+        "forward_refs": 8,
+        "chapter_runs": 13
+      },
+      "Lean source order": {
+        "tau_whole": 0.5760869565217391,
+        "tau_within_chapters": 0.8693958273675519,
+        "mean_open": 56.31884057971015,
+        "forward_refs": 2,
+        "chapter_runs": 25
+      },
+      "Just-in-time DFS": {
+        "tau_whole": 0.22547380156075814,
+        "tau_within_chapters": 0.4731982592782778,
+        "mean_open": 49.02415458937198,
+        "forward_refs": 1,
+        "chapter_runs": 77
+      },
+      "Global optimum (greedy + local search)": {
+        "tau_whole": 0.11464139725009292,
+        "tau_within_chapters": 0.5377056142111647,
+        "mean_open": 44.43961352657005,
+        "forward_refs": 1,
+        "chapter_runs": 106
+      },
+      "Cluster-then-order, true chapters": {
+        "tau_whole": 0.9543849869936827,
+        "tau_within_chapters": 0.7286002789773056,
+        "mean_open": 44.27536231884058,
+        "forward_refs": 6,
+        "chapter_runs": 13
+      },
+      "Cluster-then-order, Lean modules": {
+        "tau_whole": 0.5582497212931996,
+        "tau_within_chapters": 0.7279403522767367,
+        "mean_open": 55.98067632850242,
+        "forward_refs": 1,
+        "chapter_runs": 25
+      },
+      "LLM within true chapters": {
+        "tau_whole": 0.9836492010405053,
+        "tau_within_chapters": 0.8484555588582683,
+        "mean_open": 45.405797101449274,
+        "forward_refs": 6,
+        "chapter_runs": 13
+      },
+      "Random topological (mean of 200)": {
+        "tau_whole": 0.2509517837235229,
+        "tau_within_chapters": 0.5399979540725695,
+        "mean_open": 63.787584541062806,
+        "forward_refs": 0,
+        "chapter_runs": 162.605
+      }
+    },
+    "per_chapter_tau": {
+      "entropy": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.6666666666666667,
+        "Just-in-time DFS": 0.5026455026455027,
+        "Global optimum (greedy + local search)": 0.11111111111111116,
+        "Cluster-then-order, true chapters": 0.6296296296296297,
+        "Cluster-then-order, Lean modules": 0.3386243386243386,
+        "LLM within true chapters": 0.9206349206349207
+      },
+      "distance": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.7846153846153846,
+        "Just-in-time DFS": 0.4030769230769231,
+        "Global optimum (greedy + local search)": 0.3107692307692308,
+        "Cluster-then-order, true chapters": 0.16923076923076918,
+        "Cluster-then-order, Lean modules": 0.6369230769230769,
+        "LLM within true chapters": 0.7476923076923077
+      },
+      "entropy_pfr": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 1.0,
+        "Just-in-time DFS": 0.5652173913043479,
+        "Global optimum (greedy + local search)": 0.383399209486166,
+        "Cluster-then-order, true chapters": 0.8023715415019763,
+        "Cluster-then-order, Lean modules": 0.9130434782608696,
+        "LLM within true chapters": 0.9683794466403162
+      },
+      "improved_exponent": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.8666666666666667,
+        "Just-in-time DFS": 0.7333333333333334,
+        "Global optimum (greedy + local search)": 0.7333333333333334,
+        "Cluster-then-order, true chapters": 1.0,
+        "Cluster-then-order, Lean modules": 1.0,
+        "LLM within true chapters": 0.8666666666666667
+      },
+      "approx_hom_pfr": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 1.0,
+        "Just-in-time DFS": 0.0714285714285714,
+        "Global optimum (greedy + local search)": 0.7857142857142857,
+        "Cluster-then-order, true chapters": 1.0,
+        "Cluster-then-order, Lean modules": 0.7857142857142857,
+        "LLM within true chapters": 0.7857142857142857
+      },
+      "weak_pfr": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.7333333333333334,
+        "Just-in-time DFS": 0.6444444444444444,
+        "Global optimum (greedy + local search)": 0.7777777777777778,
+        "Cluster-then-order, true chapters": 0.7333333333333334,
+        "Cluster-then-order, Lean modules": 0.4666666666666667,
+        "LLM within true chapters": 0.7333333333333334
+      },
+      "torsion": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.9095744680851063,
+        "Just-in-time DFS": 0.2978723404255319,
+        "Global optimum (greedy + local search)": 0.36170212765957444,
+        "Cluster-then-order, true chapters": 0.6507092198581561,
+        "Cluster-then-order, Lean modules": 0.8333333333333334,
+        "LLM within true chapters": 0.898936170212766
+      },
+      "further_improvement": {
+        "Human (blueprint)": 1.0,
+        "Lean source order": 0.9943100995732574,
+        "Just-in-time DFS": 0.5675675675675675,
+        "Global optimum (greedy + local search)": 0.8378378378378378,
+        "Cluster-then-order, true chapters": 0.8435277382645804,
+        "Cluster-then-order, Lean modules": 0.8492176386913229,
+        "LLM within true chapters": 0.8662873399715505
+      }
+    },
+    "llm": {
+      "chapters_answered": [
+        "entropy",
+        "distance",
+        "entropy_pfr",
+        "improved_exponent",
+        "approx_hom_pfr",
+        "weak_pfr",
+        "torsion",
+        "further_improvement"
+      ],
+      "constraint_violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      },
+      "invalid_responses": []
+    }
+  }
+}

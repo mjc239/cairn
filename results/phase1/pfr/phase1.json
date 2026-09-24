@@ -1,0 +1,5594 @@
+{
+  "project": "PFR",
+  "provenance": "teorth/pfr @ ddd44f6ce82e, Lean leanprover/lean4:v4.35.0-rc2",
+  "stats": {
+    "project_decls": 1395,
+    "project_decls_by_kind": {
+      "def": 139,
+      "inductive": 10,
+      "opaque": 2,
+      "theorem": 1244
+    },
+    "formal_edges": 5768,
+    "blueprint_nodes": 218,
+    "blueprint_nodes_with_formal_decl": 208,
+    "lean_names_resolved": 251,
+    "lean_names_missing": {
+      "concave": [
+        "Real.strictConcaveOn_negMulLog"
+      ],
+      "condition-event-def": [
+        "ProbabilityTheory.cond"
+      ],
+      "independent-def": [
+        "ProbabilityTheory.IndepFun"
+      ],
+      "ruz-cov": [
+        "Finset.ruzsa_covering_add"
+      ]
+    },
+    "coverage": 0.984313725490196,
+    "labelled_decls": 248,
+    "unlabelled_theorems": 1019,
+    "edges": {
+      "author_edges": 469,
+      "lean_edges": 1172,
+      "author_direct_in_lean": 407,
+      "author_implied_transitively": 20,
+      "author_absent_from_lean": [
+        [
+          "add-entropy",
+          "entropic-bsg"
+        ],
+        [
+          "alternative-mutual",
+          "cond-reduce"
+        ],
+        [
+          "alternative-mutual",
+          "mutual-nonneg"
+        ],
+        [
+          "alternative-mutual",
+          "subadditive"
+        ],
+        [
+          "cond-multidist-alt",
+          "cond-multidist-lower"
+        ],
+        [
+          "cond-reduce",
+          "submodularity"
+        ],
+        [
+          "copy-ent",
+          "cond-dist-alt"
+        ],
+        [
+          "copy-ent",
+          "ruz-indep"
+        ],
+        [
+          "first-useful",
+          "key"
+        ],
+        [
+          "first-useful",
+          "lem:get-better"
+        ],
+        [
+          "hb-thm",
+          "goursat"
+        ],
+        [
+          "independent-exist",
+          "ruz-dist-def"
+        ],
+        [
+          "information-def",
+          "conditional-mutual-def"
+        ],
+        [
+          "klm-3",
+          "key"
+        ],
+        [
+          "neg-ent",
+          "klm-2"
+        ],
+        [
+          "neg-ent",
+          "ruzsa-diff"
+        ],
+        [
+          "neg-ent",
+          "ruzsa-growth"
+        ],
+        [
+          "neg-ent",
+          "sumset-lower-gen"
+        ],
+        [
+          "relabeled-entropy",
+          "ruz-indep"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "shear-ent"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "zero-large"
+        ],
+        [
+          "rho-BSG-triplet-symmetrized",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "ruz-copy",
+          "cond-dist-alt"
+        ],
+        [
+          "ruz-dist-def",
+          "cond-dist-def"
+        ],
+        [
+          "ruz-dist-def",
+          "dist-zero"
+        ],
+        [
+          "ruz-dist-def",
+          "ruz-copy"
+        ],
+        [
+          "ruz-dist-def",
+          "tau-def"
+        ],
+        [
+          "ruz-indep",
+          "cond-dist-alt"
+        ],
+        [
+          "ruzsa-nonneg",
+          "fibring-ineq"
+        ],
+        [
+          "second-estimate-aux",
+          "dist-diff-bound"
+        ],
+        [
+          "subadditive",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "submodularity",
+          "conditional-nonneg"
+        ],
+        [
+          "submodularity",
+          "fibring-ident"
+        ],
+        [
+          "sumset-lower-gen",
+          "sumset-lower-gen-cond"
+        ],
+        [
+          "sym-group",
+          "lem:100pc-self"
+        ],
+        [
+          "sym-group-def",
+          "sym-group"
+        ],
+        [
+          "tau-def",
+          "main-entropy"
+        ],
+        [
+          "tau-min",
+          "de-prop-lim-improv"
+        ],
+        [
+          "tau-min",
+          "distance-lower"
+        ],
+        [
+          "uniform-entropy-II",
+          "pfr_aux"
+        ],
+        [
+          "uniform-entropy-II",
+          "pfr_aux-improv"
+        ],
+        [
+          "uniform-entropy-II",
+          "pfr_aux_torsion"
+        ]
+      ],
+      "lean_unreported_by_author": [
+        [
+          "Gibbs",
+          "pfr-9-aux"
+        ],
+        [
+          "Gibbs",
+          "rho-cond"
+        ],
+        [
+          "Gibbs",
+          "rho-cts"
+        ],
+        [
+          "Gibbs",
+          "rho-subgroup"
+        ],
+        [
+          "Gibbs",
+          "rho-sums"
+        ],
+        [
+          "Gibbs",
+          "rhominus-subgroup"
+        ],
+        [
+          "add-entropy",
+          "first-useful"
+        ],
+        [
+          "add-entropy",
+          "rho-cond-sym"
+        ],
+        [
+          "add-entropy",
+          "torsion-free-doubling"
+        ],
+        [
+          "alt-submodularity",
+          "entropic-bsg"
+        ],
+        [
+          "alt-submodularity",
+          "kv"
+        ],
+        [
+          "alternative-mutual",
+          "cond-dist-fact"
+        ],
+        [
+          "alternative-mutual",
+          "construct-good-improv"
+        ],
+        [
+          "alternative-mutual",
+          "data-process-unc"
+        ],
+        [
+          "alternative-mutual",
+          "dist-projection"
+        ],
+        [
+          "alternative-mutual",
+          "key"
+        ],
+        [
+          "alternative-mutual",
+          "xi-z2-w-dist"
+        ],
+        [
+          "bound-conc",
+          "weak-pfr-asymm"
+        ],
+        [
+          "chain-rule",
+          "cond-reduce"
+        ],
+        [
+          "chain-rule",
+          "cond-trial-ent"
+        ],
+        [
+          "chain-rule",
+          "cor-multid"
+        ],
+        [
+          "chain-rule",
+          "dist-diff-bound"
+        ],
+        [
+          "chain-rule",
+          "entropic-bsg"
+        ],
+        [
+          "chain-rule",
+          "gen-ineq"
+        ],
+        [
+          "chain-rule",
+          "relabeled-entropy-cond"
+        ],
+        [
+          "chain-rule",
+          "rho-cond-sym"
+        ],
+        [
+          "chain-rule",
+          "submodularity"
+        ],
+        [
+          "chain-rule",
+          "uvw-s"
+        ],
+        [
+          "cond-dist-alt",
+          "I1-I2-diff"
+        ],
+        [
+          "cond-dist-alt",
+          "cor-fibre"
+        ],
+        [
+          "cond-dist-alt",
+          "dist-diff-bound"
+        ],
+        [
+          "cond-dist-alt",
+          "gen-ineq"
+        ],
+        [
+          "cond-dist-alt",
+          "key"
+        ],
+        [
+          "cond-dist-alt",
+          "total-dist"
+        ],
+        [
+          "cond-dist-def",
+          "I1-I2-diff"
+        ],
+        [
+          "cond-dist-def",
+          "averaged-construct-good"
+        ],
+        [
+          "cond-dist-def",
+          "cond-multidist-lower"
+        ],
+        [
+          "cond-dist-def",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "cond-dist-def",
+          "construct-good-improv"
+        ],
+        [
+          "cond-dist-def",
+          "construct-good-prelim"
+        ],
+        [
+          "cond-dist-def",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "cond-dist-def",
+          "cor-fibre"
+        ],
+        [
+          "cond-dist-def",
+          "de-prop"
+        ],
+        [
+          "cond-dist-def",
+          "de-prop-improv"
+        ],
+        [
+          "cond-dist-def",
+          "dist-diff-bound"
+        ],
+        [
+          "cond-dist-def",
+          "fibring-ident"
+        ],
+        [
+          "cond-dist-def",
+          "fibring-ineq"
+        ],
+        [
+          "cond-dist-def",
+          "first-cond"
+        ],
+        [
+          "cond-dist-def",
+          "first-estimate"
+        ],
+        [
+          "cond-dist-def",
+          "first-fibre"
+        ],
+        [
+          "cond-dist-def",
+          "first-upper"
+        ],
+        [
+          "cond-dist-def",
+          "first-useful"
+        ],
+        [
+          "cond-dist-def",
+          "foursum-bound"
+        ],
+        [
+          "cond-dist-def",
+          "gen-ineq"
+        ],
+        [
+          "cond-dist-def",
+          "k-vanish"
+        ],
+        [
+          "cond-dist-def",
+          "key"
+        ],
+        [
+          "cond-dist-def",
+          "lem:get-better"
+        ],
+        [
+          "cond-dist-def",
+          "phi-first-estimate"
+        ],
+        [
+          "cond-dist-def",
+          "phi-second-estimate"
+        ],
+        [
+          "cond-dist-def",
+          "rho-increase"
+        ],
+        [
+          "cond-dist-def",
+          "second-estimate"
+        ],
+        [
+          "cond-dist-def",
+          "second-useful"
+        ],
+        [
+          "cond-dist-def",
+          "single-fibres"
+        ],
+        [
+          "cond-dist-def",
+          "total-dist"
+        ],
+        [
+          "cond-dist-def",
+          "xi-z2-w-dist"
+        ],
+        [
+          "cond-dist-fact",
+          "key"
+        ],
+        [
+          "cond-dist-fact",
+          "lem:get-better"
+        ],
+        [
+          "cond-distance-lower",
+          "second-estimate"
+        ],
+        [
+          "cond-multidist-alt",
+          "cor-multid"
+        ],
+        [
+          "cond-multidist-alt",
+          "multidist-chain-rule"
+        ],
+        [
+          "cond-multidist-def",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "cond-multidist-def",
+          "cor-multid"
+        ],
+        [
+          "cond-multidist-def",
+          "key"
+        ],
+        [
+          "cond-multidist-def",
+          "multidist-chain-rule"
+        ],
+        [
+          "cond-multidist-def",
+          "multidist-chain-rule-cond"
+        ],
+        [
+          "cond-multidist-def",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "cond-multidist-nonneg",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "cond-reduce",
+          "entropic-bsg"
+        ],
+        [
+          "cond-trial-ent",
+          "sign-flip"
+        ],
+        [
+          "conditional-chain-rule",
+          "conditional-mutual-alt"
+        ],
+        [
+          "conditional-entropy-def",
+          "alt-submodularity"
+        ],
+        [
+          "conditional-entropy-def",
+          "alternative-mutual"
+        ],
+        [
+          "conditional-entropy-def",
+          "cond-dist-fact"
+        ],
+        [
+          "conditional-entropy-def",
+          "cond-reduce"
+        ],
+        [
+          "conditional-entropy-def",
+          "cond-trial-ent"
+        ],
+        [
+          "conditional-entropy-def",
+          "conditional-chain-rule"
+        ],
+        [
+          "conditional-entropy-def",
+          "conditional-mutual-alt"
+        ],
+        [
+          "conditional-entropy-def",
+          "cor-fibre"
+        ],
+        [
+          "conditional-entropy-def",
+          "cor-multid"
+        ],
+        [
+          "conditional-entropy-def",
+          "data-process-single"
+        ],
+        [
+          "conditional-entropy-def",
+          "data-process-unc-one"
+        ],
+        [
+          "conditional-entropy-def",
+          "de-prop-improv"
+        ],
+        [
+          "conditional-entropy-def",
+          "dist-diff-bound"
+        ],
+        [
+          "conditional-entropy-def",
+          "dist-projection"
+        ],
+        [
+          "conditional-entropy-def",
+          "fibring-ident"
+        ],
+        [
+          "conditional-entropy-def",
+          "gen-ineq"
+        ],
+        [
+          "conditional-entropy-def",
+          "key"
+        ],
+        [
+          "conditional-entropy-def",
+          "kl-cond"
+        ],
+        [
+          "conditional-entropy-def",
+          "multidist-chain-rule"
+        ],
+        [
+          "conditional-entropy-def",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "conditional-entropy-def",
+          "mutual-w-z2"
+        ],
+        [
+          "conditional-entropy-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "conditional-entropy-def",
+          "rho-cond"
+        ],
+        [
+          "conditional-entropy-def",
+          "rho-cond-sym"
+        ],
+        [
+          "conditional-entropy-def",
+          "rho-increase"
+        ],
+        [
+          "conditional-entropy-def",
+          "shear-ent"
+        ],
+        [
+          "conditional-entropy-def",
+          "submodularity"
+        ],
+        [
+          "conditional-entropy-def",
+          "sumset-lower-gen"
+        ],
+        [
+          "conditional-entropy-def",
+          "sumset-lower-gen-cond"
+        ],
+        [
+          "conditional-entropy-def",
+          "symm-lemma"
+        ],
+        [
+          "conditional-entropy-def",
+          "total-dist"
+        ],
+        [
+          "conditional-entropy-def",
+          "uvw-s"
+        ],
+        [
+          "conditional-entropy-def",
+          "zero-large"
+        ],
+        [
+          "conditional-independent-def",
+          "cond-trial-ent"
+        ],
+        [
+          "conditional-independent-def",
+          "entropic-bsg"
+        ],
+        [
+          "conditional-independent-def",
+          "sign-flip"
+        ],
+        [
+          "conditional-mutual-alt",
+          "cor-fibre"
+        ],
+        [
+          "conditional-mutual-alt",
+          "cor-multid"
+        ],
+        [
+          "conditional-mutual-alt",
+          "key"
+        ],
+        [
+          "conditional-mutual-alt",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "conditional-mutual-alt",
+          "rho-increase"
+        ],
+        [
+          "conditional-mutual-alt",
+          "uvw-s"
+        ],
+        [
+          "conditional-mutual-def",
+          "I1-I2-diff"
+        ],
+        [
+          "conditional-mutual-def",
+          "averaged-construct-good"
+        ],
+        [
+          "conditional-mutual-def",
+          "cond-trial-ent"
+        ],
+        [
+          "conditional-mutual-def",
+          "conditional-vanish"
+        ],
+        [
+          "conditional-mutual-def",
+          "cor-fibre"
+        ],
+        [
+          "conditional-mutual-def",
+          "cor-multid"
+        ],
+        [
+          "conditional-mutual-def",
+          "de-prop"
+        ],
+        [
+          "conditional-mutual-def",
+          "de-prop-improv"
+        ],
+        [
+          "conditional-mutual-def",
+          "fibring-ident"
+        ],
+        [
+          "conditional-mutual-def",
+          "first-estimate"
+        ],
+        [
+          "conditional-mutual-def",
+          "first-fibre"
+        ],
+        [
+          "conditional-mutual-def",
+          "foursum-bound"
+        ],
+        [
+          "conditional-mutual-def",
+          "gen-ineq"
+        ],
+        [
+          "conditional-mutual-def",
+          "k-vanish"
+        ],
+        [
+          "conditional-mutual-def",
+          "key"
+        ],
+        [
+          "conditional-mutual-def",
+          "multidist-chain-rule"
+        ],
+        [
+          "conditional-mutual-def",
+          "multidist-chain-rule-cond"
+        ],
+        [
+          "conditional-mutual-def",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "conditional-mutual-def",
+          "phi-first-estimate"
+        ],
+        [
+          "conditional-mutual-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "conditional-mutual-def",
+          "phi-second-estimate"
+        ],
+        [
+          "conditional-mutual-def",
+          "prop:52"
+        ],
+        [
+          "conditional-mutual-def",
+          "rho-increase"
+        ],
+        [
+          "conditional-mutual-def",
+          "second-estimate"
+        ],
+        [
+          "conditional-mutual-def",
+          "second-estimate-aux"
+        ],
+        [
+          "conditional-mutual-def",
+          "symm-lemma"
+        ],
+        [
+          "conditional-mutual-def",
+          "total-dist"
+        ],
+        [
+          "conditional-nonneg",
+          "fibring-ident"
+        ],
+        [
+          "copy-ent",
+          "cond-dist-fact"
+        ],
+        [
+          "copy-ent",
+          "cond-multidist-alt"
+        ],
+        [
+          "copy-ent",
+          "dist-diff-bound"
+        ],
+        [
+          "copy-ent",
+          "dist-projection"
+        ],
+        [
+          "copy-ent",
+          "dist-sums"
+        ],
+        [
+          "copy-ent",
+          "ent-w"
+        ],
+        [
+          "copy-ent",
+          "ent-z2"
+        ],
+        [
+          "copy-ent",
+          "first-upper"
+        ],
+        [
+          "copy-ent",
+          "first-useful"
+        ],
+        [
+          "copy-ent",
+          "gen-ineq"
+        ],
+        [
+          "copy-ent",
+          "key"
+        ],
+        [
+          "copy-ent",
+          "multidist-copy"
+        ],
+        [
+          "copy-ent",
+          "multidist-perm"
+        ],
+        [
+          "copy-ent",
+          "multidist-ruzsa-III"
+        ],
+        [
+          "copy-ent",
+          "multidist-ruzsa-IV"
+        ],
+        [
+          "copy-ent",
+          "mutual-w-z2"
+        ],
+        [
+          "copy-ent",
+          "pfr-rho"
+        ],
+        [
+          "copy-ent",
+          "phi-first-estimate"
+        ],
+        [
+          "copy-ent",
+          "phi-min-exist"
+        ],
+        [
+          "copy-ent",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "copy-ent",
+          "phi-second-estimate"
+        ],
+        [
+          "copy-ent",
+          "rho-BSG-triplet"
+        ],
+        [
+          "copy-ent",
+          "rho-cond-sym"
+        ],
+        [
+          "copy-ent",
+          "rho-increase"
+        ],
+        [
+          "copy-ent",
+          "ruzsa-diff"
+        ],
+        [
+          "copy-ent",
+          "second-estimate"
+        ],
+        [
+          "copy-ent",
+          "second-estimate-aux"
+        ],
+        [
+          "copy-ent",
+          "sign-flip"
+        ],
+        [
+          "copy-ent",
+          "sum-dilate-I"
+        ],
+        [
+          "copy-ent",
+          "sum-dilate-II"
+        ],
+        [
+          "copy-ent",
+          "torsion-free-doubling"
+        ],
+        [
+          "copy-ent",
+          "total-dist"
+        ],
+        [
+          "copy-ent",
+          "uvw-s"
+        ],
+        [
+          "copy-ent",
+          "weak-pfr-asymm"
+        ],
+        [
+          "copy-ent",
+          "xi-z2-w-dist"
+        ],
+        [
+          "copy-ent",
+          "zero-large"
+        ],
+        [
+          "data-process-single",
+          "pfr-projection'"
+        ],
+        [
+          "data-process-single",
+          "relabeled-entropy"
+        ],
+        [
+          "data-process-single",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "data-process-single",
+          "weak-pfr-asymm"
+        ],
+        [
+          "dist-sums",
+          "second-estimate"
+        ],
+        [
+          "energy-def",
+          "approx-hom-pfr"
+        ],
+        [
+          "entropy-comm",
+          "I1-I2-diff"
+        ],
+        [
+          "entropy-comm",
+          "chain-rule"
+        ],
+        [
+          "entropy-comm",
+          "cond-trial-ent"
+        ],
+        [
+          "entropy-comm",
+          "construct-good"
+        ],
+        [
+          "entropy-comm",
+          "construct-good-prelim"
+        ],
+        [
+          "entropy-comm",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "entropy-comm",
+          "cor-fibre"
+        ],
+        [
+          "entropy-comm",
+          "cor-multid"
+        ],
+        [
+          "entropy-comm",
+          "entropic-bsg"
+        ],
+        [
+          "entropy-comm",
+          "gen-ineq"
+        ],
+        [
+          "entropy-comm",
+          "key"
+        ],
+        [
+          "entropy-comm",
+          "lem:get-better"
+        ],
+        [
+          "entropy-comm",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "entropy-comm",
+          "prop:52"
+        ],
+        [
+          "entropy-comm",
+          "rho-increase"
+        ],
+        [
+          "entropy-comm",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "entropy-comm",
+          "sumset-lower-gen-cond"
+        ],
+        [
+          "entropy-comm",
+          "uvw-s"
+        ],
+        [
+          "entropy-def",
+          "I1-I2-diff"
+        ],
+        [
+          "entropy-def",
+          "add-entropy"
+        ],
+        [
+          "entropy-def",
+          "alt-submodularity"
+        ],
+        [
+          "entropy-def",
+          "alternative-mutual"
+        ],
+        [
+          "entropy-def",
+          "app-ent-pfr"
+        ],
+        [
+          "entropy-def",
+          "averaged-construct-good"
+        ],
+        [
+          "entropy-def",
+          "chain-rule"
+        ],
+        [
+          "entropy-def",
+          "compare-sums"
+        ],
+        [
+          "entropy-def",
+          "cond-dist-alt"
+        ],
+        [
+          "entropy-def",
+          "cond-dist-fact"
+        ],
+        [
+          "entropy-def",
+          "cond-distance-lower"
+        ],
+        [
+          "entropy-def",
+          "cond-multidist-alt"
+        ],
+        [
+          "entropy-def",
+          "cond-multidist-lower"
+        ],
+        [
+          "entropy-def",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "entropy-def",
+          "cond-reduce"
+        ],
+        [
+          "entropy-def",
+          "cond-trial-ent"
+        ],
+        [
+          "entropy-def",
+          "conditional-chain-rule"
+        ],
+        [
+          "entropy-def",
+          "conditional-mutual-alt"
+        ],
+        [
+          "entropy-def",
+          "conditional-mutual-def"
+        ],
+        [
+          "entropy-def",
+          "conditional-nonneg"
+        ],
+        [
+          "entropy-def",
+          "conditional-vanish"
+        ],
+        [
+          "entropy-def",
+          "construct-good"
+        ],
+        [
+          "entropy-def",
+          "construct-good-improv"
+        ],
+        [
+          "entropy-def",
+          "construct-good-prelim"
+        ],
+        [
+          "entropy-def",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "entropy-def",
+          "cor-fibre"
+        ],
+        [
+          "entropy-def",
+          "cor-multid"
+        ],
+        [
+          "entropy-def",
+          "data-process-single"
+        ],
+        [
+          "entropy-def",
+          "data-process-unc-one"
+        ],
+        [
+          "entropy-def",
+          "de-prop"
+        ],
+        [
+          "entropy-def",
+          "de-prop-improv"
+        ],
+        [
+          "entropy-def",
+          "de-prop-lim-improv"
+        ],
+        [
+          "entropy-def",
+          "dist-diff-bound"
+        ],
+        [
+          "entropy-def",
+          "dist-projection"
+        ],
+        [
+          "entropy-def",
+          "dist-sums"
+        ],
+        [
+          "entropy-def",
+          "dist-zero"
+        ],
+        [
+          "entropy-def",
+          "distance-lower"
+        ],
+        [
+          "entropy-def",
+          "ent-w"
+        ],
+        [
+          "entropy-def",
+          "ent-z2"
+        ],
+        [
+          "entropy-def",
+          "entropic-bsg"
+        ],
+        [
+          "entropy-def",
+          "entropy-comm"
+        ],
+        [
+          "entropy-def",
+          "entropy-pfr"
+        ],
+        [
+          "entropy-def",
+          "entropy-pfr-improv"
+        ],
+        [
+          "entropy-def",
+          "fibring-ident"
+        ],
+        [
+          "entropy-def",
+          "fibring-ineq"
+        ],
+        [
+          "entropy-def",
+          "first-cond"
+        ],
+        [
+          "entropy-def",
+          "first-dist-sum"
+        ],
+        [
+          "entropy-def",
+          "first-estimate"
+        ],
+        [
+          "entropy-def",
+          "first-fibre"
+        ],
+        [
+          "entropy-def",
+          "first-upper"
+        ],
+        [
+          "entropy-def",
+          "first-useful"
+        ],
+        [
+          "entropy-def",
+          "foursum-bound"
+        ],
+        [
+          "entropy-def",
+          "gen-ineq"
+        ],
+        [
+          "entropy-def",
+          "k-vanish"
+        ],
+        [
+          "entropy-def",
+          "key"
+        ],
+        [
+          "entropy-def",
+          "kl-cond"
+        ],
+        [
+          "entropy-def",
+          "klm-1"
+        ],
+        [
+          "entropy-def",
+          "klm-2"
+        ],
+        [
+          "entropy-def",
+          "klm-3"
+        ],
+        [
+          "entropy-def",
+          "kv"
+        ],
+        [
+          "entropy-def",
+          "lem:100pc"
+        ],
+        [
+          "entropy-def",
+          "lem:100pc-self"
+        ],
+        [
+          "entropy-def",
+          "lem:get-better"
+        ],
+        [
+          "entropy-def",
+          "main-entropy"
+        ],
+        [
+          "entropy-def",
+          "multi-zero"
+        ],
+        [
+          "entropy-def",
+          "multidist-chain-rule"
+        ],
+        [
+          "entropy-def",
+          "multidist-copy"
+        ],
+        [
+          "entropy-def",
+          "multidist-def"
+        ],
+        [
+          "entropy-def",
+          "multidist-indep"
+        ],
+        [
+          "entropy-def",
+          "multidist-lower"
+        ],
+        [
+          "entropy-def",
+          "multidist-nonneg"
+        ],
+        [
+          "entropy-def",
+          "multidist-perm"
+        ],
+        [
+          "entropy-def",
+          "multidist-ruzsa-I"
+        ],
+        [
+          "entropy-def",
+          "multidist-ruzsa-II"
+        ],
+        [
+          "entropy-def",
+          "multidist-ruzsa-III"
+        ],
+        [
+          "entropy-def",
+          "multidist-ruzsa-IV"
+        ],
+        [
+          "entropy-def",
+          "mutual-nonneg"
+        ],
+        [
+          "entropy-def",
+          "mutual-w-z2"
+        ],
+        [
+          "entropy-def",
+          "neg-ent"
+        ],
+        [
+          "entropy-def",
+          "pfr-9-aux"
+        ],
+        [
+          "entropy-def",
+          "pfr-projection"
+        ],
+        [
+          "entropy-def",
+          "pfr-projection'"
+        ],
+        [
+          "entropy-def",
+          "pfr-rho"
+        ],
+        [
+          "entropy-def",
+          "pfr_aux"
+        ],
+        [
+          "entropy-def",
+          "pfr_aux-improv"
+        ],
+        [
+          "entropy-def",
+          "pfr_aux_torsion"
+        ],
+        [
+          "entropy-def",
+          "phi-first-estimate"
+        ],
+        [
+          "entropy-def",
+          "phi-min-def"
+        ],
+        [
+          "entropy-def",
+          "phi-min-exist"
+        ],
+        [
+          "entropy-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "entropy-def",
+          "phi-second-estimate"
+        ],
+        [
+          "entropy-def",
+          "prop:52"
+        ],
+        [
+          "entropy-def",
+          "relabeled-entropy-cond"
+        ],
+        [
+          "entropy-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "entropy-def",
+          "rho-BSG-triplet-symmetrized"
+        ],
+        [
+          "entropy-def",
+          "rho-cond"
+        ],
+        [
+          "entropy-def",
+          "rho-cond-sym"
+        ],
+        [
+          "entropy-def",
+          "rho-cts"
+        ],
+        [
+          "entropy-def",
+          "rho-increase"
+        ],
+        [
+          "entropy-def",
+          "rho-increase-symmetrized"
+        ],
+        [
+          "entropy-def",
+          "rho-invariant"
+        ],
+        [
+          "entropy-def",
+          "rho-subgroup"
+        ],
+        [
+          "entropy-def",
+          "rho-sums"
+        ],
+        [
+          "entropy-def",
+          "rho-sums-sym"
+        ],
+        [
+          "entropy-def",
+          "rhoplus-def"
+        ],
+        [
+          "entropy-def",
+          "rhoplus-subgroup"
+        ],
+        [
+          "entropy-def",
+          "ruz-copy"
+        ],
+        [
+          "entropy-def",
+          "ruz-indep"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-diff"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-growth"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-nonneg"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-symm"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-triangle"
+        ],
+        [
+          "entropy-def",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "entropy-def",
+          "second-estimate"
+        ],
+        [
+          "entropy-def",
+          "second-estimate-aux"
+        ],
+        [
+          "entropy-def",
+          "second-useful"
+        ],
+        [
+          "entropy-def",
+          "shear-ent"
+        ],
+        [
+          "entropy-def",
+          "sign-flip"
+        ],
+        [
+          "entropy-def",
+          "single-fibres"
+        ],
+        [
+          "entropy-def",
+          "subadditive"
+        ],
+        [
+          "entropy-def",
+          "submodularity"
+        ],
+        [
+          "entropy-def",
+          "sum-dilate-I"
+        ],
+        [
+          "entropy-def",
+          "sum-dilate-II"
+        ],
+        [
+          "entropy-def",
+          "sumset-lower"
+        ],
+        [
+          "entropy-def",
+          "sumset-lower-gen"
+        ],
+        [
+          "entropy-def",
+          "sumset-lower-gen-cond"
+        ],
+        [
+          "entropy-def",
+          "sym-zero"
+        ],
+        [
+          "entropy-def",
+          "symm-lemma"
+        ],
+        [
+          "entropy-def",
+          "tau-copy"
+        ],
+        [
+          "entropy-def",
+          "tau-def"
+        ],
+        [
+          "entropy-def",
+          "tau-def-multi"
+        ],
+        [
+          "entropy-def",
+          "tau-min"
+        ],
+        [
+          "entropy-def",
+          "tau-min-exist-multi"
+        ],
+        [
+          "entropy-def",
+          "tau-ref"
+        ],
+        [
+          "entropy-def",
+          "torsion-dist-shrinking"
+        ],
+        [
+          "entropy-def",
+          "torsion-free-doubling"
+        ],
+        [
+          "entropy-def",
+          "total-dist"
+        ],
+        [
+          "entropy-def",
+          "uvw-s"
+        ],
+        [
+          "entropy-def",
+          "vanish-entropy"
+        ],
+        [
+          "entropy-def",
+          "weak-pfr-asymm"
+        ],
+        [
+          "entropy-def",
+          "xi-z2-w-dist"
+        ],
+        [
+          "entropy-def",
+          "zero-large"
+        ],
+        [
+          "eta-def-multi",
+          "Zero-sum"
+        ],
+        [
+          "eta-def-multi",
+          "cond-multidist-lower"
+        ],
+        [
+          "eta-def-multi",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "eta-def-multi",
+          "ent-w"
+        ],
+        [
+          "eta-def-multi",
+          "ent-z2"
+        ],
+        [
+          "eta-def-multi",
+          "key"
+        ],
+        [
+          "eta-def-multi",
+          "multidist-lower"
+        ],
+        [
+          "eta-def-multi",
+          "mutual-w-z2"
+        ],
+        [
+          "eta-def-multi",
+          "prop:52"
+        ],
+        [
+          "eta-def-multi",
+          "tau-min-exist-multi"
+        ],
+        [
+          "eta-def-multi",
+          "tau-min-multi"
+        ],
+        [
+          "eta-def-multi",
+          "tau-ref"
+        ],
+        [
+          "eta-def-multi",
+          "xi-z2-w-dist"
+        ],
+        [
+          "first-estimate",
+          "de-prop-improv"
+        ],
+        [
+          "independent-exist",
+          "I1-I2-diff"
+        ],
+        [
+          "independent-exist",
+          "de-prop"
+        ],
+        [
+          "independent-exist",
+          "de-prop-improv"
+        ],
+        [
+          "independent-exist",
+          "key"
+        ],
+        [
+          "independent-exist",
+          "lem:100pc-self"
+        ],
+        [
+          "independent-exist",
+          "main-entropy"
+        ],
+        [
+          "independent-exist",
+          "multidist-nonneg"
+        ],
+        [
+          "independent-exist",
+          "multidist-ruzsa-I"
+        ],
+        [
+          "independent-exist",
+          "multidist-ruzsa-III"
+        ],
+        [
+          "independent-exist",
+          "pfr-9-aux"
+        ],
+        [
+          "independent-exist",
+          "pfr_aux"
+        ],
+        [
+          "independent-exist",
+          "pfr_aux-improv"
+        ],
+        [
+          "independent-exist",
+          "pfr_aux_torsion"
+        ],
+        [
+          "independent-exist",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "independent-exist",
+          "rho-sums"
+        ],
+        [
+          "independent-exist",
+          "ruzsa-diff"
+        ],
+        [
+          "independent-exist",
+          "sum-dilate-II"
+        ],
+        [
+          "independent-exist",
+          "torsion-free-doubling"
+        ],
+        [
+          "independent-exist",
+          "weak-pfr-asymm"
+        ],
+        [
+          "information-def",
+          "add-entropy"
+        ],
+        [
+          "information-def",
+          "averaged-construct-good"
+        ],
+        [
+          "information-def",
+          "cond-reduce"
+        ],
+        [
+          "information-def",
+          "conditional-vanish"
+        ],
+        [
+          "information-def",
+          "construct-good"
+        ],
+        [
+          "information-def",
+          "construct-good-improv"
+        ],
+        [
+          "information-def",
+          "construct-good-prelim"
+        ],
+        [
+          "information-def",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "information-def",
+          "data-process"
+        ],
+        [
+          "information-def",
+          "data-process-unc"
+        ],
+        [
+          "information-def",
+          "data-process-unc-one"
+        ],
+        [
+          "information-def",
+          "de-prop"
+        ],
+        [
+          "information-def",
+          "dist-projection"
+        ],
+        [
+          "information-def",
+          "entropic-bsg"
+        ],
+        [
+          "information-def",
+          "first-useful"
+        ],
+        [
+          "information-def",
+          "gen-ineq"
+        ],
+        [
+          "information-def",
+          "k-vanish"
+        ],
+        [
+          "information-def",
+          "key"
+        ],
+        [
+          "information-def",
+          "lem:get-better"
+        ],
+        [
+          "information-def",
+          "multidist-chain-rule-cond"
+        ],
+        [
+          "information-def",
+          "mutual-nonneg"
+        ],
+        [
+          "information-def",
+          "mutual-w-z2"
+        ],
+        [
+          "information-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "information-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "information-def",
+          "rho-BSG-triplet-symmetrized"
+        ],
+        [
+          "information-def",
+          "sumset-lower"
+        ],
+        [
+          "information-def",
+          "sumset-lower-gen"
+        ],
+        [
+          "information-def",
+          "xi-z2-w-dist"
+        ],
+        [
+          "information-def",
+          "zero-large"
+        ],
+        [
+          "jensen-bound",
+          "pfr-9-aux"
+        ],
+        [
+          "kl-div",
+          "Conditional-Gibbs"
+        ],
+        [
+          "kl-div",
+          "Gibbs-converse"
+        ],
+        [
+          "kl-div",
+          "kl-cond"
+        ],
+        [
+          "kl-div",
+          "kl-sums"
+        ],
+        [
+          "kl-div",
+          "pfr-9-aux"
+        ],
+        [
+          "kl-div",
+          "pfr-rho"
+        ],
+        [
+          "kl-div",
+          "phi-first-estimate"
+        ],
+        [
+          "kl-div",
+          "phi-min-exist"
+        ],
+        [
+          "kl-div",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "kl-div",
+          "phi-second-estimate"
+        ],
+        [
+          "kl-div",
+          "rho-BSG-triplet"
+        ],
+        [
+          "kl-div",
+          "rho-cond"
+        ],
+        [
+          "kl-div",
+          "rho-cond-sym"
+        ],
+        [
+          "kl-div",
+          "rho-cts"
+        ],
+        [
+          "kl-div",
+          "rho-increase"
+        ],
+        [
+          "kl-div",
+          "rho-subgroup"
+        ],
+        [
+          "kl-div",
+          "rho-sums"
+        ],
+        [
+          "kl-div",
+          "rhominus-def"
+        ],
+        [
+          "kl-div",
+          "rhominus-subgroup"
+        ],
+        [
+          "kl-div-copy",
+          "pfr-rho"
+        ],
+        [
+          "kl-div-copy",
+          "phi-first-estimate"
+        ],
+        [
+          "kl-div-copy",
+          "phi-min-exist"
+        ],
+        [
+          "kl-div-copy",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "kl-div-copy",
+          "phi-second-estimate"
+        ],
+        [
+          "kl-div-copy",
+          "rho-BSG-triplet"
+        ],
+        [
+          "kl-div-copy",
+          "rho-cond-sym"
+        ],
+        [
+          "kl-div-copy",
+          "rho-increase"
+        ],
+        [
+          "kl-div-copy",
+          "rho-sums"
+        ],
+        [
+          "kv",
+          "key"
+        ],
+        [
+          "multidist-copy",
+          "cond-multidist-alt"
+        ],
+        [
+          "multidist-copy",
+          "ent-w"
+        ],
+        [
+          "multidist-copy",
+          "ent-z2"
+        ],
+        [
+          "multidist-copy",
+          "key"
+        ],
+        [
+          "multidist-copy",
+          "multidist-chain-rule-cond"
+        ],
+        [
+          "multidist-copy",
+          "multidist-nonneg"
+        ],
+        [
+          "multidist-copy",
+          "mutual-w-z2"
+        ],
+        [
+          "multidist-copy",
+          "prop:52"
+        ],
+        [
+          "multidist-copy",
+          "tau-min-exist-multi"
+        ],
+        [
+          "multidist-def",
+          "cond-multidist-lower"
+        ],
+        [
+          "multidist-def",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "multidist-def",
+          "cond-multidist-nonneg"
+        ],
+        [
+          "multidist-def",
+          "cor-multid"
+        ],
+        [
+          "multidist-def",
+          "ent-z2"
+        ],
+        [
+          "multidist-def",
+          "k-vanish"
+        ],
+        [
+          "multidist-def",
+          "key"
+        ],
+        [
+          "multidist-def",
+          "main-entropy"
+        ],
+        [
+          "multidist-def",
+          "multidist-chain-rule-cond"
+        ],
+        [
+          "multidist-def",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "multidist-def",
+          "multidist-lower"
+        ],
+        [
+          "multidist-def",
+          "mutual-w-z2"
+        ],
+        [
+          "multidist-def",
+          "prop:52"
+        ],
+        [
+          "multidist-def",
+          "tau-min-exist-multi"
+        ],
+        [
+          "multidist-def",
+          "tau-ref"
+        ],
+        [
+          "multidist-def",
+          "xi-z2-w-dist"
+        ],
+        [
+          "multidist-indep",
+          "cond-multidist-alt"
+        ],
+        [
+          "multidist-indep",
+          "cor-multid"
+        ],
+        [
+          "multidist-indep",
+          "ent-w"
+        ],
+        [
+          "multidist-indep",
+          "ent-z2"
+        ],
+        [
+          "multidist-indep",
+          "key"
+        ],
+        [
+          "multidist-indep",
+          "multidist-chain-rule"
+        ],
+        [
+          "multidist-indep",
+          "multidist-nonneg"
+        ],
+        [
+          "multidist-indep",
+          "mutual-w-z2"
+        ],
+        [
+          "multidist-lower",
+          "key"
+        ],
+        [
+          "multidist-nonneg",
+          "xi-z2-w-dist"
+        ],
+        [
+          "multidist-ruzsa-II",
+          "multi-zero"
+        ],
+        [
+          "multidist-ruzsa-IV",
+          "ent-z2"
+        ],
+        [
+          "mutual-nonneg",
+          "conditional-nonneg"
+        ],
+        [
+          "mutual-nonneg",
+          "conditional-vanish"
+        ],
+        [
+          "mutual-nonneg",
+          "lem:get-better"
+        ],
+        [
+          "mutual-nonneg",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "neg-ent",
+          "ent-w"
+        ],
+        [
+          "neg-ent",
+          "first-useful"
+        ],
+        [
+          "neg-ent",
+          "key"
+        ],
+        [
+          "neg-ent",
+          "klm-3"
+        ],
+        [
+          "neg-ent",
+          "lem:get-better"
+        ],
+        [
+          "neg-ent",
+          "multidist-ruzsa-I"
+        ],
+        [
+          "neg-ent",
+          "multidist-ruzsa-IV"
+        ],
+        [
+          "neg-ent",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "neg-ent",
+          "sum-dilate-II"
+        ],
+        [
+          "phi-min-def",
+          "phi-min-exist"
+        ],
+        [
+          "phi-min-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "phi-min-def",
+          "rho-BSG-triplet-symmetrized"
+        ],
+        [
+          "relabeled-entropy",
+          "I1-I2-diff"
+        ],
+        [
+          "relabeled-entropy",
+          "construct-good-prelim"
+        ],
+        [
+          "relabeled-entropy",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "relabeled-entropy",
+          "cor-fibre"
+        ],
+        [
+          "relabeled-entropy",
+          "cor-multid"
+        ],
+        [
+          "relabeled-entropy",
+          "dist-diff-bound"
+        ],
+        [
+          "relabeled-entropy",
+          "dist-projection"
+        ],
+        [
+          "relabeled-entropy",
+          "key"
+        ],
+        [
+          "relabeled-entropy",
+          "lem:100pc-self"
+        ],
+        [
+          "relabeled-entropy",
+          "mutual-w-z2"
+        ],
+        [
+          "relabeled-entropy",
+          "pfr-projection'"
+        ],
+        [
+          "relabeled-entropy",
+          "rho-cond-sym"
+        ],
+        [
+          "relabeled-entropy",
+          "rho-increase"
+        ],
+        [
+          "relabeled-entropy",
+          "rho-invariant"
+        ],
+        [
+          "relabeled-entropy",
+          "shear-ent"
+        ],
+        [
+          "relabeled-entropy",
+          "submodularity"
+        ],
+        [
+          "relabeled-entropy",
+          "torsion-free-doubling"
+        ],
+        [
+          "relabeled-entropy",
+          "total-dist"
+        ],
+        [
+          "relabeled-entropy",
+          "weak-pfr-asymm"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "conditional-chain-rule"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "cor-multid"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "fibring-ident"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "gen-ineq"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "key"
+        ],
+        [
+          "relabeled-entropy-cond",
+          "multidist-chain-rule-iter"
+        ],
+        [
+          "rho-BSG-triplet",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "rho-cond-def",
+          "phi-first-estimate"
+        ],
+        [
+          "rho-cond-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "rho-cond-def",
+          "phi-second-estimate"
+        ],
+        [
+          "rho-cond-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "rho-cond-def",
+          "rho-BSG-triplet-symmetrized"
+        ],
+        [
+          "rho-cond-def",
+          "rho-cond"
+        ],
+        [
+          "rho-cond-def",
+          "rho-cond-sym"
+        ],
+        [
+          "rho-cond-def",
+          "rho-increase"
+        ],
+        [
+          "rho-cond-def",
+          "rho-increase-symmetrized"
+        ],
+        [
+          "rho-cond-sym",
+          "phi-first-estimate"
+        ],
+        [
+          "rho-cond-sym",
+          "phi-second-estimate"
+        ],
+        [
+          "rho-cts",
+          "pfr-rho"
+        ],
+        [
+          "rho-def",
+          "pfr-9-aux"
+        ],
+        [
+          "rho-def",
+          "pfr-rho"
+        ],
+        [
+          "rho-def",
+          "phi-first-estimate"
+        ],
+        [
+          "rho-def",
+          "phi-min-def"
+        ],
+        [
+          "rho-def",
+          "phi-min-exist"
+        ],
+        [
+          "rho-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "rho-def",
+          "phi-second-estimate"
+        ],
+        [
+          "rho-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "rho-def",
+          "rho-BSG-triplet-symmetrized"
+        ],
+        [
+          "rho-def",
+          "rho-cond"
+        ],
+        [
+          "rho-def",
+          "rho-cond-def"
+        ],
+        [
+          "rho-def",
+          "rho-cond-invariant"
+        ],
+        [
+          "rho-def",
+          "rho-cond-relabeled"
+        ],
+        [
+          "rho-def",
+          "rho-cond-sym"
+        ],
+        [
+          "rho-def",
+          "rho-increase"
+        ],
+        [
+          "rho-def",
+          "rho-increase-symmetrized"
+        ],
+        [
+          "rho-def",
+          "rho-sums"
+        ],
+        [
+          "rho-def",
+          "rho-sums-sym"
+        ],
+        [
+          "rho-sums",
+          "rho-invariant"
+        ],
+        [
+          "rho-sums-sym",
+          "phi-first-estimate"
+        ],
+        [
+          "rho-sums-sym",
+          "phi-second-estimate"
+        ],
+        [
+          "rhominus-def",
+          "pfr-9-aux"
+        ],
+        [
+          "rhominus-def",
+          "pfr-rho"
+        ],
+        [
+          "rhominus-def",
+          "phi-first-estimate"
+        ],
+        [
+          "rhominus-def",
+          "phi-min-exist"
+        ],
+        [
+          "rhominus-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "rhominus-def",
+          "phi-second-estimate"
+        ],
+        [
+          "rhominus-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "rhominus-def",
+          "rho-cond"
+        ],
+        [
+          "rhominus-def",
+          "rho-cond-sym"
+        ],
+        [
+          "rhominus-def",
+          "rho-cts"
+        ],
+        [
+          "rhominus-def",
+          "rho-def"
+        ],
+        [
+          "rhominus-def",
+          "rho-increase"
+        ],
+        [
+          "rhominus-def",
+          "rho-subgroup"
+        ],
+        [
+          "rhominus-def",
+          "rho-sums"
+        ],
+        [
+          "rhominus-def",
+          "rhoplus-subgroup"
+        ],
+        [
+          "rhoplus-def",
+          "pfr-9-aux"
+        ],
+        [
+          "rhoplus-def",
+          "pfr-rho"
+        ],
+        [
+          "rhoplus-def",
+          "phi-first-estimate"
+        ],
+        [
+          "rhoplus-def",
+          "phi-min-exist"
+        ],
+        [
+          "rhoplus-def",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "rhoplus-def",
+          "phi-second-estimate"
+        ],
+        [
+          "rhoplus-def",
+          "rho-BSG-triplet"
+        ],
+        [
+          "rhoplus-def",
+          "rho-cond"
+        ],
+        [
+          "rhoplus-def",
+          "rho-cond-sym"
+        ],
+        [
+          "rhoplus-def",
+          "rho-cts"
+        ],
+        [
+          "rhoplus-def",
+          "rho-increase"
+        ],
+        [
+          "rhoplus-def",
+          "rho-subgroup"
+        ],
+        [
+          "rhoplus-def",
+          "rho-sums"
+        ],
+        [
+          "ruz-copy",
+          "I1-I2-diff"
+        ],
+        [
+          "ruz-copy",
+          "cond-dist-fact"
+        ],
+        [
+          "ruz-copy",
+          "de-prop"
+        ],
+        [
+          "ruz-copy",
+          "de-prop-improv"
+        ],
+        [
+          "ruz-copy",
+          "de-prop-lim-improv"
+        ],
+        [
+          "ruz-copy",
+          "dist-diff-bound"
+        ],
+        [
+          "ruz-copy",
+          "dist-projection"
+        ],
+        [
+          "ruz-copy",
+          "dist-sums"
+        ],
+        [
+          "ruz-copy",
+          "ent-w"
+        ],
+        [
+          "ruz-copy",
+          "ent-z2"
+        ],
+        [
+          "ruz-copy",
+          "first-fibre"
+        ],
+        [
+          "ruz-copy",
+          "first-upper"
+        ],
+        [
+          "ruz-copy",
+          "foursum-bound"
+        ],
+        [
+          "ruz-copy",
+          "gen-ineq"
+        ],
+        [
+          "ruz-copy",
+          "key"
+        ],
+        [
+          "ruz-copy",
+          "lem:100pc-self"
+        ],
+        [
+          "ruz-copy",
+          "multidist-ruzsa-IV"
+        ],
+        [
+          "ruz-copy",
+          "pfr-9-aux"
+        ],
+        [
+          "ruz-copy",
+          "pfr-rho"
+        ],
+        [
+          "ruz-copy",
+          "pfr_aux"
+        ],
+        [
+          "ruz-copy",
+          "pfr_aux-improv"
+        ],
+        [
+          "ruz-copy",
+          "pfr_aux_torsion"
+        ],
+        [
+          "ruz-copy",
+          "phi-first-estimate"
+        ],
+        [
+          "ruz-copy",
+          "phi-min-exist"
+        ],
+        [
+          "ruz-copy",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "ruz-copy",
+          "phi-second-estimate"
+        ],
+        [
+          "ruz-copy",
+          "prop:52"
+        ],
+        [
+          "ruz-copy",
+          "rho-BSG-triplet"
+        ],
+        [
+          "ruz-copy",
+          "rho-increase"
+        ],
+        [
+          "ruz-copy",
+          "ruzsa-diff"
+        ],
+        [
+          "ruz-copy",
+          "second-estimate"
+        ],
+        [
+          "ruz-copy",
+          "second-estimate-aux"
+        ],
+        [
+          "ruz-copy",
+          "sum-dilate-II"
+        ],
+        [
+          "ruz-copy",
+          "tau-copy"
+        ],
+        [
+          "ruz-copy",
+          "tau-min-exist-multi"
+        ],
+        [
+          "ruz-copy",
+          "torsion-free-doubling"
+        ],
+        [
+          "ruz-copy",
+          "total-dist"
+        ],
+        [
+          "ruz-copy",
+          "weak-pfr-asymm"
+        ],
+        [
+          "ruz-copy",
+          "xi-z2-w-dist"
+        ],
+        [
+          "ruz-dist-def",
+          "weak-pfr-asymm"
+        ],
+        [
+          "ruz-indep",
+          "I1-I2-diff"
+        ],
+        [
+          "ruz-indep",
+          "cond-dist-fact"
+        ],
+        [
+          "ruz-indep",
+          "cor-fibre"
+        ],
+        [
+          "ruz-indep",
+          "dist-projection"
+        ],
+        [
+          "ruz-indep",
+          "ent-w"
+        ],
+        [
+          "ruz-indep",
+          "fibring-ident"
+        ],
+        [
+          "ruz-indep",
+          "key"
+        ],
+        [
+          "ruz-indep",
+          "lem:100pc-self"
+        ],
+        [
+          "ruz-indep",
+          "pfr-9-aux"
+        ],
+        [
+          "ruz-indep",
+          "pfr_aux"
+        ],
+        [
+          "ruz-indep",
+          "pfr_aux-improv"
+        ],
+        [
+          "ruz-indep",
+          "pfr_aux_torsion"
+        ],
+        [
+          "ruz-indep",
+          "rho-cond-sym"
+        ],
+        [
+          "ruz-indep",
+          "rho-sums-sym"
+        ],
+        [
+          "ruz-indep",
+          "ruzsa-diff"
+        ],
+        [
+          "ruz-indep",
+          "ruzsa-growth"
+        ],
+        [
+          "ruz-indep",
+          "torsion-free-doubling"
+        ],
+        [
+          "ruz-indep",
+          "weak-pfr-asymm"
+        ],
+        [
+          "ruzsa-nonneg",
+          "de-prop"
+        ],
+        [
+          "ruzsa-nonneg",
+          "de-prop-improv"
+        ],
+        [
+          "ruzsa-nonneg",
+          "ent-z2"
+        ],
+        [
+          "ruzsa-nonneg",
+          "klm-2"
+        ],
+        [
+          "ruzsa-nonneg",
+          "pfr-projection"
+        ],
+        [
+          "ruzsa-nonneg",
+          "pfr-rho"
+        ],
+        [
+          "ruzsa-nonneg",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "ruzsa-nonneg",
+          "tau-ref"
+        ],
+        [
+          "ruzsa-nonneg",
+          "weak-pfr-asymm"
+        ],
+        [
+          "ruzsa-symm",
+          "app-ent-pfr"
+        ],
+        [
+          "ruzsa-symm",
+          "dist-diff-bound"
+        ],
+        [
+          "ruzsa-symm",
+          "entropy-pfr"
+        ],
+        [
+          "ruzsa-symm",
+          "entropy-pfr-improv"
+        ],
+        [
+          "ruzsa-symm",
+          "first-fibre"
+        ],
+        [
+          "ruzsa-symm",
+          "first-upper"
+        ],
+        [
+          "ruzsa-symm",
+          "gen-ineq"
+        ],
+        [
+          "ruzsa-symm",
+          "lem:100pc"
+        ],
+        [
+          "ruzsa-symm",
+          "lem:get-better"
+        ],
+        [
+          "ruzsa-symm",
+          "main-entropy"
+        ],
+        [
+          "ruzsa-symm",
+          "multidist-lower"
+        ],
+        [
+          "ruzsa-symm",
+          "multidist-ruzsa-II"
+        ],
+        [
+          "ruzsa-symm",
+          "pfr-rho"
+        ],
+        [
+          "ruzsa-symm",
+          "pfr_aux_torsion"
+        ],
+        [
+          "ruzsa-symm",
+          "phi-first-estimate"
+        ],
+        [
+          "ruzsa-symm",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "ruzsa-symm",
+          "phi-second-estimate"
+        ],
+        [
+          "ruzsa-symm",
+          "rho-increase-symmetrized"
+        ],
+        [
+          "ruzsa-symm",
+          "second-estimate"
+        ],
+        [
+          "ruzsa-symm",
+          "tau-min-exist-multi"
+        ],
+        [
+          "ruzsa-symm",
+          "torsion-free-doubling"
+        ],
+        [
+          "ruzsa-symm",
+          "weak-pfr-asymm"
+        ],
+        [
+          "ruzsa-triangle",
+          "lem:get-better"
+        ],
+        [
+          "ruzsa-triangle",
+          "pfr-rho"
+        ],
+        [
+          "ruzsa-triangle",
+          "pfr_aux_torsion"
+        ],
+        [
+          "ruzsa-triangle-improved",
+          "sum-dilate-II"
+        ],
+        [
+          "second-estimate-aux",
+          "de-prop-improv"
+        ],
+        [
+          "shear-ent",
+          "key"
+        ],
+        [
+          "shear-ent",
+          "zero-large"
+        ],
+        [
+          "subadditive",
+          "entropic-bsg"
+        ],
+        [
+          "subadditive",
+          "torsion-free-doubling"
+        ],
+        [
+          "subadditive",
+          "weak-pfr-asymm"
+        ],
+        [
+          "submodularity",
+          "mutual-w-z2"
+        ],
+        [
+          "sym-group-def",
+          "lem:100pc-self"
+        ],
+        [
+          "sym-group-def",
+          "pfr-rho"
+        ],
+        [
+          "symm-lemma",
+          "phi-minimizer-zero-distance"
+        ],
+        [
+          "tau-copy",
+          "de-prop"
+        ],
+        [
+          "tau-copy",
+          "de-prop-improv"
+        ],
+        [
+          "tau-copy",
+          "de-prop-lim-improv"
+        ],
+        [
+          "tau-copy",
+          "distance-lower"
+        ],
+        [
+          "tau-copy",
+          "entropy-pfr"
+        ],
+        [
+          "tau-copy",
+          "entropy-pfr-improv"
+        ],
+        [
+          "tau-def",
+          "de-prop"
+        ],
+        [
+          "tau-def",
+          "de-prop-improv"
+        ],
+        [
+          "tau-def",
+          "de-prop-lim-improv"
+        ],
+        [
+          "tau-def",
+          "entropy-pfr"
+        ],
+        [
+          "tau-def",
+          "entropy-pfr-improv"
+        ],
+        [
+          "tau-def",
+          "tau-min"
+        ],
+        [
+          "tau-def-multi",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "tau-def-multi",
+          "key"
+        ],
+        [
+          "tau-def-multi",
+          "multidist-lower"
+        ],
+        [
+          "tau-def-multi",
+          "prop:52"
+        ],
+        [
+          "tau-def-multi",
+          "tau-ref"
+        ],
+        [
+          "tau-min-def",
+          "averaged-construct-good"
+        ],
+        [
+          "tau-min-def",
+          "construct-good"
+        ],
+        [
+          "tau-min-def",
+          "construct-good-improv"
+        ],
+        [
+          "tau-min-def",
+          "construct-good-prelim"
+        ],
+        [
+          "tau-min-def",
+          "construct-good-prelim-improv"
+        ],
+        [
+          "tau-min-def",
+          "de-prop"
+        ],
+        [
+          "tau-min-def",
+          "de-prop-improv"
+        ],
+        [
+          "tau-min-def",
+          "de-prop-lim-improv"
+        ],
+        [
+          "tau-min-def",
+          "dist-sums"
+        ],
+        [
+          "tau-min-def",
+          "entropy-pfr"
+        ],
+        [
+          "tau-min-def",
+          "entropy-pfr-improv"
+        ],
+        [
+          "tau-min-def",
+          "first-cond"
+        ],
+        [
+          "tau-min-def",
+          "first-dist-sum"
+        ],
+        [
+          "tau-min-def",
+          "first-estimate"
+        ],
+        [
+          "tau-min-def",
+          "foursum-bound"
+        ],
+        [
+          "tau-min-def",
+          "second-estimate"
+        ],
+        [
+          "tau-min-def",
+          "second-estimate-aux"
+        ],
+        [
+          "tau-min-def",
+          "total-dist"
+        ],
+        [
+          "tau-min-def",
+          "uvw-s"
+        ],
+        [
+          "tau-min-multi",
+          "cond-multidist-lower"
+        ],
+        [
+          "tau-min-multi",
+          "cond-multidist-lower-II"
+        ],
+        [
+          "tau-min-multi",
+          "k-vanish"
+        ],
+        [
+          "tau-min-multi",
+          "key"
+        ],
+        [
+          "tau-min-multi",
+          "main-entropy"
+        ],
+        [
+          "tau-min-multi",
+          "prop:52"
+        ],
+        [
+          "tau-min-multi",
+          "tau-min-exist-multi"
+        ],
+        [
+          "unif-exist",
+          "pfr-9-aux"
+        ],
+        [
+          "unif-exist",
+          "weak-pfr-asymm"
+        ],
+        [
+          "uniform-def",
+          "app-ent-pfr"
+        ],
+        [
+          "uniform-def",
+          "dist-projection"
+        ],
+        [
+          "uniform-def",
+          "entropy-pfr"
+        ],
+        [
+          "uniform-def",
+          "entropy-pfr-improv"
+        ],
+        [
+          "uniform-def",
+          "lem:100pc"
+        ],
+        [
+          "uniform-def",
+          "lem:100pc-self"
+        ],
+        [
+          "uniform-def",
+          "main-entropy"
+        ],
+        [
+          "uniform-def",
+          "multi-zero"
+        ],
+        [
+          "uniform-def",
+          "pfr-9-aux"
+        ],
+        [
+          "uniform-def",
+          "pfr-rho"
+        ],
+        [
+          "uniform-def",
+          "pfr_aux"
+        ],
+        [
+          "uniform-def",
+          "pfr_aux-improv"
+        ],
+        [
+          "uniform-def",
+          "pfr_aux_torsion"
+        ],
+        [
+          "uniform-def",
+          "rho-subgroup"
+        ],
+        [
+          "uniform-def",
+          "rho-sums"
+        ],
+        [
+          "uniform-def",
+          "rhominus-subgroup"
+        ],
+        [
+          "uniform-def",
+          "rhoplus-subgroup"
+        ],
+        [
+          "uniform-def",
+          "single-fibres"
+        ],
+        [
+          "uniform-def",
+          "uniform-entropy"
+        ],
+        [
+          "uniform-def",
+          "weak-pfr-asymm"
+        ],
+        [
+          "uniform-entropy",
+          "app-ent-pfr"
+        ],
+        [
+          "uniform-entropy",
+          "dist-projection"
+        ],
+        [
+          "uniform-entropy",
+          "pfr-9-aux"
+        ],
+        [
+          "uniform-entropy",
+          "pfr_aux"
+        ],
+        [
+          "uniform-entropy",
+          "pfr_aux-improv"
+        ],
+        [
+          "uniform-entropy",
+          "pfr_aux_torsion"
+        ],
+        [
+          "uniform-entropy",
+          "rho-subgroup"
+        ],
+        [
+          "uniform-entropy",
+          "rhoplus-subgroup"
+        ],
+        [
+          "vanish-entropy",
+          "cond-dist-fact"
+        ],
+        [
+          "vanish-entropy",
+          "dist-projection"
+        ],
+        [
+          "vanish-entropy",
+          "key"
+        ],
+        [
+          "vanish-entropy",
+          "mutual-w-z2"
+        ]
+      ]
+    },
+    "cycles_in_lean_projection": true,
+    "unreported_from_definitions": 439,
+    "unreported_top_sources": {
+      "entropy-def": 143,
+      "ruz-copy": 39,
+      "copy-ent": 36,
+      "conditional-entropy-def": 33,
+      "cond-dist-def": 31,
+      "information-def": 29,
+      "conditional-mutual-def": 27,
+      "ruzsa-symm": 22,
+      "uniform-def": 20,
+      "independent-exist": 19
+    }
+  },
+  "scopes": [
+    {
+      "name": "author \\uses graph (whole)",
+      "n_nodes": 208,
+      "n_edges": 469,
+      "forward_refs": [
+        [
+          "pfr-9-aux'",
+          "hom-pfr"
+        ],
+        [
+          "pfr-9-aux'",
+          "approx-hom-pfr"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 208,
+          "forward_refs": 2,
+          "cutwidth": 134,
+          "mean_cut": 72.76811594202898,
+          "max_open": 51,
+          "mean_open": 31.17391304347826,
+          "mean_edge_length": 32.11727078891258
+        },
+        "human_repaired": {
+          "n": 208,
+          "forward_refs": 0,
+          "cutwidth": 134,
+          "mean_cut": 72.90338164251207,
+          "max_open": 51,
+          "mean_open": 31.95169082125604,
+          "mean_edge_length": 32.17697228144989
+        },
+        "just_in_time": {
+          "n": 208,
+          "forward_refs": 0,
+          "cutwidth": 150,
+          "mean_cut": 87.09661835748793,
+          "max_open": 64,
+          "mean_open": 37.14975845410628,
+          "mean_edge_length": 38.44136460554371
+        },
+        "greedy_min_open": {
+          "n": 208,
+          "forward_refs": 0,
+          "cutwidth": 161,
+          "mean_cut": 90.77294685990339,
+          "max_open": 64,
+          "mean_open": 37.75845410628019,
+          "mean_edge_length": 40.06396588486141
+        },
+        "optimised": {
+          "n": 208,
+          "forward_refs": 0,
+          "cutwidth": 124,
+          "mean_cut": 54.56521739130435,
+          "max_open": 48,
+          "mean_open": 26.294685990338163,
+          "mean_edge_length": 24.083155650319828
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9726867335562988,
+        "just_in_time": 0.45094760312151616,
+        "greedy_min_open": 0.08853586027499072,
+        "optimised": 0.14817911557041996
+      },
+      "random": {
+        "mean_open": {
+          "mean": 46.94822222222222,
+          "p05": 44.80193236714976,
+          "p50": 46.927536231884055,
+          "p95": 49.09661835748792
+        },
+        "max_open": {
+          "mean": 75.487,
+          "p05": 71,
+          "p50": 75,
+          "p95": 81
+        },
+        "mean_cut": {
+          "mean": 105.824884057971,
+          "p05": 98.71014492753623,
+          "p50": 106.10144927536231,
+          "p95": 112.19806763285024
+        },
+        "cutwidth": {
+          "mean": 170.65,
+          "p05": 163,
+          "p50": 170,
+          "p95": 180
+        },
+        "mean_edge_length": {
+          "mean": 46.70735820895522,
+          "p05": 43.56716417910448,
+          "p50": 46.82942430703625,
+          "p95": 49.52025586353945
+        }
+      },
+      "random_tau_vs_human_mean": 0.17582088442958008,
+      "uniform": {
+        "mean_open": {
+          "p05": 50.31884057971015,
+          "p50": 52.594202898550726,
+          "p95": 54.20289855072464
+        },
+        "max_open": {
+          "p05": 79,
+          "p50": 83,
+          "p95": 89
+        },
+        "mean_cut": {
+          "p05": 113.08212560386474,
+          "p50": 118.487922705314,
+          "p95": 124.16908212560386
+        },
+        "cutwidth": {
+          "p05": 168,
+          "p50": 180,
+          "p95": 191
+        },
+        "mean_edge_length": {
+          "p05": 49.91044776119403,
+          "p50": 52.29637526652452,
+          "p95": 54.80383795309169
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.001,
+          "cutwidth": 0.0105,
+          "mean_edge_length": 0.001
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 13,
+        "human_repaired": 16,
+        "just_in_time": 58,
+        "greedy_min_open": 111,
+        "optimised": 82
+      }
+    },
+    {
+      "name": "Lean-derived graph (whole)",
+      "n_nodes": 208,
+      "n_edges": 1172,
+      "forward_refs": [
+        [
+          "data-process-single",
+          "relabeled-entropy"
+        ],
+        [
+          "chain-rule",
+          "relabeled-entropy-cond"
+        ],
+        [
+          "data-process-single",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "pfr-9-aux'",
+          "hom-pfr"
+        ],
+        [
+          "pfr-9-aux'",
+          "approx-hom-pfr"
+        ],
+        [
+          "data-process-single",
+          "pfr-projection'"
+        ],
+        [
+          "data-process-single",
+          "weak-pfr-asymm"
+        ],
+        [
+          "rho-sums",
+          "rho-invariant"
+        ]
+      ],
+      "cycle_edges_dropped": [
+        [
+          "data-process-single",
+          "relabeled-entropy"
+        ]
+      ],
+      "orders": {
+        "human": {
+          "n": 208,
+          "forward_refs": 8,
+          "cutwidth": 579,
+          "mean_cut": 327.2463768115942,
+          "max_open": 68,
+          "mean_open": 45.53623188405797,
+          "mean_edge_length": 57.79863481228669
+        },
+        "human_repaired": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 577,
+          "mean_cut": 323.96135265700485,
+          "max_open": 72,
+          "mean_open": 46.85990338164251,
+          "mean_edge_length": 57.218430034129696
+        },
+        "just_in_time": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 639,
+          "mean_cut": 369.32850241545896,
+          "max_open": 72,
+          "mean_open": 48.207729468599034,
+          "mean_edge_length": 65.23122866894198
+        },
+        "greedy_min_open": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 726,
+          "mean_cut": 421.2705314009662,
+          "max_open": 90,
+          "mean_open": 54.03864734299517,
+          "mean_edge_length": 74.40529010238907
+        },
+        "optimised": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 589,
+          "mean_cut": 295.0048309178744,
+          "max_open": 80,
+          "mean_open": 44.02415458937198,
+          "mean_edge_length": 52.10409556313993
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9465811965811965,
+        "just_in_time": 0.12578966926793012,
+        "greedy_min_open": 0.4069119286510591,
+        "optimised": 0.3509847640282423
+      },
+      "random": {
+        "mean_open": {
+          "mean": 63.70044927536232,
+          "p05": 61.26086956521739,
+          "p50": 63.64734299516908,
+          "p95": 66.2512077294686
+        },
+        "max_open": {
+          "mean": 109.633,
+          "p05": 104,
+          "p50": 110,
+          "p95": 115
+        },
+        "mean_cut": {
+          "mean": 463.8139516908213,
+          "p05": 434.7391304347826,
+          "p50": 465.1014492753623,
+          "p95": 488.7391304347826
+        },
+        "cutwidth": {
+          "mean": 756.94,
+          "p05": 724,
+          "p50": 757,
+          "p95": 786
+        },
+        "mean_edge_length": {
+          "mean": 81.91935836177475,
+          "p05": 76.78412969283276,
+          "p50": 82.1467576791809,
+          "p95": 86.3216723549488
+        }
+      },
+      "random_tau_vs_human_mean": 0.24723141954663694,
+      "uniform": {
+        "mean_open": {
+          "p05": 63.3768115942029,
+          "p50": 65.7487922705314,
+          "p95": 68.15942028985508
+        },
+        "max_open": {
+          "p05": 103,
+          "p50": 108,
+          "p95": 113
+        },
+        "mean_cut": {
+          "p05": 466.1304347826087,
+          "p50": 479.82125603864733,
+          "p95": 492.84057971014494
+        },
+        "cutwidth": {
+          "p05": 728,
+          "p50": 756,
+          "p95": 782
+        },
+        "mean_edge_length": {
+          "p05": 82.32849829351535,
+          "p50": 84.74658703071673,
+          "p95": 87.04607508532423
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.007,
+          "cutwidth": 0.054,
+          "mean_edge_length": 0.007
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0375,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 13,
+        "human_repaired": 22,
+        "just_in_time": 68,
+        "greedy_min_open": 113,
+        "optimised": 102
+      }
+    },
+    {
+      "name": "Lean-derived, no definition edges (whole)",
+      "n_nodes": 208,
+      "n_edges": 647,
+      "forward_refs": [
+        [
+          "data-process-single",
+          "relabeled-entropy"
+        ],
+        [
+          "chain-rule",
+          "relabeled-entropy-cond"
+        ],
+        [
+          "data-process-single",
+          "ruzsa-triangle-improved"
+        ],
+        [
+          "pfr-9-aux'",
+          "hom-pfr"
+        ],
+        [
+          "pfr-9-aux'",
+          "approx-hom-pfr"
+        ],
+        [
+          "data-process-single",
+          "pfr-projection'"
+        ],
+        [
+          "data-process-single",
+          "weak-pfr-asymm"
+        ],
+        [
+          "rho-sums",
+          "rho-invariant"
+        ]
+      ],
+      "cycle_edges_dropped": [
+        [
+          "data-process-single",
+          "relabeled-entropy"
+        ]
+      ],
+      "orders": {
+        "human": {
+          "n": 208,
+          "forward_refs": 8,
+          "cutwidth": 341,
+          "mean_cut": 181.41062801932367,
+          "max_open": 57,
+          "mean_open": 37.072463768115945,
+          "mean_edge_length": 58.04018547140649
+        },
+        "human_repaired": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 337,
+          "mean_cut": 179.34782608695653,
+          "max_open": 59,
+          "mean_open": 37.76328502415459,
+          "mean_edge_length": 57.38021638330758
+        },
+        "just_in_time": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 324,
+          "mean_cut": 192.9951690821256,
+          "max_open": 57,
+          "mean_open": 37.028985507246375,
+          "mean_edge_length": 61.74652241112828
+        },
+        "greedy_min_open": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 377,
+          "mean_cut": 196.08212560386474,
+          "max_open": 79,
+          "mean_open": 39.067632850241544,
+          "mean_edge_length": 62.734157650695515
+        },
+        "optimised": {
+          "n": 208,
+          "forward_refs": 1,
+          "cutwidth": 303,
+          "mean_cut": 108.32850241545894,
+          "max_open": 58,
+          "mean_open": 28.579710144927535,
+          "mean_edge_length": 34.65842349304482
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9465811965811965,
+        "just_in_time": 0.217670011148272,
+        "greedy_min_open": 0.18617614269788185,
+        "optimised": 0.12616127833519142
+      },
+      "random": {
+        "mean_open": {
+          "mean": 46.40507246376812,
+          "p05": 44.27536231884058,
+          "p50": 46.35748792270532,
+          "p95": 48.628019323671495
+        },
+        "max_open": {
+          "mean": 86.396,
+          "p05": 81,
+          "p50": 86,
+          "p95": 92
+        },
+        "mean_cut": {
+          "mean": 215.9491690821256,
+          "p05": 198.2512077294686,
+          "p50": 215.94685990338164,
+          "p95": 233.70048309178745
+        },
+        "cutwidth": {
+          "mean": 372.724,
+          "p05": 358,
+          "p50": 373,
+          "p95": 386
+        },
+        "mean_edge_length": {
+          "mean": 69.09038330757342,
+          "p05": 63.42812982998454,
+          "p50": 69.08964451313756,
+          "p95": 74.76970633693972
+        }
+      },
+      "random_tau_vs_human_mean": 0.21972519509476032,
+      "uniform": {
+        "mean_open": {
+          "p05": 49.76328502415459,
+          "p50": 51.85990338164251,
+          "p95": 54.16425120772947
+        },
+        "max_open": {
+          "p05": 82,
+          "p50": 86,
+          "p95": 91
+        },
+        "mean_cut": {
+          "p05": 220.09661835748793,
+          "p50": 233.03381642512076,
+          "p95": 245.08212560386474
+        },
+        "cutwidth": {
+          "p05": 350,
+          "p50": 367,
+          "p95": 384
+        },
+        "mean_edge_length": {
+          "p05": 70.41731066460588,
+          "p50": 74.5564142194745,
+          "p95": 78.41112828438949
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.003,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.001,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.018,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.018
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.012,
+          "mean_cut": 0.0275,
+          "cutwidth": 0.6925,
+          "mean_edge_length": 0.0275
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.005,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.8125,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 13,
+        "human_repaired": 22,
+        "just_in_time": 80,
+        "greedy_min_open": 130,
+        "optimised": 115
+      }
+    },
+    {
+      "name": "Lean: entropy",
+      "n_nodes": 28,
+      "n_edges": 71,
+      "forward_refs": [
+        [
+          "chain-rule",
+          "relabeled-entropy-cond"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 28,
+          "forward_refs": 1,
+          "cutwidth": 34,
+          "mean_cut": 23.074074074074073,
+          "max_open": 10,
+          "mean_open": 5.814814814814815,
+          "mean_edge_length": 8.774647887323944
+        },
+        "human_repaired": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 34,
+          "mean_cut": 23.22222222222222,
+          "max_open": 10,
+          "mean_open": 5.777777777777778,
+          "mean_edge_length": 8.830985915492958
+        },
+        "just_in_time": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 45,
+          "mean_cut": 30.22222222222222,
+          "max_open": 10,
+          "mean_open": 7.0,
+          "mean_edge_length": 11.492957746478874
+        },
+        "greedy_min_open": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 38,
+          "mean_cut": 24.925925925925927,
+          "max_open": 10,
+          "mean_open": 5.518518518518518,
+          "mean_edge_length": 9.47887323943662
+        },
+        "optimised": {
+          "n": 28,
+          "forward_refs": 0,
+          "cutwidth": 36,
+          "mean_cut": 20.11111111111111,
+          "max_open": 10,
+          "mean_open": 4.925925925925926,
+          "mean_edge_length": 7.647887323943662
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9947089947089947,
+        "just_in_time": 0.5026455026455027,
+        "greedy_min_open": 0.328042328042328,
+        "optimised": 0.6296296296296297
+      },
+      "random": {
+        "mean_open": {
+          "mean": 7.147333333333333,
+          "p05": 6.37037037037037,
+          "p50": 7.111111111111111,
+          "p95": 8.037037037037036
+        },
+        "max_open": {
+          "mean": 11.008,
+          "p05": 10,
+          "p50": 11,
+          "p95": 12
+        },
+        "mean_cut": {
+          "mean": 28.85359259259259,
+          "p05": 25.40740740740741,
+          "p50": 28.85185185185185,
+          "p95": 32.25925925925926
+        },
+        "cutwidth": {
+          "mean": 42.95,
+          "p05": 37,
+          "p50": 43,
+          "p95": 48
+        },
+        "mean_edge_length": {
+          "mean": 10.972492957746478,
+          "p05": 9.661971830985916,
+          "p50": 10.971830985915492,
+          "p95": 12.267605633802816
+        }
+      },
+      "random_tau_vs_human_mean": 0.3926507936507937,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.407407407407407,
+          "p50": 8.222222222222221,
+          "p95": 8.88888888888889
+        },
+        "max_open": {
+          "p05": 11,
+          "p50": 12,
+          "p95": 13
+        },
+        "mean_cut": {
+          "p05": 28.555555555555557,
+          "p50": 31.59259259259259,
+          "p95": 34.18518518518518
+        },
+        "cutwidth": {
+          "p05": 43,
+          "p50": 48,
+          "p95": 52
+        },
+        "mean_edge_length": {
+          "p05": 10.859154929577464,
+          "p50": 12.014084507042254,
+          "p95": 13.0
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.001,
+          "max_open": 0.0965,
+          "mean_cut": 0.004,
+          "cutwidth": 0.011,
+          "mean_edge_length": 0.004
+        },
+        "human_repaired": {
+          "mean_open": 0.001,
+          "max_open": 0.0965,
+          "mean_cut": 0.004,
+          "cutwidth": 0.011,
+          "mean_edge_length": 0.004
+        },
+        "just_in_time": {
+          "mean_open": 0.415,
+          "max_open": 0.0965,
+          "mean_cut": 0.7275,
+          "cutwidth": 0.7475,
+          "mean_edge_length": 0.7275
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0965,
+          "mean_cut": 0.0315,
+          "cutwidth": 0.0755,
+          "mean_edge_length": 0.0315
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0965,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0365,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.02,
+          "max_open": 0.0025,
+          "mean_cut": 0.2125,
+          "cutwidth": 0.175,
+          "mean_edge_length": 0.2125
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: distance",
+      "n_nodes": 26,
+      "n_edges": 45,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 14.64,
+          "max_open": 9,
+          "mean_open": 5.64,
+          "mean_edge_length": 8.133333333333333
+        },
+        "human_repaired": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 14.64,
+          "max_open": 9,
+          "mean_open": 5.64,
+          "mean_edge_length": 8.133333333333333
+        },
+        "just_in_time": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 14.6,
+          "max_open": 8,
+          "mean_open": 5.56,
+          "mean_edge_length": 8.11111111111111
+        },
+        "greedy_min_open": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 11.88,
+          "max_open": 8,
+          "mean_open": 4.24,
+          "mean_edge_length": 6.6
+        },
+        "optimised": {
+          "n": 26,
+          "forward_refs": 0,
+          "cutwidth": 27,
+          "mean_cut": 11.2,
+          "max_open": 8,
+          "mean_open": 4.44,
+          "mean_edge_length": 6.222222222222222
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.6553846153846155,
+        "greedy_min_open": 0.24923076923076926,
+        "optimised": 0.0461538461538461
+      },
+      "random": {
+        "mean_open": {
+          "mean": 7.23616,
+          "p05": 6.32,
+          "p50": 7.28,
+          "p95": 8.0
+        },
+        "max_open": {
+          "mean": 11.592,
+          "p05": 10,
+          "p50": 12,
+          "p95": 13
+        },
+        "mean_cut": {
+          "mean": 17.31588,
+          "p05": 14.84,
+          "p50": 17.4,
+          "p95": 19.68
+        },
+        "cutwidth": {
+          "mean": 31.682,
+          "p05": 28,
+          "p50": 32,
+          "p95": 35
+        },
+        "mean_edge_length": {
+          "mean": 9.619933333333332,
+          "p05": 8.244444444444444,
+          "p50": 9.666666666666666,
+          "p95": 10.933333333333334
+        }
+      },
+      "random_tau_vs_human_mean": 0.34155692307692304,
+      "uniform": {
+        "mean_open": {
+          "p05": 6.92,
+          "p50": 7.64,
+          "p95": 8.48
+        },
+        "max_open": {
+          "p05": 11,
+          "p50": 12,
+          "p95": 14
+        },
+        "mean_cut": {
+          "p05": 16.08,
+          "p50": 18.24,
+          "p95": 20.68
+        },
+        "cutwidth": {
+          "p05": 30,
+          "p50": 33,
+          "p95": 35
+        },
+        "mean_edge_length": {
+          "p05": 8.933333333333334,
+          "p50": 10.133333333333333,
+          "p95": 11.488888888888889
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.001,
+          "max_open": 0.005,
+          "mean_cut": 0.0355,
+          "cutwidth": 0.138,
+          "mean_edge_length": 0.0355
+        },
+        "human_repaired": {
+          "mean_open": 0.001,
+          "max_open": 0.005,
+          "mean_cut": 0.0355,
+          "cutwidth": 0.138,
+          "mean_edge_length": 0.0355
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0325,
+          "cutwidth": 0.007,
+          "mean_edge_length": 0.0325
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.138,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0005,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0165,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.005
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.005
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.005,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.005
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: entropy_pfr",
+      "n_nodes": 23,
+      "n_edges": 54,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 17.636363636363637,
+          "max_open": 10,
+          "mean_open": 7.136363636363637,
+          "mean_edge_length": 7.185185185185185
+        },
+        "human_repaired": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 26,
+          "mean_cut": 17.636363636363637,
+          "max_open": 10,
+          "mean_open": 7.136363636363637,
+          "mean_edge_length": 7.185185185185185
+        },
+        "just_in_time": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 19.5,
+          "max_open": 11,
+          "mean_open": 7.318181818181818,
+          "mean_edge_length": 7.944444444444445
+        },
+        "greedy_min_open": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 29,
+          "mean_cut": 18.90909090909091,
+          "max_open": 11,
+          "mean_open": 7.0,
+          "mean_edge_length": 7.703703703703703
+        },
+        "optimised": {
+          "n": 23,
+          "forward_refs": 0,
+          "cutwidth": 28,
+          "mean_cut": 16.5,
+          "max_open": 10,
+          "mean_open": 7.045454545454546,
+          "mean_edge_length": 6.722222222222222
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.5573122529644269,
+        "greedy_min_open": 0.5256916996047432,
+        "optimised": 0.8023715415019763
+      },
+      "random": {
+        "mean_open": {
+          "mean": 8.598318181818183,
+          "p05": 8.272727272727273,
+          "p50": 8.545454545454545,
+          "p95": 9.045454545454545
+        },
+        "max_open": {
+          "mean": 13.869,
+          "p05": 13,
+          "p50": 14,
+          "p95": 15
+        },
+        "mean_cut": {
+          "mean": 19.581,
+          "p05": 18.272727272727273,
+          "p50": 19.40909090909091,
+          "p95": 21.5
+        },
+        "cutwidth": {
+          "mean": 30.116,
+          "p05": 29,
+          "p50": 30,
+          "p95": 31
+        },
+        "mean_edge_length": {
+          "mean": 7.977444444444444,
+          "p05": 7.444444444444445,
+          "p50": 7.907407407407407,
+          "p95": 8.75925925925926
+        }
+      },
+      "random_tau_vs_human_mean": 0.48694071146245055,
+      "uniform": {
+        "mean_open": {
+          "p05": 7.636363636363637,
+          "p50": 8.545454545454545,
+          "p95": 9.045454545454545
+        },
+        "max_open": {
+          "p05": 12,
+          "p50": 14,
+          "p95": 15
+        },
+        "mean_cut": {
+          "p05": 19.227272727272727,
+          "p50": 20.59090909090909,
+          "p95": 22.227272727272727
+        },
+        "cutwidth": {
+          "p05": 27,
+          "p50": 29,
+          "p95": 31
+        },
+        "mean_edge_length": {
+          "p05": 7.833333333333333,
+          "p50": 8.38888888888889,
+          "p95": 9.055555555555555
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0005,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0005
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0005,
+          "cutwidth": 0.0025,
+          "mean_edge_length": 0.0005
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.545,
+          "cutwidth": 0.1315,
+          "mean_edge_length": 0.545
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.27,
+          "cutwidth": 0.1315,
+          "mean_edge_length": 0.27
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0325,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0175,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.005,
+          "max_open": 0.015,
+          "mean_cut": 0.0975,
+          "cutwidth": 0.46,
+          "mean_edge_length": 0.0975
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.46,
+          "mean_edge_length": 0.015
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.2175,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: improved_exponent",
+      "n_nodes": 10,
+      "n_edges": 9,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 1.2222222222222223,
+          "max_open": 2,
+          "mean_open": 1.2222222222222223,
+          "mean_edge_length": 1.2222222222222223
+        },
+        "human_repaired": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 1.2222222222222223,
+          "max_open": 2,
+          "mean_open": 1.2222222222222223,
+          "mean_edge_length": 1.2222222222222223
+        },
+        "just_in_time": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 1.2222222222222223,
+          "max_open": 2,
+          "mean_open": 1.2222222222222223,
+          "mean_edge_length": 1.2222222222222223
+        },
+        "greedy_min_open": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 1.2222222222222223,
+          "max_open": 2,
+          "mean_open": 1.2222222222222223,
+          "mean_edge_length": 1.2222222222222223
+        },
+        "optimised": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 2,
+          "mean_cut": 1.2222222222222223,
+          "max_open": 2,
+          "mean_open": 1.2222222222222223,
+          "mean_edge_length": 1.2222222222222223
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 1.0,
+        "greedy_min_open": 1.0,
+        "optimised": 1.0
+      },
+      "random": {
+        "mean_open": {
+          "mean": 1.3794444444444443,
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        },
+        "max_open": {
+          "mean": 2.0,
+          "p05": 2,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "mean": 1.3794444444444443,
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        },
+        "cutwidth": {
+          "mean": 2.0,
+          "p05": 2,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_edge_length": {
+          "mean": 1.3794444444444443,
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        }
+      },
+      "random_tau_vs_human_mean": 0.8362222222222223,
+      "uniform": {
+        "mean_open": {
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        },
+        "max_open": {
+          "p05": 2,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_cut": {
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        },
+        "cutwidth": {
+          "p05": 2,
+          "p50": 2,
+          "p95": 2
+        },
+        "mean_edge_length": {
+          "p05": 1.2222222222222223,
+          "p50": 1.4444444444444444,
+          "p95": 1.4444444444444444
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.053,
+          "max_open": 0.5,
+          "mean_cut": 0.053,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.053
+        },
+        "human_repaired": {
+          "mean_open": 0.053,
+          "max_open": 0.5,
+          "mean_cut": 0.053,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.053
+        },
+        "just_in_time": {
+          "mean_open": 0.053,
+          "max_open": 0.5,
+          "mean_cut": 0.053,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.053
+        },
+        "greedy_min_open": {
+          "mean_open": 0.053,
+          "max_open": 0.5,
+          "mean_cut": 0.053,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.053
+        },
+        "optimised": {
+          "mean_open": 0.053,
+          "max_open": 0.5,
+          "mean_cut": 0.053,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.053
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0425,
+          "max_open": 0.5,
+          "mean_cut": 0.0425,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0425
+        },
+        "human_repaired": {
+          "mean_open": 0.0425,
+          "max_open": 0.5,
+          "mean_cut": 0.0425,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0425
+        },
+        "just_in_time": {
+          "mean_open": 0.0425,
+          "max_open": 0.5,
+          "mean_cut": 0.0425,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0425
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0425,
+          "max_open": 0.5,
+          "mean_cut": 0.0425,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0425
+        },
+        "optimised": {
+          "mean_open": 0.0425,
+          "max_open": 0.5,
+          "mean_cut": 0.0425,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0425
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: approx_hom_pfr",
+      "n_nodes": 8,
+      "n_edges": 10,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 2.5714285714285716,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.8
+        },
+        "human_repaired": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 2.5714285714285716,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.8
+        },
+        "just_in_time": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 2.5714285714285716,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.8
+        },
+        "greedy_min_open": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 2.5714285714285716,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.8
+        },
+        "optimised": {
+          "n": 8,
+          "forward_refs": 0,
+          "cutwidth": 3,
+          "mean_cut": 2.5714285714285716,
+          "max_open": 3,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.8
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.9285714285714286,
+        "greedy_min_open": 0.9285714285714286,
+        "optimised": 1.0
+      },
+      "random": {
+        "mean_open": {
+          "mean": 2.587285714285714,
+          "p05": 2.0,
+          "p50": 2.7142857142857144,
+          "p95": 3.0
+        },
+        "max_open": {
+          "mean": 4.241,
+          "p05": 3,
+          "p50": 4,
+          "p95": 5
+        },
+        "mean_cut": {
+          "mean": 3.4721428571428574,
+          "p05": 2.5714285714285716,
+          "p50": 3.5714285714285716,
+          "p95": 4.0
+        },
+        "cutwidth": {
+          "mean": 4.669,
+          "p05": 3,
+          "p50": 5,
+          "p95": 5
+        },
+        "mean_edge_length": {
+          "mean": 2.4305,
+          "p05": 1.8,
+          "p50": 2.5,
+          "p95": 2.8
+        }
+      },
+      "random_tau_vs_human_mean": 0.5291428571428571,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.4285714285714284,
+          "p50": 2.857142857142857,
+          "p95": 3.0
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 5,
+          "p95": 5
+        },
+        "mean_cut": {
+          "p05": 3.142857142857143,
+          "p50": 3.857142857142857,
+          "p95": 4.142857142857143
+        },
+        "cutwidth": {
+          "p05": 5,
+          "p50": 5,
+          "p95": 5
+        },
+        "mean_edge_length": {
+          "p05": 2.2,
+          "p50": 2.7,
+          "p95": 2.9
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0535,
+          "max_open": 0.0535,
+          "mean_cut": 0.0535,
+          "cutwidth": 0.0535,
+          "mean_edge_length": 0.0535
+        },
+        "human_repaired": {
+          "mean_open": 0.0535,
+          "max_open": 0.0535,
+          "mean_cut": 0.0535,
+          "cutwidth": 0.0535,
+          "mean_edge_length": 0.0535
+        },
+        "just_in_time": {
+          "mean_open": 0.0535,
+          "max_open": 0.0535,
+          "mean_cut": 0.0535,
+          "cutwidth": 0.0535,
+          "mean_edge_length": 0.0535
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0535,
+          "max_open": 0.0535,
+          "mean_cut": 0.0535,
+          "cutwidth": 0.0535,
+          "mean_edge_length": 0.0535
+        },
+        "optimised": {
+          "mean_open": 0.0535,
+          "max_open": 0.0535,
+          "mean_cut": 0.0535,
+          "cutwidth": 0.0535,
+          "mean_edge_length": 0.0535
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.015,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        },
+        "human_repaired": {
+          "mean_open": 0.015,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        },
+        "just_in_time": {
+          "mean_open": 0.015,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        },
+        "greedy_min_open": {
+          "mean_open": 0.015,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        },
+        "optimised": {
+          "mean_open": 0.015,
+          "max_open": 0.015,
+          "mean_cut": 0.015,
+          "cutwidth": 0.015,
+          "mean_edge_length": 0.015
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: weak_pfr",
+      "n_nodes": 10,
+      "n_edges": 11,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 2.4444444444444446,
+          "max_open": 4,
+          "mean_open": 2.111111111111111,
+          "mean_edge_length": 2.0
+        },
+        "human_repaired": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 2.4444444444444446,
+          "max_open": 4,
+          "mean_open": 2.111111111111111,
+          "mean_edge_length": 2.0
+        },
+        "just_in_time": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 3.5555555555555554,
+          "max_open": 4,
+          "mean_open": 2.5555555555555554,
+          "mean_edge_length": 2.909090909090909
+        },
+        "greedy_min_open": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 2.5555555555555554,
+          "max_open": 4,
+          "mean_open": 2.0,
+          "mean_edge_length": 2.090909090909091
+        },
+        "optimised": {
+          "n": 10,
+          "forward_refs": 0,
+          "cutwidth": 6,
+          "mean_cut": 2.3333333333333335,
+          "max_open": 4,
+          "mean_open": 2.0,
+          "mean_edge_length": 1.9090909090909092
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.7333333333333334,
+        "greedy_min_open": 0.6888888888888889,
+        "optimised": 0.7333333333333334
+      },
+      "random": {
+        "mean_open": {
+          "mean": 2.6804444444444444,
+          "p05": 2.3333333333333335,
+          "p50": 2.6666666666666665,
+          "p95": 2.888888888888889
+        },
+        "max_open": {
+          "mean": 4.0,
+          "p05": 4,
+          "p50": 4,
+          "p95": 4
+        },
+        "mean_cut": {
+          "mean": 3.884,
+          "p05": 2.7777777777777777,
+          "p50": 4.111111111111111,
+          "p95": 4.555555555555555
+        },
+        "cutwidth": {
+          "mean": 6.0,
+          "p05": 6,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_edge_length": {
+          "mean": 3.177818181818182,
+          "p05": 2.272727272727273,
+          "p50": 3.3636363636363638,
+          "p95": 3.727272727272727
+        }
+      },
+      "random_tau_vs_human_mean": 0.5647555555555556,
+      "uniform": {
+        "mean_open": {
+          "p05": 2.2222222222222223,
+          "p50": 2.5555555555555554,
+          "p95": 2.888888888888889
+        },
+        "max_open": {
+          "p05": 4,
+          "p50": 4,
+          "p95": 4
+        },
+        "mean_cut": {
+          "p05": 2.7777777777777777,
+          "p50": 3.5555555555555554,
+          "p95": 4.444444444444445
+        },
+        "cutwidth": {
+          "p05": 6,
+          "p50": 6,
+          "p95": 6
+        },
+        "mean_edge_length": {
+          "p05": 2.272727272727273,
+          "p50": 2.909090909090909,
+          "p95": 3.6363636363636362
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0065,
+          "max_open": 0.5,
+          "mean_cut": 0.003,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.003
+        },
+        "human_repaired": {
+          "mean_open": 0.0065,
+          "max_open": 0.5,
+          "mean_cut": 0.003,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.003
+        },
+        "just_in_time": {
+          "mean_open": 0.2415,
+          "max_open": 0.5,
+          "mean_cut": 0.2645,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.2645
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0005,
+          "max_open": 0.5,
+          "mean_cut": 0.0145,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0145
+        },
+        "optimised": {
+          "mean_open": 0.0005,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.005,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.005,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.4225,
+          "max_open": 0.5,
+          "mean_cut": 0.5325,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.5325
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.0075,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0075
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.5,
+          "mean_cut": 0.0,
+          "cutwidth": 0.5,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: torsion",
+      "n_nodes": 48,
+      "n_edges": 147,
+      "forward_refs": [],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 48,
+          "forward_refs": 0,
+          "cutwidth": 83,
+          "mean_cut": 40.38297872340426,
+          "max_open": 25,
+          "mean_open": 12.638297872340425,
+          "mean_edge_length": 12.91156462585034
+        },
+        "human_repaired": {
+          "n": 48,
+          "forward_refs": 0,
+          "cutwidth": 83,
+          "mean_cut": 40.38297872340426,
+          "max_open": 25,
+          "mean_open": 12.638297872340425,
+          "mean_edge_length": 12.91156462585034
+        },
+        "just_in_time": {
+          "n": 48,
+          "forward_refs": 0,
+          "cutwidth": 81,
+          "mean_cut": 49.148936170212764,
+          "max_open": 21,
+          "mean_open": 12.02127659574468,
+          "mean_edge_length": 15.714285714285714
+        },
+        "greedy_min_open": {
+          "n": 48,
+          "forward_refs": 0,
+          "cutwidth": 75,
+          "mean_cut": 38.12765957446808,
+          "max_open": 24,
+          "mean_open": 11.76595744680851,
+          "mean_edge_length": 12.19047619047619
+        },
+        "optimised": {
+          "n": 48,
+          "forward_refs": 0,
+          "cutwidth": 69,
+          "mean_cut": 32.4468085106383,
+          "max_open": 18,
+          "mean_open": 9.212765957446809,
+          "mean_edge_length": 10.374149659863946
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 1.0,
+        "just_in_time": 0.4113475177304965,
+        "greedy_min_open": 0.6170212765957447,
+        "optimised": 0.6471631205673759
+      },
+      "random": {
+        "mean_open": {
+          "mean": 14.662340425531914,
+          "p05": 13.25531914893617,
+          "p50": 14.595744680851064,
+          "p95": 16.170212765957448
+        },
+        "max_open": {
+          "mean": 25.396,
+          "p05": 22,
+          "p50": 25,
+          "p95": 28
+        },
+        "mean_cut": {
+          "mean": 54.34772340425532,
+          "p05": 46.723404255319146,
+          "p50": 54.57446808510638,
+          "p95": 61.04255319148936
+        },
+        "cutwidth": {
+          "mean": 88.543,
+          "p05": 80,
+          "p50": 89,
+          "p95": 96
+        },
+        "mean_edge_length": {
+          "mean": 17.37648299319728,
+          "p05": 14.938775510204081,
+          "p50": 17.448979591836736,
+          "p95": 19.517006802721088
+        }
+      },
+      "random_tau_vs_human_mean": 0.5477624113475177,
+      "uniform": {
+        "mean_open": {
+          "p05": 13.76595744680851,
+          "p50": 15.25531914893617,
+          "p95": 16.404255319148938
+        },
+        "max_open": {
+          "p05": 22,
+          "p50": 25,
+          "p95": 28
+        },
+        "mean_cut": {
+          "p05": 55.851063829787236,
+          "p50": 60.702127659574465,
+          "p95": 64.17021276595744
+        },
+        "cutwidth": {
+          "p05": 83,
+          "p50": 92,
+          "p95": 96
+        },
+        "mean_edge_length": {
+          "p05": 17.857142857142858,
+          "p50": 19.408163265306122,
+          "p95": 20.517006802721088
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.003,
+          "max_open": 0.4275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.127,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.003,
+          "max_open": 0.4275,
+          "mean_cut": 0.0,
+          "cutwidth": 0.127,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0045,
+          "mean_cut": 0.14,
+          "cutwidth": 0.0715,
+          "mean_edge_length": 0.14
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.225,
+          "mean_cut": 0.0,
+          "cutwidth": 0.012,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0,
+          "max_open": 0.4575,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0475,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.0,
+          "max_open": 0.4575,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0475,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0025,
+          "mean_cut": 0.0,
+          "cutwidth": 0.025,
+          "mean_edge_length": 0.0
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.255,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    },
+    {
+      "name": "Lean: further_improvement",
+      "n_nodes": 38,
+      "n_edges": 147,
+      "forward_refs": [
+        [
+          "rho-sums",
+          "rho-invariant"
+        ]
+      ],
+      "cycle_edges_dropped": [],
+      "orders": {
+        "human": {
+          "n": 38,
+          "forward_refs": 1,
+          "cutwidth": 78,
+          "mean_cut": 47.351351351351354,
+          "max_open": 20,
+          "mean_open": 10.054054054054054,
+          "mean_edge_length": 11.918367346938776
+        },
+        "human_repaired": {
+          "n": 38,
+          "forward_refs": 0,
+          "cutwidth": 78,
+          "mean_cut": 46.972972972972975,
+          "max_open": 20,
+          "mean_open": 9.972972972972974,
+          "mean_edge_length": 11.82312925170068
+        },
+        "just_in_time": {
+          "n": 38,
+          "forward_refs": 0,
+          "cutwidth": 96,
+          "mean_cut": 57.67567567567568,
+          "max_open": 16,
+          "mean_open": 9.64864864864865,
+          "mean_edge_length": 14.517006802721088
+        },
+        "greedy_min_open": {
+          "n": 38,
+          "forward_refs": 0,
+          "cutwidth": 90,
+          "mean_cut": 51.351351351351354,
+          "max_open": 17,
+          "mean_open": 9.243243243243244,
+          "mean_edge_length": 12.92517006802721
+        },
+        "optimised": {
+          "n": 38,
+          "forward_refs": 0,
+          "cutwidth": 75,
+          "mean_cut": 41.16216216216216,
+          "max_open": 18,
+          "mean_open": 8.972972972972974,
+          "mean_edge_length": 10.360544217687075
+        }
+      },
+      "tau_vs_human": {
+        "human_repaired": 0.9943100995732574,
+        "just_in_time": 0.4423897581792319,
+        "greedy_min_open": 0.6899004267425319,
+        "optimised": 0.8406827880512091
+      },
+      "random": {
+        "mean_open": {
+          "mean": 10.841351351351351,
+          "p05": 10.243243243243244,
+          "p50": 10.81081081081081,
+          "p95": 11.486486486486486
+        },
+        "max_open": {
+          "mean": 18.969,
+          "p05": 18,
+          "p50": 19,
+          "p95": 20
+        },
+        "mean_cut": {
+          "mean": 53.22251351351351,
+          "p05": 48.24324324324324,
+          "p50": 52.891891891891895,
+          "p95": 59.5945945945946
+        },
+        "cutwidth": {
+          "mean": 91.101,
+          "p05": 82,
+          "p50": 91,
+          "p95": 101
+        },
+        "mean_edge_length": {
+          "mean": 13.396142857142857,
+          "p05": 12.142857142857142,
+          "p50": 13.312925170068027,
+          "p95": 15.0
+        }
+      },
+      "random_tau_vs_human_mean": 0.7160938833570413,
+      "uniform": {
+        "mean_open": {
+          "p05": 10.243243243243244,
+          "p50": 10.891891891891891,
+          "p95": 11.486486486486486
+        },
+        "max_open": {
+          "p05": 17,
+          "p50": 18,
+          "p95": 20
+        },
+        "mean_cut": {
+          "p05": 53.945945945945944,
+          "p50": 58.513513513513516,
+          "p95": 62.78378378378378
+        },
+        "cutwidth": {
+          "p05": 88,
+          "p50": 96,
+          "p95": 102
+        },
+        "mean_edge_length": {
+          "p05": 13.578231292517007,
+          "p50": 14.727891156462585,
+          "p95": 15.802721088435375
+        }
+      },
+      "share_random_better": {
+        "human": {
+          "mean_open": 0.0185,
+          "max_open": 0.8125,
+          "mean_cut": 0.023,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.023
+        },
+        "human_repaired": {
+          "mean_open": 0.0135,
+          "max_open": 0.8125,
+          "mean_cut": 0.012,
+          "cutwidth": 0.0015,
+          "mean_edge_length": 0.012
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0015,
+          "mean_cut": 0.8815,
+          "cutwidth": 0.784,
+          "mean_edge_length": 0.8815
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.0175,
+          "mean_cut": 0.329,
+          "cutwidth": 0.4355,
+          "mean_edge_length": 0.329
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.2015,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "share_uniform_better": {
+        "human": {
+          "mean_open": 0.0175,
+          "max_open": 0.8775,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "human_repaired": {
+          "mean_open": 0.01,
+          "max_open": 0.8775,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        },
+        "just_in_time": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.4025,
+          "cutwidth": 0.5325,
+          "mean_edge_length": 0.4025
+        },
+        "greedy_min_open": {
+          "mean_open": 0.0,
+          "max_open": 0.045,
+          "mean_cut": 0.0,
+          "cutwidth": 0.1075,
+          "mean_edge_length": 0.0
+        },
+        "optimised": {
+          "mean_open": 0.0,
+          "max_open": 0.3175,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
+        }
+      },
+      "chapter_runs": {
+        "human": 1,
+        "human_repaired": 1,
+        "just_in_time": 1,
+        "greedy_min_open": 1,
+        "optimised": 1
+      }
+    }
+  ]
+}

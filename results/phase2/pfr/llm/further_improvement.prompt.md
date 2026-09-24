@@ -1,0 +1,199 @@
+You are organising one chapter of a mathematical exposition. Below are its results
+(definitions, lemmas, theorems) in an arbitrary order, each with an id and its statement. Some results use
+others; the constraints list which must come first.
+
+Choose the order in which you would present these results to a mathematician reading the chapter for the
+first time, so that it is as easy as possible to follow. Respect every constraint.
+
+Reply with only a JSON array containing every id exactly once, in your chosen order.
+
+## Results
+
+- id `rhoplus-def`: definition (Rho plus). For any $G$-valued random variable $X$, we define $\rho^+(X) := \rho^-(X) + \bbH(X) - \bbH(U_A)$.
+- id `rho-sums-sym`: lemma (Rho and sums, symmetrized). If $X,Y$ are independent, then $$ \rho(X+Y) \leq \frac{1}{2}(\rho(X)+\rho(Y) + d[X;Y]).$$
+- id `kl-div-convex`: lemma (Convexity of Kullback--Leibler). If $S$ is a finite set, $\sum_{s \in S} w_s = 1$ for some non-negative $w_s$, and ${\bf P}(X=x) = \sum_{s\in S} w_s {\bf P}(X_s=x)$, ${\bf P}(Y=x) = \sum_{s\in S} w_s {\bf P}(Y_s=x)$ for all $x$, then $$D_{KL}(X\Vert Y) \le \sum_{s\in S} w_s D_{KL}(X_s\Vert Y_s).$$
+- id `phi-minimizer-zero-distance`: proposition. If $X_1,X_2$ is a $\phi$-minimizer, then $d[X_1;X_2] = 0$.
+- id `rho-BSG-triplet-symmetrized`: lemma. If $G$-valued random variables $T_1,T_2,T_3$ satisfy $T_1+T_2+T_3=0$, then $$d[X_1;X_2] \leq \sum_{1 \leq i<j \leq 3} \bbI[T_i:T_j] + \frac{\eta}{3} \sum_{1 \leq i<j \leq 3} (\rho(T_i|T_j) + \rho(T_j|T_i) -\rho(X_1)-\rho(X_2))$$
+- id `rho-cond-relabeled`: lemma (Conditional rho and relabeling). If $f$ is injective, then $\rho(X|f(Y))=\rho(X|Y)$.
+- id `rho-subgroup`: lemma (Rho of subgroup). If $H$ is a finite subgroup of $G$, and $\rho(U_H) \leq r$, then there exists $t$ such that $|A \cap (H+t)| \geq e^{-r} \sqrt{|A||H|}$, and $|H|/|A|\in[e^{-2r},e^{2r}]$.
+- id `phi-first-estimate`: lemma. $I_1\le 2\eta d[X_1;X_2]$
+- id `rho-increase-symmetrized`: lemma. For independent random variables $Y_1,Y_2,Y_3,Y_4$ over $G$, define $T_1:=Y_1+Y_2,T_2:=Y_1+Y_3,T_3:=Y_2+Y_3$ and $S:=Y_1+Y_2+Y_3+Y_4$. Then $$\sum_{1 \leq i<j \leq 3} (\rho(T_i|T_j,S) + \rho(T_j|T_i,S) - \frac{1}{2}\sum_{i} \rho(Y_i))\le \sum_{1\leq i < j \leq 4}d[Y_i;Y_j]$$
+- id `phi-second-estimate`: lemma. $I_2\le 2\eta d[X_1;X_2] + \frac{\eta}{1-\eta}(2\eta d[X_1;X_2]-I_1)$.
+- id `I1-I2-diff`: lemma. $d[X_1;X_1]+d[X_2;X_2]= 2d[X_1;X_2]+(I_2-I_1)$.
+- id `phi-min-def`: definition. Given $G$-valued random variables $X,Y$, define $$ \phi[X;Y] := d[X;Y] + \eta(\rho(X) + \rho(Y))$$ and define a \emph{$\phi$-minimizer} to be a pair of random variables $X,Y$ which minimizes $\phi[X;Y]$.
+- id `rho-cts`: lemma (Rho continuous). $\rho(X)$ depends continuously on the distribution of $X$.
+- id `rho-BSG-triplet`: lemma. If $G$-valued random variables $T_1,T_2,T_3$ satisfy $T_1+T_2+T_3=0$, then $$d[X_1;X_2]\le 3\bbI[T_1:T_2] + (2\bbH[T_3]-\bbH[T_1]-\bbH[T_2])+ \eta(\rho(T_1|T_3)+\rho(T_2|T_3)-\rho(X_1)-\rho(X_2)).$$
+- id `kl-div-inj`: lemma (Kullback--Leibler and injections). If $f:G \to H$ is an injection, then $D_{KL}(f(X)\Vert f(Y)) = D_{KL}(X\Vert Y)$.
+- id `rhominus-def`: definition (Rho minus). For any $G$-valued random variable $X$, we define $\rho^-(X)$ to be the infimum of $D_{KL}(X \Vert U_A + T)$, where $U_A$ is uniform on $A$ and $T$ ranges over $G$-valued random variables independent of $U_A$.
+- id `rho-cond-def`: definition (Conditional Rho functional). We define $\rho(X|Y) := \sum_y {\bf P}(Y=y) \rho(X|Y=y)$.
+- id `rho-increase`: lemma. For independent random variables $Y_1,Y_2,Y_3,Y_4$ over $G$, define $S:=Y_1+Y_2+Y_3+Y_4$, $T_1:=Y_1+Y_2$, $T_2:=Y_1+Y_3$. Then $$\rho(T_1|T_2,S)+\rho(T_2|T_1,S) - \frac{1}{2}\sum_{i} \rho(Y_i)\le \frac{1}{2}(d[Y_1;Y_2]+d[Y_3;Y_4]+d[Y_1;Y_3]+d[Y_2;Y_4]).$$
+- id `pfr-9-aux`: corollary. If $|A+A| \leq K|A|$, then there exists a subgroup $H$ and $t\in G$ such that $|A \cap (H+t)| \geq K^{-4} \sqrt{|A||H|}$, and $|H|/|A|\in[K^{-8},K^8]$.
+- id `Conditional-Gibbs`: lemma (Conditional Gibbs inequality). $D_{KL}((X|W)\Vert Y) \geq 0$.
+- id `Gibbs-converse`: lemma (Converse Gibbs inequality). If $D_{KL}(X\Vert Y) = 0$, then $Y$ is a copy of $X$.
+- id `rho-cond-invariant`: lemma (Conditional rho and translation). For any $s\in G$, $\rho(X+s|Y)=\rho(X|Y)$.
+- id `rho-def`: definition (Rho functional). We define $\rho(X) := (\rho^+(X) + \rho^-(X))/2$.
+- id `rho-sums`: lemma (Rho and sums). If $X,Y$ are independent, one has $$ \rho^-(X+Y) \leq \rho^-(X)$$ $$ \rho^+(X+Y) \leq \rho^+(X) + \bbH[X+Y] - \bbH[X]$$ and $$ \rho(X+Y) \leq \rho(X) + \frac{1}{2}( \bbH[X+Y] - \bbH[X] ).$$
+- id `kl-div`: definition (Kullback--Leibler divergence). If $X,Y$ are two $G$-valued random variables, the Kullback--Leibler divergence is defined as $$ D_{KL}(X\Vert Y) := \sum_x \mathbf{P}(X=x) \log \frac{\mathbf{P}(X=x)}{\mathbf{P}(Y=x)}.$$
+- id `rho-cond`: lemma (Rho and conditioning). If $X,Z$ are defined on the same space, one has $$ \rho^-(X|Z) \leq \rho^-(X) + \bbH[X] - \bbH[X|Z]$$ $$ \rho^+(X|Z) \leq \rho^+(X)$$ and $$ \rho(X|Z) \leq \rho(X) + \frac{1}{2}( \bbH[X] - \bbH[X|Z] ).$$
+- id `pfr-rho`: proposition. For any random variables $Y_1,Y_2$, there exist a subgroup $H$ such that $$ 2\rho(U_H) \leq \rho(Y_1) + \rho(Y_2) + 8 d[Y_1;Y_2].$$
+- id `phi-min-exist`: lemma ($\phi$-minimizers exist). There exists a $\phi$-minimizer.
+- id `pfr-9`: theorem (PFR with \texorpdfstring{$C=9$}{C=9}). If $A \subset {\bf F}_2^n$ is finite non-empty with $|A+A| \leq K|A|$, then there exists a subgroup $H$ of ${\bf F}_2^n$ with $|H| \leq |A|$ such that $A$ can be covered by at most $2K^9$ translates of $H$.
+- id `kl-sums`: lemma (Kullback--Leibler and sums). If $X, Y, Z$ are independent $G$-valued random variables, then $$D_{KL}(X+Z\Vert Y+Z) \leq D_{KL}(X\Vert Y).$$
+- id `rho-invariant`: lemma (Rho invariant). For any $s \in G$, $\rho(X+s) = \rho(X)$.
+- id `pfr-9-aux'`: corollary. If $|A+A| \leq K|A|$, then there exist a subgroup $H$ and a subset $c$ of $G$ with $A \subseteq c + H$, such that $|c| \leq K^{5} |A|^{1/2}/|H|^{1/2}$ and $|H|/|A|\in[K^{-8},K^8]$.
+- id `rhominus-subgroup`: lemma (Rho minus of subgroup). If $H$ is a finite subgroup of $G$, then $\rho^-(U_H) = \log |A| - \log \max_t |A \cap (H+t)|$.
+- id `rhoplus-subgroup`: corollary (Rho plus of subgroup). If $H$ is a finite subgroup of $G$, then $\rho^+(U_H) = \log |H| - \log \max_t |A \cap (H+t)|$.
+- id `kl-div-copy`: lemma (Kullback--Leibler divergence of copy). If $X'$ is a copy of $X$, and $Y'$ is a copy of $Y$, then $D_{KL}(X'\Vert Y') = D_{KL}(X\Vert Y)$.
+- id `Gibbs`: lemma (Gibbs inequality). $D_{KL}(X\Vert Y) \geq 0$.
+- id `kl-cond`: lemma (Kullback--Leibler and conditioning). If $X, Y$ are independent $G$-valued random variables, and $Z$ is another random variable defined on the same sample space as $X$, then $$D_{KL}((X|Z)\Vert Y) = D_{KL}(X\Vert Y) + \bbH[X] - \bbH[X|Z].$$
+- id `rho-cond-sym`: lemma (Rho and conditioning, symmetrized). If $X,Y$ are independent, then $$ \rho(X | X+Y) \leq \frac{1}{2}(\rho(X)+\rho(Y) + d[X;Y]).$$
+
+## Constraints
+
+- `Gibbs` before `Conditional-Gibbs`
+- `Gibbs` before `pfr-9-aux`
+- `Gibbs` before `rho-cond`
+- `Gibbs` before `rho-cts`
+- `Gibbs` before `rho-subgroup`
+- `Gibbs` before `rho-sums`
+- `Gibbs` before `rhominus-subgroup`
+- `I1-I2-diff` before `phi-minimizer-zero-distance`
+- `I1-I2-diff` before `phi-second-estimate`
+- `kl-cond` before `rho-cond`
+- `kl-div` before `Conditional-Gibbs`
+- `kl-div` before `Gibbs`
+- `kl-div` before `Gibbs-converse`
+- `kl-div` before `kl-cond`
+- `kl-div` before `kl-div-convex`
+- `kl-div` before `kl-div-copy`
+- `kl-div` before `kl-div-inj`
+- `kl-div` before `kl-sums`
+- `kl-div` before `pfr-9-aux`
+- `kl-div` before `pfr-rho`
+- `kl-div` before `phi-first-estimate`
+- `kl-div` before `phi-min-exist`
+- `kl-div` before `phi-minimizer-zero-distance`
+- `kl-div` before `phi-second-estimate`
+- `kl-div` before `rho-BSG-triplet`
+- `kl-div` before `rho-cond`
+- `kl-div` before `rho-cond-sym`
+- `kl-div` before `rho-cts`
+- `kl-div` before `rho-increase`
+- `kl-div` before `rho-subgroup`
+- `kl-div` before `rho-sums`
+- `kl-div` before `rhominus-def`
+- `kl-div` before `rhominus-subgroup`
+- `kl-div-convex` before `kl-sums`
+- `kl-div-copy` before `pfr-rho`
+- `kl-div-copy` before `phi-first-estimate`
+- `kl-div-copy` before `phi-min-exist`
+- `kl-div-copy` before `phi-minimizer-zero-distance`
+- `kl-div-copy` before `phi-second-estimate`
+- `kl-div-copy` before `rho-BSG-triplet`
+- `kl-div-copy` before `rho-cond-sym`
+- `kl-div-copy` before `rho-increase`
+- `kl-div-copy` before `rho-sums`
+- `kl-div-inj` before `kl-sums`
+- `kl-sums` before `rho-sums`
+- `pfr-9-aux` before `pfr-9-aux'`
+- `pfr-9-aux'` before `pfr-9`
+- `pfr-rho` before `pfr-9-aux`
+- `phi-first-estimate` before `phi-minimizer-zero-distance`
+- `phi-min-def` before `pfr-rho`
+- `phi-min-def` before `phi-first-estimate`
+- `phi-min-def` before `phi-min-exist`
+- `phi-min-def` before `phi-minimizer-zero-distance`
+- `phi-min-def` before `phi-second-estimate`
+- `phi-min-def` before `rho-BSG-triplet`
+- `phi-min-def` before `rho-BSG-triplet-symmetrized`
+- `phi-min-exist` before `pfr-rho`
+- `phi-minimizer-zero-distance` before `pfr-rho`
+- `phi-second-estimate` before `phi-minimizer-zero-distance`
+- `rho-BSG-triplet` before `phi-minimizer-zero-distance`
+- `rho-BSG-triplet` before `rho-BSG-triplet-symmetrized`
+- `rho-cond` before `rho-cond-sym`
+- `rho-cond` before `rho-increase`
+- `rho-cond-def` before `phi-first-estimate`
+- `rho-cond-def` before `phi-minimizer-zero-distance`
+- `rho-cond-def` before `phi-second-estimate`
+- `rho-cond-def` before `rho-BSG-triplet`
+- `rho-cond-def` before `rho-BSG-triplet-symmetrized`
+- `rho-cond-def` before `rho-cond`
+- `rho-cond-def` before `rho-cond-invariant`
+- `rho-cond-def` before `rho-cond-relabeled`
+- `rho-cond-def` before `rho-cond-sym`
+- `rho-cond-def` before `rho-increase`
+- `rho-cond-def` before `rho-increase-symmetrized`
+- `rho-cond-relabeled` before `rho-increase`
+- `rho-cond-sym` before `phi-first-estimate`
+- `rho-cond-sym` before `phi-second-estimate`
+- `rho-cond-sym` before `rho-increase`
+- `rho-cts` before `pfr-rho`
+- `rho-cts` before `phi-min-exist`
+- `rho-def` before `pfr-9-aux`
+- `rho-def` before `pfr-rho`
+- `rho-def` before `phi-first-estimate`
+- `rho-def` before `phi-min-def`
+- `rho-def` before `phi-min-exist`
+- `rho-def` before `phi-minimizer-zero-distance`
+- `rho-def` before `phi-second-estimate`
+- `rho-def` before `rho-BSG-triplet`
+- `rho-def` before `rho-BSG-triplet-symmetrized`
+- `rho-def` before `rho-cond`
+- `rho-def` before `rho-cond-def`
+- `rho-def` before `rho-cond-invariant`
+- `rho-def` before `rho-cond-relabeled`
+- `rho-def` before `rho-cond-sym`
+- `rho-def` before `rho-cts`
+- `rho-def` before `rho-increase`
+- `rho-def` before `rho-increase-symmetrized`
+- `rho-def` before `rho-invariant`
+- `rho-def` before `rho-subgroup`
+- `rho-def` before `rho-sums`
+- `rho-def` before `rho-sums-sym`
+- `rho-increase` before `rho-increase-symmetrized`
+- `rho-increase-symmetrized` before `phi-minimizer-zero-distance`
+- `rho-invariant` before `pfr-rho`
+- `rho-invariant` before `rho-cond-invariant`
+- `rho-invariant` before `rho-cond-sym`
+- `rho-subgroup` before `pfr-9-aux`
+- `rho-sums` before `rho-invariant`
+- `rho-sums` before `rho-sums-sym`
+- `rho-sums-sym` before `phi-first-estimate`
+- `rho-sums-sym` before `phi-second-estimate`
+- `rho-sums-sym` before `rho-increase`
+- `rhominus-def` before `pfr-9-aux`
+- `rhominus-def` before `pfr-rho`
+- `rhominus-def` before `phi-first-estimate`
+- `rhominus-def` before `phi-min-exist`
+- `rhominus-def` before `phi-minimizer-zero-distance`
+- `rhominus-def` before `phi-second-estimate`
+- `rhominus-def` before `rho-BSG-triplet`
+- `rhominus-def` before `rho-cond`
+- `rhominus-def` before `rho-cond-sym`
+- `rhominus-def` before `rho-cts`
+- `rhominus-def` before `rho-def`
+- `rhominus-def` before `rho-increase`
+- `rhominus-def` before `rho-subgroup`
+- `rhominus-def` before `rho-sums`
+- `rhominus-def` before `rhominus-subgroup`
+- `rhominus-def` before `rhoplus-def`
+- `rhominus-def` before `rhoplus-subgroup`
+- `rhominus-subgroup` before `rho-subgroup`
+- `rhominus-subgroup` before `rhoplus-subgroup`
+- `rhoplus-def` before `pfr-9-aux`
+- `rhoplus-def` before `pfr-rho`
+- `rhoplus-def` before `phi-first-estimate`
+- `rhoplus-def` before `phi-min-exist`
+- `rhoplus-def` before `phi-minimizer-zero-distance`
+- `rhoplus-def` before `phi-second-estimate`
+- `rhoplus-def` before `rho-BSG-triplet`
+- `rhoplus-def` before `rho-cond`
+- `rhoplus-def` before `rho-cond-sym`
+- `rhoplus-def` before `rho-cts`
+- `rhoplus-def` before `rho-def`
+- `rhoplus-def` before `rho-increase`
+- `rhoplus-def` before `rho-subgroup`
+- `rhoplus-def` before `rho-sums`
+- `rhoplus-def` before `rhoplus-subgroup`
+- `rhoplus-subgroup` before `rho-subgroup`
