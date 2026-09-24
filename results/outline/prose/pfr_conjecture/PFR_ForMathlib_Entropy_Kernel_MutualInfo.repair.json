@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
+  "statement": "Let $S$, $U$, $T$ have measurable singletons, with $T$ countable. Let $\\mu$ be a finite measure on $T$ with finite support, and let $\\kappa$ be a kernel from $T$ into $S \\times U$ that has almost everywhere finite kernel support with respect to $\\mu$. Then $0 \\le I_k[\\kappa,\\mu]$."
+ }
+}

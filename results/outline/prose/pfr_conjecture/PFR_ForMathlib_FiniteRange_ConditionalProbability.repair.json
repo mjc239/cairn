@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.sum_meas_smul_cond_fiber'": {
+  "statement": "(Law of total probability.) Let $\\alpha$ have measurable singletons, let $X:\\Omega\\to \\alpha$ be a measurable random variable with finite range, and let $\\mu$ be a finite measure on $\\Omega$. Then $\\sum_{x\\in \\mathrm{range}(X)} \\mu(X^{-1}\\{x\\})\\cdot \\mu[\\,\\cdot \\mid X^{-1}\\{x\\}] = \\mu$, where $\\mu[\\,\\cdot\\mid A]$ denotes the conditional measure on $A$ and the sum runs over the finite range of $X$ (FiniteRange.toFinset $X$)."
+ }
+}

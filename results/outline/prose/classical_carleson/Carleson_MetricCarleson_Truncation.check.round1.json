@@ -1,0 +1,46 @@
+{
+ "R_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "R_truncation'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "finitary_carleson_step": {
+  "faithful": true,
+  "issue": ""
+ },
+ "P304.succ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "enorm_carlesonOperatorIntegrand_le_T_S": {
+  "faithful": true,
+  "issue": ""
+ },
+ "linearized_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "volume_slice": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_G_subset": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound_sum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "S_truncation": {
+  "faithful": true,
+  "issue": ""
+ }
+}

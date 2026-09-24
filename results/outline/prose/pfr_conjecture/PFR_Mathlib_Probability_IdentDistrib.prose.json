@@ -1,0 +1,17 @@
+{
+ "title": "Independent Copies of Random Variables",
+ "results": {
+  "ProbabilityTheory.independent_copies4_nondep": {
+   "statement": "Let $X_1,X_2,X_3,X_4$ be measurable random variables, all with the same codomain, defined on spaces $\\Omega_1,\\dots,\\Omega_4$ with measures $\\mu_1,\\dots,\\mu_4$ respectively. Then there exist a measurable space $A$, a probability measure $\\mu_A$ on $A$, and measurable random variables $X_1',X_2',X_3',X_4'$ on $A$ that are jointly independent under $\\mu_A$ and such that $X_i'$ under $\\mu_A$ has the same distribution as $X_i$ under $\\mu_i$, for $i=1,2,3,4$.",
+   "sketch": "The variables are realized as coordinate projections on a product probability space (helper lemma `independent_copies'` and facts about the product measure and its marginals), after lifting to a common universe."
+  },
+  "ProbabilityTheory.independent_copies": {
+   "statement": "Let $X:\\Omega\\to\\alpha$ and $Y:\\Omega'\\to\\beta$ be measurable random variables, with measures $\\mu$ on $\\Omega$ and $\\mu'$ on $\\Omega'$. Then there exist a probability measure $\\nu$ (on some space) and measurable random variables $X',Y'$ that are independent under $\\nu$, with $X'$ under $\\nu$ identically distributed to $X$ under $\\mu$ and $Y'$ under $\\nu$ identically distributed to $Y$ under $\\mu'$.",
+   "sketch": "Take $X',Y'$ to be the two coordinate projections for the product of the laws of $X$ and $Y$, which are independent (helper lemma `indepFun_fst_snd`), with the degenerate zero-measure case handled separately."
+  },
+  "ProbabilityTheory.independent_copies3_nondep": {
+   "statement": "Let $X_1,X_2,X_3$ be measurable random variables, all with the same codomain, defined on spaces $\\Omega_1,\\Omega_2,\\Omega_3$ with measures $\\mu_1,\\mu_2,\\mu_3$ respectively. Then there exist a measurable space $A$, a probability measure $\\mu_A$ on $A$, and measurable random variables $X_1',X_2',X_3'$ on $A$ that are jointly independent under $\\mu_A$ and such that $X_i'$ under $\\mu_A$ has the same distribution as $X_i$ under $\\mu_i$, for $i=1,2,3$.",
+   "sketch": "As in the four-variable case, the variables are realized as coordinate projections on a product probability space (helper lemma `independent_copies'`), after lifting to a common universe."
+  }
+ }
+}

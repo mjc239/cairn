@@ -1,0 +1,8 @@
+{
+ "condRuzsaDist": {
+  "statement": "Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\\Omega\\to G$, $Z:\\Omega\\to S$ and $Y:\\Omega'\\to G$, $W:\\Omega'\\to T$, and finite measures $\\mu$ on $\\Omega$ and $\\mu'$ on $\\Omega'$ (by default the ambient measures), this defines the real number $d[X|Z \\,;\\, Y|W]$, the conditional Ruzsa distance of $X$ given $Z$ (with respect to $\\mu$) and $Y$ given $W$ (with respect to $\\mu'$)."
+ },
+ "condRuzsaDist'": {
+  "statement": "Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\\Omega\\to G$ and $Y:\\Omega'\\to G$, $W:\\Omega'\\to T$, a measure $\\mu$ on $\\Omega$ and a finite measure $\\mu'$ on $\\Omega'$ (by default the ambient measures), this defines the real number $d[X \\,;\\, Y|W]$, the conditional Ruzsa distance between $X$ (with respect to $\\mu$) and $Y$ given $W$ (with respect to $\\mu'$)."
+ }
+}

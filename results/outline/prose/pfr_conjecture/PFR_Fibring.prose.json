@@ -1,0 +1,25 @@
+{
+ "title": "Fibring identities for Ruzsa distance",
+ "results": {
+  "rdist_of_indep_eq_sum_fibre": {
+   "statement": "Let $\\pi : H \\to H'$ be a homomorphism of additive groups and let $Z_1, Z_2$ be measurable $H$-valued random variables that are independent (with respect to $\\mu$). Then $$d[Z_1;Z_2] = d[\\pi(Z_1);\\pi(Z_2)] + d[Z_1\\mid\\pi(Z_1);\\, Z_2\\mid\\pi(Z_2)] + I\\big[Z_1 - Z_2 : (\\pi(Z_1),\\pi(Z_2)) \\,\\big|\\, \\pi(Z_1 - Z_2)\\big].$$",
+   "sketch": "All terms are expanded into (conditional) entropies; the conditional entropies are written as kernel entropies of conditional distributions, and the chain rule for kernel entropy, together with invariance under adjoining a unit coordinate, is used to match both sides."
+  },
+  "sum_of_rdist_eq_step_condMutualInfo": {
+   "statement": "Let $Y_0, Y_1, Y_2, Y_3$ be measurable $G$-valued random variables. Then $$I\\big[(Y_0 - Y_1,\\ Y_2 - Y_3) : (Y_0 - Y_2,\\ Y_1 - Y_3) \\,\\big|\\, Y_0 - Y_1 - (Y_2 - Y_3)\\big] = I\\big[Y_0 - Y_1 : Y_1 - Y_3 \\,\\big|\\, Y_0 - Y_1 - Y_2 + Y_3\\big].$$",
+   "sketch": "Given the conditioning variable, each pair is an injective function of a single coordinate, so `condMutualInfo_of_inj_map` (applied on both sides, with symmetry of conditional mutual information) reduces the left side to the right side."
+  },
+  "sum_of_rdist_eq_step_condRuzsaDist": {
+   "statement": "Let $Y_0, Y_1, Y_2, Y_3$ be jointly independent measurable $G$-valued random variables. Then $$d\\big[(Y_0,Y_2)\\mid Y_0 - Y_2;\\ (Y_1,Y_3)\\mid Y_1 - Y_3\\big] = d\\big[Y_0 \\mid Y_0 - Y_2;\\ Y_1\\mid Y_1 - Y_3\\big].$$",
+   "sketch": "This follows from `condRuzsaDist_of_inj_map`, applied with a homomorphism $\\pi : G\\times G \\to G$ that is injective in the first coordinate for each fixed second coordinate, using the independence of $(Y_0,Y_2)$ and $(Y_1,Y_3)$."
+  },
+  "sum_of_rdist_eq": {
+   "statement": "Let $Y_0, Y_1, Y_2, Y_3$ be jointly independent measurable $G$-valued random variables. Then $$d[Y_0;Y_1] + d[Y_2;Y_3] = d[Y_0 - Y_2;\\ Y_1 - Y_3] + d[Y_0\\mid Y_0 - Y_2;\\ Y_1 \\mid Y_1 - Y_3] + I[Y_0 - Y_1 : Y_1 - Y_3 \\mid Y_0 - Y_1 - Y_2 + Y_3].$$",
+   "sketch": "Apply `rdist_of_indep_eq_sum_fibre` to the independent pair $(Y_0,Y_2)$, $(Y_1,Y_3)$ in $G\\times G$ with the subtraction map $\\pi(x,y) = x - y$; the left side becomes $d[Y_0;Y_1] + d[Y_2;Y_3]$ by independence, and the conditional distance and conditional mutual information terms are simplified by `sum_of_rdist_eq_step_condRuzsaDist` and `sum_of_rdist_eq_step_condMutualInfo`."
+  },
+  "sum_of_rdist_eq_char_2": {
+   "statement": "Let $Y_0, Y_1, Y_2, Y_3$ be jointly independent measurable $G$-valued random variables (in the setting of this result $G$ is a group of characteristic $2$, as its name indicates). Then $$d[Y_0;Y_1] + d[Y_2;Y_3] = d[Y_0 + Y_2;\\ Y_1 + Y_3] + d[Y_0\\mid Y_0 + Y_2;\\ Y_1 \\mid Y_1 + Y_3] + I[Y_0 + Y_1 : Y_1 + Y_3 \\mid Y_0 + Y_1 + Y_2 + Y_3].$$",
+   "sketch": "Immediate from `sum_of_rdist_eq`, rewriting subtractions as additions."
+  }
+ }
+}

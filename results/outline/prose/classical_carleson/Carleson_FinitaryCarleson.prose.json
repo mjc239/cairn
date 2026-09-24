@@ -1,0 +1,7 @@
+{"title": "The finitary Carleson theorem",
+ "results": {
+  "finitary_carleson": {
+   "statement": "(Proposition 2.0.1) In the given setting on $X$ (with sets $F$, $G$, exponent $q$ = `nnq X`, scale functions $\\sigma_1, \\sigma_2$, kernels $K_s$ and the function $Q$), there exists a measurable set $G' \\subseteq X$ with $2\\mu(G') \\le \\mu(G)$ such that for every measurable $f : X \\to \\mathbb{C}$ with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$, $$\\int_{G \\setminus G'} \\Big\\| \\sum_{s = \\sigma_1(x)}^{\\sigma_2(x)} \\int_X K_s(x,y)\\, f(y)\\, e^{i Q(x)(y)}\\,dy \\Big\\|\\,dx \\le C_{2.0.1}(a,q)\\, \\mu(G)^{1-1/q}\\, \\mu(F)^{1/q},$$ where $C_{2.0.1}$ is the constant `C2_0_1`.",
+   "sketch": "Construct a grid structure via `grid_existence` (with parameters `defaultD a`, `defaultκ a`, `defaultS X` and the point `cancelPt X`) and a tile structure on it, rewrite the sum over scales as the Carleson sum $\\sum_{p} T_p f(x)$ over all tiles, and apply `discrete_carleson`, comparing the constants $C_{2.0.2}$ and $C_{2.0.1}$."
+  }
+ }}

@@ -1,0 +1,53 @@
+{"title": "The forest operator estimate (Proposition 2.0.4)",
+ "results": {
+  "forest_operator_le_volume": {
+   "statement": "Let $\\mathfrak{F}$ be an $n$-forest, $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$, and $A$ a measurable set with $A \\subseteq G$. Then $$\\int_A \\Big\\|\\sum_{u \\in \\mathfrak{F}} \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\Big\\|\\,dx \\le C_{2.0.4}(a,q,n)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in \\mathfrak{F}} \\mathfrak{T}(u)\\Big)^{1/q - 1/2}\\, \\mu(F)^{1/2}\\, \\mu(A)^{1/2}.$$",
+   "sketch": "Apply `forest_operator'` and bound $\\|f\\|_{L^2} \\le \\mu(F)^{1/2}$, which follows from $|f| \\le \\mathbf{1}_F$."
+  },
+  "TileStructure.Forest.forest_operator_f": {
+   "statement": "(The $f$ side of Proposition 2.0.4) Let $t$ be an $n$-forest, $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ and $g$ measurable with $\\|g(x)\\| \\le \\mathbf{1}_G(x)$ for all $x$. Then $$\\Big|\\int_X \\overline{g(x)} \\sum_{u \\in t} \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\,dx\\Big| \\le C_{2.0.4}^{\\mathrm{aux}}(a)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in t}\\mathfrak{T}(u)\\Big)^{1/2}\\, \\|f\\|_{L^2}\\, \\|g\\|_{L^2},$$ where $C_{2.0.4}^{\\mathrm{aux}}$ is `Forest.C2_0_4_aux`.",
+   "sketch": "Decompose the forest into rows via `rowDecomp`, so that the sum over trees becomes a sum over $j$ of the row sums; since $g$ is supported in $G$, each row term is controlled by `forest_operator_f_inner`, and the resulting estimates are summed over the rows."
+  },
+  "TileStructure.Forest.rowDecomp_𝔘": {
+   "statement": "For an $n$-forest $t$ and $j \\in \\mathbb{N}$, the set of tiles $\\mathrm{rowDecomp}_{\\mathfrak{U}}(t, j)$: the set of tree tops forming the $j$-th row in the row decomposition of $t$."
+  },
+  "TileStructure.Forest.rowDecomp": {
+   "statement": "For an $n$-forest $t$ and $j \\in \\mathbb{N}$, the $j$-th $n$-row of the row decomposition of $t$, as defined in the proof of Lemma 7.7.1 (with indexing shifted by one relative to the blueprint)."
+  },
+  "TileStructure.Forest.indicator_row_bound": {
+   "statement": "Let $t$ be an $n$-forest, $j \\in \\mathbb{N}$, and let $g$ be bounded with compact support and $\\operatorname{supp} g \\subseteq G$. Then $$\\big\\|\\mathbf{1}_F \\cdot \\mathrm{adjointCarlesonRowSum}_t(j, g)\\big\\|_{L^2} \\le C_{7.7.2.2}(a,n)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in t}\\mathfrak{T}(u)\\Big)^{1/2}\\, \\|g\\|_{L^2},$$ where $C_{7.7.2.2}$ is `Forest.C7_7_2_2`.",
+   "sketch": "The row sum is a sum over the trees with tops in the $j$-th row `rowDecomp_𝔘 t j`; each tree term is bounded by `indicator_adjoint_tree_estimate`, with $\\mathrm{dens}_1$ bounded by a constant and $\\mathrm{dens}_2$ of a tree bounded by that of the union, and the tree terms are combined using the disjointness of the cubes of distinct tree tops in a row."
+  },
+  "TileStructure.Forest.forest_operator_f_inner": {
+   "statement": "Let $t$ be an $n$-forest, $j \\in \\mathbb{N}$, and $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$. Then $$\\big\\|\\mathbf{1}_G \\cdot \\mathrm{carlesonRowSum}_t(j, f)\\big\\|_{L^2} \\le C_{7.7.2.2}(a,n)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in t}\\mathfrak{T}(u)\\Big)^{1/2}\\, \\|f\\|_{L^2}.$$",
+   "sketch": "By duality: pair $\\mathbf{1}_G\\, \\mathrm{carlesonRowSum}_t(j,f)$ with test functions supported in $G$, move the operator to the other side with `adjointCarlesonSum_adjoint`, and apply `indicator_row_bound`."
+  },
+  "TileStructure.Forest.forest_operator_g_main": {
+   "statement": "Let $t$ be an $n$-forest and $g$ measurable with $\\|g(x)\\| \\le \\mathbf{1}_G(x)$ for all $x$. Then $$\\Big\\|\\sum_{u \\in t} \\mathrm{adjointCarlesonSum}(\\mathfrak{T}(u), g)\\Big\\|_{L^2}^2 \\le \\big(G_{2.0.4}(a,n)\\, \\|g\\|_{L^2}\\big)^2,$$ where $G_{2.0.4}$ is the constant `Forest.G2_0_4`.",
+   "sketch": "Decompose the forest into rows via `rowDecomp` and expand the square of the $L^2$ norm: the diagonal terms are bounded using `adjoint_tree_estimate` for the (disjointly supported) trees within a row, and the off-diagonal terms between distinct rows by `row_correlation`."
+  },
+  "TileStructure.Forest.correlation_separated_trees_of_subset": {
+   "statement": "Let $t$ be an $n$-forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, and let $g_1, g_2$ be bounded with compact support. Then $$\\Big|\\int_X T^*_{\\mathfrak{T}(u_1)} g_1(x)\\, \\overline{T^*_{\\mathfrak{T}(u_2)} g_2(x)}\\,dx\\Big| \\le C_{7.4.4}(a,n)\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)\\cap\\mathcal{I}(u_2)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_1, g_1)\\big\\|_{L^2}\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)\\cap\\mathcal{I}(u_2)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_2, g_2)\\big\\|_{L^2},$$ where $T^*_{\\mathfrak{T}(u)}$ denotes `adjointCarlesonSum` over $\\mathfrak{T}(u)$ and $C_{7.4.4}$ is `Forest.C7_4_4`.",
+   "sketch": "Split $\\mathfrak{T}(u_1)$ into the part in $\\mathfrak{S}_0(u_1,u_2)$ and the rest, and combine the estimates `correlation_distant_tree_parts` and `correlation_near_tree_parts` for the two pieces."
+  },
+  "TileStructure.Forest.correlation_separated_trees": {
+   "statement": "(Lemma 7.4.4) Let $t$ be an $n$-forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$, and let $g_1, g_2$ be bounded with compact support. Then $$\\Big|\\int_X T^*_{\\mathfrak{T}(u_1)} g_1(x)\\, \\overline{T^*_{\\mathfrak{T}(u_2)} g_2(x)}\\,dx\\Big| \\le C_{7.4.4}(a,n)\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)\\cap\\mathcal{I}(u_2)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_1, g_1)\\big\\|_{L^2}\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)\\cap\\mathcal{I}(u_2)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_2, g_2)\\big\\|_{L^2}.$$",
+   "sketch": "If $\\mathcal{I}(u_1)$ and $\\mathcal{I}(u_2)$ are disjoint the integral vanishes since each $T^*_{\\mathfrak{T}(u)}g$ is supported in $\\mathcal{I}(u)$; otherwise the cubes are nested, and by symmetry (swapping $u_1, u_2$ and conjugating) one reduces to $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, which is `correlation_separated_trees_of_subset`."
+  },
+  "TileStructure.Forest.row_correlation": {
+   "statement": "(Lemma 7.7.3) Let $t$ be an $n$-forest, $j, j' < 2^n$ with $j \\ne j'$, and let $f_1, f_2$ be bounded with compact support, with $\\operatorname{supp} f_1 \\subseteq G$ and $\\operatorname{supp} f_2 \\subseteq G$. Then $$\\Big|\\int_X \\mathrm{adjointCarlesonRowSum}_t(j, f_1)(x)\\, \\overline{\\mathrm{adjointCarlesonRowSum}_t(j', f_2)(x)}\\,dx\\Big| \\le C_{7.7.3}(a,n)\\, \\|f_1\\|_{L^2}\\, \\|f_2\\|_{L^2},$$ where $C_{7.7.3}$ is `Forest.C7_7_3`.",
+   "sketch": "Expand both row sums as sums over trees in the rows `rowDecomp t j` and `rowDecomp t j'`, apply `correlation_separated_trees` to each pair of distinct trees, and sum using Cauchy–Schwarz, the disjointness of cubes within a row, and `adjoint_tree_control` to bound the boundary operators (the balls indexed by `𝓑`, `c𝓑`, `r𝓑` enter via the maximal function)."
+  },
+  "TileStructure.Forest.forest_operator_g": {
+   "statement": "(The $g$ side of Proposition 2.0.4) Let $t$ be an $n$-forest, $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ and $g$ measurable with $\\|g(x)\\| \\le \\mathbf{1}_G(x)$ for all $x$. Then $$\\Big|\\int_X \\overline{g(x)} \\sum_{u \\in t} \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\,dx\\Big| \\le G_{2.0.4}(a,n)\\, \\|f\\|_{L^2}\\, \\|g\\|_{L^2}.$$",
+   "sketch": "Move the operator onto $g$ with `adjointCarlesonSum_adjoint`, apply Cauchy–Schwarz, and use `forest_operator_g_main` to bound $\\big\\|\\sum_{u} T^*_{\\mathfrak{T}(u)} g\\big\\|_{L^2}$."
+  },
+  "forest_operator": {
+   "statement": "(Forest operator estimate) Let $\\mathfrak{F}$ be an $n$-forest, $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ and $g$ measurable with $\\|g(x)\\| \\le \\mathbf{1}_G(x)$ for all $x$. Then $$\\Big|\\int_X \\overline{g(x)} \\sum_{u \\in \\mathfrak{F}} \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\,dx\\Big| \\le C_{2.0.4}(a,q,n)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in \\mathfrak{F}} \\mathfrak{T}(u)\\Big)^{1/q - 1/2}\\, \\|f\\|_{L^2}\\, \\|g\\|_{L^2}.$$",
+   "sketch": "Interpolate between the $f$ side `forest_operator_f` (with factor $\\mathrm{dens}_2^{1/2}$) and the $g$ side `forest_operator_g` (with no density factor), taking a suitable geometric mean of the two bounds to obtain the exponent $1/q - 1/2$ and the constant $C_{2.0.4}$."
+  },
+  "forest_operator'": {
+   "statement": "Let $\\mathfrak{F}$ be an $n$-forest, $f$ measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x$, and $A$ a measurable set with $A \\subseteq G$. Then $$\\int_A \\Big\\|\\sum_{u \\in \\mathfrak{F}} \\mathrm{carlesonSum}(\\mathfrak{T}(u), f)(x)\\Big\\|\\,dx \\le C_{2.0.4}(a,q,n)\\, \\mathrm{dens}_2\\Big(\\bigcup_{u \\in \\mathfrak{F}} \\mathfrak{T}(u)\\Big)^{1/q - 1/2}\\, \\|f\\|_{L^2}\\, \\mu(A)^{1/2}.$$",
+   "sketch": "Apply `forest_operator` with $g = \\mathbf{1}_A$ times the conjugate phase of the sum (so that $\\overline{g}$ times the sum equals its norm on $A$); then $|g| \\le \\mathbf{1}_G$ and $\\|g\\|_{L^2} \\le \\mu(A)^{1/2}$."
+  }
+ }}

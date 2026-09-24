@@ -1,0 +1,9 @@
+{
+ "title": "Independence of Four Random Variables",
+ "results": {
+  "ProbabilityTheory.iIndepFun.apply_two_last": {
+   "statement": "Let $Z_1,Z_2,Z_3,Z_4$ be measurable random variables that are jointly independent (as the family $(Z_1,Z_2,Z_3,Z_4)$) with respect to the ambient measure, and let $\\varphi$ be a two-argument function whose uncurried form $(a,b)\\mapsto \\varphi(a,b)$ is measurable. Then the three random variables $Z_1$, $Z_2$ and $\\omega\\mapsto \\varphi(Z_3(\\omega),Z_4(\\omega))$ are jointly independent.",
+   "sketch": "The proof regroups the four independent variables into the blocks $\\{Z_1\\}$, $\\{Z_2\\}$, $\\{Z_3,Z_4\\}$ (via helper lemmas on independence of grouped families indexed through a reindexing map $\\kappa$), and then applies the measurable map $\\varphi$ to the last block."
+  }
+ }
+}

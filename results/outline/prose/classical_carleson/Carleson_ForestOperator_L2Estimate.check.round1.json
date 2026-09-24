@@ -1,0 +1,6 @@
+{
+  "TileStructure.Forest.tree_projection_estimate": {"faithful": true, "issue": ""},
+  "TileStructure.Forest.boundary_operator_bound": {"faithful": true, "issue": ""},
+  "TileStructure.Forest.eLpNorm_MB_le": {"faithful": true, "issue": ""},
+  "TileStructure.Forest.nontangential_operator_bound": {"faithful": true, "issue": ""}
+}

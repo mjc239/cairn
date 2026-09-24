@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.entropy_add_right": {
+  "faithful": false,
+  "issue": "The English drops the hypotheses [Countable G] and [MeasurableSingletonClass G]."
+ },
+ "ProbabilityTheory.entropy_add_left": {
+  "faithful": false,
+  "issue": "The English drops the hypotheses [Countable G] and [MeasurableSingletonClass G]."
+ },
+ "ProbabilityTheory.entropy_sub_mutualInfo_le_entropy_sub": {
+  "faithful": true,
+  "issue": ""
+ }
+}

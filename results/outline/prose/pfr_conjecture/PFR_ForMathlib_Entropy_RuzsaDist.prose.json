@@ -1,0 +1,98 @@
+{
+ "title": "Entropic Ruzsa distance and its basic inequalities",
+ "results": {
+  "condRuzsaDist": {
+   "statement": "For random variables $X:\\Omega\\to G$, $Z:\\Omega\\to S$ on $(\\Omega,\\mu)$ and $Y:\\Omega'\\to G$, $W:\\Omega'\\to T$ on $(\\Omega',\\mu')$, with $G$ an abelian group, the conditional Ruzsa distance $d[X|Z \\,;\\, Y|W]$ (with respect to $\\mu,\\mu'$) is the kernel Ruzsa distance between the conditional distribution of $X$ given $Z$ and that of $Y$ given $W$, averaged against the laws of $Z$ and $W$."
+  },
+  "condRuzsaDist'": {
+   "statement": "For $X:\\Omega\\to G$ on $(\\Omega,\\mu)$ and $Y:\\Omega'\\to G$, $W:\\Omega'\\to T$ on $(\\Omega',\\mu')$, the conditional Ruzsa distance $d[X \\,;\\, Y|W]$ (with respect to $\\mu,\\mu'$) is the kernel Ruzsa distance between the (constant) law of $X$ and the conditional distribution of $Y$ given $W$, averaged against the law of $W$."
+  },
+  "rdist": {
+   "statement": "For $X:\\Omega\\to G$ on $(\\Omega,\\mu)$ and $Y:\\Omega'\\to G$ on $(\\Omega',\\mu')$, the Ruzsa distance $d[X;\\mu \\,\\#\\, Y;\\mu']$ is $H[X'-Y'] - H[X']/2 - H[Y']/2$, where $X',Y'$ are independent copies of $X$ (under $\\mu$) and $Y$ (under $\\mu'$)."
+  },
+  "condRuzsaDist'_eq_sum": {
+   "statement": "Let $Y:\\Omega'\\to G$ and $W:\\Omega'\\to T$ be measurable (with $W$ of finite range), and let $\\mu,\\mu'$ be measures on $\\Omega,\\Omega'$. Then $d[X;\\mu \\,\\#\\, Y|W;\\mu'] = \\sum_{w\\in\\mathrm{range}(W)} \\mu'(W^{-1}\\{w\\})\\, d[X;\\mu \\,\\#\\, Y;\\mu'[\\,\\cdot\\mid W^{-1}\\{w\\}]]$, the sum being over the finite range of $W$.",
+   "sketch": "Unfold $d[X;Y|W]$ as a kernel Ruzsa distance, i.e. an integral of $\\mathrm{rdistm}$ against a product measure; since the law of $W$ is concentrated on the finite range of $W$, the integral becomes a finite sum, and each summand's measure is identified via the conditional distribution as the law of $Y$ under $\\mu'$ conditioned on $W=w$."
+  },
+  "condRuzsaDist'_eq_integral": {
+   "statement": "Let $Y$, $W$ be measurable (with $W$ of finite range), $X:\\Omega\\to G$, and $\\mu,\\mu'$ measures. Then $d[X;\\mu \\,\\#\\, Y|W;\\mu'] = \\int_T d[X;\\mu \\,\\#\\, Y;\\mu'[\\,\\cdot\\mid W^{-1}\\{w\\}]]\\, d(W_*\\mu')(w)$.",
+   "sketch": "Rewrite the left side as a finite sum by condRuzsaDist'_eq_sum and recognize it as the integral against the law $W_*\\mu'$, which is supported on the finite range of $W$."
+  },
+  "kaimanovich_vershik": {
+   "statement": "(Kaimanovich–Vershik inequality.) Let $X,Y,Z$ be measurable random variables on $(\\Omega,\\mu)$ with values in an abelian group $G$, jointly independent under $\\mu$. Then $H[X+Y+Z;\\mu] - H[X+Y;\\mu] \\le H[Y+Z;\\mu] - H[Y;\\mu]$.",
+   "sketch": "Expressing conditional entropies as kernel entropies (condEntropy_eq_kernel_entropy) and applying the chain rule for kernel entropy, the inequality is reduced to a comparison of entropies of kernels with finite support; the finite ranges of the variables provide the finite-support hypotheses needed for the chain rule."
+  },
+  "comparison_of_ruzsa_distances": {
+   "statement": "Let $X$ be measurable on $(\\Omega,\\mu)$ and $Y,Z$ measurable on $(\\Omega',\\mu')$ with $Y$ and $Z$ independent under $\\mu'$. Then (i) $d[X;\\mu \\,\\#\\, Y+Z;\\mu'] - d[X;\\mu \\,\\#\\, Y;\\mu'] \\le (H[Y+Z;\\mu'] - H[Y;\\mu'])/2$, and (ii) for every $\\mathbb{Z}/2$-module structure on $G$, $H[Y+Z;\\mu'] - H[Y;\\mu'] = d[Y;\\mu' \\,\\#\\, Z;\\mu'] + H[Z;\\mu']/2 - H[Y;\\mu']/2$.",
+   "sketch": "Take independent finite-range copies of $X,Y,Z$ (independent_copies3_nondep_finiteRange), express the Ruzsa distances as entropy differences of independent variables, and apply the Kaimanovich–Vershik inequality to the copies (with $-X'$ in place of $X$) to get (i); (ii) follows from the formula for the Ruzsa distance of independent variables, using $-Z = Z$ in characteristic $2$."
+  },
+  "condRuzsaDist_diff_le": {
+   "statement": "Let $X$ be measurable on $(\\Omega,\\mu)$ and $Y,Z$ measurable $G$-valued variables on $(\\Omega',\\mu')$ with $Y$ and $Z$ independent under $\\mu'$. Then $d[X;\\mu \\,\\#\\, Y+Z;\\mu'] - d[X;\\mu \\,\\#\\, Y;\\mu'] \\le (H[Y+Z;\\mu'] - H[Y;\\mu'])/2$.",
+   "sketch": "This is the first part of comparison_of_ruzsa_distances."
+  },
+  "condRuzsaDist_of_copy": {
+   "statement": "Let $X,Z,Y,W,X',Z',Y',W'$ be measurable, and suppose $(X,Z)$ under $\\mu$ has the same distribution as $(X',Z')$ under $\\mu''$, and $(Y,W)$ under $\\mu'$ has the same distribution as $(Y',W')$ under $\\mu'''$. Then $d[X|Z;\\mu \\,\\#\\, Y|W;\\mu'] = d[X'|Z';\\mu'' \\,\\#\\, Y'|W';\\mu''']$.",
+   "sketch": "Unfold the conditional Ruzsa distance as a kernel Ruzsa distance, i.e. a finite sum over the ranges of the conditioning variables of $\\mathrm{rdistm}$ between conditional laws weighted by point masses; all of these quantities depend only on the joint laws of $(X,Z)$ and $(Y,W)$, which are preserved by the hypotheses."
+  },
+  "condRuzsaDist_of_indep": {
+   "statement": "Let $X,Z,Y,W$ be measurable random variables on $(\\Omega,\\mu)$ such that $(X,Z)$ and $(Y,W)$ are independent under $\\mu$. Then $d[X|Z;\\mu \\,\\#\\, Y|W;\\mu] = H[X-Y \\mid (Z,W);\\mu] - H[X|Z;\\mu]/2 - H[Y|W;\\mu]/2$.",
+   "sketch": "By condDistrib_eq_prod_of_indepFun, the conditional distribution of $(X,Y)$ given $(Z,W)$ is the product of the conditional distributions of $X$ given $Z$ and of $Y$ given $W$; writing conditional entropies as kernel entropies (condEntropy_eq_kernel_entropy) and unfolding $\\mathrm{rdist}$/$\\mathrm{rdistm}$ of kernels as finite-support integrals then gives the formula."
+  },
+  "condRuzsaDist_le": {
+   "statement": "Let $X,Z$ be measurable on $(\\Omega,\\mu)$ and $Y,W$ measurable on $(\\Omega',\\mu')$, with $X,Y$ valued in an abelian group. Then $d[X|Z;\\mu \\,\\#\\, Y|W;\\mu'] \\le d[X;\\mu \\,\\#\\, Y;\\mu'] + I[X:Z;\\mu]/2 + I[Y:W;\\mu']/2$.",
+   "sketch": "Rewrite the conditional quantities as kernel entropies via condEntropy_eq_kernel_entropy and use the chain rule for kernel entropy (with finite kernel support coming from finite ranges) to compare the conditional and unconditional entropies of differences, the discrepancy being controlled by the mutual informations."
+  },
+  "condRuzsaDist_of_const": {
+   "statement": "Let $X$ be measurable, $Y:\\Omega'\\to G$, $W:\\Omega'\\to T$ and $c\\in S$. Then conditioning on the constant variable $c$ does not change the distance: $d[X \\mid c;\\mu \\,\\#\\, Y|W;\\mu'] = d[X;\\mu \\,\\#\\, Y|W;\\mu']$.",
+   "sketch": "Unfold both sides as kernel Ruzsa distances; the conditional distribution of $X$ given a constant is the law of $X$ and the law of the constant is a Dirac mass, so both integrals of $\\mathrm{rdistm}$ (over finitely supported measures) coincide."
+  },
+  "condRuzsaDist_diff_ofsum_le": {
+   "statement": "Let $X$ be measurable on $(\\Omega,\\mu)$ and $Y,Z,Z'$ measurable on $(\\Omega',\\mu')$, jointly independent under $\\mu'$. Then $d[X;\\mu \\,\\#\\, Y+Z \\mid Y+Z+Z';\\mu'] - d[X;\\mu \\,\\#\\, Y;\\mu'] \\le (H[Y+Z+Z';\\mu'] + H[Y+Z;\\mu'] - H[Y;\\mu'] - H[Z';\\mu'])/2$.",
+   "sketch": "Using condRuzsaDist_of_const, bound $d[X; Y+Z | Y+Z+Z']$ by condRuzsaDist_le by $d[X;Y+Z] + I[Y+Z : Y+Z+Z']/2$ (the mutual information of $X$ with a constant being $0$), bound $d[X;Y+Z]-d[X;Y]$ by condRuzsaDist_diff_le, and evaluate $I[Y+Z:Y+Z+Z']$ via entropy_add_right and independence of $Y+Z$ and $Z'$."
+  },
+  "ent_of_diff_le": {
+   "statement": "(Improved entropic Ruzsa triangle inequality.) Let $X,Y,Z:\\Omega\\to G$ be measurable with $(X,Y)$ and $Z$ independent under $\\mu$. Then $H[X-Y;\\mu] \\le H[X-Z;\\mu] + H[Z-Y;\\mu] - H[Z;\\mu]$.",
+   "sketch": "Rewrite the relevant conditional entropies as kernel entropies (condEntropy_eq_kernel_entropy) and apply the chain rule for kernel entropy, using finite ranges to ensure finite kernel support, to obtain the submodularity-type comparison yielding the inequality."
+  },
+  "rdist_triangle": {
+   "statement": "(Entropic Ruzsa triangle inequality.) Let $X$, $Y$, $Z$ be measurable $G$-valued random variables on $(\\Omega,\\mu)$, $(\\Omega',\\mu')$, $(\\Omega'',\\mu'')$ respectively. Then $d[X;\\mu \\,\\#\\, Z;\\mu''] \\le d[X;\\mu \\,\\#\\, Y;\\mu'] + d[Y;\\mu' \\,\\#\\, Z;\\mu'']$.",
+   "sketch": "Take jointly independent finite-range copies $X',Y',Z'$ (independent_copies3_nondep_finiteRange), express the three distances as entropy differences of independent variables, and apply ent_of_diff_le with $Y'$ as the intermediate variable."
+  },
+  "condRuzsaDist_eq_sum": {
+   "statement": "Let $X,Z,Y,W$ be measurable (with $Z,W$ of finite range) and $\\mu,\\mu'$ measures. Then $d[X|Z;\\mu \\,\\#\\, Y|W;\\mu'] = \\sum_{z\\in\\mathrm{range}(Z)}\\sum_{w\\in\\mathrm{range}(W)} \\mu(Z^{-1}\\{z\\})\\,\\mu'(W^{-1}\\{w\\})\\, d[X;\\mu[\\,\\cdot\\mid Z^{-1}\\{z\\}] \\,\\#\\, Y;\\mu'[\\,\\cdot\\mid W^{-1}\\{w\\}]]$.",
+   "sketch": "Unfold the conditional Ruzsa distance as a kernel Ruzsa distance, an integral of $\\mathrm{rdistm}$ against a product of the laws of $Z$ and $W$; these are concentrated on the finite ranges, so the integral becomes a double finite sum, and the conditional distributions are identified with the laws under the conditioned measures."
+  },
+  "condRuzsaDist'_of_copy": {
+   "statement": "Let $X:\\Omega\\to G$, $X':\\Omega''\\to G$, and let $Y,W,Y',W'$ be measurable. If $X$ under $\\mu$ has the same distribution as $X'$ under $\\mu''$, and $(Y,W)$ under $\\mu'$ has the same distribution as $(Y',W')$ under $\\mu'''$, then $d[X;\\mu \\,\\#\\, Y|W;\\mu'] = d[X';\\mu'' \\,\\#\\, Y'|W';\\mu''']$.",
+   "sketch": "Unfold $d[X;Y|W]$ as a kernel Ruzsa distance, a finite sum of $\\mathrm{rdistm}$ between laws weighted by point masses of the law of $W$; all these depend only on the law of $X$ and the joint law of $(Y,W)$, which are preserved."
+  },
+  "condRuzsaDist_of_inj_map": {
+   "statement": "Let $Y_0,Y_1,Y_2,Y_3:\\Omega\\to G$ be measurable with $(Y_0,Y_2)$ and $(Y_1,Y_3)$ independent under $\\mu$, and let $\\pi:G\\times G\\to G'$ be an additive group homomorphism such that $g\\mapsto\\pi(g,h)$ is injective for every $h\\in G$. Then $d[\\pi(Y_0,Y_2) \\mid Y_2;\\mu \\,\\#\\, \\pi(Y_1,Y_3)\\mid Y_3;\\mu] = d[Y_0|Y_2;\\mu \\,\\#\\, Y_1|Y_3;\\mu]$.",
+   "sketch": "Apply condRuzsaDist_of_indep to both sides (independence is preserved under the maps); the conditional entropies agree by condEntropy_of_injective, since $\\pi(\\cdot,h)$ is injective, and $\\pi(Y_0,Y_2)-\\pi(Y_1,Y_3) = \\pi(Y_0-Y_1, Y_2-Y_3)$ lets the same argument handle the difference term given $(Y_2,Y_3)$."
+  },
+  "condRuzsaDist'_of_inj_map": {
+   "statement": "Let $X,B,C:\\Omega\\to G$ be measurable with $X$ independent of $(B,C)$ under $\\mu$. Then $d[X;\\mu \\,\\#\\, B \\mid B+C;\\mu] = d[X;\\mu \\,\\#\\, C\\mid B+C;\\mu]$.",
+   "sketch": "Rewrite both sides as conditional distances conditioning $X$ on a constant (condRuzsaDist_of_const), then apply condRuzsaDist_of_inj_map with a suitable homomorphism $\\pi$ (injective in the first coordinate) relating $B$ given $B+C$ to $C$ given $B+C$."
+  },
+  "condRuzsaDist'_of_inj_map'": {
+   "statement": "Let $A$ (on $(\\Omega'',\\mu'')$), $B$ and $C$ (on $(\\Omega,\\mu)$) be measurable. Then $d[A;\\mu'' \\,\\#\\, B\\mid B+C;\\mu] = d[A;\\mu''\\,\\#\\, C\\mid B+C;\\mu]$.",
+   "sketch": "Take a copy of $A$ independent of $(B,C)$ on a common space via condRuzsaDist'_of_copy (with finite-range copies), and apply condRuzsaDist'_of_inj_map there."
+  },
+  "rdist_add_const": {
+   "statement": "Let $X,Y$ be measurable and $c\\in G$. Then $d[X;\\mu \\,\\#\\, Y+c;\\mu'] = d[X;\\mu \\,\\#\\, Y;\\mu']$: adding a constant to a random variable does not change the Ruzsa distance.",
+   "sketch": "Take independent finite-range copies of $X$ and $Y$ (independent_copies_finiteRange), write the distance as an entropy difference, and use that entropy is invariant under translation by a constant (for $H[Y+c]$ and $H[X'-Y'-c]$)."
+  },
+  "continuous_rdist_restrict_probabilityMeasure": {
+   "statement": "On pairs $(\\mu_1,\\mu_2)$ of probability measures on $G$ (with the topology of the space of probability measures), the map $(\\mu_1,\\mu_2)\\mapsto d[\\mathrm{id};\\mu_1 \\,\\#\\, \\mathrm{id};\\mu_2]$ is continuous.",
+   "sketch": "The distance is a combination of entropies of measures ($H_m$), each of which depends continuously on the probability measure, and of the law of the difference, whose point masses depend continuously on the pair of measures (evaluation on clopen sets is continuous)."
+  },
+  "diff_ent_le_rdist": {
+   "statement": "Let $X,Y$ be measurable. Then $|H[X;\\mu] - H[Y;\\mu']| \\le 2\\, d[X;\\mu \\,\\#\\, Y;\\mu']$.",
+   "sketch": "Pass to entropies of the difference of independent copies and use the chain rule for kernel entropy (with conditional entropies written as kernel entropies) to show $H[X'-Y'] \\ge \\max(H[X'],H[Y'])$, which gives the bound."
+  },
+  "ent_bsg": {
+   "statement": "(Entropic Balog–Szemerédi–Gowers inequality.) Let $A,B:\\Omega\\to G$ be measurable (with $G$ finite) and $Z=A+B$. Then $\\int_G d[A;\\mu[\\,\\cdot\\mid Z^{-1}\\{z\\}] \\,\\#\\, B;\\mu[\\,\\cdot\\mid Z^{-1}\\{z\\}]]\\, d(Z_*\\mu)(z) \\le 3\\,I[A:B;\\mu] + 2\\,H[A+B;\\mu] - H[A;\\mu] - H[B;\\mu]$.",
+   "sketch": "Take conditionally independent copies given $Z=A+B$ (using CondIndepFun), and estimate the entropies involved through the chain rule for kernel entropy, finite ranges ensuring finite kernel support; combining the resulting entropy inequalities yields the bound."
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{"title": "Almost orthogonality of tree operators",
+ "results": {
+  "TileStructure.Forest.indicator_adjoint_tree_estimate": {
+   "statement": "(Lemma 7.4.2, part 2) Let $t$ be a forest, $u \\in t$, and let $g$ be bounded with compact support and $\\operatorname{supp} g \\subseteq G$. Then $$\\big\\|\\mathbf{1}_F \\cdot T^*_{\\mathfrak{T}(u)} g\\big\\|_{L^2} \\le C_{7.3.1.2}(a)\\, \\mathrm{dens}_1(\\mathfrak{T}(u))^{1/2}\\, \\mathrm{dens}_2(\\mathfrak{T}(u))^{1/2}\\, \\|g\\|_{L^2},$$ where $T^*_{\\mathfrak{T}(u)}$ is the adjoint Carleson sum over the tree $\\mathfrak{T}(u)$ and $C_{7.3.1.2}$ is `Forest.C7_3_1_2`.",
+   "sketch": "By $L^2$ duality: pairing $\\mathbf{1}_F T^*_{\\mathfrak{T}(u)} g$ with test functions $f$ supported in $F$ and applying `adjoint_density_tree_bound2`."
+  },
+  "TileStructure.Forest.𝔖₀": {
+   "statement": "For a forest $t$ and tiles $u_1, u_2$, the set of tiles $\\mathfrak{S}_0(u_1,u_2)$: the set $\\mathfrak{S}$ defined in the proof of Lemma 7.4.4."
+  },
+  "TileStructure.Forest.overlap_implies_distance": {
+   "statement": "(Lemma 7.4.7, part 1) Let $t$ be a forest and $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$. If $p \\in \\mathfrak{T}(u_1) \\cup \\mathfrak{T}(u_2)$ and $\\mathcal{I}(p)$ is not disjoint from $\\mathcal{I}(u_1)$, then $p \\in \\mathfrak{S}_0(u_1,u_2)$.",
+   "sketch": "Uses the forest separation property together with the distance comparison for nested cubes `Grid.dist_strictMono` (with $C_{2.1.2} \\le 1/256$) and the geometry of enlarged tiles $\\lambda p$ to show that $p$ satisfies the defining condition of $\\mathfrak{S}_0(u_1,u_2)$."
+  },
+  "TileStructure.Forest.adjoint_tree_control": {
+   "statement": "(Lemma 7.4.3) Let $t$ be a forest, $u \\in t$, and let $f$ be bounded with compact support and $\\operatorname{supp} f \\subseteq G$. Then $$\\|\\text{adjointBoundaryOperator}_t(u, f)\\|_{L^2} \\le C_{7.4.3}(a)\\, \\|f\\|_{L^2},$$ where $C_{7.4.3}$ is `Forest.C7_4_3`.",
+   "sketch": "The adjoint boundary operator is bounded pointwise by a combination of the adjoint Carleson sum over $\\mathfrak{T}(u)$ and maximal-function terms; the first is controlled by `adjoint_tree_estimate` (using $\\mathrm{dens}_1 \\le$ a constant) and the others by the $L^p$ boundedness of the maximal function `hasStrongType_maximalFunction_one`."
+  },
+  "TileStructure.Forest.adjoint_density_tree_bound2": {
+   "statement": "Let $t$ be a forest and $u \\in t$. Let $f, g$ be bounded with compact support, with $\\operatorname{supp} f \\subseteq F$ and $\\operatorname{supp} g \\subseteq G$. Then $$\\Big|\\int_X \\overline{T^*_{\\mathfrak{T}(u)} g(x)}\\, f(x)\\,dx\\Big| \\le C_{7.3.1.2}(a)\\, \\mathrm{dens}_1(\\mathfrak{T}(u))^{1/2}\\, \\mathrm{dens}_2(\\mathfrak{T}(u))^{1/2}\\, \\|f\\|_{L^2}\\, \\|g\\|_{L^2},$$ where $T^*_{\\mathfrak{T}(u)}$ is `adjointCarlesonSum` over $\\mathfrak{T}(u)$.",
+   "sketch": "Rewrite the integral via the adjointness relation `adjointCarlesonSum_adjoint` as $\\int \\overline{g}\\, T_{\\mathfrak{T}(u)} f$ and apply `density_tree_bound2`."
+  },
+  "TileStructure.Forest.adjoint_density_tree_bound1": {
+   "statement": "Let $t$ be a forest and $u \\in t$. Let $f, g$ be bounded with compact support, with $\\operatorname{supp} g \\subseteq G$. Then $$\\Big|\\int_X \\overline{T^*_{\\mathfrak{T}(u)} g(x)}\\, f(x)\\,dx\\Big| \\le C_{7.3.1.1}(a)\\, \\mathrm{dens}_1(\\mathfrak{T}(u))^{1/2}\\, \\|f\\|_{L^2}\\, \\|g\\|_{L^2},$$ where $T^*_{\\mathfrak{T}(u)}$ is `adjointCarlesonSum` over $\\mathfrak{T}(u)$ and $C_{7.3.1.1}$ is `Forest.C7_3_1_1`.",
+   "sketch": "Rewrite the integral via `adjointCarlesonSum_adjoint` as $\\int \\overline{g}\\, T_{\\mathfrak{T}(u)} f$ and apply `density_tree_bound1`."
+  },
+  "TileStructure.Forest.adjoint_tree_estimate": {
+   "statement": "(Lemma 7.4.2, part 1) Let $t$ be a forest, $u \\in t$, and let $g$ be bounded with compact support and $\\operatorname{supp} g \\subseteq G$. Then $$\\big\\|T^*_{\\mathfrak{T}(u)} g\\big\\|_{L^2} \\le C_{7.3.1.1}(a)\\, \\mathrm{dens}_1(\\mathfrak{T}(u))^{1/2}\\, \\|g\\|_{L^2},$$ where $T^*_{\\mathfrak{T}(u)}$ is `adjointCarlesonSum` over $\\mathfrak{T}(u)$.",
+   "sketch": "By $L^2$ duality, pairing $T^*_{\\mathfrak{T}(u)} g$ with bounded compactly supported test functions $f$ and applying `adjoint_density_tree_bound1`."
+  }
+ }}

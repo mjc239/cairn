@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.measureMutualInfo_nonneg": {
+  "statement": "Let $S$ and $U$ be spaces in which singletons are measurable, and let $\\mu$ be a measure on $S \\times U$ with finite support. Then $0 \\le I_m[\\mu]$, the mutual information of the measure $\\mu$."
+ }
+}

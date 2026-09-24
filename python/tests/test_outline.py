@@ -39,3 +39,49 @@ def test_build_and_render(style):
     assert o.chapter_order == ["M.Defs", "M.A", "M.B"] or o.chapter_order.index("M.A") < o.chapter_order.index("M.B")
     md = render(o, d, "Test", style, "note")
     assert "**Theorem** `T`" in md and "folds in 1 helper lemma: `h`" in md and "Key lemma." in md
+
+
+def test_prose_roundtrip(tmp_path):
+    import json
+
+    from cairn.prose import (
+        coverage,
+        load_prose,
+        strip_namespaces,
+        write_check_prompts,
+        write_prose_prompts,
+        write_repair_prompts,
+    )
+
+    d = _decls()
+    d["T"].stmt_short = "(h : Foo.P) : Foo.Q"
+    scores = {"T": 0.9, "L": 0.8, "h": 0.1, "D": 0.05, "X": 0.95}
+    o = build(d, scores, Style(0), count=2, modules=["M"], seed=1)
+    paths = write_prose_prompts(o, d, tmp_path)
+    assert {p.name for p in paths} == {"M_Defs.prompt.md", "M_A.prompt.md", "M_B.prompt.md"}
+    prompt = (tmp_path / "M_B.prompt.md").read_text()
+    assert "`T` (theorem)" in prompt and "Proof uses:" in prompt and "- `L`" in prompt
+    (tmp_path / "M_B.prose.json").write_text(json.dumps(
+        {"title": "The main theorem", "results": {"T": {"statement": "If P then Q.", "sketch": "Apply L."}}}))
+    write_check_prompts(o, d, tmp_path)
+    assert "English: If P then Q." in (tmp_path / "M_B.check.md").read_text()
+    (tmp_path / "M_B.check.json").write_text(json.dumps({"T": {"faithful": False, "issue": "drops h"}}))
+    prose = load_prose(tmp_path)
+    assert prose["M.B"]["title"] == "The main theorem"
+    md = render(o, d, "Test", Style(0), "note", prose)
+    assert "## 3. The main theorem" in md and "If P then Q." in md and "Apply L." in md
+    assert "Translation flagged: drops h" in md and "Lean: `(h : Foo.P) : Foo.Q`" in md
+    assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"]}
+    # repair: the flagged item goes back with the checker's issue; the corrected statement overrides the original
+    assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair.md"]
+    assert "Checker's issue: drops h" in (tmp_path / "M_B.repair.md").read_text()
+    (tmp_path / "M_B.repair.json").write_text(json.dumps({"T": {"statement": "If h : P then Q."}}))
+    (tmp_path / "M_B.check.json").write_text(json.dumps({"T": {"faithful": True, "issue": ""}}))
+    prose = load_prose(tmp_path)
+    assert prose["M.B"]["results"]["T"]["statement"] == "If h : P then Q." and prose["M.B"]["results"]["T"]["repaired"]
+    assert coverage(o, prose)["flagged"] == []
+    (tmp_path / "M_B.check.json").write_text(json.dumps({"T": {"faithful": False, "issue": "still drops h"}}))
+    assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair2.md"]
+    (tmp_path / "M_B.repair2.json").write_text(json.dumps({"T": {"statement": "If h : P holds then Q."}}))
+    assert load_prose(tmp_path)["M.B"]["results"]["T"]["statement"] == "If h : P holds then Q."
+    assert strip_namespaces("Foo.P ∧ Bar.Foo.P ∧ Foo.x", ("Foo",)) == "P ∧ Bar.Foo.P ∧ x"

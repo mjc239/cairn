@@ -1,0 +1,42 @@
+You are checking translations of verified Lean statements into mathematical English.
+For each result below, compare the English statement with the Lean statement. The Lean statement shows explicit
+hypotheses and meaningful instance assumptions (e.g. `[Finite G]`); implicit arguments and purely structural
+instances (e.g. `[AddCommGroup G]`) are omitted, and the English may leave them implicit too.
+
+Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
+quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
+
+Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
+Use every Lean name exactly as given.
+
+### `ProbabilityTheory.Kernel.AEFiniteKernelSupport`
+Lean: `(κ : Kernel T S) (μ : Measure T) : Prop`
+English: For a kernel $\kappa$ from $T$ to $S$ and a measure $\mu$ on $T$, defines the property that $\kappa$ has almost everywhere finite support with respect to $\mu$: for $\mu$-almost every $t$, the measure $\kappa(t)$ has finite support (with no uniformity in $t$ required).
+
+### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk`
+Lean: `[Countable T] [MeasurableSingletonClass T] (_hκ : κ.AEFiniteKernelSupport μ) : Kernel T S`
+English: Let $T$ be a countable space in which singletons are measurable, and let $\kappa$ be a kernel from $T$ to $S$ that has almost everywhere finite kernel support with respect to a measure $\mu$ on $T$ (hypothesis $h\kappa$). This defines an associated kernel $h\kappa.\mathrm{mk}$ from $T$ to $S$ (the definition does not actually use the hypothesis $h\kappa$).
+
+### `ProbabilityTheory.Kernel.FiniteKernelSupport`
+Lean: `(κ : Kernel T S) : Prop`
+English: For a kernel $\kappa$ from $T$ to $S$, defines the property that $\kappa$ has finite kernel support, the analogue for kernels of a measure having finite support.
+
+### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk`
+Lean: `[Countable T] [MeasurableSingletonClass T] [MeasurableSingletonClass S] (hκ : κ.AEFiniteKernelSupport μ) : hκ.mk.FiniteKernelSupport`
+English: Let $T$ be a countable space in which singletons are measurable, and let $S$ be a space in which singletons are measurable. If the kernel $\kappa$ from $T$ to $S$ has almost everywhere finite kernel support with respect to $\mu$ (hypothesis $h\kappa$), then the kernel $h\kappa.\mathrm{mk}$ has finite kernel support.
+
+### `ProbabilityTheory.Kernel.disintegration`
+Lean: `[Countable S] [DiscreteMeasurableSpace S] [Countable U] [Nonempty U] [DiscreteMeasurableSpace U] (κ : Kernel T (S × U)) [IsFiniteKernel κ] : κ = κ.fst.compProd κ.condKernel`
+English: Let $S$ be a countable measurable space in which every set is measurable, and $U$ a nonempty countable measurable space in which every set is measurable. For every finite kernel $\kappa$ from $T$ to $S\times U$, one has $\kappa=\kappa.\mathrm{fst}\otimes\kappa.\mathrm{condKernel}$, i.e. $\kappa$ equals the composition-product of its first marginal with its conditional kernel.
+
+### `ProbabilityTheory.Kernel.aefiniteKernelSupport_of_cond`
+Lean: `[Nonempty U] [MeasurableSingletonClass S] [MeasurableSingletonClass T] [MeasurableSingletonClass U] [Countable U] [Countable S] [Countable T] (μ : Measure T) (hκ : κ.AEFiniteKernelSupport μ) [IsFiniteKernel κ] : κ.condKernel.AEFiniteKernelSupport (μ.compProd κ.fst)`
+English: Let $S$, $T$, $U$ be countable measurable spaces with measurable singletons, with $U$ nonempty. Let $\mu$ be a measure on $T$ and let $\kappa$ be a finite kernel from $T$ to $S \times U$ that has almost everywhere finite support with respect to $\mu$. Then $\kappa.\mathrm{condKernel}$ has almost everywhere finite support with respect to $\mu\otimes\kappa.\mathrm{fst}$.
+
+### `ProbabilityTheory.condDistrib_eq_prod_of_indepFun`
+Lean: `[Countable S] [DiscreteMeasurableSpace S] [MeasurableSingletonClass T] [Countable U] [DiscreteMeasurableSpace U] [Countable T] [Nonempty T] [Countable V] [MeasurableSingletonClass V] [Nonempty S] (hX : Measurable X) (hZ : Measurable Z) (hY : Measurable Y) (hW : Measurable W) (μ : Measure Ω) [IsProbabilityMeasure μ] (h : IndepFun (fun ω => (X ω, Z ω)) (fun ω => (Y ω, W ω)) μ) : ⇑(condDistrib (fun ω => (X ω, Y ω)) (fun ω => (Z ω, W ω)) μ) =ᵐ[Measure.map (fun ω => (Z ω, W ω)) μ] ⇑((Kernel.prodMkRight V (condDistrib X Z μ)).prod (Kernel.prodMkLeft U (condDistrib Y W μ)))`
+English: Let $S$ and $U$ be countable measurable spaces in which every set is measurable, with $S$ nonempty; let $T$ be a nonempty countable measurable space with measurable singletons, and $V$ a countable measurable space with measurable singletons. Let $X : \Omega\to S$, $Y : \Omega \to T$, $Z : \Omega \to U$, $W : \Omega \to V$ be measurable random variables, $\mu$ a probability measure on $\Omega$, and suppose the pairs $(X,Z)$ and $(Y,W)$ are independent under $\mu$. Then, almost everywhere with respect to the law of $(Z,W)$ under $\mu$, the conditional distribution of $(X,Y)$ given $(Z,W)$ equals the product kernel $(\mathrm{prodMkRight}_V\,\mathrm{condDistrib}(X|Z;\mu))\times(\mathrm{prodMkLeft}_U\,\mathrm{condDistrib}(Y|W;\mu))$, i.e. at $(z,w)$ it is the product of the conditional distribution of $X$ given $Z=z$ and that of $Y$ given $W=w$.
+
+### `ProbabilityTheory.condKernel_condDistrib_ae_eq`
+Lean: `[Countable S] [DiscreteMeasurableSpace S] [MeasurableSingletonClass T] [Countable U] [DiscreteMeasurableSpace U] [Countable T] [Nonempty T] [Nonempty S] (hX : Measurable X) (hY : Measurable Y) (hZ : Measurable Z) (μ : Measure Ω) [IsFiniteMeasure μ] : ⇑(condDistrib (fun a => (X a, Y a)) Z μ).condKernel =ᵐ[Measure.map (fun ω => (Z ω, X ω)) μ] ⇑(condDistrib Y (fun ω => (Z ω, X ω)) μ)`
+English: Let $S$ and $U$ be countable measurable spaces in which every set is measurable, with $S$ nonempty, and let $T$ be a nonempty countable measurable space with measurable singletons. Let $X : \Omega \to S$, $Y : \Omega \to T$, $Z : \Omega \to U$ be measurable random variables and $\mu$ a finite measure on $\Omega$. Then, almost everywhere with respect to the law of $(Z,X)$ under $\mu$, the conditional kernel of the conditional distribution of $(X,Y)$ given $Z$ equals the conditional distribution of $Y$ given $(Z,X)$.

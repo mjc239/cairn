@@ -1,0 +1,4 @@
+{
+  "ProbabilityTheory.independent_copies3_nondep_finiteRange": {"faithful": false, "issue": "The English drops the hypothesis that mu_1, mu_2, mu_3 are probability measures, speaking only of spaces with measures."},
+  "ProbabilityTheory.independent_copies_finiteRange": {"faithful": false, "issue": "The English drops the hypothesis that mu and mu' are probability measures, calling them just measures."}
+}

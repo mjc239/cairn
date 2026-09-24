@@ -1,0 +1,8 @@
+{
+  "construct_good": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], as well as the probability-measure assumptions."},
+  "cond_construct_good": {"faithful": false, "issue": "The English, which refers back to the previous result's hypotheses, still drops [Module (ZMod 2) G] and [Finite G], as well as the probability-measure assumptions."},
+  "I₃_eq": {"faithful": false, "issue": "The English drops the hypotheses [Finite G] and that volume is a probability measure."},
+  "sum_condMutual_le": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], as well as the probability-measure assumptions."},
+  "sum_dist_diff_le": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], as well as the probability-measure assumptions."},
+  "tau_strictly_decreases_aux": {"faithful": false, "issue": "The English drops the hypotheses [Module (ZMod 2) G] (characteristic 2) and [Finite G], as well as the probability-measure assumptions."}
+}

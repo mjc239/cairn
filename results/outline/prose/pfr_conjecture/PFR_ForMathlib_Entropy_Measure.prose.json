@@ -1,0 +1,42 @@
+{
+ "title": "Entropy and mutual information of measures",
+ "results": {
+  "ProbabilityTheory.measureEntropy": {
+   "statement": "For a measure $\\mu$ on a measurable space $S$, the entropy $H_m[\\mu]$ is the (Shannon) entropy of the normalized measure $(\\mu(S))^{-1}\\mu$; normalizing by $(\\mu(S))^{-1}$ extends the definition from probability measures to finite measures."
+  },
+  "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure": {
+   "statement": "For a probability measure $\\mu$ on $S$, $H_m[\\mu] = \\sum_{s\\in S} \\mathrm{negMulLog}(\\mu(\\{s\\}))$ (a possibly infinite sum, $\\mathrm{tsum}$), where $\\mathrm{negMulLog}(x) = -x\\log x$.",
+   "sketch": "Direct from the definition of $H_m$, since the normalizing factor is $1$ for a probability measure."
+  },
+  "ProbabilityTheory.FiniteSupport": {
+   "statement": "A measure $\\mu$ on $S$ has finite support if there exists a finite set $A\\subseteq S$ whose complement has measure zero, $\\mu(A^c)=0$."
+  },
+  "ProbabilityTheory.integrable_of_finiteSupport": {
+   "statement": "If $\\mu$ is a measure on $S$ with finite support (under the standing assumptions, including countability of $S$), then every function $f$ on $S$ is integrable with respect to $\\mu$.",
+   "sketch": "The finite support of $\\mu$ is a finite set whose complement is $\\mu$-null, so the integral reduces to a finite sum of values of $f$ weighted by the (finite) masses of points."
+  },
+  "ProbabilityTheory.measureMutualInfo": {
+   "statement": "For a measure $\\mu$ on a product $S\\times T$, the mutual information $I_m[\\mu]$ between its two marginals, namely $I_m[\\mu] = H_m[\\pi_1{}_*\\mu] + H_m[\\pi_2{}_*\\mu] - H_m[\\mu]$ with $\\pi_1,\\pi_2$ the coordinate projections."
+  },
+  "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite": {
+   "statement": "Let $\\mu$ be a probability measure on $S$ and $A\\subseteq S$ a finite set with $\\mu(A^c)=0$. Then $H_m[\\mu] = \\sum_{s\\in A}\\mathrm{negMulLog}(\\mu(\\{s\\}))$, where $\\mathrm{negMulLog}(x)=-x\\log x$.",
+   "sketch": "This follows from the expression of $H_m[\\mu]$ as a sum over a finite set carrying all the mass."
+  },
+  "ProbabilityTheory.measureMutualInfo_nonneg_aux": {
+   "statement": "For a (finitely supported, under the standing assumptions) measure $\\mu$ on $S\\times U$: $0 \\le I_m[\\mu]$, and moreover $I_m[\\mu]=0$ if and only if for every $p=(p_1,p_2)\\in S\\times U$, $\\mu(\\{p\\}) = (\\pi_1{}_*\\mu)(\\{p_1\\})\\cdot(\\pi_2{}_*\\mu)(\\{p_2\\})$, i.e. $\\mu$ is the product of its marginals.",
+   "sketch": "Write each of the three entropies in $I_m[\\mu]$ as a finite sum of $\\mathrm{negMulLog}$ over the (finite) support using measureEntropy_of_isProbabilityMeasure_finite, handling the zero measure separately; the resulting sum is a relative-entropy-type expression whose nonnegativity and equality case give the claim."
+  },
+  "ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure": {
+   "statement": "If $\\mu$ is not a finite measure, then $I_m[\\mu]=0$.",
+   "sketch": "Unfold $I_m$ in terms of $H_m$; each entropy term vanishes for a non-finite measure (and its marginals are then not finite either)."
+  },
+  "ProbabilityTheory.measureMutualInfo_univ_smul": {
+   "statement": "For every measure $\\mu$ on $S\\times U$, $I_m[(\\mu(S\\times U))^{-1}\\,\\mu] = I_m[\\mu]$.",
+   "sketch": "Split into cases: if $\\mu$ is not finite, both sides vanish by measureMutualInfo_of_not_isFiniteMeasure (and the zero-measure case is trivial); otherwise unfold $I_m$ into $H_m$ terms and use that $H_m$ is invariant under scaling by $(\\mu(\\text{univ}))^{-1}$."
+  },
+  "ProbabilityTheory.measureMutualInfo_nonneg": {
+   "statement": "For a measure $\\mu$ on $S\\times U$ (under the standing finite-support assumptions), $0\\le I_m[\\mu]$.",
+   "sketch": "If $\\mu$ is not finite, $I_m[\\mu]=0$; otherwise replace $\\mu$ by its normalization using measureMutualInfo_univ_smul (which still has finite support) and apply the first part of measureMutualInfo_nonneg_aux."
+  }
+ }
+}

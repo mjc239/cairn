@@ -1,0 +1,17 @@
+{
+ "title": "Density Bounds for Tree Operators",
+ "results": {
+  "TileStructure.Forest.density_tree_bound2": {
+   "statement": "(Lemma 7.3.1, second part) Let $f,g$ be bounded with compact support, with $\\operatorname{supp} f\\subseteq F$ and $\\operatorname{supp} g\\subseteq G$, and let $u\\in t$. Then $$\\Big\\|\\int_X\\overline{g(x)}\\,T_{\\mathfrak T(u)}f(x)\\,dx\\Big\\|\\le C_{7.3.1.2}(a)\\,\\mathrm{dens}_1(\\mathfrak T(u))^{1/2}\\,\\mathrm{dens}_2(\\mathfrak T(u))^{1/2}\\,\\|f\\|_{L^2}\\,\\|g\\|_{L^2}.$$",
+   "sketch": "Combines the tree projection estimate (Lemma 7.2.1) with the local density bound Lemma 7.3.2 (local_dens1_tree_bound), using the support conditions on $f$ and $g$ and the definitions of $\\mathcal J$, $\\mathcal J_0$, parent cubes and dilated tiles to bring in the factors $\\mathrm{dens}_1^{1/2}$ and $\\mathrm{dens}_2^{1/2}$."
+  },
+  "TileStructure.Forest.density_tree_bound1": {
+   "statement": "(Lemma 7.3.1, first part) Let $f,g$ be bounded with compact support, with $\\operatorname{supp} g\\subseteq G$, and let $u\\in t$. Then $$\\Big\\|\\int_X\\overline{g(x)}\\,T_{\\mathfrak T(u)}f(x)\\,dx\\Big\\|\\le C_{7.3.1.1}(a)\\,\\mathrm{dens}_1(\\mathfrak T(u))^{1/2}\\,\\|f\\|_{L^2}\\,\\|g\\|_{L^2}.$$",
+   "sketch": "Combines the tree projection estimate (Lemma 7.2.1) with the local density bound Lemma 7.3.2 applied on the cubes $L\\in\\mathcal L(\\mathfrak T(u))$ to control the $g$-side projection by $\\mathrm{dens}_1^{1/2}\\|g\\|_{L^2}$."
+  },
+  "TileStructure.Forest.local_dens1_tree_bound": {
+   "statement": "(Lemma 7.3.2) Let $u\\in t$ and $L\\in\\mathcal L(\\mathfrak T(u))$. Then $$\\mu\\Big(L\\cap G\\cap\\bigcup_{\\mathfrak p\\in\\mathfrak T(u)}E(\\mathfrak p)\\Big)\\le C_{7.3.2}(a)\\,\\mathrm{dens}_1(\\mathfrak T(u))\\,\\mu(L).$$",
+   "sketch": "Works with the parent cube of $L$ (Grid.succ), dilated tiles $\\lambda\\mathfrak p$ and their sets $E_2(\\lambda,\\mathfrak p)$, using the stronger Lemma 2.1.2 (Grid.dist_strictMono) to compare frequency distances, and concludes from the definition of $\\mathrm{dens}_1$."
+  }
+ }
+}

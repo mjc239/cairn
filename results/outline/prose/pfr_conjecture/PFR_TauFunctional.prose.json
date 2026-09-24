@@ -1,0 +1,35 @@
+{
+ "title": "The Tau Functional and Its Minimizers",
+ "results": {
+  "refPackage": {
+   "statement": "Defines, for types $\\Omega_{01},\\Omega_{02}$ and $G$, the structure of a reference package: it bundles the fixed data of the main argument (reference spaces and measures, the two reference random variables, and the parameter $\\eta$), so that the $\\tau$ functional can refer to a single package."
+  },
+  "refPackage.X₀₁": {
+   "statement": "For a reference package $p$, defines $X^0_1:\\Omega_{01}\\to G$, the first reference random variable of the package."
+  },
+  "refPackage.X₀₂": {
+   "statement": "For a reference package $p$, defines $X^0_2:\\Omega_{02}\\to G$, the second reference random variable of the package."
+  },
+  "refPackage.η": {
+   "statement": "For a reference package $p$, defines the real parameter $\\eta$ of the package, measuring how good the package is; the argument only works for $\\eta$ small enough (typically $\\le 1/9$ or $<1/8$)."
+  },
+  "tau": {
+   "statement": "For a reference package $p$ and $G$-valued random variables $X_1:\\Omega_1\\to G$, $X_2:\\Omega_2\\to G$ with measures $\\mu_1,\\mu_2$, defines $$\\tau[X_1;\\mu_1\\,\\#\\,X_2;\\mu_2\\mid p]:=d[X_1;X_2]+\\eta\\, d[X^0_1;X_1]+\\eta\\, d[X^0_2;X_2],$$ where $X^0_1,X^0_2$ and $\\eta$ come from $p$."
+  },
+  "TauMinimizes": {
+   "statement": "For a reference package $p$ and random variables $X_1,X_2:\\Omega\\to G$, defines the property that $(X_1,X_2)$ minimizes the $\\tau$ functional; it is expressed by comparison with pairs of measures on $G$ (rather than quantifying over all probability spaces)."
+  },
+  "distance_ge_of_min": {
+   "statement": "Let $p$ be a reference package with parameter $\\eta$, let $(X_1,X_2)$ minimize $\\tau$ for $p$, and let $X_1',X_2'$ be measurable $G$-valued random variables. Then $$d[X_1;X_2]-\\eta\\left(d[X^0_1;X_1']-d[X^0_1;X_1]\\right)-\\eta\\left(d[X^0_2;X_2']-d[X^0_2;X_2]\\right)\\le d[X_1';X_2'].$$",
+   "sketch": "Minimality gives $\\tau[X_1;X_2]\\le\\tau[X_1';X_2']$ (via the comparison lemma `is_tau_min` and invariance of $\\tau$ and $d$ under identical distribution); expanding the definition of $\\tau$ and rearranging gives the inequality."
+  },
+  "condRuzsaDistance_ge_of_min": {
+   "statement": "Let $p$ be a reference package with parameter $\\eta$, let $(X_1,X_2)$ minimize $\\tau$ for $p$, let $X_1',X_2'$ be measurable $G$-valued random variables, and let $Z:\\Omega_1'\\to S$ and $W:\\Omega_2'\\to T$ be measurable random variables. Then $$d[X_1;X_2]-\\eta\\left(d[X^0_1;X_1'\\mid Z]-d[X^0_1;X_1]\\right)-\\eta\\left(d[X^0_2;X_2'\\mid W]-d[X^0_2;X_2]\\right)\\le d[X_1'\\mid Z;X_2'\\mid W].$$",
+   "sketch": "Expand $d[X_1'|Z;X_2'|W]$ and $d[X^0_i;X_i'|\\cdot]$ as weighted sums over the values $z,w$ of $Z,W$ (`condRuzsaDist_eq_sum`, `condRuzsaDist'_eq_sum`), apply `distance_ge_of_min` to each conditioned pair, and sum using that the weights total $1$."
+  },
+  "tau_minimizer_exists": {
+   "statement": "For every reference package $p$ there exist a measurable space $\\Omega$ with a probability measure and measurable random variables $X_1,X_2:\\Omega\\to G$ such that $(X_1,X_2)$ minimizes $\\tau$ for $p$.",
+   "sketch": "The $\\tau$ functional, viewed as a function of a pair of probability measures on $G$, is continuous (using continuity of $(\\mu_1,\\mu_2)\\mapsto d[\\mathrm{id};\\mu_1\\,\\#\\,\\mathrm{id};\\mu_2]$) on a compact space, so it attains its minimum; the minimizing measures are then realized by the coordinate random variables on a product space."
+  }
+ }
+}

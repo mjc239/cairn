@@ -1,0 +1,12 @@
+{"title": "Forests and rows of tiles",
+ "results": {
+  "TileStructure.Forest": {
+   "statement": "For $n \\in \\mathbb{N}$, the type of $n$-forests in $X$: a structure consisting of a set $\\mathfrak{U}$ of tiles (tree tops) together with, for each $u$, a set of tiles $\\mathfrak{T}(u)$, satisfying the forest axioms of the blueprint."
+  },
+  "TileStructure.Row": {
+   "statement": "For $n \\in \\mathbb{N}$, the type of $n$-rows in $X$ (an $n$-row as defined in the blueprint)."
+  },
+  "TileStructure.Forest.𝔗": {
+   "statement": "For an $n$-forest $\\mathfrak{F}$ and a tile $u$, the set of tiles $\\mathfrak{T}(u)$ (the tree with top $u$). Its value only matters when $u \\in \\mathfrak{U}$."
+  }
+ }}

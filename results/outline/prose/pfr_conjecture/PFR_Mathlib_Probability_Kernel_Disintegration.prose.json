@@ -1,0 +1,34 @@
+{
+ "title": "Disintegration of Finitely Supported Kernels",
+ "results": {
+  "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {
+   "statement": "For a kernel $\\kappa$ from $T$ to $S$ and a measure $\\mu$ on $T$, defines the property that $\\kappa$ has almost everywhere finite support with respect to $\\mu$: for $\\mu$-almost every $t$, the measure $\\kappa(t)$ has finite support (with no uniformity in $t$ required)."
+  },
+  "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {
+   "statement": "Given a proof that $\\kappa$ has almost everywhere finite support with respect to $\\mu$, defines an associated kernel $\\mathrm{mk}$ from $T$ to $S$ (a modification of $\\kappa$; the definition does not actually use the hypothesis)."
+  },
+  "ProbabilityTheory.Kernel.FiniteKernelSupport": {
+   "statement": "For a kernel $\\kappa$ from $T$ to $S$, defines the property that $\\kappa$ has finite kernel support, the analogue for kernels of a measure having finite support."
+  },
+  "ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk": {
+   "statement": "If $\\kappa$ has almost everywhere finite support with respect to $\\mu$ (hypothesis $h\\kappa$), then the kernel $h\\kappa.\\mathrm{mk}$ has finite kernel support.",
+   "sketch": "It follows by unfolding the definition of $\\mathrm{mk}$, treating separately the case where the relevant type is empty (where $\\mathrm{mk}$ is zero, and the zero kernel has finite kernel support)."
+  },
+  "ProbabilityTheory.Kernel.disintegration": {
+   "statement": "For every kernel $\\kappa$ from $T$ to $S\\times U$, one has $\\kappa=\\kappa.\\mathrm{fst}\\otimes\\kappa.\\mathrm{condKernel}$, i.e. $\\kappa$ equals the composition-product of its first marginal with its conditional kernel.",
+   "sketch": "Both sides are compared by evaluating the conditional kernel explicitly and writing the lower integral as a countable sum."
+  },
+  "ProbabilityTheory.Kernel.aefiniteKernelSupport_of_cond": {
+   "statement": "Let $\\mu$ be a measure on $T$ and suppose $\\kappa$ has almost everywhere finite support with respect to $\\mu$. Then $\\kappa.\\mathrm{condKernel}$ has almost everywhere finite support with respect to $\\mu\\otimes\\kappa.\\mathrm{fst}$.",
+   "sketch": "It uses the explicit formula for the conditional kernel and the formula for the composition-product measure of a singleton."
+  },
+  "ProbabilityTheory.condDistrib_eq_prod_of_indepFun": {
+   "statement": "Let $X,Y,Z,W$ be measurable random variables on $\\Omega$, $\\mu$ a measure on $\\Omega$, and suppose the pairs $(X,Z)$ and $(Y,W)$ are independent under $\\mu$. Then, almost everywhere with respect to the law of $(Z,W)$ under $\\mu$, the conditional distribution of $(X,Y)$ given $(Z,W)$ equals the product kernel $(\\mathrm{prodMkRight}_V\\,\\mathrm{condDistrib}(X|Z))\\times(\\mathrm{prodMkLeft}_U\\,\\mathrm{condDistrib}(Y|W))$, i.e. at $(z,w)$ it is the product of the conditional distribution of $X$ given $Z=z$ and that of $Y$ given $W=w$.",
+   "sketch": "It computes both sides pointwise using the explicit formula for conditional distributions and writes lower integrals as countable sums, using independence to factor the probabilities."
+  },
+  "ProbabilityTheory.condKernel_condDistrib_ae_eq": {
+   "statement": "Let $X,Y,Z$ be measurable random variables on $\\Omega$ and $\\mu$ a measure on $\\Omega$. Then, almost everywhere with respect to the law of $(Z,X)$ under $\\mu$, the conditional kernel of the conditional distribution of $(X,Y)$ given $Z$ equals the conditional distribution of $Y$ given $(Z,X)$.",
+   "sketch": "Both sides are evaluated with the explicit formulas for the conditional kernel and for conditional distributions and compared."
+  }
+ }
+}

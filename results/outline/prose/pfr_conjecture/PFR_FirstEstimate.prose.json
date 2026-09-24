@@ -1,0 +1,29 @@
+{
+ "title": "The first estimate",
+ "results": {
+  "diff_rdist_le_3": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, and let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be random variables with $X_1$ and $\\tilde X_2$ measurable, $\\tilde X_2$ distributed as $X_2$, and $X_1, X_2, \\tilde X_2, \\tilde X_1$ jointly independent. Then $$d[X^0_1; X_1 \\mid X_1 + \\tilde X_2] - d[X^0_1;X_1] \\le \\tfrac12 d[X_1;X_2] + \\tfrac14 H[X_1] - \\tfrac14 H[X_2].$$",
+   "sketch": "Combine the bound $d[X\\mid Z; Y\\mid W] \\le d[X;Y] + \\tfrac12 I[X:Z] + \\tfrac12 I[Y:W]$ (`condRuzsaDist_le`, with a constant conditioning variable on one side via `condRuzsaDist_of_const`) with `comparison_of_ruzsa_distances`; the mutual information $I[X_1 : X_1+\\tilde X_2]$ is computed via $H[(X,X+Y)] = H[(X,Y)]$ and independence, and entropies and distances are transferred from $\\tilde X_2$ to $X_2$ using identical distribution."
+  },
+  "diff_rdist_le_4": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, and let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be random variables with $X_2$ and $\\tilde X_1$ measurable, $\\tilde X_1$ distributed as $X_1$, and $X_1, X_2, \\tilde X_2, \\tilde X_1$ jointly independent. Then $$d[X^0_2; X_2 \\mid X_2 + \\tilde X_1] - d[X^0_2;X_2] \\le \\tfrac12 d[X_1;X_2] + \\tfrac14 H[X_2] - \\tfrac14 H[X_1].$$",
+   "sketch": "Symmetric to the previous result: combine `condRuzsaDist_le` (with `condRuzsaDist_of_const`) and `comparison_of_ruzsa_distances`, computing $I[X_2 : X_2 + \\tilde X_1]$ via $H[(X,X+Y)] = H[(X,Y)]$ and independence, and transferring from $\\tilde X_1$ to $X_1$ by identical distribution."
+  },
+  "rdist_add_rdist_add_condMutual_eq": {
+   "statement": "Let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be measurable random variables with $\\tilde X_1$ distributed as $X_1$, $\\tilde X_2$ distributed as $X_2$, and $X_1, X_2, \\tilde X_2, \\tilde X_1$ jointly independent. Then $$d[X_1+\\tilde X_2;\\ X_2+\\tilde X_1] + d[X_1\\mid X_1+\\tilde X_2;\\ X_2 \\mid X_2+\\tilde X_1] + I[X_1+X_2 : \\tilde X_1 + X_2 \\mid X_1+X_2+\\tilde X_1+\\tilde X_2] = 2\\,d[X_1;X_2].$$",
+   "sketch": "Apply `sum_of_rdist_eq_char_2` to the independent quadruple $(X_1, X_2, \\tilde X_2, \\tilde X_1)$, and use identical distribution to rewrite $d[\\tilde X_2;\\tilde X_1]$ as $d[X_1;X_2]$ (via symmetry of Ruzsa distance and invariance of entropy under negation/injective maps)."
+  },
+  "rdist_of_sums_ge": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be measurable, and suppose $(X_1,X_2)$ minimizes $\\tau$ for $p$. Then $$d[X_1+\\tilde X_2;\\ X_2+\\tilde X_1] \\ge d[X_1;X_2] - \\eta\\big(d[X^0_1; X_1+\\tilde X_2] - d[X^0_1;X_1]\\big) - \\eta\\big(d[X^0_2;X_2+\\tilde X_1] - d[X^0_2;X_2]\\big).$$",
+   "sketch": "Direct application of `distance_ge_of_min` to the pair $(X_1+\\tilde X_2, X_2+\\tilde X_1)$."
+  },
+  "first_estimate": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be measurable random variables with $\\tilde X_1$ distributed as $X_1$ and $\\tilde X_2$ distributed as $X_2$, such that $X_1, X_2, \\tilde X_2, \\tilde X_1$ are jointly independent, and suppose $(X_1,X_2)$ minimizes $\\tau$ for $p$. Write $k := d[X_1;X_2]$ and $I_1 := I[X_1+X_2 : \\tilde X_1 + X_2 \\mid X_1+X_2+\\tilde X_1+\\tilde X_2]$. Then $I_1 \\le 2\\eta k$.",
+   "sketch": "Combines the lower bounds coming from $\\tau$-minimality (`condRuzsaDistance_ge_of_min`) with the upper bounds `diff_rdist_le_3` and `diff_rdist_le_4` (whose entropy terms $\\pm\\tfrac14(H[X_1]-H[X_2])$ cancel) and the comparison estimates `condRuzsaDist_diff_le` and `comparison_of_ruzsa_distances`, yielding $I_1 \\le 2\\eta k$."
+  },
+  "ent_ofsum_le": {
+   "statement": "Let $p$ be a reference package with reference variables $X^0_1, X^0_2$ and parameter $\\eta$, let $X_1, X_2, \\tilde X_1, \\tilde X_2 : \\Omega \\to G$ be measurable random variables with $\\tilde X_1$ distributed as $X_1$ and $\\tilde X_2$ distributed as $X_2$, such that $X_1, X_2, \\tilde X_2, \\tilde X_1$ are jointly independent, and suppose $(X_1,X_2)$ minimizes $\\tau$ for $p$. Write $k := d[X_1;X_2]$ and $I_1 := I[X_1+X_2 : \\tilde X_1 + X_2 \\mid X_1+X_2+\\tilde X_1+\\tilde X_2]$. Then $$H[X_1+X_2+\\tilde X_1+\\tilde X_2] \\le \\tfrac12 H[X_1] + \\tfrac12 H[X_2] + (2+\\eta)k - I_1.$$",
+   "sketch": "Use `rdist_add_rdist_add_condMutual_eq` to express $d[X_1+\\tilde X_2; X_2+\\tilde X_1]$ in terms of $2k$, the conditional distance and $I_1$; lower-bound the conditional distance by $\\tau$-minimality (`condRuzsaDistance_ge_of_min`) and control the resulting differences with `diff_rdist_le_3` and `diff_rdist_le_4`; expanding the Ruzsa distance of the independent sums in entropies gives the bound."
+  }
+ }
+}

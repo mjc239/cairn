@@ -1,0 +1,4 @@
+{
+  "MeasureTheory.estimate_trnc₁": {"faithful": false, "issue": "The English claims the Lean statement is truncated, but it is complete, and the English omits the integrand's power of s and the entire right-hand side spf.d^(q - sel j q₀ q₁) * |q - sel j q₀ q₁|⁻¹ * (‖f‖_p^p)^(sel j q₀ q₁ / sel j p₀ p₁)."},
+  "MeasureTheory.estimate_trnc": {"faithful": true, "issue": ""}
+}

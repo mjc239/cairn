@@ -1,0 +1,9 @@
+{
+ "title": "Law of total probability for finite-range variables",
+ "results": {
+  "ProbabilityTheory.sum_meas_smul_cond_fiber'": {
+   "statement": "(Law of total probability.) Let $X:\\Omega\\to G$ be a measurable random variable with finite range and $\\mu$ a measure on $\\Omega$. Then $\\sum_{x\\in \\mathrm{range}(X)} \\mu(X^{-1}\\{x\\})\\cdot \\mu[\\,\\cdot \\mid X^{-1}\\{x\\}] = \\mu$, where $\\mu[\\,\\cdot\\mid A]$ denotes the conditional measure on $A$ and the sum runs over the finite range of $X$ (FiniteRange.toFinset $X$).",
+   "sketch": "The fibres $X^{-1}\\{x\\}$, $x$ in the finite range of $X$ (using the Fintype structure on the range), partition $\\Omega$, and on each fibre $\\mu(X^{-1}\\{x\\})\\,\\mu[\\cdot\\mid X^{-1}\\{x\\}]$ is the restriction of $\\mu$; summing gives $\\mu$."
+  }
+ }
+}

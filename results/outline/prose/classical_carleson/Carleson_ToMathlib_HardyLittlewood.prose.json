@@ -1,0 +1,13 @@
+{
+ "title": "Hardy–Littlewood Maximal Function Bounds",
+ "results": {
+  "hasStrongType_maximalFunction": {
+   "statement": "If $0 < p_1 < p_2$, then the maximal function $\\mathrm{maximalFunction}(\\mu, \\mathcal{B}, c, r, p_1)$ has strong type $(p_2, p_2)$ with respect to $\\mu$ and $\\mu$, with constant $C_{2.0.6}(A, p_1, p_2)$.",
+   "sketch": "It is deduced from the case of exponent $1$, `hasStrongType_maximalFunction_one` (strong type $(p,p)$ for $p > 1$), using the relation $p_1 < p_2$ between the exponents."
+  },
+  "hasStrongType_maximalFunction_one": {
+   "statement": "If $p > 1$, then the maximal function $\\mathrm{maximalFunction}(\\mu, \\mathcal{B}, c, r, 1)$ has strong type $(p, p)$ with respect to $\\mu$ and $\\mu$, with constant $C_{MB}(A, p)$ (a special case of (2.0.44)).",
+   "sketch": "Apply the Marcinkiewicz real interpolation theorem `exists_hasStrongType_real_interpolation` to the (sublinear) maximal operator, interpolating between two weak-type estimates."
+  }
+ }
+}

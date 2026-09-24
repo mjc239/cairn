@@ -1,0 +1,21 @@
+{
+ "title": "Tile Operators and Their Adjoints",
+ "results": {
+  "carlesonOn": {
+   "statement": "For a tile $\\mathfrak p$ and $f:X\\to\\mathbb C$, defines the function $T_{\\mathfrak p}f:X\\to\\mathbb C$, the operator of Proposition 2.0.2."
+  },
+  "carlesonSum": {
+   "statement": "For a set of tiles $\\mathfrak C$ and $f:X\\to\\mathbb C$, defines $T_{\\mathfrak C}f:X\\to\\mathbb C$, the operator defined at the end of Section 7.4."
+  },
+  "adjointCarleson": {
+   "statement": "For a tile $\\mathfrak p$ and $f:X\\to\\mathbb C$, defines the adjoint operator $T^*_{\\mathfrak p}f:X\\to\\mathbb C$, as defined above Lemma 7.4.1."
+  },
+  "adjointCarlesonSum": {
+   "statement": "For a set of tiles $\\mathfrak C$ and $f:X\\to\\mathbb C$, defines $T^*_{\\mathfrak C}f:X\\to\\mathbb C$, as defined at the end of Section 7.4."
+  },
+  "adjointCarlesonSum_adjoint": {
+   "statement": "Let $f,g$ be bounded with compact support and let $\\mathfrak C$ be a set of tiles. Then $$\\int_X\\overline{g(x)}\\,T_{\\mathfrak C}f(x)\\,dx=\\int_X\\overline{T^*_{\\mathfrak C}g(x)}\\,f(x)\\,dx,$$ i.e. $T^*_{\\mathfrak C}$ is the adjoint of $T_{\\mathfrak C}$.",
+   "sketch": "Unfolds $T_{\\mathfrak C}$ and $T^*_{\\mathfrak C}$ into the tile operators $T_{\\mathfrak p}$ and $T^*_{\\mathfrak p}$ (defined via $E(\\mathfrak p)$, $\\mathcal I(\\mathfrak p)$ and $s(\\mathfrak p)$) and exchanges the order of summation and integration."
+  }
+ }
+}

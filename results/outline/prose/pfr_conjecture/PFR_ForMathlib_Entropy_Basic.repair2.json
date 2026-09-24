@@ -1,0 +1,8 @@
+{
+ "ProbabilityTheory.prob_ge_exp_neg_entropy": {
+  "statement": "Let $S$ be a nonempty space in which singletons are measurable, let $\\mu$ be a measure on $\\Omega$, and let $X : \\Omega \\to S$ be a measurable random variable taking finitely many values. Then there exists $s \\in S$ such that $\\mu(\\Omega)\\cdot e^{-H[X;\\mu]} \\le (X_*\\mu)(\\{s\\})$, where $e^{-H[X;\\mu]}$ is viewed as a nonnegative real."
+ },
+ "ProbabilityTheory.mutualInfo_nonneg": {
+  "statement": "Let $S$ and $T$ be spaces in which singletons are measurable, let $\\mu$ be a measure on $\\Omega$, and let $X : \\Omega \\to S$ and $Y : \\Omega \\to T$ be measurable random variables, each taking finitely many values. Then $0 \\le I[X : Y;\\mu]$."
+ }
+}

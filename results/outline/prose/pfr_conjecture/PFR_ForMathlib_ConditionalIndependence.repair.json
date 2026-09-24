@@ -1,0 +1,3 @@
+{
+  "ProbabilityTheory.condIndep_copies": {"statement": "Let $\\beta$ be a countable measurable space with measurable singletons, let $\\mu$ be a probability measure on $\\Omega$, and let $X : \\Omega \\to \\alpha$ and $Y : \\Omega \\to \\beta$ be measurable random variables with $Y$ of finite range. Then there exist a measurable space $\\Omega'$, a probability measure $\\nu$ on $\\Omega'$ and measurable random variables $X_1, X_2 : \\Omega' \\to \\alpha$, $Y' : \\Omega' \\to \\beta$ such that $X_1$ and $X_2$ are conditionally independent given $Y'$ with respect to $\\nu$, and both $(X_1, Y')$ and $(X_2, Y')$ under $\\nu$ have the same distribution as $(X, Y)$ under $\\mu$."}
+}

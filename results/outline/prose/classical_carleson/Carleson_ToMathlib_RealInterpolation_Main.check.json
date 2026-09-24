@@ -1,0 +1,18 @@
+{
+ "MeasureTheory.exists_hasStrongType_real_interpolation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "MeasureTheory.combine_estimates₁": {
+  "faithful": true,
+  "issue": ""
+ },
+ "MeasureTheory.combine_estimates₀": {
+  "faithful": true,
+  "issue": ""
+ },
+ "MeasureTheory.exists_hasStrongType_real_interpolation_aux₄": {
+  "faithful": true,
+  "issue": ""
+ }
+}

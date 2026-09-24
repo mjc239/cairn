@@ -1,0 +1,12 @@
+{
+ "title": "Conditional independence and conditionally independent copies",
+ "results": {
+  "ProbabilityTheory.CondIndepFun": {
+   "statement": "Given random variables $f : \\Omega \\to \\alpha$, $g : \\Omega \\to \\beta$, $h : \\Omega \\to \\gamma$ and a measure $\\mu$ on $\\Omega$, `CondIndepFun f g h μ` is the assertion that $f$ and $g$ are conditionally independent relative to $h$ (with respect to $\\mu$)."
+  },
+  "ProbabilityTheory.condIndep_copies": {
+   "statement": "Let $X : \\Omega \\to \\alpha$ and $Y : \\Omega \\to \\beta$ be measurable random variables and $\\mu$ a measure on $\\Omega$. Then there exist a measurable space $\\Omega'$, a probability measure $\\nu$ on $\\Omega'$ and measurable random variables $X_1, X_2 : \\Omega' \\to \\alpha$, $Y' : \\Omega' \\to \\beta$ such that $X_1$ and $X_2$ are conditionally independent relative to $Y'$ (with respect to $\\nu$), and both $(X_1, Y')$ and $(X_2, Y')$ have the same distribution (under $\\nu$) as $(X, Y)$ (under $\\mu$).",
+   "sketch": "The measure $\\mu$ is decomposed as $\\sum_y \\mu(Y^{-1}\\{y\\})\\,\\mu[\\,\\cdot\\mid Y^{-1}\\{y\\}]$ over the finitely many values $y$ of $Y$ (`sum_meas_smul_cond_fiber'`); the required variables are built fibre by fibre from these conditional measures, and conditional independence and identical distribution are verified fibrewise and then summed."
+  }
+ }
+}

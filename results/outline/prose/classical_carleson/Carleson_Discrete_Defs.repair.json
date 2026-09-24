@@ -1,0 +1,4 @@
+{
+  "ℭ": {"statement": "Assume the standing data of the proof (ProofData with parameters $a, q, K, \\sigma_1, \\sigma_2, F, G$) and a tile structure on $X$ with the default parameters $D$, $\\kappa$, $S$ and cancellation point. For $k, n \\in \\mathbb{N}$, we define the set of tiles $\\mathfrak{C}(k, n) \\subseteq \\mathfrak{P}(X)$ as in (5.1.7): the tiles of $\\mathfrak{P}(k)$ selected according to their density, indexed by $n$."},
+  "ℭ₁": {"statement": "Assume the standing data of the proof (ProofData with parameters $a, q, K, \\sigma_1, \\sigma_2, F, G$) and a tile structure on $X$ with the default parameters $D$, $\\kappa$, $S$ and cancellation point. For $k, n, j \\in \\mathbb{N}$, we define the set of tiles $\\mathfrak{C}_1(k, n, j) \\subseteq \\mathfrak{P}(X)$, the subset of $\\mathfrak{C}(k, n)$ given in (5.1.9)."}
+}

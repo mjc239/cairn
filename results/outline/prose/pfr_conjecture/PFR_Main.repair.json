@@ -1,0 +1,8 @@
+{
+ "PFR_conjecture_aux": {
+  "statement": "Let $G$ be a finite (in particular countable) elementary abelian $2$-group, i.e. a finite vector space over $\\mathbb{F}_2$. Let $A$ be a nonempty subset of $G$ with $|A+A|\\le K|A|$. Then there exist a subgroup $H\\le G$ and a set $c\\subseteq G$ such that $|c|\\le K^{13/2}|A|^{1/2}|H|^{-1/2}$, $|H|\\le K^{11}|A|$, $|A|\\le K^{11}|H|$, and $A\\subseteq c+H$."
+ },
+ "PFR_conjecture": {
+  "statement": "Let $G$ be a finite (in particular countable) elementary abelian $2$-group, i.e. a finite vector space over $\\mathbb{F}_2$. Let $A$ be a nonempty subset of $G$ with $|A+A|\\le K|A|$. Then there exist a subgroup $H\\le G$ and a set $c\\subseteq G$ with $|c|<2K^{12}$, $|H|\\le|A|$, and $A\\subseteq c+H$."
+ }
+}

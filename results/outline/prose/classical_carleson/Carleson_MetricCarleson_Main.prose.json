@@ -1,0 +1,9 @@
+{
+ "title": "The Metric Carleson Theorem",
+ "results": {
+  "metric_carleson": {
+   "statement": "(Theorem 1.1.1) Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G\\subseteq X$ be measurable, and let $f$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Suppose that the nontangential operator associated with $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G T f(x)\\,dx\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q},$$ where $T$ is the Carleson operator $\\mathrm{carlesonOperator}\\,K$.",
+   "sketch": "Reduces to the linearized theorem (linearized_metric_carleson), whose hypothesis for each $\\theta$ is derived from the bound on the nontangential operator (via the helper BST_LNT_of_BST_NT), with a linearizing choice of $Q$ and the base point $\\mathrm{cancelPt}(X)$."
+  }
+ }
+}

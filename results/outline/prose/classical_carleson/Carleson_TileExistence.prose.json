@@ -1,0 +1,17 @@
+{
+ "title": "Existence of Grid and Tile Structures",
+ "results": {
+  "grid_existence": {
+   "statement": "Definition (construction): for the space $X$, a grid structure on $X$ with parameters $D = \\mathrm{defaultD}(a)$, $\\kappa = \\mathrm{default}\\kappa(a)$, $S = \\mathrm{defaultS}(X)$ and base point $o = \\mathrm{cancelPt}(X)$; this is the proof that such a grid structure exists."
+  },
+  "tileData_existence": {
+   "statement": "Definition (construction): a pre-tile structure for $Q$ with parameters $D = \\mathrm{defaultD}(a)$, $\\kappa = \\mathrm{default}\\kappa(a)$, $S = \\mathrm{defaultS}(X)$ and base point $o = \\mathrm{cancelPt}(X)$."
+  },
+  "Construction.Ω": {
+   "statement": "Definition: for a tile $p \\in \\mathfrak{P}(X)$, the set $\\Omega(p) \\subseteq \\Theta(X)$ used in the construction of the tile structure."
+  },
+  "tile_existence": {
+   "statement": "Definition (construction): for the space $X$, a tile structure for $Q$ with parameters $D = \\mathrm{defaultD}(a)$, $\\kappa = \\mathrm{default}\\kappa(a)$, $S = \\mathrm{defaultS}(X)$ and base point $o = \\mathrm{cancelPt}(X)$."
+  }
+ }
+}

@@ -15,7 +15,7 @@ and Carleson. Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase
 [`docs/carleson.md`](docs/carleson.md), and the statement/proof model of load vs motivation in
 [`docs/statement-proof-events.md`](docs/statement-proof-events.md), and parameterised exposition styles in
 [`docs/style.md`](docs/style.md). **Blueprint-free outlines** of a Lean development, with a `detail`
-parameter: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`](results/outline/)).
+parameter, short statements and checked English prose: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`](results/outline/)).
 
 - [`docs/idea-notes.md`](docs/idea-notes.md): the original idea notes (motivation,
   challenges, graph formulation, prior work).
@@ -53,6 +53,8 @@ uv run cairn style path/to/blueprint/src decls.jsonl --project NAME -o results/s
 # Blueprint-free outline of any Lean development (the end-to-end tool)
 uv run cairn outline decls.jsonl --model results/outline/key_model.json --detail 0.15 [--root MainTheorem] \
     [--top-down 0.2 --roadmap chapter] -o outline.md
+uv run cairn outline ... --prose DIR --write-prose-prompts      # then fill DIR/*.prose.json (titles, English, sketches)
+uv run cairn outline ... --prose DIR --write-check-prompts      # then fill DIR/*.check.json; render with --prose DIR
 ./scripts/outline.sh                                             # models, evaluation vs blueprints, example outlines
 uv run jupyter-execute --inplace notebooks/walkthrough.ipynb  # or open it in Jupyter / VS Code (dev deps include ipykernel)
 uv run pytest && uv run ruff check python

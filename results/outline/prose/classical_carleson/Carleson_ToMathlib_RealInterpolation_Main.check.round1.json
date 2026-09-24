@@ -1,0 +1,6 @@
+{
+  "MeasureTheory.exists_hasStrongType_real_interpolation": {"faithful": true, "issue": ""},
+  "MeasureTheory.combine_estimates₁": {"faithful": false, "issue": "The English claims the bound is truncated in the source, but the Lean bound is complete, so the English leaves out the factor (...)^{1/q}, C0^{1-t} C1^t and ||f||_p."},
+  "MeasureTheory.combine_estimates₀": {"faithful": false, "issue": "The English claims the bound is truncated in the source, but the Lean bound is complete, so the English leaves out the |q-q_i|^{-1} terms, C0^{(1-t)q} C1^{tq} and ||f||_p^q."},
+  "MeasureTheory.exists_hasStrongType_real_interpolation_aux₄": {"faithful": false, "issue": "The English claims the bound is truncated in the source, but the Lean bound is complete, so the English leaves out the exponent 1/q on the bracket and the factors C0^{1-t} C1^t ||f||_p."}
+}

@@ -1,0 +1,91 @@
+{"title": "Correlation of trees with large separation",
+ "results": {
+  "TileStructure.Forest.correlation_distant_tree_parts": {
+   "statement": "(Lemma 7.4.5) Let $t$ be an $n$-forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, and let $f_1, f_2$ be bounded with compact support. Then $$\\Big|\\int_X T^*_{\\mathfrak{T}(u_1)} f_1(x)\\, \\overline{T^*_{\\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)} f_2(x)}\\,dx\\Big| \\le C_{7.4.5}(a,n)\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_1, f_1)\\big\\|_{L^2}\\, \\big\\|\\mathbf{1}_{\\mathcal{I}(u_1)} \\cdot \\mathrm{adjointBoundaryOperator}_t(u_2, f_2)\\big\\|_{L^2},$$ where $T^*_{\\mathfrak{C}}$ denotes `adjointCarlesonSum` over $\\mathfrak{C}$ and $C_{7.4.5}$ is `Forest.C7_4_5`.",
+   "sketch": "By `cdtp_le_iHolENorm` (which rests on the Hölder van der Corput estimate over the partition of $\\mathcal{I}(u_1)$ into the cubes of $\\mathcal{J}_5(u_1,u_2)$, cf. `union_𝓙₅`), the integral is bounded by a sum over $J \\in \\mathcal{J}_5(u_1,u_2)$ of Hölder norms of $h_J$ = `holderFunction` times an oscillation factor; the Hölder norms are bounded by `holder_correlation_tree`, the oscillation factor by `lower_oscillation_bound`, and the resulting sum over $J$ is estimated in terms of the $L^2$ norms of the boundary operators on $\\mathcal{I}(u_1)$."
+  },
+  "TileStructure.Forest.χtilde": {
+   "statement": "For a cube $J$, a tile $u_1$ and a point $x$, the nonnegative real number $\\tilde\\chi_J(u_1)(x)$ (`χtilde J u₁ x`), the function $\\tilde\\chi$ defined in the proof of Lemma 7.5.2."
+  },
+  "TileStructure.Forest.𝓙₅": {
+   "statement": "For an $n$-forest $t$ and tiles $u_1, u_2$, the collection of cubes $\\mathcal{J}_5(u_1,u_2)$: the collection $\\mathcal{J}'$ defined at the start of Section 7.5.1 (renamed to distinguish it from the $\\mathcal{J}'$ of Section 7.6)."
+  },
+  "TileStructure.Forest.χ": {
+   "statement": "For an $n$-forest $t$, tiles $u_1, u_2$, a cube $J$ and a point $x$, the nonnegative real number $\\chi_J(x)$ (`χ t u₁ u₂ J x`), the function $\\chi$ defined in the proof of Lemma 7.5.2."
+  },
+  "TileStructure.Forest.holderFunction": {
+   "statement": "For an $n$-forest $t$, tiles $u_1,u_2$, functions $f_1, f_2 : X \\to \\mathbb{C}$ and a cube $J$, the function $h_J : X \\to \\mathbb{C}$ (`holderFunction t u₁ u₂ f₁ f₂ J`) defined in Section 7.5.2."
+  },
+  "TileStructure.Forest.edist_holderFunction_le": {
+   "statement": "Let $t$ be an $n$-forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, and $f_1, f_2$ bounded with compact support. If $x, x' \\in B(c(J), 16 D^{s(J)})$, then $$|h_J(x) - h_J(x')| \\le I_{7.5.4}(a)\\, P_{7.5.4}(u_1,u_2,f_1,f_2,J)\\, \\Big(\\frac{d(x,x')}{D^{s(J)}}\\Big)^{1/a},$$ where $h_J$ = `holderFunction t u₁ u₂ f₁ f₂ J`, $I_{7.5.4}$ is `Forest.I7_5_4`, $P_{7.5.4}$ is `t.P7_5_4` and $D$ = `defaultD a`.",
+   "sketch": "Write $h_J$ as a product of $\\chi$ and the two modulated adjoint Carleson sums, and estimate the difference by the triangle inequality: the variation of the modulated sums is controlled by `global_tree_control1_edist_left` and `global_tree_control1_edist_right`, their size by `global_tree_control1_supbound` and `global_tree_control2`, and the variation of $\\chi$ from its definition (using `union_𝓙₅`)."
+  },
+  "TileStructure.Forest.holder_correlation_tile_two": {
+   "statement": "Let $t$ be a forest, $u \\in t$, $p \\in \\mathfrak{T}(u)$, and $f$ bounded with compact support. If $x, x' \\in B(c(p), 5 D^{s(p)})$, then $$\\big|e^{i\\mathcal{Q}(u)(x)}\\, T^*_p f(x) - e^{i\\mathcal{Q}(u)(x')}\\, T^*_p f(x')\\big| \\le \\frac{C_{7.5.5}(a)}{\\mu(B(c(p), 4D^{s(p)}))} \\Big(\\frac{d(x,x')}{D^{s(p)}}\\Big)^{1/a} \\int_{E(p)} |f(y)|\\,dy,$$ where $T^*_p$ is `adjointCarleson p` and $C_{7.5.5}$ is `Forest.C7_5_5`.",
+   "sketch": "A direct estimate of the difference of the modulated adjoint tile operators, using the Hölder regularity of the kernel and of the phase on the enlarged tile balls (via the geometry of $\\lambda p$ and $\\mathcal{I}(p)$)."
+  },
+  "TileStructure.Forest.holder_correlation_tile": {
+   "statement": "(Lemma 7.5.5) Let $t$ be a forest, $u \\in t$, $p \\in \\mathfrak{T}(u)$, and $f$ bounded with compact support. Then for all $x, x' \\in X$, $$\\big|e^{i\\mathcal{Q}(u)(x)}\\, T^*_p f(x) - e^{i\\mathcal{Q}(u)(x')}\\, T^*_p f(x')\\big| \\le \\frac{C_{7.5.5}(a)}{\\mu(B(c(p), 4D^{s(p)}))} \\Big(\\frac{d(x,x')}{D^{s(p)}}\\Big)^{1/a} \\int_{E(p)} |f(y)|\\,dy.$$",
+   "sketch": "When both $x, x'$ lie in $B(c(p), 5D^{s(p)})$ this is `holder_correlation_tile_two`; the remaining cases follow from the support of $T^*_p f$ (contained in $\\mathcal{I}(p)$) and a direct bound when the points are far apart."
+  },
+  "TileStructure.Forest.global_tree_control1_edist_part1": {
+   "statement": "(Part 1 of (7.5.18) in Lemma 7.5.9) Let $t$ be a forest, $u \\in t$, $\\mathfrak{C} \\subseteq \\mathfrak{T}(u)$, $f$ bounded with compact support, and suppose that every $p \\in \\mathfrak{C}$ with $B(c(p), 8D^{s(p)}) \\cap B(c(J), 16 D^{s(J)}) \\ne \\emptyset$ satisfies $s(J) \\le s(p)$. Then for $x, x' \\in B(c(J), 16D^{s(J)})$, $$\\big|e^{i\\mathcal{Q}(u)(x)} T^*_{\\mathfrak{C}} f(x) - e^{i\\mathcal{Q}(u)(x')} T^*_{\\mathfrak{C}} f(x')\\big| \\le C_{7.5.5}(a)\\, 2^{4a}\\, d(x,x')^{1/a} \\sum_{k = s(J)}^{S} D^{-k/a}\\, ⨍ \\cdots,$$ where $S$ = `defaultS X` and the last factor is a lower average (the remainder of the Lean statement is truncated in the source).",
+   "sketch": "Expand $T^*_{\\mathfrak{C}}$ as a sum over tiles, apply `holder_correlation_tile` to each tile, and group the tiles by scale $k \\in [s(J), S]$ (the lower bound on scales coming from the hypothesis)."
+  },
+  "TileStructure.Forest.global_tree_control1_edist_part2": {
+   "statement": "(Part 2 of (7.5.18) in Lemma 7.5.9) Under the same hypotheses as part 1 (a forest $t$, $u \\in t$, $\\mathfrak{C} \\subseteq \\mathfrak{T}(u)$, $f$ bounded with compact support, every $p \\in \\mathfrak{C}$ with $B(c(p), 8D^{s(p)}) \\cap B(c(J), 16 D^{s(J)}) \\ne \\emptyset$ has $s(J) \\le s(p)$, and $x, x' \\in B(c(J), 16D^{s(J)})$), $$\\big|e^{i\\mathcal{Q}(u)(x)} T^*_{\\mathfrak{C}} f(x) - e^{i\\mathcal{Q}(u)(x')} T^*_{\\mathfrak{C}} f(x')\\big| \\le C_{7.5.9d}(a) \\Big(\\frac{d(x,x')}{D^{s(J)}}\\Big)^{1/a} \\inf_{y \\in J} M_{\\mathcal{B}} \\cdots,$$ where $M_{\\mathcal{B}}$ is the maximal function over the ball family `Forest.𝓑` (centres `Forest.c𝓑`, radii `Forest.r𝓑`) and $C_{7.5.9d}$ is `Forest.C7_5_9d` (the end of the Lean statement is truncated in the source).",
+   "sketch": "Start from `global_tree_control1_edist_part1` and bound each average at scale $k$ by the infimum over $J$ of the maximal function, then sum the geometric series $\\sum_{k \\ge s(J)} D^{-k/a}$."
+  },
+  "TileStructure.Forest.scales_impacting_interval": {
+   "statement": "(Lemma 7.5.8) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, and $p \\in \\mathfrak{T}(u_1) \\cup (\\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2))$. If $B(c(p), 8D^{s(p)})$ and $B(c(J), 16D^{s(J)})$ are not disjoint, then $s(J) \\le s(p)$.",
+   "sketch": "Uses the definition of $\\mathcal{J}_5$ through the cube collections $\\mathcal{J}$, $\\mathcal{J}_0$, together with `overlap_implies_distance`, to rule out tiles of scale smaller than $s(J)$ whose balls meet the ball around $J$."
+  },
+  "TileStructure.Forest.global_tree_control1_edist_right": {
+   "statement": "(Equation (7.5.18) of Lemma 7.5.9 for $\\mathfrak{C} = \\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, $f$ bounded with compact support, and $x, x' \\in B(c(J), 16D^{s(J)})$. Then with $\\mathfrak{C} = \\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$, $$\\big|e^{i\\mathcal{Q}(u_2)(x)} T^*_{\\mathfrak{C}} f(x) - e^{i\\mathcal{Q}(u_2)(x')} T^*_{\\mathfrak{C}} f(x')\\big| \\le C_{7.5.9d}(a) \\Big(\\frac{d(x,x')}{D^{s(J)}}\\Big)^{1/a} \\inf_{y \\in J} M_{\\mathcal{B}} f(y),$$ where $M_{\\mathcal{B}}$ is the maximal function (with exponent $1$) over the ball family `Forest.𝓑` with centres `Forest.c𝓑` and radii `Forest.r𝓑`.",
+   "sketch": "Apply `global_tree_control1_edist_part2` with $u = u_2$ and $\\mathfrak{C} = \\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$; the scale hypothesis is provided by `scales_impacting_interval`."
+  },
+  "TileStructure.Forest.global_tree_control1_edist_left": {
+   "statement": "(Equation (7.5.18) of Lemma 7.5.9 for $\\mathfrak{C} = \\mathfrak{T}(u_1)$) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, $f$ bounded with compact support, and $x, x' \\in B(c(J), 16D^{s(J)})$. Then $$\\big|e^{i\\mathcal{Q}(u_1)(x)} T^*_{\\mathfrak{T}(u_1)} f(x) - e^{i\\mathcal{Q}(u_1)(x')} T^*_{\\mathfrak{T}(u_1)} f(x')\\big| \\le C_{7.5.9d}(a) \\Big(\\frac{d(x,x')}{D^{s(J)}}\\Big)^{1/a} \\inf_{y \\in J} M_{\\mathcal{B}} f(y).$$",
+   "sketch": "Apply `global_tree_control1_edist_part2` with $u = u_1$ and $\\mathfrak{C} = \\mathfrak{T}(u_1)$; the scale hypothesis is provided by `scales_impacting_interval`."
+  },
+  "TileStructure.Forest.global_tree_control1_supbound": {
+   "statement": "(Equation (7.5.17) of Lemma 7.5.9) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, let $\\mathfrak{C}$ be either $\\mathfrak{T}(u_1)$ or $\\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$, let $J \\in \\mathcal{J}_5(u_1,u_2)$ and $f$ be bounded with compact support. Then $$\\sup_{x \\in B(c(J), 16D^{s(J)})} |T^*_{\\mathfrak{C}} f(x)| \\le \\inf_{x \\in B(c(J), D^{s(J)}/8)} |T^*_{\\mathfrak{C}} f(x)| + C_{7.5.9s}(a) \\inf_{y \\in J} M_{\\mathcal{B}} f(y),$$ where $C_{7.5.9s}$ is `Forest.C7_5_9s`.",
+   "sketch": "For $x$ in the large ball and $x'$ in the small ball, compare $|T^*_{\\mathfrak{C}} f(x)|$ with $|T^*_{\\mathfrak{C}} f(x')|$ using the Hölder-type bound `global_tree_control1_edist_left` or `global_tree_control1_edist_right` (the modulation factors have modulus one), and note $d(x,x') \\lesssim D^{s(J)}$."
+  },
+  "TileStructure.Forest.limited_scale_impact_second_estimate": {
+   "statement": "(Part of Lemma 7.5.6) Let $t$ be a forest, $p \\in \\mathfrak{T}(u_2) \\setminus \\mathfrak{S}_0(u_1,u_2)$ and $J \\in \\mathcal{J}_5(u_1,u_2)$. If $B(c(p), 8D^{s(p)})$ and $B(c(J), D^{s(J)}/8)$ are not disjoint, then $s(p) \\le s(J) + 3$.",
+   "sketch": "Uses the maximality property of cubes in $\\mathcal{J}_5$ (defined through $\\mathcal{J}$ and $\\mathcal{J}_0$), applied to the parent cubes `Grid.succ` of $J$, to show that a tile at a larger scale would contradict the choice of $J$."
+  },
+  "TileStructure.Forest.local_tree_control_sumsumsup": {
+   "statement": "Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, and $J \\in \\mathcal{J}_5(u_1,u_2)$. Then $$\\sup_{x \\in B(c(J), D^{s(J)}/8)} \\big|T^*_{\\mathfrak{T}(u_2)\\setminus\\mathfrak{S}_0(u_1,u_2)} f(x)\\big| \\le \\sum_{k = s(J)}^{s(J)+3}\\ \\sum_{\\substack{p:\\ s(p) = k,\\\\ B(c(p),8D^{s(p)}) \\cap B(c(J), D^{s(J)}/8) \\ne \\emptyset}}\\ \\sup_{x \\in B(c(J), D^{s(J)}/8)} |T^*_p f(x)|.$$",
+   "sketch": "Expand the adjoint Carleson sum over tiles and keep only tiles whose ball $B(c(p),8D^{s(p)})$ meets the small ball (others contribute zero there); their scales lie in $[s(J), s(J)+3]$, the upper bound by `limited_scale_impact_second_estimate` and the lower bound via `overlap_implies_distance`."
+  },
+  "TileStructure.Forest.local_tree_control": {
+   "statement": "(Lemma 7.5.7) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, and $f$ bounded with compact support. Then $$\\sup_{x \\in B(c(J), D^{s(J)}/8)} \\big|T^*_{\\mathfrak{T}(u_2)\\setminus\\mathfrak{S}_0(u_1,u_2)} f(x)\\big| \\le C_{7.5.7}(a) \\inf_{y \\in J} M_{\\mathcal{B}} f(y),$$ where $C_{7.5.7}$ is `Forest.C7_5_7`.",
+   "sketch": "Start from `local_tree_control_sumsumsup` and bound each $\\sup |T^*_p f|$ by an average of $|f|$ over $E(p)$, which is dominated by the maximal function at any point of $J$; the number of relevant tiles at each of the four scales is bounded."
+  },
+  "TileStructure.Forest.global_tree_control2": {
+   "statement": "(Lemma 7.5.10) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, and $f$ bounded with compact support. Then $$\\sup_{x \\in B(c(J), 16D^{s(J)})} \\big|T^*_{\\mathfrak{T}(u_2)\\cap\\mathfrak{S}_0(u_1,u_2)} f(x)\\big| \\le \\inf_{x \\in B(c(J), D^{s(J)}/8)} \\big|T^*_{\\mathfrak{T}(u_2)} f(x)\\big| + C_{7.5.10}(a) \\inf_{y \\in J} M_{\\mathcal{B}} f(y),$$ where $C_{7.5.10}$ is `Forest.C7_5_10`.",
+   "sketch": "Apply `global_tree_control1_supbound` with $\\mathfrak{C} = \\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$, write $T^*_{\\mathfrak{T}(u_2)\\cap\\mathfrak{S}_0} = T^*_{\\mathfrak{T}(u_2)} - T^*_{\\mathfrak{T}(u_2)\\setminus\\mathfrak{S}_0}$ on the small ball, and bound the second term by `local_tree_control`."
+  },
+  "TileStructure.Forest.union_𝓙₅": {
+   "statement": "(Part of Lemma 7.5.1) Let $t$ be a forest and $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$. Then $\\bigcup_{J \\in \\mathcal{J}_5(u_1,u_2)} J = \\mathcal{I}(u_1)$.",
+   "sketch": "Follows from the definition of $\\mathcal{J}_5$ via the maximal-cube collections $\\mathcal{J}$ and $\\mathcal{J}_0$ of $\\mathfrak{S}_0(u_1,u_2)$, using `overlap_implies_distance` to see that the relevant tiles of $\\mathfrak{T}(u_1)$ belong to $\\mathfrak{S}_0(u_1,u_2)$."
+  },
+  "TileStructure.Forest.enorm_holderFunction_le": {
+   "statement": "Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, $f_1, f_2$ bounded with compact support, and $x \\in B(c(J), 16D^{s(J)})$. Then $$|h_J(x)| \\le C_{7.5.9s}(a)\\, C_{7.5.10}(a)\\, P_{7.5.4}(u_1,u_2,f_1,f_2,J),$$ where $h_J$ = `holderFunction t u₁ u₂ f₁ f₂ J` and $P_{7.5.4}$ is `t.P7_5_4`.",
+   "sketch": "Bound $\\chi \\le 1$ and estimate the two adjoint Carleson sums in $h_J$ on the ball by `global_tree_control1_supbound` (for $\\mathfrak{T}(u_1)$) and `global_tree_control2` (for $\\mathfrak{T}(u_2) \\cap \\mathfrak{S}_0(u_1,u_2)$)."
+  },
+  "TileStructure.Forest.holder_correlation_tree": {
+   "statement": "(Lemma 7.5.4) Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, $J \\in \\mathcal{J}_5(u_1,u_2)$, and $f_1, f_2$ bounded with compact support. Then the $\\tau$-Hölder norm of $h_J$ on the ball $B(c(J), 16D^{s(J)})$, with $\\tau$ = `defaultτ a`, satisfies $$\\|h_J\\|_{C^{\\tau}(B(c(J), 16D^{s(J)}))} \\le C_{7.5.4}(a)\\, P_{7.5.4}(u_1,u_2,f_1,f_2,J),$$ where the norm is `iHolENorm` and $C_{7.5.4}$ is `Forest.C7_5_4`.",
+   "sketch": "Combine the sup bound `enorm_holderFunction_le` and the Hölder-difference bound `edist_holderFunction_le` according to the definition of the Hölder norm."
+  },
+  "TileStructure.Forest.cdtp_le_iHolENorm": {
+   "statement": "Let $t$ be a forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, and let $f_1, f_2$ be bounded with compact support. Then $$\\Big|\\int_X T^*_{\\mathfrak{T}(u_1)} f_1(x)\\, \\overline{T^*_{\\mathfrak{T}(u_2)\\cap\\mathfrak{S}_0(u_1,u_2)} f_2(x)}\\,dx\\Big| \\le \\sum_{J \\in \\mathcal{J}_5(u_1,u_2)} C_{2.0.5}(a)\\, \\mu(B_J)\\, \\|h_J\\|_{C^{\\tau}(B(c(J), 2 \\cdot 8D^{s(J)}))} \\big(1 + d_{B_J}(\\mathcal{Q}(u_2), \\mathcal{Q}(u_1))\\big)^{-1/(2a^2 + a^3)},$$ where $B_J = B(c(J), 8D^{s(J)})$, $d_{B_J}$ is the (extended) distance `edist_{c J, 8 D^{s J}}`, $\\tau$ = `defaultτ a`, the Hölder norm is `iHolENorm`, and $C_{2.0.5}$ is `C2_0_5`.",
+   "sketch": "Use the partition of unity $\\chi_J$ (built from $\\tilde\\chi$) subordinate to the cubes $J \\in \\mathcal{J}_5(u_1,u_2)$, which cover $\\mathcal{I}(u_1)$ by `union_𝓙₅`, to split the integral into pieces of the form $\\int e^{i(\\mathcal{Q}(u_2) - \\mathcal{Q}(u_1))} h_J$, and apply the Hölder van der Corput estimate `holder_van_der_corput` to each piece."
+  },
+  "TileStructure.Forest.lower_oscillation_bound": {
+   "statement": "(Lemma 7.5.11) Let $t$ be an $n$-forest, $u_1, u_2 \\in t$ with $u_1 \\ne u_2$ and $\\mathcal{I}(u_1) \\le \\mathcal{I}(u_2)$, and $J \\in \\mathcal{J}_5(u_1,u_2)$. Then $$C_{7.5.11}(a,n) \\le d_{B(c(J), 8D^{s(J)})}(\\mathcal{Q}(u_1), \\mathcal{Q}(u_2)),$$ where $C_{7.5.11}$ is `Forest.C7_5_11`.",
+   "sketch": "Uses the defining property of $J \\in \\mathcal{J}_5$ (through $\\mathcal{J}$, $\\mathcal{J}_0$ and parent cubes `Grid.succ`) to find a tile of $\\mathfrak{T}(u_1) \\cup \\mathfrak{T}(u_2)$ near $J$, and `overlap_implies_distance` to place it in $\\mathfrak{S}_0(u_1,u_2)$, whose defining separation condition then gives the lower bound on the distance."
+  }
+ }}

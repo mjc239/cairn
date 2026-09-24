@@ -1,0 +1,7 @@
+{
+  "forest_complement": {"faithful": true, "issue": ""},
+  "𝔓pos": {"faithful": true, "issue": ""},
+  "lintegral_carlesonSum_𝔓₁_compl_le_sum_lintegral": {"faithful": false, "issue": "The English adds the claim that the sets on the right-hand side are antichains, which the Lean statement does not assert."},
+  "lintegral_enorm_carlesonSum_le_of_isAntichain_subset_ℭ": {"faithful": true, "issue": ""},
+  "forest_complement_optimized": {"faithful": true, "issue": ""}
+}

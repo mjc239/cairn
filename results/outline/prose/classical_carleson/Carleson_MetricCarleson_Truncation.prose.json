@@ -1,0 +1,48 @@
+{
+ "title": "Truncation and Linearization Reductions",
+ "results": {
+  "R_truncation": {
+   "statement": "(Lemma 3.0.2) Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G\\subseteq X$ be measurable, and let $f$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Let $R=2^n$, and suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G\\sup_{R^{-1}<R_1<R}\\ \\sup_{R_1<R_2<R}\\big\\|T_R(K,Q,R_1,R_2,R)f(x)\\big\\|\\,dx\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q}.$$",
+   "sketch": "Reduces to R_truncation', which has the additional hypotheses $F\\subseteq B(\\mathrm{cancelPt}(X),2R)$ and $G\\subseteq B(\\mathrm{cancelPt}(X),R)$."
+  },
+  "R_truncation'": {
+   "statement": "Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G\\subseteq X$ be measurable, and let $f$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Let $R=2^n$, assume $F\\subseteq B(o,2R)$ and $G\\subseteq B(o,R)$ where $o=\\mathrm{cancelPt}(X)$, and suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G\\sup_{R^{-1}<R_1<R}\\ \\sup_{R_1<R_2<R}\\big\\|T_R(K,Q,R_1,R_2,R)f(x)\\big\\|\\,dx\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q}.$$",
+   "sketch": "Bounds the truncated integrand pointwise by $\\|T_S\\|$ plus $4C_{2.1.3}(a)$ times the maximal function of $\\mathbf 1_F$ (enorm_carlesonOperatorIntegrand_le_T_S); the $T_S$ term is handled by Lemma 3.0.3 (S_truncation) and the maximal-function term by the strong-type bound hasStrongType_maximalFunction, with the construction P304.succ used along the way."
+  },
+  "finitary_carleson_step": {
+   "statement": "Let $CP$ be data of type $\\mathrm{CP304}(q,q',F,f,\\sigma_1,\\sigma_2)$ and let $G$ be bounded and measurable. Then there exists a bounded measurable $G'\\subseteq G$ with $2\\mu(G')\\le\\mu(G)$ and $$\\int_{G\\setminus G'}\\big\\|T_{\\mathrm{lin}}(Q_{CP},\\sigma_1,\\sigma_2)f(x)\\big\\|\\,dx\\le C_{2.0.1}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q}.$$",
+   "sketch": "Builds a ProofData instance (with its kernel data and simple function $Q$) from $CP$ and $G$ and applies finitary_carleson to it."
+  },
+  "P304.succ": {
+   "statement": "Given data $P$ of type $\\mathrm{P304}(q,q',F,f,\\sigma_1,\\sigma_2)$ (containing a set $G_n$), constructs the next data $P'$ of the same type, containing $G_{n+1}$."
+  },
+  "enorm_carlesonOperatorIntegrand_le_T_S": {
+   "statement": "Let $0<R_1<R_2$, let $f$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Then $$\\big\\|\\mathrm{carlesonOperatorIntegrand}(K,Q(x),R_1,R_2,f)(x)\\big\\|\\le\\big\\|T_S(Q,L_{302}(a,R_1),U_{302}(a,R_2))f(x)\\big\\|+4\\,C_{2.1.3}(a)\\,M(\\mathbf 1_F)(x),$$ where $M$ is the global maximal function with exponent $1$.",
+   "sketch": "No named results are listed; the proof uses only auxiliary ball-covering facts."
+  },
+  "linearized_truncation": {
+   "statement": "(Lemma 3.0.4) Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G$ be bounded measurable sets, let $f$ be measurable with $|f|\\le\\mathbf 1_F$, let $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ be measurable with finite ranges and $\\sigma_1\\le\\sigma_2$, and suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G\\big\\|T_{\\mathrm{lin}}(Q,\\sigma_1,\\sigma_2)f(x)\\big\\|\\,dx\\le C_{3.0.4}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q}.$$",
+   "sketch": "Considers the decreasing slices $G_n$ with $2\\mu(G_{n+1})\\le\\mu(G_n)$ (slice_G_subset, volume_slice), bounds the integral over $G\\setminus G_{n+1}$ by slice_integral_bound_sum, and passes to the limit $n\\to\\infty$ by monotone convergence."
+  },
+  "volume_slice": {
+   "statement": "Let $CP$ be data of type $\\mathrm{CP304}(q,q',F,f,\\sigma_1,\\sigma_2)$ and let $G$ be bounded and measurable, and write $G_n$ for the set $(\\mathrm{slice}\\,CP\\,G\\,n).G$ of the $n$-th slice. Then $2\\mu(G_{n+1})\\le\\mu(G_n)$.",
+   "sketch": "Immediate from the property $2\\mu(G')\\le\\mu(G)$ provided by finitary_carleson_step, which is used to build $G_{n+1}$ from $G_n$."
+  },
+  "slice_G_subset": {
+   "statement": "Let $CP$ be data of type $\\mathrm{CP304}(q,q',F,f,\\sigma_1,\\sigma_2)$ and let $G$ be bounded and measurable, and write $G_n$ for the set $(\\mathrm{slice}\\,CP\\,G\\,n).G$ of the $n$-th slice. Then $G_{n+1}\\subseteq G_n$.",
+   "sketch": "Immediate from the property $G'\\subseteq G$ provided by finitary_carleson_step, which is used to build $G_{n+1}$ from $G_n$."
+  },
+  "slice_integral_bound": {
+   "statement": "Let $CP$ be data of type $\\mathrm{CP304}(q,q',F,f,\\sigma_1,\\sigma_2)$ and let $G$ be bounded and measurable, and write $G_n$ for the set $(\\mathrm{slice}\\,CP\\,G\\,n).G$ of the $n$-th slice. Then $$\\int_{G_n\\setminus G_{n+1}}\\big\\|T_{\\mathrm{lin}}(Q_{CP},\\sigma_1,\\sigma_2)f(x)\\big\\|\\,dx\\le C_{2.0.1}(a,q)\\,\\mu(G_n)^{1/q'}\\,\\mu(F)^{1/q}.$$",
+   "sketch": "This is the integral bound of finitary_carleson_step applied to $G_n$."
+  },
+  "slice_integral_bound_sum": {
+   "statement": "Let $CP$ be data of type $\\mathrm{CP304}(q,q',F,f,\\sigma_1,\\sigma_2)$ and let $G$ be bounded and measurable, and write $G_n$ for the set $(\\mathrm{slice}\\,CP\\,G\\,n).G$ of the $n$-th slice. Then $$\\int_X\\mathbf 1_{G\\setminus G_{n+1}}(x)\\,\\big\\|T_{\\mathrm{lin}}(Q_{CP},\\sigma_1,\\sigma_2)f(x)\\big\\|\\,dx\\le\\Big(C_{2.0.1}(a,q)\\sum_{i=0}^{n}(2^{-i})^{1/q'}\\Big)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q}.$$ (The integrand is written with an indicator to facilitate the monotone convergence theorem.)",
+   "sketch": "By induction on $n$: $G\\setminus G_{n+1}$ is split into $G\\setminus G_n$ and $G_n\\setminus G_{n+1}$ (using slice_G_subset), the latter bounded by slice_integral_bound, and $\\mu(G_n)\\le2^{-n}\\mu(G)$ follows from volume_slice."
+  },
+  "S_truncation": {
+   "statement": "(Lemma 3.0.3) Let $q\\in(1,2]$ and let $q'$ be its Hölder conjugate, let $F,G$ be bounded measurable sets, let $f$ be measurable with $|f|\\le\\mathbf 1_F$, and suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then, with $B$ the blueprint's $S$, $$\\int_G\\sup_{s_1\\in[-B,B]}\\ \\sup_{s_2\\in[s_1,B]}\\big\\|T_S(Q,s_1,s_2)f(x)\\big\\|\\,dx\\le C_{3.0.4}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q},$$ where $s_1,s_2$ range over integers.",
+   "sketch": "Applies Lemma 3.0.4 (linearized_truncation) with suitable measurable finite-range functions $\\sigma_1\\le\\sigma_2$ selecting the scales $s_1,s_2$."
+  }
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "Grid.succ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Grid.dist_strictMono": {
+  "faithful": true,
+  "issue": ""
+ }
+}

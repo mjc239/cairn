@@ -1,0 +1,9 @@
+{
+ "title": "Hölder van der Corput Estimate",
+ "results": {
+  "holder_van_der_corput": {
+   "statement": "(Proposition 2.0.5) Suppose $\\operatorname{supp}\\varphi\\subseteq B(z,R)$. Then $$\\Big\\|\\int_X e^{i(f(x)-g(x))}\\varphi(x)\\,dx\\Big\\|\\le C_{2.0.5}(a)\\,\\mu(B(z,R))\\,\\|\\varphi\\|_{\\mathrm{iHol}(z,2R,\\tau)}\\,\\big(1+d_{z,R}(f,g)\\big)^{-1/(2a^2+a^3)},$$ where $\\tau=\\tau(a)$ is the default Hölder exponent, $\\|\\varphi\\|_{\\mathrm{iHol}(z,2R,\\tau)}$ is the (extended) inhomogeneous $\\tau$-Hölder norm $\\mathrm{iHolENorm}\\,\\varphi\\,z\\,(2R)\\,\\tau$ on the ball $B(z,2R)$, and $d_{z,R}$ is the (extended) distance between $f$ and $g$ on $B(z,R)$.",
+   "sketch": "No named results are listed; the proof relies on ball-covering properties of the doubling space (AllBallsCoverBalls and related facts)."
+  }
+ }
+}
