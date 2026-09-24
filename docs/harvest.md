@@ -65,9 +65,11 @@ Two problems turned up along the way:
 | infinity_cosmos | v4.34 | 41 | 0 | 0: no `\lean` names | — |
 | cam_combi | v4.35 | 0 | built for nothing | skipped (stub) | — |
 
-All four extraction failures are fixed. Every `\lean` name now resolves except
-one in Bonn and those in projects without names. What still limits linkage is
-the blueprints themselves:
+All four extraction failures are fixed. Nearly every `\lean` name now
+resolves. The rest are stale names: 5 in CLT (e.g. `contDiff_charFun`), 7 in
+FLT-regular (including Lean 3 spellings such as
+`is_primitive_root.zeta_pow_sub_eq_unit_zeta_sub_one`) and 1 in Bonn. What
+still limits linkage is the blueprints themselves:
 - **Semicircle** has 205 nodes but only 58 with `\lean`; the rest is not
   formalised yet.
 - **Bonn** annotates 14 of 65 nodes.
