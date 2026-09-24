@@ -17,7 +17,7 @@ import networkx as nx
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import adjusted_rand_score, average_precision_score, normalized_mutual_info_score, roc_auc_score
-from sklearn.model_selection import GroupKFold
+from sklearn.model_selection import GroupKFold, KFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -244,7 +244,10 @@ def _cross_validated(x: np.ndarray, y: np.ndarray, groups: list[str]) -> tuple[n
         return make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=2000))
 
     oof = np.zeros(len(y))
-    for train, test in GroupKFold(n_splits=5).split(x, y, groups):
+    n_groups = len(set(groups))  # small projects can have fewer than 5 modules
+    splits = GroupKFold(n_splits=min(5, n_groups)).split(x, y, groups) if n_groups >= 2 else \
+        KFold(n_splits=5, shuffle=True, random_state=0).split(x)
+    for train, test in splits:
         oof[test] = model().fit(x[train], y[train]).predict_proba(x[test])[:, 1]
     return oof, model().fit(x, y)[-1].coef_[0].tolist()
 

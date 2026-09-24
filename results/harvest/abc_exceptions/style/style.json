@@ -1,0 +1,1056 @@
+{
+  "project": "abc_exceptions",
+  "provenance": "b-mehta/ABC-Exceptions @ d8ace7bbaa23 (2025-08-18)",
+  "human": {
+    "tau": 1.0,
+    "motivated": 0.19230769230769232,
+    "mean_open": 11.92156862745098
+  },
+  "fit": {
+    "best_tau": {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.6, definitions=upfront",
+      "tau": 0.6745098039215687,
+      "motivated": 0.46923076923076923,
+      "mean_open": 11.431372549019608
+    },
+    "closest_profile": {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.2, definitions=upfront, goals by key",
+      "tau": 0.5767722473604826,
+      "motivated": 0.3076923076923077,
+      "mean_open": 11.764705882352942
+    }
+  },
+  "results": [
+    {
+      "style": {
+        "top_down": 0,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0",
+      "tau": 0.6696832579185521,
+      "motivated": 0.0,
+      "mean_open": 10.705882352941176
+    },
+    {
+      "style": {
+        "top_down": 0,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0, definitions=upfront",
+      "tau": 0.6696832579185521,
+      "motivated": 0.0,
+      "mean_open": 10.705882352941176
+    },
+    {
+      "style": {
+        "top_down": 0,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0, chapter roadmap",
+      "tau": 0.5822021116138764,
+      "motivated": 0.11538461538461539,
+      "mean_open": 11.039215686274511
+    },
+    {
+      "style": {
+        "top_down": 0,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0, chapter roadmap, definitions=upfront",
+      "tau": 0.5478129713423832,
+      "motivated": 0.07692307692307693,
+      "mean_open": 11.298039215686273
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.2",
+      "tau": 0.6666666666666667,
+      "motivated": 0.038461538461538464,
+      "mean_open": 10.72549019607843
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.2, goals by support",
+      "tau": 0.6666666666666667,
+      "motivated": 0.038461538461538464,
+      "mean_open": 10.72549019607843
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.2, goals by key",
+      "tau": 0.5469079939668176,
+      "motivated": 0.34615384615384615,
+      "mean_open": 11.443137254901961
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.2, definitions=upfront",
+      "tau": 0.6666666666666667,
+      "motivated": 0.038461538461538464,
+      "mean_open": 10.72549019607843
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.2, definitions=upfront, goals by support",
+      "tau": 0.6666666666666667,
+      "motivated": 0.038461538461538464,
+      "mean_open": 10.72549019607843
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.2, definitions=upfront, goals by key",
+      "tau": 0.5767722473604826,
+      "motivated": 0.3076923076923077,
+      "mean_open": 11.764705882352942
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.2, chapter roadmap",
+      "tau": 0.5791855203619909,
+      "motivated": 0.15384615384615385,
+      "mean_open": 11.058823529411764
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.2, chapter roadmap, goals by support",
+      "tau": 0.5791855203619909,
+      "motivated": 0.15384615384615385,
+      "mean_open": 11.058823529411764
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.2, chapter roadmap, goals by key",
+      "tau": 0.5469079939668176,
+      "motivated": 0.34615384615384615,
+      "mean_open": 11.443137254901961
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.2, chapter roadmap, definitions=upfront",
+      "tau": 0.5447963800904978,
+      "motivated": 0.11538461538461539,
+      "mean_open": 11.317647058823528
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.2, chapter roadmap, definitions=upfront, goals by support",
+      "tau": 0.5447963800904978,
+      "motivated": 0.11538461538461539,
+      "mean_open": 11.317647058823528
+    },
+    {
+      "style": {
+        "top_down": 0.2,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.2, chapter roadmap, definitions=upfront, goals by key",
+      "tau": 0.5767722473604826,
+      "motivated": 0.3076923076923077,
+      "mean_open": 11.764705882352942
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.4",
+      "tau": 0.6639517345399698,
+      "motivated": 0.3076923076923077,
+      "mean_open": 10.788235294117648
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.4, goals by support",
+      "tau": 0.6552036199095023,
+      "motivated": 0.34615384615384615,
+      "mean_open": 11.239215686274509
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.4, goals by key",
+      "tau": 0.5414781297134239,
+      "motivated": 0.5230769230769231,
+      "mean_open": 11.298039215686275
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.4, definitions=upfront",
+      "tau": 0.6618401206636501,
+      "motivated": 0.2692307692307692,
+      "mean_open": 10.882352941176471
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.4, definitions=upfront, goals by support",
+      "tau": 0.6600301659125188,
+      "motivated": 0.33076923076923076,
+      "mean_open": 11.290196078431373
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.4, definitions=upfront, goals by key",
+      "tau": 0.571342383107089,
+      "motivated": 0.4461538461538462,
+      "mean_open": 11.647058823529411
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.4, chapter roadmap",
+      "tau": 0.5070889894419306,
+      "motivated": 0.39230769230769236,
+      "mean_open": 11.101960784313725
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.4, chapter roadmap, goals by support",
+      "tau": 0.5556561085972851,
+      "motivated": 0.5307692307692309,
+      "mean_open": 11.407843137254902
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.4, chapter roadmap, goals by key",
+      "tau": 0.5414781297134239,
+      "motivated": 0.5230769230769231,
+      "mean_open": 11.298039215686275
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.4, chapter roadmap, definitions=upfront",
+      "tau": 0.5375565610859729,
+      "motivated": 0.3230769230769231,
+      "mean_open": 11.443137254901961
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.4, chapter roadmap, definitions=upfront, goals by support",
+      "tau": 0.5900452488687783,
+      "motivated": 0.43076923076923074,
+      "mean_open": 11.678431372549019
+    },
+    {
+      "style": {
+        "top_down": 0.4,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.4, chapter roadmap, definitions=upfront, goals by key",
+      "tau": 0.571342383107089,
+      "motivated": 0.4461538461538462,
+      "mean_open": 11.647058823529411
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.6",
+      "tau": 0.6524886877828054,
+      "motivated": 0.5384615384615384,
+      "mean_open": 11.31764705882353
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.6, goals by support",
+      "tau": 0.6524886877828054,
+      "motivated": 0.5384615384615384,
+      "mean_open": 11.31764705882353
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.6, goals by key",
+      "tau": 0.533634992458522,
+      "motivated": 0.6076923076923076,
+      "mean_open": 11.349019607843138
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.6, definitions=upfront",
+      "tau": 0.6745098039215687,
+      "motivated": 0.46923076923076923,
+      "mean_open": 11.431372549019608
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.6, definitions=upfront, goals by support",
+      "tau": 0.6745098039215687,
+      "motivated": 0.46923076923076923,
+      "mean_open": 11.431372549019608
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.6, definitions=upfront, goals by key",
+      "tau": 0.5653092006033182,
+      "motivated": 0.5153846153846153,
+      "mean_open": 11.686274509803921
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.6, chapter roadmap",
+      "tau": 0.5502262443438914,
+      "motivated": 0.6307692307692307,
+      "mean_open": 11.486274509803922
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.6, chapter roadmap, goals by support",
+      "tau": 0.5502262443438914,
+      "motivated": 0.6307692307692307,
+      "mean_open": 11.486274509803922
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.6, chapter roadmap, goals by key",
+      "tau": 0.533634992458522,
+      "motivated": 0.6076923076923076,
+      "mean_open": 11.349019607843138
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.6, chapter roadmap, definitions=upfront",
+      "tau": 0.5822021116138762,
+      "motivated": 0.5384615384615384,
+      "mean_open": 11.75294117647059
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.6, chapter roadmap, definitions=upfront, goals by support",
+      "tau": 0.5822021116138762,
+      "motivated": 0.5384615384615384,
+      "mean_open": 11.75294117647059
+    },
+    {
+      "style": {
+        "top_down": 0.6,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.6, chapter roadmap, definitions=upfront, goals by key",
+      "tau": 0.5653092006033182,
+      "motivated": 0.5153846153846153,
+      "mean_open": 11.686274509803921
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.8",
+      "tau": 0.5140271493212669,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.447058823529412
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.8, goals by support",
+      "tau": 0.514630467571644,
+      "motivated": 0.7615384615384616,
+      "mean_open": 11.443137254901961
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.8, goals by key",
+      "tau": 0.5188536953242836,
+      "motivated": 0.7076923076923076,
+      "mean_open": 11.423529411764706
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.8, definitions=upfront",
+      "tau": 0.5526395173453997,
+      "motivated": 0.6538461538461539,
+      "mean_open": 11.83529411764706
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.8, definitions=upfront, goals by support",
+      "tau": 0.5447963800904978,
+      "motivated": 0.676923076923077,
+      "mean_open": 11.862745098039216
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.8, definitions=upfront, goals by key",
+      "tau": 0.5460030165912519,
+      "motivated": 0.6,
+      "mean_open": 11.807843137254903
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.8, chapter roadmap",
+      "tau": 0.5140271493212669,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.447058823529412
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.8, chapter roadmap, goals by support",
+      "tau": 0.514630467571644,
+      "motivated": 0.7615384615384616,
+      "mean_open": 11.443137254901961
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.8, chapter roadmap, goals by key",
+      "tau": 0.5188536953242836,
+      "motivated": 0.7076923076923076,
+      "mean_open": 11.423529411764706
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=0.8, chapter roadmap, definitions=upfront",
+      "tau": 0.5526395173453997,
+      "motivated": 0.6538461538461539,
+      "mean_open": 11.83529411764706
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=0.8, chapter roadmap, definitions=upfront, goals by support",
+      "tau": 0.5447963800904978,
+      "motivated": 0.676923076923077,
+      "mean_open": 11.862745098039216
+    },
+    {
+      "style": {
+        "top_down": 0.8,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=0.8, chapter roadmap, definitions=upfront, goals by key",
+      "tau": 0.5460030165912519,
+      "motivated": 0.6,
+      "mean_open": 11.807843137254903
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=1",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=1, goals by support",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=1, goals by key",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=1, definitions=upfront",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=1, definitions=upfront, goals by support",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "none",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=1, definitions=upfront, goals by key",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=1, chapter roadmap",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "support"
+      },
+      "label": "top_down=1, chapter roadmap, goals by support",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "just-in-time",
+        "goal_rule": "key"
+      },
+      "label": "top_down=1, chapter roadmap, goals by key",
+      "tau": 0.5122171945701357,
+      "motivated": 0.7692307692307693,
+      "mean_open": 11.458823529411765
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "fan-in"
+      },
+      "label": "top_down=1, chapter roadmap, definitions=upfront",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "support"
+      },
+      "label": "top_down=1, chapter roadmap, definitions=upfront, goals by support",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    },
+    {
+      "style": {
+        "top_down": 1.0,
+        "roadmap": "chapter",
+        "definitions": "upfront",
+        "goal_rule": "key"
+      },
+      "label": "top_down=1, chapter roadmap, definitions=upfront, goals by key",
+      "tau": 0.5423831070889895,
+      "motivated": 0.6923076923076923,
+      "mean_open": 11.87843137254902
+    }
+  ],
+  "document": {
+    "human": {
+      "tau": 1.0,
+      "motivated": 0.16666666666666666,
+      "mean_open": 10.4
+    },
+    "fit": {
+      "best_tau": {
+        "style": {
+          "top_down": 0.4,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.4",
+        "tau": 0.7593442622950819,
+        "motivated": 0.26666666666666666,
+        "mean_open": 9.496666666666666
+      },
+      "closest_profile": {
+        "style": {
+          "top_down": 0.2,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.2, chapter roadmap",
+        "tau": 0.6474316939890711,
+        "motivated": 0.16666666666666666,
+        "mean_open": 9.623333333333333
+      }
+    },
+    "results": [
+      {
+        "style": {
+          "top_down": 0,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0",
+        "tau": 0.7534426229508197,
+        "motivated": 0.0,
+        "mean_open": 9.416666666666666
+      },
+      {
+        "style": {
+          "top_down": 0,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0, chapter roadmap",
+        "tau": 0.6496174863387978,
+        "motivated": 0.13333333333333333,
+        "mean_open": 9.606666666666666
+      },
+      {
+        "style": {
+          "top_down": 0,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0, document roadmap",
+        "tau": 0.4080874316939891,
+        "motivated": 0.13333333333333333,
+        "mean_open": 11.693333333333333
+      },
+      {
+        "style": {
+          "top_down": 0.2,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.2",
+        "tau": 0.7512568306010929,
+        "motivated": 0.03333333333333333,
+        "mean_open": 9.433333333333334
+      },
+      {
+        "style": {
+          "top_down": 0.2,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.2, chapter roadmap",
+        "tau": 0.6474316939890711,
+        "motivated": 0.16666666666666666,
+        "mean_open": 9.623333333333333
+      },
+      {
+        "style": {
+          "top_down": 0.2,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.2, document roadmap",
+        "tau": 0.3947540983606557,
+        "motivated": 0.27999999999999997,
+        "mean_open": 11.803333333333333
+      },
+      {
+        "style": {
+          "top_down": 0.4,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.4",
+        "tau": 0.7593442622950819,
+        "motivated": 0.26666666666666666,
+        "mean_open": 9.496666666666666
+      },
+      {
+        "style": {
+          "top_down": 0.4,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.4, chapter roadmap",
+        "tau": 0.6389071038251366,
+        "motivated": 0.37333333333333335,
+        "mean_open": 9.706666666666667
+      },
+      {
+        "style": {
+          "top_down": 0.4,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.4, document roadmap",
+        "tau": 0.3912568306010929,
+        "motivated": 0.37333333333333335,
+        "mean_open": 11.86
+      },
+      {
+        "style": {
+          "top_down": 0.6,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.6",
+        "tau": 0.7501639344262295,
+        "motivated": 0.4866666666666667,
+        "mean_open": 9.876666666666667
+      },
+      {
+        "style": {
+          "top_down": 0.6,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.6, chapter roadmap",
+        "tau": 0.6692896174863388,
+        "motivated": 0.5866666666666667,
+        "mean_open": 10.03
+      },
+      {
+        "style": {
+          "top_down": 0.6,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.6, document roadmap",
+        "tau": 0.39912568306010926,
+        "motivated": 0.4533333333333333,
+        "mean_open": 11.963333333333333
+      },
+      {
+        "style": {
+          "top_down": 0.8,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.8",
+        "tau": 0.6815300546448088,
+        "motivated": 0.6866666666666666,
+        "mean_open": 10.08
+      },
+      {
+        "style": {
+          "top_down": 0.8,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.8, chapter roadmap",
+        "tau": 0.6837158469945355,
+        "motivated": 0.6866666666666666,
+        "mean_open": 10.059999999999999
+      },
+      {
+        "style": {
+          "top_down": 0.8,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=0.8, document roadmap",
+        "tau": 0.38775956284153007,
+        "motivated": 0.5266666666666666,
+        "mean_open": 12.016666666666667
+      },
+      {
+        "style": {
+          "top_down": 1.0,
+          "roadmap": "none",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=1",
+        "tau": 0.6775956284153006,
+        "motivated": 0.7,
+        "mean_open": 10.096666666666668
+      },
+      {
+        "style": {
+          "top_down": 1.0,
+          "roadmap": "chapter",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=1, chapter roadmap",
+        "tau": 0.6797814207650273,
+        "motivated": 0.7,
+        "mean_open": 10.076666666666666
+      },
+      {
+        "style": {
+          "top_down": 1.0,
+          "roadmap": "document",
+          "definitions": "just-in-time",
+          "goal_rule": "fan-in"
+        },
+        "label": "top_down=1, document roadmap",
+        "tau": 0.38295081967213107,
+        "motivated": 0.5599999999999999,
+        "mean_open": 12.05
+      }
+    ]
+  }
+}

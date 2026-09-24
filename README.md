@@ -15,7 +15,7 @@ and Carleson. Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase
 [`docs/carleson.md`](docs/carleson.md), and the statement/proof model of load vs motivation in
 [`docs/statement-proof-events.md`](docs/statement-proof-events.md), and parameterised exposition styles in
 [`docs/style.md`](docs/style.md). **Blueprint-free outlines** of a Lean development, with a `detail`
-parameter, short statements and checked English prose: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`](results/outline/)). **More projects:** a blueprint harvester, first 12 projects analysed in [`docs/harvest.md`](docs/harvest.md).
+parameter, short statements and checked English prose: [`docs/outline.md`](docs/outline.md) (examples in [`results/outline/`](results/outline/)). **More projects:** a blueprint harvester over 20 projects ([`docs/harvest.md`](docs/harvest.md)), and cross-project models and a scalable order optimiser ([`docs/cross_project.md`](docs/cross_project.md)).
 
 - [`docs/idea-notes.md`](docs/idea-notes.md): the original idea notes (motivation,
   challenges, graph formulation, prior work).

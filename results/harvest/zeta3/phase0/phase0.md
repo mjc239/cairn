@@ -6,10 +6,10 @@
 
 **Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):
 
-| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
+| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / best known / uniform median | τ(human, optimised) | τ(human, random) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| (whole blueprint) | 30 | 0% | 0% | 0% | 0% | 5.2 / 4.0 / 8.3 | +0.66 | +0.28 |
-| proof | 30 | 0% | 0% | 0% | 0% | 5.2 / 4.0 / 8.3 | +0.66 | +0.28 |
+| (whole blueprint) | 30 | 0% | 0% | 0% | 0% | 5.2 / 4.0 / 8.3 | +0.69 | +0.28 |
+| proof | 30 | 0% | 0% | 0% | 0% | 5.2 / 4.0 / 8.3 | +0.69 | +0.28 |
 
 ## Whole blueprint: raw metrics
 
@@ -19,7 +19,8 @@
 | Human, forward refs repaired | 0 | 5.2 | 9 | 7.8 | 13 | 5.7 | +1.00 | 1 |
 | Just-in-time DFS (median run) | 0 | 5.3 | 9 | 6.8 | 9 | 5.0 | +0.35 | 1 |
 | Greedy min-open (best run) | 0 | 5.3 | 9 | 7.2 | 12 | 5.2 | +0.60 | 1 |
-| Greedy + local search (best run) | 0 | 4.0 | 8 | 4.8 | 9 | 3.5 | +0.66 | 1 |
+| Greedy + local search on mean open (best run) | 0 | 4.0 | 8 | 4.9 | 9 | 3.6 | +0.69 | 1 |
+| Best known (local search also from the author's order) | 0 | 4.0 | 8 | 4.9 | 9 | 3.6 | +0.69 | 1 |
 | Random topological (median) | 0 | 8.5 | 14 | 10.8 | 17 | 7.8 | +0.28 | |
 | Uniform topological (median) | 0 | 8.3 | 14 | 11.1 | 17 | 8.0 | | |
 

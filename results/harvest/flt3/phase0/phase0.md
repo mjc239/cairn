@@ -6,11 +6,11 @@
 
 **Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):
 
-| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
+| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / best known / uniform median | τ(human, optimised) | τ(human, random) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| (whole blueprint) | 92 | 0% | 0% | 0% | 0% | 16.0 / 10.6 / 20.4 | +0.66 | +0.63 |
-| 2-third_cyclotomic_extensions | 23 | 0% | 0% | 0% | 0% | 2.4 / 2.0 / 5.4 | +0.02 | +0.45 |
-| 3-fermat_last_theorem_3 | 66 | 0% | 0% | 0% | 5% | 9.7 / 8.0 / 12.8 | +0.63 | +0.67 |
+| (whole blueprint) | 92 | 0% | 0% | 0% | 0% | 16.0 / 10.4 / 20.4 | +0.69 | +0.63 |
+| 2-third_cyclotomic_extensions | 23 | 0% | 0% | 0% | 0% | 2.4 / 2.0 / 5.4 | +0.00 | +0.45 |
+| 3-fermat_last_theorem_3 | 66 | 0% | 0% | 0% | 5% | 9.7 / 7.5 / 12.8 | +0.64 | +0.67 |
 
 ## Whole blueprint: raw metrics
 
@@ -20,7 +20,8 @@
 | Human, forward refs repaired | 0 | 16.0 | 26 | 49.9 | 95 | 20.0 | +1.00 | 3 |
 | Just-in-time DFS (median run) | 0 | 14.5 | 25 | 58.2 | 88 | 23.3 | +0.38 | 20 |
 | Greedy min-open (best run) | 0 | 13.1 | 22 | 44.1 | 86 | 17.7 | +0.76 | 18 |
-| Greedy + local search (best run) | 0 | 10.6 | 21 | 32.0 | 75 | 12.8 | +0.66 | 17 |
+| Greedy + local search on mean open (best run) | 0 | 10.4 | 20 | 38.4 | 84 | 15.4 | +0.69 | 18 |
+| Best known (local search also from the author's order) | 0 | 10.4 | 20 | 38.4 | 84 | 15.4 | +0.69 | 18 |
 | Random topological (median) | 0 | 18.8 | 30 | 64.2 | 98 | 25.7 | +0.63 | |
 | Uniform topological (median) | 0 | 20.4 | 32 | 69.6 | 100 | 27.9 | | |
 

@@ -54,17 +54,27 @@
           "n": 30,
           "forward_refs": 0,
           "cutwidth": 11,
-          "mean_cut": 6.068965517241379,
+          "mean_cut": 6.241379310344827,
           "max_open": 7,
-          "mean_open": 4.068965517241379,
-          "mean_edge_length": 4.2926829268292686
+          "mean_open": 3.9655172413793105,
+          "mean_edge_length": 4.414634146341464
+        },
+        "best_known": {
+          "n": 30,
+          "forward_refs": 0,
+          "cutwidth": 10,
+          "mean_cut": 5.758620689655173,
+          "max_open": 7,
+          "mean_open": 3.6206896551724137,
+          "mean_edge_length": 4.073170731707317
         }
       },
       "tau_vs_human": {
         "human_repaired": 0.9724137931034482,
         "just_in_time": 0.7333333333333334,
         "greedy_min_open": 0.6597701149425288,
-        "optimised": 0.7517241379310344
+        "optimised": 0.7931034482758621,
+        "best_known": 0.8666666666666667
       },
       "random": {
         "mean_open": {
@@ -161,6 +171,13 @@
           "mean_cut": 0.0,
           "cutwidth": 0.0,
           "mean_edge_length": 0.0
+        },
+        "best_known": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
         }
       },
       "share_uniform_better": {
@@ -198,6 +215,13 @@
           "mean_cut": 0.0,
           "cutwidth": 0.0,
           "mean_edge_length": 0.0
+        },
+        "best_known": {
+          "mean_open": 0.0,
+          "max_open": 0.0,
+          "mean_cut": 0.0,
+          "cutwidth": 0.0,
+          "mean_edge_length": 0.0
         }
       },
       "chapter_runs": {
@@ -205,7 +229,8 @@
         "human_repaired": 5,
         "just_in_time": 9,
         "greedy_min_open": 10,
-        "optimised": 9
+        "optimised": 8,
+        "best_known": 8
       }
     },
     {
@@ -264,13 +289,23 @@
           "max_open": 4,
           "mean_open": 2.0,
           "mean_edge_length": 2.272727272727273
+        },
+        "best_known": {
+          "n": 11,
+          "forward_refs": 0,
+          "cutwidth": 5,
+          "mean_cut": 2.5,
+          "max_open": 4,
+          "mean_open": 2.0,
+          "mean_edge_length": 2.272727272727273
         }
       },
       "tau_vs_human": {
         "human_repaired": 0.7818181818181819,
         "just_in_time": 0.6,
         "greedy_min_open": 0.6727272727272727,
-        "optimised": 0.7090909090909091
+        "optimised": 0.7818181818181819,
+        "best_known": 0.7818181818181819
       },
       "random": {
         "mean_open": {
@@ -367,6 +402,13 @@
           "mean_cut": 0.013333333333333334,
           "cutwidth": 0.03833333333333333,
           "mean_edge_length": 0.013333333333333334
+        },
+        "best_known": {
+          "mean_open": 0.0016666666666666668,
+          "max_open": 0.035,
+          "mean_cut": 0.013333333333333334,
+          "cutwidth": 0.03833333333333333,
+          "mean_edge_length": 0.013333333333333334
         }
       },
       "share_uniform_better": {
@@ -404,6 +446,13 @@
           "mean_cut": 0.0,
           "cutwidth": 0.035,
           "mean_edge_length": 0.0
+        },
+        "best_known": {
+          "mean_open": 0.0,
+          "max_open": 0.01,
+          "mean_cut": 0.0,
+          "cutwidth": 0.035,
+          "mean_edge_length": 0.0
         }
       },
       "chapter_runs": {
@@ -411,7 +460,8 @@
         "human_repaired": 1,
         "just_in_time": 1,
         "greedy_min_open": 1,
-        "optimised": 1
+        "optimised": 1,
+        "best_known": 1
       }
     }
   ]

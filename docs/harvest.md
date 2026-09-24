@@ -124,6 +124,11 @@ is the share of projected Lean edges that the author never wrote.
 
 ## Order vs load (Phase 0)
 
+*Superseded: the tables in this section and under Medium projects use the old
+optimiser, which minimised edge length rather than mean open and did not scale.
+Updated numbers for all 20 blueprints are in
+[`cross_project.md`](cross_project.md#order-vs-load-all-20-blueprints).*
+
 *Gap* = (human − optimised) / (uniform random − optimised), on mean open
 results. 0 means as light as our optimiser; 1 means no better than a random
 valid order. "Chapter gap" is the median over chapters with at least 5 nodes.
@@ -211,6 +216,8 @@ hour. Each took 5–6 minutes, except Brownian motion (16). New Foundations
   set of technical lemmas the blueprint doesn't name.
 
 ### Order vs load (Phase 0)
+
+*Superseded; see [`cross_project.md`](cross_project.md#order-vs-load-all-20-blueprints).*
 
 | Project | Nodes | Forward refs | Mean open: human / optimised / random | Gap (whole) | Chapter gap (n) |
 |---|---:|---:|---|---:|---|

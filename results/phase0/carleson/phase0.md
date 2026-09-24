@@ -6,16 +6,16 @@
 
 **Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):
 
-| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
+| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / best known / uniform median | τ(human, optimised) | τ(human, random) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| (whole blueprint) | 180 | 41% | 0% | 0% | 0% | 16.6 / 13.3 / 39.2 | +0.06 | -0.09 |
+| (whole blueprint) | 180 | 41% | 0% | 0% | 0% | 16.6 / 9.3 / 39.2 | +0.19 | -0.09 |
 | proof-of-metric-space-carleson-overview | 9 | 100% | 17% | 11% | 17% | 0.1 / 0.1 / 0.4 | -0.11 | -0.10 |
 | proof-of-finitary-carleson | 15 | 42% | 100% | 99% | 100% | 4.1 / 1.2 / 3.0 | +0.37 | +0.03 |
-| proof-of-discrete-carleson | 37 | 39% | 98% | 100% | 99% | 11.0 / 2.6 / 9.1 | -0.14 | -0.01 |
-| proof-of-the-antichain-operator-proposit | 13 | 46% | 24% | 17% | 12% | 3.1 / 1.8 / 3.4 | +0.08 | -0.05 |
-| proof-of-the-forest-operator-proposition | 39 | 42% | 0% | 0% | 1% | 6.4 / 4.0 / 8.9 | +0.30 | +0.11 |
-| two-sided-metric-space-carleson | 20 | 25% | 100% | 100% | 100% | 5.4 / 2.1 / 3.4 | -0.32 | -0.12 |
-| proof-of-the-classical-carleson-theorem | 36 | 41% | 100% | 100% | 95% | 12.4 / 4.8 / 10.9 | -0.10 | -0.15 |
+| proof-of-discrete-carleson | 37 | 39% | 98% | 100% | 99% | 11.0 / 2.7 / 9.1 | -0.23 | -0.01 |
+| proof-of-the-antichain-operator-proposit | 13 | 46% | 24% | 17% | 12% | 3.1 / 1.8 / 3.4 | +0.10 | -0.05 |
+| proof-of-the-forest-operator-proposition | 39 | 42% | 0% | 0% | 1% | 6.4 / 3.9 / 8.9 | +0.31 | +0.11 |
+| two-sided-metric-space-carleson | 20 | 25% | 100% | 100% | 100% | 5.4 / 2.1 / 3.4 | -0.29 | -0.12 |
+| proof-of-the-classical-carleson-theorem | 36 | 41% | 100% | 100% | 95% | 12.4 / 4.9 / 10.9 | -0.11 | -0.15 |
 
 ## Whole blueprint: raw metrics
 
@@ -25,7 +25,8 @@
 | Human, forward refs repaired | 0 | 14.8 | 36 | 19.0 | 41 | 15.5 | +0.72 | 27 |
 | Just-in-time DFS (median run) | 0 | 16.2 | 25 | 22.3 | 40 | 18.2 | -0.20 | 30 |
 | Greedy min-open (best run) | 0 | 31.3 | 50 | 39.8 | 63 | 32.4 | +0.07 | 83 |
-| Greedy + local search (best run) | 0 | 13.3 | 22 | 17.2 | 31 | 14.0 | +0.06 | 47 |
+| Greedy + local search on mean open (best run) | 0 | 10.7 | 19 | 15.3 | 29 | 12.4 | +0.19 | 42 |
+| Best known (local search also from the author's order) | 0 | 9.3 | 22 | 12.6 | 31 | 10.2 | +0.61 | 33 |
 | Random topological (median) | 0 | 43.8 | 68 | 51.5 | 80 | 41.9 | -0.09 | |
 | Uniform topological (median) | 0 | 39.2 | 60 | 50.1 | 74 | 40.8 | | |
 

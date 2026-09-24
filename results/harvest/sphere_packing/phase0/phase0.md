@@ -6,14 +6,14 @@
 
 **Share of random orders better than the order** (0% = the order beats every random one; 50% = typical):
 
-| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / optimised / uniform median | τ(human, optimised) | τ(human, random) |
+| Scope | n | forward edges | Human: mean open (Kahn null) | Human: mean open (uniform null) | Human: mean edge length (Kahn) | Mean open: human / best known / uniform median | τ(human, optimised) | τ(human, random) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| (whole blueprint) | 141 | 5% | 0% | 0% | 0% | 15.7 / 15.6 / 33.2 | -0.03 | +0.23 |
-| E8-defs | 11 | 0% | 9% | 4% | 19% | 2.3 / 2.3 / 2.6 | +0.82 | +0.83 |
-| fourier-analysis | 8 | 0% | 2% | 2% | 2% | 1.9 / 1.9 / 2.4 | +0.43 | +0.19 |
-| modular-forms | 53 | 1% | 0% | 0% | 0% | 7.2 / 5.2 / 10.2 | +0.15 | +0.36 |
-| construct-a-b | 30 | 0% | 0% | 0% | 0% | 3.9 / 3.2 / 8.3 | +0.71 | +0.25 |
-| modform-ineq | 14 | 39% | 100% | 100% | 88% | 5.5 / 2.6 / 3.9 | -0.30 | +0.09 |
+| (whole blueprint) | 141 | 5% | 0% | 0% | 0% | 15.7 / 13.1 / 33.2 | -0.10 | +0.23 |
+| E8-defs | 11 | 0% | 9% | 4% | 19% | 2.3 / 2.3 / 2.6 | +0.85 | +0.83 |
+| fourier-analysis | 8 | 0% | 2% | 2% | 2% | 1.9 / 1.9 / 2.4 | +0.50 | +0.19 |
+| modular-forms | 53 | 1% | 0% | 0% | 0% | 7.2 / 4.3 / 10.2 | +0.31 | +0.36 |
+| construct-a-b | 30 | 0% | 0% | 0% | 0% | 3.9 / 3.4 / 8.3 | +0.77 | +0.25 |
+| modform-ineq | 14 | 39% | 100% | 100% | 88% | 5.5 / 2.5 / 3.9 | -0.23 | +0.09 |
 
 ## Whole blueprint: raw metrics
 
@@ -23,7 +23,8 @@
 | Human, forward refs repaired | 0 | 18.5 | 33 | 28.9 | 54 | 16.4 | +0.90 | 12 |
 | Just-in-time DFS (median run) | 0 | 21.5 | 38 | 37.9 | 68 | 21.5 | -0.16 | 44 |
 | Greedy min-open (best run) | 0 | 24.0 | 39 | 39.7 | 70 | 22.6 | -0.07 | 62 |
-| Greedy + local search (best run) | 0 | 15.6 | 29 | 23.8 | 44 | 13.6 | -0.03 | 59 |
+| Greedy + local search on mean open (best run) | 0 | 13.1 | 23 | 25.8 | 52 | 14.7 | -0.10 | 48 |
+| Best known (local search also from the author's order) | 0 | 13.1 | 23 | 25.8 | 52 | 14.7 | -0.10 | 48 |
 | Random topological (median) | 0 | 33.0 | 50 | 54.5 | 87 | 31.0 | +0.23 | |
 | Uniform topological (median) | 0 | 33.2 | 52 | 60.2 | 92 | 34.3 | | |
 
