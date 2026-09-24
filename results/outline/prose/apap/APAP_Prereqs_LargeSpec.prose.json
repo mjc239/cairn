@@ -1,0 +1,8 @@
+{
+ "title": "The large spectrum",
+ "results": {
+  "largeSpec": {
+   "statement": "For $f : G \\to \\mathbb{C}$ and $\\eta \\in \\mathbb{R}$, the $\\eta$-large spectrum of $f$ is defined as a finite set of additive characters $G \\to \\mathbb{C}$."
+  }
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "title": "Discrete Fourier transform",
+ "results": {
+  "dft": {
+   "statement": "For $f : G \\to \\mathbb{C}$, defines its discrete Fourier transform $\\widehat{f}$, a function assigning a complex number $\\widehat{f}(\\psi)$ to each additive character $\\psi : G \\to \\mathbb{C}$."
+  }
+ }
+}

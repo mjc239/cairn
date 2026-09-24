@@ -1,0 +1,19 @@
+{
+ "title": "Additive energy and Fourier transforms",
+ "results": {
+  "energy": {
+   "statement": "For $n \\in \\mathbb{N}$, a finite set $s \\subseteq G$ and a weight $\\nu : G \\to \\mathbb{C}$, defines the real number $\\mathrm{energy}_n(s, \\nu)$, a weighted $n$-fold additive energy of $s$."
+  },
+  "boringEnergy": {
+   "statement": "For $n \\in \\mathbb{N}$ and a finite set $s \\subseteq G$, defines the real number $\\mathrm{boringEnergy}_n(s)$, the unweighted $n$-fold additive energy of $s$."
+  },
+  "cLpNorm_dft_indicator_one_pow": {
+   "statement": "$G$ carries the discrete measurable structure. For every $n \\in \\mathbb{N}$ and finite $s \\subseteq G$, $\\|\\widehat{1_s}\\|_{2n}^{2n} = \\mathrm{boringEnergy}_n(s)$, where $\\widehat{1_s}$ is the discrete Fourier transform of the indicator of $s$ and the norm is taken with the compact (expectation) normalisation.",
+   "sketch": "Expand the compact $L^{2n}$ norm as an expectation over characters, express powers of $\\widehat{1_s}$ through iterated convolutions (`iterConv`, `ddconv_eq_sum_sub`, `trivChar`), and identify the result with the energy."
+  },
+  "cL2Norm_dft_indicator_one": {
+   "statement": "$G$ carries the discrete measurable structure. For every finite $s \\subseteq G$, $\\|\\widehat{1_s}\\|_2 = \\sqrt{|s|}$, with the compact normalisation on the norm.",
+   "sketch": "Specialise `cLpNorm_dft_indicator_one_pow` to $n = 1$ and evaluate $\\mathrm{boringEnergy}_1(s) = |s|$, then take square roots."
+  }
+ }
+}

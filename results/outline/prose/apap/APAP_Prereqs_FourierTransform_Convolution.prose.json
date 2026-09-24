@@ -1,0 +1,13 @@
+{
+ "title": "Convolution versus difference convolution norms",
+ "results": {
+  "cLpNorm_conv_le_cLpNorm_dconv": {
+   "statement": "$G$ carries the discrete measurable structure. If $n \\ne 0$ is even and $f : G \\to \\mathbb{C}$, then $\\|f * f\\|_n \\le \\|f \\circ f\\|_n$, where $*$ and $\\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation.",
+   "sketch": "Write the $n$-th powers of both norms (with $n = 2k$) as sums over the Fourier side using `cft`, `cft_conv_apply` and `cft_conjneg_apply` (via `cLpNorm_two_mul_sum_pow`) and compare them termwise."
+  },
+  "dLpNorm_ddconv_le_dLpNorm_dddconv": {
+   "statement": "$G$ carries the discrete measurable structure. If $n \\ne 0$ is even and $f : G \\to \\mathbb{C}$, then $\\|f * f\\|_n \\le \\|f \\circ f\\|_n$ for the discrete convolution, difference convolution and discrete $L^n$ norm.",
+   "sketch": "Deduced from `cLpNorm_conv_le_cLpNorm_dconv` by rescaling between the compact and discrete normalisations (`cLpNorm_pow_eq_card_inv_mul_dLpNorm_pow`, `dLpNorm_const_smul`)."
+  }
+ }
+}

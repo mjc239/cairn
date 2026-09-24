@@ -1,0 +1,9 @@
+{
+ "title": "The unbalancing step",
+ "results": {
+  "unbalancing": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $p \\in \\mathbb{N}$ with $p \\ne 0$, $0 < \\varepsilon \\le 1$, $f : G \\to \\mathbb{R}$ and $g, h : G \\to \\mathbb{C}$ with $g \\circ g = f$ (viewed as complex-valued) and $h \\circ h = \\mu_G$, and suppose $\\varepsilon \\le \\|f\\|_{p,\\mu_G}$. Then there is $p'$ with $p' \\le 2^{10}\\varepsilon^{-2} p$ and $1 + \\varepsilon/2 \\le \\|f + 1\\|_{p',\\mu_G}$. Here $\\circ$ is the discrete difference convolution, $\\mu_G$ is the normalised indicator of the whole group, and $\\|\\cdot\\|_{q,\\mu_G}$ is the $L^q$ norm weighted by $\\mu_G$.",
+   "sketch": "A physical-space argument (avoiding the Fourier transform) that expands the difference convolutions as sums via $(f\\ast g)(a)=\\sum_t f(a-t)g(t)$ and manipulates the weighted norms of $f$ and $f+1$."
+  }
+ }
+}

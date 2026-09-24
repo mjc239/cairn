@@ -1,0 +1,8 @@
+{
+ "title": "Discrete Lp norms",
+ "results": {
+  "MeasureTheory.dLpNorm": {
+   "statement": "For $p \\in [0, \\infty]$ and $f : \\alpha \\to E$, defines the real number $\\|f\\|_p$, the $L^p$ norm of $f$ (its docstring describes it as the $L^p$ norm with the compact normalisation)."
+  }
+ }
+}

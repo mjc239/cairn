@@ -1,0 +1,8 @@
+{
+ "title": "Compactly normalised L^p norms",
+ "results": {
+  "MeasureTheory.cLpNorm": {
+   "statement": "For $p \\in [0,\\infty]$ and $f : \\alpha \\to E$, $\\|f\\|_{L^p}$ with the compact normalisation (averaging rather than summing over the domain) is defined as a real number."
+  }
+ }
+}

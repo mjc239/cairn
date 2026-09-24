@@ -1,0 +1,24 @@
+{
+ "title": "Chang's lemma",
+ "results": {
+  "changConst": {
+   "statement": "The real constant $\\mathrm{changConst}$ appearing in the bounds of Chang's lemma."
+  },
+  "AddDissociated.boringEnergy_le": {
+   "statement": "Let $G$ be finite and carry the discrete measurable structure. If $s \\subseteq G$ is a finite dissociated set, then for every $n \\in \\mathbb{N}$, $\\mathrm{boringEnergy}_n(s) \\le \\mathrm{changConst}^n \\cdot n^n \\cdot |s|^n$.",
+   "sketch": "By `cLpNorm_dft_indicator_one_pow`, $\\mathrm{boringEnergy}_n(s) = \\|\\widehat{1_s}\\|_{2n}^{2n}$ (compact normalisation); Rudin's inequality applies to $\\widehat{1_s}$ since the support of its transform is the dissociated set $s$, and `cL2Norm_dft_indicator_one` gives $\\|\\widehat{1_s}\\|_2 = \\sqrt{|s|}$."
+  },
+  "general_hoelder": {
+   "statement": "$G$ carries the discrete measurable structure. Let $\\eta \\ge 0$, let $\\nu : G \\to \\mathbb{R}_{\\ge 0}$ satisfy $1 \\le \\nu(x)$ whenever $f(x) \\ne 0$, let $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$, and let $m \\ne 0$. Then $|\\Delta|^{2m}\\left(\\eta^{2m}\\,\\frac{\\|f\\|_1^2}{\\|f\\|_2^2}\\right) \\le \\mathrm{energy}_m(\\Delta, \\widehat{\\nu})$, where $\\widehat{\\nu}$ is the discrete Fourier transform of $\\nu$.",
+   "sketch": "A Hölder-type computation carried out directly by expanding the discrete $L^1$, $L^2$ and $L^p$ norms as sums; no named results beyond these norm expansions are used."
+  },
+  "spec_hoelder": {
+   "statement": "$G$ carries the discrete measurable structure. Let $\\eta \\ge 0$, $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$ and $m \\ne 0$. Then $|\\Delta|^{2m}\\left(\\eta^{2m}\\,\\frac{\\|f\\|_1^2/\\|f\\|_2^2}{|G|}\\right) \\le \\mathrm{boringEnergy}_m(\\Delta)$.",
+   "sketch": "Apply `general_hoelder` with $\\nu \\equiv 1$; the Fourier transform of the constant function is a multiple of `trivChar`, and scaling the energy (`energy_nsmul`) converts the weighted energy into $|G|$ times the unweighted one."
+  },
+  "chang": {
+   "statement": "(Chang's lemma.) $G$ carries the discrete measurable structure. If $f \\ne 0$ and $\\eta > 0$, then there is $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$ with $|\\Delta| \\le \\left\\lceil \\mathrm{changConst}\\cdot e \\cdot \\left\\lceil 1 + \\log\\left(\\frac{\\|f\\|_1^2/\\|f\\|_2^2}{|G|}\\right)^{-1}\\right\\rceil / \\eta^2 \\right\\rceil$ (natural-number ceilings) such that $\\operatorname{largeSpec}(f, \\eta)$ is contained in the additive span of $\\Delta$.",
+   "sketch": "For a dissociated $\\Delta$ inside the large spectrum, `spec_hoelder` gives a lower bound on $\\mathrm{boringEnergy}_m(\\Delta)$ and `AddDissociated.boringEnergy_le` an upper bound; comparing them for a suitable $m$ bounds $|\\Delta|$."
+  }
+ }
+}

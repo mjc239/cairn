@@ -1,0 +1,34 @@
+{
+ "title": "Croot–Sisask almost-periodicity",
+ "results": {
+  "AlmostPeriodicity.LProp": {
+   "statement": "For $k, m \\in \\mathbb{N}$, $\\varepsilon \\in \\mathbb{R}$, $f : G \\to \\mathbb{C}$ and a finite set $A \\subseteq G$, $\\mathrm{LProp}(k,m,\\varepsilon,f,A)$ is a predicate on $k$-tuples $a = (a_1,\\dots,a_k) \\in G^k$; it is the property used to define the set $l(k,m,\\varepsilon,f,A)$."
+  },
+  "AlmostPeriodicity.instDecidablePredForallFinLProp": {
+   "statement": "Automatically generated instance: the predicate $\\mathrm{LProp}(k,m,\\varepsilon,f,A)$ on $k$-tuples is decidable."
+  },
+  "AlmostPeriodicity.l": {
+   "statement": "For $k, m \\in \\mathbb{N}$, $\\varepsilon \\in \\mathbb{R}$, $f : G \\to \\mathbb{C}$ and a finite set $A \\subseteq G$, $l(k,m,\\varepsilon,f,A)$ is a finite set of $k$-tuples $a \\in G^k$, defined via the predicate $\\mathrm{LProp}(k,m,\\varepsilon,f,A)$."
+  },
+  "AlmostPeriodicity.just_the_triangle_inequality": {
+   "statement": "Let $G$ carry the discrete measurable structure. Suppose $a \\in l(k,m,\\varepsilon,f,A)$ and the shifted tuple $(a_1+t,\\dots,a_k+t) \\in l(k,m,\\varepsilon,f,A)$, with $k > 0$ and $m \\ge 1$. Then $\\|\\tau_{-t}(\\mu_A \\ast f) - \\mu_A \\ast f\\|_{2m} \\le 2\\varepsilon \\|f\\|_{2m}$, where $\\mu_A$ is the normalised indicator of $A$, $\\ast$ is discrete convolution, $\\tau_{-t}$ is translation by $-t$ and $\\|\\cdot\\|_{2m}$ is the discrete $L^{2m}$ norm.",
+   "sketch": "Unfold $\\mathrm{LProp}$ for both tuples and combine the two bounds with the triangle inequality for the $L^{2m}$ norm and the translation invariance of the norm."
+  },
+  "AlmostPeriodicity.lemma28": {
+   "statement": "Let $G$ carry the discrete measurable structure. If $\\varepsilon > 0$, $m \\ge 1$ and $64m/\\varepsilon^2 \\le k$, then $|A|^k/2 \\le |l(k,m,\\varepsilon,f,A)|$.",
+   "sketch": "Write $\\mu_A \\ast f$ as a sum via $(f\\ast g)(a)=\\sum_t f(a-t)g(t)$, apply the Marcinkiewicz–Zygmund inequality (complex version) to the resulting mean-zero sums over $A^k$, and conclude with a Markov-type counting argument that at least half of the tuples in $A^k$ satisfy $\\mathrm{LProp}$."
+  },
+  "AlmostPeriodicity.almost_periodicity": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $0 < \\varepsilon \\le 1$, $m \\in \\mathbb{N}$, $f : G \\to \\mathbb{C}$, and let $K \\ge 2$ with $\\sigma[A,S] \\le K$, where $\\sigma[A,S]$ is the additive constant `A.addConst S` of the finite sets $A, S$. Then there is a finite set $T \\subseteq G$ with $K^{-512m/\\varepsilon^2}|S| \\le |T|$ such that for every $t \\in T$, $\\|\\tau_t(\\mu_A \\ast f) - \\mu_A \\ast f\\|_{2m} \\le \\varepsilon \\|f\\|_{2m}$ (with $\\mu_A$ the normalised indicator of $A$, $\\ast$ discrete convolution, $\\tau_t$ translation by $t$).",
+   "sketch": "Use lemma28 to get many tuples in $l$, then a pigeonhole argument over shifts (big_shifts) produces a large set $T$ of $t$ for which some $a$ and its shift by $t$ both lie in $l$; just_the_triangle_inequality then bounds the translate difference for each such $t$."
+  },
+  "AlmostPeriodicity.linfty_almost_periodicity": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $0 < \\varepsilon \\le 1$, $K \\ge 2$ with $\\sigma[A,S] \\le K$, and let $B, C$ be nonempty finite subsets of $G$. Then there is a finite set $T$ with $K^{-4096\\lceil 1 + \\log(\\min(1, |C|/|B|)^{-1})\\rceil/\\varepsilon^2}|S| \\le |T|$ such that for all $t \\in T$, $\\|\\tau_t F - F\\|_\\infty \\le \\varepsilon$, where $F = \\mu_A \\ast 1_B \\ast \\mu_C$. Here $\\mu_X$ is the normalised indicator of $X$, $\\ast$ is discrete convolution, $\\tau_t$ is translation by $t$, $\\|\\cdot\\|_{q}$ is the discrete $L^q$ norm, and $\\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$). ",
+   "sketch": "Apply almost_periodicity with $f = 1_B$ and a suitable $m$, then pass from the $L^{2m}$ bound to an $L^\\infty$ bound after convolving with $\\mu_C$, using the sum formula for convolution and Hölder's inequality together with the norms of $1_B$ and $\\mu_C$."
+  },
+  "AlmostPeriodicity.linfty_almost_periodicity_boosted": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $0 < \\varepsilon \\le 1$, $k \\in \\mathbb{N}$ with $k \\ne 0$, $K \\ge 2$ with $\\sigma[A,S] \\le K$, $S$ nonempty, and $B, C$ nonempty finite subsets of $G$. Then there is a finite set $T$ with $K^{-4096\\lceil 1 + \\log(\\min(1, |C|/|B|)^{-1})\\rceil k^2/\\varepsilon^2}|S| \\le |T|$ and $\\|\\mu_T^{\\ast k} \\ast F - F\\|_\\infty \\le \\varepsilon$, where $F = \\mu_A \\ast 1_B \\ast \\mu_C$ and $\\mu_T^{\\ast k}$ is the $k$-fold convolution power of $\\mu_T$. Here $\\mu_X$ is the normalised indicator of $X$, $\\ast$ is discrete convolution, $\\tau_t$ is translation by $t$, $\\|\\cdot\\|_{q}$ is the discrete $L^q$ norm, and $\\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$). ",
+   "sketch": "Apply linfty_almost_periodicity (with a smaller accuracy parameter), write $\\mu_T^{\\ast k} \\ast F - F$ as an average of differences $\\tau_{t_1+\\dots+t_k}F - F$, and bound these by the triangle inequality for sums of translates (dLpNorm_translate_sum_sub_le)."
+  }
+ }
+}

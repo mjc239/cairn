@@ -1,0 +1,21 @@
+{
+ "title": "Discrete convolution",
+ "results": {
+  "ddconv": {
+   "statement": "For $f, g : G \\to R$, defines their (discrete) convolution $f * g : G \\to R$."
+  },
+  "ddconv_eq_sum_sub": {
+   "statement": "For $f, g : G \\to R$ and $a \\in G$, $(f * g)(a) = \\sum_t f(a - t)\\, g(t)$.",
+   "sketch": "Unfold the definition of the convolution (`ddconv_apply`) and reindex the sum."
+  },
+  "trivChar": {
+   "statement": "Defines $\\mathrm{trivChar} : G \\to R$, the trivial character."
+  },
+  "iterConv": {
+   "statement": "For $f : G \\to R$ and $n \\in \\mathbb{N}$, defines the $n$-fold iterated convolution $f^{*n} : G \\to R$."
+  },
+  "dddconv": {
+   "statement": "For a star ring $R$ and $f, g : G \\to R$, defines their difference convolution $f \\circ g : G \\to R$."
+  }
+ }
+}

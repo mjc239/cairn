@@ -1,0 +1,8 @@
+{
+ "title": "Normalised indicator functions",
+ "results": {
+  "mu": {
+   "statement": "For a finite set $s$, $\\mu_s : \\alpha \\to K$ is the normalised indicator function of $s$, i.e. $\\mu_s(x) = 1_s(x)/|s|$."
+  }
+ }
+}

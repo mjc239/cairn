@@ -1,0 +1,8 @@
+{
+ "title": "Bohr sets",
+ "results": {
+  "BohrSet": {
+   "statement": "For an additive group $G$, a Bohr set on $G$ consists of a finite set of characters of $G$ (the frequencies) together with an extended nonnegative real width for each frequency $\\psi$. It is thought of as the set $\\{x : \\|1 - \\psi(x)\\| \\le \\text{width}(\\psi) \\text{ for all frequencies } \\psi\\}$ (the chord-length convention)."
+  }
+ }
+}
