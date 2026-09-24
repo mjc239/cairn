@@ -1,0 +1,25 @@
+{
+ "name": "zeta3",
+ "repo": "ahhwuhu/zeta_3_irrational",
+ "status": "failed",
+ "stage": "extract",
+ "commit": "e8785315a01c8fbcddaa0fc03b3c8b29a61bc1f1",
+ "commit_date": "2026-03-20",
+ "toolchain": "leanprover/lean4:v4.18.0",
+ "mathlib": "aa936c36e848",
+ "blueprint_dir": "blueprint/src",
+ "entry": "content.tex",
+ "generated_blueprint": false,
+ "group_by": "section",
+ "nodes": 30,
+ "uses_edges": 93,
+ "chapters": 1,
+ "lean_nodes": 30,
+ "leanok_nodes": 30,
+ "libs": [
+  "Zeta3Irrational"
+ ],
+ "build_minutes": 5.0,
+ "error": "",
+ "minutes": 7.1
+}
