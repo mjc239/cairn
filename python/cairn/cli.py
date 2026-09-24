@@ -84,6 +84,27 @@ def main(argv: list[str] | None = None) -> None:
     pv.add_argument("-o", "--out", type=Path, required=True)
     pv.add_argument("--samples", type=int, default=1000)
 
+    pq = sub.add_parser("event-prompts", help="LLM prompts over statement/proof events (proofs may be deferred)")
+    pq.add_argument("src", type=Path)
+    pq.add_argument("decls", type=Path)
+    pq.add_argument("--entry", default="content.tex")
+    pq.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    pq.add_argument("-o", "--out", type=Path, required=True)
+    pq.add_argument("--seed", type=int, default=0)
+    pq.add_argument("--anonymise", action="store_true")
+    pq.add_argument("--no-titles", action="store_true")
+
+    pr = sub.add_parser("event-llm-eval", help="score event-level (and node-level) LLM runs on events")
+    pr.add_argument("src", type=Path)
+    pr.add_argument("decls", type=Path)
+    pr.add_argument("--entry", default="content.tex")
+    pr.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    pr.add_argument("--run", action="append", default=[], metavar="VARIANT=DIR", help="event-level responses")
+    pr.add_argument("--node-run", action="append", default=[], metavar="VARIANT=DIR",
+                    help="node-level responses (from llm-prompts), recast as events")
+    pr.add_argument("--project", required=True)
+    pr.add_argument("-o", "--out", type=Path, required=True, help="markdown report path")
+
     pt = sub.add_parser("transfer", help="train the key-declaration model on one project, test on others")
     pt.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
     pt.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
@@ -120,6 +141,30 @@ def main(argv: list[str] | None = None) -> None:
             args.out.write_text(text)
         else:
             print(text)
+        return
+
+    if args.cmd in ("event-prompts", "event-llm-eval"):
+        from .event_llm import evaluate, write_event_prompts
+        from .event_llm import write_report as write_event_llm
+        from .formal import load_decls
+
+        decls = load_decls(args.decls)
+        if args.cmd == "event-prompts":
+            paths = write_event_prompts(bp, decls, args.out, args.seed, anonymise=args.anonymise,
+                                        titles=not args.no_titles)
+            print(f"wrote {len(paths)} prompts to {args.out}")
+            return
+
+        def runs_of(specs):
+            out: dict[str, list[Path]] = {}
+            for spec in specs:
+                variant, _, d = spec.partition("=")
+                out.setdefault(variant, []).append(Path(d))
+            return out
+
+        res = evaluate(bp, decls, runs_of(args.run), runs_of(args.node_run))
+        write_event_llm(res, args.out, args.project)
+        print(f"wrote {args.out}")
         return
 
     if args.cmd == "events":

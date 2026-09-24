@@ -17,8 +17,8 @@ Whole blueprint: 1348 backward edges, 0 deferred proofs, 8 genuine forward refer
 | improved_exponent | 0% | 50% | 100% | 0% | 1.7 | 5.6 | 5.4 | 1.7 |
 | approx_hom_pfr | 0% | 59% | 100% | 0% | 2.5 | 4.7 | 3.6 | 2.5 |
 | weak_pfr | 0% | 47% | 89% | 0% | 2.4 | 5.6 | 5.2 | 2.9 |
-| torsion | 0% | 48% | 98% | 0% | 12.9 | 27.0 | 17.4 | 12.9 |
-| further_improvement | 3% | 55% | 88% | 0% | 10.6 | 21.3 | 13.7 | 10.4 |
+| torsion | 2% | 49% | 98% | 2% | 12.9 | 27.0 | 17.4 | 12.9 |
+| further_improvement | 6% | 57% | 88% | 3% | 10.6 | 21.3 | 13.7 | 10.4 |
 
 ## Hybrid styles: state a goal first (deferring its proof) iff its proof uses at least m results
 
@@ -80,22 +80,22 @@ Whole blueprint: 1348 backward edges, 0 deferred proofs, 8 genuine forward refer
 | | hybrid, goals = proofs using >= 3 results | +0.49 | 33% | 3.5 |
 | | hybrid, goals = proofs using >= 4 results | +0.45 | 33% | 3.5 |
 | | hybrid, goals = proofs using >= 6 results | +0.49 | 0% | 2.9 |
-| torsion | human | +1.00 | 0% | 12.9 |
+| torsion | human | +1.00 | 2% | 12.9 |
 | | top-down, deferred proofs | +0.08 | 98% | 17.4 |
-| | bottom-up, proofs immediately | +0.35 | 0% | 12.9 |
+| | bottom-up, proofs immediately | +0.35 | 2% | 12.9 |
 | | hybrid, goals = proofs using >= 1 results | +0.11 | 98% | 17.4 |
-| | hybrid, goals = proofs using >= 2 results | +0.23 | 82% | 15.3 |
-| | hybrid, goals = proofs using >= 3 results | +0.23 | 70% | 15.4 |
-| | hybrid, goals = proofs using >= 4 results | +0.24 | 59% | 15.2 |
-| | hybrid, goals = proofs using >= 6 results | +0.32 | 41% | 14.4 |
-| further_improvement | human | +1.00 | 3% | 10.6 |
+| | hybrid, goals = proofs using >= 2 results | +0.23 | 84% | 15.3 |
+| | hybrid, goals = proofs using >= 3 results | +0.23 | 72% | 15.4 |
+| | hybrid, goals = proofs using >= 4 results | +0.24 | 61% | 15.2 |
+| | hybrid, goals = proofs using >= 6 results | +0.32 | 43% | 14.4 |
+| further_improvement | human | +1.00 | 6% | 10.6 |
 | | top-down, deferred proofs | +0.33 | 88% | 13.7 |
-| | bottom-up, proofs immediately | +0.50 | 0% | 10.4 |
+| | bottom-up, proofs immediately | +0.50 | 3% | 10.4 |
 | | hybrid, goals = proofs using >= 1 results | +0.30 | 89% | 13.8 |
-| | hybrid, goals = proofs using >= 2 results | +0.40 | 72% | 12.2 |
-| | hybrid, goals = proofs using >= 3 results | +0.36 | 64% | 12.2 |
-| | hybrid, goals = proofs using >= 4 results | +0.38 | 62% | 12.0 |
-| | hybrid, goals = proofs using >= 6 results | +0.40 | 50% | 12.0 |
+| | hybrid, goals = proofs using >= 2 results | +0.40 | 75% | 12.2 |
+| | hybrid, goals = proofs using >= 3 results | +0.36 | 67% | 12.2 |
+| | hybrid, goals = proofs using >= 4 results | +0.38 | 65% | 12.0 |
+| | hybrid, goals = proofs using >= 6 results | +0.40 | 53% | 12.0 |
 
 ## Detail
 

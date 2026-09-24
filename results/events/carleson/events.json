@@ -59,258 +59,258 @@
       }
     },
     "proof-of-metric-space-carleson-overview": {
-      "events": 18,
+      "events": 12,
       "edges": {
-        "backward": 5,
-        "deferred proofs (S before a later P)": 6,
+        "backward": 3,
+        "deferred proofs (S before a later P)": 0,
         "genuine forward references": 0
       },
-      "human_mean_open": 4.647058823529412,
-      "optimised_mean_open": 0.7647058823529411,
-      "uniform_median_mean_open": 3.823529411764706,
-      "share_uniform_better": 0.875,
-      "tau_random": 0.2932461873638344,
-      "tau_optimised": 0.17647058823529416,
+      "human_mean_open": 0.2727272727272727,
+      "optimised_mean_open": 0.2727272727272727,
+      "uniform_median_mean_open": 1.2727272727272727,
+      "share_uniform_better": 0.005,
+      "tau_random": 0.18313131313131312,
+      "tau_optimised": 0.6666666666666667,
       "human_motivated": 1.0,
-      "random_motivated": 0.52,
+      "random_motivated": 0.49,
       "top-down, deferred proofs": {
-        "tau": 0.07712418300653594,
-        "mean_open": 0.8823529411764707,
-        "motivated": 1.0
+        "tau": -0.01666666666666667,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.45
       },
       "bottom-up, proofs immediately": {
-        "tau": 0.04705882352941176,
-        "mean_open": 0.7647058823529411,
-        "motivated": 0.0
+        "tau": -0.02575757575757575,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.5
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": 0.1045751633986928,
-        "mean_open": 0.8823529411764707,
-        "motivated": 1.0
+        "tau": 0.10303030303030303,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.475
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": 0.053594771241830076,
-        "mean_open": 0.7647058823529411,
-        "motivated": 0.0
+        "tau": 0.18181818181818182,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.675
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": 0.037908496732026134,
-        "mean_open": 0.7647058823529411,
-        "motivated": 0.0
+        "tau": 0.13333333333333333,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.475
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": 0.02222222222222221,
-        "mean_open": 0.7647058823529411,
-        "motivated": 0.0
+        "tau": 0.10909090909090909,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.65
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": 0.032679738562091484,
-        "mean_open": 0.7647058823529411,
-        "motivated": 0.0
+        "tau": 0.012121212121212133,
+        "mean_open": 0.2727272727272727,
+        "motivated": 0.6
       }
     },
     "proof-of-finitary-carleson": {
-      "events": 30,
+      "events": 31,
       "edges": {
-        "backward": 40,
+        "backward": 43,
         "deferred proofs (S before a later P)": 2,
         "genuine forward references": 0
       },
-      "human_mean_open": 4.827586206896552,
-      "optimised_mean_open": 3.4482758620689653,
-      "uniform_median_mean_open": 8.551724137931034,
+      "human_mean_open": 4.766666666666667,
+      "optimised_mean_open": 3.9,
+      "uniform_median_mean_open": 9.1,
       "share_uniform_better": 0.0,
-      "tau_random": 0.17308812260536396,
-      "tau_optimised": -0.09425287356321843,
-      "human_motivated": 0.6666666666666666,
-      "random_motivated": 0.5666666666666667,
+      "tau_random": 0.13608602150537635,
+      "tau_optimised": 0.5096774193548388,
+      "human_motivated": 0.7333333333333333,
+      "random_motivated": 0.674,
       "top-down, deferred proofs": {
-        "tau": 0.3245977011494253,
-        "mean_open": 4.391379310344828,
-        "motivated": 1.0
+        "tau": 0.15204301075268817,
+        "mean_open": 5.536666666666667,
+        "motivated": 0.7533333333333333
       },
       "bottom-up, proofs immediately": {
-        "tau": 0.2708045977011494,
-        "mean_open": 3.362068965517241,
-        "motivated": 0.0
+        "tau": 0.15483870967741936,
+        "mean_open": 4.406666666666666,
+        "motivated": 0.2
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": 0.35954022988505746,
-        "mean_open": 4.406896551724138,
-        "motivated": 1.0
+        "tau": 0.23483870967741938,
+        "mean_open": 5.1066666666666665,
+        "motivated": 0.7866666666666666
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": 0.31126436781609196,
-        "mean_open": 4.294827586206897,
-        "motivated": 0.9166666666666666
+        "tau": 0.17204301075268819,
+        "mean_open": 5.1866666666666665,
+        "motivated": 0.69
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": 0.38942528735632187,
-        "mean_open": 4.258620689655173,
-        "motivated": 0.9166666666666666
+        "tau": 0.15354838709677418,
+        "mean_open": 5.278333333333333,
+        "motivated": 0.6433333333333333
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": 0.27586206896551724,
-        "mean_open": 4.2379310344827585,
-        "motivated": 0.9166666666666666
+        "tau": 0.18881720430107526,
+        "mean_open": 4.901666666666666,
+        "motivated": 0.6766666666666666
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": 0.2731034482758621,
-        "mean_open": 3.2275862068965515,
-        "motivated": 0.0
+        "tau": 0.2705376344086021,
+        "mean_open": 4.613333333333333,
+        "motivated": 0.2
       }
     },
     "proof-of-discrete-carleson": {
-      "events": 74,
+      "events": 75,
       "edges": {
-        "backward": 90,
+        "backward": 93,
         "deferred proofs (S before a later P)": 3,
         "genuine forward references": 0
       },
-      "human_mean_open": 6.821917808219178,
-      "optimised_mean_open": 8.068493150684931,
-      "uniform_median_mean_open": 20.205479452054796,
+      "human_mean_open": 6.77027027027027,
+      "optimised_mean_open": 8.945945945945946,
+      "uniform_median_mean_open": 20.783783783783782,
       "share_uniform_better": 0.0,
-      "tau_random": 0.09682339874120696,
-      "tau_optimised": 0.20473898556090342,
-      "human_motivated": 0.48484848484848486,
-      "random_motivated": 0.5518181818181818,
+      "tau_random": 0.08542462462462462,
+      "tau_optimised": -0.10630630630630633,
+      "human_motivated": 0.5277777777777778,
+      "random_motivated": 0.6030555555555556,
       "top-down, deferred proofs": {
-        "tau": 0.17489818585708997,
-        "mean_open": 7.468493150684931,
-        "motivated": 1.0
+        "tau": 0.050954954954954966,
+        "mean_open": 11.336486486486487,
+        "motivated": 0.6402777777777777
       },
       "bottom-up, proofs immediately": {
-        "tau": 0.18370973713439467,
-        "mean_open": 5.823287671232877,
-        "motivated": 0.0
+        "tau": 0.09477477477477478,
+        "mean_open": 8.19054054054054,
+        "motivated": 0.08333333333333333
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": 0.20059237319511292,
-        "mean_open": 7.299315068493151,
-        "motivated": 1.0
+        "tau": 0.07091891891891892,
+        "mean_open": 9.149324324324324,
+        "motivated": 0.788888888888889
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": 0.11188448722695299,
-        "mean_open": 6.905479452054794,
-        "motivated": 0.834848484848485
+        "tau": 0.1692972972972973,
+        "mean_open": 8.391891891891891,
+        "motivated": 0.5819444444444445
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": 0.2673824509440948,
-        "mean_open": 6.755479452054795,
-        "motivated": 0.6712121212121211
+        "tau": 0.03416216216216217,
+        "mean_open": 8.5,
+        "motivated": 0.4736111111111111
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": 0.08715290633098852,
-        "mean_open": 5.988356164383562,
-        "motivated": 0.396969696969697
+        "tau": 0.07754954954954955,
+        "mean_open": 7.893243243243243,
+        "motivated": 0.2763888888888889
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": 0.2044427989633469,
-        "mean_open": 6.272602739726027,
-        "motivated": 0.2909090909090909
+        "tau": 0.11300900900900901,
+        "mean_open": 7.735135135135136,
+        "motivated": 0.2263888888888889
       }
     },
     "proof-of-the-antichain-operator-proposit": {
-      "events": 26,
+      "events": 27,
       "edges": {
-        "backward": 24,
+        "backward": 26,
         "deferred proofs (S before a later P)": 2,
         "genuine forward references": 2
       },
-      "human_mean_open": 3.44,
-      "optimised_mean_open": 3.0,
-      "uniform_median_mean_open": 7.36,
+      "human_mean_open": 3.730769230769231,
+      "optimised_mean_open": 3.4615384615384617,
+      "uniform_median_mean_open": 7.615384615384615,
       "share_uniform_better": 0.0,
-      "tau_random": 0.11156923076923077,
-      "tau_optimised": 0.3107692307692308,
-      "human_motivated": 0.5454545454545454,
-      "random_motivated": 0.5381818181818182,
+      "tau_random": 0.1022602089268756,
+      "tau_optimised": 0.054131054131054124,
+      "human_motivated": 0.6153846153846154,
+      "random_motivated": 0.6153846153846154,
       "top-down, deferred proofs": {
-        "tau": 0.3710769230769231,
-        "mean_open": 4.384,
-        "motivated": 1.0
+        "tau": 0.0472934472934473,
+        "mean_open": 5.1596153846153845,
+        "motivated": 0.6192307692307693
       },
       "bottom-up, proofs immediately": {
-        "tau": 0.176,
-        "mean_open": 3.064,
-        "motivated": 0.0
+        "tau": -0.101994301994302,
+        "mean_open": 3.6192307692307693,
+        "motivated": 0.15384615384615385
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": 0.39384615384615385,
-        "mean_open": 4.422000000000001,
-        "motivated": 1.0
+        "tau": 0.08262108262108263,
+        "mean_open": 4.621153846153846,
+        "motivated": 0.7615384615384616
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": 0.19876923076923075,
-        "mean_open": 4.218,
-        "motivated": 0.8772727272727273
+        "tau": 0.12478632478632479,
+        "mean_open": 4.496153846153846,
+        "motivated": 0.7192307692307692
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": 0.2596923076923077,
-        "mean_open": 3.9619999999999997,
-        "motivated": 0.759090909090909
+        "tau": 0.0011396011396011263,
+        "mean_open": 4.073076923076924,
+        "motivated": 0.6346153846153846
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": -0.003076923076923066,
-        "mean_open": 3.044,
-        "motivated": 0.0
+        "tau": 0.003988603988603967,
+        "mean_open": 3.7192307692307693,
+        "motivated": 0.15384615384615385
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": -0.003076923076923066,
-        "mean_open": 3.044,
-        "motivated": 0.0
+        "tau": -0.011396011396011419,
+        "mean_open": 3.6769230769230767,
+        "motivated": 0.15384615384615385
       }
     },
     "proof-of-the-forest-operator-proposition": {
-      "events": 78,
+      "events": 79,
       "edges": {
-        "backward": 85,
+        "backward": 89,
         "deferred proofs (S before a later P)": 12,
         "genuine forward references": 5
       },
-      "human_mean_open": 7.285714285714286,
-      "optimised_mean_open": 10.233766233766234,
-      "uniform_median_mean_open": 21.454545454545453,
+      "human_mean_open": 7.333333333333333,
+      "optimised_mean_open": 9.487179487179487,
+      "uniform_median_mean_open": 21.807692307692307,
       "share_uniform_better": 0.0,
-      "tau_random": 0.07721833721833722,
-      "tau_optimised": 0.06759906759906764,
-      "human_motivated": 0.5833333333333334,
-      "random_motivated": 0.5588888888888889,
+      "tau_random": 0.08035919073893757,
+      "tau_optimised": 0.32619279454722494,
+      "human_motivated": 0.6410256410256411,
+      "random_motivated": 0.6123076923076923,
       "top-down, deferred proofs": {
-        "tau": 0.35597735597735597,
-        "mean_open": 9.612337662337662,
-        "motivated": 0.986111111111111
+        "tau": 0.2462836741317754,
+        "mean_open": 11.860897435897437,
+        "motivated": 0.7
       },
       "bottom-up, proofs immediately": {
-        "tau": 0.2625374625374625,
-        "mean_open": 6.658441558441558,
-        "motivated": 0.0
+        "tau": 0.3087958455047063,
+        "mean_open": 7.5807692307692305,
+        "motivated": 0.10256410256410256
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": 0.4406260406260406,
-        "mean_open": 9.727272727272727,
-        "motivated": 0.9916666666666666
+        "tau": 0.35202856215514444,
+        "mean_open": 9.182692307692308,
+        "motivated": 0.8320512820512821
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": 0.37355977355977354,
-        "mean_open": 9.155844155844155,
-        "motivated": 0.9069444444444444
+        "tau": 0.3807205452775073,
+        "mean_open": 8.891666666666667,
+        "motivated": 0.7141025641025641
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": 0.398001998001998,
-        "mean_open": 9.085064935064935,
-        "motivated": 0.8027777777777778
+        "tau": 0.33041220382992537,
+        "mean_open": 9.14551282051282,
+        "motivated": 0.6794871794871795
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": 0.6711954711954712,
-        "mean_open": 7.79025974025974,
-        "motivated": 0.4722222222222222
+        "tau": 0.39337877312560854,
+        "mean_open": 8.24871794871795,
+        "motivated": 0.46794871794871795
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": 0.6335664335664336,
-        "mean_open": 7.066233766233767,
-        "motivated": 0.0
+        "tau": 0.3813047711781889,
+        "mean_open": 7.725641025641027,
+        "motivated": 0.10256410256410256
       }
     },
     "two-sided-metric-space-carleson": {
@@ -365,54 +365,54 @@
       }
     },
     "proof-of-the-classical-carleson-theorem": {
-      "events": 58,
+      "events": 59,
       "edges": {
-        "backward": 75,
+        "backward": 77,
         "deferred proofs (S before a later P)": 6,
-        "genuine forward references": 18
+        "genuine forward references": 21
       },
-      "human_mean_open": 9.596491228070175,
-      "optimised_mean_open": 7.894736842105263,
-      "uniform_median_mean_open": 16.82456140350877,
+      "human_mean_open": 10.53448275862069,
+      "optimised_mean_open": 7.879310344827586,
+      "uniform_median_mean_open": 17.310344827586206,
       "share_uniform_better": 0.0,
-      "tau_random": 0.23733413994757005,
-      "tau_optimised": 0.39745916515426494,
-      "human_motivated": 0.64,
-      "random_motivated": 0.6784,
+      "tau_random": 0.2043795051626729,
+      "tau_optimised": 0.45645821157218003,
+      "human_motivated": 0.7307692307692307,
+      "random_motivated": 0.7757692307692308,
       "top-down, deferred proofs": {
-        "tau": -0.07719298245614034,
-        "mean_open": 10.896491228070175,
+        "tau": -0.05178258328462889,
+        "mean_open": 11.47155172413793,
         "motivated": 1.0
       },
       "bottom-up, proofs immediately": {
-        "tau": -0.10356926799758015,
-        "mean_open": 10.015789473684212,
-        "motivated": 0.0
+        "tau": -0.08240794856808883,
+        "mean_open": 10.28103448275862,
+        "motivated": 0.23076923076923078
       },
       "hybrid, goals = proofs using >= 1 results": {
-        "tau": -0.06594071385359952,
-        "mean_open": 11.049122807017543,
+        "tau": -0.05996493278784334,
+        "mean_open": 11.674137931034483,
         "motivated": 1.0
       },
       "hybrid, goals = proofs using >= 2 results": {
-        "tau": -0.08372655777374471,
-        "mean_open": 11.144736842105264,
-        "motivated": 0.932
+        "tau": -0.1081239041496201,
+        "mean_open": 11.461206896551724,
+        "motivated": 0.926923076923077
       },
       "hybrid, goals = proofs using >= 3 results": {
-        "tau": -0.06763460375075622,
-        "mean_open": 10.810526315789474,
-        "motivated": 0.882
+        "tau": -0.017066043249561673,
+        "mean_open": 11.403448275862068,
+        "motivated": 0.8884615384615385
       },
       "hybrid, goals = proofs using >= 4 results": {
-        "tau": -0.10381125226860258,
-        "mean_open": 10.455263157894738,
-        "motivated": 0.68
+        "tau": -0.1691408533021625,
+        "mean_open": 11.06551724137931,
+        "motivated": 0.7692307692307693
       },
       "hybrid, goals = proofs using >= 6 results": {
-        "tau": -0.10308529945553539,
-        "mean_open": 9.842982456140351,
-        "motivated": 0.56
+        "tau": -0.09433080070134425,
+        "mean_open": 10.617241379310345,
+        "motivated": 0.6538461538461539
       }
     }
   }

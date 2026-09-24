@@ -82,7 +82,7 @@ def plot_motivation_frontier(projects: dict[str, dict], path: Path) -> None:
         ax.plot(xs, ys, color="#2a78d6", linewidth=2, marker="o", markersize=5, zorder=2)
         ax.annotate("bottom-up", (xs[0], ys[0]), textcoords="offset points", xytext=(8, 6),
                     fontsize=8, color=TEXT_SECONDARY)
-        ax.annotate("top-down", (xs[-1], ys[-1]), textcoords="offset points", xytext=(-44, 8),
+        ax.annotate("top-down", (xs[-1], ys[-1]), textcoords="offset points", xytext=(-52, -4),
                     fontsize=8, color=TEXT_SECONDARY)
         hx = statistics.fmean(s["human_motivated"] for s in scopes) * 100
         hy = statistics.fmean(s["human_mean_open"] for s in scopes)

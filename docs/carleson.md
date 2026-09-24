@@ -59,7 +59,7 @@ proves the goal. That is 37 `\proves{}`-deferred proofs, accounting for 74% of
 its forward references.
 
 When statements and proofs are modelled as separate events, the human order
-beats every random valid order on load in 6 of 7 sections. It also turns out
+beats every random valid order on load in all 7 sections. It also turns out
 to sit on a measurable trade-off between working memory and motivation. See
 [`statement-proof-events.md`](statement-proof-events.md).
 

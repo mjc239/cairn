@@ -103,6 +103,8 @@ class Node:
     statement_event: int = -1
     """Index of the statement in the document's sequence of statement and proof environments."""
     proof_event: int | None = None
+    proof_chapter: str | None = None
+    """Chapter (per ``group_by``) where the proof sits; differs from ``chapter`` for proofs deferred elsewhere."""
     """Index of the (first) proof environment for this node in that sequence; ``None`` if unproved."""
     proof_leanok: bool = False
     text: str = ""
@@ -221,6 +223,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex", group_by: s
                     continue
                 if not target.has_proof:
                     target.proof_event = event
+                    target.proof_chapter = chapter
                 event += 1
                 target.has_proof = True
                 target.proof_uses.extend(_split_csv(_macro_args(body, "uses")))

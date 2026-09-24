@@ -44,8 +44,10 @@ The blueprint defers 37 proofs, all with `\proves{}`. PFR defers none and has 8
 genuine forward references.
 
 With this correction the Phase 0 conclusion flips for Carleson. Its human order
-beats **every** uniform random valid order on load in 6 of 7 sections, where
-before it looked worse than random in 4 of 7. The earlier claim that "the
+beats **every** uniform random valid order on load in **all 7** sections, where
+before it looked worse than random in 4 of 7. This is counted with each proof
+in the section where it actually sits: 9 proofs are in a different section
+from their statement. The earlier claim that "the
 working-memory story is PFR-specific" was an artefact of the single-point
 model.
 
@@ -53,14 +55,15 @@ model.
 
 The notes' principle "no node before the goal it serves" can be measured. The
 **motivated share** is the fraction of supporting results that are stated
-*after* the statement of a result that uses them.
+*after* the statement of a result that uses them. A goal announced in an earlier
+section, such as Carleson's overview, counts.
 
 | | human | random valid order |
 |---|---:|---:|
-| PFR (chapter average) | 1% | ~55% |
-| Carleson (chapter average) | 62% | ~57% |
+| PFR (chapter average) | 2% | ~54% |
+| Carleson (chapter average) | 67% | ~62% |
 
-Carleson's 62% is not uniform:
+Carleson's motivation is not spread evenly across its lemmas:
 
 - **87%** of the lemmas serving a deferred-proof goal come after that goal
   (89 of 102);
@@ -82,31 +85,86 @@ whose proof uses at least *m* others":
 
 ![motivation vs load](../results/cross_project/motivation_frontier.png)
 
-Averaged over chapters:
+Averaged over chapters (each proof counted in the section where it sits):
 
 | | motivated | mean open | τ with human |
 |---|---:|---:|---:|
-| PFR human | 1% | 6.3 | 1 |
-| PFR bottom-up (*m* = ∞) | 0% | 6.6 | **0.54** |
-| PFR top-down (*m* = 1) | 94% | 8.8 | 0.17 |
-| Carleson human | 62% | 5.9 | 1 |
-| Carleson hybrid *m* = 3 | 64% | 5.9 | 0.20 |
-| Carleson bottom-up | 0% | 4.8 | 0.11 |
-| Carleson top-down | 100% | 6.6 | 0.24 |
+| PFR human | 2% | 6.3 | 1 |
+| PFR bottom-up (*m* = ∞) | 1% | 6.6 | **0.54** |
+| PFR hybrid *m* = 3 | 49% | 7.5 | 0.50 |
+| PFR top-down (*m* = 1) | 93% | 8.8 | 0.19 |
+| Carleson human | **67%** | **5.5** | 1 |
+| Carleson bottom-up | 18% | 5.5 | 0.04 |
+| Carleson hybrid *m* = 3 | 61% | 6.3 | 0.11 |
+| Carleson top-down | 74% | 7.7 | 0.10 |
 
-1. **Motivation has a price in working memory.** Going from 0% to ~100%
-   motivated raises load by about 35% in both projects. This is the first
-   quantitative handle on the trade-off between Sanderson's "motivated
-   explanation" and a proof that is easy to follow.
-2. **Both human blueprints sit on the frontier traced by the one-setting
-   rule.** PFR is at the bottom-up end, slightly *better* on load than the
-   heuristic. Carleson is at *m* ≈ 3, matching the hybrid almost exactly on
-   both axes. So the style choice is one interpretable setting: how many
-   results get the "state it first, prove it later" treatment.
-3. **The setting fixes the trade-off, not the sequence.** On Carleson the
-   hybrid matches the human *profile* but only τ 0.20 on the order. Which
-   lemma comes next inside a goal's proof still follows the paper's
-   argument, as the LLM baseline also suggested.
+For the whole document, mean open is 46.2 for the PFR human order, against
+47.9 bottom-up and 52.5 top-down. For Carleson it is 12.7 human, against 22.0
+bottom-up and 30.6 top-down. A uniform random order scores 118.9 and 94.3.
+
+1. **Motivation has a price in working memory,** at least for the heuristics.
+   Going from bottom-up to top-down raises load by 35–40% in both projects.
+   This is a quantitative handle on the trade-off between Sanderson's
+   "motivated explanation" and a proof that is easy to follow.
+2. **PFR's human order sits at the bottom-up end of that trade-off,**
+   slightly better on load than the heuristic.
+3. **Carleson's human order beats the trade-off curve.** It gets 67%
+   motivation at the load of pure bottom-up, where the heuristics pay about
+   15% extra load for similar motivation. How: goals are announced in the
+   overview section and proved later in the section built for them. Within a
+   section, the reader carries little. At the whole-document level, the
+   announced goals do count as open promises, and the human order still has
+   the lowest load of any strategy we tried. That is your observation: the
+   forward references are there *for* clarity, and they cost the reader
+   almost nothing.
+4. **The setting fixes the trade-off, not the sequence.** Which lemma comes
+   next inside a goal's proof still follows the paper's argument (τ ≤ 0.11 for
+   every heuristic on Carleson).
+
+## LLM baseline with proofs placed separately
+
+`cairn event-prompts` asks the model to order steps `S:x` (state) and `P:x`
+(prove), and tells it it may announce results and prove them later. Each
+chapter prompt lists exactly the steps that belong to that chapter, including
+"prove only" steps for results stated in an earlier section.
+
+The runs: 2 labelled plus 2 anonymised per project, all by the current Claude
+model via subagents, with every response valid. They are compared with the
+earlier node-level runs, recast with each proof straight after its statement.
+All methods are scored on each chapter's *core*: the results stated and
+proved there. Reports:
+[`results/events/pfr/llm_eval.md`](../results/events/pfr/llm_eval.md) and
+[`results/events/carleson/llm_eval.md`](../results/events/carleson/llm_eval.md).
+
+| | PFR τ | PFR motivated | Carleson τ | Carleson motivated |
+|---|---:|---:|---:|---:|
+| Human | 1 | 2% | 1 | 67% |
+| Best heuristic | 0.53 (bottom-up) | 1% | 0.12 | 25–86% |
+| LLM, node-level (proofs forced in place) | **0.86** / 0.85 | 1% | 0.39 / 0.33 | 25% |
+| LLM, event-level (may defer proofs) | 0.58 / 0.52 | 29% | **0.49** / 0.46 | 56% |
+
+*(labelled / anonymised; a single motivated share is given for the heuristic
+and LLM rows.)*
+
+1. **On Carleson, letting the model defer proofs helps.** τ goes from 0.39 to
+   0.49, the best of any method. Its motivation moves towards the authors'
+   (56% vs 67%), and it defers about 3 proofs per chapter against the
+   authors' 4. It reaches this at a load between bottom-up and human.
+2. **On PFR it hurts.** τ drops from 0.86 to 0.58, because the model defers
+   about 2 proofs per chapter where PFR's authors defer none. The damage is
+   concentrated in the short chapters (`improved_exponent` goes from 0.79 to
+   −0.11/−0.55, `weak_pfr` from 0.81 to 0.22/0.12). There, announcing the
+   main theorem first reorders almost everything.
+3. **The model has its own middle style.** Given the choice, it lands at
+   roughly 30% motivation on PFR and 55% on Carleson. It adapts in the right
+   direction (more deferral for the paper-style content) but not to either
+   author's extreme. That fits "style is a setting": the LLM has a default,
+   and a tool should let the user, or the target genre, set it.
+4. **Anonymising changes little** (τ −0.01 to −0.06), as with the node-level
+   runs.
+
+Caveats: 2 runs per variant; τ on events mixes statement order and proof
+placement; and contamination can't be ruled out for either project.
 
 ## What this means for Cairn
 
@@ -117,7 +175,10 @@ Averaged over chapters:
   next: state first the results the model says deserve a name.
 - **Score candidate expositions on both axes, load and motivation**, not load
   alone. A single-objective optimiser will always produce PFR-style text.
-- **Always model statements and proofs separately.** The LLM ordering prompts
-  should let the model place a proof after other results. For Carleson the
-  current prompts force "statement and proof together", which may explain
-  part of its low τ.
+- **Always model statements and proofs separately.** Doing so turned
+  Carleson from "worse than random" into "better than every heuristic". It
+  also lets an LLM reproduce a paper-style exposition better (τ 0.39 → 0.49).
+- **Tell the LLM which style to write in.** Left to itself it picks a middle
+  style that fits neither blueprint. A style instruction or target
+  motivation level (bottom-up for a blueprint or textbook, goal-first for a
+  paper) is the obvious next prompt experiment.

@@ -50,7 +50,7 @@ def event_graph(bp: Blueprint, decls: dict[str, FormalDecl]) -> tuple[nx.DiGraph
         n = by_id[v]
         g.add_node(S(v), chapter=n.chapter, kind="statement")
         if n.has_proof:
-            g.add_node(P(v), chapter=n.chapter, kind="proof")
+            g.add_node(P(v), chapter=n.proof_chapter or n.chapter, kind="proof")
             g.add_edge(S(v), P(v))
     for u, v in full.edges:
         if statement.has_edge(u, v) or not by_id[v].has_proof:
@@ -206,9 +206,13 @@ def _shuffled(items, rng: random.Random) -> list:
 # --- analysis ------------------------------------------------------------------
 
 
-def motivated_share(g: nx.DiGraph, order: list[str]) -> float:
+def motivated_share(g: nx.DiGraph, order: list[str], prior: set[str] | frozenset = frozenset()) -> float:
     """Share of supporting results stated *after* the statement of some result that uses them, i.e. the
-    reader has already seen a goal the lemma serves ("no node before the goal it serves")."""
+    reader has already seen a goal the lemma serves ("no node before the goal it serves").
+
+    ``g`` may be the whole event graph and ``order`` one chapter; statements in ``prior`` (earlier chapters)
+    count as already made, so a goal announced in an overview section motivates the lemmas proving it.
+    """
     pos = {e: i for i, e in enumerate(order)}
     supporting = motivated = 0
     for e in order:
@@ -216,11 +220,19 @@ def motivated_share(g: nx.DiGraph, order: list[str]) -> float:
             continue
         v = node_of(e)
         users = {node_of(w) for w in g.successors(e) if node_of(w) != v}
+        users = {w for w in users if S(w) in pos or S(w) in prior}
         if not users:
             continue
         supporting += 1
-        motivated += any(pos[S(w)] < pos[e] for w in users if S(w) in pos)
+        motivated += any(S(w) in prior or pos[S(w)] < pos[e] for w in users)
     return motivated / supporting if supporting else 0.0
+
+
+def prior_statements(human: list[str], scope: list[str]) -> set[str]:
+    """Statements made (in the human document) before the scope's first event and outside it."""
+    first = min(human.index(e) for e in scope)
+    inside = set(scope)
+    return {e for e in human[:first] if e.startswith("S:") and e not in inside}
 
 
 
@@ -242,6 +254,7 @@ def analyse(bp: Blueprint, decls: dict[str, FormalDecl], samples: int = 1000, se
     out = {"edges": classify_edges(g, human), "scopes": {}}
     for name, h in scopes.items():
         sub = g.subgraph(h).copy()
+        prior = prior_statements(human, h)
         base = analyse_scope(name, sub, h, samples=samples, seed=seed, uniform_samples=100)
         dag, _ = make_dag(sub, h)
         rng = random.Random(seed)
@@ -256,9 +269,9 @@ def analyse(bp: Blueprint, decls: dict[str, FormalDecl], samples: int = 1000, se
             "share_uniform_better": base.percentile("human", "mean_open", "uniform"),
             "tau_random": statistics.fmean(base.random_tau_vs_human),
             "tau_optimised": base.tau_vs_human["optimised"],
-            "human_motivated": motivated_share(sub, h),
+            "human_motivated": motivated_share(g, h, prior),
             "random_motivated": statistics.fmean(
-                motivated_share(sub, random_topological_order(dag, rng)) for _ in range(100)),
+                motivated_share(g, random_topological_order(dag, rng), prior) for _ in range(100)),
         }
         for m in (1, 2, 3, 4, 6):
             goals = goals_by_fan_in(dag, m)
@@ -267,7 +280,7 @@ def analyse(bp: Blueprint, decls: dict[str, FormalDecl], samples: int = 1000, se
             row[style] = {
                 "tau": statistics.fmean(kendall_tau(h, o) for o in runs),
                 "mean_open": statistics.fmean(order_metrics(sub, o).mean_open for o in runs),
-                "motivated": statistics.fmean(motivated_share(sub, o) for o in runs),
+                "motivated": statistics.fmean(motivated_share(g, o, prior) for o in runs),
             }
         out["scopes"][name] = row
     return out

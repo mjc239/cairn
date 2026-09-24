@@ -1,0 +1,12 @@
+{
+ "r816": "weak-pfr-asymm",
+ "r500": "app-ent-pfr",
+ "r304": "weak-pfr-symm",
+ "r366": "pfr-projection'",
+ "r467": "weak-pfr-int",
+ "r849": "torsion-free-doubling",
+ "r581": "torsion-dist-shrinking",
+ "r958": "dimension-def",
+ "r683": "single-fibres",
+ "r273": "pfr-projection"
+}

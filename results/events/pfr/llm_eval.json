@@ -1,0 +1,1703 @@
+{
+  "chapters": [
+    "entropy",
+    "distance",
+    "entropy_pfr",
+    "improved_exponent",
+    "approx_hom_pfr",
+    "weak_pfr",
+    "torsion",
+    "further_improvement"
+  ],
+  "excluded_chapters": [],
+  "summary": {
+    "human": {
+      "runs": 1,
+      "tau_mean": 1.0,
+      "tau_sd": 0.0,
+      "motivated": 0.0181056488801054,
+      "mean_open": 6.255236695728439,
+      "deferred_per_chapter": 0.0,
+      "per_chapter_tau": {
+        "entropy": 1.0,
+        "distance": 1.0,
+        "entropy_pfr": 1.0,
+        "improved_exponent": 1.0,
+        "approx_hom_pfr": 1.0,
+        "weak_pfr": 1.0,
+        "torsion": 1.0,
+        "further_improvement": 1.0
+      }
+    },
+    "bottom-up (m = \u221e)": {
+      "runs": 5,
+      "tau_mean": 0.5305320847606897,
+      "tau_sd": 0.025097765184737497,
+      "motivated": 0.006505270092226614,
+      "mean_open": 6.528318595492053,
+      "deferred_per_chapter": 0.0,
+      "per_chapter_tau": {
+        "entropy": 0.2440816326530612,
+        "distance": 0.40800000000000003,
+        "entropy_pfr": 0.4841437632135307,
+        "improved_exponent": 1.0,
+        "approx_hom_pfr": 0.9238095238095239,
+        "weak_pfr": 0.48538011695906436,
+        "torsion": 0.3194627594627595,
+        "further_improvement": 0.37937888198757763
+      }
+    },
+    "hybrid m = 3": {
+      "runs": 5,
+      "tau_mean": 0.47089353694944514,
+      "tau_sd": 0.046376257576335574,
+      "motivated": 0.5015623270059011,
+      "mean_open": 7.47304590771792,
+      "deferred_per_chapter": 4.5,
+      "per_chapter_tau": {
+        "entropy": 0.10171428571428572,
+        "distance": 0.2718367346938776,
+        "entropy_pfr": 0.42325581395348844,
+        "improved_exponent": 1.0,
+        "approx_hom_pfr": 0.9047619047619048,
+        "weak_pfr": 0.4385964912280702,
+        "torsion": 0.18466422466422466,
+        "further_improvement": 0.44231884057971016
+      }
+    },
+    "top-down (m = 1)": {
+      "runs": 5,
+      "tau_mean": 0.17187524292154926,
+      "tau_sd": 0.06780149099474543,
+      "motivated": 0.929274401624945,
+      "mean_open": 8.96406754795651,
+      "deferred_per_chapter": 10.85,
+      "per_chapter_tau": {
+        "entropy": 0.27771428571428575,
+        "distance": 0.2339591836734694,
+        "entropy_pfr": 0.4875264270613108,
+        "improved_exponent": 0.027368421052631577,
+        "approx_hom_pfr": 0.05523809523809522,
+        "weak_pfr": -0.0339181286549707,
+        "torsion": 0.05191697191697189,
+        "further_improvement": 0.2751966873706004
+      }
+    },
+    "node-level LLM, labelled": {
+      "runs": 3,
+      "tau_mean": 0.8612572887730447,
+      "tau_sd": 0.005687846910734744,
+      "motivated": 0.006505270092226613,
+      "mean_open": 6.3307305908012355,
+      "deferred_per_chapter": 0.0,
+      "per_chapter_tau": {
+        "entropy": 0.9172789115646259,
+        "distance": 0.7431292517006803,
+        "entropy_pfr": 0.9704016913319239,
+        "improved_exponent": 0.7894736842105262,
+        "approx_hom_pfr": 0.9238095238095237,
+        "weak_pfr": 0.8128654970760234,
+        "torsion": 0.8705738705738706,
+        "further_improvement": 0.8625258799171842
+      }
+    },
+    "node-level LLM, anonymised": {
+      "runs": 3,
+      "tau_mean": 0.8470014685718251,
+      "tau_sd": 0.01073260144753469,
+      "motivated": 0.006505270092226613,
+      "mean_open": 6.477542553661345,
+      "deferred_per_chapter": 0.0,
+      "per_chapter_tau": {
+        "entropy": 0.8927891156462585,
+        "distance": 0.68,
+        "entropy_pfr": 0.963354474982382,
+        "improved_exponent": 0.7473684210526316,
+        "approx_hom_pfr": 1.0,
+        "weak_pfr": 0.7660818713450293,
+        "torsion": 0.8357346357346357,
+        "further_improvement": 0.8906832298136645
+      }
+    },
+    "event-level LLM, labelled": {
+      "runs": 2,
+      "tau_mean": 0.5837408631118576,
+      "tau_sd": 0.1546457719119038,
+      "motivated": 0.2891139657444005,
+      "mean_open": 6.864227858936667,
+      "deferred_per_chapter": 1.875,
+      "per_chapter_tau": {
+        "entropy": 0.9053061224489796,
+        "distance": 0.6995918367346938,
+        "entropy_pfr": 0.7357293868921776,
+        "improved_exponent": -0.11052631578947375,
+        "approx_hom_pfr": 0.7904761904761906,
+        "weak_pfr": 0.2222222222222222,
+        "torsion": 0.644932844932845,
+        "further_improvement": 0.7821946169772257
+      }
+    },
+    "event-level LLM, anonymised": {
+      "runs": 2,
+      "tau_mean": 0.5190344333636145,
+      "tau_sd": 0.03761170275813415,
+      "motivated": 0.29028640441683917,
+      "mean_open": 6.797502521621353,
+      "deferred_per_chapter": 2.0,
+      "per_chapter_tau": {
+        "entropy": 0.9020408163265305,
+        "distance": 0.6473469387755102,
+        "entropy_pfr": 0.7378435517970401,
+        "improved_exponent": -0.5526315789473684,
+        "approx_hom_pfr": 0.9047619047619048,
+        "weak_pfr": 0.11695906432748543,
+        "torsion": 0.6373626373626373,
+        "further_improvement": 0.758592132505176
+      }
+    }
+  },
+  "runs": {
+    "human": {
+      "runs": [
+        {
+          "run": "blueprint",
+          "chapters": {
+            "entropy": {
+              "tau": 1.0,
+              "motivated": 0.0625,
+              "mean_open": 6.204081632653061,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 6.040816326530612,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 7.744186046511628,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.388888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 1.0,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.9,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 1.0,
+              "motivated": 0.06060606060606061,
+              "mean_open": 10.579710144927537,
+              "deferred_proofs": 0
+            }
+          }
+        }
+      ]
+    },
+    "bottom-up (m = \u221e)": {
+      "runs": [
+        {
+          "run": "seed 0",
+          "chapters": {
+            "entropy": {
+              "tau": 0.2522448979591837,
+              "motivated": 0.0,
+              "mean_open": 7.36734693877551,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.6342857142857143,
+              "motivated": 0.0,
+              "mean_open": 5.836734693877551,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.4841437632135307,
+              "motivated": 0.0,
+              "mean_open": 7.604651162790698,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9238095238095239,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.48538011695906436,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.35189255189255186,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.833333333333334,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.3631469979296066,
+              "motivated": 0.030303030303030304,
+              "mean_open": 10.956521739130435,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "seed 1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.14775510204081632,
+              "motivated": 0.0,
+              "mean_open": 7.857142857142857,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.3208163265306122,
+              "motivated": 0.0,
+              "mean_open": 6.979591836734694,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.4841437632135307,
+              "motivated": 0.0,
+              "mean_open": 7.604651162790698,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9238095238095239,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.48538011695906436,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.35189255189255186,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.833333333333334,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.37308488612836443,
+              "motivated": 0.030303030303030304,
+              "mean_open": 11.159420289855072,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "seed 2",
+          "chapters": {
+            "entropy": {
+              "tau": 0.2326530612244898,
+              "motivated": 0.0,
+              "mean_open": 6.714285714285714,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.5330612244897959,
+              "motivated": 0.0,
+              "mean_open": 5.653061224489796,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.4841437632135307,
+              "motivated": 0.0,
+              "mean_open": 7.604651162790698,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9238095238095239,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.48538011695906436,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.35189255189255186,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.833333333333334,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.41780538302277437,
+              "motivated": 0.030303030303030304,
+              "mean_open": 10.971014492753623,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "seed 3",
+          "chapters": {
+            "entropy": {
+              "tau": 0.37632653061224486,
+              "motivated": 0.0,
+              "mean_open": 7.571428571428571,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.17551020408163265,
+              "motivated": 0.0,
+              "mean_open": 6.591836734693878,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.4841437632135307,
+              "motivated": 0.0,
+              "mean_open": 7.604651162790698,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9238095238095239,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.48538011695906436,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.27081807081807086,
+              "motivated": 0.021739130434782608,
+              "mean_open": 13.077777777777778,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.36645962732919257,
+              "motivated": 0.030303030303030304,
+              "mean_open": 11.057971014492754,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "seed 4",
+          "chapters": {
+            "entropy": {
+              "tau": 0.2114285714285714,
+              "motivated": 0.0,
+              "mean_open": 7.163265306122449,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.37632653061224486,
+              "motivated": 0.0,
+              "mean_open": 6.020408163265306,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.4841437632135307,
+              "motivated": 0.0,
+              "mean_open": 7.604651162790698,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9238095238095239,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.48538011695906436,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.27081807081807086,
+              "motivated": 0.021739130434782608,
+              "mean_open": 13.077777777777778,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.3763975155279503,
+              "motivated": 0.030303030303030304,
+              "mean_open": 11.18840579710145,
+              "deferred_proofs": 0
+            }
+          }
+        }
+      ]
+    },
+    "hybrid m = 3": {
+      "runs": [
+        {
+          "run": "seed 0",
+          "chapters": {
+            "entropy": {
+              "tau": -0.03510204081632651,
+              "motivated": 0.4375,
+              "mean_open": 6.877551020408164,
+              "deferred_proofs": 4
+            },
+            "distance": {
+              "tau": 0.43673469387755104,
+              "motivated": 0.5882352941176471,
+              "mean_open": 7.020408163265306,
+              "deferred_proofs": 5
+            },
+            "entropy_pfr": {
+              "tau": 0.7251585623678647,
+              "motivated": 0.7272727272727273,
+              "mean_open": 9.69767441860465,
+              "deferred_proofs": 4
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.20467836257309946,
+              "motivated": 0.3333333333333333,
+              "mean_open": 3.611111111111111,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.10525030525030521,
+              "motivated": 0.7391304347826086,
+              "mean_open": 15.055555555555555,
+              "deferred_proofs": 11
+            },
+            "further_improvement": {
+              "tau": 0.3606625258799172,
+              "motivated": 0.6666666666666666,
+              "mean_open": 12.115942028985508,
+              "deferred_proofs": 10
+            }
+          }
+        },
+        {
+          "run": "seed 1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.1004081632653061,
+              "motivated": 0.5625,
+              "mean_open": 7.163265306122449,
+              "deferred_proofs": 3
+            },
+            "distance": {
+              "tau": 0.22285714285714286,
+              "motivated": 0.6470588235294118,
+              "mean_open": 7.36734693877551,
+              "deferred_proofs": 5
+            },
+            "entropy_pfr": {
+              "tau": 0.2896405919661733,
+              "motivated": 0.7727272727272727,
+              "mean_open": 10.046511627906977,
+              "deferred_proofs": 5
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.3450292397660819,
+              "motivated": 0.3333333333333333,
+              "mean_open": 3.388888888888889,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.2175824175824176,
+              "motivated": 0.6956521739130435,
+              "mean_open": 16.42222222222222,
+              "deferred_proofs": 12
+            },
+            "further_improvement": {
+              "tau": 0.3937888198757764,
+              "motivated": 0.8484848484848485,
+              "mean_open": 11.753623188405797,
+              "deferred_proofs": 9
+            }
+          }
+        },
+        {
+          "run": "seed 2",
+          "chapters": {
+            "entropy": {
+              "tau": 0.061224489795918324,
+              "motivated": 0.1875,
+              "mean_open": 6.673469387755102,
+              "deferred_proofs": 2
+            },
+            "distance": {
+              "tau": 0.35183673469387755,
+              "motivated": 0.6470588235294118,
+              "mean_open": 7.571428571428571,
+              "deferred_proofs": 5
+            },
+            "entropy_pfr": {
+              "tau": 0.20084566596194509,
+              "motivated": 0.7727272727272727,
+              "mean_open": 9.651162790697674,
+              "deferred_proofs": 5
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.3450292397660819,
+              "motivated": 0.3333333333333333,
+              "mean_open": 3.388888888888889,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.1912087912087912,
+              "motivated": 0.7391304347826086,
+              "mean_open": 15.155555555555555,
+              "deferred_proofs": 12
+            },
+            "further_improvement": {
+              "tau": 0.43850931677018634,
+              "motivated": 0.7878787878787878,
+              "mean_open": 12.985507246376812,
+              "deferred_proofs": 10
+            }
+          }
+        },
+        {
+          "run": "seed 3",
+          "chapters": {
+            "entropy": {
+              "tau": 0.3404081632653061,
+              "motivated": 0.375,
+              "mean_open": 7.571428571428571,
+              "deferred_proofs": 3
+            },
+            "distance": {
+              "tau": 0.3453061224489796,
+              "motivated": 0.5294117647058824,
+              "mean_open": 7.408163265306122,
+              "deferred_proofs": 5
+            },
+            "entropy_pfr": {
+              "tau": 0.5517970401691332,
+              "motivated": 0.7272727272727273,
+              "mean_open": 8.883720930232558,
+              "deferred_proofs": 4
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.5789473684210527,
+              "motivated": 0.3333333333333333,
+              "mean_open": 3.611111111111111,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.1760683760683761,
+              "motivated": 0.717391304347826,
+              "mean_open": 15.733333333333333,
+              "deferred_proofs": 11
+            },
+            "further_improvement": {
+              "tau": 0.49068322981366463,
+              "motivated": 0.8181818181818182,
+              "mean_open": 12.579710144927537,
+              "deferred_proofs": 10
+            }
+          }
+        },
+        {
+          "run": "seed 4",
+          "chapters": {
+            "entropy": {
+              "tau": 0.041632653061224545,
+              "motivated": 0.375,
+              "mean_open": 7.040816326530612,
+              "deferred_proofs": 3
+            },
+            "distance": {
+              "tau": 0.002448979591836764,
+              "motivated": 0.7647058823529411,
+              "mean_open": 6.428571428571429,
+              "deferred_proofs": 6
+            },
+            "entropy_pfr": {
+              "tau": 0.34883720930232553,
+              "motivated": 0.7727272727272727,
+              "mean_open": 10.651162790697674,
+              "deferred_proofs": 5
+            },
+            "improved_exponent": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 1.6842105263157894,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.7192982456140351,
+              "motivated": 0.3333333333333333,
+              "mean_open": 3.388888888888889,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.23321123321123316,
+              "motivated": 0.717391304347826,
+              "mean_open": 16.333333333333332,
+              "deferred_proofs": 12
+            },
+            "further_improvement": {
+              "tau": 0.5279503105590062,
+              "motivated": 0.6363636363636364,
+              "mean_open": 11.710144927536232,
+              "deferred_proofs": 9
+            }
+          }
+        }
+      ]
+    },
+    "top-down (m = 1)": {
+      "runs": [
+        {
+          "run": "seed 0",
+          "chapters": {
+            "entropy": {
+              "tau": 0.28163265306122454,
+              "motivated": 0.6875,
+              "mean_open": 8.204081632653061,
+              "deferred_proofs": 9
+            },
+            "distance": {
+              "tau": 0.26857142857142857,
+              "motivated": 1.0,
+              "mean_open": 8.387755102040817,
+              "deferred_proofs": 10
+            },
+            "entropy_pfr": {
+              "tau": 0.4334038054968288,
+              "motivated": 1.0,
+              "mean_open": 11.348837209302326,
+              "deferred_proofs": 10
+            },
+            "improved_exponent": {
+              "tau": 0.17894736842105263,
+              "motivated": 1.0,
+              "mean_open": 5.315789473684211,
+              "deferred_proofs": 8
+            },
+            "approx_hom_pfr": {
+              "tau": -0.21904761904761916,
+              "motivated": 1.0,
+              "mean_open": 3.642857142857143,
+              "deferred_proofs": 3
+            },
+            "weak_pfr": {
+              "tau": -0.23976608187134496,
+              "motivated": 0.8888888888888888,
+              "mean_open": 5.388888888888889,
+              "deferred_proofs": 6
+            },
+            "torsion": {
+              "tau": 0.01538461538461533,
+              "motivated": 0.9782608695652174,
+              "mean_open": 18.31111111111111,
+              "deferred_proofs": 21
+            },
+            "further_improvement": {
+              "tau": 0.23726708074534164,
+              "motivated": 0.8181818181818182,
+              "mean_open": 13.797101449275363,
+              "deferred_proofs": 18
+            }
+          }
+        },
+        {
+          "run": "seed 1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.3877551020408163,
+              "motivated": 0.75,
+              "mean_open": 8.10204081632653,
+              "deferred_proofs": 8
+            },
+            "distance": {
+              "tau": 0.3616326530612245,
+              "motivated": 1.0,
+              "mean_open": 6.530612244897959,
+              "deferred_proofs": 11
+            },
+            "entropy_pfr": {
+              "tau": 0.2642706131078224,
+              "motivated": 1.0,
+              "mean_open": 9.674418604651162,
+              "deferred_proofs": 11
+            },
+            "improved_exponent": {
+              "tau": 0.17894736842105263,
+              "motivated": 1.0,
+              "mean_open": 5.315789473684211,
+              "deferred_proofs": 8
+            },
+            "approx_hom_pfr": {
+              "tau": -0.2571428571428571,
+              "motivated": 1.0,
+              "mean_open": 3.7142857142857144,
+              "deferred_proofs": 4
+            },
+            "weak_pfr": {
+              "tau": -0.09941520467836251,
+              "motivated": 0.8888888888888888,
+              "mean_open": 5.166666666666667,
+              "deferred_proofs": 6
+            },
+            "torsion": {
+              "tau": 0.00659340659340657,
+              "motivated": 0.9782608695652174,
+              "mean_open": 17.11111111111111,
+              "deferred_proofs": 21
+            },
+            "further_improvement": {
+              "tau": 0.18426501035196685,
+              "motivated": 0.8181818181818182,
+              "mean_open": 14.057971014492754,
+              "deferred_proofs": 17
+            }
+          }
+        },
+        {
+          "run": "seed 2",
+          "chapters": {
+            "entropy": {
+              "tau": 0.3583673469387755,
+              "motivated": 0.8125,
+              "mean_open": 6.877551020408164,
+              "deferred_proofs": 8
+            },
+            "distance": {
+              "tau": -0.04979591836734687,
+              "motivated": 1.0,
+              "mean_open": 7.73469387755102,
+              "deferred_proofs": 11
+            },
+            "entropy_pfr": {
+              "tau": 0.4545454545454546,
+              "motivated": 1.0,
+              "mean_open": 11.30232558139535,
+              "deferred_proofs": 12
+            },
+            "improved_exponent": {
+              "tau": -0.0736842105263158,
+              "motivated": 1.0,
+              "mean_open": 5.421052631578948,
+              "deferred_proofs": 8
+            },
+            "approx_hom_pfr": {
+              "tau": -0.2952380952380953,
+              "motivated": 1.0,
+              "mean_open": 3.642857142857143,
+              "deferred_proofs": 3
+            },
+            "weak_pfr": {
+              "tau": 0.13450292397660824,
+              "motivated": 0.8888888888888888,
+              "mean_open": 5.388888888888889,
+              "deferred_proofs": 6
+            },
+            "torsion": {
+              "tau": 0.03931623931623929,
+              "motivated": 0.9782608695652174,
+              "mean_open": 17.58888888888889,
+              "deferred_proofs": 22
+            },
+            "further_improvement": {
+              "tau": 0.4459627329192547,
+              "motivated": 0.8181818181818182,
+              "mean_open": 13.434782608695652,
+              "deferred_proofs": 20
+            }
+          }
+        },
+        {
+          "run": "seed 3",
+          "chapters": {
+            "entropy": {
+              "tau": 0.06938775510204087,
+              "motivated": 0.6875,
+              "mean_open": 7.755102040816326,
+              "deferred_proofs": 8
+            },
+            "distance": {
+              "tau": 0.26530612244897955,
+              "motivated": 1.0,
+              "mean_open": 6.530612244897959,
+              "deferred_proofs": 10
+            },
+            "entropy_pfr": {
+              "tau": 0.6405919661733614,
+              "motivated": 1.0,
+              "mean_open": 10.488372093023257,
+              "deferred_proofs": 9
+            },
+            "improved_exponent": {
+              "tau": -0.0736842105263158,
+              "motivated": 1.0,
+              "mean_open": 5.421052631578948,
+              "deferred_proofs": 8
+            },
+            "approx_hom_pfr": {
+              "tau": 0.5428571428571429,
+              "motivated": 1.0,
+              "mean_open": 3.642857142857143,
+              "deferred_proofs": 4
+            },
+            "weak_pfr": {
+              "tau": -0.09941520467836251,
+              "motivated": 0.8888888888888888,
+              "mean_open": 5.166666666666667,
+              "deferred_proofs": 6
+            },
+            "torsion": {
+              "tau": 0.18632478632478633,
+              "motivated": 0.9782608695652174,
+              "mean_open": 17.488888888888887,
+              "deferred_proofs": 24
+            },
+            "further_improvement": {
+              "tau": 0.16853002070393375,
+              "motivated": 1.0,
+              "mean_open": 13.72463768115942,
+              "deferred_proofs": 15
+            }
+          }
+        },
+        {
+          "run": "seed 4",
+          "chapters": {
+            "entropy": {
+              "tau": 0.2914285714285715,
+              "motivated": 0.625,
+              "mean_open": 7.591836734693878,
+              "deferred_proofs": 9
+            },
+            "distance": {
+              "tau": 0.3240816326530612,
+              "motivated": 1.0,
+              "mean_open": 7.285714285714286,
+              "deferred_proofs": 11
+            },
+            "entropy_pfr": {
+              "tau": 0.6448202959830867,
+              "motivated": 1.0,
+              "mean_open": 10.372093023255815,
+              "deferred_proofs": 10
+            },
+            "improved_exponent": {
+              "tau": -0.0736842105263158,
+              "motivated": 1.0,
+              "mean_open": 5.421052631578948,
+              "deferred_proofs": 8
+            },
+            "approx_hom_pfr": {
+              "tau": 0.5047619047619047,
+              "motivated": 1.0,
+              "mean_open": 3.5714285714285716,
+              "deferred_proofs": 3
+            },
+            "weak_pfr": {
+              "tau": 0.13450292397660824,
+              "motivated": 0.8888888888888888,
+              "mean_open": 5.388888888888889,
+              "deferred_proofs": 6
+            },
+            "torsion": {
+              "tau": 0.011965811965811923,
+              "motivated": 0.9782608695652174,
+              "mean_open": 18.644444444444446,
+              "deferred_proofs": 24
+            },
+            "further_improvement": {
+              "tau": 0.3399585921325051,
+              "motivated": 0.8181818181818182,
+              "mean_open": 14.608695652173912,
+              "deferred_proofs": 18
+            }
+          }
+        }
+      ]
+    },
+    "node-level LLM, labelled": {
+      "runs": [
+        {
+          "run": "results/phase2/pfr/llm",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9085714285714286,
+              "motivated": 0.0,
+              "mean_open": 6.163265306122449,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.7387755102040816,
+              "motivated": 0.0,
+              "mean_open": 6.775510204081633,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9704016913319239,
+              "motivated": 0.0,
+              "mean_open": 7.906976744186046,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.8736842105263158,
+              "motivated": 0.0,
+              "mean_open": 1.894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 0.7714285714285715,
+              "motivated": 0.0,
+              "mean_open": 3.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.8596491228070176,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.9135531135531135,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.1,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.8525879917184265,
+              "motivated": 0.030303030303030304,
+              "mean_open": 9.971014492753623,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/named-s1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9085714285714286,
+              "motivated": 0.0,
+              "mean_open": 6.163265306122449,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.7518367346938776,
+              "motivated": 0.0,
+              "mean_open": 6.448979591836735,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9661733615221987,
+              "motivated": 0.0,
+              "mean_open": 8.023255813953488,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.7473684210526316,
+              "motivated": 0.0,
+              "mean_open": 1.7894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.8596491228070176,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.85006105006105,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.8,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.8525879917184265,
+              "motivated": 0.030303030303030304,
+              "mean_open": 9.971014492753623,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/named-s2",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9346938775510204,
+              "motivated": 0.0,
+              "mean_open": 6.489795918367347,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.7387755102040816,
+              "motivated": 0.0,
+              "mean_open": 6.816326530612245,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9746300211416491,
+              "motivated": 0.0,
+              "mean_open": 7.883720930232558,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.7473684210526316,
+              "motivated": 0.0,
+              "mean_open": 1.7894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.7192982456140351,
+              "motivated": 0.0,
+              "mean_open": 2.2777777777777777,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.8481074481074481,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.511111111111111,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.8824016563146998,
+              "motivated": 0.030303030303030304,
+              "mean_open": 9.884057971014492,
+              "deferred_proofs": 0
+            }
+          }
+        }
+      ]
+    },
+    "node-level LLM, anonymised": {
+      "runs": [
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s0",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9036734693877551,
+              "motivated": 0.0,
+              "mean_open": 6.122448979591836,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.7518367346938776,
+              "motivated": 0.0,
+              "mean_open": 7.224489795918367,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9746300211416491,
+              "motivated": 0.0,
+              "mean_open": 7.883720930232558,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.7473684210526316,
+              "motivated": 0.0,
+              "mean_open": 1.7894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.5789473684210527,
+              "motivated": 0.0,
+              "mean_open": 2.7777777777777777,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.85006105006105,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.755555555555556,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.9188405797101449,
+              "motivated": 0.030303030303030304,
+              "mean_open": 9.91304347826087,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9183673469387755,
+              "motivated": 0.0,
+              "mean_open": 6.571428571428571,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.6440816326530612,
+              "motivated": 0.0,
+              "mean_open": 7.530612244897959,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9577167019027484,
+              "motivated": 0.0,
+              "mean_open": 7.883720930232558,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.7473684210526316,
+              "motivated": 0.0,
+              "mean_open": 1.7894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.8596491228070176,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.8539682539682539,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.644444444444444,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.8939958592132505,
+              "motivated": 0.030303030303030304,
+              "mean_open": 10.72463768115942,
+              "deferred_proofs": 0
+            }
+          }
+        },
+        {
+          "run": "results/phase2/pfr/llm_runs/blind-s2",
+          "chapters": {
+            "entropy": {
+              "tau": 0.856326530612245,
+              "motivated": 0.0,
+              "mean_open": 6.877551020408164,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.6440816326530612,
+              "motivated": 0.0,
+              "mean_open": 7.571428571428571,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.9577167019027484,
+              "motivated": 0.0,
+              "mean_open": 7.883720930232558,
+              "deferred_proofs": 0
+            },
+            "improved_exponent": {
+              "tau": 0.7473684210526316,
+              "motivated": 0.0,
+              "mean_open": 1.7894736842105263,
+              "deferred_proofs": 0
+            },
+            "approx_hom_pfr": {
+              "tau": 1.0,
+              "motivated": 0.0,
+              "mean_open": 2.5,
+              "deferred_proofs": 0
+            },
+            "weak_pfr": {
+              "tau": 0.8596491228070176,
+              "motivated": 0.0,
+              "mean_open": 2.888888888888889,
+              "deferred_proofs": 0
+            },
+            "torsion": {
+              "tau": 0.8031746031746032,
+              "motivated": 0.021739130434782608,
+              "mean_open": 12.044444444444444,
+              "deferred_proofs": 0
+            },
+            "further_improvement": {
+              "tau": 0.8592132505175983,
+              "motivated": 0.030303030303030304,
+              "mean_open": 10.405797101449275,
+              "deferred_proofs": 0
+            }
+          }
+        }
+      ]
+    },
+    "event-level LLM, labelled": {
+      "runs": [
+        {
+          "run": "results/events/pfr/llm/named-s0",
+          "chapters": {
+            "entropy": {
+              "tau": 0.8955102040816326,
+              "motivated": 0.0,
+              "mean_open": 6.204081632653061,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.7224489795918367,
+              "motivated": 0.0,
+              "mean_open": 6.673469387755102,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.7315010570824525,
+              "motivated": 0.45454545454545453,
+              "mean_open": 7.744186046511628,
+              "deferred_proofs": 2
+            },
+            "improved_exponent": {
+              "tau": 0.3052631578947368,
+              "motivated": 0.4444444444444444,
+              "mean_open": 3.789473684210526,
+              "deferred_proofs": 3
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.672514619883041,
+              "motivated": 0.1111111111111111,
+              "mean_open": 3.6666666666666665,
+              "deferred_proofs": 1
+            },
+            "torsion": {
+              "tau": 0.6034188034188035,
+              "motivated": 0.2826086956521739,
+              "mean_open": 12.622222222222222,
+              "deferred_proofs": 3
+            },
+            "further_improvement": {
+              "tau": 0.7093167701863354,
+              "motivated": 0.24242424242424243,
+              "mean_open": 11.304347826086957,
+              "deferred_proofs": 3
+            }
+          }
+        },
+        {
+          "run": "results/events/pfr/llm/named-s1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9151020408163265,
+              "motivated": 0.0,
+              "mean_open": 6.653061224489796,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.676734693877551,
+              "motivated": 0.0,
+              "mean_open": 7.448979591836735,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.7399577167019027,
+              "motivated": 0.45454545454545453,
+              "mean_open": 7.744186046511628,
+              "deferred_proofs": 2
+            },
+            "improved_exponent": {
+              "tau": -0.5263157894736843,
+              "motivated": 0.5555555555555556,
+              "mean_open": 2.526315789473684,
+              "deferred_proofs": 4
+            },
+            "approx_hom_pfr": {
+              "tau": 0.6761904761904762,
+              "motivated": 0.5714285714285714,
+              "mean_open": 3.4285714285714284,
+              "deferred_proofs": 2
+            },
+            "weak_pfr": {
+              "tau": -0.22807017543859653,
+              "motivated": 0.5555555555555556,
+              "mean_open": 3.4444444444444446,
+              "deferred_proofs": 3
+            },
+            "torsion": {
+              "tau": 0.6864468864468865,
+              "motivated": 0.2826086956521739,
+              "mean_open": 12.5,
+              "deferred_proofs": 3
+            },
+            "further_improvement": {
+              "tau": 0.855072463768116,
+              "motivated": 0.24242424242424243,
+              "mean_open": 11.434782608695652,
+              "deferred_proofs": 3
+            }
+          }
+        }
+      ]
+    },
+    "event-level LLM, anonymised": {
+      "runs": [
+        {
+          "run": "results/events/pfr/llm/blind-s0",
+          "chapters": {
+            "entropy": {
+              "tau": 0.8955102040816326,
+              "motivated": 0.0,
+              "mean_open": 6.653061224489796,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.6440816326530612,
+              "motivated": 0.0,
+              "mean_open": 7.448979591836735,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.7357293868921776,
+              "motivated": 0.45454545454545453,
+              "mean_open": 7.767441860465116,
+              "deferred_proofs": 2
+            },
+            "improved_exponent": {
+              "tau": -0.5473684210526315,
+              "motivated": 0.5555555555555556,
+              "mean_open": 2.3684210526315788,
+              "deferred_proofs": 4
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": 0.33333333333333337,
+              "motivated": 0.2222222222222222,
+              "mean_open": 3.611111111111111,
+              "deferred_proofs": 2
+            },
+            "torsion": {
+              "tau": 0.6151404151404152,
+              "motivated": 0.2608695652173913,
+              "mean_open": 13.466666666666667,
+              "deferred_proofs": 3
+            },
+            "further_improvement": {
+              "tau": 0.7838509316770186,
+              "motivated": 0.15151515151515152,
+              "mean_open": 10.81159420289855,
+              "deferred_proofs": 2
+            }
+          }
+        },
+        {
+          "run": "results/events/pfr/llm/blind-s1",
+          "chapters": {
+            "entropy": {
+              "tau": 0.9085714285714286,
+              "motivated": 0.0,
+              "mean_open": 6.489795918367347,
+              "deferred_proofs": 0
+            },
+            "distance": {
+              "tau": 0.6506122448979592,
+              "motivated": 0.0,
+              "mean_open": 7.530612244897959,
+              "deferred_proofs": 0
+            },
+            "entropy_pfr": {
+              "tau": 0.7399577167019027,
+              "motivated": 0.45454545454545453,
+              "mean_open": 7.744186046511628,
+              "deferred_proofs": 2
+            },
+            "improved_exponent": {
+              "tau": -0.5578947368421052,
+              "motivated": 0.5555555555555556,
+              "mean_open": 2.3157894736842106,
+              "deferred_proofs": 5
+            },
+            "approx_hom_pfr": {
+              "tau": 0.9047619047619048,
+              "motivated": 0.42857142857142855,
+              "mean_open": 2.642857142857143,
+              "deferred_proofs": 1
+            },
+            "weak_pfr": {
+              "tau": -0.09941520467836251,
+              "motivated": 0.5555555555555556,
+              "mean_open": 3.6666666666666665,
+              "deferred_proofs": 3
+            },
+            "torsion": {
+              "tau": 0.6595848595848596,
+              "motivated": 0.30434782608695654,
+              "mean_open": 12.933333333333334,
+              "deferred_proofs": 4
+            },
+            "further_improvement": {
+              "tau": 0.7333333333333334,
+              "motivated": 0.2727272727272727,
+              "mean_open": 10.666666666666666,
+              "deferred_proofs": 3
+            }
+          }
+        }
+      ]
+    }
+  },
+  "meta": {
+    "results/phase2/pfr/llm": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/phase2/pfr/llm_runs/named-s1": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/phase2/pfr/llm_runs/named-s2": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/phase2/pfr/llm_runs/blind-s0": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/phase2/pfr/llm_runs/blind-s1": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/phase2/pfr/llm_runs/blind-s2": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/events/pfr/llm/named-s0": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/events/pfr/llm/named-s1": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/events/pfr/llm/blind-s0": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    },
+    "results/events/pfr/llm/blind-s1": {
+      "invalid": [],
+      "violations_repaired": {
+        "entropy": 0,
+        "distance": 0,
+        "entropy_pfr": 0,
+        "improved_exponent": 0,
+        "approx_hom_pfr": 0,
+        "weak_pfr": 0,
+        "torsion": 0,
+        "further_improvement": 0
+      }
+    }
+  }
+}

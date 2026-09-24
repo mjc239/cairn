@@ -49,3 +49,17 @@ import json; from pathlib import Path; from cairn.plots import plot_motivation_f
 p = {n: json.load(open(f'results/events/{k}/events.json')) for n, k in
      [('PFR (bottom-up blueprint)', 'pfr'), ('Carleson (paper-style blueprint)', 'carleson')]}
 plot_motivation_frontier(p, Path('results/cross_project/motivation_frontier.png'))"
+# Event-level LLM baseline (proofs may be deferred). Prompts: cairn event-prompts ... [--anonymise --no-titles] --seed N;
+# responses were produced by the current Claude model. Scored against the node-level runs on chapter cores.
+E=results/events
+uv run cairn event-llm-eval "$SRC" "$DECLS" --group-by section --project Carleson -o $E/carleson/llm_eval.md \
+  --run labelled=$E/carleson/llm/named-s0 --run labelled=$E/carleson/llm/named-s1 \
+  --run anonymised=$E/carleson/llm/blind-s0 --run anonymised=$E/carleson/llm/blind-s1 \
+  --node-run labelled=results/phase2/carleson/llm --node-run labelled=$R/named-s1 \
+  --node-run anonymised=$R/blind-s0 --node-run anonymised=$R/blind-s1
+P2=results/phase2/pfr
+uv run cairn event-llm-eval "$ROOT/data/raw/pfr/blueprint/src" "$PFR_DECLS" --project PFR -o $E/pfr/llm_eval.md \
+  --run labelled=$E/pfr/llm/named-s0 --run labelled=$E/pfr/llm/named-s1 \
+  --run anonymised=$E/pfr/llm/blind-s0 --run anonymised=$E/pfr/llm/blind-s1 \
+  --node-run labelled=$P2/llm --node-run labelled=$P2/llm_runs/named-s1 --node-run labelled=$P2/llm_runs/named-s2 \
+  --node-run anonymised=$P2/llm_runs/blind-s0 --node-run anonymised=$P2/llm_runs/blind-s1 --node-run anonymised=$P2/llm_runs/blind-s2

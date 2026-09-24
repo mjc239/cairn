@@ -42,6 +42,7 @@ uv run cairn transfer --project A=SRC:DECLS --project B=SRC:DECLS:section -o out
 
 ./scripts/carleson.sh [--no-lean]                                # all phases on the second project
 uv run cairn events path/to/blueprint/src decls.jsonl --project NAME -o results/events/NAME  # statements vs proofs, motivation
+uv run cairn event-prompts ... -o DIR [--anonymise --no-titles]  # LLM orders S:/P: steps; score with `cairn event-llm-eval`
 uv run pytest && uv run ruff check python
 ```
 

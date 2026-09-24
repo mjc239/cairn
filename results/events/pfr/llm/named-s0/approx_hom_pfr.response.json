@@ -1,0 +1,17 @@
+[
+"S:approx-hom-pfr",
+"S:energy-def",
+"S:cs-bound",
+"P:cs-bound",
+"S:bsg",
+"P:bsg",
+"P:approx-hom-pfr",
+"S:gdual",
+"P:gdual",
+"S:gcount",
+"P:gcount",
+"S:gslice",
+"P:gslice",
+"S:approx-hom-pfr-no-const",
+"P:approx-hom-pfr-no-const"
+]
