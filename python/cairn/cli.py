@@ -114,11 +114,77 @@ def main(argv: list[str] | None = None) -> None:
     ps.add_argument("--provenance", default="")
     ps.add_argument("-o", "--out", type=Path, required=True)
 
+    pk = sub.add_parser("key-model", help="train the key-declaration model on blueprint projects, save as JSON")
+    pk.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
+    pk.add_argument("-o", "--out", type=Path, required=True)
+
+    def add_style_args(sp):
+        sp.add_argument("--top-down", type=float, default=0.0, help="0 = bottom-up ... 1 = top-down")
+        sp.add_argument("--roadmap", choices=("none", "chapter", "document"), default="none")
+        sp.add_argument("--definitions", choices=("just-in-time", "upfront"), default="just-in-time")
+        sp.add_argument("--goal-rule", choices=("fan-in", "support", "key"), default="fan-in")
+        sp.add_argument("--chapters", choices=("module", "community"), default="module")
+        sp.add_argument("--modules", nargs="*", help="only declarations from modules under these prefixes")
+        sp.add_argument("--no-define-used", action="store_true",
+                        help="do not add the project definitions that named statements mention")
+
+    po = sub.add_parser("outline", help="blueprint-free outline of a Lean development")
+    po.add_argument("decls", type=Path, help="JSONL from lean/extract_deps.lean")
+    po.add_argument("--model", type=Path, required=True, help="key-declaration model from `cairn key-model`")
+    po.add_argument("--detail", type=float, default=0.15, help="share of declarations to present as results")
+    po.add_argument("--count", type=int, help="exact number of results (overrides --detail)")
+    po.add_argument("--root", action="append", help="only the dependency cone of these declarations")
+    po.add_argument("--title", default="Outline")
+    po.add_argument("-o", "--out", type=Path, required=True)
+    add_style_args(po)
+
+    pz = sub.add_parser("outline-eval", help="compare blueprint-free outlines with a blueprint")
+    pz.add_argument("src", type=Path)
+    pz.add_argument("decls", type=Path)
+    pz.add_argument("--entry", default="content.tex")
+    pz.add_argument("--group-by", choices=GROUP_BY, default="file", help="what counts as a chapter")
+    pz.add_argument("--model", type=Path, required=True, help="trained on *other* projects")
+    pz.add_argument("--project", required=True)
+    pz.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
+    add_style_args(pz)
+
     pt = sub.add_parser("transfer", help="train the key-declaration model on one project, test on others")
     pt.add_argument("--project", action="append", required=True, metavar="NAME=SRC:DECLS[:GROUP_BY[:ENTRY]]")
     pt.add_argument("-o", "--out", type=Path, required=True, help="JSON output path")
 
     args = ap.parse_args(argv)
+    if args.cmd in ("outline", "outline-eval"):
+        from .style import Style
+
+        style = Style(args.top_down, args.roadmap, args.definitions, args.goal_rule)
+    if args.cmd == "key-model":
+        from .formal import load_decls
+        from .outline import KeyModel
+
+        projects = {}
+        for spec in args.project:
+            name, _, rest = spec.partition("=")
+            src, decls, *more = rest.split(":")
+            projects[name] = (parse_blueprint(Path(src), more[1] if len(more) > 1 else "content.tex",
+                                              more[0] if more else "file"), load_decls(Path(decls)))
+        KeyModel.fit(projects).save(args.out)
+        print(f"wrote {args.out} (trained on {', '.join(sorted(projects))})")
+        return
+    if args.cmd == "outline":
+        from .formal import load_decls
+        from .outline import KeyModel, build, render
+
+        decls = load_decls(args.decls)
+        scores = KeyModel.load(args.model).score(decls)
+        o = build(decls, scores, style, args.detail, args.count, args.root, args.chapters,
+                  define_used=not args.no_define_used, modules=args.modules)
+        note = (f"{len(o.named)} results in {len(o.chapter_order)} chapters, "
+                f"selected from {len(decls)} declarations "
+                f"({'detail ' + str(args.detail) if args.count is None else str(args.count) + ' requested'}).")
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(render(o, decls, args.title, style, note))
+        print(f"wrote {args.out}: {note}")
+        return
     if args.cmd == "transfer":
         from .formal import load_decls
         from .phase2 import transfer_key_nodes
@@ -174,6 +240,24 @@ def main(argv: list[str] | None = None) -> None:
         res = evaluate(bp, decls, runs_of(args.run), runs_of(args.node_run))
         write_event_llm(res, args.out, args.project)
         print(f"wrote {args.out}")
+        return
+
+    if args.cmd == "outline-eval":
+        from .formal import load_decls
+        from .outline import KeyModel
+        from .outline import evaluate as evaluate_outline
+
+        decls = load_decls(args.decls)
+        rows = evaluate_outline(bp, decls, KeyModel.load(args.model).score(decls), style,
+                                chapters=args.chapters, modules=args.modules, define_used=not args.no_define_used)
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(json.dumps({"project": args.project, "style": style.label(),
+                                        "chapters": args.chapters, "rows": rows}, indent=2))
+        for r in rows:
+            print(f"detail {r['detail']:.2f}: {r['named']} named ({r['named_theorems']} theorems), precision "
+                  f"{r['precision']:.0%} (theorems {r['theorem_precision']:.0%}), recall "
+                  f"{r['recall']:.0%}, nodes covered {r['node_coverage']:.0%}, chapter NMI {r['chapter_nmi']:.2f}, "
+                  f"tau {r['tau_whole']:+.2f} (within chapters {r['tau_within_chapters']:+.2f})")
         return
 
     if args.cmd == "style":

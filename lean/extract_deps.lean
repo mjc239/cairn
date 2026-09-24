@@ -8,7 +8,8 @@ Run from the target project's root, after `lake build`:
 It emits one line per constant defined in a module whose name starts with one of the
 `ModulePrefix`es: its kind, its module and source position, and the constants used in
 its type and in its value (for theorems, the proof term),
-plus the size of both terms (number of distinct `Expr` objects). Constants from any module are
+plus the size of both terms (number of distinct `Expr` objects). For user-facing constants it also
+records the docstring and the pretty-printed statement (`type_pp`). Constants from any module are
 listed as dependencies. Filtering, folding of compiler auxiliaries into their parents and
 IDF weighting all happen in Python (`cairn.formal`), so this file stays small and easy to
 port across Lean versions.
@@ -31,13 +32,23 @@ def kindOf : ConstantInfo → String
 def namesJson (ns : Array Name) : Json :=
   Json.arr (ns.map (fun n => Json.str n.toString))
 
+/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. -/
+def ppType (env : Environment) (e : Expr) : IO String := do
+  let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
+  let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
+  try
+    let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }
+    return toString fmt
+  catch _ =>
+    return ""
+
 def main (args : List String) : IO UInt32 := do
   let root :: prefixes := args
     | IO.eprintln "usage: extract_deps <RootModule> <ModulePrefix>..."; return 1
   let prefixes := if prefixes.isEmpty then [root] else prefixes
   initSearchPath (← findSysroot)
   unsafe enableInitializersExecution
-  let env ← importModules #[{ module := root.toName }] {}
+  let env ← importModules #[{ module := root.toName }] {} (loadExts := true)
   let modNames := env.allImportedModuleNames
   let inProject (m : Name) : Bool := prefixes.any fun p => p.toName.isPrefixOf m
   let stdout ← IO.getStdout
@@ -56,6 +67,9 @@ def main (args : List String) : IO UInt32 := do
       | some v => v.numObjs
       | none => pure 0
     let typeSize ← info.type.numObjs
+    let userFacing := !(privateToUserName name).isInternalDetail
+    let doc ← if userFacing then findSimpleDocString? env name else pure none
+    let typePP ← if userFacing then ppType env info.type else pure ""
     let line := Json.mkObj [
       ("name", Json.str name.toString),
       ("user_name", Json.str (privateToUserName name).toString),
@@ -69,6 +83,10 @@ def main (args : List String) : IO UInt32 := do
         | some r => Json.num r.range.pos.line
         | none => Json.null),
       ("type_size", Json.num typeSize),
+      ("doc", match doc with
+        | some d => Json.str d
+        | none => Json.null),
+      ("type_pp", Json.str typePP),
       ("value_size", Json.num valueSize),
       ("type_deps", namesJson info.type.getUsedConstants),
       ("value_deps", namesJson valueDeps)

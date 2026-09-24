@@ -36,6 +36,7 @@ def make_dag(g: nx.DiGraph, human_order: list[str]) -> tuple[nx.DiGraph, list[tu
         for u, v in list(g.subgraph(scc).edges):
             if pos[u] > pos[v]:
                 dropped.append((u, v))
+    dropped += [(u, v) for u, v in g.edges if u == v]  # self-loops are never meaningful dependencies
     dag = g.copy()
     dag.remove_edges_from(dropped)
     assert nx.is_directed_acyclic_graph(dag)

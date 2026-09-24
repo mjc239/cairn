@@ -99,11 +99,8 @@ weight to both blueprints.
 
 ## Next
 
-- **A `detail` parameter** for how many Lean declarations to surface as named
-  results. The Phase 2 key-declaration score ranks them; the rest are folded
-  into the proofs that use them. Together with `top_down` this would let
-  `cairn` produce an outline straight from a Lean development, with no
-  blueprint needed. That is the actual end-to-end tool.
+- ~~A `detail` parameter~~ Done: see [`outline.md`](outline.md) for
+  blueprint-free outlines with `detail`.
 - **Style-conditioned LLM prompts,** e.g. "write this bottom-up" or "announce
   the goal first", to see whether an LLM can hit a requested point on the
   curve.

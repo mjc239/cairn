@@ -1,0 +1,72 @@
+{
+  "project": "PFR",
+  "style": "top_down=0",
+  "chapters": "module",
+  "rows": [
+    {
+      "detail": 0.05,
+      "named": 60,
+      "named_theorems": 60,
+      "precision": 0.7833333333333333,
+      "theorem_precision": 0.7833333333333333,
+      "recall": 0.19183673469387755,
+      "node_coverage": 0.21153846153846154,
+      "chapter_nmi": 0.8421766393720964,
+      "tau_whole": 0.36363636363636365,
+      "tau_within_chapters": 0.7777777777777778,
+      "chapters": 17
+    },
+    {
+      "detail": 0.1,
+      "named": 119,
+      "named_theorems": 119,
+      "precision": 0.7226890756302521,
+      "theorem_precision": 0.7226890756302521,
+      "recall": 0.3510204081632653,
+      "node_coverage": 0.375,
+      "chapter_nmi": 0.8514679987207896,
+      "tau_whole": 0.4665334665334665,
+      "tau_within_chapters": 0.6997535797535798,
+      "chapters": 26
+    },
+    {
+      "detail": 0.15,
+      "named": 179,
+      "named_theorems": 179,
+      "precision": 0.6089385474860335,
+      "theorem_precision": 0.6089385474860335,
+      "recall": 0.4448979591836735,
+      "node_coverage": 0.47596153846153844,
+      "chapter_nmi": 0.8589950180148612,
+      "tau_whole": 0.5036075036075036,
+      "tau_within_chapters": 0.702138627655869,
+      "chapters": 32
+    },
+    {
+      "detail": 0.2,
+      "named": 238,
+      "named_theorems": 238,
+      "precision": 0.5168067226890757,
+      "theorem_precision": 0.5168067226890757,
+      "recall": 0.5020408163265306,
+      "node_coverage": 0.5288461538461539,
+      "chapter_nmi": 0.8533449530122105,
+      "tau_whole": 0.498582151793161,
+      "tau_within_chapters": 0.6219217546406487,
+      "chapters": 34
+    },
+    {
+      "detail": 0.3,
+      "named": 358,
+      "named_theorems": 356,
+      "precision": 0.43575418994413406,
+      "theorem_precision": 0.43820224719101125,
+      "recall": 0.636734693877551,
+      "node_coverage": 0.6586538461538461,
+      "chapter_nmi": 0.8580164240028431,
+      "tau_whole": 0.5416487762988407,
+      "tau_within_chapters": 0.6510356123801502,
+      "chapters": 37
+    }
+  ]
+}
