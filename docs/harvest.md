@@ -22,8 +22,8 @@ medium projects then ran once with the fixed pipeline, and all succeeded
 
 **Where this leaves us:** 19 projects harvested plus one stub skipped, with 3
 large projects to go (PNT+, FLT, Equational Theories). **Nine** of the new
-projects link at least 64% of their blueprint nodes to Lean, as PFR and
-Carleson do:
+projects link at least half of their blueprint nodes to Lean (PFR and Carleson
+link over 90%):
 - sphere eversion 100%
 - FLT3 98%
 - CLT 80%
@@ -31,8 +31,8 @@ Carleson do:
 - Brownian motion 74%
 - sphere packing 65%
 - FLT-regular 64%
-- testing lower bounds 51%
 - ABC 57%
+- testing lower bounds 51%
 
 ## Fixes between the passes
 
@@ -223,9 +223,10 @@ hour. Each took 5–6 minutes, except Brownian motion (16). New Foundations
 | apap | 49 | 0 | 5.3 / 5.0 / 11.8 | 0.04 | 0.14 (4) |
 | iwasawa | 15 | 0 | 1.1 / 0.2 / 1.0 | (too small) | — |
 
-- **Whole documents: every medium project is at the load optimum or better**
-  (gap between −0.23 and 0.04). The PFR finding holds across all 19 projects:
-  authors order whole documents almost as tightly as an optimiser.
+- **Whole documents: every medium project except tiny Iwasawa is at the load
+  optimum or better** (gap between −0.23 and 0.04). With the small batch, 16 of
+  the 18 blueprints large enough to score have a whole-document gap of 0.3 or
+  less. Authors order whole documents almost as tightly as an optimiser.
 - **Our optimiser doesn't scale to Brownian motion.** Its 663-node order is
   heavier than the authors' (59.1 open against 39.7), so the negative gap there
   shows the limit of greedy search with local moves, not superhuman authors.
