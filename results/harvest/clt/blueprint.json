@@ -1,0 +1,1782 @@
+{
+  "nodes": [
+    {
+      "id": "def:weak_cvg_measure",
+      "kind": "definition",
+      "position": 0,
+      "chapter": "mathlib_defs",
+      "source": "chapter/mathlib_defs.tex",
+      "line": 13,
+      "title": "Weak convergence of probability measures",
+      "labels": [
+        "def:weak_cvg_measure"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 0,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "In a topological space $S$ in which the opens are measurable, we say that a sequence of probability measures $\\mu_n$ converges weakly to a probability measure $\\mu$ and write $\\mu_n \\xrightarrow{w} \\mu$ if $\\mu_n[f] \\to \\mu[f]$ for every bounded continuous function $f : S \\to \\mathbb{R}$."
+    },
+    {
+      "id": "def:cvg_distribution",
+      "kind": "definition",
+      "position": 1,
+      "chapter": "mathlib_defs",
+      "source": "chapter/mathlib_defs.tex",
+      "line": 21,
+      "title": "Convergence in distribution",
+      "labels": [
+        "def:cvg_distribution"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:weak_cvg_measure"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 1,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "We say that $X_n$ converges in distribution to $X$ and write $X_n \\xrightarrow{d} X$ if $\\mathcal L(X_n) \\xrightarrow{w} \\mathcal L(X)$."
+    },
+    {
+      "id": "def:tight",
+      "kind": "definition",
+      "position": 2,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "def:tight"
+      ],
+      "lean_decls": [
+        "MeasureTheory.IsTightMeasureSet"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 2,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A set $S$ of measures on $\\Omega$ is tight if for all $\\varepsilon > 0$ there exists a compact set $K$ such that for all $\\mu \\in S$, $\\mu(K^c) \\le \\varepsilon$."
+    },
+    {
+      "id": "lem:isTightMeasureSet_iff_norm",
+      "kind": "lemma",
+      "position": 3,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 9,
+      "title": null,
+      "labels": [
+        "lem:isTightMeasureSet_iff_norm"
+      ],
+      "lean_decls": [
+        "MeasureTheory.isTightMeasureSet_iff_tendsto_measure_norm_gt"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:tight"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 3,
+      "proof_event": 4,
+      "proof_chapter": "tight",
+      "proof_leanok": true,
+      "text": "Let $S$ be a set of measures on a finite-dimensional normed space $E$. Then $S$ is tight iff $\\lim_{r \\to +\\infty}\\sup_{\\mu \\in S} \\mu\\{\\Vert x \\Vert > r\\} = 0$."
+    },
+    {
+      "id": "lem:isTightMeasureSet_iff_sup_inner",
+      "kind": "lemma",
+      "position": 4,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 22,
+      "title": null,
+      "labels": [
+        "lem:isTightMeasureSet_iff_sup_inner"
+      ],
+      "lean_decls": [
+        "MeasureTheory.isTightMeasureSet_iff_inner_tendsto"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:tight"
+      ],
+      "proof_uses": [
+        "lem:isTightMeasureSet_iff_norm"
+      ],
+      "has_proof": true,
+      "statement_event": 5,
+      "proof_event": 6,
+      "proof_chapter": "tight",
+      "proof_leanok": true,
+      "text": "Let $S$ be a set of measures on a finite-dimensional inner product space $E$. Then $S$ is tight iff for all $y \\in E$, $\\lim_{r \\to +\\infty}\\sup_{\\mu \\in S} \\mu\\{\\vert\\langle y, x\\rangle\\vert > r\\} = 0$."
+    },
+    {
+      "id": "lem:isTightMeasureSet_iff_basis",
+      "kind": "lemma",
+      "position": 5,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 35,
+      "title": null,
+      "labels": [
+        "lem:isTightMeasureSet_iff_basis"
+      ],
+      "lean_decls": [
+        "isTightMeasureSet_iff_tendsto_limsup_inner"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:tight"
+      ],
+      "proof_uses": [
+        "lem:isTightMeasureSet_iff_sup_inner"
+      ],
+      "has_proof": true,
+      "statement_event": 7,
+      "proof_event": 8,
+      "proof_chapter": "tight",
+      "proof_leanok": true,
+      "text": "Let $(\\mu_n)_{n \\in \\mathbb{N}}$ be a sequence of measures on a finite-dimensional inner product space $E$. Then the set $\\{\\mu_n \\mid n \\in \\mathbb{N}\\}$ is tight iff for all $y \\in E$, $\\lim_{r \\to +\\infty}\\limsup_{n \\to \\infty} \\mu_n\\{\\vert\\langle y, x\\rangle\\vert > r\\} = 0$."
+    },
+    {
+      "id": "thm:prokhorov",
+      "kind": "theorem",
+      "position": 6,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 123,
+      "title": "Prokhorov's theorem",
+      "labels": [
+        "thm:prokhorov"
+      ],
+      "lean_decls": [
+        "isTightMeasureSet_iff_isCompact_closure"
+      ],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 9,
+      "proof_event": 10,
+      "proof_chapter": "tight",
+      "proof_leanok": false,
+      "text": "Let $E$ be a complete separable metric space and let $S \\subseteq \\mathcal P(E)$. Then the following are equivalent: \\begin{enumerate} \\item $S$ is tight. \\item the closure of $S$ is compact. \\end{enumerate}"
+    },
+    {
+      "id": "lem:relatively_compact_of_tight",
+      "kind": "lemma",
+      "position": 7,
+      "chapter": "tight",
+      "source": "chapter/tight.tex",
+      "line": 137,
+      "title": null,
+      "labels": [
+        "lem:relatively_compact_of_tight"
+      ],
+      "lean_decls": [
+        "isCompact_closure_of_isTightMeasureSet"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:prokhorov"
+      ],
+      "has_proof": true,
+      "statement_event": 11,
+      "proof_event": 12,
+      "proof_chapter": "tight",
+      "proof_leanok": false,
+      "text": "Let $E$ be a metric space and let $S \\subseteq \\mathcal P(E)$ be tight. Then the closure of $S$ is compact."
+    },
+    {
+      "id": "def:separates_points",
+      "kind": "definition",
+      "position": 8,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "def:separates_points"
+      ],
+      "lean_decls": [
+        "Set.SeparatesPoints"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 13,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A set $\\mathcal F$ of functions $E \\to F$ separates points in $E$ if for all $x, y \\in E$ with $x \\ne y$, there exists $f \\in \\mathcal F$ with $f(x) \\ne f(y)$."
+    },
+    {
+      "id": "lem:bounded_continuous_separating",
+      "kind": "lemma",
+      "position": 9,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 10,
+      "title": null,
+      "labels": [
+        "lem:bounded_continuous_separating"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ext_of_forall_integral_eq_of_IsFiniteMeasure"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 14,
+      "proof_event": 15,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "In a Borel space $E$, if two probability measures $\\mu, \\nu$ on $E$ are such that $\\mu[f] = \\nu[f]$ for all $f \\in C_b(E, \\mathbb{C})$, the set of bounded continuous functions from $E$ to $\\mathbb{C}$, then $\\mu = \\nu$."
+    },
+    {
+      "id": "lem:exp_character",
+      "kind": "lemma",
+      "position": 10,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 21,
+      "title": null,
+      "labels": [
+        "lem:exp_character"
+      ],
+      "lean_decls": [
+        "BoundedContinuousFunction.charMonoidHom"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 16,
+      "proof_event": 17,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "$x \\mapsto (t \\mapsto \\exp(i \\langle t, x \\rangle))$ is a monoid homomorphism from $(E,+)$ to $C_b(E, \\mathbb{C})$."
+    },
+    {
+      "id": "lem:starSubalgebra_expPoly",
+      "kind": "lemma",
+      "position": 11,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 31,
+      "title": null,
+      "labels": [
+        "lem:starSubalgebra_expPoly"
+      ],
+      "lean_decls": [
+        "BoundedContinuousFunction.charPoly"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:exp_character"
+      ],
+      "has_proof": true,
+      "statement_event": 18,
+      "proof_event": 19,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "The functions of the form $x \\mapsto \\sum_{k=1}^n a_k e^{i\\langle t_k, x\\rangle}$ for $n \\in \\mathbb{N}$, $a_1, \\ldots, a_n \\in \\mathbb{R}$ and $t_1, \\ldots, t_n \\in E$ are a star-subalgebra of $C_b(E, \\mathbb{C})$."
+    },
+    {
+      "id": "lem:separates_points_expPoly",
+      "kind": "lemma",
+      "position": 12,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 44,
+      "title": null,
+      "labels": [
+        "lem:separates_points_expPoly"
+      ],
+      "lean_decls": [
+        "BoundedContinuousFunction.separatesPoints_charPoly"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:separates_points",
+        "lem:starSubalgebra_expPoly"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 20,
+      "proof_event": 21,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "The star-subalgebra $\\mathcal M$ separates points."
+    },
+    {
+      "id": "lem:integral_restrict_compact",
+      "kind": "lemma",
+      "position": 13,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 55,
+      "title": null,
+      "labels": [
+        "lem:integral_restrict_compact"
+      ],
+      "lean_decls": [
+        "abs_integral_sub_setIntegral_mulExpNegMulSq_comp_lt"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 22,
+      "proof_event": 23,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "Let $\\mu$ be a finite measure on a Borel space $E$ and let $K$ be a measurable compact set such that $\\mu(K^c) \\le \\varepsilon$. Let $f \\in C(E, \\mathbb{R})$. Then \\begin{align*} \\left\\vert \\mu[fe^{-\\varepsilon \\Vert f \\Vert^2}] - \\mu[f e^{-\\varepsilon \\Vert f \\Vert^2} \\mathbb{I}_K] \\right\\vert \\le \\sqrt{\\varepsilon} \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:introduce_exponential",
+      "kind": "lemma",
+      "position": 14,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 69,
+      "title": null,
+      "labels": [
+        "lem:introduce_exponential"
+      ],
+      "lean_decls": [
+        "tendsto_integral_mulExpNegMulSq_comp"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 24,
+      "proof_event": 25,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "For any $f \\in C_b(E, \\mathbb{R})$ and a probability measure $\\mu$, \\begin{align*} \\mu[f] = \\lim_{\\varepsilon \\to 0} \\mu\\left[f e^{-\\varepsilon \\Vert f \\Vert^2} \\right] \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:dist_integral_mulExpNegMulSq_comp_le",
+      "kind": "lemma",
+      "position": 15,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 84,
+      "title": null,
+      "labels": [
+        "lem:dist_integral_mulExpNegMulSq_comp_le"
+      ],
+      "lean_decls": [
+        "dist_integral_mulExpNegMulSq_comp_le"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:separates_points"
+      ],
+      "proof_uses": [
+        "lem:integral_restrict_compact"
+      ],
+      "has_proof": true,
+      "statement_event": 26,
+      "proof_event": 27,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "Let $\\mu, \\nu$ be two finite measures in a standard Borel space $E$. Let $\\mathcal{A}$ be a subalgebra of $C_b(E, \\mathbb{R})$ that separates points. If for all $g \\in \\mathcal A$, $\\mu[g] = \\nu[g]$, then for all $f \\in C_b(E, \\mathbb{R})$ and all $\\varepsilon > 0$, \\begin{align*} \\left\\vert \\mu[fe^{-\\varepsilon \\Vert f \\Vert^2}] - \\nu[f e^{-\\varepsilon \\Vert f \\Vert^2}] \\right\\vert \\le 6\\sqrt{\\varepsilon} \\: . \\end{align*}"
+    },
+    {
+      "id": "thm:separating_starSubalgebra",
+      "kind": "theorem",
+      "position": 16,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 101,
+      "title": "Subalgebras separating points",
+      "labels": [
+        "thm:separating_starSubalgebra"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ext_of_forall_mem_subalgebra_integral_eq_of_polish"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:bounded_continuous_separating",
+        "lem:introduce_exponential",
+        "lem:dist_integral_mulExpNegMulSq_comp_le"
+      ],
+      "has_proof": true,
+      "statement_event": 28,
+      "proof_event": 29,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "Let $E$ be a complete separable pseudo-metric space. Let $\\mathcal A \\subseteq C_b(E, \\mathbb{C})$ be a star-subalgebra that separates points. Then if two probability measures $\\mu, \\nu$ of $E$ are such that $\\mu[f] = \\nu[f]$ for all $f \\in \\mathcal A$, then $\\mu = \\nu$."
+    },
+    {
+      "id": "lem:cvg_of_separating",
+      "kind": "lemma",
+      "position": 17,
+      "chapter": "separating",
+      "source": "chapter/separating.tex",
+      "line": 117,
+      "title": null,
+      "labels": [
+        "lem:cvg_of_separating"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ProbabilityMeasure.tendsto_of_tight_of_separatesPoints"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:weak_cvg_measure"
+      ],
+      "proof_uses": [
+        "lem:relatively_compact_of_tight",
+        "thm:separating_starSubalgebra"
+      ],
+      "has_proof": true,
+      "statement_event": 30,
+      "proof_event": 31,
+      "proof_chapter": "separating",
+      "proof_leanok": true,
+      "text": "Let $\\mathcal A$ be a subalgebra of $C_b(E, \\mathbb{C})$ that separates points. Let $\\mu, \\mu_1, \\mu_2, \\ldots$ be probability measures, with $(\\mu_n)$ tight. If for all $f \\in \\mathcal A$, $\\mu_n[f] \\to \\mu[f]$, then $\\mu_n \\xrightarrow{w} \\mu$."
+    },
+    {
+      "id": "def:charFun",
+      "kind": "definition",
+      "position": 18,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 5,
+      "title": "Characteristic function",
+      "labels": [
+        "def:charFun"
+      ],
+      "lean_decls": [
+        "MeasureTheory.charFun"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 32,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "Let $\\mu$ be a measure on a real inner product space $E$. The characteristic function of $\\mu$, denoted by $\\hat{\\mu}$, is the function $E \\to \\mathbb{C}$ defined by \\begin{align*} \\hat{\\mu}(t) = \\int_x e^{i \\langle t, x \\rangle} d\\mu(x) \\: . \\end{align*} The characteristic function of a random variable $X$ is defined as the characteristic function of $\\mathcal L(X)$."
+    },
+    {
+      "id": "lem:charFun_bounded",
+      "kind": "lemma",
+      "position": 19,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 15,
+      "title": null,
+      "labels": [
+        "lem:charFun_bounded"
+      ],
+      "lean_decls": [
+        "MeasureTheory.norm_charFun_le_one"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 33,
+      "proof_event": 34,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "For all $t$, $\\Vert\\hat{\\mu}(t)\\Vert \\le 1$."
+    },
+    {
+      "id": "lem:charFun_contDiff",
+      "kind": "lemma",
+      "position": 20,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 25,
+      "title": null,
+      "labels": [
+        "lem:charFun_contDiff"
+      ],
+      "lean_decls": [
+        "contDiff_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 35,
+      "proof_event": 36,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "If $\\mu[|X|^n] < \\infty$ then the characteristic function of $\\mu$ is continuously differentiable of order $n$."
+    },
+    {
+      "id": "lem:charFun_continuous",
+      "kind": "lemma",
+      "position": 21,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 36,
+      "title": null,
+      "labels": [
+        "lem:charFun_continuous"
+      ],
+      "lean_decls": [
+        "continuous_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:charFun_contDiff"
+      ],
+      "has_proof": true,
+      "statement_event": 37,
+      "proof_event": 38,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "The characteristic function is a continuous function."
+    },
+    {
+      "id": "lem:charFun_neg",
+      "kind": "lemma",
+      "position": 22,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 48,
+      "title": null,
+      "labels": [
+        "lem:charFun_neg"
+      ],
+      "lean_decls": [
+        "MeasureTheory.charFun_neg"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 39,
+      "proof_event": 40,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "$\\hat{\\mu}(-t) = \\overline{\\hat{\\mu}(t)}$."
+    },
+    {
+      "id": "lem:charFun_smul",
+      "kind": "lemma",
+      "position": 23,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 58,
+      "title": null,
+      "labels": [
+        "lem:charFun_smul"
+      ],
+      "lean_decls": [
+        "MeasureTheory.charFun_map_smul"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 41,
+      "proof_event": 42,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "For $a \\in \\mathbb{R}$ and $X$ a random variable with law $\\mu$, the characteristic function of $a X$ is $t \\mapsto \\hat{\\mu}(at)$."
+    },
+    {
+      "id": "lem:charFun_add_of_indep",
+      "kind": "lemma",
+      "position": 24,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 69,
+      "title": null,
+      "labels": [
+        "lem:charFun_add_of_indep"
+      ],
+      "lean_decls": [
+        "MeasureTheory.charFun_conv"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 43,
+      "proof_event": 44,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "If two random variables $X, Y : \\Omega \\to S$ with laws $\\mu$ and $\\nu$ are independent, then $X+Y$ has characteristic function $\\hat{\\mu} \\times \\hat{\\nu}$."
+    },
+    {
+      "id": "lem:integral_exp_I",
+      "kind": "lemma",
+      "position": 25,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 80,
+      "title": null,
+      "labels": [
+        "lem:integral_exp_I"
+      ],
+      "lean_decls": [
+        "integral_exp_mul_I_eq_sin"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 45,
+      "proof_event": 46,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "\\begin{align*} \\int_{-r}^r e^{i t} \\, d t = 2 \\sin r \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:integral_charFun",
+      "kind": "lemma",
+      "position": 26,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 92,
+      "title": null,
+      "labels": [
+        "lem:integral_charFun"
+      ],
+      "lean_decls": [
+        "integral_exp_mul_I_eq_sinc"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:integral_exp_I"
+      ],
+      "has_proof": true,
+      "statement_event": 47,
+      "proof_event": 48,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "\\begin{align*} \\int_{-r}^r \\hat{\\mu}(t) dt = 2 r \\int \\frac{\\sin(r x)}{r x} \\, d\\mu(x) \\end{align*}"
+    },
+    {
+      "id": "lem:charFun_bound_large",
+      "kind": "lemma",
+      "position": 27,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 135,
+      "title": null,
+      "labels": [
+        "lem:charFun_bound_large"
+      ],
+      "lean_decls": [
+        "MeasureTheory.measureReal_abs_gt_le_integral_charFun"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:integral_charFun",
+        "lem:charFun_bounded"
+      ],
+      "has_proof": true,
+      "statement_event": 49,
+      "proof_event": 50,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "For $\\mu$ a probability measure on $\\mathbb{R}$ and $r > 0$, \\begin{align*} \\mu \\left\\{x \\mid |x| > r\\right\\} &\\le \\frac{r}{2} \\int_{-2/r}^{2/r} (1 - \\hat{\\mu}(t))dt \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:charFun_bound_inner",
+      "kind": "lemma",
+      "position": 28,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 168,
+      "title": null,
+      "labels": [
+        "lem:charFun_bound_inner"
+      ],
+      "lean_decls": [
+        "MeasureTheory.measureReal_abs_inner_gt_le_integral_charFun"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:charFun_bound_large"
+      ],
+      "has_proof": true,
+      "statement_event": 51,
+      "proof_event": 52,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "For $\\mu$ a probability measure on an inner product space $E$ and $r > 0$, $a \\in E$, \\begin{align*} \\mu \\left\\{x \\mid \\vert\\langle a, x\\rangle\\vert > r\\right\\} &\\le \\frac{r}{2} \\int_{-2/r}^{2/r} (1 - \\hat{\\mu}(t \\cdot a))dt \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:tendsto_M_of_tendsto_charFun",
+      "kind": "lemma",
+      "position": 29,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 214,
+      "title": null,
+      "labels": [
+        "lem:tendsto_M_of_tendsto_charFun"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ProbabilityMeasure.tendsto_charPoly_of_tendsto_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:starSubalgebra_expPoly"
+      ],
+      "has_proof": true,
+      "statement_event": 53,
+      "proof_event": 54,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "Let $\\mu, \\mu_1, \\mu_2, \\ldots$ be probability measures on $\\mathbb{R}^d$ with characteristic functions $\\hat{\\mu}, \\hat{\\mu}_1, \\hat{\\mu}_2, \\ldots$ such that $\\hat{\\mu}_n \\to \\hat{\\mu}$. Then for all exponential polynomial $f \\in \\mathcal M$, $\\mu_n[f] \\to \\nu[f]$."
+    },
+    {
+      "id": "lem:ext_charFun",
+      "kind": "lemma",
+      "position": 30,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 226,
+      "title": null,
+      "labels": [
+        "lem:ext_charFun"
+      ],
+      "lean_decls": [
+        "MeasureTheory.Measure.ext_of_charFun"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:separating_starSubalgebra",
+        "lem:separates_points_expPoly"
+      ],
+      "has_proof": true,
+      "statement_event": 55,
+      "proof_event": 56,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "Two finite measures on a complete separable metric space are equal iff they have the same characteristic function."
+    },
+    {
+      "id": "lem:tight_of_tendsto_charFun",
+      "kind": "lemma",
+      "position": 31,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 261,
+      "title": null,
+      "labels": [
+        "lem:tight_of_tendsto_charFun"
+      ],
+      "lean_decls": [
+        "isTightMeasureSet_of_tendsto_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:tight"
+      ],
+      "proof_uses": [
+        "lem:charFun_bound_inner",
+        "lem:isTightMeasureSet_iff_basis",
+        "lem:charFun_bounded"
+      ],
+      "has_proof": true,
+      "statement_event": 57,
+      "proof_event": 58,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "Let $(\\mu_n)_{n \\in \\mathbb{N}}$ be measures on $\\mathbb{R}^d$ with characteristic functions $(\\hat{\\mu}_n)$. If $\\hat{\\mu}_n$ converges pointwise to a function $f$ which is continuous at 0, then $(\\mu_n)$ is tight."
+    },
+    {
+      "id": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "theorem",
+      "position": 32,
+      "chapter": "char_fun",
+      "source": "chapter/char_fun.tex",
+      "line": 286,
+      "title": "Convergence of characteristic functions and weak convergence of measures",
+      "labels": [
+        "thm:charFun_tendsto_iff_measure_tendsto"
+      ],
+      "lean_decls": [
+        "MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:weak_cvg_measure"
+      ],
+      "proof_uses": [
+        "thm:separating_starSubalgebra",
+        "lem:separates_points_expPoly",
+        "lem:tight_of_tendsto_charFun",
+        "lem:cvg_of_separating",
+        "lem:tendsto_M_of_tendsto_charFun",
+        "lem:charFun_continuous"
+      ],
+      "has_proof": true,
+      "statement_event": 59,
+      "proof_event": 60,
+      "proof_chapter": "char_fun",
+      "proof_leanok": true,
+      "text": "Let $\\mu, \\mu_1, \\mu_2, \\ldots$ be probability measures on $\\mathbb{R}^d$ with characteristic functions $\\hat{\\mu}, \\hat{\\mu}_1, \\hat{\\mu}_2, \\ldots$. Then $\\mu_n \\xrightarrow{w} \\mu$ iff for all $t$, $\\hat{\\mu}_n(t) \\to \\hat{\\mu}(t)$."
+    },
+    {
+      "id": "def:gaussianReal",
+      "kind": "definition",
+      "position": 33,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 3,
+      "title": null,
+      "labels": [
+        "def:gaussianReal"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.gaussianReal"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 61,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A measure on $\\mathbb{R}$ is Gaussian if it is equal to $\\mathcal{N}(m, \\sigma^2)$ for some $m \\in \\mathbb{R}$ and $\\sigma^2 \\ge 0$, in which $\\mathcal{N}(m, \\sigma^2)$ is the measure absolutely continuous with respect to the Lebesgue measure with density $x \\mapsto \\frac{1}{\\sqrt{2 \\pi \\sigma^2}}e^{- \\frac{1}{2\\sigma^2}(x - m)^2}$ if $\\sigma^2>0$ and the Dirac probability measure at $m$ if $\\sigma^2 = 0$."
+    },
+    {
+      "id": "lem:isProbabilityMeasure_gaussianReal",
+      "kind": "lemma",
+      "position": 34,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 10,
+      "title": null,
+      "labels": [
+        "lem:isProbabilityMeasure_gaussianReal"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:gaussianReal"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 62,
+      "proof_event": 63,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "A real Gaussian measure is a probability measure."
+    },
+    {
+      "id": "lem:gaussian_charFun",
+      "kind": "lemma",
+      "position": 35,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 20,
+      "title": null,
+      "labels": [
+        "lem:gaussian_charFun"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.charFun_gaussianReal"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:charFun",
+        "def:gaussianReal"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 64,
+      "proof_event": 65,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "The Gaussian distribution $\\mathcal N(m, \\sigma^2)$ has characteristic function $\\phi(t) = e^{itm - \\sigma^2 t^2 /2}$."
+    },
+    {
+      "id": "lem:add_gaussianReal",
+      "kind": "lemma",
+      "position": 36,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 31,
+      "title": null,
+      "labels": [
+        "lem:add_gaussianReal"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.gaussianReal_conv_gaussianReal"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:gaussianReal"
+      ],
+      "proof_uses": [
+        "lem:gaussian_charFun",
+        "lem:charFun_add_of_indep"
+      ],
+      "has_proof": true,
+      "statement_event": 66,
+      "proof_event": 67,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "The sum of two independent real Gaussian random variables is Gaussian."
+    },
+    {
+      "id": "def:isGaussian",
+      "kind": "definition",
+      "position": 37,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 44,
+      "title": null,
+      "labels": [
+        "def:isGaussian"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.IsGaussian"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:gaussianReal"
+      ],
+      "proof_uses": [],
+      "has_proof": false,
+      "statement_event": 68,
+      "proof_event": null,
+      "proof_chapter": null,
+      "proof_leanok": false,
+      "text": "A Borel measure $\\mu$ on a separable Banach space $E$ is said to be Gaussian if for all continuous linear maps $\\ell : E \\to \\mathbb{R}$, the pushforward $\\ell_*\\mu$ is a real Gaussian measure."
+    },
+    {
+      "id": "lem:isProbabilityMeasure_isGaussian",
+      "kind": "lemma",
+      "position": 38,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 51,
+      "title": null,
+      "labels": [
+        "lem:isProbabilityMeasure_isGaussian"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:isGaussian"
+      ],
+      "proof_uses": [
+        "lem:isProbabilityMeasure_gaussianReal"
+      ],
+      "has_proof": true,
+      "statement_event": 69,
+      "proof_event": 70,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "A Gaussian measure is a probability measure."
+    },
+    {
+      "id": "lem:isGaussian_gaussianReal",
+      "kind": "lemma",
+      "position": 39,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 62,
+      "title": null,
+      "labels": [
+        "lem:isGaussian_gaussianReal"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.isGaussian_gaussianReal"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:gaussianReal",
+        "def:isGaussian"
+      ],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 71,
+      "proof_event": 72,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "The real Gaussian measures are Gaussian measures in the sense of Definition~\\ref{def:isGaussian}."
+    },
+    {
+      "id": "lem:isGaussian_add",
+      "kind": "lemma",
+      "position": 40,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 74,
+      "title": null,
+      "labels": [
+        "lem:isGaussian_add"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.isGaussian_conv"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [
+        "def:isGaussian"
+      ],
+      "proof_uses": [
+        "lem:add_gaussianReal",
+        "lem:isProbabilityMeasure_isGaussian"
+      ],
+      "has_proof": true,
+      "statement_event": 73,
+      "proof_event": 74,
+      "proof_chapter": "gaussian",
+      "proof_leanok": true,
+      "text": "The sum of two independent Gaussian random variables is Gaussian."
+    },
+    {
+      "id": "lem:stdGaussian_finiteDimensional",
+      "kind": "lemma",
+      "position": 41,
+      "chapter": "gaussian",
+      "source": "chapter/gaussian.tex",
+      "line": 87,
+      "title": null,
+      "labels": [
+        "lem:stdGaussian_finiteDimensional"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:isGaussian"
+      ],
+      "proof_uses": [
+        "lem:isGaussian_add"
+      ],
+      "has_proof": true,
+      "statement_event": 75,
+      "proof_event": 76,
+      "proof_chapter": "gaussian",
+      "proof_leanok": false,
+      "text": "Let $E$ be a finite dimensional real inner product space and let $b_1, \\ldots, b_d$ be an orthonormal basis of $E$. Let $X_1, \\ldots, X_d$ be independent standard Gaussian random variables on $\\mathbb{R}$. Then the law of $X_1 b_1 + \\ldots + X_d b_d$ is a Gaussian measure on $E$."
+    },
+    {
+      "id": "lem:deriv_charFun",
+      "kind": "lemma",
+      "position": 42,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 5,
+      "title": null,
+      "labels": [
+        "lem:deriv_charFun"
+      ],
+      "lean_decls": [
+        "iteratedDeriv_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:charFun"
+      ],
+      "proof_uses": [
+        "lem:charFun_contDiff"
+      ],
+      "has_proof": true,
+      "statement_event": 77,
+      "proof_event": 78,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "Let $X$ be a real random variable with characteristic function $\\phi$ with $\\mathbb{E}[\\vert X \\vert^n] < \\infty$ and let $k \\le n$. Then the $k$\\textsuperscript{th} derivative of $\\phi$ is $\\phi^{(k)}(t) = \\mathbb{E}[i X]^k e^{i t X}$ \\: ."
+    },
+    {
+      "id": "lem:taylor_peano",
+      "kind": "lemma",
+      "position": 43,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 18,
+      "title": "Peano form of Taylor's theorem",
+      "labels": [
+        "lem:taylor_peano"
+      ],
+      "lean_decls": [
+        "taylor_isLittleO"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 79,
+      "proof_event": 80,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "For a $n$-times continuously differentiable function $f : \\mathbb{R} \\to E$, for any $x_0\\in\\mathbb{R}$, \\begin{align*} f(x) - \\sum_{i=0}^n\\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i = o((x - x_0)^k) \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:iIndepFun_iff_pi_map_eq_map",
+      "kind": "lemma",
+      "position": 44,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 31,
+      "title": null,
+      "labels": [
+        "lem:iIndepFun_iff_pi_map_eq_map"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.iIndepFun_iff_map_fun_eq_pi_map"
+      ],
+      "leanok": false,
+      "mathlibok": true,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 81,
+      "proof_event": 82,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "A finite collection of random variables are independent iff their joint law is the product of their respective laws."
+    },
+    {
+      "id": "lem:charFun_taylor",
+      "kind": "lemma",
+      "position": 45,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 40,
+      "title": null,
+      "labels": [
+        "lem:charFun_taylor"
+      ],
+      "lean_decls": [
+        "taylor_charFun"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "lem:deriv_charFun",
+        "lem:taylor_peano"
+      ],
+      "has_proof": true,
+      "statement_event": 83,
+      "proof_event": 84,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "Let $X$ be a real random variable with characteristic function $\\phi$, with $\\mathbb{E}[\\vert X \\vert^n] < \\infty$. Then as $t \\to 0$, \\begin{align*} \\phi(t) = \\sum_{k=0}^n \\frac{(it)^k \\mathbb{E}[X^k]}{k!} + o(t^n) \\: . \\end{align*}"
+    },
+    {
+      "id": "lem:tendsto_pow_exp_of_isLittleO",
+      "kind": "lemma",
+      "position": 46,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 54,
+      "title": null,
+      "labels": [
+        "lem:tendsto_pow_exp_of_isLittleO"
+      ],
+      "lean_decls": [
+        "tendsto_pow_exp_of_isLittleO"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [],
+      "has_proof": true,
+      "statement_event": 85,
+      "proof_event": 86,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "For $t\\in\\mathbb{C}$, $\\lim_{n\\to\\infty}(1+t/n+o(1/n))^n=\\exp(t)$ (where the little-$o$ term may be complex)."
+    },
+    {
+      "id": "thm:clt",
+      "kind": "theorem",
+      "position": 47,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 63,
+      "title": "Central limit theorem",
+      "labels": [
+        "thm:clt"
+      ],
+      "lean_decls": [
+        "ProbabilityTheory.central_limit"
+      ],
+      "leanok": true,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:cvg_distribution"
+      ],
+      "proof_uses": [
+        "lem:charFun_smul",
+        "lem:charFun_add_of_indep",
+        "thm:charFun_tendsto_iff_measure_tendsto",
+        "lem:charFun_taylor",
+        "lem:gaussian_charFun",
+        "lem:tendsto_pow_exp_of_isLittleO",
+        "lem:iIndepFun_iff_pi_map_eq_map"
+      ],
+      "has_proof": true,
+      "statement_event": 87,
+      "proof_event": 88,
+      "proof_chapter": "clt",
+      "proof_leanok": true,
+      "text": "Let $X_1, X_2, \\ldots$ be i.i.d. real random variables with mean 0 and variance 1, and let $Z$ be a random variable with law $\\mathcal N(0,1)$. Then \\begin{align*} \\frac{1}{\\sqrt{n}}\\sum_{k=1}^n X_k \\xrightarrow{d} Z \\: . \\end{align*}"
+    },
+    {
+      "id": "thm:cramer_wold",
+      "kind": "theorem",
+      "position": 48,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 88,
+      "title": "Cram\u00e9r-Wold",
+      "labels": [
+        "thm:cramer_wold"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [
+        "def:cvg_distribution"
+      ],
+      "proof_uses": [
+        "thm:charFun_tendsto_iff_measure_tendsto"
+      ],
+      "has_proof": true,
+      "statement_event": 89,
+      "proof_event": 90,
+      "proof_chapter": "clt",
+      "proof_leanok": false,
+      "text": "Let $X, X_1, X_2, \\ldots$ be random variables in $\\mathbb{R}^d$. Then $X_n \\xrightarrow{d} X$ iff for every $a \\in \\mathbb{R}^d$, $\\langle a, X_n \\rangle \\xrightarrow{d} \\langle a, X \\rangle$."
+    },
+    {
+      "id": "thm:multivariate_clt",
+      "kind": "theorem",
+      "position": 49,
+      "chapter": "clt",
+      "source": "chapter/clt.tex",
+      "line": 99,
+      "title": "Central limit theorem in $\\mathbb{R}^d$",
+      "labels": [
+        "thm:multivariate_clt"
+      ],
+      "lean_decls": [],
+      "leanok": false,
+      "mathlibok": false,
+      "statement_uses": [],
+      "proof_uses": [
+        "thm:cramer_wold",
+        "thm:clt",
+        "lem:stdGaussian_finiteDimensional"
+      ],
+      "has_proof": true,
+      "statement_event": 91,
+      "proof_event": 92,
+      "proof_chapter": "clt",
+      "proof_leanok": false,
+      "text": "Let $X_1, X_2, \\ldots$ be i.i.d. random variables in $\\mathbb{R}^d$ with mean 0 and identity covariance matrix, and let $Z$ be a random variable with law $\\mathcal N(0,I_d)$. Then \\begin{align*} \\frac{1}{\\sqrt{n}}\\sum_{k=1}^n X_k \\xrightarrow{d} Z \\: . \\end{align*}"
+    }
+  ],
+  "edges": [
+    {
+      "source": "def:weak_cvg_measure",
+      "target": "def:cvg_distribution",
+      "kind": "statement"
+    },
+    {
+      "source": "def:tight",
+      "target": "lem:isTightMeasureSet_iff_norm",
+      "kind": "statement"
+    },
+    {
+      "source": "def:tight",
+      "target": "lem:isTightMeasureSet_iff_sup_inner",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:isTightMeasureSet_iff_norm",
+      "target": "lem:isTightMeasureSet_iff_sup_inner",
+      "kind": "proof"
+    },
+    {
+      "source": "def:tight",
+      "target": "lem:isTightMeasureSet_iff_basis",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:isTightMeasureSet_iff_sup_inner",
+      "target": "lem:isTightMeasureSet_iff_basis",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:prokhorov",
+      "target": "lem:relatively_compact_of_tight",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:exp_character",
+      "target": "lem:starSubalgebra_expPoly",
+      "kind": "proof"
+    },
+    {
+      "source": "def:separates_points",
+      "target": "lem:separates_points_expPoly",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:starSubalgebra_expPoly",
+      "target": "lem:separates_points_expPoly",
+      "kind": "statement"
+    },
+    {
+      "source": "def:separates_points",
+      "target": "lem:dist_integral_mulExpNegMulSq_comp_le",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:integral_restrict_compact",
+      "target": "lem:dist_integral_mulExpNegMulSq_comp_le",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:bounded_continuous_separating",
+      "target": "thm:separating_starSubalgebra",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:introduce_exponential",
+      "target": "thm:separating_starSubalgebra",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:dist_integral_mulExpNegMulSq_comp_le",
+      "target": "thm:separating_starSubalgebra",
+      "kind": "proof"
+    },
+    {
+      "source": "def:weak_cvg_measure",
+      "target": "lem:cvg_of_separating",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:relatively_compact_of_tight",
+      "target": "lem:cvg_of_separating",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:separating_starSubalgebra",
+      "target": "lem:cvg_of_separating",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_bounded",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_contDiff",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_continuous",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:charFun_contDiff",
+      "target": "lem:charFun_continuous",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_neg",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_smul",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_add_of_indep",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:integral_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:integral_exp_I",
+      "target": "lem:integral_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_bound_large",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:integral_charFun",
+      "target": "lem:charFun_bound_large",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_bounded",
+      "target": "lem:charFun_bound_large",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:charFun_bound_inner",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:charFun_bound_large",
+      "target": "lem:charFun_bound_inner",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:tendsto_M_of_tendsto_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:starSubalgebra_expPoly",
+      "target": "lem:tendsto_M_of_tendsto_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:separating_starSubalgebra",
+      "target": "lem:ext_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:separates_points_expPoly",
+      "target": "lem:ext_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "def:tight",
+      "target": "lem:tight_of_tendsto_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:charFun_bound_inner",
+      "target": "lem:tight_of_tendsto_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:isTightMeasureSet_iff_basis",
+      "target": "lem:tight_of_tendsto_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_bounded",
+      "target": "lem:tight_of_tendsto_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "def:weak_cvg_measure",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:separating_starSubalgebra",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:separates_points_expPoly",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:tight_of_tendsto_charFun",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:cvg_of_separating",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:tendsto_M_of_tendsto_charFun",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_continuous",
+      "target": "thm:charFun_tendsto_iff_measure_tendsto",
+      "kind": "proof"
+    },
+    {
+      "source": "def:gaussianReal",
+      "target": "lem:isProbabilityMeasure_gaussianReal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:gaussian_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "def:gaussianReal",
+      "target": "lem:gaussian_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "def:gaussianReal",
+      "target": "lem:add_gaussianReal",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:gaussian_charFun",
+      "target": "lem:add_gaussianReal",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_add_of_indep",
+      "target": "lem:add_gaussianReal",
+      "kind": "proof"
+    },
+    {
+      "source": "def:gaussianReal",
+      "target": "def:isGaussian",
+      "kind": "statement"
+    },
+    {
+      "source": "def:isGaussian",
+      "target": "lem:isProbabilityMeasure_isGaussian",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:isProbabilityMeasure_gaussianReal",
+      "target": "lem:isProbabilityMeasure_isGaussian",
+      "kind": "proof"
+    },
+    {
+      "source": "def:gaussianReal",
+      "target": "lem:isGaussian_gaussianReal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:isGaussian",
+      "target": "lem:isGaussian_gaussianReal",
+      "kind": "statement"
+    },
+    {
+      "source": "def:isGaussian",
+      "target": "lem:isGaussian_add",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:add_gaussianReal",
+      "target": "lem:isGaussian_add",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:isProbabilityMeasure_isGaussian",
+      "target": "lem:isGaussian_add",
+      "kind": "proof"
+    },
+    {
+      "source": "def:isGaussian",
+      "target": "lem:stdGaussian_finiteDimensional",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:isGaussian_add",
+      "target": "lem:stdGaussian_finiteDimensional",
+      "kind": "proof"
+    },
+    {
+      "source": "def:charFun",
+      "target": "lem:deriv_charFun",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:charFun_contDiff",
+      "target": "lem:deriv_charFun",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:deriv_charFun",
+      "target": "lem:charFun_taylor",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:taylor_peano",
+      "target": "lem:charFun_taylor",
+      "kind": "proof"
+    },
+    {
+      "source": "def:cvg_distribution",
+      "target": "thm:clt",
+      "kind": "statement"
+    },
+    {
+      "source": "lem:charFun_smul",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_add_of_indep",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:charFun_tendsto_iff_measure_tendsto",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:charFun_taylor",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:gaussian_charFun",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:tendsto_pow_exp_of_isLittleO",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:iIndepFun_iff_pi_map_eq_map",
+      "target": "thm:clt",
+      "kind": "proof"
+    },
+    {
+      "source": "def:cvg_distribution",
+      "target": "thm:cramer_wold",
+      "kind": "statement"
+    },
+    {
+      "source": "thm:charFun_tendsto_iff_measure_tendsto",
+      "target": "thm:cramer_wold",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:cramer_wold",
+      "target": "thm:multivariate_clt",
+      "kind": "proof"
+    },
+    {
+      "source": "thm:clt",
+      "target": "thm:multivariate_clt",
+      "kind": "proof"
+    },
+    {
+      "source": "lem:stdGaussian_finiteDimensional",
+      "target": "thm:multivariate_clt",
+      "kind": "proof"
+    }
+  ],
+  "unresolved": [],
+  "orphan_proofs": []
+}

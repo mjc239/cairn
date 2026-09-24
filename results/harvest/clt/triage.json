@@ -1,0 +1,28 @@
+{
+ "name": "clt",
+ "repo": "RemyDegenne/CLT",
+ "status": "ok",
+ "stage": "done",
+ "commit": "760df08d054dc406fb2d88d4c8d186034f9ba852",
+ "commit_date": "2026-05-06",
+ "toolchain": "leanprover/lean4:v4.29.0-rc3",
+ "mathlib": "bf8875c7dc71",
+ "blueprint_dir": "blueprint/src",
+ "entry": "chapter/main.tex",
+ "generated_blueprint": false,
+ "group_by": "file",
+ "nodes": 50,
+ "uses_edges": 80,
+ "chapters": 6,
+ "lean_nodes": 45,
+ "leanok_nodes": 12,
+ "libs": [
+  "Clt"
+ ],
+ "build_minutes": 0.4,
+ "decls": 26,
+ "theorems": 22,
+ "lean_resolved": 0.156,
+ "nodes_linked": 7,
+ "minutes": 3.0
+}
