@@ -224,7 +224,7 @@ hour. Each took 5–6 minutes, except Brownian motion (16). New Foundations
 | iwasawa | 15 | 0 | 1.1 / 0.2 / 1.0 | (too small) | — |
 
 - **Whole documents: every medium project except tiny Iwasawa is at the load
-  optimum or better** (gap between −0.23 and 0.04). With the small batch, 16 of
+  optimum or better** (gap between −0.23 and 0.04). With the small batch, 15 of
   the 18 blueprints large enough to score have a whole-document gap of 0.3 or
   less. Authors order whole documents almost as tightly as an optimiser.
 - **Our optimiser doesn't scale to Brownian motion.** Its 663-node order is
