@@ -1,8 +1,8 @@
 {
  "name": "cam_combi",
  "repo": "YaelDillies/LeanCamCombi",
- "status": "ok",
- "stage": "done",
+ "status": "skipped",
+ "stage": "blueprint (stub)",
  "commit": "b136322241924b3eb61fdf805860e52f2b6da27f",
  "commit_date": "2026-09-20",
  "toolchain": "leanprover/lean4:v4.35.0-rc2",
@@ -16,13 +16,6 @@
  "chapters": 0,
  "lean_nodes": 0,
  "leanok_nodes": 0,
- "libs": [
-  "CamCombi"
- ],
- "build_minutes": 0.3,
- "decls": 131,
- "theorems": 93,
- "lean_resolved": 0.0,
- "nodes_linked": 0,
- "minutes": 2.5
+ "error": "only 0 blueprint nodes; not built",
+ "minutes": 0.0
 }
