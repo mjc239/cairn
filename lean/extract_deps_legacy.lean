@@ -1,4 +1,8 @@
 /-
+Legacy variant of `extract_deps.lean` for toolchains before v4.22 (tested on v4.7, v4.10, v4.18 and v4.21).
+Same output, except: term sizes count structurally distinct subterms (`Expr.numObjs` is newer), and notation
+extensions load as those versions' `importModules` does by default. Keep the two files in step.
+
 Dump the declaration-level dependency graph of a Lean project as JSON Lines.
 
 Run from the target project's root, after `lake build`:
@@ -23,7 +27,6 @@ proof reaches directly or through up to two unlisted helper lemmas outside the p
 dependencies routed through Mathlib helpers are not lost.
 -/
 import Lean
-import Lean.Util.NumObjs
 
 open Lean
 
@@ -36,6 +39,35 @@ def kindOf : ConstantInfo → String
   | .ctorInfo _   => "constructor"
   | .recInfo _    => "recursor"
   | .quotInfo _   => "quot"
+
+/-- Number of structurally distinct subterms (a stand-in for `Expr.numObjs`, which older toolchains lack). -/
+partial def exprSize (e : Expr) : IO Nat := do
+  let rec go (e : Expr) : StateM (Lean.RBMap UInt64 Unit compare) Unit := do
+    if (← get).contains e.hash then return
+    modify (·.insert e.hash ())
+    match e with
+    | .app f a => go f; go a
+    | .lam _ t b _ => go t; go b
+    | .forallE _ t b _ => go t; go b
+    | .letE _ t v b _ => go t; go v; go b
+    | .mdata _ b => go b
+    | .proj _ _ b => go b
+    | _ => pure ()
+  return ((go e).run {}).2.size
+
+def valueOf? : ConstantInfo → Option Expr
+  | .thmInfo v => some v.value
+  | .defnInfo v => some v.value
+  | .opaqueInfo v => some v.value
+  | _ => none
+
+def userNameOf (n : Name) : Name := (privateToUserName? n).getD n
+
+/-- Stand-in for `Name.isInternalDetail` (missing before ~v4.8): a component that is numeric or compiler-made. -/
+def isInternalDetail : Name → Bool
+  | .str p s => s.startsWith "_" || ["match_", "proof_", "eq_", "omega_"].any s.startsWith || isInternalDetail p
+  | .num _ _ => true
+  | .anonymous => false
 
 def namesJson (ns : Array Name) : Json :=
   Json.arr (ns.map (fun n => Json.str n.toString))
@@ -119,7 +151,7 @@ def main (args : List String) : IO UInt32 := do
       if !l.isEmpty then listedNames := listedNames.push l.toName
   initSearchPath (← findSysroot)
   unsafe enableInitializersExecution
-  let env ← importModules (roots.toArray.map fun r => { module := r.toName }) {} (loadExts := true)
+  let env ← importModules (roots.toArray.map fun r => { module := r.toName }) {}
   let modNames := env.allImportedModuleNames
   let inProject (m : Name) : Bool := prefixes.any fun p => p.toName.isPrefixOf m
   let listed : NameSet := listedNames.foldl (·.insert ·) {}
@@ -138,28 +170,27 @@ def main (args : List String) : IO UInt32 := do
     let some mod := modNames[idx.toNat]? | continue
     unless inProject mod do todo := todo.push (name, info, mod, true)
   for (name, info, mod, isExternal) in todo do
-    let range := declRangeExt.find? (level := .exported) env name <|>
-      declRangeExt.find? (level := .server) env name
-    let value := info.value? (allowOpaque := true)
+    let range := declRangeExt.find? env name
+    let value := valueOf? info
     let valueDeps := match value with
       | some v => v.getUsedConstants
       | none => #[]
     let valueSize ← match value with
-      | some v => v.numObjs
+      | some v => exprSize v
       | none => pure 0
-    let typeSize ← info.type.numObjs
-    let userFacing := !(privateToUserName name).isInternalDetail
-    let doc ← if userFacing then findSimpleDocString? env name else pure none
+    let typeSize ← exprSize info.type
+    let userFacing := !isInternalDetail (userNameOf name)
+    let doc ← if userFacing then findDocString? env name else pure none
     let typePP ← if userFacing then ppType env info.type else pure ""
     let stmtShort ← if userFacing then ppShort env info.type else pure ""
     let reach := if listed.contains name then blueprintReach env modNames inProject listed name else #[]
     let line := Json.mkObj [
       ("name", Json.str name.toString),
-      ("user_name", Json.str (privateToUserName name).toString),
+      ("user_name", Json.str (userNameOf name).toString),
       ("private", Json.bool (isPrivateName name)),
       ("module", Json.str mod.toString),
       ("kind", Json.str (kindOf info)),
-      ("internal", Json.bool (privateToUserName name).isInternalDetail),
+      ("internal", Json.bool (isInternalDetail (userNameOf name))),
       ("matcher", Json.bool (Meta.isMatcherCore env name)),
       ("aux_recursor", Json.bool (isAuxRecursor env name || isNoConfusion env name)),
       ("line", match range with

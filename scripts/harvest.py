@@ -35,6 +35,7 @@ WORK = ROOT / "data" / "raw" / "harvest"
 ELAN = Path.home() / ".elan"
 ENV = {**os.environ, "PATH": f"{ELAN / 'bin'}:{os.environ['PATH']}"}
 BUILD_TIMEOUT = 45 * 60
+MIN_NODES = 10  # fewer blueprint nodes than this: a stub, not worth building
 EXTRACT_TIMEOUT = 60 * 60
 SKIP_LIB = re.compile(r"(?i)^(test|tests|docs?|blueprint|scripts?|archive|counterexamples|bench.*)$")
 
@@ -89,6 +90,12 @@ def lean_libs(repo: Path) -> list[str]:
 def uses_mathlib(repo: Path) -> bool:
     manifest = repo / "lake-manifest.json"
     return manifest.exists() and '"name": "mathlib"' in manifest.read_text()
+
+
+def lean_version(toolchain: str) -> tuple[int, int]:
+    """``leanprover/lean4:v4.21.0-rc3`` -> (4, 21); unknown -> (99, 0), i.e. treated as current."""
+    m = re.search(r"v(\d+)\.(\d+)", toolchain)
+    return (int(m.group(1)), int(m.group(2))) if m else (99, 0)
 
 
 def mathlib_rev(repo: Path) -> str:
@@ -200,6 +207,12 @@ def harvest(proj: dict, commit_results: bool) -> dict:
                        leanok_nodes=sum(1 for n in bp.nodes if n.leanok))
             run(["uv", "run", "cairn", "parse", str(src), "--entry", entry, "--group-by", group_by,
                  "-o", str(out / "blueprint.json")], cwd=ROOT, log_to=logf)
+            (work / "lean_names.txt").write_text("".join(f"{x}\n" for n in bp.nodes for x in n.lean_decls))
+            if len(bp.nodes) >= MIN_NODES:  # order analysis needs only the blueprint
+                prov = f"{repo_name} @ {row['commit'][:12]} ({row['commit_date']})"
+                run(["uv", "run", "cairn", "phase0", str(src), "--entry", entry, "--group-by", group_by,
+                     "--project", name, "--provenance", prov, "--samples", "300", "-o", str(out / "phase0")],
+                    cwd=ROOT, timeout=3600, log_to=logf)
             keep = work / row["blueprint_dir"]
             shutil.rmtree(keep, ignore_errors=True)
             shutil.copytree(src, keep)
@@ -209,6 +222,10 @@ def harvest(proj: dict, commit_results: bool) -> dict:
 
         if not generated:
             parse_and_keep()
+            if row["nodes"] < MIN_NODES:
+                row.update(status="skipped", stage="blueprint (stub)",
+                           error=f"only {row['nodes']} blueprint nodes; not built")
+                return row
 
         # Build
         libs = proj.get("libs") or lean_libs(clone)
@@ -237,17 +254,25 @@ def harvest(proj: dict, commit_results: bool) -> dict:
                 return fail(row, "blueprint (generate)", tail)
             parse_and_keep()
 
-        # Extract
+        # Extract: the current extractor, or the legacy one for toolchains before v4.22 (and as a fallback)
         row["stage"] = "extract"
         prefixes = sorted({lib.split(".")[0] for lib in libs})
         decls = work / "decls.jsonl"
-        log(f"{name}: extract {','.join(libs)} {' '.join(prefixes)}")
-        with decls.open("w") as f:
-            p = subprocess.run(["lake", "env", "lean", "--run", str(ROOT / "lean" / "extract_deps.lean"),
-                                ",".join(libs), *prefixes], cwd=clone, env=ENV, stdout=f, stderr=subprocess.PIPE,
-                               text=True, timeout=EXTRACT_TIMEOUT)
+        variants = ["extract_deps_legacy.lean"] if lean_version(row["toolchain"]) < (4, 22) else \
+            ["extract_deps.lean", "extract_deps_legacy.lean"]
+        for variant in variants:
+            log(f"{name}: extract ({variant}) {','.join(libs)} {' '.join(prefixes)}")
+            with decls.open("w") as f:
+                p = subprocess.run(["lake", "env", "lean", "--run", str(ROOT / "lean" / variant), ",".join(libs),
+                                    *prefixes], cwd=clone, env={**ENV, "CAIRN_EXTRA": str(work / "lean_names.txt")},
+                                   stdout=f, stderr=subprocess.PIPE, text=True, timeout=EXTRACT_TIMEOUT)
+            if p.returncode == 0:
+                row["extractor"] = variant
+                break
         if p.returncode:
-            return fail(row, "extract", p.stderr[-3000:])
+            # Lean reports compile errors on stdout, which went to the dump file
+            err = decls.read_text(errors="replace")[:3000] if decls.exists() else ""
+            return fail(row, "extract", (err + "\n" + p.stderr)[-3000:])
         with decls.open("rb") as f, gzip.GzipFile(out / "decls.jsonl.gz", "wb", mtime=0, compresslevel=9) as g:
             shutil.copyfileobj(f, g)
 
@@ -257,10 +282,14 @@ def harvest(proj: dict, commit_results: bool) -> dict:
         from cairn.formal import join_blueprint, load_decls
 
         bp = parse_blueprint(src, entry, row["group_by"])
-        ds = load_decls(decls)
+        ds = load_decls(decls, external=True)
         j = join_blueprint(bp, ds)
-        row.update(decls=len(ds), theorems=sum(1 for d in ds.values() if d.kind == "theorem"),
-                   lean_resolved=round(j.coverage, 3), nodes_linked=len(j.node_decls))
+        own = [d for d in ds.values() if not d.external]
+        row.update(decls=len(own), theorems=sum(1 for d in own if d.kind == "theorem"),
+                   external_decls=len(ds) - len(own), lean_resolved=round(j.coverage, 3),
+                   nodes_linked=len(j.node_decls),
+                   nodes_linked_external_only=sum(1 for v in j.node_decls.values()
+                                                  if all(ds[x].external for x in v)))
         prov = f"{repo_name} @ {row['commit'][:12]} ({row['commit_date']}), Lean {row['toolchain']}"
         code, tail = run(["uv", "run", "cairn", "phase1", str(work / row["blueprint_dir"]), str(decls),
                           "--entry", entry, "--group-by", row["group_by"], "--project", name, "--provenance", prov,
@@ -306,18 +335,27 @@ def report() -> None:
     lines = ["# Blueprint harvest", "",
              f"*{len(ok)} of {len(rows)} projects harvested. Generated by `scripts/harvest.py` from "
              "`scripts/harvest_projects.toml`.*", "",
+             "*Nodes linked*: blueprint nodes with a `\\lean` name found in the project or, for results upstreamed "
+             "to Mathlib, in Mathlib. The second bracket counts those linked only through Mathlib.", "",
              "| project | status | blueprint nodes | `\\uses` edges | chapters (by) | Lean decls | theorems | "
-             "`\\lean` resolved | nodes linked | build min | Lean |",
+             "`\\lean` resolved | nodes linked (via Mathlib) | build min | Lean |",
              "|---|---|---:|---:|---|---:|---:|---:|---:|---:|---|"]
     for r in rows:
-        status = "ok" if r["status"] == "ok" else f"failed: {r['stage']}"
+        status = r["status"] if r["status"] in ("ok", "skipped") else f"failed: {r['stage']}"
         status += " (generated blueprint)" if r.get("generated_blueprint") else ""
+        status += " (stub blueprint)" if r["status"] == "skipped" else ""
         res = f"{r['lean_resolved']:.0%}" if "lean_resolved" in r else ""
+        linked = ""
+        if "nodes_linked" in r:
+            share = r["nodes_linked"] / r["nodes"] if r.get("nodes") else 0
+            linked = f"{r['nodes_linked']} ({share:.0%})"
+            if r.get("nodes_linked_external_only"):
+                linked += f" ({r['nodes_linked_external_only']})"
         lines.append(f"| [{r['name']}](https://github.com/{r['repo']}) | {status} | {r.get('nodes', '')} | "
                      f"{r.get('uses_edges', '')} | {r.get('chapters', '')} ({r.get('group_by', '')}) | "
-                     f"{r.get('decls', '')} | {r.get('theorems', '')} | {res} | {r.get('nodes_linked', '')} | "
+                     f"{r.get('decls', '')} | {r.get('theorems', '')} | {res} | {linked} | "
                      f"{r.get('build_minutes', '')} | {r.get('toolchain', '').split(':')[-1]} |")
-    failed = [r for r in rows if r["status"] != "ok"]
+    failed = [r for r in rows if r["status"] == "failed"]
     if failed:
         lines += ["", "## Failures", ""]
         for r in failed:

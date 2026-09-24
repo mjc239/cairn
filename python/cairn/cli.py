@@ -339,7 +339,7 @@ def main(argv: list[str] | None = None) -> None:
         from .phase1 import analyse
         from .phase1 import write_report as write_phase1
 
-        decls = load_decls(args.decls)
+        decls = load_decls(args.decls, external=True)  # blueprint names upstreamed to Mathlib count as formalised
         stats, results, _ = analyse(bp, decls, samples=args.samples, seed=args.seed)
         write_phase1(stats, results, args.out, args.project, args.provenance)
         print(f"{stats['project_decls']} project decls, coverage {stats['coverage']:.0%}; wrote {args.out}/phase1.md")
