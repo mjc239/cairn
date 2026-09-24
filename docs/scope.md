@@ -1,6 +1,6 @@
 # Cairn: scope
 
-*Status: Phases 0 and 1 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
+*Status: Phases 0–2 done on PFR (see [`phase0-pfr.md`](phase0-pfr.md), [`phase1-pfr.md`](phase1-pfr.md), [`phase2-pfr.md`](phase2-pfr.md)). Source notes: [`idea-notes.md`](idea-notes.md).*
 
 ## 1. The question
 
@@ -103,10 +103,27 @@ chapters. Details: [`phase1-pfr.md`](phase1-pfr.md).
 
 Cost in the cloud container: about 2 minutes for `lake exe cache get` (7.5 GB)
 and 4 minutes for `lake build PFR` on 4 cores. The extraction itself takes
-about 15 seconds. Needs network access to `release.lean-lang.org`, GitHub and
+between 15 seconds and 6 minutes; computing term sizes made one run slow, and
+the variance hasn't been investigated. Needs network access to `release.lean-lang.org`, GitHub and
 `cache.mathlib.org`. `scripts/phase1_pfr.sh` does all of it.
 
-### Phase 2: baselines and benchmark
+### Phase 2: baselines and benchmark ✅ first pass done for PFR
+
+**Result:** (c) the combined cheap features give AUROC 0.87 and P@k 61% (base
+rate 18%). (a) Lean modules recover the chapters (NMI 0.83) far better than
+graph communities (0.58). (b) Within chapters: minimising load gets τ 0.73,
+an LLM 0.85, and Lean source order 0.87 (not independent of the blueprint).
+Details: [`phase2-pfr.md`](phase2-pfr.md). Run with `cairn phase2` /
+`scripts/phase2_pfr.sh`. The LLM baseline works through files
+(`cairn llm-prompts`, then `<chapter>.response.json`), so any model can fill
+it in. For PFR it was filled by the current Claude model via a subagent, since
+this environment has no API key.
+
+Not yet done from the original plan: the automation-hardness probe, IDF
+weighting against Mathlib-wide usage, declaration → node pairwise grouping,
+and an API-driven LLM runner.
+
+Original design:
 
 The input is the formal graph restricted to project-local declarations. The
 three tasks:

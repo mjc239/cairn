@@ -40,6 +40,23 @@ def main(argv: list[str] | None = None) -> None:
     p1.add_argument("--samples", type=int, default=1000)
     p1.add_argument("--seed", type=int, default=0)
 
+    p2 = sub.add_parser("phase2", help="key-declaration, chapter-clustering and ordering baselines")
+    p2.add_argument("src", type=Path)
+    p2.add_argument("decls", type=Path, help="JSONL from lean/extract_deps.lean")
+    p2.add_argument("--entry", default="content.tex")
+    p2.add_argument("--project", required=True)
+    p2.add_argument("--provenance", default="")
+    p2.add_argument("-o", "--out", type=Path, required=True)
+    p2.add_argument("--llm-dir", type=Path, help="directory of <chapter>.response.json files (see llm-prompts)")
+    p2.add_argument("--seed", type=int, default=0)
+
+    pl = sub.add_parser("llm-prompts", help="write per-chapter ordering prompts for the LLM baseline")
+    pl.add_argument("src", type=Path)
+    pl.add_argument("decls", type=Path)
+    pl.add_argument("--entry", default="content.tex")
+    pl.add_argument("-o", "--out", type=Path, required=True)
+    pl.add_argument("--seed", type=int, default=0)
+
     args = ap.parse_args(argv)
     bp = parse_blueprint(args.src, args.entry)
 
@@ -55,6 +72,25 @@ def main(argv: list[str] | None = None) -> None:
             args.out.write_text(text)
         else:
             print(text)
+        return
+
+    if args.cmd in ("phase2", "llm-prompts"):
+        from .formal import formal_graph, join_blueprint, load_decls, projected_graph
+        from .phase2 import analyse as analyse2
+        from .phase2 import write_llm_prompts
+        from .phase2 import write_report as write_phase2
+
+        decls = load_decls(args.decls)
+        if args.cmd == "llm-prompts":
+            join = join_blueprint(bp, decls)
+            nodes = [n.id for n in bp.nodes if n.id in join.node_decls]
+            lean_g = projected_graph(bp, formal_graph(decls), join).subgraph(nodes).copy()
+            paths = write_llm_prompts(bp, lean_g, args.out, args.seed)
+            print(f"wrote {len(paths)} prompts to {args.out}")
+            return
+        res = analyse2(bp, decls, args.llm_dir, args.seed)
+        write_phase2(res, args.out, args.project, args.provenance)
+        print(f"wrote {args.out}/phase2.md")
         return
 
     if args.cmd == "phase1":

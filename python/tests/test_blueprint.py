@@ -19,6 +19,7 @@ def test_parse_mini():
     assert nice.proof_uses == ["later"]
 
     assert nodes["def-widget"].statement_uses == []  # commented out
+    assert nice.text == "Every widget is nice."
     assert nodes["later"].labels == ["later", "later-alias"]
     assert nodes["main"].mathlibok and not nodes["main"].leanok
 

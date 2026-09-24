@@ -49,6 +49,21 @@ def _has_flag(body: str, name: str) -> bool:
     return re.search(r"\\" + name + r"(?![A-Za-z])", body) is not None
 
 
+_META_RE = re.compile(r"\\(?:label|lean|uses|proves)\s*\{[^}]*\}|\\(?:leanok|mathlibok|notready)(?![A-Za-z])")
+
+
+def _statement_text(body: str) -> str:
+    stripped = body.lstrip(" \t")
+    if stripped.startswith("["):  # optional title, brackets may nest
+        depth = 0
+        for j, ch in enumerate(stripped):
+            depth += {"[": 1, "]": -1}.get(ch, 0)
+            if depth == 0:
+                body = stripped[j + 1 :]
+                break
+    return " ".join(_META_RE.sub("", body).split())
+
+
 def _optional_title(text: str, start: int) -> str | None:
     """Parse ``[title]`` (brackets may nest) right after ``\\begin{env}``."""
     i = start
@@ -84,6 +99,8 @@ class Node:
     proof_uses: list[str] = field(default_factory=list)
     has_proof: bool = False
     proof_leanok: bool = False
+    text: str = ""
+    """Statement body with blueprint metadata macros removed and whitespace collapsed."""
 
 
 @dataclass
@@ -201,6 +218,7 @@ def parse_blueprint(src_dir: str | Path, entry: str = "content.tex") -> Blueprin
                     leanok=_has_flag(body, "leanok"),
                     mathlibok=_has_flag(body, "mathlibok"),
                     statement_uses=_split_csv(_macro_args(body, "uses")),
+                    text=_statement_text(body),
                 )
             )
 

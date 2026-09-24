@@ -9,8 +9,9 @@ over how to present that DAG: how to **order** the results, **cluster** them,
 **name** them, **elide** routine steps and **augment** them with motivation.
 Correctness is guaranteed by the formal proof throughout.
 
-**Status:** Phases 0 (blueprint graph) and 1 (Lean dependency graph) done on PFR.
-Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase1-pfr.md`](docs/phase1-pfr.md).
+**Status:** Phases 0 (blueprint graph), 1 (Lean dependency graph) and 2 (baselines) done on PFR.
+Findings: [`docs/phase0-pfr.md`](docs/phase0-pfr.md), [`docs/phase1-pfr.md`](docs/phase1-pfr.md),
+[`docs/phase2-pfr.md`](docs/phase2-pfr.md).
 
 - [`docs/idea-notes.md`](docs/idea-notes.md): the original idea notes (motivation,
   challenges, graph formulation, prior work).
@@ -28,9 +29,17 @@ uv run cairn phase0 path/to/project/blueprint/src --project NAME -o results/phas
 # Phase 1: Lean dependencies (needs elan; run inside the built Lean project)
 lake env lean --run /path/to/cairn/lean/extract_deps.lean RootModule ModulePrefix... > decls.jsonl
 uv run cairn phase1 path/to/project/blueprint/src decls.jsonl --project NAME -o results/phase1/NAME
-./scripts/phase1_pfr.sh                                          # build PFR + extract + analyse (~7 min)
-uv run pytest
+./scripts/phase1_pfr.sh                                          # build PFR + extract + analyse (~7-13 min)
+
+# Phase 2: key declarations, chapter clustering, ordering baselines
+uv run cairn llm-prompts path/to/blueprint/src decls.jsonl -o results/phase2/NAME/llm   # then fill *.response.json
+uv run cairn phase2 path/to/blueprint/src decls.jsonl --project NAME --llm-dir results/phase2/NAME/llm -o results/phase2/NAME
+./scripts/phase2_pfr.sh                                          # from the committed dump, no Lean needed
+uv run pytest && uv run ruff check python
 ```
+
+In Claude Code on the web, `.claude/hooks/session-start.sh` installs the Python deps and the
+Lean toolchain at session start.
 
 The entry file defaults to `content.tex` and falls back to `chapter/main.tex`
 (pass `--entry` otherwise).

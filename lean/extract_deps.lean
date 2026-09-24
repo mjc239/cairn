@@ -7,12 +7,14 @@ Run from the target project's root, after `lake build`:
 
 It emits one line per constant defined in a module whose name starts with one of the
 `ModulePrefix`es: its kind, its module and source position, and the constants used in
-its type and in its value (for theorems, the proof term). Constants from any module are
+its type and in its value (for theorems, the proof term),
+plus the size of both terms (number of distinct `Expr` objects). Constants from any module are
 listed as dependencies. Filtering, folding of compiler auxiliaries into their parents and
 IDF weighting all happen in Python (`cairn.formal`), so this file stays small and easy to
 port across Lean versions.
 -/
 import Lean
+import Lean.Util.NumObjs
 
 open Lean
 
@@ -46,9 +48,14 @@ def main (args : List String) : IO UInt32 := do
     unless inProject mod do continue
     let range := declRangeExt.find? (level := .exported) env name <|>
       declRangeExt.find? (level := .server) env name
-    let valueDeps := match info.value? (allowOpaque := true) with
+    let value := info.value? (allowOpaque := true)
+    let valueDeps := match value with
       | some v => v.getUsedConstants
       | none => #[]
+    let valueSize ← match value with
+      | some v => v.numObjs
+      | none => pure 0
+    let typeSize ← info.type.numObjs
     let line := Json.mkObj [
       ("name", Json.str name.toString),
       ("user_name", Json.str (privateToUserName name).toString),
@@ -61,6 +68,8 @@ def main (args : List String) : IO UInt32 := do
       ("line", match range with
         | some r => Json.num r.range.pos.line
         | none => Json.null),
+      ("type_size", Json.num typeSize),
+      ("value_size", Json.num valueSize),
       ("type_deps", namesJson info.type.getUsedConstants),
       ("value_deps", namesJson valueDeps)
     ]

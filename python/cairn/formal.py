@@ -60,6 +60,11 @@ class FormalDecl:
     type_deps: set[str] = field(default_factory=set)
     value_deps: set[str] = field(default_factory=set)
     members: list[str] = field(default_factory=list)
+    type_size: int = 0
+    """Size of the statement (distinct ``Expr`` objects), from the declaration itself."""
+    value_size: int = 0
+    """Size of the proof / body, summed over the declaration and its folded auxiliaries."""
+    private: bool = False
 
 
 def load_decls(path: str | Path) -> dict[str, FormalDecl]:
@@ -80,6 +85,9 @@ def load_decls(path: str | Path) -> dict[str, FormalDecl]:
         if r["user_name"] == target:  # the declaration itself, not one of its auxiliaries
             d.kind, d.module = r["kind"], r["module"]
             d.line = r["line"] if r["line"] is not None else d.line
+            d.type_size = r.get("type_size", 0)
+            d.private = r["private"]
+        d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])
         d.type_deps.update(fold_name(x, kinds) for x in r["type_deps"])
         d.value_deps.update(fold_name(x, kinds) for x in r["value_deps"])
