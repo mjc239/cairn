@@ -20,9 +20,12 @@
   "SemicircleLaw"
  ],
  "build_minutes": 4.6,
+ "extractor": "extract_deps.lean",
  "decls": 229,
  "theorems": 132,
+ "external_decls": 0,
  "lean_resolved": 1.0,
  "nodes_linked": 58,
- "minutes": 7.4
+ "nodes_linked_external_only": 0,
+ "minutes": 10.0
 }
