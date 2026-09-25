@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -23,7 +27,7 @@ Use every Lean name exactly as given.
 Lean (short): `(κ : Kernel T (S × U)) (μ : Measure T) : ℝ`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → {U : Type u_4} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → [inst_2 : MeasurableSpace U] → Kernel T (S × U) → Measure T → ℝ`
 Docstring: Mutual information of a kernel into a product space with respect to a measure.
-English: For a kernel $\kappa$ from $T$ into a product space $S\times U$ and a measure $\mu$ on $T$, $I_k[\kappa,\mu]$ denotes the mutual information of the kernel $\kappa$ with respect to $\mu$.
+English: Definition. Let $S$, $T$ and $U$ be measurable spaces. For a kernel $\kappa$ from $T$ to the product space $S\times U$ and a measure $\mu$ on $T$, $I_k[\kappa,\mu]\in\mathbb R$ is the mutual information of the kernel $\kappa$ with respect to $\mu$ (as its docstring describes it).
 
 ### `ProbabilityTheory.Kernel.mutualInfo_nonneg`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [MeasurableSingletonClass T] [Countable T] [IsFiniteMeasure μ] [FiniteSupport μ] (hκ : κ.AEFiniteKernelSupport μ) : 0 ≤ Ik[κ , μ]`

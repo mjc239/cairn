@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -46,7 +50,7 @@ English: Let $S$ be a countable measurable space in which singletons are measura
 Lean (short): `(μ : autoParam (Measure (S × T)) measureMutualInfo._auto_1) : ℝ`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → autoParam (Measure (S × T)) measureMutualInfo._auto_1 → ℝ`
 Docstring: The mutual information between the marginals of a measure on a product space.
-English: For a measure $\mu$ on a product $S\times T$, the mutual information $I_m[\mu]$ between its two marginals, namely $I_m[\mu] = H_m[\pi_1{}_*\mu] + H_m[\pi_2{}_*\mu] - H_m[\mu]$ with $\pi_1,\pi_2$ the coordinate projections.
+English: Definition. Let $S$ and $T$ be measurable spaces. For a measure $\mu$ on the product $S\times T$ (an argument that Lean fills in automatically when omitted), $I_m[\mu]$ is a real number; according to its docstring, it is the mutual information between the marginals of $\mu$.
 
 ### `ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite`
 Lean (short): `(hA : μ (↑A)ᶜ = 0) [IsZeroOrProbabilityMeasure μ] : Hm[μ] = ∑ s ∈ A, (μ.real {s}).negMulLog`

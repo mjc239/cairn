@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -22,9 +26,9 @@ Use every Lean name exactly as given.
 ### `cLpNorm_conv_le_cLpNorm_dconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
 Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ (0 : ℕ) → Even n → ∀ (f : G → ℂ), ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
-English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$, where $*$ and $\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation.
+English: Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $n$ be a natural number with $n \ne 0$ and $n$ even, and let $f : G \to \mathbb{C}$. Then $\|f \ast f\|_{n} \le \|f \circ f\|_{n}$, where $\ast$ is the convolution (written `∗`), $\circ$ is the difference convolution (written `○`), and $\|\cdot\|_{n}$ is the compact $L^n$ norm (written `‖·‖ₙ_[n]`).
 
 ### `dLpNorm_ddconv_le_dLpNorm_dddconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
 Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ (0 : ℕ) → Even n → ∀ (f : G → ℂ), ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
-English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$ for the discrete convolution $*$, discrete difference convolution $\circ$ and discrete $L^n$ norm.
+English: Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $n$ be a natural number with $n \ne 0$ and $n$ even, and let $f : G \to \mathbb{C}$. Then $\|f \ast_d f\|_{n} \le \|f \circ_d f\|_{n}$, where $\ast_d$ is the discrete convolution (written `∗ᵈ`), $\circ_d$ is the discrete difference convolution (written `○ᵈ`), and $\|\cdot\|_{n}$ is the $L^n$ norm (written `‖·‖_[n]`).

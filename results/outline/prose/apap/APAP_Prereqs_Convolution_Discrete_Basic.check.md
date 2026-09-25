@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -22,9 +26,9 @@ Use every Lean name exactly as given.
 ### `balance_dddconv`
 Lean (short): `[Fintype G] [CharZero R] [StarRing R] (f : G → R) (g : G → R) : Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
 Lean (full): `∀ {G : Type u_1} {R : Type u_2} [inst : Fintype G] [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : Field R] [inst_4 : CharZero R] [inst_5 : StarRing R] (f g : G → R), Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
-English: Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero equipped with a star operation (a star ring structure). For $f, g : G \to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\operatorname{balance}(f \circ g) = \operatorname{balance}(f) \circ \operatorname{balance}(g)$, where $\circ$ is the discrete difference convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+English: Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero equipped with a star ring structure. For functions $f, g : G \to R$, $\operatorname{balance}(f \circ_d g) = \operatorname{balance}(f) \circ_d \operatorname{balance}(g)$, where $\circ_d$ is APAP's discrete difference convolution (written `○ᵈ`) and $\operatorname{balance}$ is the operator `Fintype.balance`.
 
 ### `balance_ddconv`
 Lean (short): `[Fintype G] [CharZero R] (f : G → R) (g : G → R) : Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
 Lean (full): `∀ {G : Type u_1} {R : Type u_2} [inst : Fintype G] [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : Field R] [inst_4 : CharZero R] (f g : G → R), Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
-English: Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero. For $f, g : G \to R$, $\operatorname{balance}(f \ast g) = \operatorname{balance}(f) \ast \operatorname{balance}(g)$, where $\ast$ is discrete convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+English: Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero. For functions $f, g : G \to R$, $\operatorname{balance}(f \ast_d g) = \operatorname{balance}(f) \ast_d \operatorname{balance}(g)$, where $\ast_d$ is APAP's discrete convolution (written `∗ᵈ`) and $\operatorname{balance}$ is the operator `Fintype.balance`.

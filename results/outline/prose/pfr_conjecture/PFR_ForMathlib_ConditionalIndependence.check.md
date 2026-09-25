@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -27,6 +31,6 @@ English: Given random variables $f : \Omega \to \alpha$, $g : \Omega \to \beta$,
 
 ### `ProbabilityTheory.condIndep_copies`
 Lean (short): `[MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β) (hX : Measurable X) (hY : Measurable Y) [FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ] : ∃ Ω' x X₁ X₂ Y' ν, IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`
-Lean (full): `∀ {Ω : Type u_1} {α β : Type u} [inst : MeasurableSpace Ω] [inst_1 : MeasurableSpace α] [inst_2 : MeasurableSpace β] [MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β), Measurable X → Measurable Y → ∀ [finY : FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ], ∃ Ω' x X₁ X₂ Y' ν, IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`
+Lean (full): `∀ {Ω : Type u_1} {α β : Type u} [inst : MeasurableSpace Ω] [inst_1 : MeasurableSpace α] [inst_2 : MeasurableSpace β] [MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β), Measurable X → Measurable Y → ∀ [finY : FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ], ∃ (Ω' : Type u) (x : MeasurableSpace Ω') (X₁ : Ω' → α) (X₂ : Ω' → α) (Y' : Ω' → β) (ν : Measure Ω'), IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`
 Docstring: For `X, Y` random variables, there exist conditionally independent trials `X_1, X_2, Y'`.
 English: Let $\beta$ be a countable measurable space with measurable singletons, let $\mu$ be a probability measure on $\Omega$, and let $X : \Omega \to \alpha$ and $Y : \Omega \to \beta$ be measurable random variables with $Y$ of finite range. Then there exist a measurable space $\Omega'$, a probability measure $\nu$ on $\Omega'$ and measurable random variables $X_1, X_2 : \Omega' \to \alpha$, $Y' : \Omega' \to \beta$ such that $X_1$ and $X_2$ are conditionally independent given $Y'$ with respect to $\nu$, and both $(X_1, Y')$ and $(X_2, Y')$ under $\nu$ have the same distribution as $(X, Y)$ under $\mu$.

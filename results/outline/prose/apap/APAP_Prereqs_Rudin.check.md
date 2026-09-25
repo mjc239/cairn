@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -23,4 +27,4 @@ Use every Lean name exactly as given.
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hp : 2 ≤ p) (f : G → ℂ) (hf : AddDissociated (Function.support (cft f))) : ‖f‖ₙ_[↑p] ≤ 4 * Real.exp 2⁻¹ * √↑p * ‖f‖ₙ_[2]`
 Lean (full): `∀ {G : Type u_1} [inst : Fintype G] [inst_1 : AddCommGroup G] {p : ℕ} [inst_2 : MeasurableSpace G] [DiscreteMeasurableSpace G], (2 : ℕ) ≤ p → ∀ (f : G → ℂ), AddDissociated (α := AddChar G ℂ) (Function.support (cft f)) → ‖f‖ₙ_[↑p] ≤ (4 : ℝ) * Real.exp (2 : ℝ)⁻¹ * √↑p * ‖f‖ₙ_[(2 : ENNReal)]`
 Docstring: **Rudin's inequality**, usual form.
-English: (Rudin's inequality, usual form, per the docstring.) Let $G$ be a finite abelian group with a measurable-space structure that is discrete (every set is measurable). Let $p$ be a natural number with $p \ge 2$, and let $f : G \to \mathbb{C}$ be such that the support of its discrete Fourier transform $\mathrm{cft}(f)$ (a set of additive characters $G \to \mathbb{C}$) is dissociated. Then $\|f\|_p \le 4\, e^{1/2} \sqrt{p}\, \|f\|_2$, where the norms are the normalised (expectation) $L^p$ and $L^2$ norms on $G$.
+English: (Rudin's inequality, usual form, per the docstring.) Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $p$ be a natural number with $p \ge 2$, and let $f : G \to \mathbb{C}$ be such that the support of $\mathrm{cft}(f)$ (APAP's compact Fourier transform `cft` of $f$, a function on the additive characters $G \to \mathbb{C}$) is an additively dissociated set of additive characters. Then $\|f\|_{p} \le 4\, e^{1/2} \sqrt{p}\, \|f\|_{2}$, where $\|\cdot\|_{p}$ and $\|\cdot\|_{2}$ are the compact $L^p$ and $L^2$ norms (written `‖·‖ₙ_[p]`, `‖·‖ₙ_[2]`) on functions $G \to \mathbb{C}$.

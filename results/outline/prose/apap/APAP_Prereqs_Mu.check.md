@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -23,4 +27,4 @@ Use every Lean name exactly as given.
 Lean (short): `(s : Finset α) (_ : α) : K`
 Lean (full): `{K : Type u_1} → {α : Type u_3} → [DivisionSemiring K] → Finset α → α → K`
 Docstring: The normalised indicator_one of a set.
-English: Definition. Let $K$ be a division semiring and $\alpha$ a type. For a finite set $s \subseteq \alpha$, $\mu_s : \alpha \to K$ is (per the docstring) the normalised indicator function of $s$, i.e. $\mu_s(x) = 1_s(x)/|s|$.
+English: Definition. Let $K$ be a division semiring and $\alpha$ a type. For a finite set $s \subseteq \alpha$, $\mu_s : \alpha \to K$ is, per the docstring, "the normalised indicator of a set" $s$.

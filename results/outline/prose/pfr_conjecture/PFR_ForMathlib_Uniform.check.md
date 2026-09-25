@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -27,7 +31,7 @@ English: Let $\Omega$ be a measurable space and $S$ a type. For a set $H\subsete
 
 ### `ProbabilityTheory.exists_isUniform_measureSpace`
 Lean (short): `[MeasurableSingletonClass S] (H : Finset S) (h : H.Nonempty) : ∃ Ω mΩ U, IsProbabilityMeasure volume ∧ Measurable U ∧ IsUniform (↑H) U volume ∧ (∀ (ω : Ω), U ω ∈ H) ∧ FiniteRange U`
-Lean (full): `∀ {S : Type uS} [inst : MeasurableSpace S] [MeasurableSingletonClass S] (H : Finset S), H.Nonempty → ∃ Ω mΩ U, IsProbabilityMeasure.{uS} (α := Ω) (m0 := MeasureSpace.toMeasurableSpace) volume ∧ Measurable U ∧ IsUniform (↑H) U volume ∧ (∀ (ω : Ω), U ω ∈ H) ∧ FiniteRange U`
+Lean (full): `∀ {S : Type uS} [inst : MeasurableSpace S] [MeasurableSingletonClass S] (H : Finset S), H.Nonempty → ∃ (Ω : Type uS) (mΩ : MeasureSpace Ω) (U : Ω → S), IsProbabilityMeasure.{uS} (α := Ω) (m0 := MeasureSpace.toMeasurableSpace) volume ∧ Measurable U ∧ IsUniform (↑H) U volume ∧ (∀ (ω : Ω), U ω ∈ H) ∧ FiniteRange U`
 Docstring: Uniform distributions exist, version giving a measure space
 English: Let $S$ be a space in which singletons are measurable, and let $H$ be a nonempty finite subset of $S$. Then there exist a type $\Omega$ with a measure-space structure and a random variable $U:\Omega\to S$ such that the ambient measure on $\Omega$ is a probability measure, $U$ is measurable, $U$ is uniformly distributed on $H$, $U(\omega)\in H$ for every $\omega\in\Omega$, and $U$ takes finitely many values.
 

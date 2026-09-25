@@ -14,7 +14,11 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
+prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
+as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
+repair, a missed error stays in the outline. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -33,7 +37,7 @@ English: (Lemma 10.1.5, Cotlar's estimate.) Let $X$ be a metric space equipped w
 
 ### `cotlar_set_F₂`
 Lean (short): `[DoublingMeasure X ↑(defaultA a)] [IsTwoSidedKernel a K] (ha : 4 ≤ a) (hr : 0 < r) (hR : r ≤ R) (hT : ∀ r > 0, HasBoundedStrongType (czOperator K r) 2 2 volume volume ↑(C_Ts a)) (hg : BoundedFiniteSupport g volume) : (volume.restrict (Metric.ball x (R / 4))) {x' | ↑(C10_1_4 a) * globalMaximalFunction volume 1 g x < ‖czOperator K r ((Metric.ball x (R / 2)).indicator g) x'‖ₑ} ≤ volume (Metric.ball x (R / 4)) / 4`
-Lean (full): `∀ {X : Type u_1} {a : ℕ} [inst : MetricSpace X] [inst_1 : DoublingMeasure X ↑(defaultA a)] {r R : ℝ} {K : X → X → ℂ} {x : X} [IsTwoSidedKernel a K], (4 : ℕ) ≤ a → (0 : ℝ) < r → r ≤ R → (∀ r > (0 : ℝ), HasBoundedStrongType (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (czOperator K r) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a)) → ∀ {g : X → ℂ}, BoundedFiniteSupport g volume → (Measure.restrict volume (Metric.ball x (R / (4 : ℝ))) : Measure X) {x' | ↑(C10_1_4 a) * globalMaximalFunction volume (1 : ℝ) g x < ‖czOperator K r ((Metric.ball x (R / (2 : ℝ))).indicator g) x'‖ₑ} ≤ HDiv.hDiv (α := ENNReal) ((volume : Measure X) (Metric.ball x (R / (4 : ℝ))) : ENNReal) (4 : ENNReal)`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} [inst : MetricSpace X] [inst_1 : DoublingMeasure X ↑(defaultA a)] {r R : ℝ} {K : X → X → ℂ} {x : X} [IsTwoSidedKernel a K], (4 : ℕ) ≤ a → (0 : ℝ) < r → r ≤ R → (∀ r > (0 : ℝ), HasBoundedStrongType (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (czOperator K r) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a)) → ∀ {g : X → ℂ}, BoundedFiniteSupport g volume → (Measure.restrict volume (Metric.ball x (R / (4 : ℝ))) : Measure X) {x' : X | ↑(C10_1_4 a) * globalMaximalFunction volume (1 : ℝ) g x < ‖czOperator K r ((Metric.ball x (R / (2 : ℝ))).indicator g) x'‖ₑ} ≤ HDiv.hDiv (α := ENNReal) ((volume : Measure X) (Metric.ball x (R / (4 : ℝ))) : ENNReal) (4 : ENNReal)`
 Docstring: Part 2 of Lemma 10.1.4 about `F₂`.
 English: (Lemma 10.1.4, part about $F_2$.) Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \in \mathbb{N}$), and let $K : X \times X \to \mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \ge 4$, $0 < r \le R$, suppose $\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$ for every $r > 0$, and let $g : X \to \mathbb{C}$ be bounded with finite-measure support. Then $\mathrm{vol}\big(B(x, R/4) \cap \{x' : C_{10.1.4}(a)\, M g(x) < \|\mathrm{czOperator}(K, r)(\mathbf{1}_{B(x, R/2)} g)(x')\|\}\big) \le \mathrm{vol}(B(x, R/4))/4$, where $M = \mathrm{globalMaximalFunction}(\mathrm{vol}, 1)$.
 
