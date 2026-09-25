@@ -143,7 +143,8 @@ def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
 
 def glossary(names, decls: dict[str, FormalDecl], depth: int = 2) -> list[str]:
     """Project notions (definitions, structures, classes, instances) that the statements of ``names`` refer to,
-    followed ``depth`` levels through their own statements and a structure's fields, in first-seen order.
+    followed ``depth`` levels through their own statements, definition bodies and a structure's fields, in
+    first-seen order.
     Without them a reader cannot check what a project notion such as ``ProofData`` or ``rdist`` *is*."""
     from .outline import is_boilerplate_instance
     fields = {f"{s}.{f}" for s, d in decls.items() for f in d.fields}
@@ -153,7 +154,9 @@ def glossary(names, decls: dict[str, FormalDecl], depth: int = 2) -> list[str]:
         nxt = []
         for v in frontier:
             d = decls[v]
-            refs = sorted(d.type_deps) + [f"{v}.{f}" for f in d.fields]
+            # a definition's body is shown, so the notions it uses are needed to read it
+            body = d.value_deps if d.value_pp and v not in names else set()
+            refs = sorted(d.type_deps | body) + [f"{v}.{f}" for f in d.fields]
             for u in refs:
                 if u in decls and u not in seen and u not in names and decls[u].kind != "theorem" \
                         and not is_boilerplate_instance(decls[u]) and (u in fields or not decls[u].private):

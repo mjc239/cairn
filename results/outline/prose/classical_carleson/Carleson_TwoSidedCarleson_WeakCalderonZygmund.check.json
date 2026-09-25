@@ -1,3 +1,0 @@
-{
-"estimate_czOperator": {"faithful": false, "issue": "Supplies unsupported descriptions of undefined objects: BoundedFiniteSupport as 'bounded with finite-measure support' (possibly dropping a measurability condition), an explicit formula for distribution, and IsTwoSidedKernel as a Calderon-Zygmund kernel. czOperator(K, r) is never introduced."}
-}

@@ -1,7 +1,9 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
-English with the full statement; anything the English attributes to the docstring must actually be in it.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. A "Project
+definitions" section first lists the project notions the statements refer to (statement, docstring, body,
+fields). Compare the English with the full statement; anything the English attributes to the docstring must
+actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -14,14 +16,25 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
-prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
-needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
-as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
-repair, a missed error stays in the outline. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: a project
+notion's description must agree with its entry under "Project definitions" (statement, docstring, definition body,
+fields), and a library notion may only be given its standard mathematical meaning; otherwise flag it. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
+or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
+things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
+Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
+
+## Project definitions these statements use
+(What each project notion is. Any description of one in the English must agree with this.)
+
+#### `FiniteRange` (inductive)
+Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
+Docstring: The property of having a finite range.
+
+## Translations
 
 ### `ProbabilityTheory.independent_copies3_nondep_finiteRange`
 Lean (short): `[MeasurableSingletonClass α] (hX₁ : Measurable X₁) (hX₂ : Measurable X₂) (hX₃ : Measurable X₃) [FiniteRange X₁] [FiniteRange X₂] [FiniteRange X₃] (μ₁ : Measure Ω₁) (μ₂ : Measure Ω₂) (μ₃ : Measure Ω₃) [IsProbabilityMeasure μ₁] [IsProbabilityMeasure μ₂] [IsProbabilityMeasure μ₃] : ∃ A x μA X₁' X₂' X₃', IsProbabilityMeasure μA ∧ iIndepFun ![X₁', X₂', X₃'] μA ∧ Measurable X₁' ∧ Measurable X₂' ∧ Measurable X₃' ∧ IdentDistrib X₁' X₁ μA μ₁ ∧ IdentDistrib X₂' X₂ μA μ₂ ∧ IdentDistrib X₃' X₃ μA μ₃ ∧ FiniteRange X₁' ∧ FiniteRange X₂' ∧ FiniteRange X₃'`
@@ -33,4 +46,4 @@ English: Let $\alpha$ be a measurable space with measurable singletons, and let 
 Lean (short): `(hX : Measurable X) (hY : Measurable Y) [FiniteRange X] [FiniteRange Y] [MeasurableSingletonClass α] [MeasurableSingletonClass β] (μ : Measure Ω) (μ' : Measure Ω') [IsProbabilityMeasure μ] [IsProbabilityMeasure μ'] : ∃ ν X' Y', IsProbabilityMeasure ν ∧ Measurable X' ∧ Measurable Y' ∧ IndepFun X' Y' ν ∧ IdentDistrib X' X ν μ ∧ IdentDistrib Y' Y ν μ' ∧ FiniteRange X' ∧ FiniteRange Y'`
 Lean (full): `∀ {Ω : Type u_1} {Ω' : Type u_2} {α : Type u_3} {β : Type u_5} {mΩ : MeasurableSpace Ω} {mΩ' : MeasurableSpace Ω'} {mα : MeasurableSpace α} {mβ : MeasurableSpace β} {X : Ω → α} {Y : Ω' → β}, Measurable X → Measurable Y → ∀ [FiniteRange X] [FiniteRange Y] [MeasurableSingletonClass α] [MeasurableSingletonClass β] (μ : Measure Ω) (μ' : Measure Ω') [IsProbabilityMeasure μ] [IsProbabilityMeasure μ'], ∃ (ν : Measure (α × β)) (X' : α × β → α) (Y' : α × β → β), IsProbabilityMeasure ν ∧ Measurable X' ∧ Measurable Y' ∧ IndepFun X' Y' ν ∧ IdentDistrib X' X ν μ ∧ IdentDistrib Y' Y ν μ' ∧ FiniteRange X' ∧ FiniteRange Y'`
 Docstring: A version of `independent_copies` that guarantees that the copies have `FiniteRange` if the original variables do.
-English: Let $\alpha$ and $\beta$ be measurable spaces with measurable singletons, let $\mu$ and $\mu'$ be probability measures on $\Omega$ and $\Omega'$, and let $X:\Omega\to\alpha$ and $Y:\Omega'\to\beta$ be measurable random variables, both of finite range. Then there exist a probability measure $\nu$ on some measurable space and measurable maps $X',Y'$ on it such that $X'$ and $Y'$ are independent under $\nu$, $X'$ under $\nu$ has the same distribution as $X$ under $\mu$, $Y'$ under $\nu$ has the same distribution as $Y$ under $\mu'$, and both $X'$ and $Y'$ have finite range.
+English: (A version of `independent_copies` guaranteeing finite range of the copies.) Let $\Omega$, $\Omega'$ be measurable spaces and let $\alpha$, $\beta$ be measurable spaces in which every singleton is measurable. Let $X:\Omega\to\alpha$ and $Y:\Omega'\to\beta$ be measurable functions, each with finite range, and let $\mu$ and $\mu'$ be probability measures on $\Omega$ and $\Omega'$ respectively. Then there exist a measure $\nu$ on $\alpha\times\beta$ and functions $X':\alpha\times\beta\to\alpha$ and $Y':\alpha\times\beta\to\beta$ such that $\nu$ is a probability measure, $X'$ and $Y'$ are measurable, $X'$ and $Y'$ are independent under $\nu$, $X'$ under $\nu$ has the same distribution as $X$ under $\mu$, $Y'$ under $\nu$ has the same distribution as $Y$ under $\mu'$, and $X'$ and $Y'$ both have finite range.

@@ -1,6 +1,0 @@
-{
- "linearized_metric_carleson": {
-  "faithful": false,
-  "issue": "The parenthetical 'in particular X is a doubling metric measure space and K is a Calderón–Zygmund kernel' describes KernelProofData, and the prompt does not support it. The measure mu (volume) is not introduced."
- }
-}

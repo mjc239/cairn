@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure": {
+  "statement": "Let $S$ and $U$ be types equipped with measurable-space structures, and let $\\mu$ be a measure on the product $S \\times U$. Write $H_m[\\nu] = \\mathrm{measureEntropy}\\ \\nu = \\sum_{s} \\phi\\big(((\\nu(\\mathrm{univ}))^{-1}\\nu)(\\{s\\})\\big)$ (a sum over all points $s$ of the space, with $\\phi(x) = -x\\log x$) for a measure $\\nu$ on a measurable space, and let $I_m[\\mu] = \\mathrm{measureMutualInfo}\\ \\mu = H_m[(\\mathrm{fst})_*\\mu] + H_m[(\\mathrm{snd})_*\\mu] - H_m[\\mu]$, the mutual information between the marginals of $\\mu$, where $(\\mathrm{fst})_*\\mu$ and $(\\mathrm{snd})_*\\mu$ are the pushforwards of $\\mu$ under the projections onto $S$ and $U$. If $\\mu$ is not a finite measure, then $I_m[\\mu] = 0$."
+ }
+}

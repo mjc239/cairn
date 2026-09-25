@@ -1,4 +1,0 @@
-{
-"MeasureTheory.estimate_trnc₁": {"faithful": false, "issue": "zeta, trnc_j and sel_j are used without being introduced. The description of ton as 'the truncation scale determined by spf' is not supported by any definition shown in the prompt."},
-"MeasureTheory.estimate_trnc": {"faithful": false, "issue": "trnc_j is never introduced, and the descriptions of mon ('monotonicity flag of the truncation scale') and ton ('truncation scale determined by spf') are unsupported descriptions of undefined objects."}
-}

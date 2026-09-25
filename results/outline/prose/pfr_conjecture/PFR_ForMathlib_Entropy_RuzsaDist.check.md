@@ -1,7 +1,9 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
-English with the full statement; anything the English attributes to the docstring must actually be in it.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. A "Project
+definitions" section first lists the project notions the statements refer to (statement, docstring, body,
+fields). Compare the English with the full statement; anything the English attributes to the docstring must
+actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -14,26 +16,82 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
-prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
-needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
-as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
-repair, a missed error stays in the outline. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: a project
+notion's description must agree with its entry under "Project definitions" (statement, docstring, definition body,
+fields), and a library notion may only be given its standard mathematical meaning; otherwise flag it. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
+or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
+things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
+Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
+
+## Project definitions these statements use
+(What each project notion is. Any description of one in the English must agree with this.)
+
+#### `ProbabilityTheory.Kernel.rdist` (def)
+Lean: `{T : Type u_1} → {T' : Type u_2} → {G : Type u_4} → [inst : MeasurableSpace T] → [inst_1 : MeasurableSpace T'] → [inst_2 : MeasurableSpace G] → [AddCommGroup G] → Kernel T G → Kernel T' G → Measure T → Measure T' → ℝ`
+Docstring: The Rusza distance between two kernels taking values in the same space, defined as the average Rusza distance between the image measures.
+Definition: `fun {T : Type u_1} {T' : Type u_2} {G : Type u_4} [MeasurableSpace T] [MeasurableSpace T'] [MeasurableSpace G] [AddCommGroup G] (κ : Kernel T G) (η : Kernel T' G) (μ : Measure T) (ν : Measure T') => ∫ (x : T × T'), (fun (p : T × T') => Kernel.rdistm.{u_4} (G := G) (κ p.1) (η p.2)) x ∂μ.prod ν`
+
+#### `ProbabilityTheory.entropy` (def)
+Lean: `{Ω : Type u_1} → {S : Type u_2} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → (Ω → S) → autoParam (Measure Ω) entropy._auto_1 → ℝ`
+Docstring: Entropy of a random variable with values in a finite measurable space.
+Definition: `fun {Ω : Type u_1} {S : Type u_2} [MeasurableSpace Ω] [MeasurableSpace S] (X : Ω → S) (μ : Measure Ω) => Hm[Measure.map X μ]`
+
+#### `FiniteRange` (inductive)
+Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
+Docstring: The property of having a finite range.
+
+#### `FiniteRange.toFinset` (def)
+Lean: `{Ω : Type u_1} → {G : Type u_2} → (X : Ω → G) → [hX : FiniteRange X] → Finset G`
+Docstring: The range of a finite range map, as a finset.
+Definition: `fun {Ω : Type u_1} {G : Type u_2} (X : Ω → G) [FiniteRange X] => (Set.range X).toFinset`
+
+#### `prod` (def)
+Lean: `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → (Ω → S) → (Ω → T) → Ω → S × T`
+Docstring: The pair of two random variables
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} (X : Ω → S) (Y : Ω → T) (ω : Ω) => (X ω, Y ω)`
+
+#### `ProbabilityTheory.condEntropy` (def)
+Lean: `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → [MeasurableSpace T] → (Ω → S) → (Ω → T) → autoParam (Measure Ω) condEntropy._auto_1 → ℝ`
+Docstring: Conditional entropy of a random variable w.r.t. another. This is the expectation under the law of `Y` of the entropy of the law of `X` conditioned on the event `Y = y`.
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [MeasurableSpace Ω] [MeasurableSpace S] [inst_1 : MeasurableSpace T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) => @integral _ _ _ _ inst_1 (Measure.map Y μ) fun (x : T) => (fun (y : T) => H[X | Y ← y; μ]) x`
+
+#### `ProbabilityTheory.mutualInfo` (def)
+Lean: `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → [MeasurableSpace T] → (Ω → S) → (Ω → T) → autoParam (Measure Ω) mutualInfo._auto_1 → ℝ`
+Docstring: The mutual information `I[X : Y]` of two random variables is defined to be `H[X] + H[Y] - H[X ; Y]`.
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [MeasurableSpace Ω] [MeasurableSpace S] [MeasurableSpace T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) => H[X; μ] + H[Y; μ] - H[⟨X, Y⟩; μ]`
+
+#### `ProbabilityTheory.Kernel.rdistm` (def)
+Lean: `{G : Type u_4} → [inst : MeasurableSpace G] → [AddCommGroup G] → Measure G → Measure G → ℝ`
+Docstring: The Rusza distance between two measures, defined as `H[X - Y] - H[X]/2 - H[Y]/2` where `X` and `Y` are independent variables distributed according to the two measures.
+Definition: `fun {G : Type u_4} [MeasurableSpace G] [AddCommGroup G] (μ ν : Measure G) => measureEntropy (S := G) (Measure.map (fun (x : G × G) => x.1 - x.2) (μ.prod ν)) - Hm[μ] / (2 : ℝ) - Hm[ν] / (2 : ℝ)`
+
+#### `ProbabilityTheory.measureEntropy` (def)
+Lean: `{S : Type u_2} → [inst : MeasurableSpace S] → autoParam (Measure S) measureEntropy._auto_1 → ℝ`
+Docstring: Entropy of a measure on a measurable space. We normalize the measure by `(μ Set.univ)⁻¹` to extend the entropy definition to finite measures. What we really want to do is deal with `μ=0` or `IsProbabilityMeasure μ`, but we don't have a typeclass for that (we could create one though). The added complexity ∈ the expression is not an issue because if `μ` is a probability measure, a call to `simp` will simplify `(μ Set.univ)⁻¹ • μ` to `μ`.
+Definition: `fun {S : Type u_2} [MeasurableSpace S] (μ : Measure S) => ∑' (s : S), ((HSMul.hSMul (α := ENNReal) ((μ Set.univ)⁻¹ : ENNReal) μ).real {s}).negMulLog`
+
+#### `FiniteRange.fintype` (def)
+Lean: `{Ω : Type u_1} → {G : Type u_2} → (X : Ω → G) → [hX : FiniteRange X] → Fintype ↑(Set.range X)`
+Docstring: fintype structure on the range of a finite range map.
+Definition: `fun {Ω : Type u_1} {G : Type u_2} (X : Ω → G) [FiniteRange X] => Set.Finite.fintype (s := Set.range X) ⋯`
+
+## Translations
 
 ### `condRuzsaDist`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Z : Ω → S) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) [IsFiniteMeasure μ] (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) [IsFiniteMeasure μ'] : ℝ`
 Lean (full): `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {S : Type u_6} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace S] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω → S) → (Ω' → G) → (Ω' → T) → (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) → [IsFiniteMeasure μ] → (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) → [IsFiniteMeasure μ'] → ℝ`
 Docstring: The conditional Ruzsa distance `d[X|Z ; Y|W]`.
-English: Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\Omega\to G$, $Z:\Omega\to S$ and $Y:\Omega'\to G$, $W:\Omega'\to T$, and finite measures $\mu$ on $\Omega$ and $\mu'$ on $\Omega'$ (by default the ambient measures), this defines the real number $d[X|Z \,;\, Y|W]$, the conditional Ruzsa distance of $X$ given $Z$ (with respect to $\mu$) and $Y$ given $W$ (with respect to $\mu'$).
+English: Definition. Let $\Omega$ and $\Omega'$ be measurable spaces, let $S$ and $T$ be measurable spaces, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \Omega \to G$, $Z : \Omega \to S$, $Y : \Omega' \to G$, $W : \Omega' \to T$, a finite measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist X Z Y W μ μ'` is a real number, denoted $d[X \mid Z \,;\, Y \mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X|Z ; Y|W]$.
 
 ### `condRuzsaDist'`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist'._auto_1) (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) [IsFiniteMeasure μ'] : ℝ`
 Lean (full): `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω' → G) → (Ω' → T) → autoParam (Measure Ω) condRuzsaDist'._auto_1 → (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) → [IsFiniteMeasure μ'] → ℝ`
 Docstring: The conditional Ruzsa distance `d[X ; Y|W]`.
-English: Let $G$ be a countable abelian group in which singletons are measurable. For random variables $X:\Omega\to G$ and $Y:\Omega'\to G$, $W:\Omega'\to T$, a measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (by default the ambient measures), this defines the real number $d[X \,;\, Y|W]$, the conditional Ruzsa distance between $X$ (with respect to $\mu$) and $Y$ given $W$ (with respect to $\mu'$).
+English: Definition. Let $\Omega$ and $\Omega'$ be measurable spaces, let $T$ be a measurable space, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \Omega \to G$, $Y : \Omega' \to G$, $W : \Omega' \to T$, a measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist' X Y W μ μ'` is a real number, denoted $d[X \,;\, Y \mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X ; Y|W]$.
 
 ### `rdist`
 Lean (short): `(X : Ω → G) (Y : Ω' → G) (μ : autoParam (Measure Ω) rdist._auto_1) (μ' : autoParam (Measure Ω') rdist._auto_3) : ℝ`
@@ -57,7 +115,7 @@ English: Let $G$ be a countable abelian group with a measurable structure in whi
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (h : iIndepFun ![X, Y, Z] μ) (hX : Measurable X) (hY : Measurable Y) (hZ : Measurable Z) [FiniteRange X] [FiniteRange Z] [FiniteRange Y] : H[X + Y + Z; μ] - H[X + Y; μ] ≤ H[Y + Z; μ] - H[Y; μ]`
 Lean (full): `∀ {Ω : Type u_1} {G : Type u_5} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [hG : MeasurableSpace G] [inst : AddCommGroup G] [Countable G] [MeasurableSingletonClass G] {X Y Z : Ω → G}, iIndepFun (β := fun (a : Fin (Nat.succ (0 : ℕ)).succ.succ) => G) ![X, Y, Z] μ → Measurable X → Measurable Y → Measurable Z → ∀ [FiniteRange X] [FiniteRange Z] [FiniteRange Y], H[X + Y + Z; μ] - H[X + Y; μ] ≤ H[Y + Z; μ] - H[Y; μ]`
 Docstring: The **Kaimanovich-Vershik inequality**. `H[X + Y + Z] - H[X + Y] ≤ H[Y + Z] - H[Y]`.
-English: (Kaimanovich–Vershik inequality.) Let $G$ be a countable abelian group with measurable singletons, and let $X,Y,Z:\Omega\to G$ be measurable random variables with finite range which are jointly independent under $\mu$. Then $H[X+Y+Z;\mu] - H[X+Y;\mu] \le H[Y+Z;\mu] - H[Y;\mu]$.
+English: (Kaimanovich–Vershik inequality.) Let $\Omega$ be a measurable space and $\mu$ an arbitrary measure on $\Omega$. Let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Let $X, Y, Z : \Omega \to G$ be measurable functions, each with finite range, such that the family $(X, Y, Z)$ is mutually independent with respect to $\mu$ (`iIndepFun ![X, Y, Z] μ`). Writing $H[V;\mu]$ for the entropy (`entropy`) of a $G$-valued function $V$ with respect to $\mu$, i.e. the entropy of the pushforward measure of $\mu$ under $V$, we have $$H[X+Y+Z;\mu] - H[X+Y;\mu] \le H[Y+Z;\mu] - H[Y;\mu].$$
 
 ### `comparison_of_ruzsa_distances`
 Lean (short): `(μ : Measure Ω) [Countable G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [IsProbabilityMeasure μ'] (hX : Measurable X) (hY : Measurable Y) (hZ : Measurable Z) (h : IndepFun Y Z μ') [FiniteRange X] [FiniteRange Z] [FiniteRange Y] : d[X; μ # Y + Z; μ'] - d[X; μ # Y; μ'] ≤ (H[Y + Z; μ'] - H[Y; μ']) / 2 ∧ ∀ (a : Module (ZMod 2) G), H[Y + Z; μ'] - H[Y; μ'] = d[Y; μ' # Z; μ'] + H[Z; μ'] / 2 - H[Y; μ'] / 2`

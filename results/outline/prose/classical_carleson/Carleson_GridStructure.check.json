@@ -1,4 +1,0 @@
-{
-"Grid.dist_strictMono": {"faithful": false, "issue": "q and K are never typed, and c(I), s(I) are never introduced. It supplies unsupported descriptions: ProofData making X a doubling measure space with a compatible family Theta(X), and d_{x,r} as 'the distance between functions on the ball B(x,r)'."},
-"Grid.succ": {"faithful": false, "issue": "Describes elements of Grid(X) as 'dyadic cubes', which neither the prompt nor the docstring supports."}
-}

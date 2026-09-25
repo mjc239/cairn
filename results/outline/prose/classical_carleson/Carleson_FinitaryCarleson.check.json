@@ -1,6 +1,0 @@
-{
- "finitary_carleson": {
-  "faithful": false,
-  "issue": "The function Q appearing in e^{iQ(x)(y)} is never introduced (it is the Theta(X)-valued function from ProofData); also the gloss 'nnq X = q viewed as a nonnegative real' is not supported by the prompt."
- }
-}

@@ -1,7 +1,9 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
-English with the full statement; anything the English attributes to the docstring must actually be in it.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. A "Project
+definitions" section first lists the project notions the statements refer to (statement, docstring, body,
+fields). Compare the English with the full statement; anything the English attributes to the docstring must
+actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -14,14 +16,61 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
-prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
-needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
-as $M_{\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
-repair, a missed error stays in the outline. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: a project
+notion's description must agree with its entry under "Project definitions" (statement, docstring, definition body,
+fields), and a library notion may only be given its standard mathematical meaning; otherwise flag it. Every variable
+needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
+or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
+things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
+Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
+
+## Project definitions these statements use
+(What each project notion is. Any description of one in the English must agree with this.)
+
+#### `refPackage.X₀₁` (def)
+Lean: `{Ω₀₁ : Type u_1} → {Ω₀₂ : Type u_2} → [inst : MeasureSpace Ω₀₁] → [inst_1 : MeasureSpace Ω₀₂] → {G : Type uG} → [inst_2 : MeasurableSpace G] → refPackage Ω₀₁ Ω₀₂ G → Ω₀₁ → G`
+Docstring: The first variable in a package.
+Definition: `fun (Ω₀₁ : Type u_1) (Ω₀₂ : Type u_2) [MeasureSpace Ω₀₁] [MeasureSpace Ω₀₂] (G : Type uG) [MeasurableSpace G] (self : refPackage Ω₀₁ Ω₀₂ G) => self.1`
+
+#### `refPackage.X₀₂` (def)
+Lean: `{Ω₀₁ : Type u_1} → {Ω₀₂ : Type u_2} → [inst : MeasureSpace Ω₀₁] → [inst_1 : MeasureSpace Ω₀₂] → {G : Type uG} → [inst_2 : MeasurableSpace G] → refPackage Ω₀₁ Ω₀₂ G → Ω₀₂ → G`
+Docstring: The second variable in a package.
+Definition: `fun (Ω₀₁ : Type u_1) (Ω₀₂ : Type u_2) [MeasureSpace Ω₀₁] [MeasureSpace Ω₀₂] (G : Type uG) [MeasurableSpace G] (self : refPackage Ω₀₁ Ω₀₂ G) => self.2`
+
+#### `refPackage.η` (def)
+Lean: `{Ω₀₁ : Type u_1} → {Ω₀₂ : Type u_2} → [inst : MeasureSpace Ω₀₁] → [inst_1 : MeasureSpace Ω₀₂] → {G : Type uG} → [inst_2 : MeasurableSpace G] → refPackage Ω₀₁ Ω₀₂ G → ℝ`
+Docstring: The constant that parameterizes how good the package is. The argument only works for small enough `η`, typically `≤ 1/9` or `< 1/8`.
+Definition: `fun (Ω₀₁ : Type u_1) (Ω₀₂ : Type u_2) [MeasureSpace Ω₀₁] [MeasureSpace Ω₀₂] (G : Type uG) [MeasurableSpace G] (self : refPackage Ω₀₁ Ω₀₂ G) => self.5`
+
+#### `rdist` (def)
+Lean: `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → (Ω → G) → (Ω' → G) → autoParam (Measure Ω) rdist._auto_1 → autoParam (Measure Ω') rdist._auto_3 → ℝ`
+Docstring: The Ruzsa distance `rdist X Y` or `d[X ; Y]` between two random variables is defined as `H[X'- Y'] - H[X']/2 - H[Y']/2`, where `X', Y'` are independent copies of `X, Y`.
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] (X : Ω → G) (Y : Ω' → G) (μ : Measure Ω) (μ' : Measure Ω') => H[fun (x : G × G) => x.1 - x.2; Measure.prod (Measure.map X μ) (Measure.map Y μ')] - H[X; μ] / (2 : ℝ) - H[Y; μ'] / (2 : ℝ)`
+
+#### `condRuzsaDist` (def)
+Lean: `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {S : Type u_6} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace S] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω → S) → (Ω' → G) → (Ω' → T) → (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) → [IsFiniteMeasure μ] → (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) → [IsFiniteMeasure μ'] → ℝ`
+Docstring: The conditional Ruzsa distance `d[X|Z ; Y|W]`.
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} {S : Type u_6} {T : Type u_7} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] [MeasurableSpace S] [MeasurableSpace T] [Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Z : Ω → S) (Y : Ω' → G) (W : Ω' → T) (μ : Measure Ω) [IsFiniteMeasure μ] (μ' : Measure Ω') [IsFiniteMeasure μ'] => dk[condDistrib X Z μ ; Measure.map Z μ # condDistrib Y W μ' ; Measure.map W μ']`
+
+#### `condRuzsaDist'` (def)
+Lean: `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω' → G) → (Ω' → T) → autoParam (Measure Ω) condRuzsaDist'._auto_1 → (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) → [IsFiniteMeasure μ'] → ℝ`
+Docstring: The conditional Ruzsa distance `d[X ; Y|W]`.
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} {T : Type u_7} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] [MeasurableSpace T] [Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Y : Ω' → G) (W : Ω' → T) (μ : Measure Ω) (μ' : Measure Ω') [IsFiniteMeasure μ'] => dk[Kernel.const Unit (Measure.map X μ) ; Measure.dirac () # condDistrib Y W μ' ; Measure.map W μ']`
+
+#### `ProbabilityTheory.entropy` (def)
+Lean: `{Ω : Type u_1} → {S : Type u_2} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → (Ω → S) → autoParam (Measure Ω) entropy._auto_1 → ℝ`
+Docstring: Entropy of a random variable with values in a finite measurable space.
+Definition: `fun {Ω : Type u_1} {S : Type u_2} [MeasurableSpace Ω] [MeasurableSpace S] (X : Ω → S) (μ : Measure Ω) => Hm[Measure.map X μ]`
+
+#### `ProbabilityTheory.Kernel.rdist` (def)
+Lean: `{T : Type u_1} → {T' : Type u_2} → {G : Type u_4} → [inst : MeasurableSpace T] → [inst_1 : MeasurableSpace T'] → [inst_2 : MeasurableSpace G] → [AddCommGroup G] → Kernel T G → Kernel T' G → Measure T → Measure T' → ℝ`
+Docstring: The Rusza distance between two kernels taking values in the same space, defined as the average Rusza distance between the image measures.
+Definition: `fun {T : Type u_1} {T' : Type u_2} {G : Type u_4} [MeasurableSpace T] [MeasurableSpace T'] [MeasurableSpace G] [AddCommGroup G] (κ : Kernel T G) (η : Kernel T' G) (μ : Measure T) (ν : Measure T') => ∫ (x : T × T'), (fun (p : T × T') => Kernel.rdistm.{u_4} (G := G) (κ p.1) (η p.2)) x ∂μ.prod ν`
+
+## Translations
 
 ### `refPackage`
 Lean (short): `(Ω₀₁ : Type u_1) (Ω₀₂ : Type u_2) (G : Type uG) : Type (max (max uG u_1) u_2)`
@@ -51,7 +100,7 @@ English: Let $G$ be an abelian group equipped with a measurable space structure,
 Lean (short): `[Finite G] (p : refPackage Ω₀₁ Ω₀₂ G) [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] [MeasurableSingletonClass G] [Finite S] [MeasurableSingletonClass S] [Finite T] [MeasurableSingletonClass T] (h : TauMinimizes p X₁ X₂) (h1 : Measurable X₁') (h2 : Measurable X₂') (Z : Ω'₁ → S) (W : Ω'₂ → T) (hZ : Measurable Z) (hW : Measurable W) : d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁' | Z] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂' | W] - d[p.X₀₂ # X₂]) ≤ d[X₁' | Z # X₂' | W]`
 Lean (full): `∀ {Ω₀₁ : Type u_1} {Ω₀₂ : Type u_2} [inst : MeasureSpace Ω₀₁] [inst_1 : MeasureSpace Ω₀₂] {G : Type uG} [inst_2 : AddCommGroup G] [inst_3 : Finite G] [inst_4 : MeasurableSpace G] (p : refPackage Ω₀₁ Ω₀₂ G) {Ω : Type u_3} {Ω'₁ : Type u_7} {Ω'₂ : Type u_8} {S : Type u_9} {T : Type u_10} [inst_5 : MeasureSpace Ω] [hΩ₁ : MeasureSpace Ω'₁] [hΩ₂ : MeasureSpace Ω'₂] [inst_6 : IsProbabilityMeasure.{u_7} (α := Ω'₁) (m0 := MeasureSpace.toMeasurableSpace) volume] [inst_7 : IsProbabilityMeasure.{u_8} (α := Ω'₂) (m0 := MeasureSpace.toMeasurableSpace) volume] {X₁ X₂ : Ω → G} {X₁' : Ω'₁ → G} {X₂' : Ω'₂ → G} [inst_8 : MeasurableSingletonClass G] [Finite S] [inst_10 : MeasurableSpace S] [MeasurableSingletonClass S] [Finite T] [inst_13 : MeasurableSpace T] [MeasurableSingletonClass T], TauMinimizes p X₁ X₂ → Measurable X₁' → Measurable X₂' → ∀ (Z : Ω'₁ → S) (W : Ω'₂ → T), Measurable Z → Measurable W → d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁' | Z] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂' | W] - d[p.X₀₂ # X₂]) ≤ d[X₁' | Z # X₂' | W]`
 Docstring: For any $G$-valued random variables $X'_1,X'_2$ and random variables $Z,W$, one can lower bound $d[X'_1|Z;X'_2|W]$ by $$k - \eta (d[X^0_1;X'_1|Z] - d[X^0_1;X_1] ) - \eta (d[X^0_2;X'_2|W] - d[X^0_2;X_2] ).$$
-English: Let $G$ be a finite abelian group with measurable singletons, and let $S$ and $T$ be finite types with measurable singletons. Let $p$ be a reference package with parameter $\eta$ and reference variables $X^0_1, X^0_2$, and let $(X_1,X_2)$ minimize $\tau$ for $p$. Let $\Omega_1'$ and $\Omega_2'$ be spaces whose measures are probability measures, let $X_1':\Omega_1'\to G$ and $X_2':\Omega_2'\to G$ be measurable, and let $Z:\Omega_1'\to S$ and $W:\Omega_2'\to T$ be measurable. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1'\mid Z]-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2'\mid W]-d[X^0_2;X_2]\right)\le d[X_1'\mid Z;X_2'\mid W].$$
+English: Let $G$ be a finite additive commutative group equipped with a measurable space structure in which singletons are measurable. Let $\Omega_{01}$ and $\Omega_{02}$ be measure spaces (with measures $\mathbb{P}_{01}$, $\mathbb{P}_{02}$ respectively), and let $p$ be a reference package (`refPackage Ω₀₁ Ω₀₂ G`), with reference variables $X^0_1 : \Omega_{01} \to G$ (`p.X₀₁`), $X^0_2 : \Omega_{02} \to G$ (`p.X₀₂`) and real parameter $\eta$ (`p.η`). Let $\Omega$ be a measure space with measure $\mathbb{P}$, and let $X_1, X_2 : \Omega \to G$ be functions such that $(X_1, X_2)$ minimizes the $\tau$-functional for $p$ (`TauMinimizes p X₁ X₂`), i.e. $\tau[X_1; X_2 \mid p] \le \tau[\mathrm{id}; \nu_1 \,\#\, \mathrm{id}; \nu_2 \mid p]$ for all probability measures $\nu_1, \nu_2$ on $G$, where $\tau[Y_1; \mu_1 \# Y_2; \mu_2 \mid p] = d[Y_1;\mu_1 \# Y_2;\mu_2] + \eta\, d[X^0_1; \mathbb{P}_{01} \# Y_1; \mu_1] + \eta\, d[X^0_2; \mathbb{P}_{02} \# Y_2; \mu_2]$. Let $\Omega'_1$ and $\Omega'_2$ be measure spaces whose measures $\mathbb{P}'_1$, $\mathbb{P}'_2$ are probability measures, and let $X'_1 : \Omega'_1 \to G$ and $X'_2 : \Omega'_2 \to G$ be measurable. Let $S$ and $T$ be finite types, each equipped with a measurable space structure in which singletons are measurable, and let $Z : \Omega'_1 \to S$ and $W : \Omega'_2 \to T$ be measurable. Here $d[\cdot\,;\cdot]$ is the Ruzsa distance `rdist` (with respect to the measures of the respective spaces), $d[X^0_1; X'_1 \mid Z]$ is the conditional Ruzsa distance `condRuzsaDist'` of $X^0_1$ (on $\Omega_{01}$) and $X'_1$ given $Z$ (and similarly $d[X^0_2; X'_2 \mid W]$), and $d[X'_1 \mid Z; X'_2 \mid W]$ is the conditional Ruzsa distance `condRuzsaDist`. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1'\mid Z]-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2'\mid W]-d[X^0_2;X_2]\right)\le d[X_1'\mid Z;X_2'\mid W].$$
 
 ### `tau_minimizer_exists`
 Lean (short): `[IsProbabilityMeasure volume] [IsProbabilityMeasure volume] [Finite G] (p : refPackage Ω₀₁ Ω₀₂ G) [MeasurableSingletonClass G] : ∃ Ω x X₁ X₂, Measurable X₁ ∧ Measurable X₂ ∧ IsProbabilityMeasure volume ∧ TauMinimizes p X₁ X₂`
