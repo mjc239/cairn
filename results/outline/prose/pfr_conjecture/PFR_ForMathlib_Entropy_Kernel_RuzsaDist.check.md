@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -38,19 +39,21 @@ Definition: `fun {S : Type u_2} [MeasurableSpace S] (μ : Measure S) => ∑' (s 
 #### `ProbabilityTheory.FiniteSupport` (structure or class)
 Lean: `{S : Type u_2} → [inst : MeasurableSpace S] → autoParam (Measure S) FiniteSupport._auto_1 → Prop`
 Docstring: A measure has finite support if there exists a finite set whose complement has zero measure.
-Fields: `A`, `x`
+Constructor (every field with its type): `∀ {S : Type u_2} [inst : MeasurableSpace S] {μ : autoParam (Measure S) FiniteSupport._auto_1}, (∃ (A : Finset S), ∀ᵐ (x : S) ∂μ, x ∈ A) → FiniteSupport μ`
 
 ## Translations
 
 ### `ProbabilityTheory.Kernel.rdistm`
 Lean (short): `(μ : Measure G) (ν : Measure G) : ℝ`
 Lean (full): `{G : Type u_4} → [inst : MeasurableSpace G] → [AddCommGroup G] → Measure G → Measure G → ℝ`
+Definition: `fun {G : Type u_4} [MeasurableSpace G] [AddCommGroup G] (μ ν : Measure G) => measureEntropy (S := G) (Measure.map (fun (x : G × G) => x.1 - x.2) (μ.prod ν)) - Hm[μ] / (2 : ℝ) - Hm[ν] / (2 : ℝ)`
 Docstring: The Rusza distance between two measures, defined as `H[X - Y] - H[X]/2 - H[Y]/2` where `X` and `Y` are independent variables distributed according to the two measures.
 English: Let $G$ be an abelian group equipped with a measurable space structure. For two measures $\mu,\nu$ on $G$, this defines a real number $\mathrm{rdistm}(\mu,\nu)$. According to its docstring, it is the Ruzsa distance between the two measures, defined as $H[X-Y]-H[X]/2-H[Y]/2$ where $X$ and $Y$ are independent variables distributed according to $\mu$ and $\nu$.
 
 ### `ProbabilityTheory.Kernel.rdist`
 Lean (short): `(κ : Kernel T G) (η : Kernel T' G) (μ : Measure T) (ν : Measure T') : ℝ`
 Lean (full): `{T : Type u_1} → {T' : Type u_2} → {G : Type u_4} → [inst : MeasurableSpace T] → [inst_1 : MeasurableSpace T'] → [inst_2 : MeasurableSpace G] → [AddCommGroup G] → Kernel T G → Kernel T' G → Measure T → Measure T' → ℝ`
+Definition: `fun {T : Type u_1} {T' : Type u_2} {G : Type u_4} [MeasurableSpace T] [MeasurableSpace T'] [MeasurableSpace G] [AddCommGroup G] (κ : Kernel T G) (η : Kernel T' G) (μ : Measure T) (ν : Measure T') => ∫ (x : T × T'), (fun (p : T × T') => Kernel.rdistm.{u_4} (G := G) (κ p.1) (η p.2)) x ∂μ.prod ν`
 Docstring: The Rusza distance between two kernels taking values in the same space, defined as the average Rusza distance between the image measures.
 English: Definition. Let $T$ and $T'$ be measurable spaces and let $G$ be an additive commutative group equipped with a measurable space structure. For a kernel $\kappa$ from $T$ to $G$, a kernel $\eta$ from $T'$ to $G$, a measure $\mu$ on $T$ and a measure $\nu$ on $T'$, the kernel Ruzsa distance $d_k[\kappa;\mu \,\#\, \eta;\nu]$ is a real number. According to its docstring, it is the average Ruzsa distance between the image measures.
 

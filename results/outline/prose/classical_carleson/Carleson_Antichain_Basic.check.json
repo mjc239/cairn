@@ -1,4 +1,0 @@
-{
-"dens2_antichain": {"faithful": false, "issue": "The letter \\mathfrak{c} means two things: the project constant 𝕔 (D = 2^{\\mathfrak{c} a^2}, C_{6.1.3} = 2^{(\\mathfrak{c}+3)a^3}...) and the centre function 𝔠 (\\mathfrak{c}(\\mathfrak{p})). Use a different symbol for one of them. The mathematical content otherwise matches the Lean."},
-"Lemma6_1_3.eLpNorm_𝓜p_le": {"faithful": false, "issue": "The letter \\mathfrak{c} means both the project constant 𝕔 (in D = 2^{\\mathfrak{c} a^2}) and the tile centre 𝔠 (\\mathfrak{c}(\\mathfrak{p}), which is used in B_p). Use a different symbol for one of them. The content otherwise matches the Lean."}
-}

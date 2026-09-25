@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,5 +33,6 @@ Use every Lean name exactly as given.
 ### `iterCConv`
 Lean (short): `[Fintype G] [CharZero R] (f : G → R) (_ : ℕ) (_ : G) : R`
 Lean (full): `{G : Type u_1} → {R : Type u_3} → [Fintype G] → [DecidableEq G] → [AddCommGroup G] → [inst : Semifield R] → [CharZero R] → (G → R) → ℕ → G → R`
+Definition: `fun {G : Type u_1} {R : Type u_3} [Fintype G] [DecidableEq G] [AddCommGroup G] [Semifield R] [CharZero R] (f : G → R) (x : ℕ) => Nat.brecOn (motive := fun (x : ℕ) => G → R) x (iterCConv._f f)`
 Docstring: Iterated convolution.
 English: Let $G$ be a finite additive commutative group and $R$ a semifield of characteristic zero. Definition: for a function $f : G\to R$ and a natural number $n$, a function $\mathrm{iterCConv}(f,n) : G\to R$. According to its docstring, this is an iterated convolution.

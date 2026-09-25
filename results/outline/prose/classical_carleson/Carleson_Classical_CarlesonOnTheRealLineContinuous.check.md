@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -56,6 +57,16 @@ Definition: `fun (a : ℝ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
 #### `k` (def)
 Lean: `ℝ → ℂ`
 Definition: `fun (x : ℝ) => ↑(max ((1 : ℝ) - |x|) (0 : ℝ)) / ((1 : ℂ) - Complex.exp (Complex.I * ↑x))`
+
+#### `partialFourierSum` (def)
+Lean: `ℕ → (ℝ → ℂ) → ℝ → ℂ`
+Docstring: The Nᵗʰ partial Fourier sum of `f : ℝ → ℂ` for `N : ℕ`.
+Definition: `fun (N : ℕ) (f : ℝ → ℂ) (x : ℝ) => ∑ n ∈ Finset.Icc (-↑N) ↑N, HMul.hMul (β := ℂ) (fourierCoeffOn Real.two_pi_pos f n) ((fourier n) ↑x : ℂ)`
+
+#### `𝕔` (def)
+Lean: `ℕ`
+Docstring: The main constant in the blueprint, driving all the construction, is `D = 2 ^ (100 * a ^ 2)`. It turns out that the proof is robust, and works for other values of `100`, giving better constants in the end. We will formalize it using a parameter `𝕔` (that we fix equal to `100` to follow the blueprint) and having `D = 2 ^ (𝕔 * a ^ 2)`. We register two lemmas `seven_le_c` and `c_le_100` and will never unfold `𝕔` from this point on.
+Definition: `wrapped✝.1`
 
 ## Translations
 

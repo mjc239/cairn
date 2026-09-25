@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -33,7 +34,7 @@ Use every Lean name exactly as given.
 #### `BoundedFiniteSupport` (structure or class)
 Lean: `{X : Type u_3} → {E : Type u_4} → [inst : MeasurableSpace X] → [TopologicalSpace E] → [ENorm E] → [Zero E] → (X → E) → autoParam (Measure X) BoundedFiniteSupport._auto_1 → Prop`
 Docstring: Bounded measurable function $g$ on $X$ supported on a set of finite measure
-Fields: `α`, `⊤`
+Constructor (every field with its type): `∀ {X : Type u_3} {E : Type u_4} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace E] [inst_2 : ENorm E] [inst_3 : Zero E] {f : X → E} {μ : autoParam (Measure X) BoundedFiniteSupport._auto_1}, MemLp f ⊤ μ → LT.lt (α := ENNReal) (μ (Function.support f) : ENNReal) (⊤ : ENNReal) → BoundedFiniteSupport f μ`
 
 #### `C10_0_3` (def)
 Lean: `ℕ → NNReal`
@@ -48,12 +49,12 @@ Definition: `fun (a : ℕ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
 #### `IsTwoSidedKernel` (structure or class)
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
 Docstring: `K` is a two-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
-Fields: `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ} [toIsOneSidedKernel : IsOneSidedKernel a K], (∀ {x x' y : X}, (2 : ℝ) * dist x x' ≤ dist x y → ‖K x y - K x' y‖ₑ ≤ HPow.hPow (β := ℝ) (edist x x' / edist x y) (↑a)⁻¹ * (↑(C_K ↑a) / vol x y)) → IsTwoSidedKernel a K`
 
 #### `MeasureTheory.DoublingMeasure` (structure or class)
 Lean: `(X : Type u_3) → outParam NNReal → [PseudoMetricSpace X] → Type u_3`
 Docstring: A metric space with a measure with some nice properties, including a doubling condition. This is called a "doubling metric measure space" in the blueprint. `A` will usually be `2 ^ a`.
-Fields: `α`, `m0`, `X`, `R`
+Constructor (every field with its type): `{X : Type u_3} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [toCompleteSpace : CompleteSpace X] → [toLocallyCompactSpace : LocallyCompactSpace X] → [toMeasureSpace : MeasureSpace X] → [toBorelSpace : BorelSpace X] → [toIsLocallyFiniteMeasure : IsLocallyFiniteMeasure.{u_3} (α := X) (m0 := MeasureSpace.toMeasurableSpace) volume] → [toIsDoubling : Measure.IsDoubling.{u_3} (X := X) volume A] → [toNeZero : NeZero.{u_3} (R := Measure X) volume] → DoublingMeasure X A`
 
 #### `MeasureTheory.DoublingMeasure.toMeasureSpace` (def)
 Lean: `{X : Type u_3} → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → [self : DoublingMeasure X A] → MeasureSpace X`
@@ -92,7 +93,7 @@ Definition: `fun (a : ℝ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
 #### `IsOneSidedKernel` (structure or class)
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
 Docstring: `K` is a one-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
-Fields: `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ}, Measurable (Function.uncurry K) → (∀ (x y : X), ‖K x y‖ ≤ ↑(C_K ↑a) / Real.vol x y) → (∀ {x y y' : X}, (2 : ℝ) * dist y y' ≤ dist x y → ‖K x y - K x y'‖ ≤ HPow.hPow (β := ℝ) (dist y y' / dist x y) (↑a)⁻¹ * (↑(C_K ↑a) / Real.vol x y)) → IsOneSidedKernel a K`
 
 #### `Real.vol` (def)
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → X → X → ℝ`
@@ -107,7 +108,7 @@ Definition: `fun {X : Type u_3} [PseudoMetricSpace X] [MeasureSpace X] (x y : X)
 #### `MeasureTheory.Measure.IsDoubling` (structure or class)
 Lean: `{X : Type u_3} → [inst : MeasurableSpace X] → [PseudoMetricSpace X] → Measure X → outParam NNReal → Prop`
 Docstring: A doubling measure is a measure on a metric space with the condition that doubling the radius of a ball only increases the volume by a constant factor, independent of the ball.
-Fields: `x`, `r`, `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_3} [inst : MeasurableSpace X] [inst_1 : PseudoMetricSpace X] {μ : Measure X} {A : outParam NNReal}, (∀ (x : X) (r : ℝ), μ (Metric.ball x ((2 : ℝ) * r)) ≤ HMul.hMul (β := ENNReal) ↑A (μ (Metric.ball x r) : ENNReal)) → μ.IsDoubling A`
 
 ## Translations
 

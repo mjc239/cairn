@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,5 +33,6 @@ Use every Lean name exactly as given.
 ### `MeasureTheory.cLpNorm`
 Lean (short): `(p : ENNReal) (f : α → E) : ℝ`
 Lean (full): `{α : Type u_1} → {E : Type u_4} → [MeasurableSpace α] → [NormedAddCommGroup E] → ENNReal → (α → E) → ℝ`
+Definition: `fun {α : Type u_1} {E : Type u_4} [inst : MeasurableSpace α] [NormedAddCommGroup E] (p : ENNReal) (f : α → E) => lpNorm (m0 := inst) f p (ProbabilityTheory.uniformOn Set.univ)`
 Docstring: The Lp norm of a function with the compact normalisation.
 English: Let $\alpha$ be a measurable space and $E$ a normed additive commutative group. For $p \in [0,\infty]$ (an extended nonnegative real) and a function $f : \alpha \to E$, $\mathrm{cLpNorm}(p, f)$ is a real number; according to its docstring, it is the $L^p$ norm of $f$ with the compact normalisation.

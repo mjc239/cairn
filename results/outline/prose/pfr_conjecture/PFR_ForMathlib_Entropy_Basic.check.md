@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -38,6 +39,7 @@ Definition: `fun {S : Type u_2} [MeasurableSpace S] (μ : Measure S) => ∑' (s 
 #### `FiniteRange` (inductive)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
 Docstring: The property of having a finite range.
+Constructor (every field with its type): `∀ {Ω : Type u_1} {G : Type u_2} {X : Ω → G}, (Set.range X).Finite → FiniteRange X`
 
 #### `prod` (def)
 Lean: `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → (Ω → S) → (Ω → T) → Ω → S × T`
@@ -57,12 +59,12 @@ Definition: `fun {S : Type u_2} {T : Type u_3} {U : Type u_4} [MeasurableSpace S
 #### `ProbabilityTheory.FiniteSupport` (structure or class)
 Lean: `{S : Type u_2} → [inst : MeasurableSpace S] → autoParam (Measure S) FiniteSupport._auto_1 → Prop`
 Docstring: A measure has finite support if there exists a finite set whose complement has zero measure.
-Fields: `A`, `x`
+Constructor (every field with its type): `∀ {S : Type u_2} [inst : MeasurableSpace S] {μ : autoParam (Measure S) FiniteSupport._auto_1}, (∃ (A : Finset S), ∀ᵐ (x : S) ∂μ, x ∈ A) → FiniteSupport μ`
 
 #### `ProbabilityTheory.IsUniform` (structure or class)
 Lean: `{Ω : Type uΩ} → {S : Type uS} → [mΩ : MeasurableSpace Ω] → Set S → (Ω → S) → autoParam (Measure Ω) IsUniform._auto_1 → Prop`
 Docstring: The assertion that the law of $X$ is the uniform probability measure on a finite set $H$. While in applications $H$ will be non-empty finite set, $X$ measurable, and and $μ$ a probability measure, it could be technically convenient to have a definition that works even without these hypotheses. (For instance, `isUniform` would be well-defined, but false, for infinite `H`). This should probably be refactored, requiring instead that `μ.map X = uniformOn H`.
-Fields: `α`, `0`
+Constructor (every field with its type): `∀ {Ω : Type uΩ} {S : Type uS} [mΩ : MeasurableSpace Ω] {H : Set S} {X : Ω → S} {μ : autoParam (Measure Ω) IsUniform._auto_1}, (∀ ⦃x : S⦄, x ∈ H → ∀ ⦃y : S⦄, y ∈ H → Eq (α := ENNReal) (μ (X ⁻¹' {x}) : ENNReal) (μ (X ⁻¹' {y}) : ENNReal)) → μ (X ⁻¹' Hᶜ) = (0 : ENNReal) → IsUniform H X μ`
 
 #### `ProbabilityTheory.CondIndepFun` (def)
 Lean: `{Ω : Type u_1} → {α : Type u_3} → {β : Type u_4} → {γ : Type u_5} → [inst : MeasurableSpace Ω] → [MeasurableSpace α] → [MeasurableSpace β] → [MeasurableSpace γ] → (Ω → α) → (Ω → β) → (Ω → γ) → autoParam (Measure Ω) CondIndepFun._auto_1 → Prop`
@@ -74,12 +76,14 @@ Definition: `fun {Ω : Type u_1} {α : Type u_3} {β : Type u_4} {γ : Type u_5}
 ### `ProbabilityTheory.entropy`
 Lean (short): `(X : Ω → S) (μ : autoParam (Measure Ω) entropy._auto_1) : ℝ`
 Lean (full): `{Ω : Type u_1} → {S : Type u_2} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → (Ω → S) → autoParam (Measure Ω) entropy._auto_1 → ℝ`
+Definition: `fun {Ω : Type u_1} {S : Type u_2} [MeasurableSpace Ω] [MeasurableSpace S] (X : Ω → S) (μ : Measure Ω) => Hm[Measure.map X μ]`
 Docstring: Entropy of a random variable with values in a finite measurable space.
 English: Let $\Omega$ and $S$ be measurable spaces. Definition: for a function $X : \Omega\to S$ and a measure $\mu$ on $\Omega$ (if omitted, $\mu$ is filled in automatically as `volume`, the measure of a `MeasureSpace` instance on $\Omega$), the real number $H[X;\mu]$. According to the docstring, this is the entropy of a random variable with values in a finite measurable space.
 
 ### `ProbabilityTheory.condEntropy`
 Lean (short): `(X : Ω → S) (Y : Ω → T) (μ : autoParam (Measure Ω) condEntropy._auto_1) : ℝ`
 Lean (full): `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → [MeasurableSpace T] → (Ω → S) → (Ω → T) → autoParam (Measure Ω) condEntropy._auto_1 → ℝ`
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [MeasurableSpace Ω] [MeasurableSpace S] [inst_1 : MeasurableSpace T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) => @integral _ _ _ _ inst_1 (Measure.map Y μ) fun (x : T) => (fun (y : T) => H[X | Y ← y; μ]) x`
 Docstring: Conditional entropy of a random variable w.r.t. another. This is the expectation under the law of `Y` of the entropy of the law of `X` conditioned on the event `Y = y`.
 English: Let $\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X : \Omega\to S$, $Y : \Omega\to T$ and a measure $\mu$ on $\Omega$ (if omitted, $\mu$ is filled in automatically as `volume`, the measure of a `MeasureSpace` instance on $\Omega$), the real number $H[X\mid Y;\mu]$. According to the docstring, this is the conditional entropy of $X$ with respect to $Y$: the expectation under the law of $Y$ of the entropy of the law of $X$ conditioned on the event $Y=y$.
 
@@ -92,6 +96,7 @@ English: Let $S$, $T$, $U$ be measurable spaces with measurable singletons, with
 ### `ProbabilityTheory.condMutualInfo`
 Lean (short): `(X : Ω → S) (Y : Ω → T) (Z : Ω → U) (μ : autoParam (Measure Ω) condMutualInfo._auto_1) : ℝ`
 Lean (full): `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → {U : Type u_4} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → [MeasurableSpace U] → [MeasurableSpace T] → (Ω → S) → (Ω → T) → (Ω → U) → autoParam (Measure Ω) condMutualInfo._auto_1 → ℝ`
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} {U : Type u_4} [MeasurableSpace Ω] [MeasurableSpace S] [inst_1 : MeasurableSpace U] [MeasurableSpace T] (X : Ω → S) (Y : Ω → T) (Z : Ω → U) (μ : Measure Ω) => @integral _ _ _ _ inst_1 (Measure.map Z μ) fun (x : U) => (fun (z : U) => H[X | Z ← z; μ] + H[Y | Z ← z; μ] - H[⟨X, Y⟩ | Z ← z; μ]) x`
 Docstring: The conditional mutual information `I[X : Y| Z]` is the mutual information of `X| Z=z` and `Y| Z=z`, integrated over `z`.
 English: Let $\Omega$, $S$, $T$ and $U$ be measurable spaces. Definition: for functions $X : \Omega\to S$, $Y : \Omega\to T$, $Z : \Omega\to U$ and a measure $\mu$ on $\Omega$ (if omitted, $\mu$ is filled in automatically as `volume`, the measure of a `MeasureSpace` instance on $\Omega$), the real number $I[X : Y\mid Z;\mu]$. According to the docstring, this conditional mutual information is the mutual information of $X\mid Z=z$ and $Y\mid Z=z$, integrated over $z$.
 
@@ -122,8 +127,11 @@ English: Let $S$, $T$, $U$, $V$ be countable measurable spaces with measurable s
 ### `ProbabilityTheory.mutualInfo`
 Lean (short): `(X : Ω → S) (Y : Ω → T) (μ : autoParam (Measure Ω) mutualInfo._auto_1) : ℝ`
 Lean (full): `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → [mΩ : MeasurableSpace Ω] → [MeasurableSpace S] → [MeasurableSpace T] → (Ω → S) → (Ω → T) → autoParam (Measure Ω) mutualInfo._auto_1 → ℝ`
+Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [MeasurableSpace Ω] [MeasurableSpace S] [MeasurableSpace T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) => H[X; μ] + H[Y; μ] - H[⟨X, Y⟩; μ]`
 Docstring: The mutual information `I[X : Y]` of two random variables is defined to be `H[X] + H[Y] - H[X ; Y]`.
-English: Let $\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X : \Omega\to S$, $Y : \Omega\to T$ and a measure $\mu$ on $\Omega$ (if omitted, $\mu$ is filled in automatically as `volume`, the measure of a `MeasureSpace` instance on $\Omega$), the real number $I[X : Y;\mu]$. According to the docstring, the mutual information of two random variables is defined to be $H[X]+H[Y]-H[(X,Y)]$, where $(X,Y):\Omega\to S\times T$ is the pair $\omega\mapsto(X(\omega),Y(\omega))$ and $H$ denotes entropy.
+English: Let $\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X:\Omega\to S$ and $Y:\Omega\to T$ and a measure $\mu$ on $\Omega$ (an auto-filled argument; when omitted it is supplied automatically, by default the ambient measure `volume` on $\Omega$), the mutual information $I[X:Y;\mu]$ is the real number
+$$I[X:Y;\mu] = H[X;\mu] + H[Y;\mu] - H[\langle X,Y\rangle;\mu],$$
+where $\langle X,Y\rangle:\Omega\to S\times T$ is the pair $\omega\mapsto(X(\omega),Y(\omega))$, and for a function $Z:\Omega\to V$ into a measurable space $V$, $H[Z;\mu]$ is the project's `entropy`, defined as the measure entropy of the pushforward measure $\nu=Z_*\mu$ on $V$, namely $\sum_{v\in V} \phi\big(((\nu(V))^{-1}\nu)(\{v\})\big)$ (an unconditional sum, with measure values taken as real numbers), where $\phi(x)=-x\log x$.
 
 ### `ProbabilityTheory.mutualInfo_eq_entropy_sub_condEntropy`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass T] [Countable S] [Countable T] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] : I[X : Y ; μ] = H[X; μ] - H[X | Y ; μ]`

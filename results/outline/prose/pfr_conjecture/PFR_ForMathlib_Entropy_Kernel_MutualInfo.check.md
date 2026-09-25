@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -38,7 +39,7 @@ Definition: `fun {S : Type u_2} {T : Type u_3} [MeasurableSpace S] [MeasurableSp
 #### `ProbabilityTheory.FiniteSupport` (structure or class)
 Lean: `{S : Type u_2} → [inst : MeasurableSpace S] → autoParam (Measure S) FiniteSupport._auto_1 → Prop`
 Docstring: A measure has finite support if there exists a finite set whose complement has zero measure.
-Fields: `A`, `x`
+Constructor (every field with its type): `∀ {S : Type u_2} [inst : MeasurableSpace S] {μ : autoParam (Measure S) FiniteSupport._auto_1}, (∃ (A : Finset S), ∀ᵐ (x : S) ∂μ, x ∈ A) → FiniteSupport μ`
 
 #### `ProbabilityTheory.Kernel.AEFiniteKernelSupport` (def)
 Lean: `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → Kernel T S → Measure T → Prop`
@@ -55,10 +56,11 @@ Definition: `fun {S : Type u_2} [MeasurableSpace S] (μ : Measure S) => ∑' (s 
 ### `ProbabilityTheory.Kernel.mutualInfo`
 Lean (short): `(κ : Kernel T (S × U)) (μ : Measure T) : ℝ`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → {U : Type u_4} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → [inst_2 : MeasurableSpace U] → Kernel T (S × U) → Measure T → ℝ`
+Definition: `fun {S : Type u_2} {T : Type u_3} {U : Type u_4} [MeasurableSpace S] [MeasurableSpace T] [MeasurableSpace U] (κ : Kernel T (S × U)) (μ : Measure T) => Hk[κ.fst , μ] + Hk[κ.snd , μ] - Hk[κ , μ]`
 Docstring: Mutual information of a kernel into a product space with respect to a measure.
 English: Definition. Let $S$, $T$ and $U$ be measurable spaces. For a kernel $\kappa$ from $T$ to the product space $S\times U$ and a measure $\mu$ on $T$, $I_k[\kappa,\mu]\in\mathbb R$ is the mutual information of the kernel $\kappa$ with respect to $\mu$ (as its docstring describes it).
 
 ### `ProbabilityTheory.Kernel.mutualInfo_nonneg`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [MeasurableSingletonClass T] [Countable T] [IsFiniteMeasure μ] [FiniteSupport μ] (hκ : κ.AEFiniteKernelSupport μ) : 0 ≤ Ik[κ , μ]`
 Lean (full): `∀ {S : Type u_2} {T : Type u_3} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace T] [inst_2 : MeasurableSpace U] [MeasurableSingletonClass S] [MeasurableSingletonClass U] [MeasurableSingletonClass T] [Countable T] {κ : Kernel T (S × U)} {μ : Measure T} [IsFiniteMeasure μ] [FiniteSupport μ], κ.AEFiniteKernelSupport μ → (0 : ℝ) ≤ Ik[κ , μ]`
-English: Let $S$, $U$, $T$ have measurable singletons, with $T$ countable. Let $\mu$ be a finite measure on $T$ with finite support, and let $\kappa$ be a kernel from $T$ into $S \times U$ that has almost everywhere finite kernel support with respect to $\mu$. Then $0 \le I_k[\kappa,\mu]$.
+English: Let $S$, $T$, $U$ be measurable spaces in which every singleton is measurable, with $T$ countable. Let $\mu$ be a finite measure on $T$ which has finite support (there is a finite set whose complement has $\mu$-measure zero), and let $\kappa$ be a kernel from $T$ to $S \times U$ which has almost everywhere finite support with respect to $\mu$, i.e. for $\mu$-almost every $t \in T$ there is a finite set $A \subseteq S \times U$ with $\kappa(t)(A^c) = 0$. Let $I_k[\kappa,\mu]$ denote the mutual information of the kernel $\kappa$ with respect to $\mu$ (Lean `Kernel.mutualInfo`), defined as $H_k[\kappa_1,\mu] + H_k[\kappa_2,\mu] - H_k[\kappa,\mu]$, where $\kappa_1 : T \to S$ and $\kappa_2 : T \to U$ are the first and second marginal kernels of $\kappa$ and, for a kernel $\eta$ from $T$ to a measurable space, $H_k[\eta,\mu] = \int_T \operatorname{measureEntropy}(\eta(t))\, d\mu(t)$ is the entropy of $\eta$ with respect to $\mu$ (Lean `Kernel.entropy`). Then $0 \le I_k[\kappa,\mu]$.

@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -33,6 +34,7 @@ Use every Lean name exactly as given.
 #### `FiniteRange` (inductive)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
 Docstring: The property of having a finite range.
+Constructor (every field with its type): `∀ {Ω : Type u_1} {G : Type u_2} {X : Ω → G}, (Set.range X).Finite → FiniteRange X`
 
 #### `FiniteRange.toFinset` (def)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (X : Ω → G) → [hX : FiniteRange X] → Finset G`

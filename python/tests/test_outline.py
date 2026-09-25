@@ -151,7 +151,7 @@ def test_glossary_follows_project_notions():
         "T": FormalDecl("T", "theorem", "M", 6, type_deps={"dist", "lemma1", "Nat"}, type_pp="dist = 0"),
     }
     # direct references, then (depth 2) what they refer to; theorems and non-project names are left out
-    assert glossary(["T"], decls) == ["dist", "Data"]
+    assert glossary(["T"], decls, depth=2) == ["dist", "Data"]
     assert glossary(["T"], decls, depth=3) == ["dist", "Data", "Data.c"]
     text = "\n".join(_glossary_lines(["T"], decls, ()))
     assert "Definition: `0`" in text and "Docstring: Standing data." in text and "Fields: `c`" in text

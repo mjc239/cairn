@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -46,7 +47,7 @@ Definition: `fun {α : Type u_1} {ε' : Type u_5} [ENorm ε'] [Zero ε'] (j : Bo
 #### `ScaledPowerFunction` (structure or class)
 Lean: `Type`
 Docstring: A ScaledPowerFunction is meant to represent a function of the form `t ↦ (t / d)^σ`, where `d` is strictly positive and either `σ > 0` or `σ < 0`.
-Fields: `σ`, `d`, `0`
+Constructor (every field with its type): `(σ : ℝ) → (d : ENNReal) → (0 : ENNReal) < d → d ≠ ⊤ → (0 : ℝ) < σ ∨ σ < (0 : ℝ) → ScaledPowerFunction`
 
 #### `ScaledPowerFunction.d` (def)
 Lean: `ScaledPowerFunction → ENNReal`
@@ -86,12 +87,16 @@ Definition: `fun {α : Type u_1} {ε' : Type u_5} [ENorm ε'] [Zero ε'] (f : α
 #### `StrictRangeToneCouple` (structure or class)
 Lean: `Type`
 Docstring: A StrictRangeToneCouple is a `ToneCouple` for which the functions in the couple, when restricted to `Ioo 0 ∞`, map to `Ioo 0 ∞`.
-Fields: `toToneCouple`, `0`
+Constructor (every field with its type): `(toToneCouple : ToneCouple) → (∀ t ∈ Set.Ioo (0 : ENNReal) ⊤, toToneCouple.ton t ∈ Set.Ioo (0 : ENNReal) ⊤) → (∀ t ∈ Set.Ioo (0 : ENNReal) ⊤, toToneCouple.inv t ∈ Set.Ioo (0 : ENNReal) ⊤) → StrictRangeToneCouple`
 
 #### `ToneCouple` (structure or class)
 Lean: `Type`
 Docstring: A `ToneCouple` is a couple of two monotone functions that are practically inverses of each other. It is used in the proof of the real interpolation theorem. Note: originally it seemed useful to make the possible choice of this function general in the proof of the real inteprolation theorem. However, in the end really only one function works for all the different cases. This infrastructure, however, could potentially still be useful, if one would like to try to improve the constant.
-Fields: `mon`
+Constructor (every field with its type): `(ton inv : ENNReal → ENNReal) → (mon : Bool) → (if mon = true then StrictMono ton else StrictAnti ton) → (if mon = true then ∀ (s t : ENNReal), (ton s < t ↔ s < inv t) ∧ (t < ton s ↔ inv t < s) else ∀ (s t : ENNReal), (ton s < t ↔ inv t < s) ∧ (t < ton s ↔ s < inv t)) → ToneCouple`
+
+#### `ToneCouple.inv` (def)
+Lean: `ToneCouple → ENNReal → ENNReal`
+Definition: `fun (self : ToneCouple) => self.2`
 
 ## Translations
 

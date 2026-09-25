@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -43,6 +44,7 @@ Definition: `fun {Ω : Type u_1} {S : Type u_2} [MeasurableSpace Ω] [Measurable
 #### `FiniteRange` (inductive)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
 Docstring: The property of having a finite range.
+Constructor (every field with its type): `∀ {Ω : Type u_1} {G : Type u_2} {X : Ω → G}, (Set.range X).Finite → FiniteRange X`
 
 #### `FiniteRange.toFinset` (def)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (X : Ω → G) → [hX : FiniteRange X] → Finset G`
@@ -84,18 +86,21 @@ Definition: `fun {Ω : Type u_1} {G : Type u_2} (X : Ω → G) [FiniteRange X] =
 ### `condRuzsaDist`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Z : Ω → S) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) [IsFiniteMeasure μ] (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) [IsFiniteMeasure μ'] : ℝ`
 Lean (full): `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {S : Type u_6} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace S] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω → S) → (Ω' → G) → (Ω' → T) → (μ : autoParam (Measure Ω) condRuzsaDist._auto_1) → [IsFiniteMeasure μ] → (μ' : autoParam (Measure Ω') condRuzsaDist._auto_3) → [IsFiniteMeasure μ'] → ℝ`
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} {S : Type u_6} {T : Type u_7} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] [MeasurableSpace S] [MeasurableSpace T] [Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Z : Ω → S) (Y : Ω' → G) (W : Ω' → T) (μ : Measure Ω) [IsFiniteMeasure μ] (μ' : Measure Ω') [IsFiniteMeasure μ'] => dk[condDistrib X Z μ ; Measure.map Z μ # condDistrib Y W μ' ; Measure.map W μ']`
 Docstring: The conditional Ruzsa distance `d[X|Z ; Y|W]`.
 English: Definition. Let $\Omega$ and $\Omega'$ be measurable spaces, let $S$ and $T$ be measurable spaces, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \Omega \to G$, $Z : \Omega \to S$, $Y : \Omega' \to G$, $W : \Omega' \to T$, a finite measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist X Z Y W μ μ'` is a real number, denoted $d[X \mid Z \,;\, Y \mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X|Z ; Y|W]$.
 
 ### `condRuzsaDist'`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Y : Ω' → G) (W : Ω' → T) (μ : autoParam (Measure Ω) condRuzsaDist'._auto_1) (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) [IsFiniteMeasure μ'] : ℝ`
 Lean (full): `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → {T : Type u_7} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → [MeasurableSpace T] → [Countable G] → [MeasurableSingletonClass G] → (Ω → G) → (Ω' → G) → (Ω' → T) → autoParam (Measure Ω) condRuzsaDist'._auto_1 → (μ' : autoParam (Measure Ω') condRuzsaDist'._auto_3) → [IsFiniteMeasure μ'] → ℝ`
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} {T : Type u_7} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] [MeasurableSpace T] [Countable G] [MeasurableSingletonClass G] (X : Ω → G) (Y : Ω' → G) (W : Ω' → T) (μ : Measure Ω) (μ' : Measure Ω') [IsFiniteMeasure μ'] => dk[Kernel.const Unit (Measure.map X μ) ; Measure.dirac () # condDistrib Y W μ' ; Measure.map W μ']`
 Docstring: The conditional Ruzsa distance `d[X ; Y|W]`.
 English: Definition. Let $\Omega$ and $\Omega'$ be measurable spaces, let $T$ be a measurable space, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \Omega \to G$, $Y : \Omega' \to G$, $W : \Omega' \to T$, a measure $\mu$ on $\Omega$ and a finite measure $\mu'$ on $\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist' X Y W μ μ'` is a real number, denoted $d[X \,;\, Y \mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X ; Y|W]$.
 
 ### `rdist`
 Lean (short): `(X : Ω → G) (Y : Ω' → G) (μ : autoParam (Measure Ω) rdist._auto_1) (μ' : autoParam (Measure Ω') rdist._auto_3) : ℝ`
 Lean (full): `{Ω : Type u_1} → {Ω' : Type u_2} → {G : Type u_5} → [mΩ : MeasurableSpace Ω] → [mΩ' : MeasurableSpace Ω'] → [hG : MeasurableSpace G] → [AddCommGroup G] → (Ω → G) → (Ω' → G) → autoParam (Measure Ω) rdist._auto_1 → autoParam (Measure Ω') rdist._auto_3 → ℝ`
+Definition: `fun {Ω : Type u_1} {Ω' : Type u_2} {G : Type u_5} [MeasurableSpace Ω] [MeasurableSpace Ω'] [MeasurableSpace G] [AddCommGroup G] (X : Ω → G) (Y : Ω' → G) (μ : Measure Ω) (μ' : Measure Ω') => H[fun (x : G × G) => x.1 - x.2; Measure.prod (Measure.map X μ) (Measure.map Y μ')] - H[X; μ] / (2 : ℝ) - H[Y; μ'] / (2 : ℝ)`
 Docstring: The Ruzsa distance `rdist X Y` or `d[X ; Y]` between two random variables is defined as `H[X'- Y'] - H[X']/2 - H[Y']/2`, where `X', Y'` are independent copies of `X, Y`.
 English: Definition. Let $G$ be an abelian group equipped with a measurable space structure, let $\Omega,\Omega'$ be measurable spaces with measures $\mu$ on $\Omega$ and $\mu'$ on $\Omega'$ (defaulting to the ambient measures), and let $X:\Omega\to G$ and $Y:\Omega'\to G$. The Ruzsa distance $d[X;\mu \,\#\, Y;\mu']$ is the real number which, per the docstring, is $H[X'-Y'] - H[X']/2 - H[Y']/2$, where $X',Y'$ are independent copies of $X$ (under $\mu$) and $Y$ (under $\mu'$).
 

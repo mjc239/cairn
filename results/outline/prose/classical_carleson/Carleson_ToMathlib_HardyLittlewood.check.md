@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -43,7 +44,7 @@ Definition: `fun {ε₁ : Type u_4} {ε₂ : Type u_5} [ENorm ε₁] [ENorm ε�
 #### `MeasureTheory.Measure.IsDoubling` (structure or class)
 Lean: `{X : Type u_3} → [inst : MeasurableSpace X] → [PseudoMetricSpace X] → Measure X → outParam NNReal → Prop`
 Docstring: A doubling measure is a measure on a metric space with the condition that doubling the radius of a ball only increases the volume by a constant factor, independent of the ball.
-Fields: `x`, `r`, `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_3} [inst : MeasurableSpace X] [inst_1 : PseudoMetricSpace X] {μ : Measure X} {A : outParam NNReal}, (∀ (x : X) (r : ℝ), μ (Metric.ball x ((2 : ℝ) * r)) ≤ HMul.hMul (β := ENNReal) ↑A (μ (Metric.ball x r) : ENNReal)) → μ.IsDoubling A`
 
 #### `maximalFunction` (def)
 Lean: `{X : Type u_1} → {ε : Type u_2} → [PseudoMetricSpace X] → [inst : MeasurableSpace X] → [ENorm ε] → {ι : Type u_4} → Measure X → Set ι → (ι → X) → (ι → ℝ) → ℝ → (X → ε) → X → ENNReal`
@@ -64,6 +65,11 @@ Lean: `ENNReal → ENNReal → ENNReal → ENNReal → ENNReal → NNReal → NN
 Docstring: The constant occurring in the real interpolation theorem
 Definition: `fun (p₀ p₁ q₀ q₁ q : ENNReal) (C₀ C₁ A : NNReal) (t : ENNReal) => (C_realInterpolation_ENNReal p₀ p₁ q₀ q₁ q C₀ C₁ A t).toNNReal`
 
+#### `MeasureTheory.C_realInterpolation_ENNReal` (def)
+Lean: `ENNReal → ENNReal → ENNReal → ENNReal → ENNReal → NNReal → NNReal → NNReal → ENNReal → ENNReal`
+Docstring: The definition of the constant in the real interpolation theorem, when viewed as an element of `ℝ≥0∞`.
+Definition: `fun (p₀ p₁ q₀ q₁ q : ENNReal) (C₀ C₁ A : NNReal) (t : ENNReal) => (if p₀ = p₁ then (1 : ENNReal) else ENNReal.ofReal ((2 : ℝ) * ↑A)) * q ^ q⁻¹.toReal * ((if q₁ < ⊤ then (1 : ENNReal) else (0 : ENNReal)) * ENNReal.ofReal |q.toReal - q₁.toReal|⁻¹ + (if q₀ < ⊤ then (1 : ENNReal) else (0 : ENNReal)) * ENNReal.ofReal |q.toReal - q₀.toReal|⁻¹) ^ q⁻¹.toReal * ↑C₀ ^ ((1 : ENNReal) - t).toReal * ↑C₁ ^ t.toReal`
+
 ## Translations
 
 ### `hasStrongType_maximalFunction`
@@ -76,4 +82,4 @@ English: Let $X$ be a proper pseudometric space with its Borel $\sigma$-algebra,
 Lean (short): `[μ.IsDoubling A] [SMul NNReal ε'] [ENormSMulClass NNReal ε'] [TopologicalSpace.PseudoMetrizableSpace ε'] [BorelSpace ε'] [BorelSpace X] [IsFiniteMeasureOnCompacts μ] [ProperSpace X] [μ.IsOpenPosMeasure] (hp : 1 < p) : HasStrongType (maximalFunction μ 𝓑 c r 1) (↑p) (↑p) μ μ ↑(CMB A p)`
 Lean (full): `∀ {X : Type u_1} {ε' : Type u_3} {A : NNReal} [inst : PseudoMetricSpace X] [inst_1 : MeasurableSpace X] {μ : Measure X} [μ.IsDoubling A] {ι : Type u_4} {𝓑 : Set ι} {c : ι → X} {r : ι → ℝ} [inst_3 : TopologicalSpace ε'] [inst_4 : ESeminormedAddMonoid ε'] [inst_5 : SMul NNReal ε'] [ENormSMulClass NNReal ε'] [TopologicalSpace.PseudoMetrizableSpace ε'] [inst_8 : MeasurableSpace ε'] [BorelSpace ε'] [BorelSpace X] [IsFiniteMeasureOnCompacts μ] [ProperSpace X] [μ.IsOpenPosMeasure] {p : NNReal}, (1 : NNReal) < p → HasStrongType.{u_3, 0, u_1, u_1} (ε₁ := ε') (maximalFunction μ 𝓑 c r (1 : ℝ)) (↑p) (↑p) μ μ ↑(CMB A p)`
 Docstring: Special case of equation (2.0.44). The proof is given between (9.0.12) and (9.0.34). Use the real interpolation theorem instead of following the blueprint.
-English: Let $X$ be a proper pseudometric space equipped with a measurable structure that is its Borel $\sigma$-algebra, and let $\mu$ be a measure on $X$ that is doubling with constant $A$ (a nonnegative real), finite on compact sets, and positive on nonempty open sets. Let $\iota$ be a type, $\mathcal{B}\subseteq\iota$ a set of indices, $c : \iota \to X$ (centers) and $r : \iota \to \mathbb{R}$ (radii). Let $E$ be a topological space which is an extended-seminormed additive monoid, pseudo-metrizable, carries a measurable structure that is its Borel $\sigma$-algebra, and has a scalar action of $\mathbb{R}_{\ge 0}$ compatible with the extended norm ($\|t\cdot v\|_e = t\,\|v\|_e$ for $t\in\mathbb R_{\ge0}$, $v\in E$). For $u:X\to E$ let $M u(x)=\sup_{i\in\mathcal B}\mathbf 1_{B(c(i),r(i))}(x)\,⨍_{B(c(i),r(i))}\|u(y)\|_e\,d\mu(y)\in[0,\infty]$ be the uncentered Hardy–Littlewood maximal function $\mathrm{maximalFunction}(\mu,\mathcal B,c,r,1)$ for this family of balls. Let $p$ be a nonnegative real with $p > 1$. Then $M$ has strong type $(p, p)$ with respect to $\mu$ and $\mu$ with constant $C_{MB}(A, p)$: for every $u\in L^p(\mu;E)$, $Mu$ is a.e. strongly measurable and $\|Mu\|_{L^p(\mu)}\le C_{MB}(A,p)\,\|u\|_{L^p(\mu)}$. Here $C_{MB}(A,p)=C_{\mathrm{realInterpolation}}(\infty,1,\infty,1,p,1,A^2,1,1/p)$ is the constant of the real interpolation theorem with these parameters (a special case of equation (2.0.44)).
+English: (By its docstring, this is a special case of equation (2.0.44).) Let $X$ be a proper pseudometric space equipped with a measurable structure that is its Borel $\sigma$-algebra, and let $\mu$ be a measure on $X$ that is doubling with constant $A$ (a nonnegative real; by its docstring, doubling the radius of a ball increases its measure by at most the factor $A$), finite on compact sets, and positive on nonempty open sets. Let $\iota$ be a type, $\mathcal{B}\subseteq\iota$ a set of indices, $c : \iota \to X$ (centers) and $r : \iota \to \mathbb{R}$ (radii). Let $E$ be a topological space which is an extended-seminormed additive monoid, pseudo-metrizable, carries a measurable structure that is its Borel $\sigma$-algebra, and has a scalar action of $\mathbb{R}_{\ge 0}$ compatible with the extended norm ($\|t\cdot v\|_e = t\,\|v\|_e$ for $t\in\mathbb R_{\ge0}$, $v\in E$). For $u:X\to E$ and $x\in X$ let $M u(x)=\sup_{i\in\mathcal B}\mathbf 1_{B(c(i),r(i))}(x)\,⨍_{B(c(i),r(i))}\|u(y)\|_e\,d\mu(y)\in[0,\infty]$ (by its docstring, the uncentered Hardy–Littlewood maximal function $\mathrm{maximalFunction}(\mu,\mathcal B,c,r,1)$ for this family of balls). Let $p$ be a nonnegative real with $p > 1$. Then $M$ has strong type $(p, p)$ with respect to $\mu$ and $\mu$ with constant $C_{MB}(A, p)$: for every $u:X\to E$ in $L^p(\mu)$ (a.e. strongly measurable with $\|u\|_{L^p(\mu)}<\infty$), $Mu$ is a.e. strongly measurable and $\|Mu\|_{L^p(\mu)}\le C_{MB}(A,p)\,\|u\|_{L^p(\mu)}$ in $[0,\infty]$. Here $C_{MB}(A,p)=C_{\mathrm{realInterpolation}}(\infty,1,\infty,1,p,1,A^2,1,1/p)\in\mathbb R_{\ge0}$ (`CMB A p`; by its docstring, the constant factor in the statement that $M_{\mathcal B}$ has strong type), where $C_{\mathrm{realInterpolation}}$ is, by its docstring, the constant occurring in the real interpolation theorem.

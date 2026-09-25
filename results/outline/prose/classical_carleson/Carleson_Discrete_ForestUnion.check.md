@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -54,7 +55,7 @@ Definition: `fun (𝕜 : Type u_1) {inst : RCLike 𝕜} (X : Type u) {A : outPar
 #### `ProofData` (structure or class)
 Lean: `{X : Type u_1} → outParam ℕ → outParam ℝ → outParam (X → X → ℂ) → outParam (X → ℤ) → outParam (X → ℤ) → outParam (Set X) → outParam (Set X) → [PseudoMetricSpace X] → Type (u_1 + 1)`
 Docstring: Data common through most of chapters 2-7 (except 3).
-Fields: `1`, `2`, `Q`, `θ`, `ε₁`, `ε₂`, `α`, `_x`, `_x'`, `x1`, `x2`
+Constructor (every field with its type): `{X : Type u_1} → {a : outParam ℕ} → {q : outParam ℝ} → {K : outParam (X → X → ℂ)} → {σ₁ σ₂ : outParam (X → ℤ)} → {F G : outParam (Set X)} → [inst : PseudoMetricSpace X] → [toKernelProofData : KernelProofData a K] → IsCancellative X (defaultτ a) → q ∈ Set.Ioc (1 : outParam ℝ) (2 : outParam ℝ) → Bornology.IsBounded F → Bornology.IsBounded G → MeasurableSet F → MeasurableSet G → Measurable σ₁ → Measurable σ₂ → Finite ↑(Set.range σ₁) → Finite ↑(Set.range σ₂) → σ₁ ≤ σ₂ → (Q : SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _)) → (∀ (θ : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _), HasBoundedStrongType (ε₁ := ℂ) (ε₂ := ENNReal) (α := X) (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (fun (x1 : X → ℂ) (x2 : X) => linearizedNontangentialOperator (⇑Q) θ K x1 x2) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a)) → ProofData a q K σ₁ σ₂ F G`
 
 #### `ProofData.Q` (def)
 Lean: `{X : Type u_1} → {a : outParam ℕ} → {q : outParam ℝ} → {K : outParam (X → X → ℂ)} → {σ₁ σ₂ : outParam (X → ℤ)} → {F G : outParam (Set X)} → {inst : PseudoMetricSpace X} → [self : ProofData a q K σ₁ σ₂ F G] → SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _)`
@@ -71,7 +72,7 @@ Definition: `fun (X : Type u_1) [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X
 #### `TileStructure` (structure or class)
 Lean: `{X : Type u} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [inst_1 : DoublingMeasure X A] → [inst_2 : FunctionDistances ℝ X] → outParam (SimpleFunc X (@Θ _ X Real.normedField UniformSpace.toTopologicalSpace _)) → outParam ℕ → outParam ℝ → outParam ℕ → outParam X → Type (u + 1)`
 Docstring: A tile structure.
-Fields: `Ω`, `ι`, `p`, `_`, `γ`, `4`, `5`, `1`
+Constructor (every field with its type): `{X : Type u} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [inst_1 : DoublingMeasure X A] → [inst_2 : FunctionDistances ℝ X] → {Q : outParam (SimpleFunc X (@Θ _ X Real.normedField UniformSpace.toTopologicalSpace _))} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [toPreTileStructure : PreTileStructure Q D κ S o] → (Ω : PreTileStructure.𝔓 ℝ X → Set (@Θ _ X Real.normedField UniformSpace.toTopologicalSpace _)) → (∀ {i : @GridStructure.Grid X _ inst inst_1 _ _ _ _ _}, Set.range (ι := X) ⇑Q ⊆ ⋃ (p : PreTileStructure.𝔓 ℝ X), ⋃ (_ : Membership.mem (γ := Set (PreTileStructure.𝔓 ℝ X)) (PreTileStructure.𝓘 ⁻¹' {i}) p), Ω p) → (∀ {p p' : PreTileStructure.𝔓 ℝ X}, p ≠ p' → PreTileStructure.𝓘 p = PreTileStructure.𝓘 p' → Disjoint (Ω p) (Ω p')) → (∀ {p p' : 𝔓 X}, 𝓘 p ≤ 𝓘 p' → Disjoint (Ω p) (Ω p') ∨ Ω p' ⊆ Ω p) → (∀ {p : 𝔓 X}, ball_{𝔠 p, ↑D ^ 𝔰 p / (4 : ℝ)} (𝒬 p) (5 : ℝ)⁻¹ ⊆ Ω p) → (∀ {p : 𝔓 X}, Ω p ⊆ ball_{𝔠 p, ↑D ^ 𝔰 p / (4 : ℝ)} (𝒬 p) (1 : ℝ)) → TileStructure Q D κ S o`
 
 #### `TileStructure.toPreTileStructure` (def)
 Lean: `{X : Type u} → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → {inst_1 : DoublingMeasure X A} → {inst_2 : FunctionDistances ℝ X} → {Q : outParam (SimpleFunc X (@Θ _ X Real.normedField UniformSpace.toTopologicalSpace _))} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [self : TileStructure Q D κ S o] → PreTileStructure Q D κ S o`
@@ -173,6 +174,7 @@ Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁
 #### `EquivalenceOn` (inductive)
 Lean: `{α : Type u_1} → (α → α → Prop) → Set α → Prop`
 Docstring: An equivalence relation on the set `s`.
+Constructor (every field with its type): `∀ {α : Type u_1} {r : α → α → Prop} {s : Set α}, (∀ x ∈ s, r x x) → (∀ {x y : α}, x ∈ s → y ∈ s → r x y → r y x) → (∀ {x y z : α}, x ∈ s → y ∈ s → z ∈ s → r x y → r y z → r x z) → EquivalenceOn r s`
 
 #### `𝔘₂` (def)
 Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → Set (𝔓 X)`
@@ -239,7 +241,7 @@ Definition: `fun {𝕜 : Type u_1} {X : Type u_2} [RCLike 𝕜] [PseudoMetricSpa
 #### `TileStructure.Forest` (structure or class)
 Lean: `(X : Type u_1) → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → Type u_1`
 Docstring: An `n`-forest
-Fields: `F`, `G`, `𝔘`, `𝔗`, `4`, `1`, `2`, `8`, `α`
+Constructor (every field with its type): `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → {n : ℕ} → (𝔘 : Set (𝔓 X)) → (𝔗 : 𝔓 X → Set (𝔓 X)) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → (𝔗 u).Nonempty) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → (𝔗 u).OrdConnected) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → ∀ {p : 𝔓 X}, p ∈ 𝔗 u → 𝓘 p ≠ 𝓘 u) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → ∀ {p : 𝔓 X}, p ∈ 𝔗 u → smul (F := F) (G := G) (4 : ℝ) p ≤ smul (F := F) (G := G) (1 : ℝ) u) → (∀ {x : X}, stackSize (F := F) (G := G) 𝔘 x ≤ (2 : ℕ) ^ n) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → dens₁ (F := F) (G := G) (𝔗 u) ≤ (2 : ENNReal) ^ ((4 : ℝ) * ↑a - ↑n + (1 : ℝ))) → (∀ {u u' : 𝔓 X}, u ∈ 𝔘 → u' ∈ 𝔘 → u ≠ u' → ∀ {p : 𝔓 X}, p ∈ 𝔗 u' → 𝓘 p ≤ 𝓘 u → (2 : ℝ) ^ (defaultZ a * (n + (1 : ℕ))) < dist_{𝔠 p, ↑(defaultD a) ^ 𝔰 p / (4 : ℝ)} (𝒬 p) (𝒬 u)) → (∀ {u : 𝔓 X}, u ∈ 𝔘 → ∀ {p : 𝔓 X}, p ∈ 𝔗 u → Metric.ball (𝔠 p) ((8 : ℝ) * HPow.hPow (α := ℝ) (↑(defaultD a)) (𝔰 p)) ⊆ ↑(𝓘 u)) → Forest X (F := F) (G := G) n`
 
 #### `dens₁` (def)
 Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → Set (𝔓 X) → ENNReal`
@@ -264,17 +266,17 @@ Definition: `fun (a : ℕ) (q : NNReal) => C2_0_4_base a * (2 : NNReal) ^ (↑a 
 #### `CompatibleFunctions` (structure or class)
 Lean: `(𝕜 : outParam (Type u_3)) → (X : Type u) → outParam ℕ → [RCLike 𝕜] → [PseudoMetricSpace X] → Type (max (u + 1) u_3)`
 Docstring: A set `Θ` of (continuous) functions is compatible. `A` will usually be `2 ^ a`.
-Fields: `o`, `f`, `0`, `2`
+Constructor (every field with its type): `{𝕜 : outParam (Type u_3)} → {X : Type u} → {A : outParam ℕ} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → [toFunctionDistances : FunctionDistances 𝕜 X] → (∃ (o : X), ∀ (f : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _), (coeΘ f) o = (0 : 𝕜)) → (∀ {x : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, localOscillation (Metric.ball x r) (coeΘ f) (coeΘ g) ≤ ENNReal.ofReal (dist_{x, r} f g)) → (∀ {x₁ x₂ : X} {r₁ r₂ : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, Metric.ball x₁ r₁ ⊆ Metric.ball x₂ r₂ → dist_{x₁, r₁} f g ≤ dist_{x₂, r₂} f g) → (∀ {x₁ x₂ : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, dist x₁ x₂ < (2 : ℝ) * r → dist_{x₂, (2 : ℝ) * r} f g ≤ ↑A * dist_{x₁, r} f g) → (∀ {x₁ x₂ : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, Metric.ball x₁ r ⊆ Metric.ball x₂ (↑A * r) → (2 : ℝ) * dist_{x₁, r} f g ≤ dist_{x₂, ↑A * r} f g) → (∀ {x : X} {r : ℝ}, AllBallsCoverBalls.{u} (WithFunctionDistance x r) (2 : ℝ) A) → CompatibleFunctions 𝕜 X A`
 
 #### `FunctionDistances` (structure or class)
 Lean: `(𝕜 : outParam (Type u_1)) → (X : Type u) → [NormedField 𝕜] → [TopologicalSpace X] → Type (max (u + 1) u_1)`
 Docstring: A class stating that continuous functions have distances associated to every ball. We use a separate type to conveniently index these functions.
-Fields: `Θ`, `coeΘ`, `x`, `α`
+Constructor (every field with its type): `{𝕜 : outParam (Type u_1)} → {X : Type u} → [inst : NormedField 𝕜] → [inst_1 : TopologicalSpace X] → (Θ : Type u) → (coeΘ : Θ → C(X, 𝕜)) → (∀ {f g : Θ}, (∀ (x : X), Eq.{u_1 + 1} (α := 𝕜) ((coeΘ f) x : 𝕜) ((coeΘ g) x : 𝕜)) → f = g) → (X → ℝ → PseudoMetricSpace Θ) → FunctionDistances 𝕜 X`
 
 #### `GridStructure` (structure or class)
 Lean: `(X : Type u_2) → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [DoublingMeasure X A] → outParam ℕ → outParam ℝ → outParam ℕ → outParam X → Type (max (u + 1) u_2)`
 Docstring: A grid structure on `X`. We prefer `coeGrid : Grid → Set X` over `Grid : Set (Set X)` Note: the `s` in this paper is `-s` of Christ's paper.
-Fields: `Grid`, `coeGrid`, `s`, `c`, `β`, `i`, `topCube`, `α`, `4`, `m`, `2`
+Constructor (every field with its type): `{X : Type u_2} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [inst_1 : DoublingMeasure X A] → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → (Grid : Type u) → Fintype Grid → (coeGrid : Grid → Set X) → (s : Grid → ℤ) → (c : Grid → X) → (Function.Injective.{u + 1, max 1 (u_2 + 1)} (β := Set X × ℤ) fun (i : Grid) => (coeGrid i, s i)) → Set.range s ⊆ Set.Icc (-↑S) ↑S → (topCube : Grid) → s topCube = ↑S → c topCube = o → (∀ {i : Grid}, coeGrid i ⊆ coeGrid topCube) → (∀ {i : Grid}, ∀ k ∈ Set.Ico (-↑S) (s i), coeGrid i ⊆ ⋃ j ∈ s ⁻¹' {k}, coeGrid j) → (∀ {i j : Grid}, s i ≤ s j → coeGrid i ⊆ coeGrid j ∨ Disjoint (coeGrid i) (coeGrid j)) → (∀ {i : Grid}, Metric.ball (c i) (HPow.hPow (α := ℝ) (↑D) (s i) / (4 : ℝ)) ⊆ coeGrid i) → (∀ {i : Grid}, coeGrid i ⊆ Metric.ball (c i) ((4 : ℝ) * HPow.hPow (α := ℝ) (↑D) (s i))) → (∀ {i : Grid} {t : NNReal}, HPow.hPow (α := NNReal) (↑D) (-↑S - s i) ≤ t → Measure.real.{u_2} (α := X) (m := MeasureSpace.toMeasurableSpace) volume {x : X | x ∈ coeGrid i ∧ Metric.infEDist x (coeGrid i)ᶜ ≤ ↑t * HPow.hPow (α := ENNReal) (↑D) (s i)} ≤ (2 : ℝ) * ↑t ^ κ * Measure.real (m := MeasureSpace.toMeasurableSpace) volume (coeGrid i)) → (∀ {i : Grid}, MeasurableSet (coeGrid i)) → GridStructure.{u, u_2} X D κ S o`
 
 #### `GridStructure.Grid` (def)
 Lean: `(X : Type u_2) → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → {inst_1 : DoublingMeasure X A} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [self : GridStructure.{u, u_2} X D κ S o] → Type u`
@@ -284,16 +286,16 @@ Definition: `fun (X : Type u_2) {A : outParam NNReal} {inst : PseudoMetricSpace 
 #### `MeasureTheory.DoublingMeasure` (structure or class)
 Lean: `(X : Type u_3) → outParam NNReal → [PseudoMetricSpace X] → Type u_3`
 Docstring: A metric space with a measure with some nice properties, including a doubling condition. This is called a "doubling metric measure space" in the blueprint. `A` will usually be `2 ^ a`.
-Fields: `α`, `m0`, `X`, `R`
+Constructor (every field with its type): `{X : Type u_3} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [toCompleteSpace : CompleteSpace X] → [toLocallyCompactSpace : LocallyCompactSpace X] → [toMeasureSpace : MeasureSpace X] → [toBorelSpace : BorelSpace X] → [toIsLocallyFiniteMeasure : IsLocallyFiniteMeasure.{u_3} (α := X) (m0 := MeasureSpace.toMeasurableSpace) volume] → [toIsDoubling : Measure.IsDoubling.{u_3} (X := X) volume A] → [toNeZero : NeZero.{u_3} (R := Measure X) volume] → DoublingMeasure X A`
 
 #### `KernelProofData` (structure or class)
 Lean: `{X : Type u_1} → outParam ℕ → outParam (X → X → ℂ) → [PseudoMetricSpace X] → Type (u_1 + 1)`
 Docstring: Data common through most of chapters 2 through 7. These contain the minimal axioms for `kernel-summand`'s proof. This is used in Chapter 3 when we don't have all other fields from `ProofData`.
-Fields: `d`, `4`
+Constructor (every field with its type): `{X : Type u_1} → {a : outParam ℕ} → {K : outParam (X → X → ℂ)} → [inst : PseudoMetricSpace X] → (d : DoublingMeasure X ↑(defaultA a)) → (4 : ℕ) ≤ a → CompatibleFunctions ℝ X (defaultA a) → IsOneSidedKernel a K → KernelProofData a K`
 
 #### `PreTileStructure` (structure or class)
 Lean: `{𝕜 : Type u_1} → [inst : RCLike 𝕜] → {X : Type u} → {A : outParam NNReal} → [inst_1 : PseudoMetricSpace X] → [inst_2 : DoublingMeasure X A] → [inst_3 : FunctionDistances 𝕜 X] → outParam (SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _)) → outParam ℕ → outParam ℝ → outParam ℕ → outParam X → Type (max (u + 1) (u_2 + 1))`
-Fields: `𝔓`, `𝓘`, `𝒬`, `ι`
+Constructor (every field with its type): `{𝕜 : Type u_1} → [inst : RCLike 𝕜] → {X : Type u} → {A : outParam NNReal} → [inst_1 : PseudoMetricSpace X] → [inst_2 : DoublingMeasure X A] → [inst_3 : FunctionDistances 𝕜 X] → {Q : outParam (SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _))} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [toGridStructure : GridStructure.{u_2, u} X D κ S o] → (𝔓 : Type u) → Fintype 𝔓 → (𝓘 : 𝔓 → @GridStructure.Grid X _ inst_1 inst_2 _ _ _ _ _) → Function.Surjective 𝓘 → (𝒬 : 𝔓 → @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _) → Set.range 𝒬 ⊆ Set.range (ι := X) ⇑Q → PreTileStructure.{u, u_1, u_2} Q D κ S o`
 
 #### `C_Ts` (def)
 Lean: `ℕ → NNReal`
@@ -303,12 +305,12 @@ Definition: `fun (a : ℕ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
 #### `IsCancellative` (structure or class)
 Lean: `(X : Type u_2) → {A : ℕ} → [inst : PseudoMetricSpace X] → [DoublingMeasure X ↑A] → ℝ → [CompatibleFunctions ℝ X A] → Prop`
 Docstring: Θ is τ-cancellative. `τ` will usually be `1 / a`
-Fields: `0`, `E`, `x`, `α`, `β`, `↑A`, `MeasureTheory.volume`, `1`
+Constructor (every field with its type): `∀ {X : Type u_2} {A : ℕ} [inst : PseudoMetricSpace X] [inst_1 : DoublingMeasure X ↑A] {τ : ℝ} [inst_2 : CompatibleFunctions ℝ X A], (∀ {x : X} {r : ℝ} {φ : X → ℂ}, (0 : ℝ) < r → iLipENorm φ x r ≠ ⊤ → Function.support φ ⊆ Metric.ball x r → ∀ {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, enorm (E := ℂ) (@integral _ _ _ _ MeasureSpace.toMeasurableSpace volume fun (x : X) => Complex.exp (Complex.I * (↑(f x) - ↑(g x))) * φ x) ≤ HMul.hMul (α := ENNReal) (β := ENNReal) (↑A : ENNReal) ((volume : Measure X) (Metric.ball x r) : ENNReal) * iLipENorm φ x r * ((1 : ENNReal) + edist_{x, r} f g) ^ (-τ)) → IsCancellative X τ`
 
 #### `IsOneSidedKernel` (structure or class)
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
 Docstring: `K` is a one-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
-Fields: `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ}, Measurable (Function.uncurry K) → (∀ (x y : X), ‖K x y‖ ≤ ↑(C_K ↑a) / Real.vol x y) → (∀ {x y y' : X}, (2 : ℝ) * dist y y' ≤ dist x y → ‖K x y - K x y'‖ ≤ HPow.hPow (β := ℝ) (dist y y' / dist x y) (↑a)⁻¹ * (↑(C_K ↑a) / Real.vol x y)) → IsOneSidedKernel a K`
 
 #### `MeasureTheory.HasBoundedStrongType` (def)
 Lean: `{ε₁ : Type u_3} → {ε₂ : Type u_4} → [ENorm ε₁] → [ENorm ε₂] → [TopologicalSpace ε₁] → [TopologicalSpace ε₂] → [Zero ε₁] → {α : Type u_5} → {α' : Type u_6} → {_x : MeasurableSpace α} → {_x' : MeasurableSpace α'} → ((α → ε₁) → α' → ε₂) → ENNReal → ENNReal → Measure α → Measure α' → ENNReal → Prop`
@@ -450,11 +452,151 @@ Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : �
 Docstring: Iterating `maximalSubfamily` to obtain disjoint subfamilies of `A`.
 Definition: `fun {X : Type u_1} [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (A : Set (𝔓 X)) => WellFounded.Nat.fix (motive := fun (n : ℕ) => Set (𝔓 X)) (fun (x : ℕ) => x) fun (n : ℕ) (a_1 : (y : ℕ) → InvImage (fun (x1 x2 : ℕ) => x1 < x2) (fun (x : ℕ) => x) y n → Set (𝔓 X)) => maximalSubfamily (F := F) (G := G) (A \ ⋃ (i : ↑{i : ℕ | i < n}), have this := ⋯; a_1 ↑i ⋯)`
 
+#### `AllBallsCoverBalls` (def)
+Lean: `(X : Type u_2) → [PseudoMetricSpace X] → ℝ → ℕ → Prop`
+Docstring: For all `r`, balls of radius `r` in `X` are covered by `n` balls of radius `a * r`
+Definition: `fun (X : Type u_2) [PseudoMetricSpace X] (a : ℝ) (n : ℕ) => ∀ (r : ℝ), BallsCoverBalls X (a * r) r n`
+
+#### `localOscillation` (def)
+Lean: `{𝕜 : Type u_3} → {X : Type u_4} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → Set X → C(X, 𝕜) → C(X, 𝕜) → ENNReal`
+Docstring: The local oscillation of two functions w.r.t. a set `E`. This is `d_E` in the blueprint.
+Definition: `fun {𝕜 : Type u_3} {X : Type u_4} [RCLike 𝕜] [PseudoMetricSpace X] (E : Set X) (f g : C(X, 𝕜)) => ⨆ z ∈ E ×ˢ E, ENNReal.ofReal ‖HAdd.hAdd (β := 𝕜) (HSub.hSub (β := 𝕜) (HSub.hSub (α := 𝕜) (β := 𝕜) (f z.1 : 𝕜) (g z.1 : 𝕜)) (f z.2 : 𝕜)) (g z.2 : 𝕜)‖`
+
+#### `GridStructure.c` (def)
+Lean: `{X : Type u_2} → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → {inst_1 : DoublingMeasure X A} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [self : GridStructure.{u, u_2} X D κ S o] → @GridStructure.Grid X _ inst inst_1 _ _ _ _ _ → X`
+Docstring: Center functions
+Definition: `fun (X : Type u_2) {A : outParam NNReal} {inst : PseudoMetricSpace X} {inst_1 : DoublingMeasure X A} {D : outParam ℕ} {κ : outParam ℝ} {S : outParam ℕ} {o : outParam X} [self : GridStructure.{u, u_2} X D κ S o] => self.5`
+
+#### `GridStructure.topCube` (def)
+Lean: `{X : Type u_2} → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → {inst_1 : DoublingMeasure X A} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [self : GridStructure.{u, u_2} X D κ S o] → @GridStructure.Grid X _ inst inst_1 _ _ _ _ _`
+Definition: `fun (X : Type u_2) {A : outParam NNReal} {inst : PseudoMetricSpace X} {inst_1 : DoublingMeasure X A} {D : outParam ℕ} {κ : outParam ℝ} {S : outParam ℕ} {o : outParam X} [self : GridStructure.{u, u_2} X D κ S o] => self.8`
+
+#### `MeasureTheory.Measure.IsDoubling` (structure or class)
+Lean: `{X : Type u_3} → [inst : MeasurableSpace X] → [PseudoMetricSpace X] → Measure X → outParam NNReal → Prop`
+Docstring: A doubling measure is a measure on a metric space with the condition that doubling the radius of a ball only increases the volume by a constant factor, independent of the ball.
+Constructor (every field with its type): `∀ {X : Type u_3} [inst : MeasurableSpace X] [inst_1 : PseudoMetricSpace X] {μ : Measure X} {A : outParam NNReal}, (∀ (x : X) (r : ℝ), μ (Metric.ball x ((2 : ℝ) * r)) ≤ HMul.hMul (β := ENNReal) ↑A (μ (Metric.ball x r) : ENNReal)) → μ.IsDoubling A`
+
+#### `partialFourierSum` (def)
+Lean: `ℕ → (ℝ → ℂ) → ℝ → ℂ`
+Docstring: The Nᵗʰ partial Fourier sum of `f : ℝ → ℂ` for `N : ℕ`.
+Definition: `fun (N : ℕ) (f : ℝ → ℂ) (x : ℝ) => ∑ n ∈ Finset.Icc (-↑N) ↑N, HMul.hMul (β := ℂ) (fourierCoeffOn Real.two_pi_pos f n) ((fourier n) ↑x : ℂ)`
+
+#### `iLipENorm` (def)
+Lean: `{𝕜 : Type u_3} → {X : Type u_4} → [NormedField 𝕜] → [PseudoMetricSpace X] → (X → 𝕜) → X → ℝ → ENNReal`
+Docstring: The inhomogeneous Lipschitz norm on a ball.
+Definition: `fun {𝕜 : Type u_3} {X : Type u_4} [NormedField 𝕜] [PseudoMetricSpace X] (φ : X → 𝕜) (x₀ : X) (R : ℝ) => (⨆ x ∈ Metric.ball x₀ R, ‖φ x‖ₑ) + ENNReal.ofReal R * ⨆ x ∈ Metric.ball x₀ R, ⨆ y ∈ Metric.ball x₀ R, ⨆ (_ : x ≠ y), ‖φ x - φ y‖ₑ / edist x y`
+
+#### `instFunLikeΘ` (def)
+Lean: `{𝕜 : Type u_1} → {X : Type u_2} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → [d : FunctionDistances 𝕜 X] → FunLike (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _) X 𝕜`
+Definition: `fun {𝕜 : Type u_1} {X : Type u_2} [RCLike 𝕜] [PseudoMetricSpace X] [FunctionDistances 𝕜 X] => DFunLike.mk (β := fun (x : X) => 𝕜) (fun (f : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _) => ⇑(coeΘ f)) ⋯`
+
+#### `C_K` (def)
+Lean: `ℝ → NNReal`
+Docstring: The constant used twice in the definition of the Calderon-Zygmund kernel.
+Definition: `fun (a : ℝ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
+
+#### `Real.vol` (def)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → X → X → ℝ`
+Docstring: The "volume function" `V`. Preferably use `vol` instead.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] [MeasureSpace X] (x y : X) => Measure.real (m := MeasureSpace.toMeasurableSpace) volume (Metric.ball x (dist x y))`
+
+#### `BoundedFiniteSupport` (structure or class)
+Lean: `{X : Type u_3} → {E : Type u_4} → [inst : MeasurableSpace X] → [TopologicalSpace E] → [ENorm E] → [Zero E] → (X → E) → autoParam (Measure X) BoundedFiniteSupport._auto_1 → Prop`
+Docstring: Bounded measurable function $g$ on $X$ supported on a set of finite measure
+Constructor (every field with its type): `∀ {X : Type u_3} {E : Type u_4} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace E] [inst_2 : ENorm E] [inst_3 : Zero E] {f : X → E} {μ : autoParam (Measure X) BoundedFiniteSupport._auto_1}, MemLp f ⊤ μ → LT.lt (α := ENNReal) (μ (Function.support f) : ENNReal) (⊤ : ENNReal) → BoundedFiniteSupport f μ`
+
+#### `Set.EAnnulus.oo` (def)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → X → ENNReal → ENNReal → Set X`
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] (x : X) (r R : ENNReal) => {y : X | edist x y ∈ Set.Ioo r R}`
+
+#### `upperRadius` (def)
+Lean: `{X : Type u_2} → [inst : PseudoMetricSpace X] → [inst_1 : FunctionDistances ℝ X] → (X → @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _) → @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _ → X → ENNReal`
+Docstring: `R_Q(θ, x)` defined in (1.1.17).
+Definition: `fun {X : Type u_2} [PseudoMetricSpace X] [FunctionDistances ℝ X] (Q : X → @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _) (θ : @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _) (x : X) => ⨆ (r : ℝ), ⨆ (_ : dist_{x, r} θ (Q x) < (1 : ℝ)), ENNReal.ofReal r`
+
+#### `𝔅` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → 𝔓 X → Set (𝔓 X)`
+Docstring: The subset `𝔅(p)` of `𝔐(k, n)`, given in (5.1.8).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n : ℕ) (p : 𝔓 X) => {m : 𝔓 X | Membership.mem (γ := Set (𝔓 X)) (𝔐 (F := F) (G := G) k n) m ∧ smul (F := F) (G := G) (100 : ℝ) p ≤ smul (F := F) (G := G) (1 : ℝ) m}`
+
+#### `highDensityTiles` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → Set (𝔓 X)`
+Docstring: The set $\mathcal{P}_{F,G}$, defined in (5.1.24).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] => {p : 𝔓 X | HDiv.hDiv (β := ENNReal) (HMul.hMul (β := ENNReal) ((2 : ENNReal) ^ ((2 : ℕ) * a + (5 : ℕ))) ((volume : Measure X) F : ENNReal)) ((volume : Measure X) G : ENNReal) < dens₂ (F := F) (G := G) {p}}`
+
+#### `setA` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → Set X`
+Docstring: The set `A(λ, k, n)`, defined in (5.1.26).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (l k n : ℕ) => {x : X | l * (2 : ℕ) ^ (n + (1 : ℕ)) < stackSize (F := F) (G := G) (𝔐 (F := F) (G := G) k n) x}`
+
+#### `E` (def)
+Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → 𝔓 X → Set X`
+Docstring: The set `E` defined in Proposition 2.0.2.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (p : 𝔓 X) => {x : X | x ∈ 𝓘 p ∧ Membership.mem (α := @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _) (Ω p) ((Q (F := F) (G := G)) x : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _) ∧ 𝔰 p ∈ Set.Icc (σ₁ x) (σ₂ x)}`
+
+#### `Ks` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {K : X → X → ℂ} → [inst : PseudoMetricSpace X] → [KernelProofData a K] → ℤ → X → X → ℂ`
+Docstring: K_s in the blueprint
+Definition: `fun {X : Type u_1} {a : ℕ} {K : X → X → ℂ} [PseudoMetricSpace X] [KernelProofData a K] (s : ℤ) (x y : X) => K x y * ↑(ψ (defaultD a) (HPow.hPow (α := ℝ) (↑(defaultD a)) (-s) * dist x y))`
+
+#### `PreTileStructure.fintype_𝔓` (def)
+Lean: `{𝕜 : Type u_1} → {inst : RCLike 𝕜} → {X : Type u} → {A : outParam NNReal} → {inst_1 : PseudoMetricSpace X} → {inst_2 : DoublingMeasure X A} → {inst_3 : FunctionDistances 𝕜 X} → {Q : outParam (SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _))} → {D : outParam ℕ} → {κ : outParam ℝ} → {S : outParam ℕ} → {o : outParam X} → [self : PreTileStructure.{u, u_1, u_2} Q D κ S o] → Fintype (PreTileStructure.𝔓.{u, u_1, u_2} 𝕜 X)`
+Definition: `fun (𝕜 : Type u_1) {inst : RCLike 𝕜} (X : Type u) {A : outParam NNReal} {inst_1 : PseudoMetricSpace X} {inst_2 : DoublingMeasure X A} {inst_3 : FunctionDistances 𝕜 X} {Q : outParam (SimpleFunc X (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _))} {D : outParam ℕ} {κ : outParam ℝ} {S : outParam ℕ} {o : outParam X} [self : PreTileStructure.{u, u_1, u_2} Q D κ S o] => self.3`
+
+#### `TilesAt` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → Set (𝔓 X)`
+Docstring: The definition `𝔓(k)` given in (5.1.3).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k : ℕ) => 𝓘 ⁻¹' 𝓒 (F := F) (G := G) k`
+
+#### `aux𝓒` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → Set (Grid X)`
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k : ℕ) => {i : Grid X | ∃ (j : Grid X), i ≤ j ∧ HMul.hMul (β := ENNReal) (HPow.hPow (β := ℤ) (2 : ENNReal) (-↑k)) ((volume : Measure X) ↑j : ENNReal) < (volume : Measure X) (G ∩ ↑j)}`
+
+#### `dens'` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → Set (𝔓 X) → ENNReal`
+Docstring: The definition `dens'_k(𝔓')` given in (5.1.6).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k : ℕ) (P' : Set (𝔓 X)) => ⨆ p' ∈ P', ⨆ (l : NNReal), ⨆ (_ : (2 : NNReal) ≤ l), ⨆ (p : 𝔓 X), ⨆ (_ : Membership.mem (γ := Set (𝔓 X)) (TilesAt (F := F) (G := G) k) p), ⨆ (_ : smul (F := F) (G := G) (↑l) p' ≤ smul (F := F) (G := G) (↑l) p), HDiv.hDiv (β := ENNReal) (HMul.hMul (β := ENNReal) (HPow.hPow (β := ℤ) (↑l) (-↑a)) ((volume : Measure X) (E₂ (F := F) (G := G) (↑l) p) : ENNReal)) ((volume : Measure X) ↑(𝓘 p) : ENNReal)`
+
+#### `Set.layersBelow` (def)
+Lean: `{α : Type u_1} → [PartialOrder α] → Set α → ℕ → Set α`
+Docstring: The elements below `A`'s `n` maximal layers.
+Definition: `fun {α : Type u_1} [PartialOrder α] (A : Set α) (n : ℕ) => A \ ⋃ (k : ℕ), ⋃ (_ : k ≤ n), A.maxLayer k`
+
+#### `ℭ₃` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → Set (𝔓 X)`
+Docstring: The subset `ℭ₃(k, n, j)` of `ℭ₂(k, n, j)`, given in (5.1.16).
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n j : ℕ) => ℭ₂ (F := F) (G := G) k n j \ 𝔏₂ (F := F) (G := G) k n j`
+
+#### `𝓛` (def)
+Lean: `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → 𝔓 X → Set (Grid X)`
+Docstring: The subset `𝓛(u)` of `Grid X`, given near (5.1.20). Note: It seems to also depend on `n`.
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (n : ℕ) (u : 𝔓 X) => {i : Grid X | i ≤ 𝓘 u ∧ s i + ↑(defaultZ a * (n + (1 : ℕ))) + (1 : ℤ) = 𝔰 u ∧ ¬Metric.ball (c i) ((8 : ℝ) * HPow.hPow (α := ℝ) (↑(defaultD a)) (s i)) ⊆ ↑(𝓘 u)}`
+
+#### `EquivalenceOn.out` (def)
+Lean: `{α : Type u_1} → {r : α → α → Prop} → {s : Set α} → EquivalenceOn r s → α → α`
+Docstring: An arbitrary representative of `x` w.r.t. the equivalence relation `r`.
+Definition: `fun {α : Type u_1} {r : α → α → Prop} {s : Set α} (hr : EquivalenceOn r s) (x : α) => if hx : x ∈ s then ↑⟦(⟨x, hx⟩ : { x : α // x ∈ s })⟧.out else x`
+
+#### `toTileLike` (def)
+Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → 𝔓 X → TileLike X (F := F) (G := G)`
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (p : 𝔓 X) => (𝓘 p, Ω p)`
+
+#### `TileLike.toSet` (def)
+Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → TileLike X (F := F) (G := G) → Set X`
+Docstring: From a TileLike, we can construct a set. This is used in the definitions `E₁` and `E₂`.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (t : TileLike X (F := F) (G := G)) => ↑(t.fst (F := F) (G := G)) ∩ G ∩ ⇑(Q (F := F) (G := G)) ⁻¹' t.snd (F := F) (G := G)`
+
+#### `maximalSubfamily` (def)
+Lean: `{X : Type u_1} → [inst : PseudoMetricSpace X] → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → Set (𝔓 X) → Set (𝔓 X)`
+Docstring: A disjoint subfamily of `A` covering everything.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (A : Set (𝔓 X)) => ⋯.choose (p := fun (B : Set (𝔓 X)) => (B.PairwiseDisjoint (α := Set X) fun (p : 𝔓 X) => ↑(𝓘 p)) ∧ B ⊆ A ∧ ∀ a_1 ∈ A, ∃ b ∈ B, ↑(𝓘 a_1) ⊆ ↑(𝓘 b))`
+
 ## Translations
 
 ### `𝔗₁`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) (u : 𝔓 X) : Set (𝔓 X)`
 Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → 𝔓 X → Set (𝔓 X)`
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n j : ℕ) (u : 𝔓 X) => {p : 𝔓 X | Membership.mem (γ := Set (𝔓 X)) (ℭ₁ (F := F) (G := G) k n j) p ∧ 𝓘 p ≠ 𝓘 u ∧ smul (F := F) (G := G) (2 : ℝ) p ≤ smul (F := F) (G := G) (1 : ℝ) u}`
 Docstring: The subset `𝔗₁(u)` of `ℭ₁(k, n, j)`, given in (5.4.1). In lemmas, we will assume `u ∈ 𝔘₁ k n l`
 English: Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \in \mathbb{N}$, $q \in \mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\sigma_1,\sigma_2$ and sets $F, G \subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$ and a tile $u \in \mathfrak{P}(X)$, $\mathfrak{T}_1(k,n,j,u)$ is a set of tiles. According to its docstring, it is the subset $\mathfrak{T}_1(u)$ of $\mathfrak{C}_1(k,n,j)$ given in (5.4.1), and in lemmas one assumes $u \in \mathfrak{U}_1(k,n,l)$.
 
@@ -473,12 +615,14 @@ English: Let $X$ be a metric space, let $a$ be a natural number, $q$ a real numb
 ### `ℭ₆`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) : Set (𝔓 X)`
 Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → Set (𝔓 X)`
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n j : ℕ) => {p : 𝔓 X | Membership.mem (γ := Set (𝔓 X)) (ℭ₅ (F := F) (G := G) k n j) p ∧ ¬↑(𝓘 p) ⊆ G' (F := F) (G := G)}`
 Docstring: The subset `ℭ₆(k, n, j)` of `ℭ₅(k, n, j)`, given above (5.4.1).
 English: Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \in \mathbb{N}$, $q \in \mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\sigma_1,\sigma_2$ and sets $F, G \subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$, $\mathfrak{C}_6(k,n,j)$ is a set of tiles. According to its docstring, it is the subset $\mathfrak{C}_6(k,n,j)$ of $\mathfrak{C}_5(k,n,j)$ given above (5.4.1).
 
 ### `URel`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) (u : 𝔓 X) (u' : 𝔓 X) : Prop`
 Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → ℕ → ℕ → 𝔓 X → 𝔓 X → Prop`
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n j : ℕ) (u u' : 𝔓 X) => u = u' ∨ ∃ p ∈ 𝔗₁ (F := F) (G := G) k n j u, smul (F := F) (G := G) (10 : ℝ) p ≤ smul (F := F) (G := G) (1 : ℝ) u'`
 Docstring: The relation `∼` defined below (5.4.2). It is an equivalence relation on `𝔘₂ k n j`.
 English: Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \in \mathbb{N}$, $q \in \mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\sigma_1,\sigma_2$ and sets $F, G \subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$ and tiles $u, u' \in \mathfrak{P}(X)$, $\mathrm{URel}(k,n,j,u,u')$ is a proposition (a relation between $u$ and $u'$). According to its docstring, it is the relation $\sim$ defined below (5.4.2), and it is an equivalence relation on $\mathfrak{U}_2(k,n,j)$.
 
@@ -486,7 +630,7 @@ English: Under the standing assumptions (a metric space $X$ with the `ProofData`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] : EquivalenceOn (URel k n j) (𝔘₂ k n j)`
 Lean (full): `∀ {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst : MetricSpace X] [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] {k n j : ℕ}, EquivalenceOn (URel (F := F) (G := G) k n j) (𝔘₂ (F := F) (G := G) k n j)`
 Docstring: Lemma 5.4.2.
-English: (Lemma 5.4.2) Let $X$ be a metric space, let $a$ be a natural number, $q$ a real number, $K : X \to X \to \mathbb{C}$ a function, $\sigma_1, \sigma_2 : X \to \mathbb{Z}$ functions and $F, G \subseteq X$ subsets. Assume an instance of the project structure `ProofData a q K σ₁ σ₂ F G` (the data common through most of chapters 2-7 of the blueprint); through its `KernelProofData` component it equips $X$ with a doubling-measure structure `DoublingMeasure X (2^a)`, hence with a measure, denoted $\mu$ (the `volume` of $X$), and it provides $Q$ (`ProofData.Q`), a simple function from $X$ to the type $\Theta(X)$ of functions of the `FunctionDistances` structure. Assume moreover a tile structure `TileStructure Q D κ S o` with $D = $ `defaultD a` $= 2^{𝕔 a^2}$ (where $𝕔$ is the project's fixed natural-number constant `𝕔`), $\kappa = $ `defaultκ a` $= 2^{-10a}$, $S = $ `defaultS X` (a natural number determined by the `ProofData`) and $o = $ `cancelPt X` (the point $o$ of the blueprint). Write $\mathfrak{P}$ for the (finite) type `𝔓 X` of tiles of this tile structure. Let $k, n, j$ be natural numbers. Let $\mathfrak{U}_2(k,n,j) \subseteq \mathfrak{P}$ be the project set `𝔘₂ k n j` (the subset of $\mathfrak{U}_1(k,n,j)$ given in (5.4.2)), and let $\sim$ be the project relation `URel k n j` on $\mathfrak{P}$, defined by $u \sim u'$ iff $u = u'$ or there is $p \in \mathfrak{T}_1(k,n,j,u)$ (the project set `𝔗₁ k n j u`) with `smul 10 p ≤ smul 1 u'`. Then $\sim$ is an equivalence relation on the set $\mathfrak{U}_2(k,n,j)$ (in the sense of the project predicate `EquivalenceOn`).
+English: (Lemma 5.4.2) Let $X$ be a metric space, let $a$ be a natural number, $q$ a real number, $K : X \to X \to \mathbb{C}$ a function, $\sigma_1, \sigma_2 : X \to \mathbb{Z}$ functions and $F, G \subseteq X$ subsets. Assume an instance of the project structure `ProofData a q K σ₁ σ₂ F G` (per its docstring, the data common through most of chapters 2-7); through its `KernelProofData` component it equips $X$ with a doubling-measure structure `DoublingMeasure X (2^a)` and with compatible functions `CompatibleFunctions ℝ X (2^a)` (hence a `FunctionDistances ℝ X` structure with its type $\Theta(X)$ of functions), and it provides $Q$ (`ProofData.Q`), a simple function from $X$ to $\Theta(X)$. Assume moreover a tile structure `TileStructure Q D κ S o` with $D = $ `defaultD a` $= 2^{𝕔 a^2}$ (where $𝕔$ is the project's fixed natural-number constant `𝕔`), $\kappa = $ `defaultκ a` $= 2^{-10a}$, $S = $ `defaultS X` (the least positive natural number $n$ such that $-n\le\sigma_1(x)$ and $\sigma_2(x)\le n$ for all $x\in X$ and $F$ and $G$ are contained in the open ball of radius $D^n/4$ about $o$) and $o = $ `cancelPt X` (a chosen point of $X$ at which every function of $\Theta(X)$ vanishes). Write $\mathfrak{P}$ for the type `𝔓 X` of tiles of this tile structure; each tile $p$ has a grid cube $\mathcal I(p)$ (`𝓘 p`), a point $\mathfrak c(p)=c(\mathcal I(p))\in X$ and an integer $\mathfrak s(p)=s(\mathcal I(p))$ (given by the grid-structure fields `c` and `s` applied to the cube $\mathcal I(p)$), and a function $\mathcal Q(p)\in\Theta(X)$ (`𝒬 p`). For a real $l$ and a tile $p$, `smul l p` is the pair $(\mathcal I(p),\ B_p(\mathcal Q(p), l))$ in the project type `TileLike X` (the product of the grid cubes with the order dual of the sets of elements of $\Theta(X)$), where $B_p(\mathcal Q(p),l)$ is the ball of radius $l$ around $\mathcal Q(p)$ in $\Theta(X)$ for the function-distance pseudometric attached to the point $\mathfrak c(p)$ and radius $D^{\mathfrak s(p)}/4$; `smul l p ≤ smul l' p'` refers to the project's partial order on `TileLike X`. Let $k, n, j$ be natural numbers. For a tile $u$, $\mathfrak T_1(k,n,j,u)$ (`𝔗₁ k n j u`) is the set of tiles $p$ in the project set $\mathfrak C_1(k,n,j)$ (`ℭ₁ k n j`) with $\mathcal I(p)\ne\mathcal I(u)$ and `smul 2 p ≤ smul 1 u`. Let $\mathfrak{U}_2(k,n,j) \subseteq \mathfrak{P}$ be the project set `𝔘₂ k n j` (per its docstring, the subset of $\mathfrak U_1(k,n,j)$ given in (5.4.2)). Let $\sim$ be the project relation `URel k n j` on $\mathfrak{P}$, whose definition body is: $u \sim u'$ iff $u = u'$ or there is $p \in \mathfrak{T}_1(k,n,j,u)$ with `smul 10 p ≤ smul 1 u'`. Then $\sim$ is an equivalence relation on the set $\mathfrak{U}_2(k,n,j)$ (the project predicate `EquivalenceOn (URel k n j) (𝔘₂ k n j)`, per its docstring: an equivalence relation on the set).
 
 ### `forest_inner`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hu : u ∈ 𝔘₃ k n j) (hp : p ∈ 𝔗₂ k n j u) : Metric.ball (𝔠 p) (8 * ↑(defaultD a) ^ 𝔰 p) ⊆ ↑(𝓘 u)`
@@ -503,6 +647,7 @@ English: (Lemma 5.4.6, verifying (2.0.36)) Let $X$ be a metric space, let $a$ be
 ### `forest`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (k : ℕ) (n : ℕ) (j : ℕ) (l : ℕ) : Forest X n`
 Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : MetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → ℕ → (n : ℕ) → ℕ → ℕ → Forest X (F := F) (G := G) n`
+Definition: `fun {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [MetricSpace X] [ProofData a q K σ₁ σ₂ F G] [TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] (k n j l : ℕ) => Forest.mk (F := F) (G := G) (𝔘₄ (F := F) (G := G) k n j l) (𝔗₂ (F := F) (G := G) k n j) ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯`
 Docstring: The forest based on `𝔘₄ k n j l`.
 English: Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \in \mathbb{N}$, $q \in \mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\sigma_1,\sigma_2$ and sets $F, G \subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j, l$, $\mathrm{forest}(k,n,j,l)$ is an $n$-forest on $X$ (an element of `Forest X n`). According to its docstring, it is the forest based on $\mathfrak{U}_4(k,n,j,l)$.
 

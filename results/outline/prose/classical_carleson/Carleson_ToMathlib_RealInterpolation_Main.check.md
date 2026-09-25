@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -67,7 +68,7 @@ Definition: `fun {α : Type u_1} {α' : Type u_2} {ε : Type u_3} {m' : Measurab
 #### `ScaledPowerFunction` (structure or class)
 Lean: `Type`
 Docstring: A ScaledPowerFunction is meant to represent a function of the form `t ↦ (t / d)^σ`, where `d` is strictly positive and either `σ > 0` or `σ < 0`.
-Fields: `σ`, `d`, `0`
+Constructor (every field with its type): `(σ : ℝ) → (d : ENNReal) → (0 : ENNReal) < d → d ≠ ⊤ → (0 : ℝ) < σ ∨ σ < (0 : ℝ) → ScaledPowerFunction`
 
 #### `MeasureTheory.C_realInterpolation_ENNReal` (def)
 Lean: `ENNReal → ENNReal → ENNReal → ENNReal → ENNReal → NNReal → NNReal → NNReal → ENNReal → ENNReal`
@@ -104,6 +105,11 @@ Definition: `fun (self : ScaledPowerFunction) => self.1`
 #### `ScaledPowerFunction.d` (def)
 Lean: `ScaledPowerFunction → ENNReal`
 Definition: `fun (self : ScaledPowerFunction) => self.2`
+
+#### `MeasureTheory.wnorm'` (def)
+Lean: `{α : Type u_1} → {ε : Type u_3} → {m : MeasurableSpace α} → [ENorm ε] → (α → ε) → ℝ → Measure α → ENNReal`
+Docstring: The weak L^p norm of a function, for `p < ∞`
+Definition: `fun {α : Type u_1} {ε : Type u_3} {m : MeasurableSpace α} [ENorm ε] (f : α → ε) (p : ℝ) (μ : Measure α) => ⨆ (t : NNReal), ↑t * distribution f (↑t) μ ^ p⁻¹`
 
 ## Translations
 

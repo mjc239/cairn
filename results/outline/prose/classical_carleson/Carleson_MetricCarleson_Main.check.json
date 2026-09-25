@@ -1,3 +1,0 @@
-{
-"metric_carleson": {"faithful": false, "issue": "Several symbols are not introduced or are left vague. The constants C_{T_s}(a) (C_Ts a = 2^{a^3}) and C_{1.0.2}(a,q) (= 2^{(3𝕔+18+5⌊𝕔/4⌋)a^3}/(q-1)^6, with q-1 in the nonnegative reals) are never defined. The doubling parameter is only called 'depending on a' when it is exactly defaultA a = 2^a. 'K satisfies the kernel bounds' is not backed by any definition shown. The cancellativity parameter defaultτ a = 1/a is not explained. The compatible-function family Θ that KernelProofData supplies, and over which carlesonOperator takes its supremum, is not mentioned. The integral is a lower Lebesgue integral of a [0,∞]-valued function, which the English does not say."}
-}

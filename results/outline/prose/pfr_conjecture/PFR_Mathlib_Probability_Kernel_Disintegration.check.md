@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,25 +33,28 @@ Use every Lean name exactly as given.
 ### `ProbabilityTheory.Kernel.AEFiniteKernelSupport`
 Lean (short): `(κ : Kernel T S) (μ : Measure T) : Prop`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → Kernel T S → Measure T → Prop`
+Definition: `fun {S : Type u_2} {T : Type u_3} [MeasurableSpace S] [MeasurableSpace T] (κ : Kernel T S) (μ : Measure T) => ∀ᵐ (t : T) ∂μ, ∃ (A : Finset S), (κ t : Measure S) (↑A)ᶜ = (0 : ENNReal)`
 Docstring: A kernel `κ` has almost everywhere finite support wrt a measure `μ` if, for almost every point `t`, then `κ t` has finite support. Note that we don't require any uniformity wrt `t`.
 English: Let $S$ and $T$ be measurable spaces. For a kernel $\kappa$ from $T$ to $S$ and a measure $\mu$ on $T$, this defines a proposition, ``$\kappa$ has almost everywhere finite kernel support with respect to $\mu$''. According to the docstring, this means that for $\mu$-almost every point $t$, the measure $\kappa(t)$ has finite support, with no uniformity in $t$ required.
 
 ### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk`
 Lean (short): `[Countable T] [MeasurableSingletonClass T] (_hκ : κ.AEFiniteKernelSupport μ) : Kernel T S`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → [Countable T] → [MeasurableSingletonClass T] → {μ : Measure T} → {κ : Kernel T S} → κ.AEFiniteKernelSupport μ → Kernel T S`
+Definition: `fun {S : Type u_2} {T : Type u_3} [MeasurableSpace S] [MeasurableSpace T] [Countable T] [MeasurableSingletonClass T] {μ : Measure T} {κ : Kernel T S} (_hκ : κ.AEFiniteKernelSupport μ) => if hS : Nonempty S then Kernel.piecewise (s := {t : T | ∃ (A : Finset S), (κ t : Measure S) (↑A)ᶜ = (0 : ENNReal)}) ⋯ κ (Kernel.const T (Measure.dirac hS.some)) else (0 : Kernel T S)`
 Docstring: The definition doesn't use `_hκ`, but we keep it here still as it doesn't give anything interesting otherwise.
 English: Let $S$ and $T$ be measurable spaces, with $T$ countable and with measurable singletons. Given a measure $\mu$ on $T$, a kernel $\kappa$ from $T$ to $S$, and a proof $h\kappa$ that $\kappa$ has almost everywhere finite kernel support with respect to $\mu$, this defines a kernel $h\kappa.\mathrm{mk}$ from $T$ to $S$. According to the docstring, the definition does not use the hypothesis $h\kappa$, which is kept only because the construction is otherwise uninteresting.
 
 ### `ProbabilityTheory.Kernel.FiniteKernelSupport`
 Lean (short): `(κ : Kernel T S) : Prop`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → Kernel T S → Prop`
+Definition: `fun {S : Type u_2} {T : Type u_3} [MeasurableSpace S] [MeasurableSpace T] (κ : Kernel T S) => ∀ (t : T), ∃ (A : Finset S), (κ t : Measure S) (↑A)ᶜ = (0 : ENNReal)`
 Docstring: The analogue of FiniteSupport for probability kernels.
 English: Let $S$ and $T$ be measurable spaces. For a kernel $\kappa$ from $T$ to $S$, this defines a proposition, ``$\kappa$ has finite kernel support''. According to the docstring, it is the analogue of finite support (`FiniteSupport`) for probability kernels.
 
 ### `ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk`
 Lean (short): `[Countable T] [MeasurableSingletonClass T] [MeasurableSingletonClass S] (hκ : κ.AEFiniteKernelSupport μ) : hκ.mk.FiniteKernelSupport`
 Lean (full): `∀ {S : Type u_2} {T : Type u_3} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace T] [inst_2 : Countable T] [inst_3 : MeasurableSingletonClass T] {μ : Measure T} [MeasurableSingletonClass S] {κ : Kernel T S} (hκ : κ.AEFiniteKernelSupport μ), hκ.mk.FiniteKernelSupport`
-English: Let $T$ be a countable measurable space in which singletons are measurable, let $S$ be a measurable space in which singletons are measurable, let $\mu$ be a measure on $T$, and let $\kappa$ be a kernel from $T$ to $S$. Suppose $\kappa$ has almost everywhere finite support with respect to $\mu$ (hypothesis $h\kappa$): for $\mu$-almost every $t\in T$ there is a finite set $A\subseteq S$ with $\kappa(t)(S\setminus A)=0$. Define the kernel $\kappa'=h\kappa.\mathrm{mk}$ from $T$ to $S$ as follows: if $S$ is nonempty, fix a point $s_0\in S$ and let $\kappa'(t)=\kappa(t)$ for those $t$ for which some finite $A\subseteq S$ has $\kappa(t)(S\setminus A)=0$, and $\kappa'(t)=\delta_{s_0}$ (the Dirac measure) otherwise; if $S$ is empty, $\kappa'=0$. Then $\kappa'$ has finite kernel support: for every $t\in T$ there is a finite set $A\subseteq S$ with $\kappa'(t)(S\setminus A)=0$.
+English: Let $S$ and $T$ be measurable spaces such that $T$ is countable and singletons are measurable in both $T$ and $S$. Let $\mu$ be a measure on $T$ and $\kappa$ a kernel from $T$ to $S$. Suppose $\kappa$ has almost everywhere finite support with respect to $\mu$ (project notion `AEFiniteKernelSupport`, hypothesis $h\kappa$): for $\mu$-almost every $t\in T$ there is a finite set $A\subseteq S$ with $\kappa(t)(S\setminus A)=0$. Let $\kappa' = h\kappa.\mathrm{mk}$ be the kernel from $T$ to $S$ given by the project definition `AEFiniteKernelSupport.mk`, whose body is: if $S$ is nonempty, with $s_0\in S$ a chosen point and $U=\{t\in T : \text{there is a finite } A\subseteq S \text{ with } \kappa(t)(S\setminus A)=0\}$, then $\kappa'$ is the piecewise kernel equal to $\kappa$ on $U$ and to the constant kernel $t\mapsto\delta_{s_0}$ (Dirac measure at $s_0$) off $U$; if $S$ is empty, $\kappa'$ is the zero kernel. Then $\kappa'$ has finite kernel support (project notion `FiniteKernelSupport`): for every $t\in T$ there is a finite set $A\subseteq S$ with $\kappa'(t)(S\setminus A)=0$.
 
 ### `ProbabilityTheory.Kernel.disintegration`
 Lean (short): `[Countable S] [DiscreteMeasurableSpace S] [Countable U] [Nonempty U] [DiscreteMeasurableSpace U] (κ : Kernel T (S × U)) [IsFiniteKernel κ] : κ = κ.fst.compProd κ.condKernel`

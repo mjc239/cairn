@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -45,5 +46,6 @@ Definition: `fun {G : Type u_1} [AddCommGroup G] [Fintype G] (f : G → ℂ) (ψ
 ### `largeSpec`
 Lean (short): `[Fintype G] (f : G → ℂ) (η : ℝ) : Finset (AddChar G ℂ)`
 Lean (full): `{G : Type u_1} → [inst : AddCommGroup G] → [Fintype G] → [MeasurableSpace G] → (G → ℂ) → ℝ → Finset (AddChar G ℂ)`
+Definition: `fun {G : Type u_1} [AddCommGroup G] [Fintype G] [MeasurableSpace G] (f : G → ℂ) (η : ℝ) => {ψ : AddChar G ℂ | η * ‖f‖_[(1 : ENNReal)] ≤ ‖dft f ψ‖}`
 Docstring: The `η`-large spectrum of a function.
 English: Let $G$ be a finite abelian group (an additive commutative group with finitely many elements) equipped with a measurable space structure. For $f : G \to \mathbb{C}$ and $\eta \in \mathbb{R}$, $\mathrm{largeSpec}(f, \eta)$ is a finite set of additive characters $G \to \mathbb{C}$; according to its docstring, it is the $\eta$-large spectrum of $f$.

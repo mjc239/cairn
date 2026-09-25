@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -55,7 +56,7 @@ Definition: `fun {G : Type u_1} {R : Type u_3} [DecidableEq G] [AddCommGroup G] 
 ### `cLpNorm_conv_le_cLpNorm_dconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
 Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ (0 : ℕ) → Even n → ∀ (f : G → ℂ), ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
-English: Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $n$ be a natural number with $n \ne 0$ and $n$ even, and let $f : G \to \mathbb{C}$. Then $\|f \ast f\|_{n} \le \|f \circ f\|_{n}$, where $\ast$ is the convolution (written `∗`), $\circ$ is the difference convolution (written `○`), and $\|\cdot\|_{n}$ is the compact $L^n$ norm (written `‖·‖ₙ_[n]`).
+English: Let $G$ be a finite additive commutative group, equipped with a measurable space structure which is discrete (every subset of $G$ is measurable). Let $n$ be a natural number with $n \ne 0$ and $n$ even, and let $f : G \to \mathbb{C}$. Write $f \ast f : G \to \mathbb{C}$ for the unnormalised (sum) convolution of $f$ with itself (Lean `conv`, notation `∗`, as opposed to the normalised convolution `∗ₙ`), $(f \ast f)(x) = \sum_{y+z=x} f(y) f(z)$, and $f \circ f : G \to \mathbb{C}$ for the unnormalised (sum) difference convolution of $f$ with itself (Lean `dconv`, notation `○`, as opposed to the normalised `○ₙ`), $(f \circ f)(x) = \sum_{y-z=x} f(y)\overline{f(z)}$. For $g : G \to \mathbb{C}$ let $\|g\|_{n}$ denote the compact-normalisation $L^n$ norm `cLpNorm n g`, i.e. the $L^n$ norm of $g$ with respect to the uniform probability measure on $G$, $\|g\|_{n} = \big(\frac{1}{|G|}\sum_{x \in G} |g(x)|^n\big)^{1/n}$. Then $\|f \ast f\|_{n} \le \|f \circ f\|_{n}$.
 
 ### `dLpNorm_ddconv_le_dLpNorm_dddconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`

@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,5 +33,6 @@ Use every Lean name exactly as given.
 ### `mu`
 Lean (short): `(s : Finset α) (_ : α) : K`
 Lean (full): `{K : Type u_1} → {α : Type u_3} → [DivisionSemiring K] → Finset α → α → K`
+Definition: `fun {K : Type u_1} {α : Type u_3} [DivisionSemiring K] (s : Finset α) => HSMul.hSMul (α := K) (β := α → K) (↑s.card)⁻¹ ((↑s).indicator fun (x : α) => (1 : K))`
 Docstring: The normalised indicator_one of a set.
 English: Definition. Let $K$ be a division semiring and $\alpha$ a type. For a finite set $s$ of elements of $\alpha$, $\mu_s : \alpha \to K$ is a $K$-valued function on $\alpha$; its docstring describes it as the normalised indicator_one of the set $s$.

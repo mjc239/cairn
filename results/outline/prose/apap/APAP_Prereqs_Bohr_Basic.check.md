@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -44,5 +45,6 @@ Definition: `fun (G : Type u_1) [AddCommGroup G] (self : BohrSet G) => self.1`
 ### `BohrSet`
 Lean (short): `(G : Type u_1) : Type u_1`
 Lean (full): `(G : Type u_1) → [AddCommGroup G] → Type u_1`
+Constructor (every field with its type): `{G : Type u_1} → [inst : AddCommGroup G] → (frequencies : Finset (AddChar G ℂ)) → (ewidth : AddChar G ℂ → ENNReal) → (∀ (ψ : AddChar G ℂ), ψ ∈ frequencies ↔ ewidth ψ < ⊤) → BohrSet G`
 Docstring: A *Bohr set* `B` on an additive group `G` is a finite set of characters of `G`, called the *frequencies*, along with an extended non-negative real number for each frequency `ψ`, called the *width of `B` at `ψ`*. A Bohr set `B` is thought of as the set `{x | ∀ ψ ∈ B.frequencies, ‖1 - ψ x‖ ≤ B.width ψ}`. This is the *chord-length* convention. The arc-length convention would instead be `{x | ∀ ψ ∈ B.frequencies, |arg (ψ x)| ≤ B.width ψ}`. Note that this set **does not** uniquely determine `B` (in particular, it does not uniquely determine either `B.frequencies` or `B.width`).
 English: For an abelian group $G$ (an additive commutative group), $\mathrm{BohrSet}(G)$ is a type (in the same universe as $G$). According to its docstring, a Bohr set $B$ on $G$ is a finite set of characters of $G$ (the frequencies) together with an extended nonnegative real number for each frequency $\psi$ (the width of $B$ at $\psi$); $B$ is thought of as the set $\{x : \|1 - \psi(x)\| \le \mathrm{width}_B(\psi) \text{ for all frequencies } \psi\}$ (the chord-length convention, as opposed to the arc-length convention $|\arg \psi(x)| \le \mathrm{width}_B(\psi)$), and this set does not uniquely determine $B$ (neither its frequencies nor its widths).

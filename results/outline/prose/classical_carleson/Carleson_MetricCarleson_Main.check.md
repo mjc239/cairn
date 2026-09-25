@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -47,7 +48,7 @@ Definition: `fun {𝕜 : outParam (Type u_3)} (X : Type u) {A : outParam ℕ} {i
 #### `IsCancellative` (structure or class)
 Lean: `(X : Type u_2) → {A : ℕ} → [inst : PseudoMetricSpace X] → [DoublingMeasure X ↑A] → ℝ → [CompatibleFunctions ℝ X A] → Prop`
 Docstring: Θ is τ-cancellative. `τ` will usually be `1 / a`
-Fields: `0`, `E`, `x`, `α`, `β`, `↑A`, `MeasureTheory.volume`, `1`
+Constructor (every field with its type): `∀ {X : Type u_2} {A : ℕ} [inst : PseudoMetricSpace X] [inst_1 : DoublingMeasure X ↑A] {τ : ℝ} [inst_2 : CompatibleFunctions ℝ X A], (∀ {x : X} {r : ℝ} {φ : X → ℂ}, (0 : ℝ) < r → iLipENorm φ x r ≠ ⊤ → Function.support φ ⊆ Metric.ball x r → ∀ {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, enorm (E := ℂ) (@integral _ _ _ _ MeasureSpace.toMeasurableSpace volume fun (x : X) => Complex.exp (Complex.I * (↑(f x) - ↑(g x))) * φ x) ≤ HMul.hMul (α := ENNReal) (β := ENNReal) (↑A : ENNReal) ((volume : Measure X) (Metric.ball x r) : ENNReal) * iLipENorm φ x r * ((1 : ENNReal) + edist_{x, r} f g) ^ (-τ)) → IsCancellative X τ`
 
 #### `J102` (def)
 Lean: `Set (ℚ × ℚ)`
@@ -57,7 +58,7 @@ Definition: `{p : ℚ × ℚ | (0 : ℚ) < p.1 ∧ p.1 < p.2}`
 #### `KernelProofData` (structure or class)
 Lean: `{X : Type u_1} → outParam ℕ → outParam (X → X → ℂ) → [PseudoMetricSpace X] → Type (u_1 + 1)`
 Docstring: Data common through most of chapters 2 through 7. These contain the minimal axioms for `kernel-summand`'s proof. This is used in Chapter 3 when we don't have all other fields from `ProofData`.
-Fields: `d`, `4`
+Constructor (every field with its type): `{X : Type u_1} → {a : outParam ℕ} → {K : outParam (X → X → ℂ)} → [inst : PseudoMetricSpace X] → (d : DoublingMeasure X ↑(defaultA a)) → (4 : ℕ) ≤ a → CompatibleFunctions ℝ X (defaultA a) → IsOneSidedKernel a K → KernelProofData a K`
 
 #### `KernelProofData.cf` (def)
 Lean: `{X : Type u_1} → {a : outParam ℕ} → {K : outParam (X → X → ℂ)} → {inst : PseudoMetricSpace X} → [self : KernelProofData a K] → CompatibleFunctions ℝ X (defaultA a)`
@@ -109,12 +110,12 @@ Definition: `wrapped✝.1`
 #### `CompatibleFunctions` (structure or class)
 Lean: `(𝕜 : outParam (Type u_3)) → (X : Type u) → outParam ℕ → [RCLike 𝕜] → [PseudoMetricSpace X] → Type (max (u + 1) u_3)`
 Docstring: A set `Θ` of (continuous) functions is compatible. `A` will usually be `2 ^ a`.
-Fields: `o`, `f`, `0`, `2`
+Constructor (every field with its type): `{𝕜 : outParam (Type u_3)} → {X : Type u} → {A : outParam ℕ} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → [toFunctionDistances : FunctionDistances 𝕜 X] → (∃ (o : X), ∀ (f : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _), (coeΘ f) o = (0 : 𝕜)) → (∀ {x : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, localOscillation (Metric.ball x r) (coeΘ f) (coeΘ g) ≤ ENNReal.ofReal (dist_{x, r} f g)) → (∀ {x₁ x₂ : X} {r₁ r₂ : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, Metric.ball x₁ r₁ ⊆ Metric.ball x₂ r₂ → dist_{x₁, r₁} f g ≤ dist_{x₂, r₂} f g) → (∀ {x₁ x₂ : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, dist x₁ x₂ < (2 : ℝ) * r → dist_{x₂, (2 : ℝ) * r} f g ≤ ↑A * dist_{x₁, r} f g) → (∀ {x₁ x₂ : X} {r : ℝ} {f g : @Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _}, Metric.ball x₁ r ⊆ Metric.ball x₂ (↑A * r) → (2 : ℝ) * dist_{x₁, r} f g ≤ dist_{x₂, ↑A * r} f g) → (∀ {x : X} {r : ℝ}, AllBallsCoverBalls.{u} (WithFunctionDistance x r) (2 : ℝ) A) → CompatibleFunctions 𝕜 X A`
 
 #### `FunctionDistances` (structure or class)
 Lean: `(𝕜 : outParam (Type u_1)) → (X : Type u) → [NormedField 𝕜] → [TopologicalSpace X] → Type (max (u + 1) u_1)`
 Docstring: A class stating that continuous functions have distances associated to every ball. We use a separate type to conveniently index these functions.
-Fields: `Θ`, `coeΘ`, `x`, `α`
+Constructor (every field with its type): `{𝕜 : outParam (Type u_1)} → {X : Type u} → [inst : NormedField 𝕜] → [inst_1 : TopologicalSpace X] → (Θ : Type u) → (coeΘ : Θ → C(X, 𝕜)) → (∀ {f g : Θ}, (∀ (x : X), Eq.{u_1 + 1} (α := 𝕜) ((coeΘ f) x : 𝕜) ((coeΘ g) x : 𝕜)) → f = g) → (X → ℝ → PseudoMetricSpace Θ) → FunctionDistances 𝕜 X`
 
 #### `FunctionDistances.Θ` (def)
 Lean: `{𝕜 : outParam (Type u_1)} → (X : Type u) → {inst : NormedField 𝕜} → {inst_1 : TopologicalSpace X} → [self : FunctionDistances 𝕜 X] → Type u`
@@ -124,7 +125,7 @@ Definition: `fun {𝕜 : outParam (Type u_1)} (X : Type u) {inst : NormedField �
 #### `MeasureTheory.DoublingMeasure` (structure or class)
 Lean: `(X : Type u_3) → outParam NNReal → [PseudoMetricSpace X] → Type u_3`
 Docstring: A metric space with a measure with some nice properties, including a doubling condition. This is called a "doubling metric measure space" in the blueprint. `A` will usually be `2 ^ a`.
-Fields: `α`, `m0`, `X`, `R`
+Constructor (every field with its type): `{X : Type u_3} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [toCompleteSpace : CompleteSpace X] → [toLocallyCompactSpace : LocallyCompactSpace X] → [toMeasureSpace : MeasureSpace X] → [toBorelSpace : BorelSpace X] → [toIsLocallyFiniteMeasure : IsLocallyFiniteMeasure.{u_3} (α := X) (m0 := MeasureSpace.toMeasurableSpace) volume] → [toIsDoubling : Measure.IsDoubling.{u_3} (X := X) volume A] → [toNeZero : NeZero.{u_3} (R := Measure X) volume] → DoublingMeasure X A`
 
 #### `WithFunctionDistance` (def)
 Lean: `{𝕜 : Type u_1} → {X : Type u_2} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → [d : FunctionDistances 𝕜 X] → X → ℝ → Type u_2`
@@ -147,12 +148,12 @@ Definition: `fun {𝕜 : Type u_1} {X : Type u_2} [RCLike 𝕜] [PseudoMetricSpa
 #### `IsOneSidedKernel` (structure or class)
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
 Docstring: `K` is a one-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
-Fields: `2`, `β`
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ}, Measurable (Function.uncurry K) → (∀ (x y : X), ‖K x y‖ ≤ ↑(C_K ↑a) / Real.vol x y) → (∀ {x y y' : X}, (2 : ℝ) * dist y y' ≤ dist x y → ‖K x y - K x y'‖ ≤ HPow.hPow (β := ℝ) (dist y y' / dist x y) (↑a)⁻¹ * (↑(C_K ↑a) / Real.vol x y)) → IsOneSidedKernel a K`
 
 #### `BoundedFiniteSupport` (structure or class)
 Lean: `{X : Type u_3} → {E : Type u_4} → [inst : MeasurableSpace X] → [TopologicalSpace E] → [ENorm E] → [Zero E] → (X → E) → autoParam (Measure X) BoundedFiniteSupport._auto_1 → Prop`
 Docstring: Bounded measurable function $g$ on $X$ supported on a set of finite measure
-Fields: `α`, `⊤`
+Constructor (every field with its type): `∀ {X : Type u_3} {E : Type u_4} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace E] [inst_2 : ENorm E] [inst_3 : Zero E] {f : X → E} {μ : autoParam (Measure X) BoundedFiniteSupport._auto_1}, MemLp f ⊤ μ → LT.lt (α := ENNReal) (μ (Function.support f) : ENNReal) (⊤ : ENNReal) → BoundedFiniteSupport f μ`
 
 #### `linearizedCarlesonOperator` (def)
 Lean: `{X : Type u_2} → {A : ℕ} → [inst : PseudoMetricSpace X] → [DoublingMeasure X ↑A] → [inst_2 : FunctionDistances ℝ X] → (X → @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _) → (X → X → ℂ) → (X → ℂ) → X → ENNReal`
@@ -163,10 +164,50 @@ Definition: `fun {X : Type u_2} {A : ℕ} [PseudoMetricSpace X] [DoublingMeasure
 Lean: `{X : Type u_1} → [PseudoMetricSpace X] → X → ℝ → ℝ → Set X`
 Definition: `fun {X : Type u_1} [PseudoMetricSpace X] (x : X) (r R : ℝ) => {y : X | dist x y ∈ Set.Ioo r R}`
 
+#### `AllBallsCoverBalls` (def)
+Lean: `(X : Type u_2) → [PseudoMetricSpace X] → ℝ → ℕ → Prop`
+Docstring: For all `r`, balls of radius `r` in `X` are covered by `n` balls of radius `a * r`
+Definition: `fun (X : Type u_2) [PseudoMetricSpace X] (a : ℝ) (n : ℕ) => ∀ (r : ℝ), BallsCoverBalls X (a * r) r n`
+
+#### `FunctionDistances.coeΘ` (def)
+Lean: `{𝕜 : outParam (Type u_1)} → {X : Type u} → {inst : NormedField 𝕜} → {inst_1 : TopologicalSpace X} → [self : FunctionDistances 𝕜 X] → @Θ _ X inst inst_1 _ → C(X, 𝕜)`
+Docstring: The coercion map from `Θ` to `C(X, 𝕜)`.
+Definition: `fun {𝕜 : outParam (Type u_1)} (X : Type u) {inst : NormedField 𝕜} {inst_1 : TopologicalSpace X} [self : FunctionDistances 𝕜 X] => self.2`
+
+#### `localOscillation` (def)
+Lean: `{𝕜 : Type u_3} → {X : Type u_4} → [inst : RCLike 𝕜] → [inst_1 : PseudoMetricSpace X] → Set X → C(X, 𝕜) → C(X, 𝕜) → ENNReal`
+Docstring: The local oscillation of two functions w.r.t. a set `E`. This is `d_E` in the blueprint.
+Definition: `fun {𝕜 : Type u_3} {X : Type u_4} [RCLike 𝕜] [PseudoMetricSpace X] (E : Set X) (f g : C(X, 𝕜)) => ⨆ z ∈ E ×ˢ E, ENNReal.ofReal ‖HAdd.hAdd (β := 𝕜) (HSub.hSub (β := 𝕜) (HSub.hSub (α := 𝕜) (β := 𝕜) (f z.1 : 𝕜) (g z.1 : 𝕜)) (f z.2 : 𝕜)) (g z.2 : 𝕜)‖`
+
+#### `MeasureTheory.Measure.IsDoubling` (structure or class)
+Lean: `{X : Type u_3} → [inst : MeasurableSpace X] → [PseudoMetricSpace X] → Measure X → outParam NNReal → Prop`
+Docstring: A doubling measure is a measure on a metric space with the condition that doubling the radius of a ball only increases the volume by a constant factor, independent of the ball.
+Constructor (every field with its type): `∀ {X : Type u_3} [inst : MeasurableSpace X] [inst_1 : PseudoMetricSpace X] {μ : Measure X} {A : outParam NNReal}, (∀ (x : X) (r : ℝ), μ (Metric.ball x ((2 : ℝ) * r)) ≤ HMul.hMul (β := ENNReal) ↑A (μ (Metric.ball x r) : ENNReal)) → μ.IsDoubling A`
+
+#### `FunctionDistances.metric` (def)
+Lean: `{𝕜 : outParam (Type u_1)} → {X : Type u} → {inst : NormedField 𝕜} → {inst_1 : TopologicalSpace X} → [self : FunctionDistances 𝕜 X] → X → ℝ → PseudoMetricSpace (@Θ _ X inst inst_1 _)`
+Docstring: For each `_x : X` and `_r : ℝ`, a `PseudoMetricSpace Θ`.
+Definition: `fun {𝕜 : outParam (Type u_1)} (X : Type u) {inst : NormedField 𝕜} {inst_1 : TopologicalSpace X} [self : FunctionDistances 𝕜 X] => self.4`
+
+#### `C_K` (def)
+Lean: `ℝ → NNReal`
+Docstring: The constant used twice in the definition of the Calderon-Zygmund kernel.
+Definition: `fun (a : ℝ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
+
+#### `Real.vol` (def)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → X → X → ℝ`
+Docstring: The "volume function" `V`. Preferably use `vol` instead.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] [MeasureSpace X] (x y : X) => Measure.real (m := MeasureSpace.toMeasurableSpace) volume (Metric.ball x (dist x y))`
+
+#### `carlesonOperatorIntegrand` (def)
+Lean: `{X : Type u_2} → {A : ℕ} → [inst : PseudoMetricSpace X] → [DoublingMeasure X ↑A] → [inst_2 : FunctionDistances ℝ X] → (X → X → ℂ) → @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _ → ℝ → ℝ → (X → ℂ) → X → ℂ`
+Docstring: The integrand in the (linearized) Carleson operator. This is `G` in Lemma 3.0.1.
+Definition: `fun {X : Type u_2} {A : ℕ} [PseudoMetricSpace X] [DoublingMeasure X ↑A] [FunctionDistances ℝ X] (K : X → X → ℂ) (θ : @Θ _ X Real.normedField UniformSpace.toTopologicalSpace _) (R₁ R₂ : ℝ) (f : X → ℂ) (x : X) => @integral _ _ _ _ MeasureSpace.toMeasurableSpace (Measure.restrict volume (Set.Annulus.oo x R₁ R₂)) fun (y : X) => K x y * f y * Complex.exp (Complex.I * ↑(θ y))`
+
 ## Translations
 
 ### `metric_carleson`
 Lean (short): `[KernelProofData a K] [IsCancellative X (defaultτ a)] (hq : q ∈ Set.Ioc 1 2) (hqq' : q.HolderConjugate q') (mF : MeasurableSet F) (mG : MeasurableSet G) (mf : Measurable f) (nf : (fun x => ‖f x‖) ≤ F.indicator 1) (hT : HasBoundedStrongType (fun x1 x2 => nontangentialOperator K x1 x2) 2 2 volume volume ↑(C_Ts a)) : ∫⁻ (x : X) in G, carlesonOperator K f x ≤ ↑(C1_0_2 a q) * volume G ^ (↑q')⁻¹ * volume F ^ (↑q)⁻¹`
 Lean (full): `∀ {X : Type u_1} {a : ℕ} [inst : MetricSpace X] {q q' : NNReal} {F G : Set X} {K : X → X → ℂ} [inst_1 : KernelProofData a K] {f : X → ℂ} [IsCancellative X (defaultτ a)], q ∈ Set.Ioc (1 : NNReal) (2 : NNReal) → q.HolderConjugate q' → MeasurableSet F → MeasurableSet G → Measurable f → (fun (x : X) => ‖f x‖) ≤ F.indicator (1 : X → ℝ) → HasBoundedStrongType (ε₁ := ℂ) (ε₂ := ENNReal) (α := X) (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (fun (x1 : X → ℂ) (x2 : X) => nontangentialOperator K x1 x2) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a) → ∫⁻ (x : X) in G, carlesonOperator K f x ≤ ↑(C1_0_2 a q) * HPow.hPow (α := ENNReal) ((volume : Measure X) G : ENNReal) (↑q')⁻¹ * HPow.hPow (α := ENNReal) ((volume : Measure X) F : ENNReal) (↑q)⁻¹`
 Docstring: Theorem 1.1.1
-English: (Theorem 1.1.1) Let $X$ be a metric space, $a\in\mathbb N$, and $K : X\times X\to\mathbb C$ a kernel satisfying the standing assumptions `KernelProofData a K` (so $X$ carries a doubling measure $\mu$ with parameter depending on $a$ and $K$ satisfies the kernel bounds), and assume the cancellative property `IsCancellative X (defaultτ a)` holds. Let $q,q'$ be nonnegative reals with $q\in(1,2]$ and $q'$ its Hölder conjugate, let $F,G\subseteq X$ be measurable, and let $f:X\to\mathbb C$ be measurable with $|f|\le\mathbf 1_F$ pointwise. Suppose that the nontangential operator associated with $K$ has bounded strong type $(2,2)$ (with respect to $\mu$) with constant $C_{T_s}(a)$. Then $$\int_G T f(x)\,d\mu(x)\le C_{1.0.2}(a,q)\,\mu(G)^{1/q'}\,\mu(F)^{1/q},$$ where $T$ is the Carleson operator $\mathrm{carlesonOperator}\,K$.
+English: (Theorem 1.1.1) Let $X$ be a metric space, let $a \in \mathbb{N}$, and let $K : X \to X \to \mathbb{C}$. Assume given a `KernelProofData a K` structure (per its docstring, the data common through most of chapters 2 through 7, containing the minimal axioms for the proof of the kernel-summand lemma); in particular it equips $X$ with a doubling measure with constant $\mathrm{defaultA}(a) = 2^a$ (making $X$ a doubling metric measure space, whose measure we denote $\mu$ = `volume`) and with a compatible family `CompatibleFunctions ℝ X (2^a)` of functions, i.e. a type $\Theta(X)$ of (continuous) real-valued functions on $X$ with associated distances on balls. Assume moreover `IsCancellative X (defaultτ a)`, i.e. (per its docstring) $\Theta(X)$ is $\tau$-cancellative with $\tau = \mathrm{defaultτ}(a) = 1/a$. Let $q, q' \in \mathbb{R}_{\ge 0}$ be nonnegative reals with $q \in (1, 2]$ and $q, q'$ Hölder conjugate ($1/q + 1/q' = 1$). Let $F, G \subseteq X$ be measurable sets and let $f : X \to \mathbb{C}$ be measurable with $\|f(x)\| \le \mathbf{1}_F(x)$ for all $x \in X$. Let $T_*$ be the operator `nontangentialOperator K` (per its docstring, the maximally truncated nontangential Calderón–Zygmund operator): for $h : X \to \mathbb{C}$ and $x \in X$, $$T_* h(x) = \sup_{R_2 \in \mathbb{R}}\ \sup_{0 < R_1 < R_2}\ \sup_{x' \in B(x, R_1)} \Big\| \int_{\{y : R_1 < d(x', y) < R_2\}} K(x', y)\, h(y)\, d\mu(y) \Big\|_e \in [0,\infty].$$ Let $C_{T_s}(a) := 2^{a^3}$ (`C_Ts a`). Assume $T_*$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$ with respect to $\mu$ (`HasBoundedStrongType`): for every $h : X \to \mathbb{C}$ that is bounded, measurable and supported on a set of finite $\mu$-measure, $T_* h$ is a.e. strongly measurable and $\|T_* h\|_{L^2(\mu)} \le C_{T_s}(a)\, \|h\|_{L^2(\mu)}$ (the $[0,\infty]$-valued $L^2$ norm `eLpNorm`). Let $T$ be the generalized Carleson operator `carlesonOperator K`: $T f(x) = \sup_{\theta \in \Theta(X)} T_\theta f(x) \in [0,\infty]$, where $T_\theta$ is the linearized Carleson operator `linearizedCarlesonOperator` with the constant choice $x \mapsto \theta$, i.e. $T_\theta f(x) = \sup_{0 < R_1 < R_2} \|\mathrm{carlesonOperatorIntegrand}(K, \theta, R_1, R_2, f)(x)\|_e$, with `carlesonOperatorIntegrand` the project's integrand. Let $C_{1.0.2}(a, q) := 2^{(3 c_0 + 18 + 5 \lfloor c_0/4 \rfloor) a^3} / (q \dot- 1)^6 \in \mathbb{R}_{\ge 0}$ (`C1_0_2 a q`), where $c_0 \in \mathbb{N}$ is the project constant `𝕔` (per its docstring fixed equal to $100$), $\lfloor c_0/4 \rfloor$ is natural-number division and $q \dot- 1$ is truncated subtraction in $\mathbb{R}_{\ge 0}$. Then $$\int_G^{-} T f(x)\, d\mu(x) \le C_{1.0.2}(a, q)\, \mu(G)^{1/q'}\, \mu(F)^{1/q},$$ where the left side is the Lebesgue integral (`∫⁻`) over $G$ of the $[0,\infty]$-valued function $Tf$, and the inequality is in $[0,\infty]$.

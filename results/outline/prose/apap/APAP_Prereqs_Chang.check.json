@@ -1,7 +1,0 @@
-{
-"changConst": {"faithful": true, "issue": ""},
-"AddDissociated.boringEnergy_le": {"faithful": false, "issue": "boringEnergy_n(s) appears only under its Lean name. The English should say what it is: energy n s trivChar, i.e. the number of pairs of n-tuples (γ, δ) in s^n with Σγ_i = Σδ_i. Without that the statement cannot be read mathematically."},
-"general_hoelder": {"faithful": false, "issue": "Project notions are used without being explained. energy_m(Δ, ν̂) (the sum over γ, δ ∈ Δ^m of ‖ν̂(Σγ_i − Σδ_i)‖) and largeSpec(f, η) (the set of characters ψ with η‖f‖_1 ≤ |dft f ψ|) are never described. The norms ‖f‖_1, ‖f‖_2 are called L^1 and L^2 norms without saying they are taken with respect to counting measure (the compact normalisation), and in this setting that choice matters."},
-"spec_hoelder": {"faithful": false, "issue": "boringEnergy_m(Δ) and largeSpec(f, η) are never explained. The norms ‖f‖_1, ‖f‖_2 are called L^1/L^2 norms without the normalisation (counting measure) being stated, and the /|G| factor depends on that choice."},
-"chang": {"faithful": false, "issue": "largeSpec(f, η) (the η-large spectrum {ψ : η‖f‖_1 ≤ |dft f ψ|}) and addSpan(Δ) are not explained. The L^1/L^2 norms are given without their normalisation (counting measure), which changes the meaning of the ratio ‖f‖_1^2/‖f‖_2^2/|G|."}
-}

@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,5 +33,6 @@ Use every Lean name exactly as given.
 ### `cft`
 Lean (short): `[Fintype G] (f : G → ℂ) (_ : AddChar G ℂ) : ℂ`
 Lean (full): `{G : Type u_1} → [inst : AddCommGroup G] → [Fintype G] → (G → ℂ) → AddChar G ℂ → ℂ`
+Definition: `fun {G : Type u_1} [AddCommGroup G] [Fintype G] (f : G → ℂ) (ψ : AddChar G ℂ) => ⟪⇑ψ, f⟫ₙ_[ℂ]`
 Docstring: The discrete Fourier transform.
 English: Let $G$ be a finite abelian group. For $f : G \to \mathbb{C}$, $\mathrm{cft}(f)$ assigns to each additive character $\psi : G \to \mathbb{C}$ a complex number $\mathrm{cft}(f)(\psi)$; according to its docstring, it is the discrete Fourier transform of $f$.

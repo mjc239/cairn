@@ -22,7 +22,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \to \mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -33,6 +34,7 @@ Use every Lean name exactly as given.
 #### `FiniteRange` (inductive)
 Lean: `{Ω : Type u_1} → {G : Type u_2} → (Ω → G) → Prop`
 Docstring: The property of having a finite range.
+Constructor (every field with its type): `∀ {Ω : Type u_1} {G : Type u_2} {X : Ω → G}, (Set.range X).Finite → FiniteRange X`
 
 #### `prod` (def)
 Lean: `{Ω : Type u_1} → {S : Type u_2} → {T : Type u_3} → (Ω → S) → (Ω → T) → Ω → S × T`
@@ -44,8 +46,9 @@ Definition: `fun {Ω : Type u_1} {S : Type u_2} {T : Type u_3} (X : Ω → S) (Y
 ### `ProbabilityTheory.CondIndepFun`
 Lean (short): `(f : Ω → α) (g : Ω → β) (h : Ω → γ) (μ : autoParam (Measure Ω) CondIndepFun._auto_1) : Prop`
 Lean (full): `{Ω : Type u_1} → {α : Type u_3} → {β : Type u_4} → {γ : Type u_5} → [inst : MeasurableSpace Ω] → [MeasurableSpace α] → [MeasurableSpace β] → [MeasurableSpace γ] → (Ω → α) → (Ω → β) → (Ω → γ) → autoParam (Measure Ω) CondIndepFun._auto_1 → Prop`
+Definition: `fun {Ω : Type u_1} {α : Type u_3} {β : Type u_4} {γ : Type u_5} [MeasurableSpace Ω] [MeasurableSpace α] [MeasurableSpace β] [MeasurableSpace γ] (f : Ω → α) (g : Ω → β) (h : Ω → γ) (μ : Measure Ω) => ∀ᵐ (z : γ) ∂Measure.map h μ, IndepFun f g μ[|h ⁻¹' {z}]`
 Docstring: The assertion that `f` and `g` are conditionally independent relative to `h`.
-English: Let $\Omega$, $\alpha$, $\beta$, $\gamma$ be types, each equipped with a measurable-space structure. Given functions (random variables) $f : \Omega \to \alpha$, $g : \Omega \to \beta$, $h : \Omega \to \gamma$ and a measure $\mu$ on $\Omega$ (an auto-filled argument that, when omitted, is supplied by Lean's default tactic, i.e. the ambient measure $\mathrm{volume}$ on $\Omega$), $\mathrm{CondIndepFun}\ f\ g\ h\ \mu$ is the proposition that $f$ and $g$ are conditionally independent relative to $h$ with respect to $\mu$.
+English: Let $\Omega$, $\alpha$, $\beta$, $\gamma$ be measurable spaces. For functions $f : \Omega \to \alpha$, $g : \Omega \to \beta$, $h : \Omega \to \gamma$ and a measure $\mu$ on $\Omega$ (an automatically supplied argument), $\mathrm{CondIndepFun}\ f\ g\ h\ \mu$ is the proposition that for almost every $z \in \gamma$ with respect to the pushforward measure $h_*\mu$, the functions $f$ and $g$ are independent (`IndepFun`) with respect to the conditional measure $\mu[\,\cdot \mid h^{-1}(\{z\})]$, i.e. $\mu$ conditioned on the set $h^{-1}(\{z\})$. Per the docstring, this is the assertion that $f$ and $g$ are conditionally independent relative to $h$.
 
 ### `ProbabilityTheory.condIndep_copies`
 Lean (short): `[MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β) (hX : Measurable X) (hY : Measurable Y) [FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ] : ∃ Ω' x X₁ X₂ Y' ν, IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`

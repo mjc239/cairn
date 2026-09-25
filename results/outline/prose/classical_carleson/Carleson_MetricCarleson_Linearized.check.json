@@ -1,6 +1,0 @@
-{
- "linearized_metric_carleson": {
-  "faithful": false,
-  "issue": "When it unfolds HasBoundedStrongType, the English quantifies over g 'bounded with finite-measure support' and omits the measurability that `BoundedFiniteSupport` requires (docstring: bounded measurable function supported on a set of finite measure). That misstates the project notion and makes the hypothesis hT stronger than the Lean's."
- }
-}

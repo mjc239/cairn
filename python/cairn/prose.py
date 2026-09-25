@@ -149,7 +149,7 @@ def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
     return lines
 
 
-def glossary(names, decls: dict[str, FormalDecl], depth: int = 2) -> list[str]:
+def glossary(names, decls: dict[str, FormalDecl], depth: int = 3) -> list[str]:
     """Project notions (definitions, structures, classes, instances) that the statements of ``names`` refer to,
     followed ``depth`` levels through their own statements, definition bodies and a structure's fields, in
     first-seen order.
