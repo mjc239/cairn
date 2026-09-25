@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.independent_copies": {
+  "statement": "Let $\\Omega,\\Omega',\\alpha,\\beta$ be measurable spaces, let $X:\\Omega\\to\\alpha$ and $Y:\\Omega'\\to\\beta$ be measurable maps, and let $\\mu$ and $\\mu'$ be probability measures on $\\Omega$ and $\\Omega'$ respectively. Then there exist a probability measure $\\nu$ on $\\alpha\\times\\beta$ (with the product measurable structure) and measurable maps $X':\\alpha\\times\\beta\\to\\alpha$ and $Y':\\alpha\\times\\beta\\to\\beta$ such that $X'$ and $Y'$ are independent under $\\nu$, $X'$ under $\\nu$ has the same distribution as $X$ under $\\mu$, and $Y'$ under $\\nu$ has the same distribution as $Y$ under $\\mu'$."
+ }
+}
