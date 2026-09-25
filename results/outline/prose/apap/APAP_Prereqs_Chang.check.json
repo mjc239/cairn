@@ -1,0 +1,7 @@
+{
+ "changConst": {"faithful": false, "issue": "Definition body is shown (changConst = 32 * exp 1), but the English only says it is 'a fixed real constant' and does not state its value 32e."},
+ "AddDissociated.boringEnergy_le": {"faithful": true, "issue": ""},
+ "general_hoelder": {"faithful": true, "issue": ""},
+ "spec_hoelder": {"faithful": true, "issue": ""},
+ "chang": {"faithful": true, "issue": ""}
+}

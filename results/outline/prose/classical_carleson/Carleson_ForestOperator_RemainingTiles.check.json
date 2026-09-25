@@ -1,0 +1,34 @@
+{
+ "TileStructure.Forest.correlation_near_tree_parts": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₆": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.thin_scale_impact_prelims": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.thin_scale_impact_key": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.e763": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.e764_preCS": {
+  "faithful": false,
+  "issue": "Several objects in the statement are introduced only by raw Lean identifiers, with no mathematical description: 𝔖₀(u1,u2) (`t.𝔖₀ u₁ u₂`), 𝔗_t(u), T* (`adjointCarlesonSum`), P (`Forest.approxOnCube`), J_6 (`t.𝓙₆ u₁`), C_{2.1.3}(a) (`C2_1_3 a`, whose value 2^{(𝕔+2)a^3} is not given), C_{7.6.3}(a,n), and the ball family `Forest.𝓑`/`c𝓑`/`r𝓑` behind M. Also κ, o and the forest are left vague ('forest of level n'). The sibling entries define all of these; this one does not, so the statement cannot be checked from the English."
+ },
+ "TileStructure.Forest.e764_postCS": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.bound_for_tree_projection": {
+  "faithful": true,
+  "issue": ""
+ }
+}

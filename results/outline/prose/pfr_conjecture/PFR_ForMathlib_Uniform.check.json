@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.IsUniform": {
+  "faithful": false,
+  "issue": "A structure with its constructor shown, but the English only paraphrases the docstring. It does not state the defining conditions: μ(X⁻¹{x}) = μ(X⁻¹{y}) for all x,y∈H, and μ(X⁻¹(Hᶜ)) = 0. The docstring's 'uniform probability measure' reading is also stronger than these conditions, since μ need not be a probability measure."
+ },
+ "ProbabilityTheory.exists_isUniform_measureSpace": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.IsUniform.measureReal_preimage_of_mem": {
+  "faithful": true,
+  "issue": ""
+ }
+}

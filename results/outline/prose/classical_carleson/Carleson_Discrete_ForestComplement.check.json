@@ -8,8 +8,8 @@
   "issue": "Definition body is shown ({p | 0 < μ(𝓘 p ∩ G ∩ G'ᶜ)}) but the English only paraphrases the docstring ('the set 𝔓_{G\\G'} in the blueprint') and never says what the set is."
  },
  "lintegral_carlesonSum_𝔓₁_compl_le_sum_lintegral": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Calls 𝔏₃ the 'l-th maximal layer', but the printed body reads `minLayer`; state exactly what the body says."
  },
  "lintegral_enorm_carlesonSum_le_of_isAntichain_subset_ℭ": {
   "faithful": true,

@@ -1,0 +1,22 @@
+{
+ "ProbabilityTheory.Kernel.entropy": {
+  "faithful": false,
+  "issue": "A definition with its body shown, but the English only paraphrases the docstring ('the entropy of the kernel'). It does not give the body H_k[κ,μ] = ∫ H(κ(t)) dμ(t) (Bochner integral), with H = measureEntropy the normalized Shannon entropy. It also does not state that S and T are measurable spaces."
+ },
+ "ProbabilityTheory.Kernel.entropy_prodMkLeft_unit": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib": {
+  "faithful": false,
+  "issue": "The conclusion is the project notion `AEFiniteKernelSupport`, stated only as 'has almost everywhere finite kernel support' with no meaning given. It should say: for Y_*μ-almost every t there is a finite A⊆S with condDistrib(X|Y;μ)(t)(Aᶜ)=0. Ω is also not explicitly introduced as a measurable space."
+ },
+ "ProbabilityTheory.Kernel.entropy_compProd": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.chain_rule": {
+  "faithful": true,
+  "issue": ""
+ }
+}

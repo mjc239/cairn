@@ -1,0 +1,94 @@
+{
+ "ProbabilityTheory.entropy": {
+  "faithful": false,
+  "issue": "Definition body is shown (H[X;μ] = Hm[X_*μ], the measure entropy of the pushforward: Σ_s negMulLog of the normalized mass ((μ.map X)(univ))⁻¹·(μ.map X)({s})), but the English gives only the type and a docstring paraphrase. The docstring's 'finite measurable space' is also not a hypothesis of the definition."
+ },
+ "ProbabilityTheory.condEntropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condEntropy_of_injective": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condMutualInfo": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only paraphrases the docstring. It never gives the formula ∫ (H[X | Z←z; μ] + H[Y | Z←z; μ] − H[⟨X,Y⟩ | Z←z; μ]) d(Z_*μ)(z), and it does not say that the integral is taken against the law Z_*μ of Z ('integrated over z' leaves the measure unspecified)."
+ },
+ "ProbabilityTheory.condEntropy_eq_kernel_entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condMutualInfo_eq_kernel_mutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condMutualInfo_eq": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condMutualInfo_of_inj_map": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.mutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.mutualInfo_eq_entropy_sub_condEntropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.mutualInfo_eq_zero": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.IndepFun.condEntropy_eq_entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condEntropy_two_eq_kernel_entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.cond_chain_rule": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.entropy_eq_sum_finset": {
+  "faithful": false,
+  "issue": "S is never introduced: its type/measurable-space structure is not stated (and Ω's measurable space is not stated either). 'Random variable' is also ambiguous about measurability, which the Lean does not assume."
+ },
+ "ProbabilityTheory.IsUniform.entropy_eq": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.entropy_submodular": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.entropy_triple_add_entropy_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.entropy_sub_mutualInfo_eq_condEntropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.prob_ge_exp_neg_entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.mutualInfo_nonneg": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condMutualInfo_eq_zero": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.ent_of_cond_indep": {
+  "faithful": true,
+  "issue": ""
+ }
+}

@@ -4,12 +4,12 @@
   "issue": ""
  },
  "global_dichotomy": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The inner product ⟪·,·⟫_[ℝ] is not said to be a sum or an average; state which, from the project definitions or the notation's meaning."
  },
  "di_in_ff": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The inner product ⟪·,·⟫_[ℝ] is not said to be a sum or an average; state which, from the project definitions or the notation's meaning."
  },
  "ff": {
   "faithful": true,
