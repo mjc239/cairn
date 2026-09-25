@@ -383,6 +383,12 @@ translator or checker, so they now see everything:
   (`eraseProjectNumeralDelabs`). The three dumps were re-extracted at their
   pinned commits (`scripts/reextract.sh`). Of the whole PFR dump, only 4
   tactic-internal statements still print `nat_lit`, and none is a result.
+- **Project definitions in every prompt.** Statements use project notions (`ProofData`, 𝔗(u), `rdist`,
+  `carlesonSum`) whose meaning a checker cannot verify from the statement alone. Each prompt opens with a
+  glossary of the project notions its chapter refers to, followed three levels deep through statements and
+  definition bodies (`prose.glossary`). Each entry gives the full statement, the docstring, the definition body
+  (`value_pp`, now extracted) and, for a structure, its constructor with every field and type (`ctor_pp`).
+  Results that are themselves definitions or structures show their body or constructor too.
 - **Narrow exclusions.** `is_boilerplate_instance` now excludes only instances
   of classes with no mathematical content: `Decidable…`, `Repr`, `ToString`,
   `Hashable`, `BEq`. Tactic implementation code (`….Tactic.…`) is also
