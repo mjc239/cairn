@@ -1,6 +1,0 @@
-{
- "holder_van_der_corput": {
-  "faithful": false,
-  "issue": "Omits the standing assumptions (metric space X and ProofData instance) under which the statement is proved."
- }
-}

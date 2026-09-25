@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -41,17 +43,17 @@ English: For a measure $\mu$ on a product $S\times T$, the mutual information $I
 
 ### `ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite`
 Lean (short): `(hA : μ (↑A)ᶜ = 0) [IsZeroOrProbabilityMeasure μ] : Hm[μ] = ∑ s ∈ A, (μ.real {s}).negMulLog`
-Lean (full): `∀ {S : Type u_2} [inst : MeasurableSpace S] {μ : Measure S} {A : Finset S}, μ (↑A)ᶜ = 0 → ∀ [IsZeroOrProbabilityMeasure μ], Hm[μ] = ∑ s ∈ A, (μ.real {s}).negMulLog`
+Lean (full): `∀ {S : Type u_2} [inst : MeasurableSpace S] {μ : Measure S} {A : Finset S}, μ (↑A)ᶜ = (0 : ENNReal) → ∀ [IsZeroOrProbabilityMeasure μ], Hm[μ] = ∑ s ∈ A, (μ.real {s}).negMulLog`
 English: Let $\mu$ be a measure on $S$ that is zero or a probability measure, and let $A\subseteq S$ be a finite set with $\mu(A^c)=0$. Then $H_m[\mu] = \sum_{s\in A}\mathrm{negMulLog}(\mu(\{s\}))$, where $\mathrm{negMulLog}(x)=-x\log x$.
 
 ### `ProbabilityTheory.measureMutualInfo_nonneg_aux`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [FiniteSupport μ] [IsZeroOrProbabilityMeasure μ] : 0 ≤ Im[μ] ∧ (Im[μ] = 0 ↔ ∀ (p : S × U), μ.real {p} = (Measure.map Prod.fst μ).real {p.1} * (Measure.map Prod.snd μ).real {p.2})`
-Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] [MeasurableSingletonClass S] [MeasurableSingletonClass U] {μ : Measure (S × U)} [FiniteSupport μ] [IsZeroOrProbabilityMeasure μ], 0 ≤ Im[μ] ∧ (Im[μ] = 0 ↔ ∀ (p : S × U), μ.real {p} = (Measure.map Prod.fst μ).real {p.1} * (Measure.map Prod.snd μ).real {p.2})`
+Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] [MeasurableSingletonClass S] [MeasurableSingletonClass U] {μ : Measure (S × U)} [FiniteSupport μ] [IsZeroOrProbabilityMeasure μ], (0 : ℝ) ≤ Im[μ] ∧ (Im[μ] = (0 : ℝ) ↔ ∀ (p : S × U), μ.real {p} = (Measure.map Prod.fst μ).real {p.1} * (Measure.map Prod.snd μ).real {p.2})`
 English: Let $S$ and $U$ have measurable singletons, and let $\mu$ be a measure on $S\times U$ with finite support that is zero or a probability measure. Then $0 \le I_m[\mu]$, and moreover $I_m[\mu]=0$ if and only if for every $p=(p_1,p_2)\in S\times U$, $\mu(\{p\}) = (\pi_1{}_*\mu)(\{p_1\})\cdot(\pi_2{}_*\mu)(\{p_2\})$, where $\pi_1,\pi_2$ are the coordinate projections.
 
 ### `ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure`
 Lean (short): `(h : ¬IsFiniteMeasure μ) : Im[μ] = 0`
-Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] {μ : Measure (S × U)}, ¬IsFiniteMeasure μ → Im[μ] = 0`
+Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] {μ : Measure (S × U)}, ¬IsFiniteMeasure μ → Im[μ] = (0 : ℝ)`
 English: If $\mu$ is not a finite measure, then $I_m[\mu]=0$.
 
 ### `ProbabilityTheory.measureMutualInfo_univ_smul`
@@ -61,5 +63,5 @@ English: For every measure $\mu$ on $S\times U$, $I_m[(\mu(S\times U))^{-1}\,\mu
 
 ### `ProbabilityTheory.measureMutualInfo_nonneg`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass U] [FiniteSupport μ] : 0 ≤ Im[μ]`
-Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] [MeasurableSingletonClass S] [MeasurableSingletonClass U] {μ : Measure (S × U)} [FiniteSupport μ], 0 ≤ Im[μ]`
+Lean (full): `∀ {S : Type u_2} {U : Type u_4} [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] [MeasurableSingletonClass S] [MeasurableSingletonClass U] {μ : Measure (S × U)} [FiniteSupport μ], (0 : ℝ) ≤ Im[μ]`
 English: Let $S$ and $U$ be spaces in which singletons are measurable, and let $\mu$ be a measure on $S \times U$ with finite support. Then $0 \le I_m[\mu]$, the mutual information of the measure $\mu$.

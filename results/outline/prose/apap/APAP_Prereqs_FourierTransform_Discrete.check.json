@@ -1,6 +1,0 @@
-{
- "dft": {
-  "faithful": false,
-  "issue": "Says G has 'its additive group structure' but omits that the Lean requires G to be an abelian group (AddCommGroup)."
- }
-}

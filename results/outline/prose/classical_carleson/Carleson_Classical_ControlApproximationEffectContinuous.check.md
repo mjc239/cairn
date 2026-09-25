@@ -9,17 +9,19 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `rcarleson_exceptional_set_estimate_specific`
 Lean (short): `(Cpos : 0 < C) (hmf : Measurable f) (hf : ∀ (x : ℝ), ‖f x‖ ≤ ↑C) (measurableSetE : MeasurableSet E) (E_subset : E ⊆ Set.Icc 0 (2 * Real.pi)) (hE : ∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) : ↑δ * volume E ≤ ↑C * ↑(C10_0_1 4 2) * ENNReal.ofReal (2 * Real.pi + 2) ^ 2⁻¹ * volume E ^ 2⁻¹`
-Lean (full): `∀ {δ C : NNReal}, 0 < C → ∀ {f : ℝ → ℂ}, Measurable f → (∀ (x : ℝ), ‖f x‖ ≤ ↑C) → ∀ {E : Set ℝ}, MeasurableSet E → E ⊆ Set.Icc 0 (2 * Real.pi) → (∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) → ↑δ * volume E ≤ ↑C * ↑(C10_0_1 4 2) * ENNReal.ofReal (2 * Real.pi + 2) ^ 2⁻¹ * volume E ^ 2⁻¹`
+Lean (full): `∀ {δ C : NNReal}, (0 : NNReal) < C → ∀ {f : ℝ → ℂ}, Measurable f → (∀ (x : ℝ), ‖f x‖ ≤ ↑C) → ∀ {E : Set ℝ}, MeasurableSet E → E ⊆ Set.Icc (0 : ℝ) ((2 : ℝ) * Real.pi) → (∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) → ↑δ * volume E ≤ ↑C * ↑(C10_0_1 (4 : ℕ) (2 : NNReal)) * ENNReal.ofReal ((2 : ℝ) * Real.pi + (2 : ℝ)) ^ (2 : ℝ)⁻¹ * volume E ^ (2 : ℝ)⁻¹`
 English: Let $C > 0$, let $f : \mathbb{R} \to \mathbb{C}$ be measurable with $\|f(x)\| \le C$ for all $x \in \mathbb{R}$, and let $E \subseteq [0, 2\pi]$ be measurable with $\delta \le T f(x)$ for all $x \in E$, where $T$ = `carlesonOperatorReal K` is the Carleson operator on $\mathbb{R}$ with kernel $K$. Then $\delta \cdot |E| \le C \cdot C_{10.0.1}(4, 2) \cdot (2\pi + 2)^{1/2} \cdot |E|^{1/2}$ (in $[0,\infty]$, with $|\cdot|$ Lebesgue measure).
 
 ### `rcarleson_exceptional_set_estimate`
 Lean (short): `(Cpos : 0 < C) (hmf : Measurable f) (measurableSetF : MeasurableSet F) (hf : ∀ (x : ℝ), ‖f x‖ ≤ ↑C * F.indicator 1 x) (measurableSetE : MeasurableSet E) (hE : ∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) : ↑δ * volume E ≤ ↑C * ↑(C10_0_1 4 2) * volume F ^ 2⁻¹ * volume E ^ 2⁻¹`
-Lean (full): `∀ {δ C : NNReal}, 0 < C → ∀ {f : ℝ → ℂ}, Measurable f → ∀ {F : Set ℝ}, MeasurableSet F → (∀ (x : ℝ), ‖f x‖ ≤ ↑C * F.indicator 1 x) → ∀ {E : Set ℝ}, MeasurableSet E → (∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) → ↑δ * volume E ≤ ↑C * ↑(C10_0_1 4 2) * volume F ^ 2⁻¹ * volume E ^ 2⁻¹`
+Lean (full): `∀ {δ C : NNReal}, (0 : NNReal) < C → ∀ {f : ℝ → ℂ}, Measurable f → ∀ {F : Set ℝ}, MeasurableSet F → (∀ (x : ℝ), ‖f x‖ ≤ ↑C * F.indicator (1 : ℝ → ℝ) x) → ∀ {E : Set ℝ}, MeasurableSet E → (∀ x ∈ E, ↑δ ≤ carlesonOperatorReal K f x) → ↑δ * volume E ≤ ↑C * ↑(C10_0_1 (4 : ℕ) (2 : NNReal)) * volume F ^ (2 : ℝ)⁻¹ * volume E ^ (2 : ℝ)⁻¹`
 English: Let $C > 0$, let $f : \mathbb{R} \to \mathbb{C}$ be measurable, let $F \subseteq \mathbb{R}$ be measurable with $\|f(x)\| \le C \cdot \mathbf{1}_F(x)$ for all $x$, and let $E$ be measurable with $\delta \le T f(x)$ for all $x \in E$, where $T$ = `carlesonOperatorReal K`. Then $\delta \cdot |E| \le C \cdot C_{10.0.1}(4, 2) \cdot |F|^{1/2} \cdot |E|^{1/2}$.

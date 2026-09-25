@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -37,4 +39,4 @@ English: For a set of tiles $\mathfrak C$ and $f:X\to\mathbb C$, defines $T_{\ma
 ### `adjointCarlesonSum_adjoint`
 Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (hg : BoundedCompactSupport g volume) (ℭ : Set (𝔓 X)) : ∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ℭ f x = ∫ (x : X), (starRingEnd ℂ) (adjointCarlesonSum ℭ g x) * f x`
 Lean (full): `∀ {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst : MetricSpace X] [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {f g : X → ℂ}, BoundedCompactSupport f volume → BoundedCompactSupport g volume → ∀ (ℭ : Set (𝔓 X)), ∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ℭ f x = ∫ (x : X), (starRingEnd ℂ) (adjointCarlesonSum ℭ g x) * f x`
-English: Let $f,g$ be bounded with compact support and let $\mathfrak C$ be a set of tiles. Then $$\int_X\overline{g(x)}\,T_{\mathfrak C}f(x)\,dx=\int_X\overline{T^*_{\mathfrak C}g(x)}\,f(x)\,dx,$$ i.e. $T^*_{\mathfrak C}$ is the adjoint of $T_{\mathfrak C}$.
+English: Let $X$ be a metric space and work under the standing assumptions of the proof: the data $a\in\mathbb N$, $q\in\mathbb R$, $K:X\times X\to\mathbb C$, $\sigma_1,\sigma_2:X\to\mathbb Z$, $F,G\subseteq X$ of `ProofData` (making $X$ a doubling metric measure space with measure $\mu$), together with a tile structure `TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)` with set of tiles $\mathfrak P(X)$. Let $f,g:X\to\mathbb C$ be bounded with compact support and let $\mathfrak C\subseteq\mathfrak P(X)$ be a set of tiles. Then $$\int_X\overline{g(x)}\,T_{\mathfrak C}f(x)\,d\mu(x)=\int_X\overline{T^*_{\mathfrak C}g(x)}\,f(x)\,d\mu(x),$$ where $T_{\mathfrak C}$ is `carlesonSum` and $T^*_{\mathfrak C}$ is `adjointCarlesonSum`, i.e. $T^*_{\mathfrak C}$ is the adjoint of $T_{\mathfrak C}$.

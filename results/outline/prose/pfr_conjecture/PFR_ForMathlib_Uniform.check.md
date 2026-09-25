@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -26,5 +28,5 @@ English: Let $S$ be a space in which singletons are measurable, and let $H$ be a
 
 ### `ProbabilityTheory.IsUniform.measureReal_preimage_of_mem`
 Lean (short): `[DiscreteMeasurableSpace S] [IsProbabilityMeasure μ] (h : IsUniform (↑A) X μ) (hX : Measurable X) (hs : s ∈ A) : μ.real (X ⁻¹' {s}) = 1 / ↑A.card`
-Lean (full): `∀ {Ω : Type uΩ} {S : Type uS} [mΩ : MeasurableSpace Ω] {X : Ω → S} {μ : Measure Ω} [inst : MeasurableSpace S] [DiscreteMeasurableSpace S] {A : Finset S} [IsProbabilityMeasure μ], IsUniform (↑A) X μ → Measurable X → ∀ {s : S}, s ∈ A → μ.real (X ⁻¹' {s}) = 1 / ↑A.card`
+Lean (full): `∀ {Ω : Type uΩ} {S : Type uS} [mΩ : MeasurableSpace Ω] {X : Ω → S} {μ : Measure Ω} [inst : MeasurableSpace S] [DiscreteMeasurableSpace S] {A : Finset S} [IsProbabilityMeasure μ], IsUniform (↑A) X μ → Measurable X → ∀ {s : S}, s ∈ A → μ.real (X ⁻¹' {s}) = (1 : ℝ) / ↑A.card`
 English: Let $S$ carry the discrete $\sigma$-algebra (every subset measurable), let $\mu$ be a probability measure, let $A\subseteq S$ be a finite set, and let $X$ be a measurable $S$-valued random variable that is uniformly distributed on $A$ with respect to $\mu$. Then for every $s\in A$, $\mu(X=s)=1/|A|$ (as a real number).

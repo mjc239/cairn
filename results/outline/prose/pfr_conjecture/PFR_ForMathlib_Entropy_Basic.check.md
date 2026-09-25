@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -66,7 +68,7 @@ English: Let $S$ and $T$ be countable measurable spaces with measurable singleto
 
 ### `ProbabilityTheory.mutualInfo_eq_zero`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass T] (hX : Measurable X) (hY : Measurable Y) [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] : I[X : Y ; μ] = 0 ↔ IndepFun X Y μ`
-Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {Y : Ω → T} [inst_1 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T], Measurable X → Measurable Y → ∀ {μ : Measure Ω} [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y], I[X : Y ; μ] = 0 ↔ IndepFun X Y μ`
+Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {Y : Ω → T} [inst_1 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T], Measurable X → Measurable Y → ∀ {μ : Measure Ω} [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y], I[X : Y ; μ] = (0 : ℝ) ↔ IndepFun X Y μ`
 English: Let $S$ and $T$ be measurable spaces with measurable singletons. Let $\mu$ be a measure on $\Omega$ that is zero or a probability measure, and let $X : \Omega \to S$, $Y : \Omega \to T$ be measurable random variables, both of finite range. Then $I[X : Y;\mu] = 0$ if and only if $X$ and $Y$ are independent with respect to $\mu$.
 
 ### `ProbabilityTheory.IndepFun.condEntropy_eq_entropy`
@@ -86,7 +88,7 @@ English: Let $S$, $T$, $U$ be countable measurable spaces with measurable single
 
 ### `ProbabilityTheory.entropy_eq_sum_finset`
 Lean (short): `[IsZeroOrProbabilityMeasure μ] (hA : (Measure.map X μ) (↑A)ᶜ = 0) : H[X; μ] = ∑ x ∈ A, ((Measure.map X μ).real {x}).negMulLog`
-Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {μ : Measure Ω} [IsZeroOrProbabilityMeasure μ] {A : Finset S}, (Measure.map X μ) (↑A)ᶜ = 0 → H[X; μ] = ∑ x ∈ A, ((Measure.map X μ).real {x}).negMulLog`
+Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {μ : Measure Ω} [IsZeroOrProbabilityMeasure μ] {A : Finset S}, (Measure.map X μ) (↑A)ᶜ = (0 : ENNReal) → H[X; μ] = ∑ x ∈ A, ((Measure.map X μ).real {x}).negMulLog`
 English: Let $\mu$ be a measure on $\Omega$ that is zero or a probability measure, let $X : \Omega \to S$ be a random variable, and let $A$ be a finite subset of $S$ such that the law $X_*\mu$ gives measure $0$ to the complement of $A$. Then $H[X;\mu] = \sum_{x\in A} \mathrm{negMulLog}\big(X_*\mu(\{x\})\big)$, where $\mathrm{negMulLog}(t) = -t\log t$ and $X_*\mu(\{x\})$ is taken as a real number.
 
 ### `ProbabilityTheory.IsUniform.entropy_eq`
@@ -116,12 +118,12 @@ English: Let $S$ be a nonempty space in which singletons are measurable, let $\m
 
 ### `ProbabilityTheory.mutualInfo_nonneg`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass T] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) [FiniteRange X] [FiniteRange Y] : 0 ≤ I[X : Y ; μ]`
-Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {Y : Ω → T} [inst_1 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T], Measurable X → Measurable Y → ∀ (μ : Measure Ω) [FiniteRange X] [FiniteRange Y], 0 ≤ I[X : Y ; μ]`
+Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] {X : Ω → S} {Y : Ω → T} [inst_1 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T], Measurable X → Measurable Y → ∀ (μ : Measure Ω) [FiniteRange X] [FiniteRange Y], (0 : ℝ) ≤ I[X : Y ; μ]`
 English: Let $S$ and $T$ be spaces in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X : \Omega \to S$ and $Y : \Omega \to T$ be measurable random variables, each taking finitely many values. Then $0 \le I[X : Y;\mu]$.
 
 ### `ProbabilityTheory.condMutualInfo_eq_zero`
 Lean (short): `[MeasurableSingletonClass S] [MeasurableSingletonClass T] [Countable U] [MeasurableSingletonClass U] (hX : Measurable X) (hY : Measurable Y) [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] [FiniteRange Z] : I[X : Y|Z;μ] = 0 ↔ CondIndepFun X Y Z μ`
-Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} {U : Type u_4} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] {X : Ω → S} {Y : Ω → T} {Z : Ω → U} {μ : Measure Ω} [inst_2 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T] [Countable U] [MeasurableSingletonClass U], Measurable X → Measurable Y → ∀ [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] [FiniteRange Z], I[X : Y|Z;μ] = 0 ↔ CondIndepFun X Y Z μ`
+Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} {U : Type u_4} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] [inst_1 : MeasurableSpace U] {X : Ω → S} {Y : Ω → T} {Z : Ω → U} {μ : Measure Ω} [inst_2 : MeasurableSpace T] [MeasurableSingletonClass S] [MeasurableSingletonClass T] [Countable U] [MeasurableSingletonClass U], Measurable X → Measurable Y → ∀ [IsZeroOrProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] [FiniteRange Z], I[X : Y|Z;μ] = (0 : ℝ) ↔ CondIndepFun X Y Z μ`
 English: Let $S$, $T$, $U$ be measurable spaces with measurable singletons, with $U$ countable. Let $\mu$ be a measure on $\Omega$ that is zero or a probability measure, let $X : \Omega \to S$ and $Y : \Omega \to T$ be measurable random variables, and let $Z : \Omega \to U$ be a random variable, with $X$, $Y$, $Z$ each of finite range. Then $I[X : Y \mid Z;\mu] = 0$ if and only if $X$ and $Y$ are conditionally independent given $Z$ with respect to $\mu$.
 
 ### `ProbabilityTheory.ent_of_cond_indep`

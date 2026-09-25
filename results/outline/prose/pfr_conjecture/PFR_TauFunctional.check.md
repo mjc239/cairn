@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -32,7 +34,7 @@ English: For a reference package $p$ and random variables $X_1,X_2:\Omega\to G$,
 ### `distance_ge_of_min`
 Lean (short): `(p : refPackage Ω₀₁ Ω₀₂ G) [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] (h : TauMinimizes p X₁ X₂) (h1 : Measurable X₁') (h2 : Measurable X₂') : d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁'] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂'] - d[p.X₀₂ # X₂]) ≤ d[X₁' # X₂']`
 Lean (full): `∀ {Ω₀₁ : Type u_1} {Ω₀₂ : Type u_2} [inst : MeasureSpace Ω₀₁] [inst_1 : MeasureSpace Ω₀₂] {G : Type uG} [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] (p : refPackage Ω₀₁ Ω₀₂ G) {Ω : Type u_3} {Ω'₁ : Type u_7} {Ω'₂ : Type u_8} [inst_4 : MeasureSpace Ω] [hΩ₁ : MeasureSpace Ω'₁] [hΩ₂ : MeasureSpace Ω'₂] [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] {X₁ X₂ : Ω → G} {X₁' : Ω'₁ → G} {X₂' : Ω'₂ → G}, TauMinimizes p X₁ X₂ → Measurable X₁' → Measurable X₂' → d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁'] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂'] - d[p.X₀₂ # X₂]) ≤ d[X₁' # X₂']`
-English: Let $p$ be a reference package with reference random variables $X^0_1, X^0_2$ and parameter $\eta$, let $(X_1,X_2)$ minimize $\tau$ for $p$, and let $X_1',X_2'$ be measurable $G$-valued random variables defined on spaces whose ambient measures are probability measures. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1']-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2']-d[X^0_2;X_2]\right)\le d[X_1';X_2'].$$
+English: Let $G$ be an abelian group equipped with a measurable space structure, and let $p$ be a reference package on $G$ with reference random variables $X^0_1, X^0_2$ (defined on the measure spaces $\Omega_{01}$ and $\Omega_{02}$ respectively) and parameter $\eta$. Let $\Omega$, $\Omega'_1$, $\Omega'_2$ be measure spaces, where $\Omega'_1$ and $\Omega'_2$ are probability spaces. Let $X_1, X_2 : \Omega \to G$ be such that $(X_1,X_2)$ minimizes $\tau$ for $p$, and let $X_1' : \Omega'_1 \to G$ and $X_2' : \Omega'_2 \to G$ be measurable. Then $$d[X_1;X_2]-\eta\left(d[X^0_1;X_1']-d[X^0_1;X_1]\right)-\eta\left(d[X^0_2;X_2']-d[X^0_2;X_2]\right)\le d[X_1';X_2'].$$
 
 ### `condRuzsaDistance_ge_of_min`
 Lean (short): `[Finite G] (p : refPackage Ω₀₁ Ω₀₂ G) [IsProbabilityMeasure volume] [IsProbabilityMeasure volume] [MeasurableSingletonClass G] [Finite S] [MeasurableSingletonClass S] [Finite T] [MeasurableSingletonClass T] (h : TauMinimizes p X₁ X₂) (h1 : Measurable X₁') (h2 : Measurable X₂') (Z : Ω'₁ → S) (W : Ω'₂ → T) (hZ : Measurable Z) (hW : Measurable W) : d[X₁ # X₂] - p.η * (d[p.X₀₁ # X₁' | Z] - d[p.X₀₁ # X₁]) - p.η * (d[p.X₀₂ # X₂' | W] - d[p.X₀₂ # X₂]) ≤ d[X₁' | Z # X₂' | W]`

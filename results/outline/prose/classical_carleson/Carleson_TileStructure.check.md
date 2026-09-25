@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -82,7 +84,7 @@ English: Definition: for a set $\mathfrak{P}'$ of tiles, the density $\mathrm{de
 ### `exists_maximal_disjoint_covering_subfamily`
 Lean (short): `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (A : Set (𝔓 X)) : ∃ B, (B.PairwiseDisjoint fun p => ↑(𝓘 p)) ∧ B ⊆ A ∧ ∀ a_1 ∈ A, ∃ b ∈ B, ↑(𝓘 a_1) ⊆ ↑(𝓘 b)`
 Lean (full): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (A : Set (𝔓 X)), ∃ B, (B.PairwiseDisjoint fun p => ↑(𝓘 p)) ∧ B ⊆ A ∧ ∀ a_1 ∈ A, ∃ b ∈ B, ↑(𝓘 a_1) ⊆ ↑(𝓘 b)`
-English: For every set $A$ of tiles there is a set $B$ of tiles such that the cubes $\mathcal{I}(p)$, $p \in B$, are pairwise disjoint, $B \subseteq A$, and for every $a \in A$ there is $b \in B$ with $\mathcal{I}(a) \subseteq \mathcal{I}(b)$.
+English: Let $X$ be a pseudometric space, and assume the standing assumptions of the proof: the data $a \in \mathbb{N}$, $q \in \mathbb{R}$, $K : X \times X \to \mathbb{C}$, $\sigma_1, \sigma_2 : X \to \mathbb{Z}$, $F, G \subseteq X$ satisfy `ProofData`, and $X$ carries a tile structure (`TileStructure` with $Q$, $D$ = `defaultD a`, $\kappa$ = `defaultκ a`, $S$ = `defaultS X` and the point `cancelPt X`). Then for every set $A$ of tiles there is a set $B$ of tiles such that the cubes $\mathcal{I}(p)$, $p \in B$, are pairwise disjoint, $B \subseteq A$, and for every $a \in A$ there is $b \in B$ with $\mathcal{I}(a) \subseteq \mathcal{I}(b)$.
 
 ### `iteratedMaximalSubfamily`
 Lean (short): `[TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (A : Set (𝔓 X)) (n : ℕ) : Set (𝔓 X)`

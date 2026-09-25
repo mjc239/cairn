@@ -9,15 +9,17 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `Grid.dist_strictMono`
 Lean (short): `[GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hpq : I < J) : dist_{c I, ↑(defaultD a) ^ s I / 4} f g ≤ C2_1_2 a * dist_{c J, ↑(defaultD a) ^ s J / 4} f g`
-Lean (full): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {I J : Grid X}, I < J → ∀ {f g : Θ X}, dist_{c I, ↑(defaultD a) ^ s I / 4} f g ≤ C2_1_2 a * dist_{c J, ↑(defaultD a) ^ s J / 4} f g`
-English: (Stronger version of Lemma 2.1.2) If $I<J$ are dyadic cubes, then for all $f,g$ $$d_{c(I),\,D^{s(I)}/4}(f,g)\le C_{2.1.2}(a)\,d_{c(J),\,D^{s(J)}/4}(f,g),$$ where $D=D(a)$ is the default doubling parameter and $d_{x,r}$ denotes the distance between functions on the ball $B(x,r)$.
+Lean (full): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {I J : Grid X}, I < J → ∀ {f g : Θ X}, dist_{c I, ↑(defaultD a) ^ s I / (4 : ℝ)} f g ≤ C2_1_2 a * dist_{c J, ↑(defaultD a) ^ s J / (4 : ℝ)} f g`
+English: (Stronger version of Lemma 2.1.2) Let $X$ be a pseudometric space carrying the standing data $a\in\mathbb N$, $q$, $K$, $\sigma_1$, $\sigma_2$, $F$, $G$ of `ProofData` (so in particular $X$ is a doubling measure space with a compatible family $\Theta(X)$ of functions), together with a grid structure `GridStructure` on $X$ with the default parameters $D=D(a)$, $\kappa(a)$, $S(X)$. If $I<J$ are grid cubes, then for all $f,g\in\Theta(X)$ $$d_{c(I),\,D^{s(I)}/4}(f,g)\le C_{2.1.2}(a)\,d_{c(J),\,D^{s(J)}/4}(f,g),$$ where $d_{x,r}$ denotes the distance between functions on the ball $B(x,r)$.
 
 ### `Grid.succ`
 Lean (short): `[GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (i : Grid X) : Grid X`

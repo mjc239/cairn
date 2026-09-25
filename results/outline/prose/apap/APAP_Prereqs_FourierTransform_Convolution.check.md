@@ -9,17 +9,19 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `cLpNorm_conv_le_cLpNorm_dconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
-Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ 0 → Even n → ∀ (f : G → ℂ), ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ (0 : ℕ) → Even n → ∀ (f : G → ℂ), ‖f ∗ f‖ₙ_[↑n] ≤ ‖f ○ f‖ₙ_[↑n]`
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$, where $*$ and $\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation.
 
 ### `dLpNorm_ddconv_le_dLpNorm_dddconv`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hn₀ : n ≠ 0) (hn : Even n) (f : G → ℂ) : ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
-Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ 0 → Even n → ∀ (f : G → ℂ), ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Fintype G] [inst_2 : DecidableEq G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] {n : ℕ}, n ≠ (0 : ℕ) → Even n → ∀ (f : G → ℂ), ‖f ∗ᵈ f‖_[↑n] ≤ ‖f ○ᵈ f‖_[↑n]`
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \ne 0$ is even and $f : G \to \mathbb{C}$, then $\|f * f\|_n \le \|f \circ f\|_n$ for the discrete convolution $*$, discrete difference convolution $\circ$ and discrete $L^n$ norm.

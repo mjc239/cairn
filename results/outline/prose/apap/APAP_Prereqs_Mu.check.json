@@ -1,6 +1,0 @@
-{
- "mu": {
-  "faithful": false,
-  "issue": "Never says what K is; the Lean requires K to be a division semiring (DivisionSemiring K)."
- }
-}

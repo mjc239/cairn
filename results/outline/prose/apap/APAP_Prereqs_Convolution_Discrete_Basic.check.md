@@ -9,7 +9,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -17,9 +19,9 @@ Use every Lean name exactly as given.
 ### `balance_dddconv`
 Lean (short): `[Fintype G] [CharZero R] [StarRing R] (f : G → R) (g : G → R) : Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
 Lean (full): `∀ {G : Type u_1} {R : Type u_2} [inst : Fintype G] [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : Field R] [inst_4 : CharZero R] [inst_5 : StarRing R] (f g : G → R), Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
-English: Let $G$ be a finite abelian group and let $R$ have characteristic zero and a star operation. For $f, g : G \to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\operatorname{balance}(f \circ g) = \operatorname{balance}(f) \circ \operatorname{balance}(g)$, where $\circ$ is the discrete difference convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+English: Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero equipped with a star operation (a star ring structure). For $f, g : G \to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\operatorname{balance}(f \circ g) = \operatorname{balance}(f) \circ \operatorname{balance}(g)$, where $\circ$ is the discrete difference convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
 
 ### `balance_ddconv`
 Lean (short): `[Fintype G] [CharZero R] (f : G → R) (g : G → R) : Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
 Lean (full): `∀ {G : Type u_1} {R : Type u_2} [inst : Fintype G] [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : Field R] [inst_4 : CharZero R] (f g : G → R), Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
-English: Let $G$ be a finite abelian group and let $R$ have characteristic zero. For $f, g : G \to R$, $\operatorname{balance}(f \ast g) = \operatorname{balance}(f) \ast \operatorname{balance}(g)$, where $\ast$ is discrete convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
+English: Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero. For $f, g : G \to R$, $\operatorname{balance}(f \ast g) = \operatorname{balance}(f) \ast \operatorname{balance}(g)$, where $\ast$ is discrete convolution and $\operatorname{balance}(h) = h - \mathbb{E}\,h$.
