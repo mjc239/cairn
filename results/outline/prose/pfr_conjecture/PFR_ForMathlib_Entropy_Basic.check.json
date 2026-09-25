@@ -32,8 +32,8 @@
   "issue": ""
  },
  "ProbabilityTheory.mutualInfo": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Reads the docstring's H[X ; Y] as the entropy of the pair (X,Y); support this from the definition body under Project definitions, or state it as the docstring does."
  },
  "ProbabilityTheory.mutualInfo_eq_entropy_sub_condEntropy": {
   "faithful": true,

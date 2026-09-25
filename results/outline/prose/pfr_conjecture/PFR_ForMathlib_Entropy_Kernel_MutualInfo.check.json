@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
+  "faithful": false,
+  "issue": "The symbol I_k[κ,μ] is not introduced (never named as the mutual information of the kernel κ with respect to μ); S, U, T are also not explicitly said to be measurable spaces. Otherwise the statement matches."
+ }
+}
