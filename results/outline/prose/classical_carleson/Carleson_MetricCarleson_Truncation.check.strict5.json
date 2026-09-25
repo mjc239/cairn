@@ -1,0 +1,46 @@
+{
+ "R_truncation": {
+  "faithful": false,
+  "issue": "The central operator T_R(K,Q,R_1,R_2,R) is never introduced: no definition and no name identifying it as the project operator `T_R` (Lemma 3.0.2's T_{R1,R2,R}: 1_{B(o,R)}(x) times the Carleson integrand over the annulus R1<d(x,y)<R2 with phase e^{iQ(x)(y)}). The constants C_{1.0.2}(a,q) and C_{T_s}(a), and Theta(X), are also used as bare symbols with no value or name."
+ },
+ "R_truncation'": {
+  "faithful": false,
+  "issue": "Same as R_truncation: T_R(K,Q,R_1,R_2,R), C_{1.0.2}(a,q), C_{T_s}(a) and Theta(X) appear as bare symbols with no definition or name tying them to the project notions `T_R`, `C1_0_2`, `C_Ts`."
+ },
+ "finitary_carleson_step": {
+  "faithful": false,
+  "issue": "T_lin(Q_CP,sigma_1,sigma_2) and C_{2.0.1}(a,q) are used as bare symbols with no definition or name (T_lin is the project operator `T_lin`, i.e. T_S Q (sigma_1 x) (sigma_2 x) f x). CP304 is also left opaque, so the hypotheses it carries are invisible."
+ },
+ "P304.succ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "enorm_carlesonOperatorIntegrand_le_T_S": {
+  "faithful": false,
+  "issue": "T_S(Q,L_302(a,R_1),U_302(a,R_2)), L_302, U_302 and C_{2.1.3}(a) appear as bare symbols with no definition or name (e.g. T_S = sum over s in [s1,s2] of the integral of K_s(x,y) f(y) e^{iQ(x)(y)}; L302 = floor(log_D(2R_1))+3; U302 = ceil(log_D(4R_2))-2). The integrand carlesonOperatorIntegrand is not described either."
+ },
+ "linearized_truncation": {
+  "faithful": false,
+  "issue": "T_lin(Q,sigma_1,sigma_2) and C_{3.0.4}(a,q) are used as bare symbols with no definition or name tying them to the project operator `T_lin` and constant `C3_0_4`."
+ },
+ "volume_slice": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_G_subset": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound": {
+  "faithful": false,
+  "issue": "T_lin(Q_CP,sigma_1,sigma_2) and C_{2.0.1}(a,q) are used as bare symbols with no definition or name tying them to the project operator `T_lin` and constant `C2_0_1`."
+ },
+ "slice_integral_bound_sum": {
+  "faithful": false,
+  "issue": "T_lin(Q_CP,sigma_1,sigma_2) and C_{2.0.1}(a,q) are used as bare symbols with no definition or name tying them to the project operator `T_lin` and constant `C2_0_1`."
+ },
+ "S_truncation": {
+  "faithful": false,
+  "issue": "T_S(Q,s_1,s_2) and C_{3.0.4}(a,q) are used as bare symbols with no definition or name (T_S is the project operator `T_S` of Lemma 3.0.3: the sum over s in [s1,s2] of the integral of K_s(x,y) f(y) e^{iQ(x)(y)})."
+ }
+}

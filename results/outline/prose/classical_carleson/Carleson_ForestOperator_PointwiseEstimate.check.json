@@ -1,0 +1,46 @@
+{
+ "TileStructure.Forest.c𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₀": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.boundaryOperator": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.r𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.approxOnCube": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.pointwise_tree_estimate": {
+  "faithful": false,
+  "issue": "The English gives an explicit description of 𝓙₀/𝓙 (s(J)=-S or 𝓘(p) not contained in B(c(J),100 D^{s(J)+1})), of 𝓑 = {0..S+5}×{0..2S+3}×Grid(X) with c_β = c(I), r_β = 2^k D^{s(I)+l}, and of boundaryOperator as a sum over I of indicator times sum over J of ijIntegral, which has no entry (body) under Project definitions and is not given anywhere in the prompt, so it cannot be checked against the Lean; flagged per the strict rule that descriptions of project notions must be supported."
+ },
+ "TileStructure.Forest.first_tree_pointwise": {
+  "faithful": false,
+  "issue": "The hypothesis BoundedCompactSupport f volume (per its docstring: bounded, compactly supported AND measurable) is rendered only as 'bounded with compact support', dropping the measurability part of the hypothesis."
+ },
+ "TileStructure.Forest.second_tree_pointwise": {
+  "faithful": false,
+  "issue": "The English gives an explicit description of 𝓙₀ and 𝓙 (s(J)=-S or 𝓘(p) not contained in B(c(J),100 D^{s(J)+1}) for every p, then maximal elements), which has no entry (body) under Project definitions and is not given anywhere in the prompt, so it cannot be checked against the Lean; flagged per the strict rule that descriptions of project notions must be supported."
+ },
+ "TileStructure.Forest.third_tree_pointwise": {
+  "faithful": false,
+  "issue": "The English gives an explicit description of 𝓙₀/𝓙 (the 100 D^{s(J)+1} ball condition) and of boundaryOperator (sum over I in Grid X of 1_I(z) times sum over J in 𝓙 with J ⊆ B(c(I),16D^{s(I)}), s(J) ≤ s(I) of ijIntegral), which has no entry (body) under Project definitions and is not given anywhere in the prompt, so it cannot be checked against the Lean; flagged per the strict rule that descriptions of project notions must be supported."
+ }
+}

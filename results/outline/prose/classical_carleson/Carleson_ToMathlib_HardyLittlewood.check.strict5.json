@@ -1,0 +1,10 @@
+{
+ "hasStrongType_maximalFunction": {
+  "faithful": true,
+  "issue": ""
+ },
+ "hasStrongType_maximalFunction_one": {
+  "faithful": false,
+  "issue": "The citation '(a special case of equation (2.0.44))' is attached to the description of the constant C_MB(A,p), whereas the docstring says the statement (strong type of the maximal function) is a special case of (2.0.44); the citation is misattributed. The rest matches (CMB parameters (∞,1,∞,1,p,1,A²,1,1/p) are correct)."
+ }
+}

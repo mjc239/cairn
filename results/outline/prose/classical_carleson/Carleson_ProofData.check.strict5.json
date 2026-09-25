@@ -1,0 +1,14 @@
+{
+ "ProofData": {
+  "faithful": false,
+  "issue": "The English only paraphrases the docstring: it names ProofData as a type of structures but says nothing about what the structure contains (the KernelProofData component, Q, and the conditions on q, sigma_1, sigma_2, F, G it bundles). A definition's translation has to say what the object is."
+ },
+ "ProofData.toKernelProofData": {
+  "faithful": true,
+  "issue": ""
+ },
+ "defaultS": {
+  "faithful": false,
+  "issue": "It gives no description of S. By definition, defaultS X is the least natural number n>0 with -n <= sigma_1(x) and sigma_2(x) <= n for all x, and F, G contained in B(o, D^n/4). The English only says it is 'the natural number associated with this data'."
+ }
+}

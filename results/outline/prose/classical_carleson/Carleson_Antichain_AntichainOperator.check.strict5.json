@@ -1,0 +1,10 @@
+{
+"dach": {"faithful": false, "issue": "The setting is given only as raw Lean code: the tile structure `TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)` uses Q, defaultD, defaultκ, defaultS and cancelPt without introducing any of them (Q is the ProofData field; D=2^{𝕔a^2}, κ=2^{-10a}, etc.). The English also says nothing about what the quantity is beyond quoting the docstring."},
+"antichain_operator_le_volume": {"faithful": true, "issue": ""},
+"dens1_antichain_sq": {"faithful": true, "issue": ""},
+"dens1_antichain_dach": {"faithful": true, "issue": ""},
+"dach_bound": {"faithful": true, "issue": ""},
+"dens1_antichain": {"faithful": true, "issue": ""},
+"antichain_operator": {"faithful": true, "issue": ""},
+"antichain_operator'": {"faithful": true, "issue": ""}
+}

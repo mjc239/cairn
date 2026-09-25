@@ -1,33 +1,29 @@
 {
- "TileStructure.Forest.correlation_near_tree_parts": {
+ "TileStructure.Forest.indicator_adjoint_tree_estimate": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.𝓙₆": {
+ "TileStructure.Forest.adjoint_tree_control": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.thin_scale_impact_prelims": {
+ "TileStructure.Forest.𝔖₀": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.thin_scale_impact_key": {
+ "TileStructure.Forest.overlap_implies_distance": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.e763": {
+ "TileStructure.Forest.adjoint_density_tree_bound2": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.e764_preCS": {
-  "faithful": true,
-  "issue": ""
- },
- "TileStructure.Forest.e764_postCS": {
+ "TileStructure.Forest.adjoint_density_tree_bound1": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  },
- "TileStructure.Forest.bound_for_tree_projection": {
+ "TileStructure.Forest.adjoint_tree_estimate": {
   "faithful": false,
   "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
  }

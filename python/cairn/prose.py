@@ -47,7 +47,7 @@ Write:
    symbol, by definition or by name; never use one letter for two things. Describe a project notion only as its
    entry under "Project definitions" supports (statement, docstring, definition body, fields), and a library
    notion only by its standard meaning; if unsure, name it rather than guess. For a definition, name the setting
-   its signature assumes and say what is being defined.
+   its signature assumes and say what is being defined, from its body when one is shown.
 3. For every theorem, `sketch`: one or two sentences on how the proof goes, based only on the listed results it
    uses and their statements. Do not invent steps; if the structure is not clear, just say which results it
    combines.
@@ -80,7 +80,8 @@ fields), and a library notion may only be given its standard mathematical meanin
 needs its type ("$f : G \\to \\mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
 or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\\mathcal B}$"), and no letter may mean two
 things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
-Stylistic choices are fine.
+A definition whose body is shown must be described by what it defines (in words or a formula that agrees with the
+body), not only by a paraphrase of its docstring. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given."""
@@ -97,7 +98,8 @@ supports them. Do not add
 claims the Lean does not make; attribute anything beyond a definition's signature to its docstring, and when no
 docstring, definition body (under "Project definitions") or Lean supports a description of an object, name it
 instead of describing it. Give every variable its
-type, introduce every symbol, and never use one letter for two things.
+type, introduce every symbol, and never use one letter for two things. When a definition's body is shown, say what
+it defines, in words or a formula that agrees with the body.
 
 Reply with only a JSON object: {"<lean name>": {"statement": "..."}}
 Use every Lean name exactly as given."""
@@ -136,9 +138,13 @@ def _oneline(text: str) -> str:
 
 
 def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
-    """Short and full statement, never truncated: the prose must be checked against everything Lean assumes."""
+    """Short and full statement, never truncated: the prose must be checked against everything Lean assumes.
+    A definition also shows its body, so a description of what it defines can be checked."""
     short, full = _oneline(statement_of(d, nss)), _oneline(full_statement_of(d, nss))
-    return [f"Lean (short): `{short}`", f"Lean (full): `{full}`"] if full != short else [f"Lean: `{full}`"]
+    lines = [f"Lean (short): `{short}`", f"Lean (full): `{full}`"] if full != short else [f"Lean: `{full}`"]
+    if d.value_pp:
+        lines.append(f"Definition: `{_oneline(strip_namespaces(d.value_pp, nss))}`")
+    return lines
 
 
 def glossary(names, decls: dict[str, FormalDecl], depth: int = 2) -> list[str]:
