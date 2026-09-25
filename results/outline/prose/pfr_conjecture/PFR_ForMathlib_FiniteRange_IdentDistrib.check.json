@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.independent_copies3_nondep_finiteRange": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.independent_copies_finiteRange": {
+  "faithful": false,
+  "issue": "conclusion weakened: Lean gives $\\nu$ as a measure on $\\alpha\\times\\beta$ with $X' : \\alpha\\times\\beta\\to\\alpha$, $Y' : \\alpha\\times\\beta\\to\\beta$, but the English says only 'some measurable space' and does not give the codomains of $X', Y'$; $\\Omega,\\Omega'$ are not stated to be measurable spaces"
+ }
+}

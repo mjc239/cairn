@@ -1,0 +1,5 @@
+{
+"ProbabilityTheory.independent_copies4_nondep": {"faithful": true, "issue": ""},
+"ProbabilityTheory.independent_copies": {"faithful": false, "issue": "Weakens the conclusion: the Lean gives nu as a measure on alpha x beta, with X' : alpha x beta -> alpha and Y' : alpha x beta -> beta, while the English says only 'on some measurable space'. alpha and beta are also not stated to be measurable spaces."},
+"ProbabilityTheory.independent_copies3_nondep": {"faithful": true, "issue": ""}
+}

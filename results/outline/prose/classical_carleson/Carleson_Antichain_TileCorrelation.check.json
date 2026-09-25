@@ -1,0 +1,18 @@
+{
+ "Tile.correlation_le": {
+  "faithful": false,
+  "issue": "The added remark that ProofData makes X 'a doubling metric measure space with the kernel K' is not supported by the prompt. The measure mu (volume) and the notation Q(p), E(p) are never introduced."
+ },
+ "Tile.I12_le": {
+  "faithful": false,
+  "issue": "g is never introduced or typed (Lean: g : X -> C), and p, p' are not introduced as tiles. The letter 𝔠 means both the tile centre 𝔠(p) and the constant 𝕔. mu is not introduced, and the 'doubling' remark is unsupported."
+ },
+ "Tile.I12_le'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.correlation_le_of_nonempty_inter": {
+  "faithful": false,
+  "issue": "p, p' are never introduced as tiles and mu (volume) is not introduced. The remark that ProofData makes X 'a doubling metric measure space with the kernel K' is not supported by the prompt."
+ }
+}

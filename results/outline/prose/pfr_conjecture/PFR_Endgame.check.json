@@ -1,0 +1,8 @@
+{
+"construct_good": {"faithful": true, "issue": ""},
+"cond_construct_good": {"faithful": true, "issue": ""},
+"I₃_eq": {"faithful": false, "issue": "The closing remark 'i.e. I_3 = I[V:W|S] equals I_2' uses V, W, S and I_2 without introducing them."},
+"sum_condMutual_le": {"faithful": true, "issue": ""},
+"sum_dist_diff_le": {"faithful": true, "issue": ""},
+"tau_strictly_decreases_aux": {"faithful": true, "issue": ""}
+}

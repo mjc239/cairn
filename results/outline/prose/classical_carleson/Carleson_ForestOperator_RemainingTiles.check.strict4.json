@@ -1,0 +1,34 @@
+{
+ "TileStructure.Forest.correlation_near_tree_parts": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support."
+ },
+ "TileStructure.Forest.𝓙₆": {
+  "faithful": false,
+  "issue": "Introduces Theta(X) without defining it and describes Q as a function X -> Theta(X) given by the proof data. Neither the Lean nor the docstring supports that."
+ },
+ "TileStructure.Forest.thin_scale_impact_prelims": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support."
+ },
+ "TileStructure.Forest.thin_scale_impact_key": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support."
+ },
+ "TileStructure.Forest.e763": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support."
+ },
+ "TileStructure.Forest.e764_preCS": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.e764_postCS": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support. M_B and the family of balls B are also described only vaguely ('used in the forest construction')."
+ },
+ "TileStructure.Forest.bound_for_tree_projection": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves q, K, sigma_1, sigma_2, F, G without types, omits Q and cancelPt from the tile structure, and claims X 'is then a doubling metric measure space', which the prompt does not support."
+ }
+}

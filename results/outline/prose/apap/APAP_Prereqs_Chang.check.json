@@ -1,0 +1,22 @@
+{
+ "changConst": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AddDissociated.boringEnergy_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "general_hoelder": {
+  "faithful": true,
+  "issue": ""
+ },
+ "spec_hoelder": {
+  "faithful": true,
+  "issue": ""
+ },
+ "chang": {
+  "faithful": true,
+  "issue": ""
+ }
+}

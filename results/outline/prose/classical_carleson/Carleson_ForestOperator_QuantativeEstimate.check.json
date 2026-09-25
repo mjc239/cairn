@@ -1,0 +1,14 @@
+{
+ "TileStructure.Forest.density_tree_bound2": {
+  "faithful": false,
+  "issue": "The added claim that ProofData makes X 'a doubling metric measure space' is not supported by the prompt. The notation T(u) (t.𝔗 u) is not introduced, nor are dens_1, dens_2 and the operator T (carlesonSum)."
+ },
+ "TileStructure.Forest.density_tree_bound1": {
+  "faithful": false,
+  "issue": "The added claim that ProofData makes X 'a doubling metric measure space' is not supported by the prompt. The notation T(u) (t.𝔗 u) is not introduced, nor are dens_1, dens_2 and the operator T (carlesonSum)."
+ },
+ "TileStructure.Forest.local_dens1_tree_bound": {
+  "faithful": false,
+  "issue": "The added claim that ProofData makes X 'a doubling metric measure space' is not supported by the prompt. The notation T(u) (t.𝔗 u) is not introduced, nor are dens_1, the family 𝓛, E(p) and the measure mu (volume)."
+ }
+}

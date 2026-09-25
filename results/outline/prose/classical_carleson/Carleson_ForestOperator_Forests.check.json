@@ -1,0 +1,54 @@
+{
+ "forest_operator_le_volume": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f$ ($X \\to \\mathbb{C}$) is not stated; $\\mu$ (the volume measure on $X$) is used without being introduced"
+ },
+ "TileStructure.Forest.forest_operator_f": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f, g$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "TileStructure.Forest.rowDecomp_𝔘": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.rowDecomp": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.indicator_row_bound": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $g$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "TileStructure.Forest.forest_operator_f_inner": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "TileStructure.Forest.forest_operator_g_main": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $g$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "TileStructure.Forest.correlation_separated_trees_of_subset": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $g_1, g_2$ ($X \\to \\mathbb{C}$) is not stated; $u_1,u_2$ not stated to be tiles in $\\mathfrak{P}(X)$"
+ },
+ "TileStructure.Forest.correlation_separated_trees": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $g_1, g_2$ ($X \\to \\mathbb{C}$) is not stated; the notation $T^*_{\\mathfrak{T}(u)}$ is used but never introduced in this entry (it should be adjointCarlesonSum), and $C_{7.4.4}$ is not identified"
+ },
+ "TileStructure.Forest.row_correlation": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); $j, j'$ not stated to be natural numbers; the codomain of $f_1, f_2$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "TileStructure.Forest.forest_operator_g": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f, g$ ($X \\to \\mathbb{C}$) is not stated; $G_{2.0.4}$ not identified as `Forest.G2_0_4` in this entry"
+ },
+ "forest_operator": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f, g$ ($X \\to \\mathbb{C}$) is not stated"
+ },
+ "forest_operator'": {
+  "faithful": false,
+  "issue": "the type of $n$ (a natural number) is not stated ('an $n$-forest'); the codomain of $f$ ($X \\to \\mathbb{C}$) is not stated; $\\mu$ (the volume measure) is used without being introduced"
+ }
+}

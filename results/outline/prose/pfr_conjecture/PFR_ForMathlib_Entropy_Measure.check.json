@@ -1,0 +1,42 @@
+{
+ "ProbabilityTheory.measureEntropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.FiniteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.integrable_of_finiteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_univ_smul": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure": {
+  "faithful": false,
+  "issue": "$\\mu$ is never introduced: the English omits that $\\mu$ is a measure on $S\\times U$ for measurable spaces $S, U$, and $I_m$ is not introduced"
+ }
+}

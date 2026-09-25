@@ -1,0 +1,18 @@
+{
+ "TileStructure.Forest.tree_projection_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.eLpNorm_MB_le": {
+  "faithful": false,
+  "issue": "Claims that ProofData makes X 'a doubling metric measure space', which neither the prompt's Lean nor its docstring supports. There is no docstring, and 'dyadic grid cubes' is also unsupported."
+ },
+ "TileStructure.Forest.boundary_operator_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.nontangential_operator_bound": {
+  "faithful": false,
+  "issue": "The type of f (X -> C) is not stated, and Theta(X) is never introduced. Claims that ProofData makes X 'a doubling metric measure space', which neither the prompt's Lean nor its docstring supports."
+ }
+}

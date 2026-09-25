@@ -1,0 +1,18 @@
+{
+ "ap_in_ff": {
+  "faithful": true,
+  "issue": ""
+ },
+ "global_dichotomy": {
+  "faithful": false,
+  "issue": "$\\mu_A$, $\\mu_C$ and the convolution $*$ are used without being introduced."
+ },
+ "di_in_ff": {
+  "faithful": false,
+  "issue": "$\\mu_A$, $\\mu_C$, $\\mu_V$, $1_A$, the convolution $*$ and $\\|\\cdot\\|_\\infty$ are used without being introduced; also $A, C$ not stated to be finite sets explicitly (minor)."
+ },
+ "ff": {
+  "faithful": true,
+  "issue": ""
+ }
+}

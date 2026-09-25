@@ -1,0 +1,50 @@
+{
+ "Antichain.𝔄_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.tile_count": {
+  "faithful": false,
+  "issue": "standing data $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ are listed without their types ($q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_i : X \\to \\mathbb{Z}$, $F,G \\subseteq X$); $p_6$ is never introduced beyond the name"
+ },
+ "Antichain.global_antichain_density": {
+  "faithful": false,
+  "issue": "standing data $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ are listed without their types ($q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_i : X \\to \\mathbb{Z}$, $F,G \\subseteq X$)"
+ },
+ "Antichain.𝔄'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.exists_larger_grid": {
+  "faithful": false,
+  "issue": "standing data $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ are listed without their types ($q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_i : X \\to \\mathbb{Z}$, $F,G \\subseteq X$); $L'$ not stated to be a grid cube in `Grid X` (only 'a cube')"
+ },
+ "Antichain.L'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.p''": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.pΘ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.stack_density": {
+  "faithful": false,
+  "issue": "standing data $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ are listed without their types ($q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_i : X \\to \\mathbb{Z}$, $F,G \\subseteq X$)"
+ },
+ "Antichain.tile_reach": {
+  "faithful": false,
+  "issue": "standing data $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ are listed without their types ($q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_i : X \\to \\mathbb{Z}$, $F,G \\subseteq X$)"
+ }
+}

@@ -1,0 +1,9 @@
+{
+"AlmostPeriodicity.LProp": {"faithful": true, "issue": ""},
+"AlmostPeriodicity.l": {"faithful": true, "issue": ""},
+"AlmostPeriodicity.just_the_triangle_inequality": {"faithful": false, "issue": "The variables are never typed: k, m (naturals), eps (real), f : G -> C, A (finite set), a : Fin k -> G and t in G. The descriptions of mu_A ('normalised indicator') and of the norm are not supported by the prompt."},
+"AlmostPeriodicity.lemma28": {"faithful": false, "issue": "A, f, k, m, eps and l are used without being introduced or typed (A a finset, f : G -> C, k, m naturals, eps real)."},
+"AlmostPeriodicity.almost_periodicity": {"faithful": false, "issue": "K is never stated to be real. The descriptions of mu_A as the normalised indicator and of addConst as the 'additive constant' are not supported by any definition or docstring in the prompt."},
+"AlmostPeriodicity.linfty_almost_periodicity": {"faithful": false, "issue": "A and S are not introduced as finite subsets of G, and K is not typed as real. The descriptions of mu_X and addConst ('additive doubling constant') are unsupported by the prompt."},
+"AlmostPeriodicity.linfty_almost_periodicity_boosted": {"faithful": false, "issue": "A and S are not introduced as finite subsets of G, and K is not typed as real. The descriptions of mu_X and addConst ('additive doubling constant') are unsupported by the prompt."}
+}

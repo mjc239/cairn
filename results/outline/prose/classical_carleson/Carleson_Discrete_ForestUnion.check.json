@@ -1,0 +1,54 @@
+{
+ "𝔗₁": {
+  "faithful": true,
+  "issue": ""
+ },
+ "forest_union": {
+  "faithful": false,
+  "issue": "The codomain of f (X -> C) is not stated. G', P_1 and mu are not introduced. The letter q is used both for the real parameter and for nnq X. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "forest_union_aux": {
+  "faithful": false,
+  "issue": "The type of f (X -> C) is not stated. G', P_1 and mu are not introduced. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "ℭ₆": {
+  "faithful": true,
+  "issue": ""
+ },
+ "URel": {
+  "faithful": true,
+  "issue": ""
+ },
+ "equivalenceOn_urel": {
+  "faithful": false,
+  "issue": "k, n, j are not introduced as natural numbers. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "forest_inner": {
+  "faithful": false,
+  "issue": "k, n, j (natural numbers) and p, u (tiles) are not introduced with types. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "forest_separation": {
+  "faithful": false,
+  "issue": "k, n, j, p, u, u' have no stated types. The notation d_{c,r} and the map Q(p) are not introduced. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "forest": {
+  "faithful": true,
+  "issue": ""
+ },
+ "carlesonSum_ℭ₆_eq_sum": {
+  "faithful": false,
+  "issue": "f : X -> C and the natural numbers k, n, j are not introduced. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "lintegral_carlesonSum_forest": {
+  "faithful": false,
+  "issue": "The type of f (X -> C) and the natural numbers k, n, j, l are not stated. G' and mu are not introduced. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "lintegral_carlesonSum_forest'": {
+  "faithful": false,
+  "issue": "The type of f (X -> C) and the natural numbers k, n, j, l are not stated. G' and mu are not introduced. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ },
+ "forest_union_optimized": {
+  "faithful": false,
+  "issue": "The codomain of f is not stated. G', P_1 and mu are not introduced. The letter q is used both for the real parameter and for nnq X. Parenthetical says ProofData makes X 'a doubling metric measure space with the kernel K', which the prompt does not support."
+ }
+}

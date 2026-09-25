@@ -1,0 +1,26 @@
+{
+ "diff_rdist_le_3": {
+  "faithful": true,
+  "issue": ""
+ },
+ "diff_rdist_le_4": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_add_rdist_add_condMutual_eq": {
+  "faithful": false,
+  "issue": "the notations $d[\\cdot;\\cdot]$, $d[\\cdot|\\cdot;\\cdot|\\cdot]$ (Ruzsa distance, conditional) and $I[\\cdot:\\cdot|\\cdot]$ (conditional mutual information) are used without being introduced"
+ },
+ "rdist_of_sums_ge": {
+  "faithful": false,
+  "issue": "the notation $d[\\cdot;\\cdot]$ (Ruzsa distance) is never introduced; $\\eta$ is not stated to be real"
+ },
+ "first_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ent_ofsum_le": {
+  "faithful": true,
+  "issue": ""
+ }
+}

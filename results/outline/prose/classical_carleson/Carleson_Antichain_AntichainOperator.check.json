@@ -1,0 +1,34 @@
+{
+ "dach": {
+  "faithful": true,
+  "issue": ""
+ },
+ "antichain_operator_le_volume": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted)."
+ },
+ "dens1_antichain_sq": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted). The statement also lacks a docstring and the lemma is not named."
+ },
+ "dens1_antichain_dach": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted). E(p) is never introduced."
+ },
+ "dach_bound": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted). p_6(a) and q_6(a) are not introduced, and the letter p is used both for a tile and in p_6."
+ },
+ "dens1_antichain": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted)."
+ },
+ "antichain_operator": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted)."
+ },
+ "antichain_operator'": {
+  "faithful": false,
+  "issue": "Standing-assumption boilerplate leaves K, sigma_1, sigma_2, F, G without types and asserts X 'is then a doubling metric measure space', which the prompt does not support. The tile structure is only described vaguely (Q and cancelPt are omitted)."
+ }
+}
