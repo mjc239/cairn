@@ -1,0 +1,11 @@
+{
+ "condRuzsaDist": {
+  "statement": "Definition. Let $\\Omega$ and $\\Omega'$ be measurable spaces, let $S$ and $T$ be measurable spaces, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \\Omega \\to G$, $Z : \\Omega \\to S$, $Y : \\Omega' \\to G$, $W : \\Omega' \\to T$, a finite measure $\\mu$ on $\\Omega$ and a finite measure $\\mu'$ on $\\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist X Z Y W μ μ'` is a real number, denoted $d[X \\mid Z \\,;\\, Y \\mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X|Z ; Y|W]$."
+ },
+ "condRuzsaDist'": {
+  "statement": "Definition. Let $\\Omega$ and $\\Omega'$ be measurable spaces, let $T$ be a measurable space, and let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Given functions $X : \\Omega \\to G$, $Y : \\Omega' \\to G$, $W : \\Omega' \\to T$, a measure $\\mu$ on $\\Omega$ and a finite measure $\\mu'$ on $\\Omega'$ (both arguments are filled in automatically by Lean when omitted), `condRuzsaDist' X Y W μ μ'` is a real number, denoted $d[X \\,;\\, Y \\mid W]$; according to its docstring it is the conditional Ruzsa distance $d[X ; Y|W]$."
+ },
+ "kaimanovich_vershik": {
+  "statement": "(Kaimanovich–Vershik inequality.) Let $\\Omega$ be a measurable space and $\\mu$ an arbitrary measure on $\\Omega$. Let $G$ be a countable additive commutative group equipped with a measurable space structure in which singletons are measurable. Let $X, Y, Z : \\Omega \\to G$ be measurable functions, each with finite range, such that the family $(X, Y, Z)$ is mutually independent with respect to $\\mu$ (`iIndepFun ![X, Y, Z] μ`). Writing $H[V;\\mu]$ for the entropy (`entropy`) of a $G$-valued function $V$ with respect to $\\mu$, i.e. the entropy of the pushforward measure of $\\mu$ under $V$, we have $$H[X+Y+Z;\\mu] - H[X+Y;\\mu] \\le H[Y+Z;\\mu] - H[Y;\\mu].$$"
+ }
+}
