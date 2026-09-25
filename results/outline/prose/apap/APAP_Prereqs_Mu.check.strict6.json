@@ -1,0 +1,3 @@
+{
+ "mu": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring ('normalised indicator_one'). It should state the formula μ_s = (#s)⁻¹ • 1_s, i.e. μ_s(x) = (#s)⁻¹ for x ∈ s and 0 otherwise, computed in K (in particular μ_∅ = 0 because 0⁻¹ = 0)."}
+}

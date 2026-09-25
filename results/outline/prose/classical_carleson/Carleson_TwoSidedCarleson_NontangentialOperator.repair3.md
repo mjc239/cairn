@@ -1,0 +1,127 @@
+You are correcting translations of verified Lean statements into mathematical English.
+An independent checker found the English statements below unfaithful to the Lean. For each, write a corrected
+statement in clear mathematical English (LaTeX between $...$), fixing the issue the checker raised. Be faithful to
+the FULL Lean statement: keep every hypothesis, including the assumptions carried by instance arguments, stated in
+words ("G is a finite abelian group", "μ is a probability measure", "X is a metric space"), and the exact
+conclusion. Only instances with no mathematical content (decidability: `Decidable…`) may stay unstated. Never
+replace an assumption by a stronger one, and state restrictive types (a natural number, a nonnegative real). For a
+definition, name the setting its signature assumes. Keep citations and remarks only if the docstring or the Lean
+supports them. Do not add
+claims the Lean does not make; attribute anything beyond a definition's signature to its docstring, and when no
+docstring, definition body (under "Project definitions") or Lean supports a description of an object, name it
+instead of describing it. Give every variable its
+type, introduce every symbol, and never use one letter for two things. When a definition's body is shown, say what
+it defines, in words or a formula that agrees with the body.
+
+Reply with only a JSON object: {"<lean name>": {"statement": "..."}}
+Use every Lean name exactly as given.
+
+Namespaces open (prefixes omitted): MeasureTheory, TileStructure, Antichain.
+
+## Project definitions these statements use
+(What each project notion is. Any description of one in the English must agree with this.)
+
+#### `BoundedFiniteSupport` (structure or class)
+Lean: `{X : Type u_3} → {E : Type u_4} → [inst : MeasurableSpace X] → [TopologicalSpace E] → [ENorm E] → [Zero E] → (X → E) → autoParam (Measure X) BoundedFiniteSupport._auto_1 → Prop`
+Docstring: Bounded measurable function $g$ on $X$ supported on a set of finite measure
+Constructor (every field with its type): `∀ {X : Type u_3} {E : Type u_4} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace E] [inst_2 : ENorm E] [inst_3 : Zero E] {f : X → E} {μ : autoParam (Measure X) BoundedFiniteSupport._auto_1}, MemLp f ⊤ μ → LT.lt (α := ENNReal) (μ (Function.support f) : ENNReal) (⊤ : ENNReal) → BoundedFiniteSupport f μ`
+
+#### `C10_1_5` (def)
+Lean: `ℕ → NNReal`
+Docstring: The constant used in `cotlar_estimate`.
+Definition: `wrapped✝.1`
+
+#### `C_Ts` (def)
+Lean: `ℕ → NNReal`
+Docstring: A constant used on the boundedness of `T_Q^θ` and `T_*`. We generally assume `HasBoundedStrongType (linearizedNontangentialOperator Q θ K · ·) 2 2 volume volume (C_Ts a)` throughout this formalization.
+Definition: `fun (a : ℕ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
+
+#### `IsTwoSidedKernel` (structure or class)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
+Docstring: `K` is a two-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ} [toIsOneSidedKernel : IsOneSidedKernel a K], (∀ {x x' y : X}, (2 : ℝ) * dist x x' ≤ dist x y → ‖K x y - K x' y‖ₑ ≤ HPow.hPow (β := ℝ) (edist x x' / edist x y) (↑a)⁻¹ * (↑(C_K ↑a) / vol x y)) → IsTwoSidedKernel a K`
+
+#### `MeasureTheory.DoublingMeasure` (structure or class)
+Lean: `(X : Type u_3) → outParam NNReal → [PseudoMetricSpace X] → Type u_3`
+Docstring: A metric space with a measure with some nice properties, including a doubling condition. This is called a "doubling metric measure space" in the blueprint. `A` will usually be `2 ^ a`.
+Constructor (every field with its type): `{X : Type u_3} → {A : outParam NNReal} → [inst : PseudoMetricSpace X] → [toCompleteSpace : CompleteSpace X] → [toLocallyCompactSpace : LocallyCompactSpace X] → [toMeasureSpace : MeasureSpace X] → [toBorelSpace : BorelSpace X] → [toIsLocallyFiniteMeasure : IsLocallyFiniteMeasure.{u_3} (α := X) (m0 := MeasureSpace.toMeasurableSpace) volume] → [toIsDoubling : Measure.IsDoubling.{u_3} (X := X) volume A] → [toNeZero : NeZero.{u_3} (R := Measure X) volume] → DoublingMeasure X A`
+
+#### `MeasureTheory.DoublingMeasure.toMeasureSpace` (def)
+Lean: `{X : Type u_3} → {A : outParam NNReal} → {inst : PseudoMetricSpace X} → [self : DoublingMeasure X A] → MeasureSpace X`
+Definition: `fun (X : Type u_3) {A : outParam NNReal} {inst : PseudoMetricSpace X} [self : DoublingMeasure X A] => self.3`
+
+#### `MeasureTheory.HasBoundedStrongType` (def)
+Lean: `{ε₁ : Type u_3} → {ε₂ : Type u_4} → [ENorm ε₁] → [ENorm ε₂] → [TopologicalSpace ε₁] → [TopologicalSpace ε₂] → [Zero ε₁] → {α : Type u_5} → {α' : Type u_6} → {_x : MeasurableSpace α} → {_x' : MeasurableSpace α'} → ((α → ε₁) → α' → ε₂) → ENNReal → ENNReal → Measure α → Measure α' → ENNReal → Prop`
+Docstring: A weaker version of `HasStrongType`. This is the same as `HasStrongType` if `T` is continuous w.r.t. the L^2 norm, but weaker in general.
+Definition: `fun {ε₁ : Type u_3} {ε₂ : Type u_4} [ENorm ε₁] [ENorm ε₂] [TopologicalSpace ε₁] [TopologicalSpace ε₂] [Zero ε₁] {α : Type u_5} {α' : Type u_6} {_x : MeasurableSpace α} {_x' : MeasurableSpace α'} (T : (α → ε₁) → α' → ε₂) (p p' : ENNReal) (μ : Measure α) (ν : Measure α') (c : ENNReal) => ∀ (f : α → ε₁), BoundedFiniteSupport f μ → AEStronglyMeasurable (T f) ν ∧ eLpNorm (T f) p' ν ≤ c * eLpNorm f p μ`
+
+#### `czOperator` (def)
+Lean: `{X : Type u_2} → [PseudoMetricSpace X] → [MeasureSpace X] → (X → X → ℂ) → ℝ → (X → ℂ) → X → ℂ`
+Docstring: The Calderon Zygmund operator `T_r` in chapter Two-sided Metric Space Carleson
+Definition: `fun {X : Type u_2} [PseudoMetricSpace X] [MeasureSpace X] (K : X → X → ℂ) (r : ℝ) (f : X → ℂ) (x : X) => @integral _ _ _ _ MeasureSpace.toMeasurableSpace (Measure.restrict volume (Metric.ball x r)ᶜ) fun (y : X) => K x y * f y`
+
+#### `defaultA` (def)
+Lean: `ℕ → ℕ`
+Docstring: This is usually the value of the argument `A` in `DoublingMeasure` and `CompatibleFunctions`
+Definition: `fun (a : ℕ) => (2 : ℕ) ^ a`
+
+#### `globalMaximalFunction` (def)
+Lean: `{X : Type u_1} → {ε : Type u_2} → [PseudoMetricSpace X] → [inst : MeasurableSpace X] → [ENorm ε] → Measure X → ℝ → (X → ε) → X → ENNReal`
+Docstring: The uncentered Hardy-Littlewood maximal function.
+Definition: `fun {X : Type u_1} {ε : Type u_2} [PseudoMetricSpace X] [MeasurableSpace X] [ENorm ε] (μ : Measure X) (p : ℝ) (u : X → ε) (x : X) => maximalFunction μ Set.univ (fun (x : X × ℝ) => x.1) (fun (x : X × ℝ) => x.2) p u x`
+
+#### `C10_1_4` (def)
+Lean: `ℕ → NNReal`
+Docstring: The constant used in `cotlar_set_F₂`.
+Definition: `wrapped✝.1`
+
+#### `partialFourierSum` (def)
+Lean: `ℕ → (ℝ → ℂ) → ℝ → ℂ`
+Docstring: The Nᵗʰ partial Fourier sum of `f : ℝ → ℂ` for `N : ℕ`.
+Definition: `fun (N : ℕ) (f : ℝ → ℂ) (x : ℝ) => ∑ n ∈ Finset.Icc (-↑N) ↑N, HMul.hMul (β := ℂ) (fourierCoeffOn Real.two_pi_pos f n) ((fourier n) ↑x : ℂ)`
+
+#### `C_K` (def)
+Lean: `ℝ → NNReal`
+Docstring: The constant used twice in the definition of the Calderon-Zygmund kernel.
+Definition: `fun (a : ℝ) => (2 : NNReal) ^ a ^ (3 : ℕ)`
+
+#### `IsOneSidedKernel` (structure or class)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → outParam ℕ → (X → X → ℂ) → Prop`
+Docstring: `K` is a one-sided Calderon-Zygmund kernel. In the formalization `K x y` is defined everywhere, even for `x = y`. The assumptions on `K` show that `K x x = 0`.
+Constructor (every field with its type): `∀ {X : Type u_1} [inst : PseudoMetricSpace X] [inst_1 : MeasureSpace X] {a : outParam ℕ} {K : X → X → ℂ}, Measurable (Function.uncurry K) → (∀ (x y : X), ‖K x y‖ ≤ ↑(C_K ↑a) / Real.vol x y) → (∀ {x y y' : X}, (2 : ℝ) * dist y y' ≤ dist x y → ‖K x y - K x y'‖ ≤ HPow.hPow (β := ℝ) (dist y y' / dist x y) (↑a)⁻¹ * (↑(C_K ↑a) / Real.vol x y)) → IsOneSidedKernel a K`
+
+#### `Real.vol` (def)
+Lean: `{X : Type u_1} → [PseudoMetricSpace X] → [MeasureSpace X] → X → X → ℝ`
+Docstring: The "volume function" `V`. Preferably use `vol` instead.
+Definition: `fun {X : Type u_1} [PseudoMetricSpace X] [MeasureSpace X] (x y : X) => Measure.real (m := MeasureSpace.toMeasurableSpace) volume (Metric.ball x (dist x y))`
+
+#### `vol` (def)
+Lean: `{X : Type u_3} → [PseudoMetricSpace X] → [MeasureSpace X] → X → X → ENNReal`
+Docstring: The "volume function" `V`. We will need to assume `IsFiniteMeasureOnCompacts` and `ProperSpace` to actually know that this volume is finite.
+Definition: `fun {X : Type u_3} [PseudoMetricSpace X] [MeasureSpace X] (x y : X) => (volume : Measure X) (Metric.ball x (dist x y))`
+
+#### `MeasureTheory.Measure.IsDoubling` (structure or class)
+Lean: `{X : Type u_3} → [inst : MeasurableSpace X] → [PseudoMetricSpace X] → Measure X → outParam NNReal → Prop`
+Docstring: A doubling measure is a measure on a metric space with the condition that doubling the radius of a ball only increases the volume by a constant factor, independent of the ball.
+Constructor (every field with its type): `∀ {X : Type u_3} [inst : MeasurableSpace X] [inst_1 : PseudoMetricSpace X] {μ : Measure X} {A : outParam NNReal}, (∀ (x : X) (r : ℝ), μ (Metric.ball x ((2 : ℝ) * r)) ≤ HMul.hMul (β := ENNReal) ↑A (μ (Metric.ball x r) : ENNReal)) → μ.IsDoubling A`
+
+#### `maximalFunction` (def)
+Lean: `{X : Type u_1} → {ε : Type u_2} → [PseudoMetricSpace X] → [inst : MeasurableSpace X] → [ENorm ε] → {ι : Type u_4} → Measure X → Set ι → (ι → X) → (ι → ℝ) → ℝ → (X → ε) → X → ENNReal`
+Docstring: The uncentered Hardy-Littlewood maximal function, for a family of balls.
+Definition: `fun {X : Type u_1} {ε : Type u_2} [PseudoMetricSpace X] [MeasurableSpace X] [ENorm ε] {ι : Type u_4} (μ : Measure X) (𝓑 : Set ι) (c : ι → X) (r : ι → ℝ) (p : ℝ) (u : X → ε) (x : X) => ⨆ i ∈ 𝓑, (Metric.ball (c i) (r i)).indicator (fun (x : X) => (⨍⁻ (y : X) in Metric.ball (c i) (r i), ‖u y‖ₑ ^ p ∂μ) ^ p⁻¹) x`
+
+## Flagged translations
+
+### `cotlar_estimate`
+Lean (short): `[DoublingMeasure X ↑(defaultA a)] [IsTwoSidedKernel a K] (ha : 4 ≤ a) (hT : ∀ r > 0, HasBoundedStrongType (czOperator K r) 2 2 volume volume ↑(C_Ts a)) (hg : BoundedFiniteSupport g volume) (hr : r ∈ Set.Ioc 0 R) : ‖czOperator K R g x‖ₑ ≤ 4 * globalMaximalFunction volume 1 (czOperator K r g) x + ↑(C10_1_5 a) * globalMaximalFunction volume 1 g x`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} [inst : MetricSpace X] [inst_1 : DoublingMeasure X ↑(defaultA a)] {r R : ℝ} {K : X → X → ℂ} {x : X} [IsTwoSidedKernel a K], (4 : ℕ) ≤ a → (∀ r > (0 : ℝ), HasBoundedStrongType (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (czOperator K r) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a)) → ∀ {g : X → ℂ}, BoundedFiniteSupport g volume → r ∈ Set.Ioc (0 : ℝ) R → ‖czOperator K R g x‖ₑ ≤ (4 : ENNReal) * globalMaximalFunction volume (1 : ℝ) (czOperator K r g) x + ↑(C10_1_5 a) * globalMaximalFunction volume (1 : ℝ) g x`
+Docstring: Lemma 10.1.5
+Previous English: (Lemma 10.1.5.) Let $X$ be a metric space and $a\in\mathbb N$, and assume $X$ carries a project `DoublingMeasure` structure with constant $\mathrm{defaultA}(a)=2^a$ (docstring: a metric space with a measure with some nice properties, including a doubling condition); denote its measure (`volume`) by $\mu$. Let $K : X\to X\to\mathbb C$ satisfy the project predicate `IsTwoSidedKernel a K` (docstring: $K$ is a two-sided Calderón–Zygmund kernel), and assume $a\ge 4$. For $t\in\mathbb R$, $h : X\to\mathbb C$ and $z\in X$ let $T_t h(z)=\mathrm{czOperator}(K,t,h)(z)=\int_{X\setminus B(z,t)}K(z,y)\,h(y)\,d\mu(y)$. Say that an operator $T$ taking functions $X\to\mathbb C$ to functions on $X$ (with values in $\mathbb C$ or $[0,\infty]$) has bounded strong type $(2,2)$ with constant $C\in[0,\infty]$ (project `HasBoundedStrongType T 2 2 μ μ C`) if for every $h : X\to\mathbb C$ that is bounded, measurable and supported on a set of finite measure (`BoundedFiniteSupport h μ`), $Th$ is almost everywhere strongly measurable and $\|Th\|_{L^2(\mu)}\le C\,\|h\|_{L^2(\mu)}$. Let $C_{Ts}(a)=2^{a^3}$ (project constant `C_Ts a`), and assume that for every real $t>0$ the operator $T_t$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. Let $M h(z)\in[0,\infty]$ denote the project maximal function `globalMaximalFunction μ 1 h z` (docstring: the uncentered Hardy–Littlewood maximal function), with exponent $1$. Let $C_{10.1.5}(a)\in\mathbb R_{\ge0}$ be the project constant `C10_1_5 a` (docstring: the constant used in `cotlar_estimate`). Let $r,R\in\mathbb R$ with $0<r\le R$, let $x\in X$, and let $g : X\to\mathbb C$ be bounded, measurable and supported on a set of finite $\mu$-measure (`BoundedFiniteSupport g μ`). Then $$\|T_R g(x)\|_e\le 4\,M(T_r g)(x)+C_{10.1.5}(a)\,Mg(x)$$ in $[0,\infty]$.
+Checker's issue: `BoundedCompactSupport`/`BoundedFiniteSupport` require only essential boundedness (MemLp ⊤) and a.e.-strong measurability; 'bounded and measurable' states a stronger hypothesis. Say 'essentially bounded, a.e.-strongly measurable'.
+
+### `cotlar_set_F₂`
+Lean (short): `[DoublingMeasure X ↑(defaultA a)] [IsTwoSidedKernel a K] (ha : 4 ≤ a) (hr : 0 < r) (hR : r ≤ R) (hT : ∀ r > 0, HasBoundedStrongType (czOperator K r) 2 2 volume volume ↑(C_Ts a)) (hg : BoundedFiniteSupport g volume) : (volume.restrict (Metric.ball x (R / 4))) {x' | ↑(C10_1_4 a) * globalMaximalFunction volume 1 g x < ‖czOperator K r ((Metric.ball x (R / 2)).indicator g) x'‖ₑ} ≤ volume (Metric.ball x (R / 4)) / 4`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} [inst : MetricSpace X] [inst_1 : DoublingMeasure X ↑(defaultA a)] {r R : ℝ} {K : X → X → ℂ} {x : X} [IsTwoSidedKernel a K], (4 : ℕ) ≤ a → (0 : ℝ) < r → r ≤ R → (∀ r > (0 : ℝ), HasBoundedStrongType (_x := MeasureSpace.toMeasurableSpace) (_x' := MeasureSpace.toMeasurableSpace) (czOperator K r) (2 : ENNReal) (2 : ENNReal) volume volume ↑(C_Ts a)) → ∀ {g : X → ℂ}, BoundedFiniteSupport g volume → (Measure.restrict volume (Metric.ball x (R / (4 : ℝ))) : Measure X) {x' : X | ↑(C10_1_4 a) * globalMaximalFunction volume (1 : ℝ) g x < ‖czOperator K r ((Metric.ball x (R / (2 : ℝ))).indicator g) x'‖ₑ} ≤ HDiv.hDiv (α := ENNReal) ((volume : Measure X) (Metric.ball x (R / (4 : ℝ))) : ENNReal) (4 : ENNReal)`
+Docstring: Part 2 of Lemma 10.1.4 about `F₂`.
+Previous English: (Part 2 of Lemma 10.1.4, about $F_2$.) Let $X$ be a metric space and $a\in\mathbb N$, and assume $X$ carries a project `DoublingMeasure` structure with constant $\mathrm{defaultA}(a)=2^a$ (docstring: a metric space with a measure with some nice properties, including a doubling condition); denote its measure (`volume`) by $\mu$. Let $K : X\to X\to\mathbb C$ satisfy the project predicate `IsTwoSidedKernel a K` (docstring: $K$ is a two-sided Calderón–Zygmund kernel), and assume $a\ge 4$. For $t\in\mathbb R$, $h : X\to\mathbb C$ and $z\in X$ let $T_t h(z)=\mathrm{czOperator}(K,t,h)(z)=\int_{X\setminus B(z,t)}K(z,y)\,h(y)\,d\mu(y)$. Say that an operator $T$ taking functions $X\to\mathbb C$ to functions on $X$ (with values in $\mathbb C$ or $[0,\infty]$) has bounded strong type $(2,2)$ with constant $C\in[0,\infty]$ (project `HasBoundedStrongType T 2 2 μ μ C`) if for every $h : X\to\mathbb C$ that is bounded, measurable and supported on a set of finite measure (`BoundedFiniteSupport h μ`), $Th$ is almost everywhere strongly measurable and $\|Th\|_{L^2(\mu)}\le C\,\|h\|_{L^2(\mu)}$. Let $C_{Ts}(a)=2^{a^3}$ (project constant `C_Ts a`), and assume that for every real $t>0$ the operator $T_t$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. Let $M h(z)\in[0,\infty]$ denote the project maximal function `globalMaximalFunction μ 1 h z` (docstring: the uncentered Hardy–Littlewood maximal function), with exponent $1$. Let $C_{10.1.4}(a)\in\mathbb R_{\ge0}$ be the project constant `C10_1_4 a` (docstring: the constant used in `cotlar_set_F₂`). Let $r,R\in\mathbb R$ with $0<r\le R$, let $x\in X$, and let $g : X\to\mathbb C$ be bounded, measurable and supported on a set of finite $\mu$-measure (`BoundedFiniteSupport g μ`). Then $$\mu\Big(B(x,R/4)\cap\big\{x'\in X : C_{10.1.4}(a)\,Mg(x)<\|T_r(\mathbf 1_{B(x,R/2)}\,g)(x')\|_e\big\}\Big)\le\frac{\mu(B(x,R/4))}{4}.$$
+Checker's issue: `BoundedCompactSupport`/`BoundedFiniteSupport` require only essential boundedness (MemLp ⊤) and a.e.-strong measurability; 'bounded and measurable' states a stronger hypothesis. Say 'essentially bounded, a.e.-strongly measurable'.

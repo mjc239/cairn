@@ -1,0 +1,8 @@
+{
+ "construct_good": {"faithful": true, "issue": ""},
+ "cond_construct_good": {"faithful": true, "issue": ""},
+ "I₃_eq": {"faithful": true, "issue": ""},
+ "sum_condMutual_le": {"faithful": true, "issue": ""},
+ "sum_dist_diff_le": {"faithful": true, "issue": ""},
+ "tau_strictly_decreases_aux": {"faithful": false, "issue": "The hypothesis TauMinimizes is only glossed as 'it minimizes τ for p', and τ is never introduced. The project definition is specific: for all probability measures ν₁, ν₂ on G, τ[X₁ # X₂ | p] ≤ τ[id; ν₁ # id; ν₂ | p], with τ = d[X₁;X₂] + η d[X⁰₁;X₁] + η d[X⁰₂;X₂]. Neither the functional nor the class it is minimized over is stated."}
+}

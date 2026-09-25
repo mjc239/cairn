@@ -1,0 +1,38 @@
+{
+ "aux𝓒": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. It says only that aux𝓒(k) is a set of dyadic cubes, without the body {i : Grid X | ∃ j, i ≤ j ∧ 2^{-k}·μ(j) < μ(G ∩ j)}."
+ },
+ "dens'": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: dens'_k(P') = sup over p' ∈ P', real l ≥ 2 and p ∈ TilesAt k with smul l p' ≤ smul l p of l^{-a}·μ(E₂ l p)/μ(𝓘 p)."
+ },
+ "ℭ": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: {p ∈ TilesAt k : dens'_k({p}) ∈ (2^{4a-n}, 2^{4a-n+1}]}. The docstring's 'partition of 𝔓(k)' is not a formula."
+ },
+ "𝔐": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: the maximal elements of aux𝔐 k n."
+ },
+ "𝔅": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: {m ∈ 𝔐(k,n) : smul 100 p ≤ smul 1 m}."
+ },
+ "ℭ₁": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: preℭ₁ k n j \\ preℭ₁ k n (j+1). The partition remark with 𝔏₀ comes only from the docstring and 𝔏₀ is never introduced."
+ },
+ "ℭ₂": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: Set.layersAbove (ℭ₁ k n j) (Z·(n+1)) with Z = defaultZ a."
+ },
+ "𝔘₁": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: the u ∈ ℭ₁(k,n,j) such that for every p ∈ ℭ₁(k,n,j) with 𝓘 u < 𝓘 p, the balls ball_{𝔠 u, D^{𝔰 u}/4}(𝒬 u, 100) and ball_{𝔠 p, D^{𝔰 p}/4}(𝒬 p, 100) are disjoint."
+ },
+ "ℭ₅": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English gives only the type and a docstring paraphrase instead of what the definition is. The body is missing: ℭ₄(k,n,j) \\ 𝔏₄(k,n,j)."
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "grid_existence": {"faithful": false, "issue": "Definition body is shown but the English only says 'a grid structure GridStructure X D κ S o' and paraphrases the docstring; it does not describe the construction (cubes are the elements z of 𝓓 X, coeGrid z = I3(z.y) (𝓓.coe), scale s = z.k, centre c = z.y, top cube max_𝓓 X of scale S centred at cancelPt X)."},
+ "tileData_existence": {"faithful": false, "issue": "Definition body is shown but not described: the tiles 𝔓 are the pairs (I, z) with I a cube and z ∈ 𝓩(I), 𝓘(I,z) = I and 𝒬(I,z) = z, built on the given grid structure. The English only names the resulting type 'a pre-tile structure'."},
+ "Construction.Ω": {"faithful": false, "issue": "The English only says Ω(p) is 'a set ⊆ Θ(X)' and does not describe the body: a recursion on opSize of the cube of p, where Ω(p) = Ω₁(p) if 𝓘 p is maximal, and otherwise the ball_{𝔠 p, D^{𝔰 p}/4}(𝒬 p, CΩ) union the Ω(succ 𝓘 p, z) over z ∈ 𝓩(succ 𝓘 p) ∩ Ω₁(p). It also does not say that 𝔓 X here is the tile type from tileData_existence."},
+ "tile_existence": {"faithful": false, "issue": "Definition body is shown but not described: the tile structure extends tileData_existence (tiles are pairs (I,z) with z ∈ 𝓩(I)) and has Ω := Construction.Ω. The English only names the resulting type."}
+}

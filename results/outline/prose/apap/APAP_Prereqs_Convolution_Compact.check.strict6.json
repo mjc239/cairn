@@ -1,0 +1,6 @@
+{
+ "iterCConv": {
+  "faithful": false,
+  "issue": "Only a docstring paraphrase ('an iterated convolution'); does not say which convolution (compact/normalised) is iterated, how many times, or the n = 0 base case, so the defined object is not described."
+ }
+}

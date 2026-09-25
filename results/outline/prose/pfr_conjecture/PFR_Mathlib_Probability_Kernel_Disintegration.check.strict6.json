@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring. It should state the body: for μ-a.e. t there is a finite set A ⊆ S with κ(t)(Aᶜ) = 0. 'κ(t) has finite support' is only the docstring's gloss."},
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {"faithful": false, "issue": "Definition body is shown but the English gives no description of the kernel, only the docstring remark that hκ is unused. It omits the body: if S is nonempty, the piecewise kernel equal to κ on {t | ∃ finite A, κ t Aᶜ = 0} and to the constant Dirac kernel at a chosen point elsewhere; otherwise the zero kernel."},
+ "ProbabilityTheory.Kernel.FiniteKernelSupport": {"faithful": false, "issue": "Definition body is shown but the English only repeats the docstring ('analogue of FiniteSupport for probability kernels'). It never states the body: for every t there is a finite A ⊆ S with κ(t)(Aᶜ) = 0. The docstring's 'probability kernels' is also misleading, since the definition applies to any kernel."},
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk": {"faithful": true, "issue": ""},
+ "ProbabilityTheory.Kernel.disintegration": {"faithful": true, "issue": ""},
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_of_cond": {"faithful": false, "issue": "The symbols κ.condKernel, κ.fst and μ⊗κ.fst are used without being introduced; the reader is not told that κ.fst is the first marginal, that condKernel is the conditional kernel T×S → U, or that ⊗ is the measure-kernel composition-product rather than a product measure. The project notion AEFiniteKernelSupport is also used without saying what it means (for a.e. point there is a finite set of full measure)."},
+ "ProbabilityTheory.condDistrib_eq_prod_of_indepFun": {"faithful": true, "issue": ""},
+ "ProbabilityTheory.condKernel_condDistrib_ae_eq": {"faithful": true, "issue": ""}
+}

@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.independent_copies4_nondep": {
+  "faithful": false,
+  "issue": "The common codomain α is never named or said to be a measurable space, the Ω_i are only called 'spaces' (Lean requires measurable spaces), and the English does not say the X_i' take values in that common codomain α; variables/types are not properly introduced."
+ },
+ "ProbabilityTheory.independent_copies": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.independent_copies3_nondep": {
+  "faithful": false,
+  "issue": "The common codomain α is never named or said to be a measurable space, the Ω_i are only called 'spaces' (Lean requires measurable spaces), and the English does not say the X_i' take values in that common codomain α; variables/types are not properly introduced."
+ }
+}

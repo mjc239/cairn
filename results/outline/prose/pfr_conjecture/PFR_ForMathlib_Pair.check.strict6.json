@@ -1,0 +1,6 @@
+{
+ "prod": {
+  "faithful": false,
+  "issue": "Definition body is shown (ω ↦ (X ω, Y ω)) but the English only says it is 'the pair of the two random variables' per the docstring; it should state ⟨X,Y⟩(ω) = (X(ω), Y(ω))."
+ }
+}

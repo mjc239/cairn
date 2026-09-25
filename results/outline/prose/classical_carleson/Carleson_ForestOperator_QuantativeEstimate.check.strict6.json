@@ -1,0 +1,14 @@
+{
+ "TileStructure.Forest.density_tree_bound2": {
+  "faithful": false,
+  "issue": "the English writes 'supp f ⊆ F' / 'supp g ⊆ G', which readers take as the closed support, while the Lean hypothesis is Function.support (the set where the function is nonzero) contained in the set; this makes the hypothesis stronger unless stated as {x : f(x) ≠ 0} ⊆ F"
+ },
+ "TileStructure.Forest.density_tree_bound1": {
+  "faithful": false,
+  "issue": "the English writes 'supp g ⊆ G', which readers take as the closed support, while the Lean hypothesis is Function.support (the set where the function is nonzero) contained in the set; this makes the hypothesis stronger unless stated as {x : f(x) ≠ 0} ⊆ F"
+ },
+ "TileStructure.Forest.local_dens1_tree_bound": {
+  "faithful": true,
+  "issue": ""
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "discrete_carleson": {
+  "faithful": false,
+  "issue": "The central operator T_p (`carlesonOn p g`) is introduced only by its Lean name and docstring ('T_p of Proposition 2.0.2'). Its definition, 1_{E(p)}(x)·∫ e^{i(Q(x)(y)-Q(x)(x))} K_{s(p)}(x,y) g(y) dμ(y), is never given, and neither are E(p) and K_s. S is also only 'a natural number determined by the ProofData'. The conclusion is about T, so the English does not pin down the statement."
+ }
+}

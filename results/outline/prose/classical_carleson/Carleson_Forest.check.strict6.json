@@ -1,0 +1,10 @@
+{
+ "TileStructure.Forest": {
+  "faithful": false,
+  "issue": "Structure with explicit fields (𝔘, 𝔗 and conditions: 𝔗 u nonempty and order-connected, 𝓘 p ≠ 𝓘 u, smul 4 p ≤ smul 1 u, stackSize 𝔘 x ≤ 2^n, dens₁(𝔗 u) ≤ 2^(4a-n+1), separation 2^(Z(n+1)) < dist, ball(𝔠 p, 8D^{𝔰 p}) ⊆ 𝓘 u) is described only via its docstring ('type of n-forests'); none of the fields are stated."
+ },
+ "TileStructure.Row": {
+  "faithful": false,
+  "issue": "Structure (an n-forest whose tops 𝔘 have pairwise disjoint cubes 𝓘 u) is described only by its docstring ('type of n-rows'); fields not stated."
+ }
+}

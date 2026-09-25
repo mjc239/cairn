@@ -1,0 +1,6 @@
+{
+ "two_sided_metric_carleson": {
+  "faithful": false,
+  "issue": "Key quantities are named but never described. The constants C_Ts(a) (=2^{a^3}) in the hypothesis and C_{10.0.1}(a,q) (=C_K(a)^2·C_{1.0.2}(a,q)) in the conclusion get no values. The doubling constant is written defaultA(a) and never given as 2^a. carlesonOperator(K,f) (sup over θ∈Θ, 0<R1<R2 of |∫_{R1<d(x,y)<R2} K(x,y)f(y)e^{iθ(y)}dμ(y)|, valued in [0,∞]) and czOperator(K,r) (integral over the complement of B(x,r)) are left undefined. The IsCancellative property is also not described. As written, the hypothesis and the conclusion are not determined."
+ }
+}

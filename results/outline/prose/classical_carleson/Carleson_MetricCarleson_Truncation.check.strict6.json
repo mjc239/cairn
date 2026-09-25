@@ -1,0 +1,46 @@
+{
+ "R_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "R_truncation'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "finitary_carleson_step": {
+  "faithful": true,
+  "issue": ""
+ },
+ "enorm_carlesonOperatorIntegrand_le_T_S": {
+  "faithful": true,
+  "issue": ""
+ },
+ "linearized_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound_sum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "S_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "P304.succ": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only paraphrases the docstring ('constructs G_{n+1} given G_n'). It must say what the definition builds: the P304 with the same CP304 data and with G replaced by a chosen G' ⊆ P.G that is bounded and measurable, with 2·μ(G') ≤ μ(P.G) and ∫⁻ over P.G \\ G' of ‖T_lin CP.Q σ₁ σ₂ f‖ₑ ≤ C2_0_1 a q · μ(P.G)^{1/q'} · μ(F)^{1/q}. P304 is also left unexplained (CP304 data together with a bounded measurable set G)."
+ },
+ "volume_slice": {
+  "faithful": false,
+  "issue": "The project notion `slice` (and P304/P304.succ) is introduced only as the Lean expression '(slice CP bG mG n).G' with no description. The English never says that G_0 = G and that G_{n+1} is the chosen subset of G_n given by P304.succ, so the claimed relation between G_n and G_{n+1} has no mathematical content for a reader. Compare slice_integral_bound, which does describe it. CP304 is also named without its docstring or contents."
+ },
+ "slice_G_subset": {
+  "faithful": false,
+  "issue": "The project notion `slice` (and P304/P304.succ) is introduced only as the Lean expression '(slice CP bG mG n).G' with no description. The English never says that G_0 = G and that G_{n+1} is the chosen subset of G_n given by P304.succ, so the claimed relation between G_n and G_{n+1} has no mathematical content for a reader. Compare slice_integral_bound, which does describe it. CP304 is also named without its docstring or contents."
+ }
+}

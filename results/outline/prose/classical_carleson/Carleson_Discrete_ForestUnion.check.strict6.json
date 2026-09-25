@@ -1,0 +1,15 @@
+{
+ "𝔗₁": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring; it never states what the set is: tiles p in ℭ₁(k,n,j) with 𝓘 p ≠ 𝓘 u and smul 2 p ≤ smul 1 u. The standing assumptions ('the tile structure with the default parameters') are also left vague."},
+ "forest_union": {"faithful": true, "issue": ""},
+ "forest_union_aux": {"faithful": true, "issue": ""},
+ "ℭ₆": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring; it omits the defining condition {p ∈ ℭ₅(k,n,j) | ¬ (𝓘 p ⊆ G')}."},
+ "URel": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring; it omits the defining formula u = u' ∨ ∃ p ∈ 𝔗₁(k,n,j,u), smul 10 p ≤ smul 1 u'. The docstring's claim that it is an equivalence relation on 𝔘₂ is given as a property of the definition, not as what the definition is."},
+ "equivalenceOn_urel": {"faithful": true, "issue": ""},
+ "forest_inner": {"faithful": true, "issue": ""},
+ "forest_separation": {"faithful": true, "issue": ""},
+ "forest": {"faithful": false, "issue": "Definition body is shown (Forest.mk with 𝔘 = 𝔘₄ k n j l and 𝔗 = 𝔗₂ k n j), but the English only repeats the docstring 'the forest based on 𝔘₄'. It never says that the tree map is 𝔗₂ k n j."},
+ "carlesonSum_ℭ₆_eq_sum": {"faithful": true, "issue": ""},
+ "lintegral_carlesonSum_forest": {"faithful": true, "issue": ""},
+ "lintegral_carlesonSum_forest'": {"faithful": true, "issue": ""},
+ "forest_union_optimized": {"faithful": true, "issue": ""}
+}

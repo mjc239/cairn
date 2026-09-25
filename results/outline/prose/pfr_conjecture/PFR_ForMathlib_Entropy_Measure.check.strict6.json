@@ -1,0 +1,42 @@
+{
+ "ProbabilityTheory.measureEntropy": {
+  "faithful": false,
+  "issue": "The definition body is shown, but the English only calls it the '(Shannon) entropy' of the normalised measure. It never gives the formula H_m[μ] = Σ'_{s∈S} negMulLog(((μ univ)⁻¹•μ).real {s}), a real-valued tsum over singletons (which is 0 when the sum is not summable). For a general measure this is not a standard notion."
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.FiniteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.integrable_of_finiteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo": {
+  "faithful": false,
+  "issue": "The definition body is shown (Hm[fst_*μ] + Hm[snd_*μ] − Hm[μ]), but the English only gives the docstring paraphrase 'mutual information between the marginals'. It does not state the formula."
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_univ_smul": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg": {
+  "faithful": false,
+  "issue": "I_m[μ] is only called 'the mutual information of the measure μ' and is never defined. The project notion is Hm[fst_*μ] + Hm[snd_*μ] − Hm[μ], with Hm normalising by (μ univ)⁻¹. Here μ is an arbitrary measure with finite support (it need not be a probability measure, or even finite), so the standard meaning of mutual information does not determine it. The spaces S and U are also only called 'spaces', not measurable spaces."
+ }
+}

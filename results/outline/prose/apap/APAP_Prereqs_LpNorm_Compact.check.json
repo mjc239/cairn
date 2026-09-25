@@ -1,0 +1,6 @@
+{
+ "MeasureTheory.cLpNorm": {
+  "faithful": false,
+  "issue": "Definition body is shown (lpNorm f p (uniformOn univ): the L^p norm of f with respect to the uniform probability measure on α), but the English only paraphrases the docstring ('compact normalisation') and never says what the definition is."
+ }
+}
