@@ -134,12 +134,21 @@ user-facing declaration. It opens the binders with `forallTelescope` and keeps:
   Dumps made before `Fintype` was kept get it back from the full statement
   (`formal.restore_fintype`).
 
-It drops implicit arguments and purely structural instances such as
+It drops implicit arguments and instances on bare variables such as
 `[AddCommGroup G]` or `[MeasurableSpace Ω]`. Proofs inside terms are hidden,
 and namespaces that a reader would have open are stripped. The median
 statement shrinks from 274 to 146 characters on PFR and from 246 to 116 on
-Carleson. The full statement stays in the
-dump as `type_pp`.
+Carleson.
+
+**The short form is only for the displayed line.** Dropped assumptions can
+matter: `[AddCommGroup G]` says G is abelian, `[MetricSpace X]` is stronger
+than `[PseudoMetricSpace X]`, and `[ProofData …]` bundles all of Carleson's
+standing hypotheses. So nothing that feeds the prose uses it alone (see
+[Nothing hidden](#nothing-hidden-from-the-translator-or-checker) below). The
+rendered outline shows the short line and, under a *Full Lean statement*
+toggle, the full one (`type_pp`). That form has every implicit argument and
+instance, typed numerals (`(12 : ℝ)`, `(4 : ℕ)`), and the space behind each
+ambiguous instance (`IsProbabilityMeasure (α := Ω₀₁) volume`).
 
 ## Prose: titles, English statements, proof sketches
 
@@ -208,10 +217,11 @@ Caveats:
 - **Sketches are not checked.** Several go beyond the listed dependencies,
   reconstructing the standard argument (e.g. `classical_carleson`, `ent_bsg`).
   They read well but are the least grounded part of the outline.
-- **Some readings are the translator's.** Where the Lean is ambiguous as
-  printed, the English picks a reading, and the checker accepted it as
-  reasonable. Examples: which space each of several `[IsProbabilityMeasure
-  volume]` refers to; `x ^ (1 / 2)` taken as a real power.
+- ~~Some readings are the translator's~~. Where the printed Lean was
+  ambiguous (which space a `volume` lives on, the type of `1 / 2`), the English
+  had to pick a reading. The full statements are now printed unambiguously, so
+  these readings are checked (see
+  [Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
 - **Translator and checker are the same model family**, as separate
   subagents. They share context isolation but may share blind spots.
 
@@ -327,19 +337,93 @@ What the checker caught:
   blueprints do name them: `SimpleProcess.instModule` (Brownian motion),
   `instIsZLatticeE8Lattice` (sphere packing), `instFunctionDistancesReal`
   (Carleson). Outlines lose 1–15 results; precision and recall move by at most
-  a point.
+  a point. This list was later narrowed to classes with no mathematical content
+  (see [Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
 
 **Readability note.** Several sketches go beyond the listed dependencies, as for
 PFR and Carleson (e.g. "iterated density increment" for `ff`, inferred from
 helper names).
 
+## Nothing hidden from the translator or checker
+
+The short statements, the APAP fixes and the boilerplate rule all drop
+something, so we audited every drop. Question: could anything dropped ever
+matter for the prose, or even help it? It could, in each case:
+
+- **Hidden instances carried content.** Among the instances dropped from short
+  statements were `AddCommGroup` (commutativity), `Field`, `MetricSpace` vs
+  `PseudoMetricSpace`, `DoublingMeasure X A` (the doubling constant) and
+  Carleson's standing bundles (`ProofData`, `KernelProofData`,
+  `TileStructure`).
+- **Some excluded instance classes can carry content.** `Nonempty`,
+  `Inhabited`, `Unique` and `Subsingleton` instances state facts. `CoeSort` and
+  `FunLike` instances define how an object is read as a set or function.
+- **The printer hid information.** Bare numerals left their type implicit.
+  `𝕔 / 4` is floor division on ℕ, and `K ^ 12` could be a natural-number or a
+  real power. `IsProbabilityMeasure volume` did not say which space. PFR's own
+  numeral delaborator (`Mathlib.Tactic.RPowRing.delab_ofNat`) printed some
+  numerals as raw `nat_lit`.
+- **Prompts truncated.** Uses lists stopped at 10 entries, helper lists and
+  docstrings were clipped, and check prompts had no docstrings, so checkers
+  could not verify glosses attributed to them.
+
+Removing a term buys only a shorter displayed line. It never helps the
+translator or checker, so they now see everything:
+
+- **Full statements everywhere.** Translate, check and repair prompts give each
+  result as `Lean (short)` and `Lean (full)` (only one line when they agree).
+  The *proof uses* list gives full statements, all of them. Helpers and
+  docstrings are complete, and check prompts include docstrings.
+- **Unambiguous printing.** `type_pp` is printed with `pp.numericTypes` and
+  `pp.analyze` (falling back to plain printing if analysis fails).
+  Project-local `OfNat` delaborators are erased before printing
+  (`eraseProjectNumeralDelabs`). The three dumps were re-extracted at their
+  pinned commits (`scripts/reextract.sh`). Of the whole PFR dump, only 4
+  tactic-internal statements still print `nat_lit`, and none is a result.
+- **Narrow exclusions.** `is_boilerplate_instance` now excludes only instances
+  of classes with no mathematical content: `Decidable…`, `Repr`, `ToString`,
+  `Hashable`, `BEq`. Tactic implementation code (`….Tactic.…`) is also
+  excluded.
+- **The budget ignores exclusions.** `detail × |universe|` is computed before
+  the exclusions. Before this fix, excluding tactic code shrank the budget and
+  two real PFR theorems dropped out (`IsUniform.entropy_eq`,
+  `sum_of_rdist_eq_char_2`). A regression test covers it.
+- **Stricter checking.** The checker must flag:
+  - any missing assumption, including one carried by an instance (only
+    `Decidable…` may stay unstated);
+  - a stronger assumption than the Lean's (metric for pseudometric);
+  - an unstated restrictive type (ℕ, ℝ≥0);
+  - a definition that doesn't name its setting;
+  - a citation or remark that neither the docstring nor the Lean supports.
+
+  Standing bundles (`ProofData`, `KernelProofData`, `TileStructure`,
+  `GridStructure`) may be named compactly.
+
+All 371 results (PFR 131, Carleson 194, APAP 46) were re-checked from scratch
+under this regime:
+
+ROUNDS_TABLE
+
+What the full statements caught, beyond missing assumptions:
+
+- **`drc` (APAP):** `p` is a natural number, but the English treated it as a
+  real exponent.
+- **`construct_good` (PFR):** the English put the random variables on the wrong
+  probability space. The analysed printing shows which `volume` each
+  hypothesis refers to.
+- **Strengthened assumptions:** "metric space" where the Lean has a
+  pseudometric (Carleson), and "finite group" where only `[Finite G]` on an
+  `AddCommGroup` was assumed.
+- **Types:** `Tile.I12_le'` uses ℕ floor division `𝕔 / 4`. The exponents
+  `(1 / 2 : ℝ)` in Carleson are real, as the typed numerals now show.
+- **Definitions without their setting:** most of the strict round's flags.
+
 ## Limitations and next steps
 
 - ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
   chapter titles~~. Done: short statements, prose and titles above.
-- **Ambiguous pretty-printing.** Printing each instance with the space it
-  lives on (`[IsProbabilityMeasure (volume : Measure Ω₀₁)]`) and
-  disambiguating numerals' types would remove most judgement calls.
+- ~~Ambiguous pretty-printing~~. Done: typed numerals and `pp.analyze` in the
+  full statements, which the translator and checker now see (above).
 - **Proof sketches are unchecked.** A checker could compare each sketch
   against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline
