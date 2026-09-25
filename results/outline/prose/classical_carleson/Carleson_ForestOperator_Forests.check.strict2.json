@@ -1,0 +1,54 @@
+{
+ "forest_operator_le_volume": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.forest_operator_f": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.rowDecomp_𝔘": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.rowDecomp": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.indicator_row_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.forest_operator_f_inner": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.forest_operator_g_main": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.correlation_separated_trees_of_subset": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.correlation_separated_trees": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.row_correlation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.forest_operator_g": {
+  "faithful": true,
+  "issue": ""
+ },
+ "forest_operator": {
+  "faithful": true,
+  "issue": ""
+ },
+ "forest_operator'": {
+  "faithful": true,
+  "issue": ""
+ }
+}

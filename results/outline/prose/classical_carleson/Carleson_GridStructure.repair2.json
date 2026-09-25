@@ -1,0 +1,5 @@
+{
+ "Grid.succ": {
+  "statement": "Let $X$ be a pseudometric space equipped with the standing Carleson data $\\mathrm{ProofData}(a, q, K, \\sigma_1, \\sigma_2, F, G)$ (with $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a kernel $K : X \\times X \\to \\mathbb{C}$, functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$), and with a grid structure $\\mathrm{GridStructure}(X, \\mathrm{defaultD}(a), \\mathrm{default}\\kappa(a), \\mathrm{defaultS}(X), \\mathrm{cancelPt}(X))$. Definition: for a dyadic cube $i \\in \\mathrm{Grid}(X)$, a cube $\\mathrm{succ}(i) \\in \\mathrm{Grid}(X)$. According to the docstring, if $i$ is not a maximal element, this is the (unique) minimal element greater than $i$; and this does not form a successor order, since an element can be the successor of multiple other elements."
+ }
+}

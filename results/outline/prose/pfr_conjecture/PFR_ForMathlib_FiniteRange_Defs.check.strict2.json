@@ -1,0 +1,14 @@
+{
+ "FiniteRange": {
+  "faithful": false,
+  "issue": "The characterization 'its range X(Omega) is a finite set' goes beyond the signature (Omega -> G) -> Prop and is not attributed to the docstring."
+ },
+ "FiniteRange.fintype": {
+  "faithful": true,
+  "issue": ""
+ },
+ "FiniteRange.toFinset": {
+  "faithful": false,
+  "issue": "The claim that the resulting Finset is the range of X goes beyond the signature and is not attributed to the docstring."
+ }
+}

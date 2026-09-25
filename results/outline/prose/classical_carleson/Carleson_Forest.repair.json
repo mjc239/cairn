@@ -1,0 +1,8 @@
+{
+ "TileStructure.Forest": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing assumptions of the proof: `ProofData` with parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K : X \\times X \\to \\mathbb{C}$, integer-valued functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$, together with a tile structure on $X$ (with the frequency map $Q$, the default parameters $D$, $\\kappa$, $S$ and the cancellation point). For a natural number $n$, $\\mathrm{Forest}(X, n)$ is a type; according to the docstring, it is the type of $n$-forests."
+ },
+ "TileStructure.Row": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing assumptions of the proof: `ProofData` with parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K : X \\times X \\to \\mathbb{C}$, integer-valued functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$, together with a tile structure on $X$ (with the frequency map $Q$, the default parameters $D$, $\\kappa$, $S$ and the cancellation point). For a natural number $n$, $\\mathrm{Row}(X, n)$ is a type; according to the docstring, it is the type of $n$-rows."
+ }
+}

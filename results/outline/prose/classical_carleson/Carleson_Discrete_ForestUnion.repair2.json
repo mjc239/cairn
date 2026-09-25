@@ -1,0 +1,14 @@
+{
+ "𝔗₁": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$ and a tile $u \\in \\mathfrak{P}(X)$, $\\mathfrak{T}_1(k,n,j,u)$ is a set of tiles. According to its docstring, it is the subset $\\mathfrak{T}_1(u)$ of $\\mathfrak{C}_1(k,n,j)$ given in (5.4.1), and in lemmas one assumes $u \\in \\mathfrak{U}_1(k,n,l)$."
+ },
+ "ℭ₆": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$, $\\mathfrak{C}_6(k,n,j)$ is a set of tiles. According to its docstring, it is the subset $\\mathfrak{C}_6(k,n,j)$ of $\\mathfrak{C}_5(k,n,j)$ given above (5.4.1)."
+ },
+ "URel": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j$ and tiles $u, u' \\in \\mathfrak{P}(X)$, $\\mathrm{URel}(k,n,j,u,u')$ is a proposition (a relation between $u$ and $u'$). According to its docstring, it is the relation $\\sim$ defined below (5.4.2), and it is an equivalence relation on $\\mathfrak{U}_2(k,n,j)$."
+ },
+ "forest": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for natural numbers $k, n, j, l$, $\\mathrm{forest}(k,n,j,l)$ is an $n$-forest on $X$ (an element of `Forest X n`). According to its docstring, it is the forest based on $\\mathfrak{U}_4(k,n,j,l)$."
+ }
+}

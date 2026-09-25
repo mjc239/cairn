@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,6 +22,7 @@ Use every Lean name exactly as given.
 ### `ProbabilityTheory.Kernel.entropy`
 Lean (short): `(κ : Kernel T S) (μ : Measure T) : ℝ`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → Kernel T S → Measure T → ℝ`
+Docstring: Entropy of a kernel with respect to a measure.
 English: For a kernel $\kappa$ from $T$ to $S$ and a measure $\mu$ on $T$, $H_k[\kappa,\mu]$ denotes the entropy of the kernel $\kappa$ with respect to the measure $\mu$.
 
 ### `ProbabilityTheory.Kernel.entropy_prodMkLeft_unit`
@@ -28,7 +32,7 @@ English: Let $T$ have measurable singletons, let $\kappa$ be a kernel from $T$ t
 
 ### `ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib`
 Lean (short): `[Nonempty S] [Countable S] [MeasurableSingletonClass S] [Countable T] [MeasurableSingletonClass T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) [IsFiniteMeasure μ] (hX : Measurable X) (hY : Measurable Y) [FiniteRange X] : (condDistrib X Y μ).AEFiniteKernelSupport (Measure.map Y μ)`
-Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] [inst_1 : MeasurableSpace T] [inst_2 : Nonempty S] [inst_3 : Countable S] [inst_4 : MeasurableSingletonClass S] [Countable T] [MeasurableSingletonClass T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) [inst_7 : IsFiniteMeasure μ], Measurable X → Measurable Y → ∀ [FiniteRange X], (condDistrib X Y μ).AEFiniteKernelSupport (Measure.map Y μ)`
+Lean (full): `∀ {Ω : Type u_1} {S : Type u_2} {T : Type u_3} [mΩ : MeasurableSpace Ω] [inst : MeasurableSpace S] [inst_1 : MeasurableSpace T] [inst_2 : Nonempty S] [inst_3 : Countable S] [inst_4 : MeasurableSingletonClass S] [Countable T] [MeasurableSingletonClass T] (X : Ω → S) (Y : Ω → T) (μ : Measure Ω) [inst_7 : IsFiniteMeasure μ], Measurable X → Measurable Y → ∀ [FiniteRange X], Kernel.AEFiniteKernelSupport (condDistrib X Y μ) (Measure.map Y μ)`
 English: Let $S$ be a nonempty countable space and $T$ a countable space, both with measurable singletons. Let $\mu$ be a finite measure on $\Omega$, and let $X : \Omega \to S$ and $Y : \Omega \to T$ be measurable random variables, with $X$ having finite range. Then the conditional distribution kernel $\mathrm{condDistrib}(X \mid Y;\mu)$ has almost everywhere finite kernel support with respect to the law $Y_*\mu$ of $Y$.
 
 ### `ProbabilityTheory.Kernel.entropy_compProd`

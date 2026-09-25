@@ -1,0 +1,18 @@
+{
+ "Tile.correlation_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.I12_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.I12_le'": {
+  "faithful": false,
+  "issue": "The exponent term 𝕔/4 is natural-number (floor) division in the Lean, but the English leaves it as an unqualified quotient that reads as exact division."
+ },
+ "Tile.correlation_le_of_nonempty_inter": {
+  "faithful": true,
+  "issue": ""
+ }
+}

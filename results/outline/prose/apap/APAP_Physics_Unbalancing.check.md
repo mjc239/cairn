@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,4 +22,5 @@ Use every Lean name exactly as given.
 ### `unbalancing`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (p : ℕ) (hp : p ≠ 0) (ε : ℝ) (hε₀ : 0 < ε) (hε₁ : ε ≤ 1) (f : G → ℝ) (g : G → ℂ) (h : G → ℂ) (hf : g ○ᵈ g = Complex.ofReal ∘ f) (hh : h ○ᵈ h = mu Finset.univ) (hε : ε ≤ ‖f‖_[↑p, mu Finset.univ]) : ∃ p', ↑p' ≤ 2 ^ 10 * ε⁻¹ ^ 2 * ↑p ∧ 1 + ε / 2 ≤ ‖f + 1‖_[↑p', mu Finset.univ]`
 Lean (full): `∀ {G : Type u_1} [inst : Fintype G] [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] (p : ℕ), p ≠ (0 : ℕ) → ∀ (ε : ℝ), (0 : ℝ) < ε → ε ≤ (1 : ℝ) → ∀ (f : G → ℝ) (g h : G → ℂ), g ○ᵈ g = Complex.ofReal ∘ f → h ○ᵈ h = mu Finset.univ → ε ≤ ‖f‖_[↑p, mu Finset.univ] → ∃ p', ↑p' ≤ (2 : ℝ) ^ (10 : ℕ) * ε⁻¹ ^ (2 : ℕ) * ↑p ∧ (1 : ℝ) + ε / (2 : ℝ) ≤ ‖f + (1 : G → ℝ)‖_[↑p', mu Finset.univ]`
+Docstring: The unbalancing step. Note that we do the physical proof in order to avoid the Fourier transform.
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $p \in \mathbb{N}$ with $p \ne 0$, $0 < \varepsilon \le 1$, $f : G \to \mathbb{R}$ and $g, h : G \to \mathbb{C}$ with $g \circ g = f$ (viewed as complex-valued) and $h \circ h = \mu_G$, and suppose $\varepsilon \le \|f\|_{p,\mu_G}$. Then there is $p' \in \mathbb{N}$ with $p' \le 2^{10}\varepsilon^{-2} p$ and $1 + \varepsilon/2 \le \|f + 1\|_{p',\mu_G}$. Here $\circ$ is the discrete difference convolution, $\mu_G$ is the normalised indicator of the whole group, and $\|\cdot\|_{q,\mu_G}$ is the $L^q$ norm weighted by $\mu_G$.

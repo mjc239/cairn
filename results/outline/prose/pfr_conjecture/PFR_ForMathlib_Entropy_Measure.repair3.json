@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.integrable_of_finiteSupport": {
+  "statement": "Let $S$ be a countable measurable space in which singletons are measurable, let $\\mu$ be a finite measure on $S$ with finite support, and let $\\beta$ be a normed additive commutative group. Then every function $f : S \\to \\beta$ is integrable with respect to $\\mu$."
+ }
+}

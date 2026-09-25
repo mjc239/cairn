@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.IsUniform": {
+  "statement": "Let $\\Omega$ be a measurable space and $S$ a type. For a set $H\\subseteq S$, a function $X:\\Omega\\to S$ and a measure $\\mu$ on $\\Omega$ (supplied automatically by default), $\\mathrm{IsUniform}(H,X,\\mu)$ is a proposition. According to its docstring, it asserts that the law of $X$ is the uniform probability measure on the finite set $H$; the definition itself makes no assumptions on $H$, $X$ or $\\mu$ (the docstring notes it would be well-defined but false for infinite $H$)."
+ }
+}

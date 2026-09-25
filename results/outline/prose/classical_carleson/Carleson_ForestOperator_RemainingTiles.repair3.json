@@ -1,0 +1,5 @@
+{
+ "TileStructure.Forest.𝓙₆": {
+  "statement": "Let $X$ be a metric space equipped with the standing Carleson data $\\mathrm{ProofData}(a, q, K, \\sigma_1, \\sigma_2, F, G)$ (with $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a kernel $K : X \\times X \\to \\mathbb{C}$, functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$), and with a tile structure $\\mathrm{TileStructure}(Q, \\mathrm{defaultD}(a), \\mathrm{default}\\kappa(a), \\mathrm{defaultS}(X), \\mathrm{cancelPt}(X))$ on $X$, where $Q$ is the function $X \\to \\Theta(X)$ given by the proof data. Definition: for a natural number $n$, an $n$-forest $t$ and a tile $u_1 \\in \\mathfrak{P}(X)$, the collection of dyadic cubes $\\mathcal{J}_6(t, u_1) \\subseteq \\mathrm{Grid}(X)$; according to the docstring, this is the set $\\mathcal{J}'$ from the start of Section 7.6, named differently to distinguish it from the $\\mathcal{J}'$ of Section 7.5."
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "BohrSet": {
+  "statement": "For an abelian group $G$ (an additive commutative group), $\\mathrm{BohrSet}(G)$ is a type (in the same universe as $G$). According to its docstring, a Bohr set $B$ on $G$ is a finite set of characters of $G$ (the frequencies) together with an extended nonnegative real number for each frequency $\\psi$ (the width of $B$ at $\\psi$); $B$ is thought of as the set $\\{x : \\|1 - \\psi(x)\\| \\le \\mathrm{width}_B(\\psi) \\text{ for all frequencies } \\psi\\}$ (the chord-length convention, as opposed to the arc-length convention $|\\arg \\psi(x)| \\le \\mathrm{width}_B(\\psi)$), and this set does not uniquely determine $B$ (neither its frequencies nor its widths)."
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "finitary_carleson": {
+  "statement": "Let $X$ be a metric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space). Then (the docstring labels this Proposition 2.0.1) there exists a measurable set $G'\\subseteq X$ with $2\\mu(G')\\le\\mu(G)$ (in $[0,\\infty]$, $\\mu$ the measure on $X$) such that for every measurable $f : X\\to\\mathbb C$ with $\\|f(x)\\|\\le\\mathbf 1_F(x)$ for all $x\\in X$, $$\\int_{G\\setminus G'}\\Big\\|\\sum_{s\\in[\\sigma_1(x),\\sigma_2(x)]\\cap\\mathbb Z}\\int_X K_s(x,y)\\,f(y)\\,e^{i\\,Q(x)(y)}\\,d\\mu(y)\\Big\\|\\,d\\mu(x)\\le C_{2.0.1}(a,q)\\,\\mu(G)^{1-q^{-1}}\\,\\mu(F)^{q^{-1}},$$ where the left side is a lower Lebesgue integral of extended norms, $K_s$ is the truncated kernel `Ks`, $C_{2.0.1}(a,q)$ is the nonnegative constant `C2_0_1 a (nnq X)` (with $q$ viewed as a nonnegative real), and the powers $1-q^{-1}$ and $q^{-1}$ are real exponents of extended nonnegative reals."
+ }
+}

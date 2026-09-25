@@ -1,0 +1,5 @@
+{
+ "𝔘": {
+  "statement": "Let $X$ be a metric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space), together with a tile structure for $Q$ with the default parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$. Definition: for natural numbers $k,n,j$, a point $x\\in X$ and a tile $m\\in\\mathfrak P(X)$, a finite set of tiles $\\mathfrak U(m)\\subseteq\\mathfrak P(X)$ (depending on $k,n,j,x$). According to its docstring, this is the function $\\mathfrak U(m)$ used in the proof of Lemma 5.2.8."
+ }
+}

@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,4 +22,5 @@ Use every Lean name exactly as given.
 ### `BohrSet`
 Lean (short): `(G : Type u_1) : Type u_1`
 Lean (full): `(G : Type u_1) → [AddCommGroup G] → Type u_1`
-English: For a type $G$, $\mathrm{BohrSet}(G)$ is a type (in the same universe as $G$), the type of Bohr sets on $G$. According to its docstring, a Bohr set on an additive group $G$ consists of a finite set of characters of $G$ (the frequencies) together with an extended nonnegative real width for each frequency $\psi$, and is thought of as the set $\{x : \|1 - \psi(x)\| \le \text{width}(\psi) \text{ for all frequencies } \psi\}$ (the chord-length convention).
+Docstring: A *Bohr set* `B` on an additive group `G` is a finite set of characters of `G`, called the *frequencies*, along with an extended non-negative real number for each frequency `ψ`, called the *width of `B` at `ψ`*. A Bohr set `B` is thought of as the set `{x | ∀ ψ ∈ B.frequencies, ‖1 - ψ x‖ ≤ B.width ψ}`. This is the *chord-length* convention. The arc-length convention would instead be `{x | ∀ ψ ∈ B.frequencies, |arg (ψ x)| ≤ B.width ψ}`. Note that this set **does not** uniquely determine `B` (in particular, it does not uniquely determine either `B.frequencies` or `B.width`).
+English: For an abelian group $G$ (an additive commutative group), $\mathrm{BohrSet}(G)$ is a type (in the same universe as $G$). According to its docstring, a Bohr set $B$ on $G$ is a finite set of characters of $G$ (the frequencies) together with an extended nonnegative real number for each frequency $\psi$ (the width of $B$ at $\psi$); $B$ is thought of as the set $\{x : \|1 - \psi(x)\| \le \mathrm{width}_B(\psi) \text{ for all frequencies } \psi\}$ (the chord-length convention, as opposed to the arc-length convention $|\arg \psi(x)| \le \mathrm{width}_B(\psi)$), and this set does not uniquely determine $B$ (neither its frequencies nor its widths).

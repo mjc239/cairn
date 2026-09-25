@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,6 +22,7 @@ Use every Lean name exactly as given.
 ### `ProbabilityTheory.Kernel.mutualInfo`
 Lean (short): `(κ : Kernel T (S × U)) (μ : Measure T) : ℝ`
 Lean (full): `{S : Type u_2} → {T : Type u_3} → {U : Type u_4} → [inst : MeasurableSpace S] → [inst_1 : MeasurableSpace T] → [inst_2 : MeasurableSpace U] → Kernel T (S × U) → Measure T → ℝ`
+Docstring: Mutual information of a kernel into a product space with respect to a measure.
 English: For a kernel $\kappa$ from $T$ into a product space $S\times U$ and a measure $\mu$ on $T$, $I_k[\kappa,\mu]$ denotes the mutual information of the kernel $\kappa$ with respect to $\mu$.
 
 ### `ProbabilityTheory.Kernel.mutualInfo_nonneg`

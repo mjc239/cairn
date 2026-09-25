@@ -1,0 +1,5 @@
+{
+ "CompatibleFunctions.toFunctionDistances": {
+  "statement": "Let $\\mathbb{K}$ be an RCLike field (i.e. $\\mathbb{R}$ or $\\mathbb{C}$), $X$ a pseudometric space and $A$ a natural number. Every `CompatibleFunctions` $\\mathbb{K}$ $X$ $A$ structure on $X$ yields (as its underlying parent structure) a `FunctionDistances` $\\mathbb{K}$ $X$ structure on $X$."
+ }
+}

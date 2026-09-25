@@ -1,0 +1,5 @@
+{
+ "symmGroup": {
+  "statement": "Let $\\Omega$ be a measure space and let $G$ be an abelian group with a measurable space structure for which addition $G\\times G\\to G$ is measurable. For a measurable random variable $X:\\Omega\\to G$, this defines an additive subgroup $\\mathrm{Sym}[X]$ of $G$. According to its docstring, it is the symmetry group of $X$: the set of all $h\\in G$ such that $X+h$ has an identical distribution to $X$."
+ }
+}

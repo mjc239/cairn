@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,9 +22,11 @@ Use every Lean name exactly as given.
 ### `ProbabilityTheory.CondIndepFun`
 Lean (short): `(f : Ω → α) (g : Ω → β) (h : Ω → γ) (μ : autoParam (Measure Ω) CondIndepFun._auto_1) : Prop`
 Lean (full): `{Ω : Type u_1} → {α : Type u_3} → {β : Type u_4} → {γ : Type u_5} → [inst : MeasurableSpace Ω] → [MeasurableSpace α] → [MeasurableSpace β] → [MeasurableSpace γ] → (Ω → α) → (Ω → β) → (Ω → γ) → autoParam (Measure Ω) CondIndepFun._auto_1 → Prop`
+Docstring: The assertion that `f` and `g` are conditionally independent relative to `h`.
 English: Given random variables $f : \Omega \to \alpha$, $g : \Omega \to \beta$, $h : \Omega \to \gamma$ and a measure $\mu$ on $\Omega$, `CondIndepFun f g h μ` is the assertion that $f$ and $g$ are conditionally independent relative to $h$ (with respect to $\mu$).
 
 ### `ProbabilityTheory.condIndep_copies`
 Lean (short): `[MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β) (hX : Measurable X) (hY : Measurable Y) [FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ] : ∃ Ω' x X₁ X₂ Y' ν, IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`
 Lean (full): `∀ {Ω : Type u_1} {α β : Type u} [inst : MeasurableSpace Ω] [inst_1 : MeasurableSpace α] [inst_2 : MeasurableSpace β] [MeasurableSingletonClass β] [Countable β] (X : Ω → α) (Y : Ω → β), Measurable X → Measurable Y → ∀ [finY : FiniteRange Y] (μ : Measure Ω) [IsProbabilityMeasure μ], ∃ Ω' x X₁ X₂ Y' ν, IsProbabilityMeasure ν ∧ Measurable X₁ ∧ Measurable X₂ ∧ Measurable Y' ∧ CondIndepFun X₁ X₂ Y' ν ∧ IdentDistrib (⟨X₁, Y'⟩) (⟨X, Y⟩) ν μ ∧ IdentDistrib (⟨X₂, Y'⟩) (⟨X, Y⟩) ν μ`
+Docstring: For `X, Y` random variables, there exist conditionally independent trials `X_1, X_2, Y'`.
 English: Let $\beta$ be a countable measurable space with measurable singletons, let $\mu$ be a probability measure on $\Omega$, and let $X : \Omega \to \alpha$ and $Y : \Omega \to \beta$ be measurable random variables with $Y$ of finite range. Then there exist a measurable space $\Omega'$, a probability measure $\nu$ on $\Omega'$ and measurable random variables $X_1, X_2 : \Omega' \to \alpha$, $Y' : \Omega' \to \beta$ such that $X_1$ and $X_2$ are conditionally independent given $Y'$ with respect to $\nu$, and both $(X_1, Y')$ and $(X_2, Y')$ under $\nu$ have the same distribution as $(X, Y)$ under $\mu$.

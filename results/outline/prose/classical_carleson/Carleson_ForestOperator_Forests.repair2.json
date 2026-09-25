@@ -1,0 +1,8 @@
+{
+ "TileStructure.Forest.rowDecomp_𝔘": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for a natural number $n$, an $n$-forest $t$ on $X$ and $j \\in \\mathbb{N}$, $\\mathrm{rowDecomp}_{\\mathfrak{U}}(t, j)$ is a set of tiles in $\\mathfrak{P}(X)$."
+ },
+ "TileStructure.Forest.rowDecomp": {
+  "statement": "Under the standing assumptions (a metric space $X$ with the `ProofData` bundle for parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a complex-valued kernel $K$, integer-valued functions $\\sigma_1,\\sigma_2$ and sets $F, G \\subseteq X$, and the tile structure on $X$ with the default parameters), for a natural number $n$, an $n$-forest $t$ on $X$ and $j \\in \\mathbb{N}$, $\\mathrm{rowDecomp}(t, j)$ is an $n$-row on $X$ (an element of `Row X n`). According to its docstring, it is the row-decomposition of a tree defined in the proof of Lemma 7.7.1, with indexing off by one compared to the blueprint."
+ }
+}

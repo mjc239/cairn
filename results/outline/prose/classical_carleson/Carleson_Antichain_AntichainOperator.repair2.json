@@ -1,0 +1,5 @@
+{
+ "dach": {
+  "statement": "Let $X$ be a metric space with parameters $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, a kernel $K : X \\times X \\to \\mathbb{C}$, functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$ satisfying the standing assumptions `ProofData a q K σ₁ σ₂ F G`, and suppose $X$ carries a tile structure `TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)` with set of tiles $\\mathfrak{P}(X)$. For a set of tiles $\\mathfrak{A} \\subseteq \\mathfrak{P}(X)$, a tile $p \\in \\mathfrak{P}(X)$ and a function $g : X \\to \\mathbb{C}$, `dach 𝔄 p g` is an extended nonnegative real number in $[0,\\infty]$; according to its docstring, it is the quantity $h(p)$ in the proof of Lemma 6.1.4."
+ }
+}

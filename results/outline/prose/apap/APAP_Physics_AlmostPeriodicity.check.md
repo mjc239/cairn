@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -33,7 +36,7 @@ English: Let $G$ be a finite abelian group carrying the discrete measurable stru
 
 ### `AlmostPeriodicity.lemma28`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (hε : 0 < ε) (hm : 1 ≤ m) (hk : 64 * ↑m / ε ^ 2 ≤ ↑k) : ↑A.card ^ k / 2 ≤ ↑(l k m ε f A).card`
-Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A : Finset G} {f : G → ℂ} {ε : ℝ} {k m : ℕ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G], (0 : ℝ) < ε → (1 : ℕ) ≤ m → (64 : ℝ) * ↑m / ε ^ (2 : ℕ) ≤ ↑k → ↑A.card ^ k / (2 : ℝ) ≤ ↑(l k m ε f A).card`
+Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A : Finset G} {f : G → ℂ} {ε : ℝ} {k m : ℕ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G], (0 : ℝ) < ε → (1 : ℕ) ≤ m → (64 : ℝ) * ↑m / ε ^ (2 : ℕ) ≤ ↑k → HPow.hPow (α := ℝ) (↑A.card) k / (2 : ℝ) ≤ ↑(l k m ε f A).card`
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. If $\varepsilon > 0$, $m \ge 1$ and $64m/\varepsilon^2 \le k$, then $|A|^k/2 \le |l(k,m,\varepsilon,f,A)|$.
 
 ### `AlmostPeriodicity.almost_periodicity`
@@ -43,10 +46,10 @@ English: Let $G$ be a finite abelian group carrying the discrete measurable stru
 
 ### `AlmostPeriodicity.linfty_almost_periodicity`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (ε : ℝ) (hε₀ : 0 < ε) (hε₁ : ε ≤ 1) (hK₂ : 2 ≤ K) (hK : ↑(A.addConst S) ≤ K) (B : Finset G) (C : Finset G) (hB : B.Nonempty) (hC : C.Nonempty) : ∃ T, K ^ (-4096 * ↑⌈1 + Real.log (min 1 (↑C.card / ↑B.card))⁻¹⌉ / ε ^ 2) * ↑S.card ≤ ↑T.card ∧ ∀ t ∈ T, ‖translate t ((mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C‖_[⊤] ≤ ε`
-Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A S : Finset G} {K : ℝ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] (ε : ℝ), (0 : ℝ) < ε → ε ≤ (1 : ℝ) → (2 : ℝ) ≤ K → ↑(A.addConst S) ≤ K → ∀ (B C : Finset G), B.Nonempty → C.Nonempty → ∃ T, K ^ ((-4096 : ℝ) * ↑⌈(1 : ℝ) + Real.log (min (1 : ℝ) (↑C.card / ↑B.card))⁻¹⌉ / ε ^ (2 : ℕ)) * ↑S.card ≤ ↑T.card ∧ ∀ t ∈ T, ‖translate t ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C‖_[⊤] ≤ ε`
+Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A S : Finset G} {K : ℝ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] (ε : ℝ), (0 : ℝ) < ε → ε ≤ (1 : ℝ) → (2 : ℝ) ≤ K → ↑(A.addConst S) ≤ K → ∀ (B C : Finset G), B.Nonempty → C.Nonempty → ∃ T, K ^ ((-4096 : ℝ) * ↑⌈(1 : ℝ) + Real.log (min (1 : ℝ) (HDiv.hDiv (α := ℝ) ↑C.card ↑B.card))⁻¹⌉ / ε ^ (2 : ℕ)) * ↑S.card ≤ ↑T.card ∧ ∀ t ∈ T, ‖HSub.hSub (α := G → ℂ) (translate t ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C)) ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C)‖_[⊤] ≤ ε`
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $0 < \varepsilon \le 1$, $K \ge 2$ with $\sigma[A,S] \le K$, and let $B, C$ be nonempty finite subsets of $G$. Then there is a finite set $T \subseteq G$ with $K^{-4096\lceil 1 + \log(\min(1, |C|/|B|)^{-1})\rceil/\varepsilon^2}|S| \le |T|$ such that for all $t \in T$, $\|\tau_t F - F\|_\infty \le \varepsilon$, where $F = (\mu_A \ast 1_B) \ast \mu_C$. Here $\mu_X$ is the normalised indicator of $X$, $1_B$ is the indicator of $B$, $\ast$ is discrete convolution, $\tau_t$ is translation by $t$, $\|\cdot\|_{\infty}$ is the discrete $L^\infty$ norm, and $\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$).
 
 ### `AlmostPeriodicity.linfty_almost_periodicity_boosted`
 Lean (short): `[Fintype G] [DiscreteMeasurableSpace G] (ε : ℝ) (hε₀ : 0 < ε) (hε₁ : ε ≤ 1) (k : ℕ) (hk : k ≠ 0) (hK₂ : 2 ≤ K) (hK : ↑(A.addConst S) ≤ K) (hS : S.Nonempty) (B : Finset G) (C : Finset G) (hB : B.Nonempty) (hC : C.Nonempty) : ∃ T, K ^ (-4096 * ↑⌈1 + Real.log (min 1 (↑C.card / ↑B.card))⁻¹⌉ * ↑k ^ 2 / ε ^ 2) * ↑S.card ≤ ↑T.card ∧ ‖mu T ∗ᵈ^ k ∗ᵈ ((mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => 1) ∗ᵈ mu C‖_[⊤] ≤ ε`
-Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A S : Finset G} {K : ℝ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] (ε : ℝ), (0 : ℝ) < ε → ε ≤ (1 : ℝ) → ∀ (k : ℕ), k ≠ (0 : ℕ) → (2 : ℝ) ≤ K → ↑(A.addConst S) ≤ K → S.Nonempty → ∀ (B C : Finset G), B.Nonempty → C.Nonempty → ∃ T, K ^ ((-4096 : ℝ) * ↑⌈(1 : ℝ) + Real.log (min (1 : ℝ) (↑C.card / ↑B.card))⁻¹⌉ * ↑k ^ (2 : ℕ) / ε ^ (2 : ℕ)) * ↑S.card ≤ ↑T.card ∧ ‖mu T ∗ᵈ^ k ∗ᵈ ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C) - (mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C‖_[⊤] ≤ ε`
+Lean (full): `∀ {G : Type u_1} [inst : Fintype G] {A S : Finset G} {K : ℝ} [inst_1 : DecidableEq G] [inst_2 : AddCommGroup G] [inst_3 : MeasurableSpace G] [DiscreteMeasurableSpace G] (ε : ℝ), (0 : ℝ) < ε → ε ≤ (1 : ℝ) → ∀ (k : ℕ), k ≠ (0 : ℕ) → (2 : ℝ) ≤ K → ↑(A.addConst S) ≤ K → S.Nonempty → ∀ (B C : Finset G), B.Nonempty → C.Nonempty → ∃ T, K ^ ((-4096 : ℝ) * ↑⌈(1 : ℝ) + Real.log (min (1 : ℝ) (HDiv.hDiv (α := ℝ) ↑C.card ↑B.card))⁻¹⌉ * HPow.hPow (α := ℝ) ↑k (2 : ℕ) / ε ^ (2 : ℕ)) * ↑S.card ≤ ↑T.card ∧ ‖HSub.hSub (α := G → ℂ) (mu T ∗ᵈ^ k ∗ᵈ ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C)) ((mu A ∗ᵈ (↑B).indicator fun x => (1 : ℂ)) ∗ᵈ mu C)‖_[⊤] ≤ ε`
 English: Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $0 < \varepsilon \le 1$, $k \in \mathbb{N}$ with $k \ne 0$, $K \ge 2$ with $\sigma[A,S] \le K$, $S$ nonempty, and $B, C$ nonempty finite subsets of $G$. Then there is a finite set $T \subseteq G$ with $K^{-4096\lceil 1 + \log(\min(1, |C|/|B|)^{-1})\rceil k^2/\varepsilon^2}|S| \le |T|$ and $\|\mu_T^{\ast k} \ast F - F\|_\infty \le \varepsilon$, where $F = (\mu_A \ast 1_B) \ast \mu_C$ and $\mu_T^{\ast k}$ is the $k$-fold convolution power of $\mu_T$. Here $\mu_X$ is the normalised indicator of $X$, $1_B$ is the indicator of $B$, $\ast$ is discrete convolution, $\|\cdot\|_{\infty}$ is the discrete $L^\infty$ norm, and $\sigma[A,S]$ denotes Lean's `A.addConst S` (the additive doubling constant of $A$ and $S$).

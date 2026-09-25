@@ -1,0 +1,8 @@
+{
+ "energy": {
+  "statement": "Let $G$ be an abelian group. For a natural number $n$, a finite set $s \\subseteq G$ and a function $\\nu : G \\to \\mathbb{C}$, $\\mathrm{energy}_n(s, \\nu)$ is a real number."
+ },
+ "boringEnergy": {
+  "statement": "Let $G$ be an abelian group. For a natural number $n$ and a finite set $s \\subseteq G$, $\\mathrm{boringEnergy}_n(s)$ is a real number."
+ }
+}

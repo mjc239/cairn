@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.entropy": {
+  "statement": "Let $\\Omega$ and $S$ be measurable spaces. Definition: for a function $X : \\Omega \\to S$ and a measure $\\mu$ on $\\Omega$ (by default the canonical measure on $\\Omega$), the real number $H[X;\\mu]$; according to the docstring, this is the entropy of the random variable $X$ with values in a finite measurable space."
+ },
+ "ProbabilityTheory.condEntropy": {
+  "statement": "Let $\\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X : \\Omega \\to S$, $Y : \\Omega \\to T$ and a measure $\\mu$ on $\\Omega$ (by default the canonical measure on $\\Omega$), the real number $H[X \\mid Y;\\mu]$; according to the docstring, this is the conditional entropy of $X$ with respect to $Y$, namely the expectation under the law of $Y$ of the entropy of the law of $X$ conditioned on the event $Y = y$."
+ },
+ "ProbabilityTheory.condMutualInfo": {
+  "statement": "Let $\\Omega$, $S$, $T$ and $U$ be measurable spaces. Definition: for functions $X : \\Omega \\to S$, $Y : \\Omega \\to T$, $Z : \\Omega \\to U$ and a measure $\\mu$ on $\\Omega$ (by default the canonical measure on $\\Omega$), the real number $I[X : Y \\mid Z;\\mu]$; according to the docstring, this conditional mutual information is the mutual information of $X \\mid Z = z$ and $Y \\mid Z = z$, integrated over $z$."
+ },
+ "ProbabilityTheory.mutualInfo": {
+  "statement": "Let $\\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X : \\Omega \\to S$, $Y : \\Omega \\to T$ and a measure $\\mu$ on $\\Omega$ (by default the canonical measure on $\\Omega$), the real number $I[X : Y;\\mu]$; according to the docstring, the mutual information of $X$ and $Y$ is defined to be $H[X] + H[Y] - H[(X, Y)]$ (entropies taken with respect to $\\mu$)."
+ }
+}

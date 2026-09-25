@@ -1,0 +1,5 @@
+{
+ "cancelPt": {
+  "statement": "Let $\\mathbb{k}$ be an RCLike field (i.e. $\\mathbb{R}$ or $\\mathbb{C}$), $X$ a pseudometric space and $A \\in \\mathbb{N}$, and suppose `CompatibleFunctions 𝕜 X A` holds (a compatible family of functions on $X$ with values in $\\mathbb{k}$ and parameter $A$). Then `cancelPt X` is a point of $X$; according to its docstring, it is the point $o$ in the blueprint."
+ }
+}

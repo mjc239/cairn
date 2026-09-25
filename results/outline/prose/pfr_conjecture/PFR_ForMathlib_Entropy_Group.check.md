@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,7 +12,9 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
@@ -19,14 +22,17 @@ Use every Lean name exactly as given.
 ### `ProbabilityTheory.entropy_add_right`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) : H[⟨X, X + Y⟩; μ] = H[⟨X, Y⟩; μ]`
 Lean (full): `∀ {Ω : Type uΩ} {G : Type uS} [mΩ : MeasurableSpace Ω] [Countable G] [hG : MeasurableSpace G] [MeasurableSingletonClass G] [inst : AddGroup G] {X Y : Ω → G}, Measurable X → Measurable Y → ∀ (μ : Measure Ω), H[⟨X, X + Y⟩; μ] = H[⟨X, Y⟩; μ]`
+Docstring: `H[X, X + Y] = H[X, Y]`
 English: Let $G$ be a countable additive group in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables. Then $H[(X, X+Y);\mu] = H[(X, Y);\mu]$.
 
 ### `ProbabilityTheory.entropy_add_left`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] (hX : Measurable X) (hY : Measurable Y) (μ : Measure Ω) : H[⟨Y + X, Y⟩; μ] = H[⟨X, Y⟩; μ]`
 Lean (full): `∀ {Ω : Type uΩ} {G : Type uS} [mΩ : MeasurableSpace Ω] [Countable G] [hG : MeasurableSpace G] [MeasurableSingletonClass G] [inst : AddGroup G] {X Y : Ω → G}, Measurable X → Measurable Y → ∀ (μ : Measure Ω), H[⟨Y + X, Y⟩; μ] = H[⟨X, Y⟩; μ]`
+Docstring: `H[Y + X, Y] = H[X, Y]`
 English: Let $G$ be a countable additive group in which singletons are measurable, let $\mu$ be a measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables. Then $H[(Y+X, Y);\mu] = H[(X, Y);\mu]$.
 
 ### `ProbabilityTheory.entropy_sub_mutualInfo_le_entropy_sub`
 Lean (short): `[Countable G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [FiniteRange X] [FiniteRange Y] (hX : Measurable X) (hY : Measurable Y) : H[X; μ] - I[X : Y ; μ] ≤ H[X - Y; μ]`
 Lean (full): `∀ {Ω : Type uΩ} {G : Type uS} [mΩ : MeasurableSpace Ω] [Countable G] [hG : MeasurableSpace G] [MeasurableSingletonClass G] [inst : AddGroup G] {X : Ω → G} {μ : Measure Ω} [IsProbabilityMeasure μ] {Y : Ω → G} [FiniteRange X] [FiniteRange Y], Measurable X → Measurable Y → H[X; μ] - I[X : Y ; μ] ≤ H[X - Y; μ]`
+Docstring: `H[X] - I[X : Y] ≤ H[X - Y]`
 English: Let $G$ be a countable additive group with measurable singletons, let $\mu$ be a probability measure on $\Omega$, and let $X, Y : \Omega \to G$ be measurable random variables, both of finite range. Then $H[X;\mu] - I[X:Y;\mu] \le H[X - Y;\mu]$.

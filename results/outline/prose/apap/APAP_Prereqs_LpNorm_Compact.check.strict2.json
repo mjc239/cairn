@@ -1,0 +1,6 @@
+{
+ "MeasureTheory.cLpNorm": {
+  "faithful": false,
+  "issue": "Omits the setting (α a measurable space, E a normed additive commutative group), and the 'compact normalisation (averaging)' gloss is not attributed to the docstring."
+ }
+}

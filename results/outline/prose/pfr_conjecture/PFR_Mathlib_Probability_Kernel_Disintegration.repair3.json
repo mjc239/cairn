@@ -1,0 +1,11 @@
+{
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {
+  "statement": "Let $S$ and $T$ be measurable spaces. For a kernel $\\kappa$ from $T$ to $S$ and a measure $\\mu$ on $T$, this defines a proposition, ``$\\kappa$ has almost everywhere finite kernel support with respect to $\\mu$''. According to the docstring, this means that for $\\mu$-almost every point $t$, the measure $\\kappa(t)$ has finite support, with no uniformity in $t$ required."
+ },
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {
+  "statement": "Let $S$ and $T$ be measurable spaces, with $T$ countable and with measurable singletons. Given a measure $\\mu$ on $T$, a kernel $\\kappa$ from $T$ to $S$, and a proof $h\\kappa$ that $\\kappa$ has almost everywhere finite kernel support with respect to $\\mu$, this defines a kernel $h\\kappa.\\mathrm{mk}$ from $T$ to $S$. According to the docstring, the definition does not use the hypothesis $h\\kappa$, which is kept only because the construction is otherwise uninteresting."
+ },
+ "ProbabilityTheory.Kernel.FiniteKernelSupport": {
+  "statement": "Let $S$ and $T$ be measurable spaces. For a kernel $\\kappa$ from $T$ to $S$, this defines a proposition, ``$\\kappa$ has finite kernel support''. According to the docstring, it is the analogue of finite support (`FiniteSupport`) for probability kernels."
+ }
+}

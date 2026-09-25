@@ -1,6 +1,7 @@
 You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -11,27 +12,30 @@ says "a group" where the Lean requires an abelian group claims more than was pro
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
 naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
 ("for an abelian group $G$ and …, $\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
-space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
+space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
+(a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
+be supported by the docstring or the Lean. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `grid_existence`
 Lean (short): `(X : Type u_1) : GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-Lean (full): `(X : Type u_1) → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-English: Definition (construction): for the space $X$, a grid structure on $X$ with parameters $D = \mathrm{defaultD}(a)$, $\kappa = \mathrm{default}\kappa(a)$, $S = \mathrm{defaultS}(X)$ and base point $o = \mathrm{cancelPt}(X)$; this is the proof that such a grid structure exists.
+Lean (full): `(X : Type u_1) → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → GridStructure X (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)`
+Docstring: Proof that there exists a grid structure.
+English: Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\in\mathbb N$, $q\in\mathbb R$, a complex-valued kernel $K : X\times X\to\mathbb C$, integer-valued scale functions $\sigma_1,\sigma_2 : X\to\mathbb Z$ and sets $F,G\subseteq X$ (making $X$ a doubling metric measure space). Definition (construction): a grid structure on $X$ with parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$. Its docstring describes it as the proof that there exists a grid structure.
 
 ### `tileData_existence`
 Lean (short): `[GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] : PreTileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] → PreTileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-English: Definition (construction): a pre-tile structure for $Q$ with parameters $D = \mathrm{defaultD}(a)$, $\kappa = \mathrm{default}\kappa(a)$, $S = \mathrm{defaultS}(X)$ and base point $o = \mathrm{cancelPt}(X)$.
+Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [GridStructure X (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → PreTileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)`
+English: Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\in\mathbb N$, $q\in\mathbb R$, a complex-valued kernel $K : X\times X\to\mathbb C$, integer-valued scale functions $\sigma_1,\sigma_2 : X\to\mathbb Z$ and sets $F,G\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$. Definition (construction): a pre-tile structure for $Q$ with parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$.
 
 ### `Construction.Ω`
 Lean (short): `[GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (p : 𝔓 X) : Set (Θ X)`
-Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] → 𝔓 X → Set (Θ X)`
-English: Definition: for a tile $p \in \mathfrak{P}(X)$, the set $\Omega(p) \subseteq \Theta(X)$ used in the construction of the tile structure.
+Lean (full): `{X : Type u_1} → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [inst_2 : GridStructure X (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → 𝔓 X → Set (@Θ _ X DenselyNormedField.toNormedField UniformSpace.toTopologicalSpace _)`
+English: Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\in\mathbb N$, $q\in\mathbb R$, a complex-valued kernel $K : X\times X\to\mathbb C$, integer-valued scale functions $\sigma_1,\sigma_2 : X\to\mathbb Z$ and sets $F,G\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$. Definition: for a tile $p\in\mathfrak P(X)$, a set $\Omega(p)\subseteq\Theta(X)$.
 
 ### `tile_existence`
 Lean (short): `(X : Type u_1) [GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-Lean (full): `(X : Type u_1) → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [GridStructure X (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] → TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)`
-English: Definition (construction): for the space $X$, a tile structure for $Q$ with parameters $D = \mathrm{defaultD}(a)$, $\kappa = \mathrm{default}\kappa(a)$, $S = \mathrm{defaultS}(X)$ and base point $o = \mathrm{cancelPt}(X)$.
+Lean (full): `(X : Type u_1) → {a : ℕ} → {q : ℝ} → {K : X → X → ℂ} → {σ₁ σ₂ : X → ℤ} → {F G : Set X} → [inst : PseudoMetricSpace X] → [inst_1 : ProofData a q K σ₁ σ₂ F G] → [GridStructure X (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)] → TileStructure (Q (F := F) (G := G)) (defaultD a) (defaultκ a) (defaultS X (F := F) (G := G)) (cancelPt X)`
+English: Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\in\mathbb N$, $q\in\mathbb R$, a complex-valued kernel $K : X\times X\to\mathbb C$, integer-valued scale functions $\sigma_1,\sigma_2 : X\to\mathbb Z$ and sets $F,G\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$. Definition (construction): a tile structure for $Q$ with parameters $D=\mathrm{defaultD}(a)$, $\kappa=\mathrm{default}\kappa(a)$, $S=\mathrm{defaultS}(X)$ and base point $o=\mathrm{cancelPt}(X)$.
