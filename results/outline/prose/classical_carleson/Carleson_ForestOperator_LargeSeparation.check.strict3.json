@@ -1,0 +1,94 @@
+{
+ "TileStructure.Forest.correlation_distant_tree_parts": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.χtilde": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₅": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.χ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holderFunction": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.edist_holderFunction_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tile_two": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tile": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part1": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part2": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.scales_impacting_interval": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_right": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.global_tree_control1_edist_left": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.global_tree_control1_supbound": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.limited_scale_impact_second_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.local_tree_control_sumsumsup": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.local_tree_control": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.global_tree_control2": {
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
+ },
+ "TileStructure.Forest.union_𝓙₅": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.enorm_holderFunction_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tree": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.cdtp_le_iHolENorm": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.lower_oscillation_bound": {
+  "faithful": true,
+  "issue": ""
+ }
+}

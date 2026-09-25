@@ -1,0 +1,14 @@
+{
+ "FiniteRange": {
+  "faithful": true,
+  "issue": ""
+ },
+ "FiniteRange.fintype": {
+  "faithful": true,
+  "issue": ""
+ },
+ "FiniteRange.toFinset": {
+  "faithful": true,
+  "issue": ""
+ }
+}

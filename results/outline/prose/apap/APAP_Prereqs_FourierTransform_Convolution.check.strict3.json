@@ -1,0 +1,10 @@
+{
+ "cLpNorm_conv_le_cLpNorm_dconv": {
+  "faithful": false,
+  "issue": "'n ≠ 0 is even' should state n is a natural number, as in the Lean (if applicable); check every variable's type is stated."
+ },
+ "dLpNorm_ddconv_le_dLpNorm_dddconv": {
+  "faithful": false,
+  "issue": "'n ≠ 0 is even' should state n is a natural number, as in the Lean (if applicable); check every variable's type is stated."
+ }
+}

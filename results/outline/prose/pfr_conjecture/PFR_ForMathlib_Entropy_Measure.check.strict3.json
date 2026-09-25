@@ -1,0 +1,42 @@
+{
+ "ProbabilityTheory.measureEntropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.FiniteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.integrable_of_finiteSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo": {
+  "faithful": false,
+  "issue": "The formula given is not shown by the Lean signature or the docstring; attribute it correctly or state only what the signature/docstring supports."
+ },
+ "ProbabilityTheory.measureEntropy_of_isProbabilityMeasure_finite": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_of_not_isFiniteMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_univ_smul": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.measureMutualInfo_nonneg": {
+  "faithful": true,
+  "issue": ""
+ }
+}
