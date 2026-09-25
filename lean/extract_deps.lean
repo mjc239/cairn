@@ -112,6 +112,19 @@ def blueprintReach (env : Environment) (modNames : Array Name) (inProject : Name
     frontier := next
   return found
 
+/-- Switch off numeral delaborators (`@[delab app.OfNat.ofNat]`) declared in the project itself, e.g. PFR's
+`RPowRing.delab_ofNat`, which prints the raw literal and so overrides `pp.numericTypes`. Core and Mathlib printing,
+and the project's other notation, are untouched. -/
+def eraseProjectNumeralDelabs (env : Environment) (modNames : Array Name) (inProject : Name → Bool) :
+    Environment := Id.run do
+  let mut env := env
+  for e in PrettyPrinter.Delaborator.delabAttribute.getEntries env `app.OfNat.ofNat do
+    let some idx := env.getModuleIdxFor? e.declName | continue
+    if inProject modNames[idx.toNat]! then
+      env := PrettyPrinter.Delaborator.delabAttribute.ext.modifyState env
+        fun st => { st with erased := st.erased.insert e.declName }
+  return env
+
 def main (args : List String) : IO UInt32 := do
   let root :: prefixes := args
     | IO.eprintln "usage: [CAIRN_EXTRA=FILE] extract_deps <RootModule>[,<RootModule>...] <ModulePrefix>..."; return 1
@@ -127,6 +140,7 @@ def main (args : List String) : IO UInt32 := do
   let env ← importModules (roots.toArray.map fun r => { module := r.toName }) {} (loadExts := true)
   let modNames := env.allImportedModuleNames
   let inProject (m : Name) : Bool := prefixes.any fun p => p.toName.isPrefixOf m
+  let env := eraseProjectNumeralDelabs env modNames inProject
   let listed : NameSet := listedNames.foldl (·.insert ·) {}
   let stdout ← IO.getStdout
   let mut count := 0
