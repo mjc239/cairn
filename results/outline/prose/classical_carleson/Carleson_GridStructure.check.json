@@ -1,9 +1,9 @@
 {
- "Grid.succ": {
-  "faithful": true,
-  "issue": ""
- },
  "Grid.dist_strictMono": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and GridStructure (pseudometric space X, doubling measure, grid structure)."
+ },
+ "Grid.succ": {
   "faithful": true,
   "issue": ""
  }

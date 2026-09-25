@@ -4,8 +4,8 @@
   "issue": ""
  },
  "global_dichotomy": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G); only finiteness and the discrete measurable structure are stated."
  },
  "di_in_ff": {
   "faithful": true,

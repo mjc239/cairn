@@ -1,3 +1,6 @@
 {
-  "finitary_carleson": {"faithful": true, "issue": ""}
+ "finitary_carleson": {
+  "faithful": true,
+  "issue": ""
+ }
 }

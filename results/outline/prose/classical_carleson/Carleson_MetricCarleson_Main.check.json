@@ -1,3 +1,6 @@
 {
-  "metric_carleson": {"faithful": true, "issue": ""}
+ "metric_carleson": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
+ }
 }

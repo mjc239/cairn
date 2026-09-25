@@ -1,15 +1,54 @@
 {
-  "forest_operator_le_volume": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.forest_operator_f": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.rowDecomp_𝔘": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.rowDecomp": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.indicator_row_bound": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.forest_operator_f_inner": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.forest_operator_g_main": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.correlation_separated_trees_of_subset": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.correlation_separated_trees": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.row_correlation": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.forest_operator_g": {"faithful": true, "issue": ""},
-  "forest_operator": {"faithful": true, "issue": ""},
-  "forest_operator'": {"faithful": true, "issue": ""}
+ "forest_operator_le_volume": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.forest_operator_f": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.rowDecomp_𝔘": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.rowDecomp": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.indicator_row_bound": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.forest_operator_f_inner": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.forest_operator_g_main": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.correlation_separated_trees_of_subset": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.correlation_separated_trees": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.row_correlation": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.forest_operator_g": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "forest_operator": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "forest_operator'": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ }
 }

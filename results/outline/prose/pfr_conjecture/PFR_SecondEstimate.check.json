@@ -1,4 +1,10 @@
 {
-  "second_estimate_aux": {"faithful": true, "issue": ""},
-  "second_estimate": {"faithful": true, "issue": ""}
+ "second_estimate_aux": {
+  "faithful": false,
+  "issue": "English omits that G is a finite abelian group with Module (ZMod 2) G, measurable singletons and measurable addition, and that the measures on Omega and the reference spaces are probability measures."
+ },
+ "second_estimate": {
+  "faithful": false,
+  "issue": "English (via 'same hypotheses') omits that G is a finite elementary abelian 2-group with measurable singletons/addition, and that the measures on Omega and the reference spaces are probability measures."
+ }
 }

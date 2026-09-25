@@ -4,8 +4,8 @@
   "issue": ""
  },
  "ProbabilityTheory.Kernel.rdist": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Says only 'the same group G' where the Lean requires G to be an abelian group (AddCommGroup G)."
  },
  "ProbabilityTheory.Kernel.rdist_symm": {
   "faithful": true,

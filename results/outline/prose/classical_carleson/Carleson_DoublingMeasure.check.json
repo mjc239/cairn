@@ -1,3 +1,6 @@
 {
-  "cancelPt": {"faithful": true, "issue": ""}
+ "cancelPt": {
+  "faithful": true,
+  "issue": ""
+ }
 }

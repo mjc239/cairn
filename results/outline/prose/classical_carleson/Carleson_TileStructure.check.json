@@ -1,19 +1,70 @@
 {
-  "PreTileStructure.toGridStructure": {"faithful": true, "issue": ""},
-  "𝔓": {"faithful": true, "issue": ""},
-  "𝓘": {"faithful": true, "issue": ""},
-  "𝔠": {"faithful": true, "issue": ""},
-  "𝔰": {"faithful": true, "issue": ""},
-  "TileStructure": {"faithful": true, "issue": ""},
-  "TileStructure.toPreTileStructure": {"faithful": true, "issue": ""},
-  "E": {"faithful": true, "issue": ""},
-  "TileLike": {"faithful": true, "issue": ""},
-  "toTileLike": {"faithful": true, "issue": ""},
-  "smul": {"faithful": true, "issue": ""},
-  "E₂": {"faithful": true, "issue": ""},
-  "dens₁": {"faithful": true, "issue": ""},
-  "exists_maximal_disjoint_covering_subfamily": {"faithful": true, "issue": ""},
-  "iteratedMaximalSubfamily": {"faithful": true, "issue": ""},
-  "stackSize": {"faithful": true, "issue": ""},
-  "dens₂": {"faithful": true, "issue": ""}
+ "PreTileStructure.toGridStructure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "𝔓": {
+  "faithful": true,
+  "issue": ""
+ },
+ "𝓘": {
+  "faithful": true,
+  "issue": ""
+ },
+ "𝔠": {
+  "faithful": true,
+  "issue": ""
+ },
+ "𝔰": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.toPreTileStructure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileLike": {
+  "faithful": true,
+  "issue": ""
+ },
+ "toTileLike": {
+  "faithful": true,
+  "issue": ""
+ },
+ "stackSize": {
+  "faithful": true,
+  "issue": ""
+ },
+ "smul": {
+  "faithful": true,
+  "issue": ""
+ },
+ "E₂": {
+  "faithful": true,
+  "issue": ""
+ },
+ "dens₁": {
+  "faithful": true,
+  "issue": ""
+ },
+ "iteratedMaximalSubfamily": {
+  "faithful": true,
+  "issue": ""
+ },
+ "dens₂": {
+  "faithful": true,
+  "issue": ""
+ },
+ "E": {
+  "faithful": true,
+  "issue": ""
+ },
+ "exists_maximal_disjoint_covering_subfamily": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData and TileStructure instances) under which the lemma holds."
+ }
 }

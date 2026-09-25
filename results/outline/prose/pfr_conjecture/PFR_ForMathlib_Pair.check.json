@@ -1,3 +1,6 @@
 {
-  "prod": {"faithful": true, "issue": ""}
+ "prod": {
+  "faithful": true,
+  "issue": ""
+ }
 }

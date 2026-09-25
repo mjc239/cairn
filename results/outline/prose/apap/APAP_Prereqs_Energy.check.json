@@ -1,18 +1,18 @@
 {
-  "energy": {
-    "faithful": true,
-    "issue": ""
-  },
-  "boringEnergy": {
-    "faithful": true,
-    "issue": ""
-  },
-  "cLpNorm_dft_indicator_one_pow": {
-    "faithful": true,
-    "issue": ""
-  },
-  "cL2Norm_dft_indicator_one": {
-    "faithful": true,
-    "issue": ""
-  }
+ "energy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "boringEnergy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cLpNorm_dft_indicator_one_pow": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cL2Norm_dft_indicator_one": {
+  "faithful": true,
+  "issue": ""
+ }
 }

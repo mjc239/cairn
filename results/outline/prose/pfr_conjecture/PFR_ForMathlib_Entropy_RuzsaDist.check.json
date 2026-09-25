@@ -1,98 +1,98 @@
 {
-  "condRuzsaDist": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'": {
-    "faithful": true,
-    "issue": ""
-  },
-  "rdist": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'_eq_sum": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'_eq_integral": {
-    "faithful": true,
-    "issue": ""
-  },
-  "kaimanovich_vershik": {
-    "faithful": true,
-    "issue": ""
-  },
-  "comparison_of_ruzsa_distances": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_diff_le": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_of_copy": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_of_indep": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_le": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_of_const": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_diff_ofsum_le": {
-    "faithful": true,
-    "issue": ""
-  },
-  "ent_of_diff_le": {
-    "faithful": true,
-    "issue": ""
-  },
-  "rdist_triangle": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_eq_sum": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'_of_copy": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist_of_inj_map": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'_of_inj_map": {
-    "faithful": true,
-    "issue": ""
-  },
-  "condRuzsaDist'_of_inj_map'": {
-    "faithful": true,
-    "issue": ""
-  },
-  "rdist_add_const": {
-    "faithful": true,
-    "issue": ""
-  },
-  "continuous_rdist_restrict_probabilityMeasure": {
-    "faithful": true,
-    "issue": ""
-  },
-  "diff_ent_le_rdist": {
-    "faithful": true,
-    "issue": ""
-  },
-  "ent_bsg": {
-    "faithful": true,
-    "issue": ""
-  }
+ "condRuzsaDist": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "kaimanovich_vershik": {
+  "faithful": true,
+  "issue": ""
+ },
+ "comparison_of_ruzsa_distances": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist_diff_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist_of_indep": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist_diff_ofsum_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ent_of_diff_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_triangle": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist_of_inj_map": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist'_of_inj_map": {
+  "faithful": true,
+  "issue": ""
+ },
+ "condRuzsaDist'_of_inj_map'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_add_const": {
+  "faithful": true,
+  "issue": ""
+ },
+ "continuous_rdist_restrict_probabilityMeasure": {
+  "faithful": true,
+  "issue": ""
+ },
+ "diff_ent_le_rdist": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ent_bsg": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist": {
+  "faithful": false,
+  "issue": "Never states that G is an abelian group (AddCommGroup G)."
+ },
+ "condRuzsaDist'_eq_sum": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ },
+ "condRuzsaDist'_eq_integral": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ },
+ "condRuzsaDist_of_copy": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ },
+ "condRuzsaDist_of_const": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ },
+ "condRuzsaDist_eq_sum": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ },
+ "condRuzsaDist'_of_copy": {
+  "faithful": false,
+  "issue": "Omits that G is an abelian group (AddCommGroup G), stating only countability and measurable singletons."
+ }
 }

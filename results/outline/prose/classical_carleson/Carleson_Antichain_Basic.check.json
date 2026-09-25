@@ -1,4 +1,10 @@
 {
-  "dens2_antichain": {"faithful": true, "issue": ""},
-  "Lemma6_1_3.eLpNorm_𝓜p_le": {"faithful": true, "issue": ""}
+ "dens2_antichain": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "Lemma6_1_3.eLpNorm_𝓜p_le": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ }
 }

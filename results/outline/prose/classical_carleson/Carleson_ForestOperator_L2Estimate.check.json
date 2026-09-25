@@ -1,6 +1,18 @@
 {
-  "TileStructure.Forest.tree_projection_estimate": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.boundary_operator_bound": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.eLpNorm_MB_le": {"faithful": true, "issue": ""},
-  "TileStructure.Forest.nontangential_operator_bound": {"faithful": true, "issue": ""}
+ "TileStructure.Forest.tree_projection_estimate": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData and TileStructure instances) under which the lemma holds."
+ },
+ "TileStructure.Forest.eLpNorm_MB_le": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData and TileStructure instances) under which the lemma holds."
+ },
+ "TileStructure.Forest.boundary_operator_bound": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData and TileStructure instances) under which the lemma holds."
+ },
+ "TileStructure.Forest.nontangential_operator_bound": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData and TileStructure instances) under which the lemma holds."
+ }
 }

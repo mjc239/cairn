@@ -1,6 +1,18 @@
 {
-  "Tile.correlation_le": {"faithful": true, "issue": ""},
-  "Tile.I12_le": {"faithful": true, "issue": ""},
-  "Tile.I12_le'": {"faithful": true, "issue": ""},
-  "Tile.correlation_le_of_nonempty_inter": {"faithful": true, "issue": ""}
+ "Tile.correlation_le": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "Tile.I12_le": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "Tile.I12_le'": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "Tile.correlation_le_of_nonempty_inter": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ }
 }

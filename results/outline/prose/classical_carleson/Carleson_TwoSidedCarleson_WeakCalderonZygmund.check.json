@@ -1,3 +1,6 @@
 {
-  "estimate_czOperator": {"faithful": true, "issue": ""}
+ "estimate_czOperator": {
+  "faithful": false,
+  "issue": "Omits that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ }
 }

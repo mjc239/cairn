@@ -1,7 +1,22 @@
 {
-  "nontangential_from_simple": {"faithful": true, "issue": ""},
-  "cotlar_estimate": {"faithful": true, "issue": ""},
-  "cotlar_set_F₂": {"faithful": true, "issue": ""},
-  "simple_nontangential_operator": {"faithful": true, "issue": ""},
-  "simple_nontangential_operator_le": {"faithful": true, "issue": ""}
+ "nontangential_from_simple": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ },
+ "cotlar_estimate": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ },
+ "cotlar_set_F₂": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ },
+ "simple_nontangential_operator": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ },
+ "simple_nontangential_operator_le": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions that X is a metric space with a doubling measure (DoublingMeasure X (defaultA a)) and that K is a two-sided Calderon-Zygmund kernel (IsTwoSidedKernel a K)."
+ }
 }

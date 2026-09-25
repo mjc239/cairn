@@ -1,30 +1,30 @@
 {
-  "AlmostPeriodicity.LProp": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.l": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.just_the_triangle_inequality": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.lemma28": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.almost_periodicity": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.linfty_almost_periodicity": {
-    "faithful": true,
-    "issue": ""
-  },
-  "AlmostPeriodicity.linfty_almost_periodicity_boosted": {
-    "faithful": true,
-    "issue": ""
-  }
+ "AlmostPeriodicity.LProp": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.l": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.just_the_triangle_inequality": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.lemma28": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.almost_periodicity": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity_boosted": {
+  "faithful": true,
+  "issue": ""
+ }
 }

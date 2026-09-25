@@ -1,19 +1,19 @@
 {
  "rdist_of_indep_eq_sum_fibre": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Says 'additive groups' but the Lean requires H and H' to be abelian (AddCommGroup)."
  },
  "sum_of_rdist_eq_step_condMutualInfo": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Says 'finite additive group' but the Lean requires G to be abelian (AddCommGroup)."
  },
  "sum_of_rdist_eq_step_condRuzsaDist": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Says 'finite additive group' but the Lean requires G to be abelian (AddCommGroup)."
  },
  "sum_of_rdist_eq": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Says 'finite additive group' but the Lean requires G to be abelian (AddCommGroup)."
  },
  "sum_of_rdist_eq_char_2": {
   "faithful": true,

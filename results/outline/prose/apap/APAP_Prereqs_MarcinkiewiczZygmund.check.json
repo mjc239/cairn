@@ -1,10 +1,10 @@
 {
-  "Real.marcinkiewicz_zygmund": {
-    "faithful": true,
-    "issue": ""
-  },
-  "RCLike.marcinkiewicz_zygmund": {
-    "faithful": true,
-    "issue": ""
-  }
+ "Real.marcinkiewicz_zygmund": {
+  "faithful": true,
+  "issue": ""
+ },
+ "RCLike.marcinkiewicz_zygmund": {
+  "faithful": true,
+  "issue": ""
+ }
 }

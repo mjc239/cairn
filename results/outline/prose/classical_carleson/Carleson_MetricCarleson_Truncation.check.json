@@ -1,46 +1,46 @@
 {
  "R_truncation": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "R_truncation'": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "finitary_carleson_step": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "P304.succ": {
   "faithful": true,
   "issue": ""
  },
  "enorm_carlesonOperatorIntegrand_le_T_S": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumption KernelProofData a K (metric space X, doubling measure, kernel bounds)."
  },
  "linearized_truncation": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "volume_slice": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "slice_G_subset": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "slice_integral_bound": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "slice_integral_bound_sum": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  },
  "S_truncation": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Omits the standing assumptions KernelProofData a K (metric space X, doubling measure, kernel bounds) and IsCancellative X (defaultτ a)."
  }
 }

@@ -1,3 +1,6 @@
 {
-  "CompatibleFunctions.toFunctionDistances": {"faithful": true, "issue": ""}
+ "CompatibleFunctions.toFunctionDistances": {
+  "faithful": true,
+  "issue": ""
+ }
 }
