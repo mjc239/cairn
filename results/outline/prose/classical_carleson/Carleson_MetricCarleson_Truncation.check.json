@@ -1,0 +1,46 @@
+{
+ "R_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "R_truncation'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "finitary_carleson_step": {
+  "faithful": true,
+  "issue": ""
+ },
+ "P304.succ": {
+  "faithful": false,
+  "issue": "The definition omits its setting (metric space X, KernelProofData a K, IsCancellative X (defaultτ a)), and the G_n/G_{n+1} gloss is not attributed to the docstring."
+ },
+ "enorm_carlesonOperatorIntegrand_le_T_S": {
+  "faithful": true,
+  "issue": ""
+ },
+ "linearized_truncation": {
+  "faithful": true,
+  "issue": ""
+ },
+ "volume_slice": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_G_subset": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "slice_integral_bound_sum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "S_truncation": {
+  "faithful": true,
+  "issue": ""
+ }
+}

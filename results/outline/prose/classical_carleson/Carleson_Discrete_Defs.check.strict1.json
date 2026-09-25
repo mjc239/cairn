@@ -1,0 +1,38 @@
+{
+ "aux𝓒": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires."
+ },
+ "dens'": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires."
+ },
+ "ℭ": {
+  "faithful": false,
+  "issue": "The description of the set as the tiles of P(k) selected by density and indexed by n goes beyond the signature and is not attributed to the docstring."
+ },
+ "𝔐": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires."
+ },
+ "𝔅": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is a subset of M(k,n) is also not attributed to the docstring."
+ },
+ "ℭ₁": {
+  "faithful": false,
+  "issue": "The claim that C1(k,n,j) is a subset of C(k,n) goes beyond the signature and is not attributed to the docstring."
+ },
+ "ℭ₂": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is a subset of C1(k,n,j) is also not attributed to the docstring."
+ },
+ "𝔘₁": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is a subset of C1(k,n,j) is also not attributed to the docstring."
+ },
+ "ℭ₅": {
+  "faithful": false,
+  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is a subset of C4(k,n,j) is also not attributed to the docstring."
+ }
+}

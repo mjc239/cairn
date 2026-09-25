@@ -1,0 +1,50 @@
+{
+ "Antichain.𝔄_aux": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the claims that it is a subset of A as in Definition 6.3.15 are not attributed to the docstring."
+ },
+ "Antichain.tile_count": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.global_antichain_density": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝔄'": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the set from Lemma 6.3.4 is not attributed to the docstring."
+ },
+ "Antichain.𝓛": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the collection L from Lemma 6.3.4 is not attributed to the docstring."
+ },
+ "Antichain.𝓛'": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the collection L* from Lemma 6.3.4 is not attributed to the docstring."
+ },
+ "Antichain.exists_larger_grid": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.L'": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the cube L' from the proof of Lemma 6.3.4 is not attributed to the docstring."
+ },
+ "Antichain.p''": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the blueprint's tile p'' is not attributed to the docstring."
+ },
+ "Antichain.pΘ": {
+  "faithful": false,
+  "issue": "Does not name the ProofData/TileStructure setting on the metric space X, and the gloss that it is the blueprint's tile p_Theta is not attributed to the docstring."
+ },
+ "Antichain.stack_density": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.tile_reach": {
+  "faithful": true,
+  "issue": ""
+ }
+}

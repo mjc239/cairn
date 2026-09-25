@@ -1,0 +1,6 @@
+{
+ "rudin_ineq": {
+  "faithful": false,
+  "issue": "p is a natural number in the Lean, but the English leaves p untyped, reading as a real p ≥ 2 and so claiming more."
+ }
+}

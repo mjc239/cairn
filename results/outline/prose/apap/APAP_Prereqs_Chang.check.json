@@ -1,0 +1,22 @@
+{
+ "changConst": {
+  "faithful": false,
+  "issue": "The claim that the constant appears in the bounds of Chang's lemma goes beyond the signature and is not attributed to the docstring."
+ },
+ "AddDissociated.boringEnergy_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "general_hoelder": {
+  "faithful": true,
+  "issue": ""
+ },
+ "spec_hoelder": {
+  "faithful": true,
+  "issue": ""
+ },
+ "chang": {
+  "faithful": true,
+  "issue": ""
+ }
+}

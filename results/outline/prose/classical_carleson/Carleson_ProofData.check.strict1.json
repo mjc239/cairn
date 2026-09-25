@@ -1,0 +1,14 @@
+{
+ "ProofData": {
+  "faithful": false,
+  "issue": "The definition omits that X is a pseudometric space, which the signature requires."
+ },
+ "ProofData.toKernelProofData": {
+  "faithful": false,
+  "issue": "The definition omits that X is a pseudometric space, which the signature requires."
+ },
+ "defaultS": {
+  "faithful": false,
+  "issue": "The definition omits the setting: a pseudometric space X carrying the ProofData bundle."
+ }
+}

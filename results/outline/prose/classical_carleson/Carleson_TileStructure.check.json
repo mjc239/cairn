@@ -1,0 +1,70 @@
+{
+ "PreTileStructure.toGridStructure": {
+  "faithful": false,
+  "issue": "The definition omits the setting: 𝕜 an RCLike field and X a pseudometric space with a doubling measure and FunctionDistances 𝕜 X."
+ },
+ "𝔓": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with a doubling measure, FunctionDistances (over RCLike 𝕜), and the PreTileStructure/TileStructure bundle."
+ },
+ "𝓘": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with a doubling measure, FunctionDistances (over RCLike 𝕜), and the PreTileStructure/TileStructure bundle."
+ },
+ "𝔠": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with a doubling measure, FunctionDistances (over RCLike 𝕜), and the PreTileStructure/TileStructure bundle."
+ },
+ "𝔰": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with a doubling measure, FunctionDistances (over RCLike 𝕜), and the PreTileStructure/TileStructure bundle."
+ },
+ "TileStructure": {
+  "faithful": false,
+  "issue": "The definition omits the setting: X a pseudometric space with a doubling measure and FunctionDistances ℝ X."
+ },
+ "TileStructure.toPreTileStructure": {
+  "faithful": false,
+  "issue": "The definition omits the setting: X a pseudometric space with a doubling measure and FunctionDistances ℝ X."
+ },
+ "TileLike": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "toTileLike": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "stackSize": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "smul": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "E₂": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "dens₁": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "exists_maximal_disjoint_covering_subfamily": {
+  "faithful": true,
+  "issue": ""
+ },
+ "iteratedMaximalSubfamily": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "dens₂": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ },
+ "E": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a pseudometric space X with the ProofData bundle and the TileStructure."
+ }
+}

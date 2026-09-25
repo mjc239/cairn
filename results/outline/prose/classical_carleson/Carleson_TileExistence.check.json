@@ -1,0 +1,18 @@
+{
+ "grid_existence": {
+  "faithful": false,
+  "issue": "The English omits the pseudometric-space and ProofData standing assumptions on X, and its gloss ('the proof that such a grid structure exists') is not attributed to the docstring."
+ },
+ "tileData_existence": {
+  "faithful": false,
+  "issue": "The English omits the pseudometric-space, ProofData and GridStructure assumptions that the signature requires."
+ },
+ "Construction.Ω": {
+  "faithful": false,
+  "issue": "The English omits the pseudometric-space, ProofData and GridStructure assumptions, and its gloss ('used in the construction of the tile structure') is not attributed to the docstring."
+ },
+ "tile_existence": {
+  "faithful": false,
+  "issue": "The English omits the pseudometric-space, ProofData and GridStructure assumptions that the signature requires."
+ }
+}

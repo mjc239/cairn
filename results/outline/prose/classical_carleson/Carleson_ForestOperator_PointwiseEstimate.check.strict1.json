@@ -1,0 +1,46 @@
+{
+ "TileStructure.Forest.c𝓑": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.𝓑": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.𝓙₀": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.𝓙": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.boundaryOperator": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.r𝓑": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+ },
+ "TileStructure.Forest.approxOnCube": {
+  "faithful": false,
+  "issue": "The definition does not name the setting its signature assumes: a metric space X with ProofData and TileStructure, and E' a normed real vector space."
+ },
+ "TileStructure.Forest.pointwise_tree_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.first_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.second_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.third_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ }
+}

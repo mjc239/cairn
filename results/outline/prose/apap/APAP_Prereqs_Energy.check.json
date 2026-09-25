@@ -1,0 +1,18 @@
+{
+ "energy": {
+  "faithful": false,
+  "issue": "The definition does not state that G is an abelian group."
+ },
+ "boringEnergy": {
+  "faithful": false,
+  "issue": "The definition does not state that G is an abelian group."
+ },
+ "cLpNorm_dft_indicator_one_pow": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cL2Norm_dft_indicator_one": {
+  "faithful": true,
+  "issue": ""
+ }
+}
