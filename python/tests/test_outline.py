@@ -137,3 +137,21 @@ def test_exclusions_do_not_shrink_the_budget():
     scores = {"M.Tactic.cfg": 1.0, "X.instDecidableEqX": 0.9, "T0": 0.8, "T1": 0.7, "T2": 0.6, "T3": 0.5}
     # 6 declarations at detail 0.5 -> 3 results; the two excluded ones never take a place, nor shrink the budget
     assert select(decls, fg, scores, detail=0.5, define_used=False) == {"T0", "T1", "T2"}
+
+
+def test_glossary_follows_project_notions():
+    from cairn.prose import _glossary_lines, glossary
+
+    decls = {
+        "Data": FormalDecl("Data", "inductive", "M", 1, fields=["c"], doc="Standing data."),
+        "Data.c": FormalDecl("Data.c", "def", "M", 2, type_deps={"Data", "C"}, type_pp="[Data] → C"),
+        "C": FormalDecl("C", "def", "M", 3, type_pp="Type", value_pp="ℕ"),
+        "dist": FormalDecl("dist", "def", "M", 4, type_deps={"Data"}, type_pp="[Data] → ℝ", value_pp="0"),
+        "lemma1": FormalDecl("lemma1", "theorem", "M", 5),
+        "T": FormalDecl("T", "theorem", "M", 6, type_deps={"dist", "lemma1", "Nat"}, type_pp="dist = 0"),
+    }
+    # direct references, then (depth 2) what they refer to; theorems and non-project names are left out
+    assert glossary(["T"], decls) == ["dist", "Data"]
+    assert glossary(["T"], decls, depth=3) == ["dist", "Data", "Data.c"]
+    text = "\n".join(_glossary_lines(["T"], decls, ()))
+    assert "Definition: `0`" in text and "Docstring: Standing data." in text and "Fields: `c`" in text

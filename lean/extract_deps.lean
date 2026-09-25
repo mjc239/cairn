@@ -175,6 +175,10 @@ def main (args : List String) : IO UInt32 := do
     let doc ← if userFacing then findSimpleDocString? env name else pure none
     let typePP ← if userFacing then ppType env info.type else pure ""
     let stmtShort ← if userFacing then ppShort env info.type else pure ""
+    -- A definition's body, so that prose describing what a defined notion *is* can be checked against it.
+    let valuePP ← match info with
+      | .defnInfo d => if userFacing then ppType env d.value else pure ""
+      | _ => pure ""
     let reach := if listed.contains name then blueprintReach env modNames inProject listed name else #[]
     let line := Json.mkObj [
       ("name", Json.str name.toString),
@@ -194,6 +198,7 @@ def main (args : List String) : IO UInt32 := do
         | none => Json.null),
       ("type_pp", Json.str typePP),
       ("stmt_short", Json.str stmtShort),
+      ("value_pp", Json.str valuePP),
       ("value_size", Json.num valueSize),
       ("type_deps", namesJson info.type.getUsedConstants),
       ("value_deps", namesJson valueDeps),

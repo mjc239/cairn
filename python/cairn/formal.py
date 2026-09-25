@@ -96,6 +96,8 @@ class FormalDecl:
     """Pretty-printed statement (Lean syntax), when the dump has it."""
     stmt_short: str = ""
     """Short statement: explicit hypotheses and conclusion only."""
+    value_pp: str = ""
+    """For a definition: its pretty-printed body, when the dump has it."""
     external: bool = False
     """Declared outside the project (e.g. upstreamed to Mathlib) but named by the blueprint."""
     fields: list[str] = field(default_factory=list)
@@ -137,6 +139,7 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
             d.doc = r.get("doc")
             d.type_pp = r.get("type_pp", "")
             d.stmt_short = restore_fintype(r.get("stmt_short", ""), d.type_pp)
+            d.value_pp = r.get("value_pp", "")
             d.external = bool(r.get("external"))
         d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])

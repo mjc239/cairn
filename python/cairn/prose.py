@@ -31,7 +31,8 @@ Below are the results of one chapter, in the order the outline presents them. Fo
 short form of its statement, the full Lean statement (every implicit argument and every instance assumption, e.g.
 `[AddCommGroup G]` for "G is an abelian group", `[Field K]`, `[MetricSpace X]`), its docstring if there is one, and,
 for theorems, the named results its proof uses (with their full statements) and the helper lemmas folded into the
-proof.
+proof. A "Project definitions" section first lists the project notions these statements refer to, with their
+statements, docstrings, definition bodies and fields.
 
 Write:
 1. `title`: a short chapter title (at most 8 words), as a mathematician would name this material.
@@ -42,9 +43,11 @@ Write:
    was proved. Only instances that carry no mathematical content at all (decidability: `Decidable…`) may be left
    unstated. Never replace an assumption by a stronger one (a metric space where the Lean has a pseudometric
    space). State restrictive types (a natural number, a nonnegative real). Cite theorem or lemma numbers, or add
-   remarks, only when the docstring or the Lean supports them. If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, name
-   the setting its signature assumes and say what is being defined, attributing anything beyond the signature to
-   the docstring.
+   remarks, only when the docstring or the Lean supports them. Give every variable its type and introduce every
+   symbol, by definition or by name; never use one letter for two things. Describe a project notion only as its
+   entry under "Project definitions" supports (statement, docstring, definition body, fields), and a library
+   notion only by its standard meaning; if unsure, name it rather than guess. For a definition, name the setting
+   its signature assumes and say what is being defined.
 3. For every theorem, `sketch`: one or two sentences on how the proof goes, based only on the listed results it
    uses and their statements. Do not invent steps; if the structure is not clear, just say which results it
    combines.
@@ -55,8 +58,10 @@ Reply with only a JSON object:
 
 CHECK_INSTRUCTIONS = """You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
-English with the full statement; anything the English attributes to the docstring must actually be in it.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. A "Project
+definitions" section first lists the project notions the statements refer to (statement, docstring, body,
+fields). Compare the English with the full statement; anything the English attributes to the docstring must
+actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -69,11 +74,13 @@ naturally. Definitions are held to the same standard: the English must name the 
 ("for an abelian group $G$ and …, $\\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
 space where the Lean has a pseudometric space) is unfaithful too, and so is leaving a restrictive type unstated
 (a natural number, a nonnegative real). Citations (theorem or lemma numbers) and remarks are claims too: each must
-be supported by the docstring or the Lean. So is a formula or description of what a defined object is: when the
-prompt shows neither its definition nor a docstring saying it, the English must not supply one. Every variable
-needs its type ("$f : G \\to \\mathbb{C}$", "$m$ a natural number"), every symbol must be introduced (notation such
-as $M_{\\mathcal B}$ included), and no letter may mean two things. When in doubt, flag it: a false alarm costs one
-repair, a missed error stays in the outline. Stylistic choices are fine.
+be supported by the docstring or the Lean. So is a formula or description of what a defined object is: a project
+notion's description must agree with its entry under "Project definitions" (statement, docstring, definition body,
+fields), and a library notion may only be given its standard mathematical meaning; otherwise flag it. Every variable
+needs its type ("$f : G \\to \\mathbb{C}$", "$m$ a natural number"), every symbol must be introduced, by definition
+or by name ("the Ruzsa distance $d[X;Y]$", "the maximal operator $M_{\\mathcal B}$"), and no letter may mean two
+things. When in doubt, flag it: a false alarm costs one repair, a missed error stays in the outline.
+Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given."""
@@ -88,7 +95,8 @@ replace an assumption by a stronger one, and state restrictive types (a natural 
 definition, name the setting its signature assumes. Keep citations and remarks only if the docstring or the Lean
 supports them. Do not add
 claims the Lean does not make; attribute anything beyond a definition's signature to its docstring, and when no
-docstring or Lean supports a description of an object, name it instead of describing it. Give every variable its
+docstring, definition body (under "Project definitions") or Lean supports a description of an object, name it
+instead of describing it. Give every variable its
 type, introduce every symbol, and never use one letter for two things.
 
 Reply with only a JSON object: {"<lean name>": {"statement": "..."}}
@@ -133,6 +141,48 @@ def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
     return [f"Lean (short): `{short}`", f"Lean (full): `{full}`"] if full != short else [f"Lean: `{full}`"]
 
 
+def glossary(names, decls: dict[str, FormalDecl], depth: int = 2) -> list[str]:
+    """Project notions (definitions, structures, classes, instances) that the statements of ``names`` refer to,
+    followed ``depth`` levels through their own statements and a structure's fields, in first-seen order.
+    Without them a reader cannot check what a project notion such as ``ProofData`` or ``rdist`` *is*."""
+    from .outline import is_boilerplate_instance
+    fields = {f"{s}.{f}" for s, d in decls.items() for f in d.fields}
+    seen: dict[str, None] = {}
+    frontier = list(names)
+    for _ in range(depth):
+        nxt = []
+        for v in frontier:
+            d = decls[v]
+            refs = sorted(d.type_deps) + [f"{v}.{f}" for f in d.fields]
+            for u in refs:
+                if u in decls and u not in seen and u not in names and decls[u].kind != "theorem" \
+                        and not is_boilerplate_instance(decls[u]) and (u in fields or not decls[u].private):
+                    seen[u] = None
+                    nxt.append(u)
+        frontier = nxt
+    return list(seen)
+
+
+def _glossary_lines(names, decls: dict[str, FormalDecl], nss: tuple[str, ...]) -> list[str]:
+    terms = glossary(names, decls)
+    if not terms:
+        return []
+    lines = ["## Project definitions these statements use",
+             "(What each project notion is. Any description of one in the English must agree with this.)", ""]
+    for u in terms:
+        d = decls[u]
+        lines.append(f"#### `{u}` ({'structure or class' if d.fields else d.kind})")
+        lines.append(f"Lean: `{_oneline(full_statement_of(d, nss))}`")
+        if d.doc:
+            lines.append(f"Docstring: {_oneline(d.doc)}")
+        if d.value_pp:
+            lines.append(f"Definition: `{_oneline(strip_namespaces(d.value_pp, nss))}`")
+        if d.fields:
+            lines.append("Fields: " + ", ".join(f"`{f}`" for f in d.fields))
+        lines.append("")
+    return lines
+
+
 def _chapters(o) -> dict[str, list[str]]:
     """Chapter -> named results in the order their statements appear."""
     out: dict[str, list[str]] = {ch: [] for ch in o.chapter_order}
@@ -161,7 +211,7 @@ def write_prose_prompts(o, decls: dict[str, FormalDecl], out_dir: Path) -> list[
         if not results:
             continue
         lines = [PROSE_INSTRUCTIONS, "", f"Namespaces open (prefixes omitted): {', '.join(nss)}.", "",
-                 f"## Chapter (Lean module `{ch}`)", ""]
+                 *_glossary_lines(results, decls, nss), f"## Chapter (Lean module `{ch}`)", ""]
         for v in results:
             d = decls[v]
             kind = "definition" if d.kind != "theorem" else "theorem"
@@ -192,7 +242,7 @@ def write_check_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> lis
         entry = prose.get(ch)
         if not entry:
             continue
-        lines = [CHECK_INSTRUCTIONS, ""]
+        lines = [CHECK_INSTRUCTIONS, "", *_glossary_lines(results, decls, nss), "## Translations", ""]
         for v in results:
             eng = entry["results"].get(v, {}).get("statement")
             if not eng:
@@ -214,7 +264,8 @@ def write_repair_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> li
         flagged = [v for v in results if entry and entry["results"].get(v, {}).get("faithful") is False]
         if not flagged:
             continue
-        lines = [REPAIR_INSTRUCTIONS, "", f"Namespaces open (prefixes omitted): {', '.join(nss)}.", ""]
+        lines = [REPAIR_INSTRUCTIONS, "", f"Namespaces open (prefixes omitted): {', '.join(nss)}.", "",
+                 *_glossary_lines(flagged, decls, nss), "## Flagged translations", ""]
         for v in flagged:
             r, d = entry["results"][v], decls[v]
             lines += [f"### `{v}`", *_lean_lines(d, nss)]
