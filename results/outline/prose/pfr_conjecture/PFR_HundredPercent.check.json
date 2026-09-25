@@ -1,0 +1,22 @@
+{
+ "symmGroup": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sub_mem_symmGroup": {
+  "faithful": false,
+  "issue": "Symbols not introduced: d[X;X] is never named as the Ruzsa distance, and Sym[X] is used without saying it is the symmetry group symmGroup X = {h ∈ G : X+h has the same distribution as X}."
+ },
+ "isUniform_sub_const_of_rdist_eq_zero": {
+  "faithful": false,
+  "issue": "Symbols not introduced: d[X;X] is never named as the Ruzsa distance, and Sym[X] is used without saying it is the symmetry group symmGroup X = {h ∈ G : X+h has the same distribution as X}."
+ },
+ "exists_isUniform_of_rdist_self_eq_zero": {
+  "faithful": true,
+  "issue": ""
+ },
+ "exists_isUniform_of_rdist_eq_zero": {
+  "faithful": true,
+  "issue": ""
+ }
+}
