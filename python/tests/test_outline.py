@@ -155,3 +155,5 @@ def test_glossary_follows_project_notions():
     assert glossary(["T"], decls, depth=3) == ["dist", "Data", "Data.c"]
     text = "\n".join(_glossary_lines(["T"], decls, ()))
     assert "Definition: `0`" in text and "Docstring: Standing data." in text and "Fields: `c`" in text
+    decls["Data"].ctor_pp = "(c : C) → Data"
+    assert "Constructor (every field with its type): `(c : C) → Data`" in "\n".join(_glossary_lines(["T"], decls, ()))

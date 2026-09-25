@@ -102,6 +102,8 @@ class FormalDecl:
     """Declared outside the project (e.g. upstreamed to Mathlib) but named by the blueprint."""
     fields: list[str] = field(default_factory=list)
     """For a structure (single-constructor inductive): the named explicit fields of its constructor."""
+    ctor_pp: str = ""
+    """For a structure: its constructor's pretty-printed type, i.e. every field with its type."""
 
 
 def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl]:
@@ -149,6 +151,7 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
     for target, rs in ctors.items():
         if target in decls and len(rs) == 1:  # a structure: its constructor's explicit binders are the fields
             decls[target].fields = list(dict.fromkeys(_BINDER.findall(rs[0].get("type_pp", ""))))
+            decls[target].ctor_pp = rs[0].get("type_pp", "")
     for d in decls.values():
         d.type_deps.discard(d.name)
         d.value_deps.discard(d.name)

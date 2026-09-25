@@ -139,11 +139,13 @@ def _oneline(text: str) -> str:
 
 def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
     """Short and full statement, never truncated: the prose must be checked against everything Lean assumes.
-    A definition also shows its body, so a description of what it defines can be checked."""
+    A definition also shows its body, and a structure its constructor, so a description can be checked."""
     short, full = _oneline(statement_of(d, nss)), _oneline(full_statement_of(d, nss))
     lines = [f"Lean (short): `{short}`", f"Lean (full): `{full}`"] if full != short else [f"Lean: `{full}`"]
     if d.value_pp:
         lines.append(f"Definition: `{_oneline(strip_namespaces(d.value_pp, nss))}`")
+    if d.ctor_pp:
+        lines.append(f"Constructor (every field with its type): `{_oneline(strip_namespaces(d.ctor_pp, nss))}`")
     return lines
 
 
@@ -186,7 +188,9 @@ def _glossary_lines(names, decls: dict[str, FormalDecl], nss: tuple[str, ...]) -
             lines.append(f"Docstring: {_oneline(d.doc)}")
         if d.value_pp:
             lines.append(f"Definition: `{_oneline(strip_namespaces(d.value_pp, nss))}`")
-        if d.fields:
+        if d.ctor_pp:
+            lines.append(f"Constructor (every field with its type): `{_oneline(strip_namespaces(d.ctor_pp, nss))}`")
+        elif d.fields:
             lines.append("Fields: " + ", ".join(f"`{f}`" for f in d.fields))
         lines.append("")
     return lines

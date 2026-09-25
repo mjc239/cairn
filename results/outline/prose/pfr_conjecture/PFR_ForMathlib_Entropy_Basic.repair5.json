@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.mutualInfo": {
+  "statement": "Let $\\Omega$, $S$ and $T$ be measurable spaces. Definition: for functions $X:\\Omega\\to S$ and $Y:\\Omega\\to T$ and a measure $\\mu$ on $\\Omega$ (an auto-filled argument; when omitted it is supplied automatically, by default the ambient measure `volume` on $\\Omega$), the mutual information $I[X:Y;\\mu]$ is the real number\n$$I[X:Y;\\mu] = H[X;\\mu] + H[Y;\\mu] - H[\\langle X,Y\\rangle;\\mu],$$\nwhere $\\langle X,Y\\rangle:\\Omega\\to S\\times T$ is the pair $\\omega\\mapsto(X(\\omega),Y(\\omega))$, and for a function $Z:\\Omega\\to V$ into a measurable space $V$, $H[Z;\\mu]$ is the project's `entropy`, defined as the measure entropy of the pushforward measure $\\nu=Z_*\\mu$ on $V$, namely $\\sum_{v\\in V} \\phi\\big(((\\nu(V))^{-1}\\nu)(\\{v\\})\\big)$ (an unconditional sum, with measure values taken as real numbers), where $\\phi(x)=-x\\log x$."
+ }
+}
