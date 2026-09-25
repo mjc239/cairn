@@ -1,0 +1,8 @@
+{
+ "exists_isUniform_of_rdist_self_eq_zero": {
+  "statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure in which singletons are measurable and addition $G\\times G\\to G$ is measurable. Let $\\Omega$ be a measure space whose measure $\\mu$ is a probability measure, and let $X:\\Omega\\to G$ be a measurable function whose Ruzsa distance to itself is $d[X;X]=0$. Then there exist an additive subgroup $H\\le G$ and a measurable function $U:\\Omega\\to G$ that is uniformly distributed on $H$ with respect to $\\mu$, such that $d[X;U]=0$."
+ },
+ "exists_isUniform_of_rdist_eq_zero": {
+  "statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure in which singletons are measurable and addition $G\\times G\\to G$ is measurable. Let $\\Omega$ and $\\Omega'$ be measure spaces whose measures $\\mu$ and $\\mu'$ are probability measures, and let $X:\\Omega\\to G$ and $X':\\Omega'\\to G$ be measurable functions with Ruzsa distance $d[X;X']=0$. Then there exist an additive subgroup $H\\le G$ and a measurable function $U:\\Omega\\to G$ that is uniformly distributed on $H$ with respect to $\\mu$, such that $d[X;U]=0$ and $d[X';U]=0$."
+ }
+}

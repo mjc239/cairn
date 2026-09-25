@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo": {
+  "statement": "Definition. Let $S$, $T$ and $U$ be measurable spaces. For a kernel $\\kappa$ from $T$ to the product space $S\\times U$ and a measure $\\mu$ on $T$, $I_k[\\kappa,\\mu]\\in\\mathbb R$ is the mutual information of the kernel $\\kappa$ with respect to $\\mu$ (as its docstring describes it)."
+ }
+}

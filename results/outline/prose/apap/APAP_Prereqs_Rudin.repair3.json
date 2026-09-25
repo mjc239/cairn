@@ -1,0 +1,3 @@
+{
+  "rudin_ineq": {"statement": "(Rudin's inequality, usual form, per the docstring.) Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $p$ be a natural number with $p \\ge 2$, and let $f : G \\to \\mathbb{C}$ be such that the support of $\\mathrm{cft}(f)$ (APAP's compact Fourier transform `cft` of $f$, a function on the additive characters $G \\to \\mathbb{C}$) is an additively dissociated set of additive characters. Then $\\|f\\|_{p} \\le 4\\, e^{1/2} \\sqrt{p}\\, \\|f\\|_{2}$, where $\\|\\cdot\\|_{p}$ and $\\|\\cdot\\|_{2}$ are the compact $L^p$ and $L^2$ norms (written `‖·‖ₙ_[p]`, `‖·‖ₙ_[2]`) on functions $G \\to \\mathbb{C}$."}
+}

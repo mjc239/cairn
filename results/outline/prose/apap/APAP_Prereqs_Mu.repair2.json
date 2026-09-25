@@ -1,0 +1,3 @@
+{
+  "mu": {"statement": "Definition. Let $K$ be a division semiring and $\\alpha$ a type. For a finite set $s \\subseteq \\alpha$, $\\mu_s : \\alpha \\to K$ is, per the docstring, \"the normalised indicator of a set\" $s$."}
+}

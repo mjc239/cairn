@@ -363,6 +363,9 @@ matter for the prose, or even help it? It could, in each case:
   real power. `IsProbabilityMeasure volume` did not say which space. PFR's own
   numeral delaborator (`Mathlib.Tactic.RPowRing.delab_ofNat`) printed some
   numerals as raw `nat_lit`.
+- **Binder types were hidden.** `∃ H c, …` in `PFR_conjecture` did not say that
+  H is a subgroup and c a set. The same gap affected 30 of the 371 outlined
+  results.
 - **Prompts truncated.** Uses lists stopped at 10 entries, helper lists and
   docstrings were clipped, and check prompts had no docstrings, so checkers
   could not verify glosses attributed to them.
@@ -374,8 +377,8 @@ translator or checker, so they now see everything:
   result as `Lean (short)` and `Lean (full)` (only one line when they agree).
   The *proof uses* list gives full statements, all of them. Helpers and
   docstrings are complete, and check prompts include docstrings.
-- **Unambiguous printing.** `type_pp` is printed with `pp.numericTypes` and
-  `pp.analyze` (falling back to plain printing if analysis fails).
+- **Unambiguous printing.** `type_pp` is printed with `pp.numericTypes`,
+  `pp.funBinderTypes` (so `∃ U : Ω → G`, not `∃ U`) and `pp.analyze` (falling back to plain printing if analysis fails).
   Project-local `OfNat` delaborators are erased before printing
   (`eraseProjectNumeralDelabs`). The three dumps were re-extracted at their
   pinned commits (`scripts/reextract.sh`). Of the whole PFR dump, only 4

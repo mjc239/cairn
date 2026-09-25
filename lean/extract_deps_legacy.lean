@@ -74,10 +74,12 @@ def namesJson (ns : Array Name) : Json :=
 
 /-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. Numerals carry
 their type (`(1 / 2 : ℝ)`, not `1 / 2`, which could be the natural number 0): this is the full statement the prose
-is checked against, so it hides nothing. -/
+is checked against, so it hides nothing. Binders of `∃`, `fun`, `∑` and the like show their types
+(`∃ U : Ω → G, …`, not `∃ U, …`) for the same reason. -/
 def ppType (env : Environment) (e : Expr) : IO String := do
   let base : Options :=
-    ((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true
+    (((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true)
+      |>.setBool `pp.funBinderTypes true
   let run (opts : Options) : IO String := do
     let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
     let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }
