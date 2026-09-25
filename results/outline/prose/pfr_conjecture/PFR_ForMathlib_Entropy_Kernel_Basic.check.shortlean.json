@@ -1,0 +1,22 @@
+{
+ "ProbabilityTheory.Kernel.entropy": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.entropy_prodMkLeft_unit": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.entropy_compProd": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.chain_rule": {
+  "faithful": true,
+  "issue": ""
+ }
+}

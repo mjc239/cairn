@@ -1,22 +1,30 @@
 You are checking translations of verified Lean statements into mathematical English.
-For each result below, compare the English statement with the Lean statement. The Lean statement shows explicit
-hypotheses and meaningful instance assumptions (e.g. `[Finite G]`); implicit arguments and purely structural
-instances (e.g. `[AddCommGroup G]`) are omitted, and the English may leave them implicit too.
+For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
+and instance assumption) and the English. Compare the English with the full statement.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
-quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
+quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
+arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Field K]`, `[MetricSpace X]`,
+`[IsProbabilityMeasure μ]`, a bundle of standing assumptions such as `[ProofData …]`, and so on. The English must
+state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
+says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
+mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
+naturally. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `TileStructure.Forest.density_tree_bound2`
-Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (h2f : Function.support f ⊆ F) (hg : BoundedCompactSupport g volume) (h2g : Function.support g ⊆ G) (hu : u ∈ t) : ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_2 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * dens₂ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
+Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (h2f : Function.support f ⊆ F) (hg : BoundedCompactSupport g volume) (h2g : Function.support g ⊆ G) (hu : u ∈ t) : ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_2 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * dens₂ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst : MetricSpace X] [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {n : ℕ} {t : Forest X n} {u : 𝔓 X} {f g : X → ℂ}, BoundedCompactSupport f volume → Function.support f ⊆ F → BoundedCompactSupport g volume → Function.support g ⊆ G → u ∈ t → ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_2 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * dens₂ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
 English: (Lemma 7.3.1, second part) Let $f,g$ be bounded with compact support, with $\operatorname{supp} f\subseteq F$ and $\operatorname{supp} g\subseteq G$, and let $u\in t$. Then $$\Big\|\int_X\overline{g(x)}\,T_{\mathfrak T(u)}f(x)\,dx\Big\|\le C_{7.3.1.2}(a)\,\mathrm{dens}_1(\mathfrak T(u))^{1/2}\,\mathrm{dens}_2(\mathfrak T(u))^{1/2}\,\|f\|_{L^2}\,\|g\|_{L^2}.$$
 
 ### `TileStructure.Forest.density_tree_bound1`
-Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (hg : BoundedCompactSupport g volume) (h2g : Function.support g ⊆ G) (hu : u ∈ t) : ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_1 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
+Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hf : BoundedCompactSupport f volume) (hg : BoundedCompactSupport g volume) (h2g : Function.support g ⊆ G) (hu : u ∈ t) : ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_1 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst : MetricSpace X] [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {n : ℕ} {t : Forest X n} {u : 𝔓 X} {f g : X → ℂ}, BoundedCompactSupport f volume → BoundedCompactSupport g volume → Function.support g ⊆ G → u ∈ t → ‖∫ (x : X), (starRingEnd ℂ) (g x) * carlesonSum ((fun x => t.𝔗 x) u) f x‖ₑ ≤ ↑(Forest.C7_3_1_1 a) * dens₁ ((fun x => t.𝔗 x) u) ^ 2⁻¹ * eLpNorm f 2 volume * eLpNorm g 2 volume`
 English: (Lemma 7.3.1, first part) Let $f,g$ be bounded with compact support, with $\operatorname{supp} g\subseteq G$, and let $u\in t$. Then $$\Big\|\int_X\overline{g(x)}\,T_{\mathfrak T(u)}f(x)\,dx\Big\|\le C_{7.3.1.1}(a)\,\mathrm{dens}_1(\mathfrak T(u))^{1/2}\,\|f\|_{L^2}\,\|g\|_{L^2}.$$
 
 ### `TileStructure.Forest.local_dens1_tree_bound`
-Lean: `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hu : u ∈ t) (hL : L ∈ Forest.𝓛 ((fun x => t.𝔗 x) u)) : volume (↑L ∩ G ∩ ⋃ p ∈ (fun x => t.𝔗 x) u, E p) ≤ ↑(Forest.C7_3_2 a) * dens₁ ((fun x => t.𝔗 x) u) * volume ↑L`
+Lean (short): `[ProofData a q K σ₁ σ₂ F G] [TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] (hu : u ∈ t) (hL : L ∈ Forest.𝓛 ((fun x => t.𝔗 x) u)) : volume (↑L ∩ G ∩ ⋃ p ∈ (fun x => t.𝔗 x) u, E p) ≤ ↑(Forest.C7_3_2 a) * dens₁ ((fun x => t.𝔗 x) u) * volume ↑L`
+Lean (full): `∀ {X : Type u_1} {a : ℕ} {q : ℝ} {K : X → X → ℂ} {σ₁ σ₂ : X → ℤ} {F G : Set X} [inst : MetricSpace X] [inst_1 : ProofData a q K σ₁ σ₂ F G] [inst_2 : TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)] {n : ℕ} {t : Forest X n} {u : 𝔓 X} {L : Grid X}, u ∈ t → L ∈ Forest.𝓛 ((fun x => t.𝔗 x) u) → volume (↑L ∩ G ∩ ⋃ p ∈ (fun x => t.𝔗 x) u, E p) ≤ ↑(Forest.C7_3_2 a) * dens₁ ((fun x => t.𝔗 x) u) * volume ↑L`
 English: (Lemma 7.3.2) Let $u\in t$ and $L\in\mathcal L(\mathfrak T(u))$. Then $$\mu\Big(L\cap G\cap\bigcup_{\mathfrak p\in\mathfrak T(u)}E(\mathfrak p)\Big)\le C_{7.3.2}(a)\,\mathrm{dens}_1(\mathfrak T(u))\,\mu(L).$$

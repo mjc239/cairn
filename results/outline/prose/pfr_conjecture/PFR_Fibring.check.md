@@ -1,30 +1,40 @@
 You are checking translations of verified Lean statements into mathematical English.
-For each result below, compare the English statement with the Lean statement. The Lean statement shows explicit
-hypotheses and meaningful instance assumptions (e.g. `[Finite G]`); implicit arguments and purely structural
-instances (e.g. `[AddCommGroup G]`) are omitted, and the English may leave them implicit too.
+For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
+and instance assumption) and the English. Compare the English with the full statement.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
-quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
+quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
+arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Field K]`, `[MetricSpace X]`,
+`[IsProbabilityMeasure μ]`, a bundle of standing assumptions such as `[ProofData …]`, and so on. The English must
+state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
+says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
+mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
+naturally. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given.
 
 ### `rdist_of_indep_eq_sum_fibre`
-Lean: `[Countable H] [MeasurableSingletonClass H] [Countable H'] [MeasurableSingletonClass H'] (π : H →+ H') [IsProbabilityMeasure μ] (h : IndepFun Z_1 Z_2 μ) (h1 : Measurable Z_1) (h2 : Measurable Z_2) [FiniteRange Z_1] [FiniteRange Z_2] : d[Z_1; μ # Z_2; μ] = d[⇑π ∘ Z_1; μ # ⇑π ∘ Z_2; μ] + d[Z_1 | ⇑π ∘ Z_1 ; μ # Z_2 | ⇑π ∘ Z_2 ; μ] + I[Z_1 - Z_2 : ⟨⇑π ∘ Z_1, ⇑π ∘ Z_2⟩|⇑π ∘ (Z_1 - Z_2);μ]`
+Lean (short): `[Countable H] [MeasurableSingletonClass H] [Countable H'] [MeasurableSingletonClass H'] (π : H →+ H') [IsProbabilityMeasure μ] (h : IndepFun Z_1 Z_2 μ) (h1 : Measurable Z_1) (h2 : Measurable Z_2) [FiniteRange Z_1] [FiniteRange Z_2] : d[Z_1; μ # Z_2; μ] = d[⇑π ∘ Z_1; μ # ⇑π ∘ Z_2; μ] + d[Z_1 | ⇑π ∘ Z_1 ; μ # Z_2 | ⇑π ∘ Z_2 ; μ] + I[Z_1 - Z_2 : ⟨⇑π ∘ Z_1, ⇑π ∘ Z_2⟩|⇑π ∘ (Z_1 - Z_2);μ]`
+Lean (full): `∀ {H : Type u_1} [inst : AddCommGroup H] [inst_1 : Countable H] [hH : MeasurableSpace H] [inst_2 : MeasurableSingletonClass H] {H' : Type u_2} [inst_3 : AddCommGroup H'] [Countable H'] [hH' : MeasurableSpace H'] [MeasurableSingletonClass H'] (π : H →+ H') {Ω : Type u_3} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [inst_6 : IsProbabilityMeasure μ] {Z_1 Z_2 : Ω → H}, IndepFun Z_1 Z_2 μ → Measurable Z_1 → Measurable Z_2 → ∀ [FiniteRange Z_1] [FiniteRange Z_2], d[Z_1; μ # Z_2; μ] = d[⇑π ∘ Z_1; μ # ⇑π ∘ Z_2; μ] + d[Z_1 | ⇑π ∘ Z_1 ; μ # Z_2 | ⇑π ∘ Z_2 ; μ] + I[Z_1 - Z_2 : ⟨⇑π ∘ Z_1, ⇑π ∘ Z_2⟩|⇑π ∘ (Z_1 - Z_2);μ]`
 English: Let $H$ and $H'$ be countable additive groups with measurable singletons, let $\pi : H \to H'$ be a homomorphism of additive groups, let $\mu$ be a probability measure, and let $Z_1, Z_2$ be measurable $H$-valued random variables, both of finite range, that are independent with respect to $\mu$. Then $$d[Z_1;Z_2] = d[\pi(Z_1);\pi(Z_2)] + d[Z_1\mid\pi(Z_1);\, Z_2\mid\pi(Z_2)] + I\big[Z_1 - Z_2 : (\pi(Z_1),\pi(Z_2)) \,\big|\, \pi(Z_1 - Z_2)\big],$$ all quantities taken with respect to $\mu$.
 
 ### `sum_of_rdist_eq_step_condMutualInfo`
-Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : I[⟨Y 0 - Y 1, Y 2 - Y 3⟩ : ⟨Y 0 - Y 2, Y 1 - Y 3⟩|Y 0 - Y 1 - (Y 2 - Y 3);μ] = I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
+Lean (short): `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : I[⟨Y 0 - Y 1, Y 2 - Y 3⟩ : ⟨Y 0 - Y 2, Y 1 - Y 3⟩|Y 0 - Y 1 - (Y 2 - Y 3);μ] = I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [Finite G] [hG : MeasurableSpace G] [MeasurableSingletonClass G] {Ω : Type u_2} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [IsProbabilityMeasure μ] {Y : Fin 4 → Ω → G}, (∀ (i : Fin 4), Measurable (Y i)) → I[⟨Y 0 - Y 1, Y 2 - Y 3⟩ : ⟨Y 0 - Y 2, Y 1 - Y 3⟩|Y 0 - Y 1 - (Y 2 - Y 3);μ] = I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
 English: Let $G$ be a finite additive group with measurable singletons, let $\mu$ be a probability measure, and let $Y_0, Y_1, Y_2, Y_3$ be measurable $G$-valued random variables. Then, with respect to $\mu$, $$I\big[(Y_0 - Y_1,\ Y_2 - Y_3) : (Y_0 - Y_2,\ Y_1 - Y_3) \,\big|\, Y_0 - Y_1 - (Y_2 - Y_3)\big] = I\big[Y_0 - Y_1 : Y_1 - Y_3 \,\big|\, Y_0 - Y_1 - Y_2 + Y_3\big].$$
 
 ### `sum_of_rdist_eq_step_condRuzsaDist`
-Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[⟨Y 0, Y 2⟩ | Y 0 - Y 2 ; μ # ⟨Y 1, Y 3⟩ | Y 1 - Y 3 ; μ] = d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ]`
+Lean (short): `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[⟨Y 0, Y 2⟩ | Y 0 - Y 2 ; μ # ⟨Y 1, Y 3⟩ | Y 1 - Y 3 ; μ] = d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Finite G] [hG : MeasurableSpace G] [inst_2 : MeasurableSingletonClass G] {Ω : Type u_2} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [inst_3 : IsProbabilityMeasure μ] {Y : Fin 4 → Ω → G}, iIndepFun Y μ → (∀ (i : Fin 4), Measurable (Y i)) → d[⟨Y 0, Y 2⟩ | Y 0 - Y 2 ; μ # ⟨Y 1, Y 3⟩ | Y 1 - Y 3 ; μ] = d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ]`
 English: Let $G$ be a finite additive group with measurable singletons, let $\mu$ be a probability measure, and let $Y_0, Y_1, Y_2, Y_3$ be measurable $G$-valued random variables that are jointly independent with respect to $\mu$. Then, with respect to $\mu$, $$d\big[(Y_0,Y_2)\mid Y_0 - Y_2;\ (Y_1,Y_3)\mid Y_1 - Y_3\big] = d\big[Y_0 \mid Y_0 - Y_2;\ Y_1\mid Y_1 - Y_3\big].$$
 
 ### `sum_of_rdist_eq`
-Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (Y : Fin 4 → Ω → G) (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 - Y 2; μ # Y 1 - Y 3; μ] + d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ] + I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
+Lean (short): `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] (Y : Fin 4 → Ω → G) (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 - Y 2; μ # Y 1 - Y 3; μ] + d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ] + I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Finite G] [hG : MeasurableSpace G] [inst_2 : MeasurableSingletonClass G] {Ω : Type u_2} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [inst_3 : IsProbabilityMeasure μ] (Y : Fin 4 → Ω → G), iIndepFun Y μ → (∀ (i : Fin 4), Measurable (Y i)) → d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 - Y 2; μ # Y 1 - Y 3; μ] + d[Y 0 | Y 0 - Y 2 ; μ # Y 1 | Y 1 - Y 3 ; μ] + I[Y 0 - Y 1 : Y 1 - Y 3|Y 0 - Y 1 - Y 2 + Y 3;μ]`
 English: Let $G$ be a finite additive group with measurable singletons, let $\mu$ be a probability measure, and let $Y_0, Y_1, Y_2, Y_3$ be measurable $G$-valued random variables that are jointly independent with respect to $\mu$. Then, with respect to $\mu$, $$d[Y_0;Y_1] + d[Y_2;Y_3] = d[Y_0 - Y_2;\ Y_1 - Y_3] + d[Y_0\mid Y_0 - Y_2;\ Y_1 \mid Y_1 - Y_3] + I[Y_0 - Y_1 : Y_1 - Y_3 \mid Y_0 - Y_1 - Y_2 + Y_3].$$
 
 ### `sum_of_rdist_eq_char_2`
-Lean: `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [Module (ZMod 2) G] (Y : Fin 4 → Ω → G) (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 + Y 2; μ # Y 1 + Y 3; μ] + d[Y 0 | Y 0 + Y 2 ; μ # Y 1 | Y 1 + Y 3 ; μ] + I[Y 0 + Y 1 : Y 1 + Y 3|Y 0 + Y 1 + Y 2 + Y 3;μ]`
+Lean (short): `[Finite G] [MeasurableSingletonClass G] [IsProbabilityMeasure μ] [Module (ZMod 2) G] (Y : Fin 4 → Ω → G) (h_indep : iIndepFun Y μ) (h_meas : ∀ (i : Fin 4), Measurable (Y i)) : d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 + Y 2; μ # Y 1 + Y 3; μ] + d[Y 0 | Y 0 + Y 2 ; μ # Y 1 | Y 1 + Y 3 ; μ] + I[Y 0 + Y 1 : Y 1 + Y 3|Y 0 + Y 1 + Y 2 + Y 3;μ]`
+Lean (full): `∀ {G : Type u_1} [inst : AddCommGroup G] [inst_1 : Finite G] [hG : MeasurableSpace G] [inst_2 : MeasurableSingletonClass G] {Ω : Type u_2} [mΩ : MeasurableSpace Ω] {μ : Measure Ω} [inst_3 : IsProbabilityMeasure μ] [Module (ZMod 2) G] (Y : Fin 4 → Ω → G), iIndepFun Y μ → (∀ (i : Fin 4), Measurable (Y i)) → d[Y 0; μ # Y 1; μ] + d[Y 2; μ # Y 3; μ] = d[Y 0 + Y 2; μ # Y 1 + Y 3; μ] + d[Y 0 | Y 0 + Y 2 ; μ # Y 1 | Y 1 + Y 3 ; μ] + I[Y 0 + Y 1 : Y 1 + Y 3|Y 0 + Y 1 + Y 2 + Y 3;μ]`
 English: Let $G$ be a finite elementary abelian $2$-group (i.e. a vector space over $\mathbb{F}_2$) with measurable singletons, let $\mu$ be a probability measure, and let $Y_0, Y_1, Y_2, Y_3$ be measurable $G$-valued random variables that are jointly independent with respect to $\mu$. Then, with respect to $\mu$, $$d[Y_0;Y_1] + d[Y_2;Y_3] = d[Y_0 + Y_2;\ Y_1 + Y_3] + d[Y_0\mid Y_0 + Y_2;\ Y_1 \mid Y_1 + Y_3] + I[Y_0 + Y_1 : Y_1 + Y_3 \mid Y_0 + Y_1 + Y_2 + Y_3].$$

@@ -1,0 +1,7 @@
+{
+  "nontangential_from_simple": {"faithful": true, "issue": ""},
+  "cotlar_estimate": {"faithful": true, "issue": ""},
+  "cotlar_set_F₂": {"faithful": true, "issue": ""},
+  "simple_nontangential_operator": {"faithful": true, "issue": ""},
+  "simple_nontangential_operator_le": {"faithful": true, "issue": ""}
+}

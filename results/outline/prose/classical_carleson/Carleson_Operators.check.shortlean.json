@@ -1,0 +1,22 @@
+{
+ "carlesonOn": {
+  "faithful": true,
+  "issue": ""
+ },
+ "carlesonSum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "adjointCarleson": {
+  "faithful": true,
+  "issue": ""
+ },
+ "adjointCarlesonSum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "adjointCarlesonSum_adjoint": {
+  "faithful": true,
+  "issue": ""
+ }
+}
