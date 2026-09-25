@@ -125,10 +125,11 @@ def select(decls: dict[str, FormalDecl], fg: nx.DiGraph, scores: dict[str, float
         if missing:
             raise KeyError(f"unknown root declarations: {missing}")
         universe &= set(roots).union(*(nx.ancestors(fg, r) for r in roots))
+    # The budget comes from the whole universe, so exclusions never cost a real result its place.
+    k = count if count is not None else max(1, round(detail * len(universe)))
     # never results: instances with no mathematical content, and tactic (metaprogramming) code
     universe = {v for v in universe if not is_boilerplate_instance(decls[v]) and ".Tactic." not in f".{v}."}
     ranked = sorted(universe, key=lambda v: (-scores.get(v, 0.0), v))
-    k = count if count is not None else max(1, round(detail * len(universe)))
     named = set(ranked[:k]) | set(roots or [])
     if define_used:  # make every named statement readable: add the project definitions it mentions
         frontier = list(named)

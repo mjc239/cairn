@@ -121,3 +121,19 @@ def test_boilerplate_instances_are_never_named():
     assert not is_boilerplate_instance(inst("SimpleProcess.instModule", "[OrderBot ι] : Module ℝ (SimpleProcess E)"))
     assert not is_boilerplate_instance(inst("instIsZLatticeE8Lattice", "IsZLattice ℝ E8Lattice"))
     assert not is_boilerplate_instance(inst("decidableThing", "DecidablePred p"))  # not auto-named
+
+
+def test_exclusions_do_not_shrink_the_budget():
+    import networkx as nx
+
+    from cairn.formal import FormalDecl
+    from cairn.outline import select
+
+    decls = {f"T{i}": FormalDecl(f"T{i}", "theorem", "M", i) for i in range(4)}
+    decls["M.Tactic.cfg"] = FormalDecl("M.Tactic.cfg", "def", "M", 9)
+    decls["X.instDecidableEqX"] = FormalDecl("X.instDecidableEqX", "def", "M", 10, stmt_short="DecidableEq X")
+    fg = nx.DiGraph()
+    fg.add_nodes_from(decls)
+    scores = {"M.Tactic.cfg": 1.0, "X.instDecidableEqX": 0.9, "T0": 0.8, "T1": 0.7, "T2": 0.6, "T3": 0.5}
+    # 6 declarations at detail 0.5 -> 3 results; the two excluded ones never take a place, nor shrink the budget
+    assert select(decls, fg, scores, detail=0.5, define_used=False) == {"T0", "T1", "T2"}
