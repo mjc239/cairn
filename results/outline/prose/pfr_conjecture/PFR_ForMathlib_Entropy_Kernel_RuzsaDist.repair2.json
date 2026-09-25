@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.rdist": {
+  "statement": "Definition. Let $T$, $T'$ be measurable spaces and let $G$ be an abelian group equipped with a measurable space structure. For kernels $\\kappa$ from $T$ to $G$ and $\\eta$ from $T'$ to $G$ (with values in the same abelian group $G$) and measures $\\mu$ on $T$ and $\\nu$ on $T'$, the kernel Ruzsa distance $d_k[\\kappa;\\mu \\,\\#\\, \\eta;\\nu]$ is a real number. According to its docstring, it is the average of the Ruzsa distances between the image measures $\\kappa(t)$ and $\\eta(t')$, averaged over $(t,t')$ with respect to $\\mu\\times\\nu$."
+ }
+}

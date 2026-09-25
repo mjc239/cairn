@@ -1,0 +1,5 @@
+{
+ "exists_maximal_disjoint_covering_subfamily": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing assumptions of the proof: the data $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$, $F, G \\subseteq X$ satisfy `ProofData`, and $X$ carries a tile structure (`TileStructure` with $Q$, $D$ = `defaultD a`, $\\kappa$ = `defaultκ a`, $S$ = `defaultS X` and the point `cancelPt X`). Then for every set $A$ of tiles there is a set $B$ of tiles such that the cubes $\\mathcal{I}(p)$, $p \\in B$, are pairwise disjoint, $B \\subseteq A$, and for every $a \\in A$ there is $b \\in B$ with $\\mathcal{I}(a) \\subseteq \\mathcal{I}(b)$."
+ }
+}

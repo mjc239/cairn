@@ -40,9 +40,12 @@ def kindOf : ConstantInfo → String
 def namesJson (ns : Array Name) : Json :=
   Json.arr (ns.map (fun n => Json.str n.toString))
 
-/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. -/
+/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. Numerals carry
+their type (`(1 / 2 : ℝ)`, not `1 / 2`, which could be the natural number 0): this is the full statement the prose
+is checked against, so it hides nothing. -/
 def ppType (env : Environment) (e : Expr) : IO String := do
-  let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
+  let opts : Options :=
+    ((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true
   let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
   try
     let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }

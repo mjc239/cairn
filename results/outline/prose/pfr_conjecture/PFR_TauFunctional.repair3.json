@@ -1,0 +1,5 @@
+{
+ "distance_ge_of_min": {
+  "statement": "Let $G$ be an abelian group equipped with a measurable space structure, and let $p$ be a reference package on $G$ with reference random variables $X^0_1, X^0_2$ (defined on the measure spaces $\\Omega_{01}$ and $\\Omega_{02}$ respectively) and parameter $\\eta$. Let $\\Omega$, $\\Omega'_1$, $\\Omega'_2$ be measure spaces, where $\\Omega'_1$ and $\\Omega'_2$ are probability spaces. Let $X_1, X_2 : \\Omega \\to G$ be such that $(X_1,X_2)$ minimizes $\\tau$ for $p$, and let $X_1' : \\Omega'_1 \\to G$ and $X_2' : \\Omega'_2 \\to G$ be measurable. Then $$d[X_1;X_2]-\\eta\\left(d[X^0_1;X_1']-d[X^0_1;X_1]\\right)-\\eta\\left(d[X^0_2;X_2']-d[X^0_2;X_2]\\right)\\le d[X_1';X_2'].$$"
+ }
+}

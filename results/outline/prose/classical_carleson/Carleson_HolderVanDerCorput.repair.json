@@ -1,0 +1,5 @@
+{
+ "holder_van_der_corput": {
+  "statement": "(Proposition 2.0.5) Under the standing assumptions of the proof (the data $a\\in\\mathbb N$, $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ of `ProofData` on the metric space $X$, which is then a doubling metric measure space with measure $\\mu$ and a compatible family $\\Theta(X)$ of functions), let $z\\in X$, $R\\in\\mathbb R$, and let $\\varphi:X\\to\\mathbb C$ with $\\operatorname{supp}\\varphi\\subseteq B(z,R)$. Then for all $f,g\\in\\Theta(X)$, $$\\Big\\|\\int_X e^{i(f(x)-g(x))}\\varphi(x)\\,d\\mu(x)\\Big\\|\\le C_{2.0.5}(a)\\,\\mu(B(z,R))\\,\\|\\varphi\\|_{\\mathrm{iHol}(z,2R,\\tau)}\\,\\big(1+d_{z,R}(f,g)\\big)^{-1/(2a^2+a^3)},$$ where $\\tau=\\tau(a)$ is the default Hölder exponent, $\\|\\varphi\\|_{\\mathrm{iHol}(z,2R,\\tau)}$ is the (extended) inhomogeneous $\\tau$-Hölder norm $\\mathrm{iHolENorm}\\,\\varphi\\,z\\,(2R)\\,\\tau$ on the ball $B(z,2R)$, and $d_{z,R}$ is the (extended) distance between $f$ and $g$ on $B(z,R)$."
+ }
+}

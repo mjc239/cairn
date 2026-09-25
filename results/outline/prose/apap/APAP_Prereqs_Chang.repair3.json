@@ -1,0 +1,5 @@
+{
+ "AddDissociated.boringEnergy_le": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. If $s \\subseteq G$ is a finite dissociated set, then for every $n \\in \\mathbb{N}$, $\\mathrm{boringEnergy}_n(s) \\le \\mathrm{changConst}^n \\cdot n^n \\cdot |s|^n$."
+ }
+}

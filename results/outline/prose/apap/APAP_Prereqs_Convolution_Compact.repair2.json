@@ -1,0 +1,5 @@
+{
+ "iterCConv": {
+  "statement": "Let $G$ be a finite abelian group and $R$ a semifield of characteristic zero. For $f : G \\to R$ and $n \\in \\mathbb{N}$, $\\mathrm{iterCConv}(f, n)$ is a function $G \\to R$; according to its docstring, it is the (n-fold) iterated convolution of $f$."
+ }
+}

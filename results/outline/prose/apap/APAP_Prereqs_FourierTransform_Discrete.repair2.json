@@ -1,0 +1,5 @@
+{
+ "dft": {
+  "statement": "Definition. Let $G$ be a finite abelian group. For $f : G \\to \\mathbb{C}$, $\\mathrm{dft}(f)$ assigns a complex number $\\mathrm{dft}(f)(\\psi)$ to each additive character $\\psi : G \\to \\mathbb{C}$; according to its docstring, it is the discrete Fourier transform of $f$."
+ }
+}

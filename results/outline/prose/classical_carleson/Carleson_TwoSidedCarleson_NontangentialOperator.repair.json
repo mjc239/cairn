@@ -1,0 +1,17 @@
+{
+ "nontangential_from_simple": {
+  "statement": "(Lemma 10.0.2.) Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$ and suppose that for every $r > 0$, $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. Then the nontangential operator $\\mathrm{nontangentialOperator}(K)$ has bounded strong type $(2,2)$ with constant $C_{10.0.2}(a)$ (including measurability of the operator)."
+ },
+ "cotlar_estimate": {
+  "statement": "(Lemma 10.1.5, Cotlar's estimate.) Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$ for every $r > 0$, let $g : X \\to \\mathbb{C}$ be bounded with finite-measure support, and $r \\in (0, R]$. Then $\\|\\mathrm{czOperator}(K, R)\\, g(x)\\| \\le 4\\, M(\\mathrm{czOperator}(K, r)\\, g)(x) + C_{10.1.5}(a)\\, M g(x)$, where $M = \\mathrm{globalMaximalFunction}(\\mathrm{vol}, 1)$."
+ },
+ "cotlar_set_F₂": {
+  "statement": "(Lemma 10.1.4, part about $F_2$.) Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, $0 < r \\le R$, suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$ for every $r > 0$, and let $g : X \\to \\mathbb{C}$ be bounded with finite-measure support. Then $\\mathrm{vol}\\big(B(x, R/4) \\cap \\{x' : C_{10.1.4}(a)\\, M g(x) < \\|\\mathrm{czOperator}(K, r)(\\mathbf{1}_{B(x, R/2)} g)(x')\\|\\}\\big) \\le \\mathrm{vol}(B(x, R/4))/4$, where $M = \\mathrm{globalMaximalFunction}(\\mathrm{vol}, 1)$."
+ },
+ "simple_nontangential_operator": {
+  "statement": "(Lemma 10.1.6.) Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$ for every $r > 0$, and let $r > 0$. Then $\\mathrm{simpleNontangentialOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{10.1.6}(a)$ (including measurability of the operator)."
+ },
+ "simple_nontangential_operator_le": {
+  "statement": "Let $X$ be a metric space equipped with a doubling measure `volume` with doubling constant $A$ = `defaultA a` (for $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$ for every $r > 0$, and let $r \\ge 0$. Then $\\mathrm{simpleNontangentialOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{10.1.6}(a)$."
+ }
+}
