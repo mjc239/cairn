@@ -1,0 +1,5 @@
+{
+ "BohrSet": {
+  "statement": "For an additive commutative group $G$, $\\mathrm{BohrSet}(G)$ is the type (in the same universe as $G$) of structures $B$ consisting of: a finite set $\\mathrm{frequencies}(B)$ of additive characters $\\psi : G\\to\\mathbb{C}$ (homomorphisms from the additive group $G$ to the multiplicative monoid of $\\mathbb{C}$); a function $\\mathrm{ewidth}_B$ assigning to every additive character $\\psi : G\\to\\mathbb{C}$ (not only to the frequencies) an extended nonnegative real number $\\mathrm{ewidth}_B(\\psi)\\in[0,\\infty]$; and the condition that for every additive character $\\psi : G\\to\\mathbb{C}$, $\\psi\\in\\mathrm{frequencies}(B)$ if and only if $\\mathrm{ewidth}_B(\\psi)<\\infty$. According to its docstring, $\\mathrm{ewidth}_B(\\psi)$ is called the width of $B$ at $\\psi$, and $B$ is thought of as the set $\\{x\\in G : \\|1-\\psi(x)\\|\\le \\mathrm{width}_B(\\psi)\\text{ for all }\\psi\\in\\mathrm{frequencies}(B)\\}$ (the chord-length convention, as opposed to the arc-length convention $|\\arg\\psi(x)|\\le\\mathrm{width}_B(\\psi)$); this set does not uniquely determine $B$ (neither its frequencies nor its widths)."
+ }
+}
