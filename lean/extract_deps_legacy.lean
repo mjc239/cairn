@@ -76,14 +76,16 @@ def namesJson (ns : Array Name) : Json :=
 their type (`(1 / 2 : ℝ)`, not `1 / 2`, which could be the natural number 0): this is the full statement the prose
 is checked against, so it hides nothing. -/
 def ppType (env : Environment) (e : Expr) : IO String := do
-  let opts : Options :=
+  let base : Options :=
     ((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true
-  let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
-  try
+  let run (opts : Options) : IO String := do
+    let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
     let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }
     return toString fmt
-  catch _ =>
-    return ""
+  -- `pp.analyze` adds the annotations needed to read the term back unambiguously, e.g. which space's `volume`
+  -- an `[IsProbabilityMeasure volume]` is about; if it fails, fall back to the plain printing.
+  try run (base.setBool `pp.analyze true) catch _ =>
+    try run base catch _ => return ""
 
 /-- Short statement: explicit binders, meaningful instance assumptions and the conclusion, e.g.
 `[Finite G] (hA : A.Nonempty) : …`. Implicit binders are dropped, and so are instance binders that only
