@@ -38,7 +38,7 @@ def test_build_and_render(style):
     assert pos[S("D")] < pos[S("T")] and pos[S("L")] < pos[P("T")]
     assert o.chapter_order == ["M.Defs", "M.A", "M.B"] or o.chapter_order.index("M.A") < o.chapter_order.index("M.B")
     md = render(o, d, "Test", style, "note")
-    assert "**Theorem** `T`" in md and "folds in 1 helper lemma: `h`" in md and "Key lemma." in md
+    assert "**Theorem** `T`" in md and "folds in 1 helper lemma" in md and "<code>h</code>" in md and "Key lemma." in md
 
 
 def test_prose_roundtrip(tmp_path):
@@ -61,6 +61,7 @@ def test_prose_roundtrip(tmp_path):
     assert {p.name for p in paths} == {"M_Defs.prompt.md", "M_A.prompt.md", "M_B.prompt.md"}
     prompt = (tmp_path / "M_B.prompt.md").read_text()
     assert "`T` (theorem)" in prompt and "Proof uses:" in prompt and "- `L`" in prompt
+    assert "Lean (short): `(h : Foo.P) : Foo.Q`" in prompt and "Lean (full): `T : D`" in prompt  # nothing hidden
     (tmp_path / "M_B.prose.json").write_text(json.dumps(
         {"title": "The main theorem", "results": {"T": {"statement": "If P then Q.", "sketch": "Apply L."}}}))
     write_check_prompts(o, d, tmp_path)
@@ -112,8 +113,11 @@ def test_boilerplate_instances_are_never_named():
         return FormalDecl(name, "def", "M", 1, stmt_short=stmt)
 
     assert is_boilerplate_instance(inst("A.instDecidablePredForallFinLProp", "DecidablePred (LProp k m ε f A)"))
-    assert is_boilerplate_instance(inst("BohrSet.instCoeSort", "CoeSort (BohrSet G) (Type u_1)"))
-    assert is_boilerplate_instance(inst("X.instInhabited", "[Fintype G] : Inhabited (X G)"))
+    assert is_boilerplate_instance(inst("X.instReprConfig", "Repr Config"))
+    # coercions and nonemptiness can carry content a reader needs: they stay eligible
+    assert not is_boilerplate_instance(inst("BohrSet.instCoeSort", "CoeSort (BohrSet G) (Type u_1)"))
+    assert not is_boilerplate_instance(inst("X.instInhabited", "[Fintype G] : Inhabited (X G)"))
+    assert not is_boilerplate_instance(inst("T.instNonempty", "(K : Type) : Nonempty ↥(torsion K)"))
     assert not is_boilerplate_instance(inst("SimpleProcess.instModule", "[OrderBot ι] : Module ℝ (SimpleProcess E)"))
     assert not is_boilerplate_instance(inst("instIsZLatticeE8Lattice", "IsZLattice ℝ E8Lattice"))
     assert not is_boilerplate_instance(inst("decidableThing", "DecidablePred p"))  # not auto-named

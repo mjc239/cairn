@@ -27,18 +27,21 @@ from .events import P, S, node_of
 from .formal import FormalDecl
 
 PROSE_INSTRUCTIONS = """You are writing the text of a mathematical outline generated from a verified Lean formalisation.
-Below are the results of one chapter, in the order the outline presents them. For each you get its Lean name, its
-statement in Lean (explicit hypotheses and meaningful instance assumptions such as `[Finite G]` are shown; implicit
-arguments and purely structural instances such as `[AddCommGroup G]` are omitted), its
-docstring if there is one, and, for theorems, the named results its proof uses (with their statements) and the
-helper lemmas folded into the proof.
+Below are the results of one chapter, in the order the outline presents them. For each you get its Lean name, a
+short form of its statement, the full Lean statement (every implicit argument and every instance assumption, e.g.
+`[AddCommGroup G]` for "G is an abelian group", `[Field K]`, `[MetricSpace X]`), its docstring if there is one, and,
+for theorems, the named results its proof uses (with their full statements) and the helper lemmas folded into the
+proof.
 
 Write:
 1. `title`: a short chapter title (at most 8 words), as a mathematician would name this material.
 2. For every result, `statement`: the statement in clear mathematical English, using LaTeX between $...$ for
-   formulas. Be faithful: keep every hypothesis and the exact conclusion; do not add, drop, strengthen or weaken
-   anything. If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, say
-   what is being defined.
+   formulas. Be faithful to the FULL statement: keep every hypothesis and the exact conclusion; do not add, drop,
+   strengthen or weaken anything. State the assumptions carried by instance arguments in words ("G is a finite
+   abelian group", "X is a metric space", "μ is a doubling measure"); omitting one makes the English claim more than
+   was proved. Only instances that carry no mathematical content at all (decidability: `Decidable…`) may be left
+   unstated. If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, say
+   what is being defined, attributing anything beyond the signature to the docstring.
 3. For every theorem, `sketch`: one or two sentences on how the proof goes, based only on the listed results it
    uses and their statements. Do not invent steps; if the structure is not clear, just say which results it
    combines.
@@ -48,23 +51,28 @@ Reply with only a JSON object:
 (omit "sketch" for definitions). Use every Lean name exactly as given."""
 
 CHECK_INSTRUCTIONS = """You are checking translations of verified Lean statements into mathematical English.
-For each result below, compare the English statement with the Lean statement. The Lean statement shows explicit
-hypotheses and meaningful instance assumptions (e.g. `[Finite G]`); implicit arguments and purely structural
-instances (e.g. `[AddCommGroup G]`) are omitted, and the English may leave them implicit too.
+For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
+and instance assumption) and the English. Compare the English with the full statement.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
-quantifier, inequality direction or constant wrong, or misreads the notation. Stylistic choices are fine.
+quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
+arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Field K]`, `[MetricSpace X]`,
+`[IsProbabilityMeasure μ]`, a bundle of standing assumptions such as `[ProofData …]`, and so on. The English must
+state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
+says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
+mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
+naturally. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given."""
 
 REPAIR_INSTRUCTIONS = """You are correcting translations of verified Lean statements into mathematical English.
 An independent checker found the English statements below unfaithful to the Lean. For each, write a corrected
-statement in clear mathematical English (LaTeX between $...$), fixing the issue the checker raised. Keep every
-hypothesis the Lean shows, including instance assumptions such as `[Finite G]` or `[IsProbabilityMeasure μ]`
-(say them in words: "$G$ is finite", "$\\mu$ is a probability measure"), and the exact conclusion. Do not add
-claims the Lean does not make. Purely structural instances (e.g. `[AddCommGroup G]`) and implicit arguments are not
-shown and may stay implicit.
+statement in clear mathematical English (LaTeX between $...$), fixing the issue the checker raised. Be faithful to
+the FULL Lean statement: keep every hypothesis, including the assumptions carried by instance arguments, stated in
+words ("G is a finite abelian group", "μ is a probability measure", "X is a metric space"), and the exact
+conclusion. Only instances with no mathematical content (decidability: `Decidable…`) may stay unstated. Do not add
+claims the Lean does not make; attribute anything beyond a definition's signature to its docstring.
 
 Reply with only a JSON object: {"<lean name>": {"statement": "..."}}
 Use every Lean name exactly as given."""
@@ -93,9 +101,19 @@ def statement_of(d: FormalDecl, namespaces: tuple[str, ...] = ()) -> str:
     return strip_namespaces((d.stmt_short or d.type_pp or "").strip(), namespaces)
 
 
-def _clip(text: str, n: int) -> str:
-    text = " ".join(text.split())
-    return text if len(text) <= n else text[: n - 1] + "…"
+def full_statement_of(d: FormalDecl, namespaces: tuple[str, ...] = ()) -> str:
+    """The complete Lean statement: every implicit argument and instance assumption (``type_pp``)."""
+    return strip_namespaces((d.type_pp or d.stmt_short or "").strip(), namespaces)
+
+
+def _oneline(text: str) -> str:
+    return " ".join(text.split())
+
+
+def _lean_lines(d: FormalDecl, nss: tuple[str, ...]) -> list[str]:
+    """Short and full statement, never truncated: the prose must be checked against everything Lean assumes."""
+    short, full = _oneline(statement_of(d, nss)), _oneline(full_statement_of(d, nss))
+    return [f"Lean (short): `{short}`", f"Lean (full): `{full}`"] if full != short else [f"Lean: `{full}`"]
 
 
 def _chapters(o) -> dict[str, list[str]]:
@@ -131,17 +149,17 @@ def write_prose_prompts(o, decls: dict[str, FormalDecl], out_dir: Path) -> list[
             d = decls[v]
             kind = "definition" if d.kind != "theorem" else "theorem"
             lines.append(f"### `{v}` ({kind})")
-            lines.append(f"Lean: `{_clip(statement_of(d, nss), 3000)}`")
+            lines += _lean_lines(d, nss)
             if d.doc:
-                lines.append(f"Docstring: {_clip(d.doc, 400)}")
+                lines.append(f"Docstring: {_oneline(d.doc)}")
             if kind == "theorem":
                 uses = uses_of(o, v)
                 if uses:
                     lines.append("Proof uses:")
-                    lines += [f"- `{u}`: `{_clip(statement_of(decls[u], nss), 500)}`" for u in uses[:10]]
+                    lines += [f"- `{u}`: `{_oneline(full_statement_of(decls[u], nss))}`" for u in uses]
                 helpers = helpers_of(o, v)
                 if helpers:
-                    lines.append("Helper lemmas folded into the proof: " + ", ".join(f"`{h}`" for h in helpers[:8]))
+                    lines.append("Helper lemmas folded into the proof: " + ", ".join(f"`{h}`" for h in helpers))
             lines.append("")
         path = out_dir / f"{chapter_key(ch)}.prompt.md"
         path.write_text("\n".join(lines))
@@ -162,7 +180,7 @@ def write_check_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> lis
             eng = entry["results"].get(v, {}).get("statement")
             if not eng:
                 continue
-            lines += [f"### `{v}`", f"Lean: `{_clip(statement_of(decls[v], nss), 3000)}`", f"English: {eng}", ""]
+            lines += [f"### `{v}`", *_lean_lines(decls[v], nss), f"English: {eng}", ""]
         path = Path(prose_dir) / f"{chapter_key(ch)}.check.md"
         path.write_text("\n".join(lines))
         paths.append(path)
@@ -181,9 +199,9 @@ def write_repair_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> li
         lines = [REPAIR_INSTRUCTIONS, "", f"Namespaces open (prefixes omitted): {', '.join(nss)}.", ""]
         for v in flagged:
             r, d = entry["results"][v], decls[v]
-            lines += [f"### `{v}`", f"Lean: `{_clip(statement_of(d, nss), 3000)}`"]
+            lines += [f"### `{v}`", *_lean_lines(d, nss)]
             if d.doc:
-                lines.append(f"Docstring: {_clip(d.doc, 400)}")
+                lines.append(f"Docstring: {_oneline(d.doc)}")
             lines += [f"Previous English: {r['statement']}", f"Checker's issue: {r.get('issue', '')}", ""]
         key = chapter_key(ch)
         n = len(_repair_files(Path(prose_dir), key)) + 1
