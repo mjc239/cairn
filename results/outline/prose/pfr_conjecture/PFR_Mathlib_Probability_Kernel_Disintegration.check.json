@@ -1,0 +1,34 @@
+{
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.FiniteKernelSupport": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk": {
+  "faithful": false,
+  "issue": "The English gives an explicit construction of hκ.mk (κ'(t)=κ(t) where κ(t) has finite support, else a Dirac mass δ_{s0}, and 0 if S is empty). Nothing in the prompt (Lean statement, docstrings, or the entry for `mk`) supports this construction, so the description is an unsupported claim."
+ },
+ "ProbabilityTheory.Kernel.disintegration": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_of_cond": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condDistrib_eq_prod_of_indepFun": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condKernel_condDistrib_ae_eq": {
+  "faithful": true,
+  "issue": ""
+ }
+}

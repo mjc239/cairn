@@ -1,0 +1,6 @@
+{
+ "𝔘": {
+  "faithful": false,
+  "issue": "The English says 'a tile structure for $Q$' without introducing $Q$ (the simple function `ProofData.Q` : X -> Θ(X)), and uses $\\mathfrak P(X)$ without saying it is the (finite) type of tiles of that structure. Beyond the signature it gives no description of what $\\mathfrak U(m)$ is, so the definition is not actually conveyed."
+ }
+}

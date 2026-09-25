@@ -1,0 +1,50 @@
+{
+ "Antichain.𝔄_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.tile_count": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.global_antichain_density": {
+  "faithful": false,
+  "issue": "The English defines 𝔄_aux 𝔄 ϑ N explicitly as {t ∈ 𝔄 : 2^N ≤ 1 + d_t(𝒬(t), ϑ) < 2^{N+1}}, but no definition body of 𝔄_aux is given in the prompt (its only docstring is 'Def. 6.3.15'); the formula (including the half-open interval) is unsupported."
+ },
+ "Antichain.𝔄'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.exists_larger_grid": {
+  "faithful": false,
+  "issue": "The English asserts that 𝓛' 𝔄 ϑ N consists of the maximal elements (for ≤) of 𝓛 𝔄 ϑ N; nothing in the prompt (docstring 'The set 𝓛* defined in Lemma 6.3.4', no definition body) supports this description."
+ },
+ "Antichain.L'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.p''": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.pΘ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.stack_density": {
+  "faithful": false,
+  "issue": "The English defines 𝔄_aux 𝔄 ϑ N explicitly as {t ∈ 𝔄 : 2^N ≤ 1 + d_t(𝒬(t), ϑ) < 2^{N+1}}, but no definition body of 𝔄_aux is given in the prompt (its only docstring is 'Def. 6.3.15'); the formula (including the half-open interval) is unsupported."
+ },
+ "Antichain.tile_reach": {
+  "faithful": true,
+  "issue": ""
+ }
+}
