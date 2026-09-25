@@ -1,3 +1,5 @@
 {
- "iterCConv": "Let $G$ be a finite additive commutative group and $R$ a semifield of characteristic zero. Definition: for a function $f : G\\to R$ and a natural number $n$, a function $\\mathrm{iterCConv}(f,n) : G\\to R$. According to its docstring, this is an iterated convolution."
+ "iterCConv": {
+  "statement": "Let $G$ be a finite additive commutative group and $R$ a semifield of characteristic zero. Definition: for a function $f : G\\to R$ and a natural number $n$, a function $\\mathrm{iterCConv}(f,n) : G\\to R$. According to its docstring, this is an iterated convolution."
+ }
 }
