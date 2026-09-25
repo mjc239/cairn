@@ -1,0 +1,10 @@
+{
+ "Grid.dist_strictMono": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Grid.succ": {
+  "faithful": false,
+  "issue": "The English gives only the docstring's description of the non-maximal case. It omits that succ(i) = i when i is maximal, and that otherwise succ(i) is a chosen j > i with j ≤ j' for every j' > i."
+ }
+}

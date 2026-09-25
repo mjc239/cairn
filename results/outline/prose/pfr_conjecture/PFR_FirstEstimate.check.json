@@ -1,0 +1,26 @@
+{
+ "diff_rdist_le_3": {
+  "faithful": true,
+  "issue": ""
+ },
+ "diff_rdist_le_4": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_add_rdist_add_condMutual_eq": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_of_sums_ge": {
+  "faithful": true,
+  "issue": ""
+ },
+ "first_estimate": {
+  "faithful": false,
+  "issue": "The hypothesis TauMinimizes p X₁ X₂ is rendered as '(X₁,X₂) minimizes τ for p', but τ is never introduced/defined here (τ[Y₁;Y₂] = d[Y₁;Y₂] + η d[X⁰₁;Y₁] + η d[X⁰₂;Y₂]) and the precise minimality notion (comparison with id_G under all probability measures ν₁, ν₂ on G) is not stated; the reference package (with its constraints 0<η, 8η≤1) is also only named."
+ },
+ "ent_ofsum_le": {
+  "faithful": false,
+  "issue": "The hypothesis TauMinimizes p X₁ X₂ is rendered as '(X₁,X₂) minimizes τ for p', but τ is never introduced/defined here and the precise minimality notion (comparison with id_G under all probability measures ν₁, ν₂ on G) is not stated."
+ }
+}

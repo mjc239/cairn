@@ -1,0 +1,50 @@
+{
+ "Antichain.𝔄_aux": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: tiles p in 𝔄 with 2^N ≤ 1 + d_{𝔠 p, D^{𝔰 p}/4}(𝒬 p, ϑ) < 2^{N+1}."
+ },
+ "Antichain.tile_count": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.global_antichain_density": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝔄'": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: p ∈ 𝔄_aux 𝔄 ϑ N with 𝓘 p ∩ G ≠ ∅ and 𝔰 p > -S."
+ },
+ "Antichain.𝓛": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: cubes I with I ≤ 𝓘 p for some p ∈ 𝔄' and every p ∈ 𝔄' with 𝓘 p ≤ I has 𝔰 p = -S."
+ },
+ "Antichain.𝓛'": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: the maximal elements of 𝓛 𝔄 ϑ N."
+ },
+ "Antichain.exists_larger_grid": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.L'": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: a chosen cube L' with L ≤ L' and s L' = s L + 1."
+ },
+ "Antichain.p''": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: a chosen tile p ∈ 𝔄' 𝔄 ϑ N with 𝓘 p ≤ L'."
+ },
+ "Antichain.pΘ": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: p'' if 𝓘 p'' = L', else the unique tile with cube L' and ϑ ∈ Ω p."
+ },
+ "Antichain.stack_density": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.tile_reach": {
+  "faithful": true,
+  "issue": ""
+ }
+}

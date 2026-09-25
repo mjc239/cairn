@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo": {
+  "faithful": false,
+  "issue": "Definition body is shown (Hk[κ.fst, μ] + Hk[κ.snd, μ] − Hk[κ, μ]) but the English only paraphrases the docstring ('the mutual information ... as its docstring describes it') instead of giving this formula."
+ },
+ "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
+  "faithful": true,
+  "issue": ""
+ }
+}

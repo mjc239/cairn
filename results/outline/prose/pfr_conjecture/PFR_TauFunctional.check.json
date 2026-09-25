@@ -1,0 +1,8 @@
+{
+ "refPackage": {"faithful": false, "issue": "The structure's constructor fields are shown but the English only paraphrases the docstring. It never says what a package consists of: measurable X₀₁ : Ω₀₁ → G and X₀₂ : Ω₀₂ → G, and a real η with 0 < η and 8η ≤ 1."},
+ "tau": {"faithful": false, "issue": "The body is described only through the docstring, and the docstring formula leaves symbols unintroduced: d is never identified as the Ruzsa distance, η is not said to be p.η, and the measures are not stated (d[X₁;μ₁ # X₂;μ₂] + p.η·d[p.X₀₁; volume # X₁; μ₁] + p.η·d[p.X₀₂; volume # X₂; μ₂])."},
+ "TauMinimizes": {"faithful": false, "issue": "The body is not described, only the docstring is paraphrased. The body is: for all probability measures ν₁, ν₂ on G, τ[X₁ # X₂ | p] (with the canonical measure of Ω) ≤ τ[id; ν₁ # id; ν₂ | p]."},
+ "distance_ge_of_min": {"faithful": true, "issue": ""},
+ "condRuzsaDistance_ge_of_min": {"faithful": true, "issue": ""},
+ "tau_minimizer_exists": {"faithful": true, "issue": ""}
+}

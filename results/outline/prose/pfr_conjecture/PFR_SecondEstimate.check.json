@@ -1,0 +1,10 @@
+{
+ "second_estimate_aux": {
+  "faithful": false,
+  "issue": "The English describes the refPackage p as providing random variables X⁰₁, X⁰₂ and 'a real parameter η', omitting the structure's hypotheses that X⁰₁, X⁰₂ are measurable and 0 < η with 8η ≤ 1; the statement (with its division by 1-η) therefore reads as holding for arbitrary real η, which is more than was proved."
+ },
+ "second_estimate": {
+  "faithful": false,
+  "issue": "The English describes the refPackage p as providing random variables X⁰₁, X⁰₂ and 'a real parameter η', omitting the structure's hypotheses that X⁰₁, X⁰₂ are measurable and 0 < η with 8η ≤ 1; the statement (with its division by 1-η) therefore reads as holding for arbitrary real η, which is more than was proved."
+ }
+}

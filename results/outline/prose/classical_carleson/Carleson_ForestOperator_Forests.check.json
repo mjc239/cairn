@@ -1,0 +1,15 @@
+{
+ "forest_operator_le_volume": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.forest_operator_f": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.rowDecomp_𝔘": {"faithful": false, "issue": "Definition body is shown (recursive choice, via WellFounded.Nat.fix, of a maximal element of rowDecomp_zornset applied to t.𝔘 minus the earlier rows, i.e. a maximal set of tiles of t.𝔘 not in previous rows with pairwise disjoint cubes 𝓘 u and cubes maximal among those), but the English only says it is 'a set of tiles'; it does not describe what is defined."},
+ "TileStructure.Forest.rowDecomp": {"faithful": false, "issue": "Definition body is shown (the n-row whose forest has 𝔘 = t.rowDecomp_𝔘 j and the same 𝔗 as t), but the English only gives the type and paraphrases the docstring; it does not describe the object by what it defines."},
+ "TileStructure.Forest.indicator_row_bound": {"faithful": false, "issue": "Lean hypothesis is Function.support g ⊆ G (the set where g ≠ 0), but the English writes 'supp g ⊆ G', which in standard notation (and next to 'compactly supported') denotes the closed support, a stronger hypothesis. Also 'bounded, measurable' is only an approximation of BoundedCompactSupport (MemLp g ∞, i.e. a.e.-strongly measurable and essentially bounded, plus compact support)."},
+ "TileStructure.Forest.forest_operator_f_inner": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.forest_operator_g_main": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.correlation_separated_trees_of_subset": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.correlation_separated_trees": {"faithful": true, "issue": ""},
+ "TileStructure.Forest.row_correlation": {"faithful": false, "issue": "Lean hypotheses are Function.support f₁ ⊆ G and Function.support f₂ ⊆ G (sets where f_i ≠ 0), but the English writes 'supp f_i ⊆ G', which standardly denotes the closed support (a stronger hypothesis), especially alongside 'compactly supported'."},
+ "TileStructure.Forest.forest_operator_g": {"faithful": true, "issue": ""},
+ "forest_operator": {"faithful": true, "issue": ""},
+ "forest_operator'": {"faithful": true, "issue": ""}
+}

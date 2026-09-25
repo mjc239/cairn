@@ -1,0 +1,22 @@
+{
+ "ProbabilityTheory.IsUniform.measureReal_preimage_sub_zero": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.IsUniform.measureReal_preimage_sub": {
+  "faithful": true,
+  "issue": ""
+ },
+ "rdist_le_of_isUniform_of_card_sub_le": {
+  "faithful": false,
+  "issue": "The symbol d[U_0;U_0] is never introduced: the English does not say it is the Ruzsa distance (rdist) or define it."
+ },
+ "PFR_conjecture_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "PFR_conjecture": {
+  "faithful": true,
+  "issue": ""
+ }
+}

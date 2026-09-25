@@ -1,0 +1,70 @@
+{
+ "PreTileStructure.toGridStructure": {
+  "faithful": false,
+  "issue": "the English only calls it a doubling measure with constant A, but the Lean assumes the project structure DoublingMeasure X A, which also bundles completeness, local compactness, a Borel measure space, local finiteness and a nonzero measure; the setting is understated"
+ },
+ "𝔓": {
+  "faithful": false,
+  "issue": "the English only calls it a doubling measure with constant A, but the Lean assumes the project structure DoublingMeasure X A, which also bundles completeness, local compactness, a Borel measure space, local finiteness and a nonzero measure; the setting is understated"
+ },
+ "𝓘": {
+  "faithful": false,
+  "issue": "the English only calls it a doubling measure with constant A, but the Lean assumes the project structure DoublingMeasure X A, which also bundles completeness, local compactness, a Borel measure space, local finiteness and a nonzero measure; the setting is understated"
+ },
+ "𝔠": {
+  "faithful": false,
+  "issue": "The body is c(𝓘 p), the centre of the tile's grid cube. The English only says that 𝔠 assigns some point of X to each tile and never describes what it defines."
+ },
+ "𝔰": {
+  "faithful": false,
+  "issue": "The body is s(𝓘 p), the scale of the tile's grid cube. The English only says that 𝔰 assigns an integer to each tile and never describes what it defines."
+ },
+ "TileStructure": {
+  "faithful": false,
+  "issue": "The English does not describe the constructor fields: the underlying PreTileStructure, Ω : 𝔓 → Set Θ, the covering condition, disjointness for equal cubes, the nesting-or-disjoint condition, and the two ball inclusions (radius 1/5 and radius 1). It also understates the DoublingMeasure structure as just 'a doubling measure'."
+ },
+ "TileStructure.toPreTileStructure": {
+  "faithful": false,
+  "issue": "the English only calls it a doubling measure with constant A, but the Lean assumes the project structure DoublingMeasure X A, which also bundles completeness, local compactness, a Borel measure space, local finiteness and a nonzero measure; the setting is understated"
+ },
+ "TileLike": {
+  "faithful": false,
+  "issue": "The body is Grid X × (Set Θ(X))ᵒᵈ, pairs of a cube and a set of functions with the dual order on the second factor. The English only names 'the type of tile-like objects' and never describes it."
+ },
+ "toTileLike": {
+  "faithful": false,
+  "issue": "The body is (𝓘 p, Ω p). The English only says 'the tile-like object associated with p' and does not describe it."
+ },
+ "stackSize": {
+  "faithful": true,
+  "issue": ""
+ },
+ "smul": {
+  "faithful": false,
+  "issue": "The body is (𝓘 p, ball_{𝔠 p, D^{𝔰 p}/4}(𝒬 p, l)). The English gives no description of the definition, only a paraphrase of its docstring."
+ },
+ "E₂": {
+  "faithful": false,
+  "issue": "The body is (smul l p).toSet = 𝓘 p ∩ G ∩ Q⁻¹(ball_{𝔠 p, D^{𝔰 p}/4}(𝒬 p, l)). The English only names the set E₂(l,p) and never describes it."
+ },
+ "dens₁": {
+  "faithful": false,
+  "issue": "The body (a supremum over p' ∈ 𝔓' and l ≥ 2 of l^{-a} times sup μ(E₂(l,p))/μ(𝓘 p) over lower tiles p with smul l p' ≤ smul l p) is not described. The English only paraphrases the docstring."
+ },
+ "exists_maximal_disjoint_covering_subfamily": {
+  "faithful": true,
+  "issue": ""
+ },
+ "iteratedMaximalSubfamily": {
+  "faithful": false,
+  "issue": "The body is the recursion maximalSubfamily(A minus the union of the sets for i < n). The English only paraphrases the docstring and never states the recursion or what maximalSubfamily is."
+ },
+ "dens₂": {
+  "faithful": false,
+  "issue": "The body (a supremum over p ∈ 𝔓' and r ≥ 4D^{𝔰 p} of μ(F ∩ B(𝔠 p, r))/μ(B(𝔠 p, r))) is not described. The English only paraphrases the docstring."
+ },
+ "E": {
+  "faithful": false,
+  "issue": "The body {x ∈ 𝓘 p : Q x ∈ Ω p, σ₁ x ≤ 𝔰 p ≤ σ₂ x} is not described. The English only cites the docstring."
+ }
+}

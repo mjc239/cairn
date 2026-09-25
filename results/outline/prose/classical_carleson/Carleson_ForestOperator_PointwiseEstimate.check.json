@@ -1,0 +1,46 @@
+{
+ "TileStructure.Forest.c𝓑": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: c𝓑(z) = c(z.2.2), the centre of the grid cube in the third component. It also leaves the ProofData/TileStructure notation (Q, defaultD, defaultκ, defaultS, cancelPt) uninterpreted."
+ },
+ "TileStructure.Forest.𝓑": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: 𝓑 = {0,…,S+5} × {0,…,2S+3} × Grid(X), where S = defaultS X."
+ },
+ "TileStructure.Forest.𝓙₀": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: 𝓙₀(𝔖) = {J : s(J) = -S, or for every p ∈ 𝔖, 𝓘(p) ⊄ B(c(J), 100·D^{s(J)+1})}."
+ },
+ "TileStructure.Forest.𝓙": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: 𝓙(𝔖) is the set of maximal elements of 𝓙₀(𝔖), and 𝓙₀ is not defined either."
+ },
+ "TileStructure.Forest.boundaryOperator": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: S_{1,u}f(x) = Σ_I 1_I(x) Σ_{J ∈ 𝓙'(t,u,c(I),s(I))} D^{(s(J)-s(I))/a}/μ(B(c(I),16D^{s(I)})) ∫⁻_J |f|. The notation (forest, tiles, 𝓙, the measure) is not explained."
+ },
+ "TileStructure.Forest.r𝓑": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only gives the type and a docstring paraphrase; it never states what the object is: r𝓑(k,l,I) = 2^k · D^{s(I)+l}."
+ },
+ "TileStructure.Forest.approxOnCube": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.pointwise_tree_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.first_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.second_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.third_tree_pointwise": {
+  "faithful": true,
+  "issue": ""
+ }
+}

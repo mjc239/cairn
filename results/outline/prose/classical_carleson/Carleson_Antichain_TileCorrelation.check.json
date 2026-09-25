@@ -1,0 +1,18 @@
+{
+ "Tile.correlation_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.I12_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.I12_le'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Tile.correlation_le_of_nonempty_inter": {
+  "faithful": true,
+  "issue": ""
+ }
+}

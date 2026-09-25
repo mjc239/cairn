@@ -1,0 +1,22 @@
+{
+ "rdist_of_indep_eq_sum_fibre": {
+  "faithful": false,
+  "issue": "The notation is never introduced: the English uses d[·;·], the conditional d[·|·;·|·] and I[·:·|·] without naming or defining them (e.g. 'the Ruzsa distance d[X;Y]', 'the conditional Ruzsa distance', 'the conditional mutual information I[X:Y|Z]'), as the checking rules require; otherwise the statement matches the Lean."
+ },
+ "sum_of_rdist_eq_step_condMutualInfo": {
+  "faithful": false,
+  "issue": "The notation is never introduced: the English uses I[·:·|·] without naming or defining them (e.g. 'the Ruzsa distance d[X;Y]', 'the conditional Ruzsa distance', 'the conditional mutual information I[X:Y|Z]'), as the checking rules require; otherwise the statement matches the Lean."
+ },
+ "sum_of_rdist_eq_step_condRuzsaDist": {
+  "faithful": false,
+  "issue": "The notation is never introduced: the English uses the conditional d[·|·;·|·] without naming or defining them (e.g. 'the Ruzsa distance d[X;Y]', 'the conditional Ruzsa distance', 'the conditional mutual information I[X:Y|Z]'), as the checking rules require; otherwise the statement matches the Lean."
+ },
+ "sum_of_rdist_eq": {
+  "faithful": false,
+  "issue": "The notation is never introduced: the English uses d[·;·], the conditional d[·|·;·|·] and I[·:·|·] without naming or defining them (e.g. 'the Ruzsa distance d[X;Y]', 'the conditional Ruzsa distance', 'the conditional mutual information I[X:Y|Z]'), as the checking rules require; otherwise the statement matches the Lean."
+ },
+ "sum_of_rdist_eq_char_2": {
+  "faithful": true,
+  "issue": ""
+ }
+}

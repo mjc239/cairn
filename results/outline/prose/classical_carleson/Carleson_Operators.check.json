@@ -1,0 +1,22 @@
+{
+ "adjointCarleson": {
+  "faithful": false,
+  "issue": "The English only paraphrases the docstring; the definition body is shown but the English never says what the object is: T*_p f(x) = ∫_{E(p)} conj(K_{s(p)}(y,x)) e^{i(Q(y)(y)-Q(y)(x))} f(y) dμ(y) is not given. Setting description is also vague (tile structure parameters D, κ, S, o not defined)."
+ },
+ "adjointCarlesonSum": {
+  "faithful": false,
+  "issue": "The English only paraphrases the docstring; the definition body is shown but the English never says what the object is: T*_C f(x) = Σ_{p∈C} T*_p f(x) (sum of adjointCarleson over tiles in C) is not stated, and T*_p itself is not defined."
+ },
+ "carlesonOn": {
+  "faithful": false,
+  "issue": "The English only paraphrases the docstring; the definition body is shown but the English never says what the object is: T_p f(x) = 1_{E(p)}(x) ∫ e^{i(Q(x)(y)-Q(x)(x))} K_{s(p)}(x,y) f(y) dμ(y) is not given."
+ },
+ "carlesonSum": {
+  "faithful": false,
+  "issue": "The English only paraphrases the docstring; the definition body is shown but the English never says what the object is: T_C f(x) = Σ_{p∈C} carlesonOn p f x is not stated, and T_p is not defined."
+ },
+ "adjointCarlesonSum_adjoint": {
+  "faithful": true,
+  "issue": ""
+ }
+}

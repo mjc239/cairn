@@ -1,0 +1,6 @@
+{
+ "BohrSet": {
+  "faithful": false,
+  "issue": "Structure described only through its docstring; it omits the actual fields: ewidth is a function on all characters AddChar G ℂ → [0,∞] and the constraint ψ ∈ frequencies ↔ ewidth ψ < ⊤. Also 'characters' is not specified as complex-valued additive characters."
+ }
+}

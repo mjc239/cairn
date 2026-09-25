@@ -1,0 +1,94 @@
+{
+ "TileStructure.Forest.correlation_distant_tree_parts": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.edist_holderFunction_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tile_two": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tile": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part1": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part2": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_right": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_edist_left": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control1_supbound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.local_tree_control_sumsumsup": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.local_tree_control": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.global_tree_control2": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.union_𝓙₅": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.enorm_holderFunction_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holder_correlation_tree": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.cdtp_le_iHolENorm": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.lower_oscillation_bound": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.χtilde": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the docstring; it must describe what is defined (body: indicator of 𝓘 u₁ applied to x ↦ max(0, 8 − D^{−s(J)}·dist(x, c(J))), as a nonnegative real)."
+ },
+ "TileStructure.Forest.𝓙₅": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the docstring; it must describe what is defined (body: 𝓙(𝔖₀(t,u₁,u₂)) ∩ {J : J ≤ 𝓘 u₁}, i.e. the maximal cubes of 𝓙₀(𝔖₀) lying below 𝓘 u₁)."
+ },
+ "TileStructure.Forest.χ": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the docstring; it must describe what is defined (body: χ̃_J(u₁)(x) divided by the sum over J' ∈ 𝓙₅(t,u₁,u₂) of χ̃_{J'}(u₁)(x))."
+ },
+ "TileStructure.Forest.holderFunction": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the docstring; it must describe what is defined (body: χ(t,u₁,u₂,J,x)·e^{i𝒬(u₁)(x)}·T*_{𝔗(u₁)}f₁(x)·conj(e^{i𝒬(u₂)(x)}·T*_{𝔗(u₂)∩𝔖₀(u₁,u₂)}f₂(x)))."
+ },
+ "TileStructure.Forest.scales_impacting_interval": {
+  "faithful": false,
+  "issue": "The letter p is used both for the fixed tile of the hypothesis and as the bound variable in the description of 𝔖₀(u₁,u₂) ('the set of tiles p ∈ 𝔗(u₁)∪𝔗(u₂) with ... d_{𝔠(p),...}'), so p means two things in the same statement."
+ },
+ "TileStructure.Forest.limited_scale_impact_second_estimate": {
+  "faithful": false,
+  "issue": "The letter p is used both for the fixed tile (p ∈ 𝔗(u₂)∖𝔖₀) and as the bound variable in the set-builder description of 𝔖₀(u₁,u₂) given in the same sentence, so p means two things."
+ }
+}

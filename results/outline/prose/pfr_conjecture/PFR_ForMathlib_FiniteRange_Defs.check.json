@@ -1,0 +1,14 @@
+{
+ "FiniteRange": {
+  "faithful": false,
+  "issue": "This is a structure whose constructor field is shown ((Set.range X).Finite). The English only says it is a proposition and attributes the meaning to the docstring; it does not itself state that FiniteRange X holds iff the range of X is finite."
+ },
+ "FiniteRange.fintype": {
+  "faithful": true,
+  "issue": ""
+ },
+ "FiniteRange.toFinset": {
+  "faithful": false,
+  "issue": "The definition body is shown ((Set.range X).toFinset), but the English only attributes 'the range of X as a finset' to the docstring. It does not itself state what the object is."
+ }
+}
