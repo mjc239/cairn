@@ -405,7 +405,21 @@ translator or checker, so they now see everything:
 All 371 results (PFR 131, Carleson 194, APAP 46) were re-checked from scratch
 under this regime:
 
-ROUNDS_TABLE
+Each round is a fresh check of every chapter by separate checker agents, followed by repairs of what was flagged.
+Each step that exposed more information, or made the rules stricter, raised the count before repairs brought it
+down:
+
+| Round | What changed before the check | Flagged (of 371) |
+|---|---|---:|
+| 1 | Checkers see full statements (every implicit argument and instance) | 142 |
+| 2 | Stricter rules: settings of definitions, no strengthened assumptions, restrictive types, supported citations | 117 |
+| 3 | Borderline passes reported by checkers are flagged too | 37 |
+| 4 | Typed binders (`∃ U : Ω → G`); every variable typed, every symbol introduced, no unsupported descriptions | 138 |
+| 5 | Prompts list the project definitions each chapter uses (glossary) | 95 |
+| 6 | Definition bodies and structure constructors shown; a definition must say what it defines | 173 |
+| 7 | … | ROUND7 |
+
+The per-round verdicts are kept as `*.check.full1.json` and `*.check.strict1.json` … `*.check.strict6.json`.
 
 What the full statements caught, beyond missing assumptions:
 
