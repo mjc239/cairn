@@ -40,8 +40,10 @@ Write:
    strengthen or weaken anything. State the assumptions carried by instance arguments in words ("G is a finite
    abelian group", "X is a metric space", "μ is a doubling measure"); omitting one makes the English claim more than
    was proved. Only instances that carry no mathematical content at all (decidability: `Decidable…`) may be left
-   unstated. If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, say
-   what is being defined, attributing anything beyond the signature to the docstring.
+   unstated. Never replace an assumption by a stronger one (a metric space where the Lean has a pseudometric
+   space). If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, name
+   the setting its signature assumes and say what is being defined, attributing anything beyond the signature to
+   the docstring.
 3. For every theorem, `sketch`: one or two sentences on how the proof goes, based only on the listed results it
    uses and their statements. Do not invent steps; if the structure is not clear, just say which results it
    combines.
@@ -61,7 +63,9 @@ arguments count as hypotheses: `[AddCommGroup G]` (G is an abelian group), `[Fie
 state each one, or make it unmistakable from context (e.g. "a finite abelian group G"); an English statement that
 says "a group" where the Lean requires an abelian group claims more than was proved. Only instances with no
 mathematical content (decidability: `Decidable…`) may go unstated. Implicit type arguments may be introduced
-naturally. Stylistic choices are fine.
+naturally. Definitions are held to the same standard: the English must name the setting the signature assumes
+("for an abelian group $G$ and …, $\\mathrm{rdist}$ is …"). Replacing an assumption by a stronger one (a metric
+space where the Lean has a pseudometric space) is unfaithful too. Stylistic choices are fine.
 
 Reply with only a JSON object: {"<lean name>": {"faithful": true | false, "issue": "<empty, or what is wrong>"}}
 Use every Lean name exactly as given."""
@@ -71,7 +75,8 @@ An independent checker found the English statements below unfaithful to the Lean
 statement in clear mathematical English (LaTeX between $...$), fixing the issue the checker raised. Be faithful to
 the FULL Lean statement: keep every hypothesis, including the assumptions carried by instance arguments, stated in
 words ("G is a finite abelian group", "μ is a probability measure", "X is a metric space"), and the exact
-conclusion. Only instances with no mathematical content (decidability: `Decidable…`) may stay unstated. Do not add
+conclusion. Only instances with no mathematical content (decidability: `Decidable…`) may stay unstated. Never
+replace an assumption by a stronger one. For a definition, name the setting its signature assumes. Do not add
 claims the Lean does not make; attribute anything beyond a definition's signature to its docstring.
 
 Reply with only a JSON object: {"<lean name>": {"statement": "..."}}

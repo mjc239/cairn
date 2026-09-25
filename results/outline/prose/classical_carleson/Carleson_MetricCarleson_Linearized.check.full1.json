@@ -1,0 +1,6 @@
+{
+ "linearized_metric_carleson": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X with KernelProofData a K) and the cancellativity assumption IsCancellative X (defaultτ a), and does not say Q is a simple function."
+ }
+}

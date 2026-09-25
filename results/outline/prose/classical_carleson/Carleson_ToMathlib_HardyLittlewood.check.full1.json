@@ -1,0 +1,10 @@
+{
+ "hasStrongType_maximalFunction": {
+  "faithful": false,
+  "issue": "Says 'metric space' but the Lean only assumes X is a pseudometric space, so the English strengthens the hypothesis."
+ },
+ "hasStrongType_maximalFunction_one": {
+  "faithful": false,
+  "issue": "Says 'metric space' where the Lean only assumes a pseudometric space, and omits that the target space is an extended-seminormed additive monoid (ESeminormedAddMonoid)."
+ }
+}

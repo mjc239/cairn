@@ -1,0 +1,14 @@
+{
+ "TileStructure.Forest.density_tree_bound2": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.density_tree_bound1": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.local_dens1_tree_bound": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ }
+}
