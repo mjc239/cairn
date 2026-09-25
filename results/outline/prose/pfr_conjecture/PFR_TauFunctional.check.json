@@ -1,15 +1,15 @@
 {
  "refPackage": {
-  "faithful": false,
-  "issue": "Omits that Ω₀₁, Ω₀₂ are measure spaces and G a measurable space, and the gloss on the bundled contents (which wrongly includes the spaces and measures, which are parameters) is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "tau": {
-  "faithful": false,
-  "issue": "Omits that G is an abelian group (AddCommGroup G), and the defining formula is a gloss not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "TauMinimizes": {
-  "faithful": false,
-  "issue": "Omits that G is an abelian group and Ω a measure space, and the gloss about comparison with measures on G is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "distance_ge_of_min": {
   "faithful": true,

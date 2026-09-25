@@ -1,7 +1,7 @@
 {
  "ProbabilityTheory.Kernel.mutualInfo": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Does not state that S, T and U are measurable spaces (instance assumptions in the full statement)."
  },
  "ProbabilityTheory.Kernel.mutualInfo_nonneg": {
   "faithful": true,

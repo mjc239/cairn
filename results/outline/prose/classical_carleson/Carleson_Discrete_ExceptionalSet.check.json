@@ -1,6 +1,6 @@
 {
  "𝔘": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  }
 }

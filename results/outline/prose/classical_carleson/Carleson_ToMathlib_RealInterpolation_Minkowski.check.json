@@ -1,10 +1,10 @@
 {
  "MeasureTheory.estimate_trnc₁": {
-  "faithful": false,
-  "issue": "It omits the instance assumption that E1 is a topological space with an extended-seminormed additive monoid structure (ESeminormedAddMonoid), which is the codomain of f."
+  "faithful": true,
+  "issue": ""
  },
  "MeasureTheory.estimate_trnc": {
-  "faithful": false,
-  "issue": "It omits the instance assumption that E1 is a topological space with an extended-seminormed additive monoid structure (ESeminormedAddMonoid), which is the codomain of f."
+  "faithful": true,
+  "issue": ""
  }
 }

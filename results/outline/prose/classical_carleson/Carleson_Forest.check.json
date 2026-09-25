@@ -1,10 +1,10 @@
 {
  "TileStructure.Forest": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the pseudometric space X or the ProofData and TileStructure standing assumptions. Its description of the structure's fields and axioms is also not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "TileStructure.Row": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the pseudometric space X or the ProofData and TileStructure standing assumptions."
+  "faithful": true,
+  "issue": ""
  }
 }

@@ -1,7 +1,7 @@
 {
  "symmGroup": {
-  "faithful": false,
-  "issue": "Omits the setting (G an abelian group with a measurable structure and measurable addition, Omega a measure space), and the description of the subgroup's elements is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "sub_mem_symmGroup": {
   "faithful": true,

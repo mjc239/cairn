@@ -1,11 +1,11 @@
 {
  "AlmostPeriodicity.LProp": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The Lean signature assumes a MeasurableSpace structure on G ([MeasurableSpace G]); the English names only a finite abelian group and omits this part of the setting."
  },
  "AlmostPeriodicity.l": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The Lean signature assumes a MeasurableSpace structure on G ([MeasurableSpace G]); the English names only a finite abelian group and omits this part of the setting."
  },
  "AlmostPeriodicity.just_the_triangle_inequality": {
   "faithful": true,

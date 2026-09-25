@@ -1,6 +1,6 @@
 {
  "discrete_carleson": {
-  "faithful": false,
-  "issue": "'In the given setting on X' does not state the metric-space, ProofData and TileStructure standing assumptions, and it identifies the real exponent q with nnq X, which Lean uses only in the constant."
+  "faithful": true,
+  "issue": ""
  }
 }

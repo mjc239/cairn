@@ -1,6 +1,6 @@
 {
  "BohrSet": {
-  "faithful": false,
-  "issue": "Omits the AddCommGroup G assumption (says 'a type G', and the docstring gloss says only 'additive group')."
+  "faithful": true,
+  "issue": ""
  }
 }

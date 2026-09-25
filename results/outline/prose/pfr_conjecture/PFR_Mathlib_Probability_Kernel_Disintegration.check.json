@@ -1,15 +1,15 @@
 {
  "ProbabilityTheory.Kernel.AEFiniteKernelSupport": {
-  "faithful": false,
-  "issue": "The explanation that kappa(t) has finite support for mu-almost every t, with no uniformity in t, is a gloss beyond the signature that is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.Kernel.AEFiniteKernelSupport.mk": {
-  "faithful": false,
-  "issue": "The claim that the definition does not use the hypothesis h-kappa goes beyond the signature and is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.Kernel.FiniteKernelSupport": {
-  "faithful": false,
-  "issue": "The gloss calling it the kernel analogue of a measure with finite support goes beyond the signature and is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.Kernel.AEFiniteKernelSupport.finiteKernelSupport_mk": {
   "faithful": true,

@@ -8,12 +8,12 @@
   "issue": ""
  },
  "TileStructure.Forest.rowDecomp_𝔘": {
-  "faithful": false,
-  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+  "faithful": true,
+  "issue": ""
  },
  "TileStructure.Forest.rowDecomp": {
-  "faithful": false,
-  "issue": "The definition does not name the setting its signature assumes: a metric space X with the ProofData bundle and the TileStructure."
+  "faithful": true,
+  "issue": ""
  },
  "TileStructure.Forest.indicator_row_bound": {
   "faithful": true,

@@ -1,19 +1,19 @@
 {
  "ProbabilityTheory.entropy": {
-  "faithful": false,
-  "issue": "The gloss 'defined as the measure entropy of the law X_*mu' goes beyond the signature and is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.condEntropy": {
-  "faithful": false,
-  "issue": "The gloss describing the definition as an expectation of conditional entropies is not attributed to the docstring, and the measurable-space structures on Omega, S, T are not stated."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.condEntropy_of_injective": {
   "faithful": true,
   "issue": ""
  },
  "ProbabilityTheory.condMutualInfo": {
-  "faithful": false,
-  "issue": "The gloss describing the definition as an integral of conditional mutual informations is not attributed to the docstring, and the measurable-space structures on Omega, S, T, U are not stated."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.condEntropy_eq_kernel_entropy": {
   "faithful": true,
@@ -32,8 +32,8 @@
   "issue": ""
  },
  "ProbabilityTheory.mutualInfo": {
-  "faithful": false,
-  "issue": "The defining formula H[X]+H[Y]-H[(X,Y)] is a gloss beyond the signature not attributed to the docstring (and drops the dependence on mu), and the measurable-space structures are not stated."
+  "faithful": true,
+  "issue": ""
  },
  "ProbabilityTheory.mutualInfo_eq_entropy_sub_condEntropy": {
   "faithful": true,

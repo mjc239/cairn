@@ -1,11 +1,11 @@
 {
  "diff_rdist_le_3": {
-  "faithful": false,
-  "issue": "The English calls the reference spaces only measure spaces, so it omits the extra IsProbabilityMeasure volume instance hypothesis that the Lean assumes after the ZMod 2 module instance."
+  "faithful": true,
+  "issue": ""
  },
  "diff_rdist_le_4": {
-  "faithful": false,
-  "issue": "The English calls the reference spaces only measure spaces, so it omits the extra IsProbabilityMeasure volume instance hypothesis that the Lean assumes after the ZMod 2 module instance."
+  "faithful": true,
+  "issue": ""
  },
  "rdist_add_rdist_add_condMutual_eq": {
   "faithful": true,
@@ -16,11 +16,11 @@
   "issue": ""
  },
  "first_estimate": {
-  "faithful": false,
-  "issue": "The English calls the reference spaces only measure spaces, so it omits the two extra IsProbabilityMeasure volume instance hypotheses that the Lean assumes after the ZMod 2 module instance."
+  "faithful": true,
+  "issue": ""
  },
  "ent_ofsum_le": {
-  "faithful": false,
-  "issue": "The English calls the reference spaces only measure spaces, so it omits the two extra IsProbabilityMeasure volume instance hypotheses that the Lean assumes after the ZMod 2 module instance."
+  "faithful": true,
+  "issue": ""
  }
 }

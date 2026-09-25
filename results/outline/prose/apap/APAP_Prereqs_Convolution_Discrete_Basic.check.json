@@ -1,10 +1,10 @@
 {
  "balance_dddconv": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Defines balance(h) as h minus its mean, which the prompt does not show; say it is APAP's `balance` operator and attribute any gloss to its docstring, or omit."
  },
  "balance_ddconv": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Defines balance(h) as h minus its mean, which the prompt does not show; say it is APAP's `balance` operator and attribute any gloss to its docstring, or omit."
  }
 }

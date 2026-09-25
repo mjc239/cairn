@@ -1,7 +1,7 @@
 {
  "dach": {
-  "faithful": false,
-  "issue": "The definition's English omits the ProofData and TileStructure standing assumptions the signature requires, and its gloss ('used in the proof of Lemma 6.1.4') is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "antichain_operator_le_volume": {
   "faithful": true,

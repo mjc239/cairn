@@ -1,11 +1,11 @@
 {
  "ProbabilityTheory.Kernel.rdistm": {
-  "faithful": false,
-  "issue": "The formula H[X-Y]-H[X]/2-H[Y]/2 with independent X and Y goes beyond the signature and is not attributed to the docstring."
- },
- "ProbabilityTheory.Kernel.rdist": {
   "faithful": true,
   "issue": ""
+ },
+ "ProbabilityTheory.Kernel.rdist": {
+  "faithful": false,
+  "issue": "English attributes 'averaged over μ×ν' to the docstring, which only says 'average'; state the averaging from the Lean or drop the attribution."
  },
  "ProbabilityTheory.Kernel.rdist_symm": {
   "faithful": true,

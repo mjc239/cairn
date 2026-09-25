@@ -1,7 +1,7 @@
 {
  "s": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The signature also assumes a measurable-space structure [MeasurableSpace G] on G; the English omits it (only says G is a finite abelian group)."
  },
  "drc": {
   "faithful": true,

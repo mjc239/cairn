@@ -1,22 +1,22 @@
 {
  "ddconv": {
-  "faithful": false,
-  "issue": "Omits that G is an abelian (AddCommGroup) group, saying only 'its additive group structure', and omits that R is a commutative semiring."
+  "faithful": true,
+  "issue": ""
  },
  "ddconv_eq_sum_sub": {
-  "faithful": false,
-  "issue": "Omits that R is a commutative semiring."
+  "faithful": true,
+  "issue": ""
  },
  "trivChar": {
-  "faithful": false,
-  "issue": "Omits the setting (G an abelian group, R a commutative semiring), and the gloss 'the trivial character' is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "iterConv": {
-  "faithful": false,
-  "issue": "Omits that G is an abelian (AddCommGroup) group, saying only 'its additive group structure', and omits that R is a commutative semiring."
+  "faithful": true,
+  "issue": ""
  },
  "dddconv": {
-  "faithful": false,
-  "issue": "Says 'R a star ring' where the Lean has a commutative semiring with a StarRing structure (misstates the algebraic assumption), and does not say G is abelian."
+  "faithful": true,
+  "issue": ""
  }
 }

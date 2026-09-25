@@ -1,6 +1,6 @@
 {
  "finitary_carleson": {
-  "faithful": false,
-  "issue": "The English says only 'the given setting on X', so it never names the ProofData standing-assumption bundle or the metric space structure on X."
+  "faithful": true,
+  "issue": ""
  }
 }

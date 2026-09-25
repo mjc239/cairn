@@ -1,19 +1,19 @@
 {
  "adjointCarleson": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "adjointCarlesonSum": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "carlesonOn": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (pseudometric space X, ProofData and TileStructure bundles), and the blueprint gloss is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "carlesonSum": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (pseudometric space X, ProofData and TileStructure bundles), and the blueprint gloss is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "adjointCarlesonSum_adjoint": {
   "faithful": true,

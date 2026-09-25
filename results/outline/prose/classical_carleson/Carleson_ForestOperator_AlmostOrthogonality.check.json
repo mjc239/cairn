@@ -8,8 +8,8 @@
   "issue": ""
  },
  "TileStructure.Forest.𝔖₀": {
-  "faithful": false,
-  "issue": "The definition's English omits the ProofData and TileStructure standing assumptions (and metric space X) the signature requires, and its gloss ('the set defined in the proof of Lemma 7.4.4') is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "TileStructure.Forest.overlap_implies_distance": {
   "faithful": true,

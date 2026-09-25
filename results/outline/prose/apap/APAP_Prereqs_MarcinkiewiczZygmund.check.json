@@ -1,10 +1,10 @@
 {
  "Real.marcinkiewicz_zygmund": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The English never states that m is a natural number (only 'n ∈ ℕ, and m ≠ 0'); in the Lean m : ℕ, and this restrictive type matters for the exponent 2m, (m-1) and the constant."
  },
  "RCLike.marcinkiewicz_zygmund": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The English never states that m is a natural number (only 'n ∈ ℕ, and m ≠ 0'); in the Lean m : ℕ, and this restrictive type matters for the exponent 2m, (m-1) and the constant."
  }
 }

@@ -4,7 +4,7 @@
   "issue": ""
  },
  "Grid.succ": {
-  "faithful": false,
-  "issue": "The definition omits its setting (pseudometric space X with ProofData and GridStructure), and the parent/non-successor-order gloss is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  }
 }

@@ -1,7 +1,7 @@
 {
  "𝔗₁": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claims that it is a subset of C1(k,n,j) and is defined in (5.4.1) are also not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "forest_union": {
   "faithful": true,
@@ -12,12 +12,12 @@
   "issue": ""
  },
  "ℭ₆": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is a subset of C5(k,n,j) is also not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "URel": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that it is an equivalence relation on U2(k,n,j) is also not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "equivalenceOn_urel": {
   "faithful": true,
@@ -32,8 +32,8 @@
   "issue": ""
  },
  "forest": {
-  "faithful": false,
-  "issue": "The definition omits its setting: it never names the ProofData and TileStructure standing assumptions on the metric space X that the signature requires. The claim that its tree tops are U4(k,n,j,l) is also not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "carlesonSum_ℭ₆_eq_sum": {
   "faithful": true,

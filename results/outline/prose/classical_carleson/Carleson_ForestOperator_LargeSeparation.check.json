@@ -3,6 +3,22 @@
   "faithful": true,
   "issue": ""
  },
+ "TileStructure.Forest.χtilde": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₅": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.χ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holderFunction": {
+  "faithful": true,
+  "issue": ""
+ },
  "TileStructure.Forest.edist_holderFunction_le": {
   "faithful": true,
   "issue": ""
@@ -20,24 +36,24 @@
   "issue": ""
  },
  "TileStructure.Forest.global_tree_control1_edist_part2": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.scales_impacting_interval": {
   "faithful": true,
   "issue": ""
  },
  "TileStructure.Forest.global_tree_control1_edist_right": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.global_tree_control1_edist_left": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.global_tree_control1_supbound": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.limited_scale_impact_second_estimate": {
   "faithful": true,
@@ -48,12 +64,12 @@
   "issue": ""
  },
  "TileStructure.Forest.local_tree_control": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.global_tree_control2": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "Uses the maximal operator notation M_𝓑 (and/or J) without saying what it denotes; introduce every symbol (e.g. 'the Hardy–Littlewood maximal operator over the ball family 𝓑')."
  },
  "TileStructure.Forest.union_𝓙₅": {
   "faithful": true,
@@ -74,21 +90,5 @@
  "TileStructure.Forest.lower_oscillation_bound": {
   "faithful": true,
   "issue": ""
- },
- "TileStructure.Forest.χtilde": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
- },
- "TileStructure.Forest.𝓙₅": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
- },
- "TileStructure.Forest.χ": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
- },
- "TileStructure.Forest.holderFunction": {
-  "faithful": false,
-  "issue": "Omits the setting the signature assumes (metric space X, ProofData and TileStructure bundles), and the gloss about where it is defined in the blueprint is not attributed to the docstring."
  }
 }

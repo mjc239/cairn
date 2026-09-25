@@ -1,6 +1,6 @@
 {
  "largeSpec": {
-  "faithful": false,
-  "issue": "Says only 'its additive group structure' where the Lean requires an abelian group, and omits the measurable structure on G."
+  "faithful": true,
+  "issue": ""
  }
 }

@@ -1,18 +1,18 @@
 {
  "MeasureTheory.exists_hasStrongType_real_interpolation": {
-  "faithful": false,
-  "issue": "Omits the instance assumptions that E₁ is a topological ESeminormedAddMonoid and E₂ a topological space with ContinuousENorm."
+  "faithful": true,
+  "issue": ""
  },
  "MeasureTheory.combine_estimates₁": {
-  "faithful": false,
-  "issue": "Omits the instance assumptions that E₁ is a topological ESeminormedAddMonoid and E₂ a topological space with ContinuousENorm."
+  "faithful": true,
+  "issue": ""
  },
  "MeasureTheory.combine_estimates₀": {
-  "faithful": false,
-  "issue": "Omits the instance assumptions that E₁ is a topological ESeminormedAddMonoid and E₂ a topological space with ContinuousENorm."
+  "faithful": true,
+  "issue": ""
  },
  "MeasureTheory.exists_hasStrongType_real_interpolation_aux₄": {
-  "faithful": false,
-  "issue": "Omits the instance assumptions that E₁ is a topological ESeminormedAddMonoid and E₂ a topological space with ContinuousENorm."
+  "faithful": true,
+  "issue": ""
  }
 }

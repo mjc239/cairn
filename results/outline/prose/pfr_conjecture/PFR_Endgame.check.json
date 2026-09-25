@@ -20,7 +20,7 @@
   "issue": ""
  },
  "tau_strictly_decreases_aux": {
-  "faithful": true,
-  "issue": ""
+  "faithful": false,
+  "issue": "The contrapositive remark is supported only by the lemma's name, not by the docstring or the Lean; drop it or state it from the Lean."
  }
 }

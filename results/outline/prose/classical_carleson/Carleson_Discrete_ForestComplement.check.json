@@ -4,12 +4,12 @@
   "issue": ""
  },
  "𝔓pos": {
-  "faithful": false,
-  "issue": "Does not name the standing ProofData/TileStructure setting on the metric space X, and the gloss identifying it as the blueprint's P_{G\\G'} is not attributed to the docstring."
+  "faithful": true,
+  "issue": ""
  },
  "lintegral_carlesonSum_𝔓₁_compl_le_sum_lintegral": {
-  "faithful": false,
-  "issue": "Omits the MetricSpace X instance (X is never said to be a metric space)."
+  "faithful": true,
+  "issue": ""
  },
  "lintegral_enorm_carlesonSum_le_of_isAntichain_subset_ℭ": {
   "faithful": true,
