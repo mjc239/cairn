@@ -1,6 +1,0 @@
-{
- "mu": {
-  "faithful": false,
-  "issue": "The formula μ_s(x)=1_s(x)/|s| is not in the docstring ('normalised indicator'); attribute only what the docstring says, or quote it."
- }
-}

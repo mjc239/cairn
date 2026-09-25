@@ -1,6 +1,0 @@
-{
- "ProbabilityTheory.iIndepFun.apply_two_last": {
-  "faithful": false,
-  "issue": "The English omits that Z₁,…,Z₄ all take values in a single measurable space G and that φ : G → G → G; it describes φ only as 'a two-argument function' with an unspecified codomain, which suggests more generality than the Lean proves."
- }
-}
