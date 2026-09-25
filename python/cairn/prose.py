@@ -54,7 +54,8 @@ Reply with only a JSON object:
 
 CHECK_INSTRUCTIONS = """You are checking translations of verified Lean statements into mathematical English.
 For each result below you get a short form of the Lean statement, the FULL Lean statement (every implicit argument
-and instance assumption) and the English. Compare the English with the full statement.
+and instance assumption, numerals with their types), the docstring if there is one, and the English. Compare the
+English with the full statement; anything the English attributes to the docstring must actually be in it.
 
 Mark `faithful: false` if the English adds, drops, strengthens or weakens a hypothesis or the conclusion, gets a
 quantifier, inequality direction or constant wrong, or misreads the notation. Assumptions carried by instance
@@ -185,7 +186,8 @@ def write_check_prompts(o, decls: dict[str, FormalDecl], prose_dir: Path) -> lis
             eng = entry["results"].get(v, {}).get("statement")
             if not eng:
                 continue
-            lines += [f"### `{v}`", *_lean_lines(decls[v], nss), f"English: {eng}", ""]
+            doc = [f"Docstring: {_oneline(decls[v].doc)}"] if decls[v].doc else []
+            lines += [f"### `{v}`", *_lean_lines(decls[v], nss), *doc, f"English: {eng}", ""]
         path = Path(prose_dir) / f"{chapter_key(ch)}.check.md"
         path.write_text("\n".join(lines))
         paths.append(path)
