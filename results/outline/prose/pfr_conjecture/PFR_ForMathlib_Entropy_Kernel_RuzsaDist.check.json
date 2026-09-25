@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.rdistm": {"faithful": false, "issue": "Definition body is shown (measureEntropy of the pushforward of μ ⊗ ν under (x,y) ↦ x − y, minus Hm[μ]/2 minus Hm[ν]/2, with measureEntropy normalising by total mass), but the English only states the type and repeats the docstring ('according to its docstring ... independent variables distributed according to μ and ν'), which for arbitrary (non-probability) measures is not an accurate description of the body."},
+ "ProbabilityTheory.Kernel.rdist": {"faithful": false, "issue": "Definition body is shown (the integral over T × T' with respect to μ.prod ν of rdistm(κ t, η t')), but the English only says it is a real number and, per the docstring, 'the average Ruzsa distance between the image measures', without specifying the averaging measure μ ⊗ ν or the formula."},
+ "ProbabilityTheory.Kernel.rdist_symm": {"faithful": true, "issue": ""}
+}

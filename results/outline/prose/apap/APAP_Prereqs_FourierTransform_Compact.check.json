@@ -1,0 +1,3 @@
+{
+ "cft": {"faithful": false, "issue": "Definition body is shown (cft f ψ = ⟪ψ, f⟫ₙ_[ℂ], the normalised (expectation) inner product of ψ and f on G), but the English only gives the type and the docstring ('the discrete Fourier transform'); it does not describe the formula, and in particular omits the compact normalisation that distinguishes it from dft."}
+}
