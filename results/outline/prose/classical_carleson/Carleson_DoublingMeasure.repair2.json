@@ -1,0 +1,5 @@
+{
+ "cancelPt": {
+  "statement": "Let $\\mathbb k$ be an RCLike field (i.e. $\\mathbb R$ or $\\mathbb C$), $X$ a pseudometric space and $A\\in\\mathbb N$, and assume a `CompatibleFunctions 𝕜 X A` structure on $X$ (by its docstring, a compatible set $\\Theta$ of continuous functions); in particular this gives a type $\\Theta(X)$ with a map (`coeΘ`) into the continuous functions $X\\to\\mathbb k$, and its first axiom asserts that there exists a point $o\\in X$ with $\\theta(o)=0$ for every $\\theta\\in\\Theta(X)$. Define `cancelPt X` $\\in X$ (by its docstring, the point $o$ in the blueprint) to be a point chosen (via the axiom of choice, `Exists.choose`) among the points $o\\in X$ such that every $\\theta\\in\\Theta(X)$ vanishes at $o$; thus $\\theta(\\mathrm{cancelPt}\\,X)=0$ for all $\\theta\\in\\Theta(X)$."
+ }
+}
