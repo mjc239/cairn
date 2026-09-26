@@ -247,6 +247,9 @@ def _oneline(text: str) -> str:
     return " ".join(text.split())
 
 
+_HELPERS_SHOWN = 200
+
+
 def render(o: Outline, decls: dict[str, FormalDecl], title: str, style: Style, detail_note: str,
            prose: dict[str, dict] | None = None) -> str:
     """Markdown outline. With ``prose`` (see :mod:`cairn.prose`), chapters get titles, results an English
@@ -318,8 +321,11 @@ def render(o: Outline, decls: dict[str, FormalDecl], title: str, style: Style, d
             else:
                 lines.append(f"- *Proof of* `{v}`" + (f" — {'; '.join(note)}" if note else ""))
             if helpers:
-                lines.append("  <details><summary>Helper lemmas</summary>"
-                             + ", ".join(f"<code>{html.escape(h)}</code>" for h in helpers) + "</details>")
+                # A display list, not a record: past a few hundred names it is unreadable (and a single result of a
+                # 50k-declaration development can fold in thousands). The full list is `helpers_of`.
+                shown = ", ".join(f"<code>{html.escape(h)}</code>" for h in helpers[:_HELPERS_SHOWN])
+                more = f", … and {len(helpers) - _HELPERS_SHOWN} more" if len(helpers) > _HELPERS_SHOWN else ""
+                lines.append(f"  <details><summary>Helper lemmas</summary>{shown}{more}</details>")
     return "\n".join(lines) + "\n"
 
 
