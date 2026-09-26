@@ -300,6 +300,15 @@ def _repair_files(prose_dir: Path, key: str) -> list[Path]:
     return [f for _, f in sorted(files)]
 
 
+def _answers(repair: Path | None, name: str, issue: str) -> bool:
+    """Whether ``repair`` (a ``.repair*.json``) was written in answer to ``issue``: its prompt quotes the issue."""
+    prompt = repair.with_suffix(".md") if repair else None
+    if not (prompt and prompt.exists() and issue):
+        return False
+    block = prompt.read_text().split(f"### `{name}`", 1)
+    return len(block) == 2 and f"Checker's issue: {issue}" in block[1].split("\n### ", 1)[0]
+
+
 def load_prose(prose_dir: Path | None) -> dict[str, dict]:
     """Chapter (module) -> {"title", "results": {name: {"statement", "sketch", "faithful", "issue"}}}."""
     if prose_dir is None or not Path(prose_dir).exists():
@@ -315,12 +324,14 @@ def load_prose(prose_dir: Path | None) -> dict[str, dict]:
         m = re.search(r"Lean module `([^`]+)`", prompt.read_text()) if prompt.exists() else None
         module = m.group(1) if m else key
         results = {k: dict(v) for k, v in data.get("results", {}).items()}
+        last_repair: dict[str, Path] = {}
         for repair in _repair_files(Path(prose_dir), key):
             try:
                 for k, v in json.loads(repair.read_text()).items():
                     if k in results and v.get("statement"):
                         results[k]["statement"] = v["statement"]
                         results[k]["repaired"] = True
+                        last_repair[k] = repair
             except json.JSONDecodeError:
                 pass
         check = Path(prose_dir) / f"{key}.check.json"
@@ -330,6 +341,8 @@ def load_prose(prose_dir: Path | None) -> dict[str, dict]:
                     if k in results:
                         results[k]["faithful"] = bool(v.get("faithful", True))
                         results[k]["issue"] = v.get("issue", "")
+                        if not results[k]["faithful"] and _answers(last_repair.get(k), k, results[k]["issue"]):
+                            results[k]["recheck_pending"] = True  # repaired after this verdict, not yet re-checked
             except json.JSONDecodeError:
                 pass
         out[module] = {"title": data.get("title"), "results": results}
@@ -341,4 +354,6 @@ def coverage(o, prose: dict[str, dict]) -> dict:
     have = [v for v in named if prose.get(o.chapter[v], {}).get("results", {}).get(v, {}).get("statement")]
     checked = [v for v in have if "faithful" in prose[o.chapter[v]]["results"][v]]
     flagged = [v for v in checked if not prose[o.chapter[v]]["results"][v]["faithful"]]
-    return {"results": len(named), "translated": len(have), "checked": len(checked), "flagged": flagged}
+    pending = [v for v in flagged if prose[o.chapter[v]]["results"][v].get("recheck_pending")]
+    return {"results": len(named), "translated": len(have), "checked": len(checked), "flagged": flagged,
+            "recheck_pending": pending}

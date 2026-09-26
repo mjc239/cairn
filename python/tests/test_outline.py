@@ -72,7 +72,7 @@ def test_prose_roundtrip(tmp_path):
     md = render(o, d, "Test", Style(0), "note", prose)
     assert "## 3. The main theorem" in md and "If P then Q." in md and "Apply L." in md
     assert "Translation flagged: drops h" in md and "Lean: `(h : Foo.P) : Foo.Q`" in md
-    assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"]}
+    assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"], "recheck_pending": []}
     # repair: the flagged item goes back with the checker's issue; the corrected statement overrides the original
     assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair.md"]
     assert "Checker's issue: drops h" in (tmp_path / "M_B.repair.md").read_text()
@@ -157,3 +157,20 @@ def test_glossary_follows_project_notions():
     assert "Definition: `0`" in text and "Docstring: Standing data." in text and "Fields: `c`" in text
     decls["Data"].ctor_pp = "(c : C) → Data"
     assert "Constructor (every field with its type): `(c : C) → Data`" in "\n".join(_glossary_lines(["T"], decls, ()))
+
+
+def test_repair_after_last_check_is_marked_pending(tmp_path):
+    import json
+
+    from cairn.prose import load_prose
+
+    (tmp_path / "M.prompt.md").write_text("Lean module `M`")
+    (tmp_path / "M.prose.json").write_text(json.dumps({"title": "T", "results": {"a": {"statement": "old"},
+                                                                                 "b": {"statement": "old"}}}))
+    (tmp_path / "M.check.json").write_text(json.dumps({"a": {"faithful": False, "issue": "x is untyped"},
+                                                       "b": {"faithful": False, "issue": "y"}}))
+    (tmp_path / "M.repair.md").write_text("### `a`\nChecker's issue: x is untyped\n")
+    (tmp_path / "M.repair.json").write_text(json.dumps({"a": {"statement": "new"}}))
+    r = load_prose(tmp_path)["M"]["results"]
+    assert r["a"]["statement"] == "new" and r["a"].get("recheck_pending")
+    assert not r["b"].get("recheck_pending")

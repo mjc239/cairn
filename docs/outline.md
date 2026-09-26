@@ -189,7 +189,8 @@ subagents as the translator and checker:
 | 2. Repair flagged, re-check their chapters | 0 of the 83 still flagged; 15 others newly flagged | 0 of the 12 still flagged |
 | 3. Repair those 15, re-check | 0 flagged | — |
 
-Final: every English statement in both outlines passes its latest check. The
+At that point every English statement in both outlines passed its latest check (the later, stricter rounds
+under [Nothing hidden](#nothing-hidden-from-the-translator-or-checker) reopened many). The
 per-round verdicts are kept in `*.check.round1.json` and `*.check.round2.json`.
 
 What the checks caught:
@@ -301,7 +302,8 @@ through the same translate, check and repair loop as PFR and Carleson:
 | 3. Short statements now show `[Fintype G]` (below): re-check the 14 chapters whose Lean lines changed | 30 of 39 |
 | 4. Repair those 30, re-check their chapters | 0 |
 
-Final: all 46 English statements pass their latest check.
+At that point all 46 English statements passed their latest check (reopened by the later rounds under
+[Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
 
 What the checker caught:
 
@@ -423,9 +425,23 @@ down:
 | 4 | Typed binders (`∃ U : Ω → G`); every variable typed, every symbol introduced, no unsupported descriptions | 138 |
 | 5 | Prompts list the project definitions each chapter uses (glossary) | 95 |
 | 6 | Definition bodies and structure constructors shown; a definition must say what it defines | 173 |
-| 7 | … | ROUND7 |
 
 The per-round verdicts are kept as `*.check.full1.json` and `*.check.strict1.json` … `*.check.strict6.json`.
+
+**Where this stopped.** The loop was stopped after round 6 to save usage, before it reached zero. Of the 173
+statements round 6 flagged, 147 have been revised (round-6 repairs) but not re-checked, and 26 were not repaired.
+The outlines say which is which: a revised statement carries "⚠ Translation flagged, then revised; the revision
+is not yet re-checked", an unrepaired one "⚠ Translation flagged", each with the checker's issue. The other 198
+statements passed round 6. `cairn outline … --prose DIR` prints the same counts. Most round-6 flags are about
+completeness (a definition that paraphrases its docstring instead of saying what its body defines, a symbol not
+introduced); fewer are errors of substance, such as "bounded and measurable" for `BoundedCompactSupport`, which
+asks only for essential boundedness and a.e.-strong measurability, or "supp f ⊆ F" where the Lean means
+`Function.support`.
+
+The count did not fall monotonically: each time the checkers were shown more (typed binders, the glossary,
+definition bodies and constructors) or given a stricter rule, they found a new kind of gap. To finish, run the
+repair prompts still unanswered (`--write-repair-prompts`), then full re-checks until one flags nothing. A full
+check reads about 2.8 MB of prompts, so re-checking only the chapters that changed is the cheaper option.
 
 What the full statements caught, beyond missing assumptions:
 
@@ -447,6 +463,11 @@ What the full statements caught, beyond missing assumptions:
   chapter titles~~. Done: short statements, prose and titles above.
 - ~~Ambiguous pretty-printing~~. Done: typed numerals and `pp.analyze` in the
   full statements, which the translator and checker now see (above).
+- **Prose checks not finished.** 173 of 371 statements are flagged or revised-but-unchecked after round 6
+  (above). Finish with targeted re-checks of changed chapters.
+- **Standing assumptions are named, not listed, in each statement.** Carleson statements say "assume
+  `ProofData`" rather than repeating its twenty fields. The rendered outline could show each chapter's glossary
+  (standing structures and definitions) once, so the reader sees them without the prose repeating them.
 - **Proof sketches are unchecked.** A checker could compare each sketch
   against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline

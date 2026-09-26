@@ -286,7 +286,10 @@ def render(o: Outline, decls: dict[str, FormalDecl], title: str, style: Style, d
             tag = " *(proof deferred)*" if deferred else ""
             if entry.get("statement"):
                 lines.append(f"- **{kind}** (`{v}`){tag}. {entry['statement']}")
-                if entry.get("faithful") is False:
+                if entry.get("recheck_pending"):
+                    lines.append(f"  ⚠ *Translation flagged, then revised; the revision is not yet re-checked. "
+                                 f"The flag was: {entry.get('issue') or 'see the Lean statement'}*")
+                elif entry.get("faithful") is False:
                     lines.append(f"  ⚠ *Translation flagged: {entry.get('issue') or 'see the Lean statement'}*")
                 if statement_of(d, nss):
                     lines.append(f"  <br>Lean: `{_oneline(statement_of(d, nss))}`")
