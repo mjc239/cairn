@@ -1,0 +1,50 @@
+{
+ "Antichain.𝔄_aux": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.tile_count": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "Antichain.global_antichain_density": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "Antichain.𝔄'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.𝓛'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.exists_larger_grid": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "Antichain.L'": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.p''": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.pΘ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Antichain.stack_density": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "Antichain.tile_reach": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ }
+}

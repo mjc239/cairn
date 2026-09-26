@@ -1,0 +1,7 @@
+{
+ "ddconv": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring ('the convolution'). It should give the formula (f ∗ g)(a) = Σ_{(x,y) ∈ G×G, x+y=a} f(x) g(y)."},
+ "ddconv_eq_sum_sub": {"faithful": true, "issue": ""},
+ "trivChar": {"faithful": false, "issue": "Described only through the docstring as 'the trivial character'. The body is the indicator of 0 (1 if a = 0, else 0), which is not the standard trivial character (the constant function 1), so the description is misleading and the body is not stated."},
+ "iterConv": {"faithful": false, "issue": "Definition body is not described, only the docstring is paraphrased ('the iterated convolution'). The recursion and base case (n-fold convolution of f, starting from trivChar, the indicator of 0) are not stated."},
+ "dddconv": {"faithful": false, "issue": "Definition body is not described, only the docstring is paraphrased ('difference convolution'). It should give the formula Σ_{(x,y), x−y=a} f(x)·star(g(y)), which conjugates g."}
+}

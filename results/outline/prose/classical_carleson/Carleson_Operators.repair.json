@@ -1,0 +1,5 @@
+{
+ "adjointCarlesonSum_adjoint": {
+  "statement": "Let $X$ be a metric space and work under the standing assumptions of the proof: the data $a\\in\\mathbb N$, $q\\in\\mathbb R$, $K:X\\times X\\to\\mathbb C$, $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$, $F,G\\subseteq X$ of `ProofData` (making $X$ a doubling metric measure space with measure $\\mu$), together with a tile structure `TileStructure Q (defaultD a) (defaultκ a) (defaultS X) (cancelPt X)` with set of tiles $\\mathfrak P(X)$. Let $f,g:X\\to\\mathbb C$ be bounded with compact support and let $\\mathfrak C\\subseteq\\mathfrak P(X)$ be a set of tiles. Then $$\\int_X\\overline{g(x)}\\,T_{\\mathfrak C}f(x)\\,d\\mu(x)=\\int_X\\overline{T^*_{\\mathfrak C}g(x)}\\,f(x)\\,d\\mu(x),$$ where $T_{\\mathfrak C}$ is `carlesonSum` and $T^*_{\\mathfrak C}$ is `adjointCarlesonSum`, i.e. $T^*_{\\mathfrak C}$ is the adjoint of $T_{\\mathfrak C}$."
+ }
+}

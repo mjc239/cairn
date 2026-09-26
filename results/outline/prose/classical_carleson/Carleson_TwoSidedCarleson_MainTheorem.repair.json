@@ -1,0 +1,5 @@
+{
+ "two_sided_metric_carleson": {
+  "statement": "Let $X$ be a metric space and $a\\in\\mathbb N$, and suppose $X$ carries a doubling measure $\\mu$ with doubling constant $\\mathrm{defaultA}(a)$ (`DoublingMeasure X (defaultA a)`), a family $\\Theta(X)$ of real-valued compatible functions with parameter $\\mathrm{defaultA}(a)$ (`CompatibleFunctions ℝ X (defaultA a)`), and satisfies the cancellative property `IsCancellative X (defaultτ a)`. Let $K:X\\times X\\to\\mathbb C$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, let $q,q'$ be nonnegative reals with $q \\in (1, 2]$ and $q'$ its Hölder conjugate, let $F, G\\subseteq X$ be measurable sets, and suppose that for every $r > 0$ the truncated Calderón–Zygmund operator $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with respect to $\\mu$ with constant $C_{Ts}(a)$. If $f:X\\to\\mathbb C$ is measurable with $\\|f(x)\\| \\le \\mathbf{1}_F(x)$ for all $x \\in X$, then $$\\int_G \\mathrm{carlesonOperator}(K, f)(x)\\, d\\mu(x) \\le C_{10.0.1}(a, q)\\, \\mu(G)^{1/q'}\\, \\mu(F)^{1/q}.$$"
+ }
+}

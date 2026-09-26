@@ -1,0 +1,5 @@
+{
+ "MeasureTheory.dLpNorm": {
+  "statement": "Let $\\alpha$ be a measurable space and $E$ a normed abelian group. For an extended nonnegative real $p \\in [0, \\infty]$ and a function $f : \\alpha \\to E$, $\\mathrm{dLpNorm}(p, f)$ is a real number, written $\\|f\\|_p$; according to its docstring, it is the $L^p$ norm of $f$ with the compact normalisation."
+ }
+}

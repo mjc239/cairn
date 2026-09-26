@@ -1,0 +1,4 @@
+{
+"rcarleson": {"faithful": false, "issue": "The kernel K is never introduced; it is a specific fixed object in the Lean. The description 'the Carleson operator on R with kernel K' is not supported by any definition or docstring in the prompt."},
+"rcarleson_general": {"faithful": false, "issue": "The kernel K in carlesonOperatorReal K is never introduced. q and q' are nonnegative reals (NNReal), which the English leaves implicit."}
+}

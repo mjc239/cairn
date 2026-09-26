@@ -1,0 +1,5 @@
+{
+ "largeSpec": {
+  "statement": "Let $G$ be a finite abelian group (an additive commutative group with finitely many elements) equipped with a measurable space structure. For $f : G \\to \\mathbb{C}$ and $\\eta \\in \\mathbb{R}$, $\\mathrm{largeSpec}(f, \\eta)$ is a finite set of additive characters $G \\to \\mathbb{C}$; according to its docstring, it is the $\\eta$-large spectrum of $f$."
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.CondIndepFun": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.condIndep_copies": {
+  "faithful": true,
+  "issue": ""
+ }
+}

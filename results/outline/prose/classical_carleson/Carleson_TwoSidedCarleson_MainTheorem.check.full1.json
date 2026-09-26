@@ -1,0 +1,6 @@
+{
+ "two_sided_metric_carleson": {
+  "faithful": false,
+  "issue": "English omits the instance hypotheses: metric space X with doubling measure, K a two-sided kernel, compatible functions, and the cancellative condition."
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "title": "The compact Fourier transform",
+ "results": {
+  "cft": {
+   "statement": "For $f : G \\to \\mathbb{C}$, the discrete Fourier transform (in this module's compact normalisation) assigns to each additive character $\\psi : G \\to \\mathbb{C}$ a complex number $\\widehat f(\\psi)$."
+  }
+ }
+}

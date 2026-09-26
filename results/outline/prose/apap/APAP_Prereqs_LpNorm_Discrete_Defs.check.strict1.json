@@ -1,0 +1,6 @@
+{
+ "MeasureTheory.dLpNorm": {
+  "faithful": false,
+  "issue": "The definition's setting is omitted: E must be a normed abelian group and alpha a measurable space, and neither is stated."
+ }
+}

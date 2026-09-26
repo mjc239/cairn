@@ -1,0 +1,18 @@
+{
+ "grid_existence": {
+  "faithful": true,
+  "issue": ""
+ },
+ "tileData_existence": {
+  "faithful": true,
+  "issue": ""
+ },
+ "Construction.Ω": {
+  "faithful": true,
+  "issue": ""
+ },
+ "tile_existence": {
+  "faithful": true,
+  "issue": ""
+ }
+}

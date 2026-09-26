@@ -1,0 +1,5 @@
+{
+ "estimate_czOperator": {
+  "statement": "(Lemma 10.0.3.) Let $X$ be a metric space with a doubling measure with doubling constant `defaultA a` (where $a \\in \\mathbb{N}$), and let $K : X \\times X \\to \\mathbb{C}$ be a two-sided Calderón–Zygmund kernel with parameter $a$ (`IsTwoSidedKernel a K`). Let $a \\ge 4$, $r > 0$, let $f : X \\to \\mathbb{C}$ be bounded with finite-measure support, and suppose $\\mathrm{czOperator}(K, r)$ has bounded strong type $(2,2)$ with constant $C_{Ts}(a)$. Then for every $\\alpha \\in [0,\\infty]$, the distribution function satisfies $\\mathrm{vol}\\{x : \\|\\mathrm{czOperator}(K, r) f(x)\\| > \\alpha\\} \\le \\frac{C_{10.0.3}(a)}{\\alpha} \\|f\\|_{L^1}$."
+ }
+}

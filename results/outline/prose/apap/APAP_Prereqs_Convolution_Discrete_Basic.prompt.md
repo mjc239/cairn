@@ -1,0 +1,37 @@
+You are writing the text of a mathematical outline generated from a verified Lean formalisation.
+Below are the results of one chapter, in the order the outline presents them. For each you get its Lean name, its
+statement in Lean (explicit hypotheses and meaningful instance assumptions such as `[Finite G]` are shown; implicit
+arguments and purely structural instances such as `[AddCommGroup G]` are omitted), its
+docstring if there is one, and, for theorems, the named results its proof uses (with their statements) and the
+helper lemmas folded into the proof.
+
+Write:
+1. `title`: a short chapter title (at most 8 words), as a mathematician would name this material.
+2. For every result, `statement`: the statement in clear mathematical English, using LaTeX between $...$ for
+   formulas. Be faithful: keep every hypothesis and the exact conclusion; do not add, drop, strengthen or weaken
+   anything. If some notation's meaning is unclear, keep the notation rather than guessing. For a definition, say
+   what is being defined.
+3. For every theorem, `sketch`: one or two sentences on how the proof goes, based only on the listed results it
+   uses and their statements. Do not invent steps; if the structure is not clear, just say which results it
+   combines.
+
+Reply with only a JSON object:
+{"title": "...", "results": {"<lean name>": {"statement": "...", "sketch": "..."}}}
+(omit "sketch" for definitions). Use every Lean name exactly as given.
+
+Namespaces open (prefixes omitted): AlmostPeriodicity, MeasureTheory.
+
+## Chapter (Lean module `APAP.Prereqs.Convolution.Discrete.Basic`)
+
+### `balance_dddconv` (theorem)
+Lean: `[CharZero R] [StarRing R] (f : G → R) (g : G → R) : Fintype.balance (f ○ᵈ g) = Fintype.balance f ○ᵈ Fintype.balance g`
+Proof uses:
+- `ddconv`: `(f : G → R) (g : G → R) (_ : G) : R`
+- `ddconv_eq_sum_sub`: `(f : G → R) (g : G → R) (a : G) : (f ∗ᵈ g) a = ∑ t, f (a - t) * g t`
+Helper lemmas folded into the proof: `add_dddconv`, `const_dddconv`, `ddconv_comm`, `ddconv_conjneg`, `ddconv_eq_sum_add`, `ddconv_eq_sum_sub'`, `dddconv_add`, `dddconv_const`
+
+### `balance_ddconv` (theorem)
+Lean: `[CharZero R] (f : G → R) (g : G → R) : Fintype.balance (f ∗ᵈ g) = Fintype.balance f ∗ᵈ Fintype.balance g`
+Proof uses:
+- `ddconv_eq_sum_sub`: `(f : G → R) (g : G → R) (a : G) : (f ∗ᵈ g) a = ∑ t, f (a - t) * g t`
+Helper lemmas folded into the proof: `add_ddconv`, `const_ddconv`, `ddconv_add`, `ddconv_comm`, `ddconv_const`, `ddconv_eq_sum_sub'`, `ddconv_neg`, `ddconv_sub`

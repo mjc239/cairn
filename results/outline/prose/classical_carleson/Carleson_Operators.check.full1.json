@@ -1,0 +1,22 @@
+{
+ "adjointCarleson": {
+  "faithful": true,
+  "issue": ""
+ },
+ "adjointCarlesonSum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "carlesonOn": {
+  "faithful": true,
+  "issue": ""
+ },
+ "carlesonSum": {
+  "faithful": true,
+  "issue": ""
+ },
+ "adjointCarlesonSum_adjoint": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (ProofData / TileStructure bundle), which carry mathematical content."
+ }
+}

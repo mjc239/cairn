@@ -1,0 +1,18 @@
+{
+ "s": {
+  "faithful": true,
+  "issue": ""
+ },
+ "drc": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sifting": {
+  "faithful": false,
+  "issue": "$A$ is never introduced with a type (a finite subset of $G$); it is only said to be nonempty."
+ },
+ "sifting_cor": {
+  "faithful": true,
+  "issue": ""
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "TileStructure.Forest.c𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₀": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.boundaryOperator": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.r𝓑": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.approxOnCube": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.pointwise_tree_estimate": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.first_tree_pointwise": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.second_tree_pointwise": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ },
+ "TileStructure.Forest.third_tree_pointwise": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions (metric space X, ProofData and TileStructure instances) under which the statement is proved."
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "cLpNorm_conv_le_cLpNorm_dconv": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \\ne 0$ is even and $f : G \\to \\mathbb{C}$, then $\\|f * f\\|_n \\le \\|f \\circ f\\|_n$, where $*$ and $\\circ$ are the compact convolution and difference convolution and the norms have the compact (expectation) normalisation."
+ },
+ "dLpNorm_ddconv_le_dLpNorm_dddconv": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. If $n \\ne 0$ is even and $f : G \\to \\mathbb{C}$, then $\\|f * f\\|_n \\le \\|f \\circ f\\|_n$ for the discrete convolution $*$, discrete difference convolution $\\circ$ and discrete $L^n$ norm."
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "MeasureTheory.estimate_trnc₁": {
+  "faithful": true,
+  "issue": ""
+ },
+ "MeasureTheory.estimate_trnc": {
+  "faithful": true,
+  "issue": ""
+ }
+}

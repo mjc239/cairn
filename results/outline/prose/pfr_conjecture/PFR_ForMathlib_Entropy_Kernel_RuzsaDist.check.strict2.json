@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.Kernel.rdistm": {
+  "faithful": false,
+  "issue": "The formula H[X-Y]-H[X]/2-H[Y]/2 with independent X and Y goes beyond the signature and is not attributed to the docstring."
+ },
+ "ProbabilityTheory.Kernel.rdist": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.Kernel.rdist_symm": {
+  "faithful": true,
+  "issue": ""
+ }
+}

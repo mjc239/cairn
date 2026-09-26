@@ -1,0 +1,5 @@
+{
+ "dLpNorm_ddconv_le_dLpNorm_dddconv": {
+  "statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure that is discrete (every subset is measurable). Let $n$ be a natural number with $n \\ne 0$ and $n$ even, and let $f : G \\to \\mathbb{C}$. Define the convolution $(f \\ast_d f)(a) = \\sum_{(x,y) \\in G \\times G,\\ x + y = a} f(x) f(y)$ (the project's `ddconv`, written `∗ᵈ`) and the difference convolution $(f \\circ_d f)(a) = \\sum_{(x,y) \\in G \\times G,\\ x - y = a} f(x)\\,\\overline{f(y)}$ (the project's `dddconv`, written `○ᵈ`), for $a \\in G$, where $\\overline{\\cdot}$ is complex conjugation. For $h : G \\to \\mathbb{C}$, let $\\|h\\|_{n} = \\big(\\sum_{x \\in G} |h(x)|^n\\big)^{1/n}$ be its $L^n$ norm with respect to the counting measure on $G$ (the project's `dLpNorm`, written `‖·‖_[n]`, with $n$ regarded as an element of $[0,\\infty]$). Then $\\|f \\ast_d f\\|_{n} \\le \\|f \\circ_d f\\|_{n}$."
+ }
+}

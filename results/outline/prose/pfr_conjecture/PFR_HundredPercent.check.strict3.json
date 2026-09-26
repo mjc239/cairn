@@ -1,0 +1,22 @@
+{
+ "symmGroup": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sub_mem_symmGroup": {
+  "faithful": true,
+  "issue": ""
+ },
+ "isUniform_sub_const_of_rdist_eq_zero": {
+  "faithful": true,
+  "issue": ""
+ },
+ "exists_isUniform_of_rdist_self_eq_zero": {
+  "faithful": false,
+  "issue": "Does not say on which space U is defined (see the full statement)."
+ },
+ "exists_isUniform_of_rdist_eq_zero": {
+  "faithful": false,
+  "issue": "Does not say on which space U is defined (see the full statement)."
+ }
+}

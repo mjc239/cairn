@@ -1,0 +1,10 @@
+{
+ "TileStructure.Forest": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Row": {
+  "faithful": true,
+  "issue": ""
+ }
+}

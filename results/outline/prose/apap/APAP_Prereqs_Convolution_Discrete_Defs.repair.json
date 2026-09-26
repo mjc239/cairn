@@ -1,0 +1,14 @@
+{
+ "ddconv": {
+  "statement": "Let $G$ be a finite type (with its additive group structure). For $f, g : G \\to R$, $\\mathrm{ddconv}(f, g)$ is a function $G \\to R$; according to its docstring, it is the convolution $f * g$ of $f$ and $g$."
+ },
+ "ddconv_eq_sum_sub": {
+  "statement": "Let $G$ be a finite abelian group. For $f, g : G \\to R$ and $a \\in G$, $(f * g)(a) = \\sum_{t \\in G} f(a - t)\\, g(t)$, where $*$ is discrete convolution."
+ },
+ "iterConv": {
+  "statement": "Let $G$ be a finite type (with its additive group structure). For $f : G \\to R$ and $n \\in \\mathbb{N}$, $\\mathrm{iterConv}(f, n)$ is a function $G \\to R$; according to its docstring, it is the ($n$-fold) iterated convolution of $f$."
+ },
+ "dddconv": {
+  "statement": "Let $G$ be a finite type (with its additive group structure) and $R$ a star ring. For $f, g : G \\to R$, $\\mathrm{dddconv}(f, g)$ is a function $G \\to R$; according to its docstring, it is the difference convolution $f \\circ g$ of $f$ and $g$."
+ }
+}

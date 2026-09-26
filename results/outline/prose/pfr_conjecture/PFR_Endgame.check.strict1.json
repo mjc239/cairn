@@ -1,0 +1,26 @@
+{
+ "construct_good": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cond_construct_good": {
+  "faithful": true,
+  "issue": ""
+ },
+ "I₃_eq": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_condMutual_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_dist_diff_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "tau_strictly_decreases_aux": {
+  "faithful": true,
+  "issue": ""
+ }
+}

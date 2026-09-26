@@ -1,0 +1,6 @@
+{
+ "CompatibleFunctions.toFunctionDistances": {
+  "faithful": false,
+  "issue": "The English calls K merely 'a field' instead of an RCLike field (R or C) and omits the pseudometric space on X, and its gloss about distances indexed by balls is not attributed to the docstring."
+ }
+}

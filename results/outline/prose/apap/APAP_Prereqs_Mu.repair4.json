@@ -1,0 +1,5 @@
+{
+ "mu": {
+  "statement": "Definition. Let $K$ be a division semiring and $\\alpha$ a type. For a finite set $s\\subseteq\\alpha$, $\\mu_s:\\alpha\\to K$ is the normalised indicator function of $s$: $\\mu_s=(|s|)^{-1}\\cdot\\mathbf 1_s$, where $|s|$ is the cardinality of $s$ cast into $K$, the inverse is taken in $K$ (with $0^{-1}=0$), and $\\mathbf 1_s:\\alpha\\to K$ is $1$ on $s$ and $0$ off $s$. That is, $\\mu_s(x)=(|s|)^{-1}$ for $x\\in s$ and $\\mu_s(x)=0$ for $x\\notin s$; in particular $\\mu_\\emptyset=0$."
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "metric_carleson": {
+  "statement": "(Theorem 1.1.1) Let $X$ be a metric space, $a\\in\\mathbb N$, and $K : X\\times X\\to\\mathbb C$ a kernel satisfying the standing assumptions `KernelProofData a K` (so $X$ carries a doubling measure $\\mu$ with parameter depending on $a$ and $K$ satisfies the kernel bounds), and assume the cancellative property `IsCancellative X (defaultτ a)` holds. Let $q,q'$ be nonnegative reals with $q\\in(1,2]$ and $q'$ its Hölder conjugate, let $F,G\\subseteq X$ be measurable, and let $f:X\\to\\mathbb C$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Suppose that the nontangential operator associated with $K$ has bounded strong type $(2,2)$ (with respect to $\\mu$) with constant $C_{T_s}(a)$. Then $$\\int_G T f(x)\\,d\\mu(x)\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q},$$ where $T$ is the Carleson operator $\\mathrm{carlesonOperator}\\,K$."
+ }
+}

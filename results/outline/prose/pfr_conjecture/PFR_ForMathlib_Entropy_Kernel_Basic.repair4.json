@@ -1,0 +1,8 @@
+{
+ "ProbabilityTheory.Kernel.entropy": {
+  "statement": "Definition. Let $S$ and $T$ be measurable spaces. For a kernel $\\kappa$ from $T$ to $S$ (a measurable map assigning to each $t\\in T$ a measure $\\kappa(t)$ on $S$) and a measure $\\mu$ on $T$, the entropy of $\\kappa$ with respect to $\\mu$ is the real number $$H_k[\\kappa,\\mu]=\\int_T H(\\kappa(t))\\,d\\mu(t)$$ (a Bochner integral, hence $0$ if the integrand is not $\\mu$-integrable), where for a measure $\\nu$ on $S$, $H(\\nu)$ is the project's `measureEntropy`: $H(\\nu)=\\sum_{s\\in S}\\phi\\big(\\nu'(\\{s\\})\\big)$ (an unconditional sum of reals, taken to be $0$ if not summable), with $\\nu'=\\nu(S)^{-1}\\cdot\\nu$ the normalized measure (computed in $[0,\\infty]$), $\\nu'(\\{s\\})$ taken as a real number, and $\\phi(x)=-x\\log x$."
+ },
+ "ProbabilityTheory.Kernel.aefiniteKernelSupport_condDistrib": {
+  "statement": "Let $\\Omega$ be a measurable space, let $S$ be a nonempty countable measurable space with measurable singletons, and let $T$ be a countable measurable space with measurable singletons. Let $\\mu$ be a finite measure on $\\Omega$, and let $X : \\Omega \\to S$ and $Y : \\Omega \\to T$ be measurable maps, with $X$ having finite range (the set $\\{X(\\omega):\\omega\\in\\Omega\\}$ is finite). Let $\\kappa=\\mathrm{condDistrib}(X\\mid Y;\\mu)$ be the conditional distribution kernel of $X$ given $Y$ under $\\mu$ (a kernel from $T$ to $S$), and let $Y_*\\mu$ be the pushforward (law) of $\\mu$ under $Y$. Then $\\kappa$ has almost everywhere finite support with respect to $Y_*\\mu$: for $Y_*\\mu$-almost every $t\\in T$ there exists a finite set $A\\subseteq S$ with $\\kappa(t)(S\\setminus A)=0$."
+ }
+}

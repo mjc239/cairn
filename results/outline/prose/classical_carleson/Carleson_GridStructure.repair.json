@@ -1,0 +1,5 @@
+{
+ "Grid.dist_strictMono": {
+  "statement": "(Stronger version of Lemma 2.1.2) Let $X$ be a pseudometric space carrying the standing data $a\\in\\mathbb N$, $q$, $K$, $\\sigma_1$, $\\sigma_2$, $F$, $G$ of `ProofData` (so in particular $X$ is a doubling measure space with a compatible family $\\Theta(X)$ of functions), together with a grid structure `GridStructure` on $X$ with the default parameters $D=D(a)$, $\\kappa(a)$, $S(X)$. If $I<J$ are grid cubes, then for all $f,g\\in\\Theta(X)$ $$d_{c(I),\\,D^{s(I)}/4}(f,g)\\le C_{2.1.2}(a)\\,d_{c(J),\\,D^{s(J)}/4}(f,g),$$ where $d_{x,r}$ denotes the distance between functions on the ball $B(x,r)$."
+ }
+}

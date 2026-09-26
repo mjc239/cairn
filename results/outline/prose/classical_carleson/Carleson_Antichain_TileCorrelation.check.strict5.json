@@ -1,0 +1,6 @@
+{
+"Tile.correlation_le": {"faithful": true, "issue": ""},
+"Tile.I12_le": {"faithful": true, "issue": ""},
+"Tile.I12_le'": {"faithful": false, "issue": "Several symbols are never introduced: Q (the ProofData simple function X -> Θ(X)), s(p) (the scale 𝔰 p of the tile's cube), E(p) (the project set E p), 𝔓(X) (the tiles), Θ(X), and the TileStructure parameters defaultκ, defaultS, cancelPt. I12 is named only as `Tile.I12`, with no description of what it is (Definition (6.2.27): |∫ e^{i(-Q(x1)(y)+Q(x2)(y))} conj(K_{s(p')}(x1,y)) K_{s(p)}(x2,y) dμ(y) · g(x1) g(x2)|), so the conclusion cannot be read without the Lean code."},
+"Tile.correlation_le_of_nonempty_inter": {"faithful": true, "issue": ""}
+}

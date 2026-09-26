@@ -1,0 +1,6 @@
+{
+ "discrete_carleson": {
+  "faithful": false,
+  "issue": "Writes carlesonSum as sum_{p in P} T_p f(x), but T_p is never introduced and the prompt gives no such formula for carlesonSum."
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "rdist_of_indep_eq_sum_fibre": {
+  "statement": "Let $H$ and $H'$ be countable abelian groups, each equipped with a measurable structure in which singletons are measurable, let $\\pi : H \\to H'$ be a group homomorphism, let $\\mu$ be a probability measure on a measurable space $\\Omega$, and let $Z_1, Z_2:\\Omega\\to H$ be measurable random variables, both of finite range, that are independent with respect to $\\mu$. Then $$d[Z_1;Z_2] = d[\\pi(Z_1);\\pi(Z_2)] + d[Z_1\\mid\\pi(Z_1);\\, Z_2\\mid\\pi(Z_2)] + I\\big[Z_1 - Z_2 : (\\pi(Z_1),\\pi(Z_2)) \\,\\big|\\, \\pi(Z_1 - Z_2)\\big],$$ all quantities taken with respect to $\\mu$."
+ },
+ "sum_of_rdist_eq_step_condMutualInfo": {
+  "statement": "Let $G$ be a finite abelian group equipped with a measurable structure in which singletons are measurable, let $\\mu$ be a probability measure on a measurable space $\\Omega$, and let $Y_0, Y_1, Y_2, Y_3:\\Omega\\to G$ be measurable random variables. Then, with respect to $\\mu$, $$I\\big[(Y_0 - Y_1,\\ Y_2 - Y_3) : (Y_0 - Y_2,\\ Y_1 - Y_3) \\,\\big|\\, Y_0 - Y_1 - (Y_2 - Y_3)\\big] = I\\big[Y_0 - Y_1 : Y_1 - Y_3 \\,\\big|\\, Y_0 - Y_1 - Y_2 + Y_3\\big].$$"
+ },
+ "sum_of_rdist_eq_step_condRuzsaDist": {
+  "statement": "Let $G$ be a finite abelian group equipped with a measurable structure in which singletons are measurable, let $\\mu$ be a probability measure on a measurable space $\\Omega$, and let $Y_0, Y_1, Y_2, Y_3:\\Omega\\to G$ be measurable random variables that are jointly independent with respect to $\\mu$. Then, with respect to $\\mu$, $$d\\big[(Y_0,Y_2)\\mid Y_0 - Y_2;\\ (Y_1,Y_3)\\mid Y_1 - Y_3\\big] = d\\big[Y_0 \\mid Y_0 - Y_2;\\ Y_1\\mid Y_1 - Y_3\\big].$$"
+ },
+ "sum_of_rdist_eq": {
+  "statement": "Let $G$ be a finite abelian group equipped with a measurable structure in which singletons are measurable, let $\\mu$ be a probability measure on a measurable space $\\Omega$, and let $Y_0, Y_1, Y_2, Y_3:\\Omega\\to G$ be measurable random variables that are jointly independent with respect to $\\mu$. Then, with respect to $\\mu$, $$d[Y_0;Y_1] + d[Y_2;Y_3] = d[Y_0 - Y_2;\\ Y_1 - Y_3] + d[Y_0\\mid Y_0 - Y_2;\\ Y_1 \\mid Y_1 - Y_3] + I[Y_0 - Y_1 : Y_1 - Y_3 \\mid Y_0 - Y_1 - Y_2 + Y_3].$$"
+ }
+}

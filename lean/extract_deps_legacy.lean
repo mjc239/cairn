@@ -72,21 +72,28 @@ def isInternalDetail : Name → Bool
 def namesJson (ns : Array Name) : Json :=
   Json.arr (ns.map (fun n => Json.str n.toString))
 
-/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. -/
+/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. Numerals carry
+their type (`(1 / 2 : ℝ)`, not `1 / 2`, which could be the natural number 0): this is the full statement the prose
+is checked against, so it hides nothing. Binders of `∃`, `fun`, `∑` and the like show their types
+(`∃ U : Ω → G, …`, not `∃ U, …`) for the same reason. -/
 def ppType (env : Environment) (e : Expr) : IO String := do
-  let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
-  let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
-  try
+  let base : Options :=
+    (((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true)
+      |>.setBool `pp.funBinderTypes true
+  let run (opts : Options) : IO String := do
+    let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
     let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }
     return toString fmt
-  catch _ =>
-    return ""
+  -- `pp.analyze` adds the annotations needed to read the term back unambiguously, e.g. which space's `volume`
+  -- an `[IsProbabilityMeasure volume]` is about; if it fails, fall back to the plain printing.
+  try run (base.setBool `pp.analyze true) catch _ =>
+    try run base catch _ => return ""
 
 /-- Short statement: explicit binders, meaningful instance assumptions and the conclusion, e.g.
 `[Finite G] (hA : A.Nonempty) : …`. Implicit binders are dropped, and so are instance binders that only
 equip a variable with structure (`[AddCommGroup G]`, `[MeasurableSpace Ω]`: a class applied to bound
-variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`)
-or mention other terms (`[Module (ZMod 2) G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
+variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`),
+mention other terms (`[Module (ZMod 2) G]`) or say a type is finite (`[Fintype G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
 def ppShort (env : Environment) (e : Expr) : IO String := do
   let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
   let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
@@ -98,7 +105,9 @@ def ppShort (env : Environment) (e : Expr) : IO String := do
         let name := if d.userName.hasMacroScopes then "_" else d.userName.toString
         parts := parts.push s!"({name} : {← Meta.ppExpr d.type})"
       else if d.binderInfo.isInstImplicit then
-        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar)
+        -- `[Fintype G]` is data but says G is finite, so it is kept like `[Finite G]`
+        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar) &&
+          d.type.getAppFn.constName? != some `Fintype
         unless structural do
           parts := parts.push s!"[{← Meta.ppExpr d.type}]"
     let concl := toString (← Meta.ppExpr body)

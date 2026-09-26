@@ -1,0 +1,30 @@
+{
+ "TileStructure.Forest.indicator_adjoint_tree_estimate": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.adjoint_tree_control": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.𝔖₀": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.overlap_implies_distance": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound2": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound1": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.adjoint_tree_estimate": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ }
+}

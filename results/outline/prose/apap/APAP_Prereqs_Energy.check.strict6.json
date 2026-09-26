@@ -1,0 +1,18 @@
+{
+ "energy": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only says energy_n(s,ν) 'is a real number'; it must state energy_n(s,ν) = Σ_{γ,δ ∈ s^n} ‖ν(Σ_i γ_i − Σ_i δ_i)‖."
+ },
+ "boringEnergy": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only says boringEnergy_n(s) 'is a real number'; it must state boringEnergy_n(s) = energy_n(s, trivChar) (number of pairs (γ,δ) ∈ s^n × s^n with Σγ_i = Σδ_i), and G needs decidable equality only implicitly."
+ },
+ "cLpNorm_dft_indicator_one_pow": {
+  "faithful": true,
+  "issue": ""
+ },
+ "cL2Norm_dft_indicator_one": {
+  "faithful": true,
+  "issue": ""
+ }
+}

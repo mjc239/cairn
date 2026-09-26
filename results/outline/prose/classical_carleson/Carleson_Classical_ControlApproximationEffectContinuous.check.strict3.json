@@ -1,0 +1,10 @@
+{
+ "rcarleson_exceptional_set_estimate_specific": {
+  "faithful": false,
+  "issue": "delta (and C) are nonnegative reals (NNReal) in the Lean; the English never states that delta is a nonnegative real, leaving a restrictive type unstated."
+ },
+ "rcarleson_exceptional_set_estimate": {
+  "faithful": false,
+  "issue": "delta (and C) are nonnegative reals (NNReal) in the Lean; the English never states that delta is a nonnegative real, leaving a restrictive type unstated."
+ }
+}

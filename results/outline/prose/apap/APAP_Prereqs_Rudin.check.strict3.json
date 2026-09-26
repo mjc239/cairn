@@ -1,0 +1,6 @@
+{
+ "rudin_ineq": {
+  "faithful": false,
+  "issue": "Calls `cft` the 'discrete Fourier transform'; in APAP that is `dft`. Name the transform correctly (the compact/normalised Fourier transform)."
+ }
+}

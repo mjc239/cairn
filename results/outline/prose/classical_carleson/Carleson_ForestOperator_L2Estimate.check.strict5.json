@@ -1,0 +1,18 @@
+{
+ "TileStructure.Forest.tree_projection_estimate": {
+  "faithful": false,
+  "issue": "The symbol $Q$ in `TileStructure Q ...` is never introduced (it is the simple function `ProofData.Q` : X -> Θ(X)); 'bounded with compact support' drops the measurability that `BoundedCompactSupport` includes (docstring: bounded compactly supported measurable functions), so the English assumes less than the Lean."
+ },
+ "TileStructure.Forest.eLpNorm_MB_le": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.boundary_operator_bound": {
+  "faithful": false,
+  "issue": "The symbol $Q$ in `TileStructure Q ...` is never introduced (it is the simple function `ProofData.Q` : X -> Θ(X)); 'bounded with compact support' drops the measurability that `BoundedCompactSupport` includes (docstring: bounded compactly supported measurable functions), so the English assumes less than the Lean."
+ },
+ "TileStructure.Forest.nontangential_operator_bound": {
+  "faithful": true,
+  "issue": ""
+ }
+}

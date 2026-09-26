@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.measureMutualInfo": {
+  "statement": "Definition. Let $S$ and $T$ be measurable spaces. For a measure $\\mu$ on the product $S\\times T$ (an argument that Lean fills in automatically when omitted), $I_m[\\mu]$ is a real number; according to its docstring, it is the mutual information between the marginals of $\\mu$."
+ }
+}

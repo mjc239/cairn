@@ -1,0 +1,30 @@
+{
+ "AlmostPeriodicity.LProp": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.l": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.just_the_triangle_inequality": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.lemma28": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.almost_periodicity": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity_boosted": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ }
+}

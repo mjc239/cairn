@@ -1,0 +1,94 @@
+{
+ "TileStructure.Forest.correlation_distant_tree_parts": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.χtilde": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝓙₅": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.χ": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.holderFunction": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.edist_holderFunction_le": {
+  "faithful": false,
+  "issue": "The English gives explicit formulas for t.holderFunction (h_J), t.χ and Forest.χtilde (and for 𝓙₅), none of which have a definition body under Project definitions; these descriptions are unsupported by the prompt."
+ },
+ "TileStructure.Forest.holder_correlation_tile_two": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.holder_correlation_tile": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part1": {
+  "faithful": false,
+  "issue": "Calls Grid(X) a finite type, which the prompt does not support (only the tile type has a finiteness instance)."
+ },
+ "TileStructure.Forest.global_tree_control1_edist_part2": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.scales_impacting_interval": {
+  "faithful": false,
+  "issue": "The English gives an explicit formula for t.𝓙₅ (cubes J' ≤ 𝓘(u₁) maximal among 𝓙₀(𝔖₀(u₁,u₂))), but 𝓙₅ has no entry under Project definitions (its own entry gives only signature and docstring), so this description is unsupported by the prompt."
+ },
+ "TileStructure.Forest.global_tree_control1_edist_right": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.global_tree_control1_edist_left": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.global_tree_control1_supbound": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.limited_scale_impact_second_estimate": {
+  "faithful": false,
+  "issue": "The English gives an explicit formula for t.𝓙₅ (cubes J' ≤ 𝓘(u₁) maximal among 𝓙₀(𝔖₀(u₁,u₂))), but 𝓙₅ has no entry under Project definitions (its own entry gives only signature and docstring), so this description is unsupported by the prompt."
+ },
+ "TileStructure.Forest.local_tree_control_sumsumsup": {
+  "faithful": false,
+  "issue": "The English gives an explicit formula for t.𝓙₅ (cubes J' ≤ 𝓘(u₁) maximal among 𝓙₀(𝔖₀(u₁,u₂))), but 𝓙₅ has no entry under Project definitions (its own entry gives only signature and docstring), so this description is unsupported by the prompt."
+ },
+ "TileStructure.Forest.local_tree_control": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.global_tree_control2": {
+  "faithful": false,
+  "issue": "BoundedCompactSupport is rendered as 'bounded with compact support', dropping the measurability part (docstring: 'Bounded compactly supported measurable functions'); the English thus assumes less than the Lean."
+ },
+ "TileStructure.Forest.union_𝓙₅": {
+  "faithful": false,
+  "issue": "The English gives an explicit formula for t.𝓙₅ (cubes J' ≤ 𝓘(u₁) maximal among 𝓙₀(𝔖₀(u₁,u₂))), but 𝓙₅ has no entry under Project definitions (its own entry gives only signature and docstring), so this description is unsupported by the prompt."
+ },
+ "TileStructure.Forest.enorm_holderFunction_le": {
+  "faithful": false,
+  "issue": "The English gives explicit formulas for t.holderFunction (h_J), t.χ and Forest.χtilde (and for 𝓙₅), none of which have a definition body under Project definitions; these descriptions are unsupported by the prompt."
+ },
+ "TileStructure.Forest.holder_correlation_tree": {
+  "faithful": false,
+  "issue": "The English gives explicit formulas for t.holderFunction (h_J), t.χ and Forest.χtilde (and for 𝓙₅), none of which have a definition body under Project definitions; these descriptions are unsupported by the prompt."
+ },
+ "TileStructure.Forest.cdtp_le_iHolENorm": {
+  "faithful": false,
+  "issue": "The English gives explicit formulas for t.holderFunction (h_J), t.χ and Forest.χtilde (and for 𝓙₅), none of which have a definition body under Project definitions; these descriptions are unsupported by the prompt."
+ },
+ "TileStructure.Forest.lower_oscillation_bound": {
+  "faithful": false,
+  "issue": "The English gives an explicit formula for t.𝓙₅ (cubes J' ≤ 𝓘(u₁) maximal among 𝓙₀(𝔖₀(u₁,u₂))), but 𝓙₅ has no entry under Project definitions (its own entry gives only signature and docstring), so this description is unsupported by the prompt."
+ }
+}

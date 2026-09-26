@@ -1,0 +1,6 @@
+{
+ "wLpNorm": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only restates the type and the docstring; it does not say what the object is (formula/condition from the body). Missing: it is the L^p norm (lpNorm) of f with respect to the measure Σ_i w(i)·δ_i."
+ }
+}

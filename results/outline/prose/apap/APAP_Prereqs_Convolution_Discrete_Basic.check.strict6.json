@@ -1,0 +1,10 @@
+{
+ "balance_dddconv": {
+  "faithful": false,
+  "issue": "The operators are introduced only via Lean identifiers: the difference convolution (f ○ᵈ g)(a) = Σ_{x-y=a} f(x)·conj(g(y)) (project def dddconv, body shown) is not described, and 'balance' is only named as `Fintype.balance` without its meaning (f minus its average), so the statement is not readable as mathematics."
+ },
+ "balance_ddconv": {
+  "faithful": false,
+  "issue": "The operators are introduced only via Lean identifiers: the convolution (f ∗ᵈ g)(a) = Σ_{x+y=a} f(x)g(y) (project def ddconv, body shown) is not described, and 'balance' is only named as `Fintype.balance` without its meaning (f minus its average)."
+ }
+}

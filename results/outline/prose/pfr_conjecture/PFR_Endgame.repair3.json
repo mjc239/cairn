@@ -1,0 +1,5 @@
+{
+ "tau_strictly_decreases_aux": {
+  "statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure in which singletons are measurable, and suppose $G$ is a module over $\\mathbb Z/2\\mathbb Z$. Let $\\Omega_{01}$, $\\Omega_{02}$ and $\\Omega$ be measure spaces whose measures are probability measures, and let $p$ be a reference package `refPackage Ω₀₁ Ω₀₂ G` with parameter $\\eta = p.\\eta\\in\\mathbb R$. Let $X_1, X_2, X_1', X_2' : \\Omega \\to G$ be measurable functions such that $X_1'$ has the same distribution as $X_1$, $X_2'$ has the same distribution as $X_2$, the four functions $X_1, X_2, X_1', X_2'$ are jointly independent, and $(X_1, X_2)$ satisfies `TauMinimizes p X₁ X₂` (it minimizes $\\tau$ for $p$). If $\\eta = 1/9$, then the Ruzsa distance $d[X_1;X_2]$ (with respect to the measure on $\\Omega$) equals $0$."
+ }
+}

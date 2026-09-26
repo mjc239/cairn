@@ -1,0 +1,30 @@
+{
+ "TileStructure.Forest.indicator_adjoint_tree_estimate": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ },
+ "TileStructure.Forest.adjoint_tree_control": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ },
+ "TileStructure.Forest.𝔖₀": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.overlap_implies_distance": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound2": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound1": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ },
+ "TileStructure.Forest.adjoint_tree_estimate": {
+  "faithful": false,
+  "issue": "English omits the standing assumptions (metric space X, ProofData and TileStructure instances)."
+ }
+}

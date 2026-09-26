@@ -1,0 +1,13 @@
+{
+ "title": "Discrete convolution and balancing",
+ "results": {
+  "balance_dddconv": {
+   "statement": "Let $R$ have characteristic zero and a star operation. For $f, g : G \\to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\\operatorname{balance}(f \\circ g) = \\operatorname{balance}(f) \\circ \\operatorname{balance}(g)$, where $\\operatorname{balance}(h) = h - \\mathbb{E}\\,h$.",
+   "sketch": "Write each balanced function as the function minus a constant, expand by bilinearity of the difference convolution, and use that difference-convolving with a constant gives a constant, together with the sum formula for convolution."
+  },
+  "balance_ddconv": {
+   "statement": "Let $R$ have characteristic zero. For $f, g : G \\to R$, $\\operatorname{balance}(f \\ast g) = \\operatorname{balance}(f) \\ast \\operatorname{balance}(g)$, where $\\ast$ is discrete convolution and $\\operatorname{balance}(h) = h - \\mathbb{E}\\,h$.",
+   "sketch": "Write each balanced function as the function minus a constant, expand by bilinearity of convolution, and use that convolving with a constant gives a constant, via the formula $(f\\ast g)(a)=\\sum_t f(a-t)g(t)$."
+  }
+ }
+}

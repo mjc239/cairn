@@ -206,7 +206,7 @@ def main(argv: list[str] | None = None) -> None:
         if prose:
             c = coverage(o, prose)
             print(f"prose: {c['translated']}/{c['results']} translated, {c['checked']} checked, "
-                  f"{len(c['flagged'])} flagged")
+                  f"{len(c['flagged'])} flagged ({len(c['recheck_pending'])} of them revised, awaiting re-check)")
         return
     if args.cmd == "transfer":
         from .formal import load_decls

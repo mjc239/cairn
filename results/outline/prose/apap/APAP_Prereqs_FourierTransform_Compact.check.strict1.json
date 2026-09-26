@@ -1,0 +1,6 @@
+{
+ "cft": {
+  "faithful": false,
+  "issue": "It says only 'its additive group structure' and never says that G is abelian, although the Lean requires AddCommGroup G."
+ }
+}

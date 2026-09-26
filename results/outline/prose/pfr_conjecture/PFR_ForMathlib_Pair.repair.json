@@ -1,0 +1,5 @@
+{
+ "prod": {
+  "statement": "For types $\\Omega,S,T$ and functions $X:\\Omega\\to S$, $Y:\\Omega\\to T$, this defines a function $\\langle X,Y\\rangle:\\Omega\\to S\\times T$. According to its docstring, it is the pair of the two random variables $X$ and $Y$."
+ }
+}

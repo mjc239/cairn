@@ -1,0 +1,6 @@
+{
+ "prod": {
+  "faithful": false,
+  "issue": "The description of the pair as the map sending omega to (X(omega), Y(omega)) goes beyond the signature and is not attributed to the docstring."
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "global_dichotomy": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $A, C \\subseteq G$ with $A$ nonempty, let $\\gamma, \\varepsilon \\in \\mathbb{R}$ with $0 < \\gamma \\le \\operatorname{dens}(C)$, and suppose $\\varepsilon \\le \\left| |G|\\,\\langle \\mu_A * \\mu_A, \\mu_C\\rangle - 1 \\right|$ (real inner product). Then $\\dfrac{\\varepsilon}{2|G|} \\le \\|\\operatorname{bal}(\\mu_A) \\circ \\operatorname{bal}(\\mu_A)\\|_{p, \\mu_G}$, where $p = 2\\lceil 1 + \\log \\gamma^{-1}\\rceil$ (natural-number ceiling), $\\operatorname{bal}(f) = f - \\mathbb{E} f$ is the balanced function, $\\circ$ is the discrete difference convolution, and $\\|\\cdot\\|_{p,\\mu_G}$ is the $L^p$ norm weighted by the uniform density $\\mu_G$ on $G$."
+ }
+}

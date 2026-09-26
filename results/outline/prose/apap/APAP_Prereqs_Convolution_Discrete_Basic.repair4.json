@@ -1,0 +1,8 @@
+{
+ "balance_dddconv": {
+  "statement": "Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero equipped with a star ring structure (an involutive conjugation $r \\mapsto \\overline{r}$ compatible with the ring operations). For $u, v : G \\to R$ define the difference convolution $(u \\circ_d v) : G \\to R$ by $(u \\circ_d v)(a) = \\sum_{(x,y) \\in G \\times G,\\ x - y = a} u(x)\\,\\overline{v(y)}$. For a function $h : G \\to R$, $\\operatorname{balance}(h) : G \\to R$ denotes $h$ minus its average, i.e. $\\operatorname{balance}(h)(x) = h(x) - \\frac{1}{|G|}\\sum_{y \\in G} h(y)$. Then for all functions $f, g : G \\to R$, $\\operatorname{balance}(f \\circ_d g) = \\operatorname{balance}(f) \\circ_d \\operatorname{balance}(g)$."
+ },
+ "balance_ddconv": {
+  "statement": "Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero. For $u, v : G \\to R$ define the convolution $(u \\ast_d v) : G \\to R$ by $(u \\ast_d v)(a) = \\sum_{(x,y) \\in G \\times G,\\ x + y = a} u(x)\\,v(y)$. For a function $h : G \\to R$, $\\operatorname{balance}(h) : G \\to R$ denotes $h$ minus its average, i.e. $\\operatorname{balance}(h)(x) = h(x) - \\frac{1}{|G|}\\sum_{y \\in G} h(y)$. Then for all functions $f, g : G \\to R$, $\\operatorname{balance}(f \\ast_d g) = \\operatorname{balance}(f) \\ast_d \\operatorname{balance}(g)$."
+ }
+}

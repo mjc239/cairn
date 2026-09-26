@@ -1,0 +1,6 @@
+{
+ "dft": {
+  "faithful": false,
+  "issue": "The body is the inner product ⟪ψ, f⟫ = Σ_x conj(ψ(x)) f(x). The English does not give this formula and only cites the docstring."
+ }
+}

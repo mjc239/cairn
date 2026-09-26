@@ -54,23 +54,23 @@ declarations):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 102 (60) | 78% | 27% | 30% | 0.82 | 0.45 | 0.88 |
+| 0.05 | 101 (59) | 78% | 27% | 30% | 0.82 | 0.44 | 0.88 |
 | 0.10 | 167 (119) | 72% | 44% | 48% | 0.84 | 0.51 | 0.61 |
-| 0.15 | 231 (179) | 61% | 53% | 58% | 0.85 | 0.52 | 0.63 |
-| 0.20 | 292 (238) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
-| 0.30 | 417 (356) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
+| 0.15 | 230 (178) | 61% | 53% | 58% | 0.85 | 0.52 | 0.62 |
+| 0.20 | 291 (237) | 52% | 59% | 63% | 0.84 | 0.53 | 0.61 |
+| 0.30 | 415 (354) | 44% | 73% | 76% | 0.85 | 0.54 | 0.57 |
 
 **Carleson** (style `top_down = 0.2` with a chapter roadmap; the blueprint
 names 7% of declarations and no definitions):
 
 | `detail` | named (theorems) | theorem precision | recall | blueprint nodes covered | chapter NMI | τ whole | τ within chapters |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 0.05 | 421 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.80 |
-| 0.10 | 551 (218) | 43% | 42% | 51% | 0.71 | 0.44 | 0.30 |
-| 0.15 | 713 (347) | 35% | 54% | 64% | 0.72 | 0.47 | −0.03 |
-| 0.20 | 885 (502) | 29% | 64% | 74% | 0.72 | 0.43 | −0.03 |
+| 0.05 | 420 (121) | 48% | 27% | 35% | 0.71 | 0.40 | 0.79 |
+| 0.10 | 549 (217) | 43% | 42% | 51% | 0.71 | 0.43 | 0.27 |
+| 0.15 | 711 (346) | 35% | 54% | 64% | 0.72 | 0.47 | −0.03 |
+| 0.20 | 882 (500) | 29% | 64% | 74% | 0.72 | 0.43 | −0.03 |
 
-*(With `--no-define-used`, Carleson's list shrinks to 169–674 results with the
+*(With `--no-define-used`, Carleson's list shrinks to 169–672 results with the
 same recall; PFR's precision is unchanged. Full numbers are in
 `results/outline/*_eval*.json`.)*
 
@@ -129,15 +129,26 @@ user-facing declaration. It opens the binders with `forallTelescope` and keeps:
 
 - explicit arguments and hypotheses, e.g. `(hA : A.Nonempty)`;
 - instance assumptions that carry content: a proposition (`[Finite G]`,
-  `[IsProbabilityMeasure μ]`), or a class applied to more than bare variables
-  (`[Module (ZMod 2) G]`).
+  `[IsProbabilityMeasure μ]`), a class applied to more than bare variables
+  (`[Module (ZMod 2) G]`), or `[Fintype G]`, which is data but says G is finite.
+  Dumps made before `Fintype` was kept get it back from the full statement
+  (`formal.restore_fintype`).
 
-It drops implicit arguments and purely structural instances such as
+It drops implicit arguments and instances on bare variables such as
 `[AddCommGroup G]` or `[MeasurableSpace Ω]`. Proofs inside terms are hidden,
 and namespaces that a reader would have open are stripped. The median
 statement shrinks from 274 to 146 characters on PFR and from 246 to 116 on
-Carleson. The full statement stays in the
-dump as `type_pp`.
+Carleson.
+
+**The short form is only for the displayed line.** Dropped assumptions can
+matter: `[AddCommGroup G]` says G is abelian, `[MetricSpace X]` is stronger
+than `[PseudoMetricSpace X]`, and `[ProofData …]` bundles all of Carleson's
+standing hypotheses. So nothing that feeds the prose uses it alone (see
+[Nothing hidden](#nothing-hidden-from-the-translator-or-checker) below). The
+rendered outline shows the short line and, under a *Full Lean statement*
+toggle, the full one (`type_pp`). That form has every implicit argument and
+instance, typed numerals (`(12 : ℝ)`, `(4 : ℕ)`), and the space behind each
+ambiguous instance (`IsProbabilityMeasure (α := Ω₀₁) volume`).
 
 ## Prose: titles, English statements, proof sketches
 
@@ -178,7 +189,8 @@ subagents as the translator and checker:
 | 2. Repair flagged, re-check their chapters | 0 of the 83 still flagged; 15 others newly flagged | 0 of the 12 still flagged |
 | 3. Repair those 15, re-check | 0 flagged | — |
 
-Final: every English statement in both outlines passes its latest check. The
+At that point every English statement in both outlines passed its latest check (the later, stricter rounds
+under [Nothing hidden](#nothing-hidden-from-the-translator-or-checker) reopened many). The
 per-round verdicts are kept in `*.check.round1.json` and `*.check.round2.json`.
 
 What the checks caught:
@@ -206,10 +218,11 @@ Caveats:
 - **Sketches are not checked.** Several go beyond the listed dependencies,
   reconstructing the standard argument (e.g. `classical_carleson`, `ent_bsg`).
   They read well but are the least grounded part of the outline.
-- **Some readings are the translator's.** Where the Lean is ambiguous as
-  printed, the English picks a reading, and the checker accepted it as
-  reasonable. Examples: which space each of several `[IsProbabilityMeasure
-  volume]` refers to; `x ^ (1 / 2)` taken as a real power.
+- ~~Some readings are the translator's~~. Where the printed Lean was
+  ambiguous (which space a `volume` lives on, the type of `1 / 2`), the English
+  had to pick a reading. The full statements are now printed unambiguously, so
+  these readings are checked (see
+  [Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
 - **Translator and checker are the same model family**, as separate
   subagents. They share context isolation but may share blind spots.
 
@@ -228,39 +241,39 @@ the previous model, trained on PFR and Carleson only (minus the project).
 
 | Project | Detail | Style | Named (theorems) | Theorem precision | Recall | Nodes covered | Chapter NMI | τ within chapters | Baseline: named, theorem precision |
 |---|---:|---|---:|---:|---:|---:|---:|---:|---|
-| PFR | 0.18 | `top_down=0` | 283 (214) | 59% | 60% | 66% | 0.85 | +0.70 | 306, 50% |
-| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 538 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 466, 45% |
-| brownian_motion | 0.15 | `top_down=0` | 429 (264) | 28% | 39% | 39% | 0.78 | +0.58 | 467, 25% |
-| testing_lower_bounds | 0.12 | `top_down=0` | 157 (116) | 26% | 33% | 33% | 0.63 | +0.58 | 165, 24% |
-| sphere_packing | 0.07 | `top_down=0` | 204 (81) | 28% | 54% | 53% | 0.82 | +0.93 | 211, 28% |
+| PFR | 0.18 | `top_down=0` | 282 (213) | 60% | 60% | 66% | 0.85 | +0.68 | 305, 50% |
+| Carleson | 0.07 | `top_down=0.2`, chapter roadmap | 537 (192) | 40% | 35% | 47% | 0.72 | +0.26 | 464, 46% |
+| brownian_motion | 0.15 | `top_down=0` | 426 (263) | 29% | 39% | 39% | 0.78 | +0.58 | 464, 25% |
+| testing_lower_bounds | 0.12 | `top_down=0` | 157 (116) | 26% | 33% | 33% | 0.63 | +0.54 | 165, 24% |
+| sphere_packing | 0.07 | `top_down=0` | 204 (81) | 28% | 54% | 53% | 0.82 | +0.89 | 211, 28% |
 | flt3 | 0.38 | `top_down=0` | 101 (60) | 78% | 58% | 58% | 1.00 | +0.28 | 119, 61% |
-| sphere_eversion | 0.06 | `top_down=0.2` | 199 (43) | 47% | 62% | 65% | 0.62 | +0.50 | 220, 34% |
-| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 78 (43) | 49% | 71% | 91% | 0.92 | +0.70 | 82, 44% |
-| apap | 0.04 | `top_down=0` | 47 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 54, 67% |
+| sphere_eversion | 0.06 | `top_down=0.2` | 188 (42) | 48% | 62% | 65% | 0.62 | +0.51 | 205, 34% |
+| abc_exceptions | 0.20 | `top_down=0.2`, chapter roadmap | 78 (43) | 49% | 71% | 91% | 0.92 | +0.67 | 82, 44% |
+| apap | 0.04 | `top_down=0` | 46 (27) | 78% | 74% | 76% | 0.83 | +0.64 | 53, 67% |
 
 *Named counts include the definitions added so that every statement can be read
 (`define_used`), which is why they exceed the detail share. Structure fields count
 with their structure.*
 
 - **Selection works well beyond chance on projects it has never seen.** At
-  each blueprint's own detail, precision on named theorems is 1.9–18 times the
+  each blueprint's own detail, precision on named theorems is 2–18 times the
   base rate. The highest lifts are on the most selective blueprints: APAP names
   4% of its declarations and the outline hits 78%; sphere eversion names 6%
-  and the outline hits 47%.
+  and the outline hits 48%.
 - **More training projects make outlines tighter, not broader.** Across all 45
   project and detail settings, recall is unchanged (mean 57% for both
-  models). Theorem precision rises in 38 settings and falls in 6 (mean 42% vs
+  models). Theorem precision rises in 37 settings and falls in 7 (mean 42% vs
   38%). At the blueprints' own detail, the new model names 3–15% fewer
   results on 8 of 9 projects, with recall within 2 points. It spends its budget on
   fewer, better-chosen theorems.
 - **Carleson is the exception.** The new model names more of its declarations
-  as theorems (192 against 148) and loses theorem precision (40% vs 45%),
+  as theorems (192 against 147) and loses theorem precision (40% vs 46%),
   though recall improves (35% vs 31%). Carleson's blueprint names no
   definitions at all, unlike most training projects, so a model trained on
   them transfers less well there.
 - **Chapters from Lean modules match the blueprint's chapters** (NMI
   0.62–1.00). **Order within chapters agrees well** with the authors
-  (τ +0.50 to +0.93) except in FLT3 and Carleson (+0.28, +0.26), whose
+  (τ +0.51 to +0.89) except in FLT3 and Carleson (+0.28, +0.26), whose
   authors follow the argument rather than the dependency order.
 - **The hardest projects are the largest.** Brownian motion and testing lower
   bounds reach 26–28% theorem precision and 33–39% recall. Their blueprints
@@ -274,18 +287,194 @@ with their structure.*
   196 → 194) without changing which theorems are chosen: precision and
   recall are unchanged.
 
+## Checked prose for a new project: APAP
+
+[`results/outline/apap.md`](../results/outline/apap.md) is the first harvested
+project with English prose. The outline comes from the model trained on the
+other 8 projects, never on APAP (`key_model_without_apap.json`), at the
+blueprint's own detail (0.044): 46 results in 20 chapters. The prose went
+through the same translate, check and repair loop as PFR and Carleson:
+
+| Round | Flagged |
+|---|---:|
+| 1. Translate (2 agents), check (fresh agent, Lean/English pairs only) | 3 of 47 |
+| 2. Repair those 3, re-check their chapters | 0 |
+| 3. Short statements now show `[Fintype G]` (below): re-check the 14 chapters whose Lean lines changed | 30 of 39 |
+| 4. Repair those 30, re-check their chapters | 0 |
+
+At that point all 46 English statements passed their latest check (reopened by the later rounds under
+[Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
+
+What the checker caught:
+
+- **A real notation error.** In Chang's lemma the Lean takes
+  `Real.log (x)⁻¹`, the log of the inverse. The English had written
+  $\log(x)^{-1}$, which reads as one over the log. The repair writes
+  $\log(1/x)$.
+- **Definition glosses that claimed too much.** The signature of `BohrSet`
+  shows only `Type → Type`, but the English described its fields. The English
+  for `dLpNorm` asserted a normalisation that the signature can't show. The
+  repairs keep to the signature and attribute extra detail to the docstring
+  ("according to its docstring…").
+- **Missing finiteness, once the Lean showed it.** The first short statements
+  dropped `[Fintype G]` (see below), and 30 English statements never said G is
+  finite. Round 3 flagged all of them as soon as the Lean line showed the
+  assumption.
+
+**Two fixes this prompted, for every project:**
+
+- **`[Fintype X]` is now shown.** Short statements keep instance assumptions
+  that are propositions (`[Finite G]`) or carry content (`[Module (ZMod q) G]`),
+  and drop data classes on a bare variable such as `[AddCommGroup G]`.
+  `Fintype X` is data, but it says X is finite, so both extractors now keep
+  it. `formal.restore_fintype` adds it back to older dumps from the full
+  statement, so no re-extraction is needed. Only APAP's outline statements
+  change (PFR uses `[Finite G]`). Other data classes, such as `DecidableEq`,
+  stay hidden as technical.
+- **Boilerplate instances are never named results.** The first APAP outline
+  named an auto-generated `DecidablePred` instance.
+  `outline.is_boilerplate_instance` now excludes auto-named instances of
+  plumbing classes (`Decidable…`, coercions, `Inhabited`, `Repr`, `FunLike`
+  and similar). Instances of mathematical classes stay eligible, because
+  blueprints do name them: `SimpleProcess.instModule` (Brownian motion),
+  `instIsZLatticeE8Lattice` (sphere packing), `instFunctionDistancesReal`
+  (Carleson). Outlines lose 1–15 results; precision and recall move by at most
+  a point. This list was later narrowed to classes with no mathematical content
+  (see [Nothing hidden](#nothing-hidden-from-the-translator-or-checker)).
+
+**Readability note.** Several sketches go beyond the listed dependencies, as for
+PFR and Carleson (e.g. "iterated density increment" for `ff`, inferred from
+helper names).
+
+## Nothing hidden from the translator or checker
+
+The short statements, the APAP fixes and the boilerplate rule all drop
+something, so we audited every drop. Question: could anything dropped ever
+matter for the prose, or even help it? It could, in each case:
+
+- **Hidden instances carried content.** Among the instances dropped from short
+  statements were `AddCommGroup` (commutativity), `Field`, `MetricSpace` vs
+  `PseudoMetricSpace`, `DoublingMeasure X A` (the doubling constant) and
+  Carleson's standing bundles (`ProofData`, `KernelProofData`,
+  `TileStructure`).
+- **Some excluded instance classes can carry content.** `Nonempty`,
+  `Inhabited`, `Unique` and `Subsingleton` instances state facts. `CoeSort` and
+  `FunLike` instances define how an object is read as a set or function.
+- **The printer hid information.** Bare numerals left their type implicit.
+  `𝕔 / 4` is floor division on ℕ, and `K ^ 12` could be a natural-number or a
+  real power. `IsProbabilityMeasure volume` did not say which space. PFR's own
+  numeral delaborator (`Mathlib.Tactic.RPowRing.delab_ofNat`) printed some
+  numerals as raw `nat_lit`.
+- **Binder types were hidden.** `∃ H c, …` in `PFR_conjecture` did not say that
+  H is a subgroup and c a set. The same gap affected 30 of the 371 outlined
+  results.
+- **Prompts truncated.** Uses lists stopped at 10 entries, helper lists and
+  docstrings were clipped, and check prompts had no docstrings, so checkers
+  could not verify glosses attributed to them.
+
+Removing a term buys only a shorter displayed line. It never helps the
+translator or checker, so they now see everything:
+
+- **Full statements everywhere.** Translate, check and repair prompts give each
+  result as `Lean (short)` and `Lean (full)` (only one line when they agree).
+  The *proof uses* list gives full statements, all of them. Helpers and
+  docstrings are complete, and check prompts include docstrings.
+- **Unambiguous printing.** `type_pp` is printed with `pp.numericTypes`,
+  `pp.funBinderTypes` (so `∃ U : Ω → G`, not `∃ U`) and `pp.analyze` (falling back to plain printing if analysis fails).
+  Project-local `OfNat` delaborators are erased before printing
+  (`eraseProjectNumeralDelabs`). The three dumps were re-extracted at their
+  pinned commits (`scripts/reextract.sh`). Of the whole PFR dump, only 4
+  tactic-internal statements still print `nat_lit`, and none is a result.
+- **Project definitions in every prompt.** Statements use project notions (`ProofData`, 𝔗(u), `rdist`,
+  `carlesonSum`) whose meaning a checker cannot verify from the statement alone. Each prompt opens with a
+  glossary of the project notions its chapter refers to, followed three levels deep through statements and
+  definition bodies (`prose.glossary`). Each entry gives the full statement, the docstring, the definition body
+  (`value_pp`, now extracted) and, for a structure, its constructor with every field and type (`ctor_pp`).
+  Results that are themselves definitions or structures show their body or constructor too.
+- **Narrow exclusions.** `is_boilerplate_instance` now excludes only instances
+  of classes with no mathematical content: `Decidable…`, `Repr`, `ToString`,
+  `Hashable`, `BEq`. Tactic implementation code (`….Tactic.…`) is also
+  excluded.
+- **The budget ignores exclusions.** `detail × |universe|` is computed before
+  the exclusions. Before this fix, excluding tactic code shrank the budget and
+  two real PFR theorems dropped out (`IsUniform.entropy_eq`,
+  `sum_of_rdist_eq_char_2`). A regression test covers it.
+- **Stricter checking.** The checker must flag:
+  - any missing assumption, including one carried by an instance (only
+    `Decidable…` may stay unstated);
+  - a stronger assumption than the Lean's (metric for pseudometric);
+  - an unstated restrictive type (ℕ, ℝ≥0);
+  - a definition that doesn't name its setting;
+  - a citation or remark that neither the docstring nor the Lean supports.
+
+  Standing bundles (`ProofData`, `KernelProofData`, `TileStructure`,
+  `GridStructure`) may be named compactly.
+
+All 371 results (PFR 131, Carleson 194, APAP 46) were re-checked from scratch
+under this regime:
+
+Each round is a fresh check of every chapter by separate checker agents, followed by repairs of what was flagged.
+Each step that exposed more information, or made the rules stricter, raised the count before repairs brought it
+down:
+
+| Round | What changed before the check | Flagged (of 371) |
+|---|---|---:|
+| 1 | Checkers see full statements (every implicit argument and instance) | 142 |
+| 2 | Stricter rules: settings of definitions, no strengthened assumptions, restrictive types, supported citations | 117 |
+| 3 | Borderline passes reported by checkers are flagged too | 37 |
+| 4 | Typed binders (`∃ U : Ω → G`); every variable typed, every symbol introduced, no unsupported descriptions | 138 |
+| 5 | Prompts list the project definitions each chapter uses (glossary) | 95 |
+| 6 | Definition bodies and structure constructors shown; a definition must say what it defines | 173 |
+
+The per-round verdicts are kept as `*.check.full1.json` and `*.check.strict1.json` … `*.check.strict6.json`.
+
+**Where this stopped.** The loop was stopped after round 6 to save usage, before it reached zero. Of the 173
+statements round 6 flagged, 147 have been revised (round-6 repairs) but not re-checked, and 26 were not repaired.
+The outlines say which is which: a revised statement carries "⚠ Translation flagged, then revised; the revision
+is not yet re-checked", an unrepaired one "⚠ Translation flagged", each with the checker's issue. The other 198
+statements passed round 6. `cairn outline … --prose DIR` prints the same counts. Most round-6 flags are about
+completeness (a definition that paraphrases its docstring instead of saying what its body defines, a symbol not
+introduced); fewer are errors of substance, such as "bounded and measurable" for `BoundedCompactSupport`, which
+asks only for essential boundedness and a.e.-strong measurability, or "supp f ⊆ F" where the Lean means
+`Function.support`.
+
+The count did not fall monotonically: each time the checkers were shown more (typed binders, the glossary,
+definition bodies and constructors) or given a stricter rule, they found a new kind of gap. To finish, run the
+repair prompts still unanswered (`--write-repair-prompts`), then full re-checks until one flags nothing. A full
+check reads about 2.8 MB of prompts, so re-checking only the chapters that changed is the cheaper option.
+
+What the full statements caught, beyond missing assumptions:
+
+- **`drc` (APAP):** `p` is a natural number, but the English treated it as a
+  real exponent.
+- **`construct_good` (PFR):** the English put the random variables on the wrong
+  probability space. The analysed printing shows which `volume` each
+  hypothesis refers to.
+- **Strengthened assumptions:** "metric space" where the Lean has a
+  pseudometric (Carleson), and "finite group" where only `[Finite G]` on an
+  `AddCommGroup` was assumed.
+- **Types:** `Tile.I12_le'` uses ℕ floor division `𝕔 / 4`. The exponents
+  `(1 / 2 : ℝ)` in Carleson are real, as the typed numerals now show.
+- **Definitions without their setting:** most of the strict round's flags.
+
 ## Limitations and next steps
 
 - ~~Statements are Lean syntax, not prose~~ and ~~module names serve as
   chapter titles~~. Done: short statements, prose and titles above.
-- **Ambiguous pretty-printing.** Printing each instance with the space it
-  lives on (`[IsProbabilityMeasure (volume : Measure Ω₀₁)]`) and
-  disambiguating numerals' types would remove most judgement calls.
+- ~~Ambiguous pretty-printing~~. Done: typed numerals and `pp.analyze` in the
+  full statements, which the translator and checker now see (above).
+- **Prose checks not finished.** 173 of 371 statements are flagged or revised-but-unchecked after round 6
+  (above). Finish with targeted re-checks of changed chapters.
+- **Standing assumptions are named, not listed, in each statement.** Carleson statements say "assume
+  `ProofData`" rather than repeating its twenty fields. The rendered outline could show each chapter's glossary
+  (standing structures and definitions) once, so the reader sees them without the prose repeating them.
 - **Proof sketches are unchecked.** A checker could compare each sketch
   against the proof's actual dependencies.
 - **`detail` is a global share.** A per-chapter budget, or a target outline
   length, may suit readers better.
 - ~~Only two training projects~~. Done: `key_model_all.json` is trained on 9
   projects (above and [`cross_project.md`](cross_project.md)).
+- ~~`[Fintype G]` hidden in short statements, boilerplate instances named as
+  results~~. Done (see APAP above).
 - ~~Structure fields as definitions~~. Done: projections are shown with their
   structure (above).

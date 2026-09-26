@@ -1,0 +1,6 @@
+{
+ "holder_van_der_corput": {
+  "faithful": false,
+  "issue": "q, K, sigma_1, sigma_2, F, G are listed without types (q real, K : X -> X -> C, sigma_i : X -> Z, F,G subsets of X); descriptions of tau (default Holder exponent) and d_{z,R} go beyond what the prompt shows."
+ }
+}

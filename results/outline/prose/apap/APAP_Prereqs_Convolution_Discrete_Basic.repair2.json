@@ -1,0 +1,8 @@
+{
+ "balance_dddconv": {
+  "statement": "Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero equipped with a star operation (a star ring structure). For $f, g : G \\to R$, the balanced (mean-subtracted) version of the difference convolution is the difference convolution of the balanced functions: $\\operatorname{balance}(f \\circ g) = \\operatorname{balance}(f) \\circ \\operatorname{balance}(g)$, where $\\circ$ is the discrete difference convolution and $\\operatorname{balance}(h) = h - \\mathbb{E}\\,h$."
+ },
+ "balance_ddconv": {
+  "statement": "Let $G$ be a finite abelian group and let $R$ be a field of characteristic zero. For $f, g : G \\to R$, $\\operatorname{balance}(f \\ast g) = \\operatorname{balance}(f) \\ast \\operatorname{balance}(g)$, where $\\ast$ is discrete convolution and $\\operatorname{balance}(h) = h - \\mathbb{E}\\,h$."
+ }
+}

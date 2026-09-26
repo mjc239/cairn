@@ -1,0 +1,4 @@
+{
+  "balance_dddconv": {"statement": "Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero equipped with a star ring structure. For functions $f, g : G \\to R$, $\\operatorname{balance}(f \\circ_d g) = \\operatorname{balance}(f) \\circ_d \\operatorname{balance}(g)$, where $\\circ_d$ is APAP's discrete difference convolution (written `○ᵈ`) and $\\operatorname{balance}$ is the operator `Fintype.balance`."},
+  "balance_ddconv": {"statement": "Let $G$ be a finite additive commutative group and let $R$ be a field of characteristic zero. For functions $f, g : G \\to R$, $\\operatorname{balance}(f \\ast_d g) = \\operatorname{balance}(f) \\ast_d \\operatorname{balance}(g)$, where $\\ast_d$ is APAP's discrete convolution (written `∗ᵈ`) and $\\operatorname{balance}$ is the operator `Fintype.balance`."}
+}

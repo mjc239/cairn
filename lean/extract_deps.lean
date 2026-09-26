@@ -40,21 +40,28 @@ def kindOf : ConstantInfo → String
 def namesJson (ns : Array Name) : Json :=
   Json.arr (ns.map (fun n => Json.str n.toString))
 
-/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. -/
+/-- Pretty-print a statement; failures (rare) become an empty string rather than aborting the dump. Numerals carry
+their type (`(1 / 2 : ℝ)`, not `1 / 2`, which could be the natural number 0): this is the full statement the prose
+is checked against, so it hides nothing. Binders of `∃`, `fun`, `∑` and the like show their types
+(`∃ U : Ω → G, …`, not `∃ U, …`) for the same reason. -/
 def ppType (env : Environment) (e : Expr) : IO String := do
-  let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
-  let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
-  try
+  let base : Options :=
+    (((({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false).setBool `pp.numericTypes true)
+      |>.setBool `pp.funBinderTypes true
+  let run (opts : Options) : IO String := do
+    let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
     let (fmt, _, _) ← (Meta.ppExpr e).toIO ctx { env }
     return toString fmt
-  catch _ =>
-    return ""
+  -- `pp.analyze` adds the annotations needed to read the term back unambiguously, e.g. which space's `volume`
+  -- an `[IsProbabilityMeasure volume]` is about; if it fails, fall back to the plain printing.
+  try run (base.setBool `pp.analyze true) catch _ =>
+    try run base catch _ => return ""
 
 /-- Short statement: explicit binders, meaningful instance assumptions and the conclusion, e.g.
 `[Finite G] (hA : A.Nonempty) : …`. Implicit binders are dropped, and so are instance binders that only
 equip a variable with structure (`[AddCommGroup G]`, `[MeasurableSpace Ω]`: a class applied to bound
-variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`)
-or mention other terms (`[Module (ZMod 2) G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
+variables only, not a proposition). Instances that are propositions (`[Finite G]`, `[IsProbabilityMeasure μ]`),
+mention other terms (`[Module (ZMod 2) G]`) or say a type is finite (`[Fintype G]`) are kept. Unnamed hypotheses print as `(_ : P)`. -/
 def ppShort (env : Environment) (e : Expr) : IO String := do
   let opts : Options := (({} : Options).set `format.width (100 : Nat)).setBool `pp.proofs false
   let ctx : Core.Context := { fileName := "<cairn>", fileMap := default, options := opts, maxHeartbeats := 0 }
@@ -66,7 +73,9 @@ def ppShort (env : Environment) (e : Expr) : IO String := do
         let name := if d.userName.hasMacroScopes then "_" else d.userName.toString
         parts := parts.push s!"({name} : {← Meta.ppExpr d.type})"
       else if d.binderInfo.isInstImplicit then
-        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar)
+        -- `[Fintype G]` is data but says G is finite, so it is kept like `[Finite G]`
+        let structural := !(← Meta.isProp d.type) && d.type.getAppArgs.all (·.isFVar) &&
+          d.type.getAppFn.constName? != some `Fintype
         unless structural do
           parts := parts.push s!"[{← Meta.ppExpr d.type}]"
     let concl := toString (← Meta.ppExpr body)
@@ -107,6 +116,19 @@ def blueprintReach (env : Environment) (modNames : Array Name) (inProject : Name
     frontier := next
   return found
 
+/-- Switch off numeral delaborators (`@[delab app.OfNat.ofNat]`) declared in the project itself, e.g. PFR's
+`RPowRing.delab_ofNat`, which prints the raw literal and so overrides `pp.numericTypes`. Core and Mathlib printing,
+and the project's other notation, are untouched. -/
+def eraseProjectNumeralDelabs (env : Environment) (modNames : Array Name) (inProject : Name → Bool) :
+    Environment := Id.run do
+  let mut env := env
+  for e in PrettyPrinter.Delaborator.delabAttribute.getEntries env `app.OfNat.ofNat do
+    let some idx := env.getModuleIdxFor? e.declName | continue
+    if inProject modNames[idx.toNat]! then
+      env := PrettyPrinter.Delaborator.delabAttribute.ext.modifyState env
+        fun st => { st with erased := st.erased.insert e.declName }
+  return env
+
 def main (args : List String) : IO UInt32 := do
   let root :: prefixes := args
     | IO.eprintln "usage: [CAIRN_EXTRA=FILE] extract_deps <RootModule>[,<RootModule>...] <ModulePrefix>..."; return 1
@@ -122,6 +144,7 @@ def main (args : List String) : IO UInt32 := do
   let env ← importModules (roots.toArray.map fun r => { module := r.toName }) {} (loadExts := true)
   let modNames := env.allImportedModuleNames
   let inProject (m : Name) : Bool := prefixes.any fun p => p.toName.isPrefixOf m
+  let env := eraseProjectNumeralDelabs env modNames inProject
   let listed : NameSet := listedNames.foldl (·.insert ·) {}
   let stdout ← IO.getStdout
   let mut count := 0
@@ -152,6 +175,10 @@ def main (args : List String) : IO UInt32 := do
     let doc ← if userFacing then findSimpleDocString? env name else pure none
     let typePP ← if userFacing then ppType env info.type else pure ""
     let stmtShort ← if userFacing then ppShort env info.type else pure ""
+    -- A definition's body, so that prose describing what a defined notion *is* can be checked against it.
+    let valuePP ← match info with
+      | .defnInfo d => if userFacing then ppType env d.value else pure ""
+      | _ => pure ""
     let reach := if listed.contains name then blueprintReach env modNames inProject listed name else #[]
     let line := Json.mkObj [
       ("name", Json.str name.toString),
@@ -171,6 +198,7 @@ def main (args : List String) : IO UInt32 := do
         | none => Json.null),
       ("type_pp", Json.str typePP),
       ("stmt_short", Json.str stmtShort),
+      ("value_pp", Json.str valuePP),
       ("value_size", Json.num valueSize),
       ("type_deps", namesJson info.type.getUsedConstants),
       ("value_deps", namesJson valueDeps),

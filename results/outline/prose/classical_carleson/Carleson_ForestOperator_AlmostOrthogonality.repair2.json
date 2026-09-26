@@ -1,0 +1,5 @@
+{
+ "TileStructure.Forest.𝔖₀": {
+  "statement": "Let $X$ be a metric space, $a$ a natural number, $q$ a real number, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and $F, G \\subseteq X$, satisfying the standing assumptions `ProofData`, and suppose $X$ carries a tile structure (`TileStructure`) with respect to $Q$ and the default parameters `defaultD a`, `defaultκ a`, `defaultS X` and `cancelPt X`. For a natural number $n$, a forest $t$ of level $n$ (`Forest X n`) and tiles $u_1, u_2 \\in \\mathfrak{P}(X)$, $\\mathfrak{S}_0(u_1, u_2)$ is a set of tiles in $\\mathfrak{P}(X)$. According to its docstring, it is the set $\\mathfrak{S}$ defined in the proof of Lemma 7.4.4 (with subscript $0$ added to distinguish it from a section variable)."
+ }
+}

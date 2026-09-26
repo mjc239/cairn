@@ -1,0 +1,6 @@
+{
+ "MeasureTheory.dLpNorm": {
+  "faithful": false,
+  "issue": "A definition with its body shown, but the English only paraphrases the docstring ('L^p norm with the compact normalisation'). It does not say what the body is: lpNorm f p with respect to the counting measure on α."
+ }
+}

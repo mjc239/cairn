@@ -1,0 +1,10 @@
+{
+ "cLpNorm_conv_le_cLpNorm_dconv": {
+  "faithful": true,
+  "issue": ""
+ },
+ "dLpNorm_ddconv_le_dLpNorm_dddconv": {
+  "faithful": false,
+  "issue": "The project notions are named without being described. ∗ᵈ (ddconv) is (f∗ᵈg)(a) = Σ_{x+y=a} f(x)g(y); ○ᵈ (dddconv) is (f○ᵈg)(a) = Σ_{x−y=a} f(x)·conj(g(y)), and the complex conjugation is never mentioned; ‖·‖_[n] (dLpNorm) is the L^n norm with respect to counting measure, but the English just says 'the L^n norm' without saying which normalisation."
+ }
+}

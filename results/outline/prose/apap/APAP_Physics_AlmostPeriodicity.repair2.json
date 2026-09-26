@@ -1,0 +1,4 @@
+{
+  "AlmostPeriodicity.LProp": {"statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure. For natural numbers $k, m \\in \\mathbb{N}$, a real number $\\varepsilon \\in \\mathbb{R}$, a function $f : G \\to \\mathbb{C}$, a finite set $A \\subseteq G$ and a $k$-tuple $a : \\mathrm{Fin}\\,k \\to G$, $\\mathrm{LProp}(k,m,\\varepsilon,f,A,a)$ is a proposition."},
+  "AlmostPeriodicity.l": {"statement": "Let $G$ be a finite additive commutative group equipped with a measurable space structure. For natural numbers $k, m \\in \\mathbb{N}$, a real number $\\varepsilon \\in \\mathbb{R}$, a function $f : G \\to \\mathbb{C}$ and a finite set $A \\subseteq G$, $l(k,m,\\varepsilon,f,A)$ is a finite set of $k$-tuples $a : \\mathrm{Fin}\\,k \\to G$."}
+}

@@ -1,0 +1,8 @@
+{
+ "FiniteRange": {
+  "statement": "For arbitrary types $\\Omega$ and $G$ and a map $X : \\Omega \\to G$, $\\mathrm{FiniteRange}(X)$ is a proposition about $X$; according to its docstring, it is the property of $X$ having a finite range."
+ },
+ "FiniteRange.toFinset": {
+  "statement": "For arbitrary types $\\Omega$ and $G$ and a map $X : \\Omega \\to G$ satisfying $\\mathrm{FiniteRange}(X)$, $\\mathrm{FiniteRange.toFinset}(X)$ is a finite set (Finset) of elements of $G$; according to its docstring, it is the range of $X$, viewed as a finset."
+ }
+}

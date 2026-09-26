@@ -1,0 +1,6 @@
+{
+ "iterCConv": {
+  "faithful": false,
+  "issue": "Calls R a ring of characteristic zero, but Lean requires a semifield of characteristic zero."
+ }
+}

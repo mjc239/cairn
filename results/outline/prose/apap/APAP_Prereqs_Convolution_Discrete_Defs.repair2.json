@@ -1,0 +1,17 @@
+{
+ "ddconv": {
+  "statement": "Let $G$ be a finite abelian group and $R$ a commutative semiring. For $f, g : G \\to R$, $\\mathrm{ddconv}(f, g)$ is a function $G \\to R$; according to its docstring, it is the convolution of $f$ and $g$."
+ },
+ "ddconv_eq_sum_sub": {
+  "statement": "Let $G$ be a finite abelian group and $R$ a commutative semiring. For $f, g : G \\to R$ and $a \\in G$, the discrete convolution satisfies $(f *_d g)(a) = \\sum_{t \\in G} f(a - t)\\, g(t)$."
+ },
+ "trivChar": {
+  "statement": "Let $G$ be an abelian group and $R$ a commutative semiring. $\\mathrm{trivChar}$ is a function $G \\to R$; according to its docstring, it is the trivial character."
+ },
+ "iterConv": {
+  "statement": "Let $G$ be a finite abelian group and $R$ a commutative semiring. For $f : G \\to R$ and a natural number $n$, $\\mathrm{iterConv}(f, n)$ is a function $G \\to R$; according to its docstring, it is the iterated convolution."
+ },
+ "dddconv": {
+  "statement": "Let $G$ be a finite abelian group and $R$ a commutative semiring equipped with a star-ring structure. For $f, g : G \\to R$, $\\mathrm{dddconv}(f, g)$ is a function $G \\to R$; according to its docstring, it is the difference convolution of $f$ and $g$."
+ }
+}

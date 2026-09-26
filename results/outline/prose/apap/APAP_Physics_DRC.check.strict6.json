@@ -1,0 +1,18 @@
+{
+ "s": {
+  "faithful": false,
+  "issue": "The body {x : (1-ε)‖1_A ○ 1_A‖_{p, μ_{B₁}○μ_{B₂}} < (1_A ○ 1_A)(x)} is not described. The English only says that s is some finite subset of G."
+ },
+ "drc": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sifting": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sifting_cor": {
+  "faithful": true,
+  "issue": ""
+ }
+}

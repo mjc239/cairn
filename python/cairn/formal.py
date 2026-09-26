@@ -22,6 +22,23 @@ _GENERATED_SUFFIXES = {
 }
 
 
+_FINTYPE = re.compile(r"\[(?:[^\[\]:]+ : )?(Fintype [^\]]+)\]")
+
+
+def restore_fintype(stmt_short: str, type_pp: str) -> str:
+    """Add the ``[Fintype X]`` assumptions of the full statement to a short statement that dropped them.
+
+    ``Fintype X`` is data, so extractors before this fix hid it like ``[AddCommGroup X]``, but it states that X is
+    finite. Current extractors keep it; this repairs older dumps.
+    """
+    missing = [f for f in dict.fromkeys(_FINTYPE.findall(type_pp or "")) if f"[{f}]" not in stmt_short]
+    if not missing or not stmt_short:
+        return stmt_short
+    prefix = " ".join(f"[{f}]" for f in missing)
+    has_binders = stmt_short.startswith("[") or re.match(r"\((\S+) : ", stmt_short)
+    return f"{prefix} {stmt_short}" if has_binders else f"{prefix} : {stmt_short}"
+
+
 _BINDER = re.compile(r"\(([^\s():]+) :")
 
 
@@ -79,10 +96,14 @@ class FormalDecl:
     """Pretty-printed statement (Lean syntax), when the dump has it."""
     stmt_short: str = ""
     """Short statement: explicit hypotheses and conclusion only."""
+    value_pp: str = ""
+    """For a definition: its pretty-printed body, when the dump has it."""
     external: bool = False
     """Declared outside the project (e.g. upstreamed to Mathlib) but named by the blueprint."""
     fields: list[str] = field(default_factory=list)
     """For a structure (single-constructor inductive): the named explicit fields of its constructor."""
+    ctor_pp: str = ""
+    """For a structure: its constructor's pretty-printed type, i.e. every field with its type."""
 
 
 def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl]:
@@ -119,7 +140,8 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
             d.private = r["private"]
             d.doc = r.get("doc")
             d.type_pp = r.get("type_pp", "")
-            d.stmt_short = r.get("stmt_short", "")
+            d.stmt_short = restore_fintype(r.get("stmt_short", ""), d.type_pp)
+            d.value_pp = r.get("value_pp", "")
             d.external = bool(r.get("external"))
         d.value_size += r.get("value_size", 0)
         d.members.append(r["name"])
@@ -129,6 +151,7 @@ def load_decls(path: str | Path, external: bool = False) -> dict[str, FormalDecl
     for target, rs in ctors.items():
         if target in decls and len(rs) == 1:  # a structure: its constructor's explicit binders are the fields
             decls[target].fields = list(dict.fromkeys(_BINDER.findall(rs[0].get("type_pp", ""))))
+            decls[target].ctor_pp = rs[0].get("type_pp", "")
     for d in decls.values():
         d.type_deps.discard(d.name)
         d.value_deps.discard(d.name)

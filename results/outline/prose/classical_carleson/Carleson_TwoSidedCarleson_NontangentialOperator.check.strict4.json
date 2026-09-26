@@ -1,0 +1,22 @@
+{
+ "nontangential_from_simple": {
+  "faithful": false,
+  "issue": "The English calls K a 'Calderón–Zygmund kernel', a description of IsTwoSidedKernel that neither the prompt nor a docstring supports."
+ },
+ "cotlar_estimate": {
+  "faithful": false,
+  "issue": "The English calls K a 'Calderón–Zygmund kernel', a description of IsTwoSidedKernel that neither the prompt nor a docstring supports. The point x : X is never introduced, and r, R are not stated to be real. The name 'Cotlar's estimate' is not in the docstring."
+ },
+ "cotlar_set_F₂": {
+  "faithful": false,
+  "issue": "The English calls K a 'Calderón–Zygmund kernel', a description of IsTwoSidedKernel that neither the prompt nor a docstring supports. The point x : X is never introduced, and r, R are not stated to be real."
+ },
+ "simple_nontangential_operator": {
+  "faithful": false,
+  "issue": "The English calls K a 'Calderón–Zygmund kernel', a description of IsTwoSidedKernel that neither the prompt nor a docstring supports."
+ },
+ "simple_nontangential_operator_le": {
+  "faithful": false,
+  "issue": "The English calls K a 'Calderón–Zygmund kernel', a description of IsTwoSidedKernel that neither the prompt nor a docstring supports."
+ }
+}

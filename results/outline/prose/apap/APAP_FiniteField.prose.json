@@ -1,0 +1,21 @@
+{
+ "title": "Three-term progressions in finite vector spaces",
+ "results": {
+  "ap_in_ff": {
+   "statement": "Let $q$ be a prime and let $G$ be a finite vector space over $\\mathbb{Z}/q\\mathbb{Z}$. Let $S, A_1, A_2 \\subseteq G$ be finite sets, and let $0 < \\alpha \\le 1/2$ and $0 < \\varepsilon \\le 1$ with $\\alpha \\le \\operatorname{dens}(A_1)$ and $\\alpha \\le \\operatorname{dens}(A_2)$. Then there is a subspace $V \\le G$ with $\\dim G - \\dim V \\le 2^{32}\\,(1 + \\log \\alpha^{-1})^2\\,(1 + \\log (\\varepsilon\\alpha)^{-1})^2\\,\\varepsilon^{-2}$ and $\\left|\\sum_{x \\in S} (\\mu_V * \\mu_{A_1} * \\mu_{A_2})(x) - \\sum_{x \\in S} (\\mu_{A_1} * \\mu_{A_2})(x)\\right| \\le \\varepsilon$, where $\\mu_X$ is the normalised indicator of $X$ and $*$ is discrete convolution.",
+   "sketch": "Boosted $L^\\infty$ almost-periodicity (`linfty_almost_periodicity_boosted`) gives a large set $T$ whose iterated convolution $\\mu_T^{*k}$ leaves a convolution of the form $\\mu_A * 1_B * \\mu_C$ almost unchanged in $L^\\infty$; Chang's lemma applied to the large spectrum of the relevant function then yields a small set $\\Delta$ of characters spanning it, and $V$ is taken to be the common kernel of the characters in $\\Delta$, whose codimension is bounded by $|\\Delta|$ (via the folded kernel/codimension lemmas)."
+  },
+  "global_dichotomy": {
+   "statement": "$G$ carries the discrete measurable structure (and is finite). Let $A, C \\subseteq G$ with $A$ nonempty, let $0 < \\gamma \\le \\operatorname{dens}(C)$, and suppose $\\varepsilon \\le \\left| |G|\\,\\langle \\mu_A * \\mu_A, \\mu_C\\rangle - 1 \\right|$. Then $\\dfrac{\\varepsilon}{2|G|} \\le \\|\\operatorname{bal}(\\mu_A) \\circ \\operatorname{bal}(\\mu_A)\\|_{p, \\mu_G}$, where $p = 2\\lceil 1 + \\log \\gamma^{-1}\\rceil$ (natural-number ceiling), $\\operatorname{bal}(f) = f - \\mathbb{E} f$ is the balanced function, $\\circ$ is the discrete difference convolution, and $\\|\\cdot\\|_{p,\\mu_G}$ is the $L^p$ norm weighted by the uniform density $\\mu_G$ on $G$.",
+   "sketch": "Writing $|G|\\langle \\mu_A*\\mu_A,\\mu_C\\rangle - 1$ via balanced functions (`balance_ddconv`, `ddconv_eq_sum_sub`), a Hölder bound for the inner product reduces the claim to an $L^p$ bound on $\\operatorname{bal}(\\mu_A) * \\operatorname{bal}(\\mu_A)$, which is then compared with the difference convolution using `dLpNorm_ddconv_le_dLpNorm_dddconv`."
+  },
+  "di_in_ff": {
+   "statement": "Let $q$ be a prime and let $G$ be a finite vector space over $\\mathbb{Z}/q\\mathbb{Z}$ carrying the discrete measurable structure. Let $A, C \\subseteq G$, $0 < \\varepsilon < 1$, $0 < \\gamma \\le \\operatorname{dens}(C)$, and suppose $\\varepsilon \\le \\left| |G|\\,\\langle \\mu_A * \\mu_A, \\mu_C\\rangle - 1 \\right|$. Then there is a subspace $V \\le G$ with $\\dim G - \\dim V \\le 2^{128}\\,(1 + \\log \\operatorname{dens}(A)^{-1})^4\\,(1 + \\log \\gamma^{-1})^4 / \\varepsilon^{12}$ and $(1 + \\varepsilon/32)\\operatorname{dens}(A) \\le \\|1_A * \\mu_V\\|_\\infty$.",
+   "sketch": "`global_dichotomy` gives a lower bound on an $L^p$ norm of $\\operatorname{bal}(\\mu_A)\\circ\\operatorname{bal}(\\mu_A)$; `unbalancing` (with `balance_dddconv`) upgrades this to $1 + \\varepsilon/2 \\le \\|\\cdot + 1\\|_{p'}$ for a larger $p'$; `sifting_cor` then produces dense sets $A_1, A_2$ with $\\mu_{A_1}\\circ\\mu_{A_2}$ concentrated on the set where the convolution is large, and `ap_in_ff` supplies the subspace $V$ giving the density increment."
+  },
+  "ff": {
+   "statement": "Let $q \\ge 3$ be a prime and let $G$ be a finite vector space over $\\mathbb{Z}/q\\mathbb{Z}$. If $A \\subseteq G$ is nonempty and contains no nontrivial three-term arithmetic progression, then $\\dim G \\le 2^{148}\\,(1 + \\log \\operatorname{dens}(A)^{-1})^9$.",
+   "sketch": "Since $A$ is 3AP-free, $\\langle \\mu_A * \\mu_A, \\mu_{2\\cdot A}\\rangle$ is controlled (`ThreeAPFree.wInner_one_mu_ddconv_mu_mu_two_smul_mu`), so `di_in_ff` applies with $C = 2\\cdot A$ and gives a subspace $V$ on a translate of which $A$ has density at least $(1+\\varepsilon/32)\\operatorname{dens}(A)$; this density increment is iterated to bound $\\dim G$."
+  }
+ }
+}

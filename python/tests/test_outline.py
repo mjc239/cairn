@@ -38,7 +38,7 @@ def test_build_and_render(style):
     assert pos[S("D")] < pos[S("T")] and pos[S("L")] < pos[P("T")]
     assert o.chapter_order == ["M.Defs", "M.A", "M.B"] or o.chapter_order.index("M.A") < o.chapter_order.index("M.B")
     md = render(o, d, "Test", style, "note")
-    assert "**Theorem** `T`" in md and "folds in 1 helper lemma: `h`" in md and "Key lemma." in md
+    assert "**Theorem** `T`" in md and "folds in 1 helper lemma" in md and "<code>h</code>" in md and "Key lemma." in md
 
 
 def test_prose_roundtrip(tmp_path):
@@ -61,6 +61,7 @@ def test_prose_roundtrip(tmp_path):
     assert {p.name for p in paths} == {"M_Defs.prompt.md", "M_A.prompt.md", "M_B.prompt.md"}
     prompt = (tmp_path / "M_B.prompt.md").read_text()
     assert "`T` (theorem)" in prompt and "Proof uses:" in prompt and "- `L`" in prompt
+    assert "Lean (short): `(h : Foo.P) : Foo.Q`" in prompt and "Lean (full): `T : D`" in prompt  # nothing hidden
     (tmp_path / "M_B.prose.json").write_text(json.dumps(
         {"title": "The main theorem", "results": {"T": {"statement": "If P then Q.", "sketch": "Apply L."}}}))
     write_check_prompts(o, d, tmp_path)
@@ -71,7 +72,7 @@ def test_prose_roundtrip(tmp_path):
     md = render(o, d, "Test", Style(0), "note", prose)
     assert "## 3. The main theorem" in md and "If P then Q." in md and "Apply L." in md
     assert "Translation flagged: drops h" in md and "Lean: `(h : Foo.P) : Foo.Q`" in md
-    assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"]}
+    assert coverage(o, prose) == {"results": 3, "translated": 1, "checked": 1, "flagged": ["T"], "recheck_pending": []}
     # repair: the flagged item goes back with the checker's issue; the corrected statement overrides the original
     assert [p.name for p in write_repair_prompts(o, d, tmp_path)] == ["M_B.repair.md"]
     assert "Checker's issue: drops h" in (tmp_path / "M_B.repair.md").read_text()
@@ -102,3 +103,74 @@ def test_select_presents_projections_with_their_structure():
     named = select(decls, fg, {"T": 1.0, "Pair.v": 0.5, "Pair": 0.1}, count=1)
     assert named == {"T", "Pair"}  # Pair.v is added for readability, then shown as part of Pair
     assert select(decls, fg, {"Pair.v": 1.0, "T": 0.5, "Pair": 0.1}, count=1, define_used=False) == {"Pair"}
+
+
+def test_boilerplate_instances_are_never_named():
+    from cairn.formal import FormalDecl
+    from cairn.outline import is_boilerplate_instance
+
+    def inst(name, stmt):
+        return FormalDecl(name, "def", "M", 1, stmt_short=stmt)
+
+    assert is_boilerplate_instance(inst("A.instDecidablePredForallFinLProp", "DecidablePred (LProp k m ε f A)"))
+    assert is_boilerplate_instance(inst("X.instReprConfig", "Repr Config"))
+    # coercions and nonemptiness can carry content a reader needs: they stay eligible
+    assert not is_boilerplate_instance(inst("BohrSet.instCoeSort", "CoeSort (BohrSet G) (Type u_1)"))
+    assert not is_boilerplate_instance(inst("X.instInhabited", "[Fintype G] : Inhabited (X G)"))
+    assert not is_boilerplate_instance(inst("T.instNonempty", "(K : Type) : Nonempty ↥(torsion K)"))
+    assert not is_boilerplate_instance(inst("SimpleProcess.instModule", "[OrderBot ι] : Module ℝ (SimpleProcess E)"))
+    assert not is_boilerplate_instance(inst("instIsZLatticeE8Lattice", "IsZLattice ℝ E8Lattice"))
+    assert not is_boilerplate_instance(inst("decidableThing", "DecidablePred p"))  # not auto-named
+
+
+def test_exclusions_do_not_shrink_the_budget():
+    import networkx as nx
+
+    from cairn.formal import FormalDecl
+    from cairn.outline import select
+
+    decls = {f"T{i}": FormalDecl(f"T{i}", "theorem", "M", i) for i in range(4)}
+    decls["M.Tactic.cfg"] = FormalDecl("M.Tactic.cfg", "def", "M", 9)
+    decls["X.instDecidableEqX"] = FormalDecl("X.instDecidableEqX", "def", "M", 10, stmt_short="DecidableEq X")
+    fg = nx.DiGraph()
+    fg.add_nodes_from(decls)
+    scores = {"M.Tactic.cfg": 1.0, "X.instDecidableEqX": 0.9, "T0": 0.8, "T1": 0.7, "T2": 0.6, "T3": 0.5}
+    # 6 declarations at detail 0.5 -> 3 results; the two excluded ones never take a place, nor shrink the budget
+    assert select(decls, fg, scores, detail=0.5, define_used=False) == {"T0", "T1", "T2"}
+
+
+def test_glossary_follows_project_notions():
+    from cairn.prose import _glossary_lines, glossary
+
+    decls = {
+        "Data": FormalDecl("Data", "inductive", "M", 1, fields=["c"], doc="Standing data."),
+        "Data.c": FormalDecl("Data.c", "def", "M", 2, type_deps={"Data", "C"}, type_pp="[Data] → C"),
+        "C": FormalDecl("C", "def", "M", 3, type_pp="Type", value_pp="ℕ"),
+        "dist": FormalDecl("dist", "def", "M", 4, type_deps={"Data"}, type_pp="[Data] → ℝ", value_pp="0"),
+        "lemma1": FormalDecl("lemma1", "theorem", "M", 5),
+        "T": FormalDecl("T", "theorem", "M", 6, type_deps={"dist", "lemma1", "Nat"}, type_pp="dist = 0"),
+    }
+    # direct references, then (depth 2) what they refer to; theorems and non-project names are left out
+    assert glossary(["T"], decls, depth=2) == ["dist", "Data"]
+    assert glossary(["T"], decls, depth=3) == ["dist", "Data", "Data.c"]
+    text = "\n".join(_glossary_lines(["T"], decls, ()))
+    assert "Definition: `0`" in text and "Docstring: Standing data." in text and "Fields: `c`" in text
+    decls["Data"].ctor_pp = "(c : C) → Data"
+    assert "Constructor (every field with its type): `(c : C) → Data`" in "\n".join(_glossary_lines(["T"], decls, ()))
+
+
+def test_repair_after_last_check_is_marked_pending(tmp_path):
+    import json
+
+    from cairn.prose import load_prose
+
+    (tmp_path / "M.prompt.md").write_text("Lean module `M`")
+    (tmp_path / "M.prose.json").write_text(json.dumps({"title": "T", "results": {"a": {"statement": "old"},
+                                                                                 "b": {"statement": "old"}}}))
+    (tmp_path / "M.check.json").write_text(json.dumps({"a": {"faithful": False, "issue": "x is untyped"},
+                                                       "b": {"faithful": False, "issue": "y"}}))
+    (tmp_path / "M.repair.md").write_text("### `a`\nChecker's issue: x is untyped\n")
+    (tmp_path / "M.repair.json").write_text(json.dumps({"a": {"statement": "new"}}))
+    r = load_prose(tmp_path)["M"]["results"]
+    assert r["a"]["statement"] == "new" and r["a"].get("recheck_pending")
+    assert not r["b"].get("recheck_pending")

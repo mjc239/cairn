@@ -58,15 +58,15 @@
     {
       "detail": 0.3,
       "named": 358,
-      "named_theorems": 356,
-      "precision": 0.43575418994413406,
-      "theorem_precision": 0.43820224719101125,
-      "recall": 0.636734693877551,
-      "node_coverage": 0.6586538461538461,
-      "chapter_nmi": 0.8580164240028431,
-      "tau_whole": 0.5416487762988407,
-      "tau_within_chapters": 0.6510356123801502,
-      "chapters": 37
+      "named_theorems": 358,
+      "precision": 0.43854748603351956,
+      "theorem_precision": 0.43854748603351956,
+      "recall": 0.6408163265306123,
+      "node_coverage": 0.6634615384615384,
+      "chapter_nmi": 0.8578269561524717,
+      "tau_whole": 0.5436369406537607,
+      "tau_within_chapters": 0.6615598220640238,
+      "chapters": 36
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+ "ddconv": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "ddconv_eq_sum_sub": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "trivChar": {
+  "faithful": true,
+  "issue": ""
+ },
+ "iterConv": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ },
+ "dddconv": {
+  "faithful": false,
+  "issue": "The English omits the [Fintype G] hypothesis that G is finite."
+ }
+}

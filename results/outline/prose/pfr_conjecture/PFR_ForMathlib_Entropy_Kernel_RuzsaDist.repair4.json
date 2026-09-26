@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.rdist": {
+  "statement": "Definition. Let $T$ and $T'$ be measurable spaces and let $G$ be an additive commutative group equipped with a measurable space structure. For a kernel $\\kappa$ from $T$ to $G$, a kernel $\\eta$ from $T'$ to $G$, a measure $\\mu$ on $T$ and a measure $\\nu$ on $T'$, the kernel Ruzsa distance $d_k[\\kappa;\\mu \\,\\#\\, \\eta;\\nu]$ is a real number. According to its docstring, it is the average Ruzsa distance between the image measures."
+ }
+}

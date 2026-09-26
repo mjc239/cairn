@@ -1,0 +1,22 @@
+{
+ "rdist_of_indep_eq_sum_fibre": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_of_rdist_eq_step_condMutualInfo": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_of_rdist_eq_step_condRuzsaDist": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_of_rdist_eq": {
+  "faithful": true,
+  "issue": ""
+ },
+ "sum_of_rdist_eq_char_2": {
+  "faithful": true,
+  "issue": ""
+ }
+}

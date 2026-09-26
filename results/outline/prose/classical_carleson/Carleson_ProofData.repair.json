@@ -1,0 +1,11 @@
+{
+ "ProofData": {
+  "statement": "Let $X$ be a pseudometric space. Definition: given a natural number $a$, a real number $q$, a kernel $K : X \\times X \\to \\mathbb{C}$, functions $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and sets $F, G \\subseteq X$, the type of structures $\\mathrm{ProofData}(a, q, K, \\sigma_1, \\sigma_2, F, G)$ on $X$; according to the docstring, it bundles the data common throughout most of Chapters 2–7 (except Chapter 3)."
+ },
+ "ProofData.toKernelProofData": {
+  "statement": "Let $X$ be a pseudometric space, $a$ a natural number, $q$ a real number, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$ and $F, G \\subseteq X$. Definition: the kernel data $\\mathrm{KernelProofData}(a, K)$ underlying a structure $\\mathrm{ProofData}(a, q, K, \\sigma_1, \\sigma_2, F, G)$."
+ },
+ "defaultS": {
+  "statement": "Let $X$ be a pseudometric space equipped with $\\mathrm{ProofData}(a, q, K, \\sigma_1, \\sigma_2, F, G)$ (with $a \\in \\mathbb{N}$, $q \\in \\mathbb{R}$, $K : X \\times X \\to \\mathbb{C}$, $\\sigma_1, \\sigma_2 : X \\to \\mathbb{Z}$, $F, G \\subseteq X$). Definition: the natural number $S = \\mathrm{defaultS}(X)$ associated with this data."
+ }
+}

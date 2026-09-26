@@ -1,0 +1,5 @@
+{
+ "largeSpec": {
+  "statement": "Let $G$ be a finite type (with its additive group structure). For $f : G \\to \\mathbb{C}$ and $\\eta \\in \\mathbb{R}$, $\\mathrm{largeSpec}(f, \\eta)$ is a finite set of additive characters $G \\to \\mathbb{C}$; according to its docstring, it is the $\\eta$-large spectrum of $f$."
+ }
+}

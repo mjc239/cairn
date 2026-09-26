@@ -1,0 +1,10 @@
+{
+ "ProbabilityTheory.CondIndepFun": {
+  "faithful": false,
+  "issue": "Does not state the measurable-space structures on $\\Omega,\\alpha,\\beta,\\gamma$ required by the signature, nor that $\\mu$ is an autoParam (defaults to the volume measure)."
+ },
+ "ProbabilityTheory.condIndep_copies": {
+  "faithful": false,
+  "issue": "Does not state that $\\Omega$ and $\\alpha$ are measurable spaces (instance hypotheses); $\\Omega'$ in the same universe is fine but the setting is incomplete."
+ }
+}

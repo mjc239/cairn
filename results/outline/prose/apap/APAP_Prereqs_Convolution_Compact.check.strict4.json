@@ -1,0 +1,6 @@
+{
+ "iterCConv": {
+  "faithful": false,
+  "issue": "The docstring says only 'Iterated convolution'. The English goes further and calls it the '(n-fold)' iterated convolution, which ties n to the number of convolution factors; neither the Lean signature nor the docstring supports that."
+ }
+}

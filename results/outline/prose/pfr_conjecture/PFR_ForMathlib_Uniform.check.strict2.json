@@ -1,0 +1,14 @@
+{
+ "ProbabilityTheory.IsUniform": {
+  "faithful": false,
+  "issue": "The gloss that the proposition expresses X being uniformly distributed on H goes beyond the signature and is not attributed to the docstring."
+ },
+ "ProbabilityTheory.exists_isUniform_measureSpace": {
+  "faithful": true,
+  "issue": ""
+ },
+ "ProbabilityTheory.IsUniform.measureReal_preimage_of_mem": {
+  "faithful": true,
+  "issue": ""
+ }
+}

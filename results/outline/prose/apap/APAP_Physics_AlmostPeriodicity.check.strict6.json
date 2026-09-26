@@ -1,0 +1,30 @@
+{
+ "AlmostPeriodicity.LProp": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only says LProp is 'a proposition'; it must state the defining inequality dLpNorm_{2m}(x ↦ Σ_i f(x - a_i) - k·(μ_A ∗ f)(x)) ≤ k·ε·‖f‖_[2m]."
+ },
+ "AlmostPeriodicity.l": {
+  "faithful": false,
+  "issue": "Definition body is shown but the English only says l is 'a finite set of k-tuples'; it must state that l is the set of tuples a ∈ A^k (Fintype.piFinset of A) satisfying LProp k m ε f A a."
+ },
+ "AlmostPeriodicity.just_the_triangle_inequality": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.lemma28": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.almost_periodicity": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity": {
+  "faithful": true,
+  "issue": ""
+ },
+ "AlmostPeriodicity.linfty_almost_periodicity_boosted": {
+  "faithful": true,
+  "issue": ""
+ }
+}

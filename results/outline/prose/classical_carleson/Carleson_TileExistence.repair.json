@@ -1,0 +1,14 @@
+{
+ "grid_existence": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space). Definition (construction): a grid structure on $X$ with parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$. Its docstring describes it as the proof that there exists a grid structure."
+ },
+ "tileData_existence": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$. Definition (construction): a pre-tile structure for $Q$ with parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$."
+ },
+ "Construction.Ω": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$. Definition: for a tile $p\\in\\mathfrak P(X)$, a set $\\Omega(p)\\subseteq\\Theta(X)$."
+ },
+ "tile_existence": {
+  "statement": "Let $X$ be a pseudometric space, and assume the standing `ProofData` assumptions for parameters $a\\in\\mathbb N$, $q\\in\\mathbb R$, a complex-valued kernel $K : X\\times X\\to\\mathbb C$, integer-valued scale functions $\\sigma_1,\\sigma_2 : X\\to\\mathbb Z$ and sets $F,G\\subseteq X$ (making $X$ a doubling metric measure space), together with a grid structure on $X$ with the default parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$. Definition (construction): a tile structure for $Q$ with parameters $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and base point $o=\\mathrm{cancelPt}(X)$."
+ }
+}

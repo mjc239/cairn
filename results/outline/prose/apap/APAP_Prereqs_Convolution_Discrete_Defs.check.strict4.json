@@ -1,0 +1,7 @@
+{
+"ddconv": {"faithful": true, "issue": ""},
+"ddconv_eq_sum_sub": {"faithful": true, "issue": ""},
+"trivChar": {"faithful": true, "issue": ""},
+"iterConv": {"faithful": true, "issue": ""},
+"dddconv": {"faithful": true, "issue": ""}
+}

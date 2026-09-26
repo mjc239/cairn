@@ -1,0 +1,5 @@
+{
+ "cft": {
+  "statement": "Let $G$ be a finite abelian group. For $f : G \\to \\mathbb{C}$, $\\mathrm{cft}(f)$ assigns to each additive character $\\psi : G \\to \\mathbb{C}$ a complex number $\\mathrm{cft}(f)(\\psi)$; according to its docstring, it is the discrete Fourier transform of $f$."
+ }
+}

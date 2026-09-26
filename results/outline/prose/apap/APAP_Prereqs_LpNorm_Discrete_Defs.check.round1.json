@@ -1,0 +1,6 @@
+{
+  "MeasureTheory.dLpNorm": {
+    "faithful": false,
+    "issue": "The English attributes the compact (averaging) normalisation to the discrete `dLpNorm`, a specific property not readable from the signature and at odds with the discrete (summing) norm used elsewhere."
+  }
+}

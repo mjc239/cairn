@@ -1,0 +1,20 @@
+{
+ "title": "Dependent random choice and sifting",
+ "results": {
+  "s": {
+   "statement": "For $p \\in \\mathbb{R}_{\\ge 0}$, $\\varepsilon \\in \\mathbb{R}$ and finite sets $B_1, B_2, A \\subseteq G$, $s(p,\\varepsilon,B_1,B_2,A)$ is a finite subset of $G$ built from these data; it is the set appearing in the sifting lemmas."
+  },
+  "drc": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $p \\ge 2$ (a nonnegative real), $f : G \\to \\mathbb{R}_{\\ge 0}$, and suppose some $x \\in B_1 - B_2$ with $x \\in A - A$ has $f(x) \\ne 0$; suppose $B_1 \\cap B_2$ and $A$ are nonempty. Then there are $A_1 \\subseteq B_1$ and $A_2 \\subseteq B_2$ such that $\\langle \\mu_{A_1}\\circ\\mu_{A_2}, f\\rangle \\cdot \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^p \\le 2\\sum_x (\\mu_{B_1}\\circ\\mu_{B_2})(x)\\,(1_A\\circ 1_A)(x)^p f(x)$, and $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_1|/|B_1|$ and $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_2|/|B_2|$. Here $\\mu_X$ is the normalised indicator of $X$, $\\circ$ is the discrete difference convolution, $1_A$ is the indicator of $A$, and $\\|\\cdot\\|_{p,w}$ is the $L^p$ norm weighted by $w = \\mu_{B_1}\\circ\\mu_{B_2}$.",
+   "sketch": "Expand the difference convolutions as sums using $(f\\ast g)(a)=\\sum_t f(a-t)g(t)$ and run a dependent random choice (averaging) argument to find the sets $A_1, A_2$ satisfying all three inequalities."
+  },
+  "sifting": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $B_1, B_2$ be finite subsets of $G$, $0 < \\varepsilon \\le 1$, $\\delta > 0$, $p$ an even natural number with $p \\ge 2$ and $\\varepsilon^{-1}\\log(2/\\delta) \\le p$, $B_1 \\cap B_2$ and $A$ nonempty, and suppose some $x \\in B_1 - B_2$ with $x \\in A - A$ satisfies $x \\notin s(p,\\varepsilon,B_1,B_2,A)$. Then there are $A_1 \\subseteq B_1$ and $A_2 \\subseteq B_2$ with $1 - \\delta \\le \\sum_{x \\in s(p,\\varepsilon,B_1,B_2,A)} (\\mu_{A_1}\\circ\\mu_{A_2})(x)$, $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_1|/|B_1|$ and $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_2|/|B_2|$. Here $\\mu_X$ is the normalised indicator of $X$, $\\circ$ is the discrete difference convolution, $1_A$ is the indicator of $A$, and $\\|\\cdot\\|_{p,w}$ is the $L^p$ norm weighted by $w = \\mu_{B_1}\\circ\\mu_{B_2}$.",
+   "sketch": "Apply drc to a suitable nonnegative function (its support hypothesis supplied by the assumed point $x$) and turn the resulting inequality into the stated bound using the expansion of the $L^p$ norm as a sum."
+  },
+  "sifting_cor": {
+   "statement": "Let $G$ carry the discrete measurable structure. Let $0 < \\varepsilon \\le 1$, $\\delta > 0$, $p$ an even natural number with $p \\ne 0$ and $\\varepsilon^{-1}\\log(2/\\delta) \\le p$, and $A$ nonempty. Then there are $A_1, A_2 \\subseteq G$ with $1 - \\delta \\le \\sum_{x \\in s(p,\\varepsilon,G,G,A)} (\\mu_{A_1}\\circ\\mu_{A_2})(x)$, $\\frac14 \\operatorname{dens}(A)^{2p} \\le \\operatorname{dens}(A_1)$ and $\\frac14 \\operatorname{dens}(A)^{2p} \\le \\operatorname{dens}(A_2)$, where $\\operatorname{dens}(X) = |X|/|G|$, $\\mu_X$ is the normalised indicator of $X$ and $\\circ$ is the discrete difference convolution.",
+   "sketch": "Specialise sifting to $B_1 = B_2 = G$ (the whole group), rewriting the cardinality ratios as densities and bounding the weighted $L^p$ norm of $1_A\\circ 1_A$ using $L^p$ and $L^1$ norm computations for indicators."
+  }
+ }
+}

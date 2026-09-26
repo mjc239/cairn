@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.CondIndepFun": {
+  "statement": "Let $\\Omega$, $\\alpha$, $\\beta$, $\\gamma$ be measurable spaces. For functions $f : \\Omega \\to \\alpha$, $g : \\Omega \\to \\beta$, $h : \\Omega \\to \\gamma$ and a measure $\\mu$ on $\\Omega$ (an automatically supplied argument), $\\mathrm{CondIndepFun}\\ f\\ g\\ h\\ \\mu$ is the proposition that for almost every $z \\in \\gamma$ with respect to the pushforward measure $h_*\\mu$, the functions $f$ and $g$ are independent (`IndepFun`) with respect to the conditional measure $\\mu[\\,\\cdot \\mid h^{-1}(\\{z\\})]$, i.e. $\\mu$ conditioned on the set $h^{-1}(\\{z\\})$. Per the docstring, this is the assertion that $f$ and $g$ are conditionally independent relative to $h$."
+ }
+}

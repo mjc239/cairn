@@ -1,0 +1,5 @@
+{
+ "linearized_metric_carleson": {
+  "statement": "(Theorem 1.1.2) Let $X$ be a metric space with $a \\in \\mathbb{N}$ and a kernel $K : X \\times X \\to \\mathbb{C}$ satisfying the standing assumptions `KernelProofData a K` (in particular $X$ is a doubling metric measure space and $K$ is a Calderón–Zygmund kernel with parameter $a$), and assume the cancellative condition `IsCancellative X (defaultτ a)` for the family $\\Theta(X)$ of frequency functions. Let $Q : X \\to \\Theta(X)$ be a simple function. Let $q, q' \\in \\mathbb{R}_{\\ge 0}$ with $q\\in(1,2]$ and $q'$ the Hölder conjugate of $q$, let $F,G\\subseteq X$ be measurable, and let $f : X \\to \\mathbb{C}$ be measurable with $|f|\\le\\mathbf 1_F$ pointwise. Further, suppose that for every $\\theta\\in\\Theta(X)$ the linearized nontangential operator associated with $Q$, $\\theta$ and $K$ has bounded strong type $(2,2)$ with constant $C_{T_s}(a)$. Then $$\\int_G T_{Q}^{\\mathrm{lin}}f(x)\\,dx\\le C_{1.0.2}(a,q)\\,\\mu(G)^{1/q'}\\,\\mu(F)^{1/q},$$ where $T_Q^{\\mathrm{lin}}$ is the linearized Carleson operator $\\mathrm{linearizedCarlesonOperator}\\,Q\\,K$."
+ }
+}

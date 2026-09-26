@@ -1,0 +1,11 @@
+{
+ "general_hoelder": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $\\eta \\ge 0$, let $\\nu : G \\to \\mathbb{R}_{\\ge 0}$ satisfy $1 \\le \\nu(x)$ whenever $f(x) \\ne 0$, let $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$, and let $m \\ne 0$. Then $|\\Delta|^{2m}\\left(\\eta^{2m}\\,\\frac{\\|f\\|_1^2}{\\|f\\|_2^2}\\right) \\le \\mathrm{energy}_m(\\Delta, \\widehat{\\nu})$, where $\\widehat{\\nu}$ is the discrete Fourier transform of $\\nu$."
+ },
+ "spec_hoelder": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $\\eta \\ge 0$, $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$ and $m \\ne 0$. Then $|\\Delta|^{2m}\\left(\\eta^{2m}\\,\\frac{\\|f\\|_1^2/\\|f\\|_2^2}{|G|}\\right) \\le \\mathrm{boringEnergy}_m(\\Delta)$."
+ },
+ "chang": {
+  "statement": "(Chang's lemma.) Let $G$ be a finite abelian group carrying the discrete measurable structure. If $f \\ne 0$ and $\\eta > 0$, then there is a finite set $\\Delta \\subseteq \\operatorname{largeSpec}(f, \\eta)$ such that $|\\Delta| \\le \\left\\lceil \\mathrm{changConst}\\cdot e \\cdot \\left\\lceil 1 + \\log\\Big(1 \\big/ \\big(\\|f\\|_1^2 / \\|f\\|_2^2 / |G|\\big)\\Big)\\right\\rceil / \\eta^2 \\right\\rceil$ (both ceilings being natural-number ceilings) and $\\operatorname{largeSpec}(f, \\eta)$ is contained in the additive span of $\\Delta$."
+ }
+}

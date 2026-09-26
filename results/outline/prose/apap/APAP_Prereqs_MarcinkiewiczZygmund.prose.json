@@ -1,0 +1,13 @@
+{
+ "title": "The Marcinkiewicz–Zygmund inequality",
+ "results": {
+  "Real.marcinkiewicz_zygmund": {
+   "statement": "Let $A$ be a finite subset of a type $\\iota$, $n \\in \\mathbb{N}$, and $m \\ne 0$. Let $f : \\iota \\to \\mathbb{R}$ satisfy $\\sum_{a \\in A^n} f(a_i) = 0$ for every $i \\in \\{0,\\dots,n-1\\}$. Then $\\sum_{a \\in A^n}\\bigl(\\sum_i f(a_i)\\bigr)^{2m} \\le (4m)^m\\, n^{m-1} \\sum_{a \\in A^n}\\sum_i f(a_i)^{2m}$.",
+   "sketch": "Deduced from a variant of the inequality with a different constant (Real.marcinkiewicz_zygmund'), which is proved through a chain of auxiliary estimates."
+  },
+  "RCLike.marcinkiewicz_zygmund": {
+   "statement": "Let $A$ be a finite subset of a type $\\iota$, $n \\in \\mathbb{N}$, and $m \\ne 0$. Let $\\mathbb{K}$ be $\\mathbb{R}$ or $\\mathbb{C}$ and let $f : \\iota \\to \\mathbb{K}$ satisfy $\\sum_{a \\in A^n} f(a_i) = 0$ for every $i \\in \\{0,\\dots,n-1\\}$. Then $\\sum_{a \\in A^n}\\bigl|\\sum_i f(a_i)\\bigr|^{2m} \\le (8m)^m\\, n^{m-1} \\sum_{a \\in A^n}\\sum_i |f(a_i)|^{2m}$.",
+   "sketch": "Reduced to the real-valued inequality Real.marcinkiewicz_zygmund, at the cost of replacing the constant $4m$ by $8m$."
+  }
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.rdistm": {
+  "statement": "Let $G$ be an abelian group equipped with a measurable space structure. For two measures $\\mu,\\nu$ on $G$, this defines a real number $\\mathrm{rdistm}(\\mu,\\nu)$. According to its docstring, it is the Ruzsa distance between the two measures, defined as $H[X-Y]-H[X]/2-H[Y]/2$ where $X$ and $Y$ are independent variables distributed according to $\\mu$ and $\\nu$."
+ }
+}

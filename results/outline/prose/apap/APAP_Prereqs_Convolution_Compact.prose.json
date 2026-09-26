@@ -1,0 +1,8 @@
+{
+ "title": "Compact convolution",
+ "results": {
+  "iterCConv": {
+   "statement": "For $R$ of characteristic zero, $f : G \\to R$ and $n \\in \\mathbb{N}$, defines the $n$-fold iterated convolution of $f$ with respect to the compact (expectation-normalised) convolution."
+  }
+ }
+}

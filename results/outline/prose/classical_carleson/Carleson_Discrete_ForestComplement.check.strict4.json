@@ -1,0 +1,7 @@
+{
+"forest_complement": {"faithful": false, "issue": "Supplies descriptions not in the prompt: G' as 'the exceptional set of the proof', P_1 as 'the union of the forests', and the formula carlesonSum = sum over p of T_p f (T_p never introduced). Q is also never introduced."},
+"𝔓pos": {"faithful": false, "issue": "Q is never introduced ('a tile structure for Q'), and the claim that ProofData makes X a doubling metric measure space is not supported by the prompt."},
+"lintegral_carlesonSum_𝔓₁_compl_le_sum_lintegral": {"faithful": false, "issue": "G', P_1, Q and the sets L_0', L_1, L_2, L_3 are never introduced. The claim that ProofData makes X a doubling metric measure space is also unsupported."},
+"lintegral_enorm_carlesonSum_le_of_isAntichain_subset_ℭ": {"faithful": false, "issue": "Unsupported descriptions of G' ('exceptional set') and P_1 ('union of the forests'). C(k,n) (ℭ k n) and Q are never introduced."},
+"forest_complement_optimized": {"faithful": false, "issue": "Unsupported descriptions of G' ('exceptional set of the proof') and P_1 ('union of the forests'), which neither the Lean nor a docstring gives. Q is never introduced."}
+}

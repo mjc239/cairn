@@ -1,0 +1,3 @@
+{
+ "largeSpec": {"faithful": false, "issue": "Definition body is shown but the English only paraphrases the docstring ('the η-large spectrum'). It should state that largeSpec(f, η) is the set of characters ψ with η·‖f‖₁ ≤ |f̂(ψ)|, where ‖f‖₁ = Σ_x |f(x)| is the L¹ norm with counting measure (dLpNorm) and f̂(ψ) = dft f ψ = ⟪ψ, f⟫."}
+}

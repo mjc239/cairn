@@ -1,0 +1,5 @@
+{
+ "ProbabilityTheory.Kernel.mutualInfo": {
+  "statement": "Definition. Let $S$, $T$ and $U$ be measurable spaces. For a kernel $\\kappa$ from $T$ to the product space $S\\times U$ and a measure $\\mu$ on $T$, the mutual information of $\\kappa$ with respect to $\\mu$ is the real number $$I_k[\\kappa,\\mu]=H_k[\\kappa_1,\\mu]+H_k[\\kappa_2,\\mu]-H_k[\\kappa,\\mu],$$ where $\\kappa_1$ (a kernel from $T$ to $S$) and $\\kappa_2$ (a kernel from $T$ to $U$) are the first and second marginals of $\\kappa$ ($\\kappa_1(t)$ and $\\kappa_2(t)$ are the pushforwards of $\\kappa(t)$ under the projections $S\\times U\\to S$ and $S\\times U\\to U$), and for a kernel $\\lambda$ from $T$ to a measurable space $V$, $H_k[\\lambda,\\mu]=\\int_T H(\\lambda(t))\\,d\\mu(t)$ (Bochner integral, the project's kernel entropy), with $H(\\nu)=\\sum_{v\\in V}\\phi\\big(\\nu'(\\{v\\})\\big)$ for a measure $\\nu$ on $V$ (the project's `measureEntropy`; unconditional real sum, $0$ if not summable), $\\nu'=\\nu(V)^{-1}\\cdot\\nu$ the normalized measure, and $\\phi(x)=-x\\log x$."
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "grid_existence": {
+  "statement": "Let $X$ be a pseudometric space, let $a\\in\\mathbb N$, $q\\in\\mathbb R$, $K:X\\to X\\to\\mathbb C$, $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ and $F,G\\subseteq X$, and assume the standing hypotheses `ProofData a q K σ₁ σ₂ F G` (which supply, among other things, the function $Q$ used below). Write $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and $o=\\mathrm{cancelPt}(X)$. Definition (construction): a grid structure `GridStructure X D κ S o` on $X$ with parameters $D,\\kappa,S$ and point $o$. Its docstring describes it as the proof that there exists a grid structure."
+ },
+ "tileData_existence": {
+  "statement": "Let $X$ be a pseudometric space, let $a\\in\\mathbb N$, $q\\in\\mathbb R$, $K:X\\to X\\to\\mathbb C$, $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ and $F,G\\subseteq X$, and assume the standing hypotheses `ProofData a q K σ₁ σ₂ F G` (which supply, among other things, the function $Q$ used below). Write $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and $o=\\mathrm{cancelPt}(X)$. Assume moreover a grid structure `GridStructure X D κ S o` on $X$. Definition (construction): a pre-tile structure `PreTileStructure Q D κ S o` on $X$ for $Q$ with parameters $D,\\kappa,S$ and point $o$."
+ },
+ "Construction.Ω": {
+  "statement": "Let $X$ be a pseudometric space, let $a\\in\\mathbb N$, $q\\in\\mathbb R$, $K:X\\to X\\to\\mathbb C$, $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ and $F,G\\subseteq X$, and assume the standing hypotheses `ProofData a q K σ₁ σ₂ F G` (which supply, among other things, the function $Q$ used below). Write $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and $o=\\mathrm{cancelPt}(X)$. Assume moreover a grid structure `GridStructure X D κ S o` on $X$. Let $\\mathfrak P(X)$ denote the tiles `𝔓 X` and $\\Theta(X)$ the space `Θ X`. Definition: for a tile $p\\in\\mathfrak P(X)$, a set $\\Omega(p)\\subseteq\\Theta(X)$ (named `Construction.Ω p`)."
+ },
+ "tile_existence": {
+  "statement": "Let $X$ be a pseudometric space, let $a\\in\\mathbb N$, $q\\in\\mathbb R$, $K:X\\to X\\to\\mathbb C$, $\\sigma_1,\\sigma_2:X\\to\\mathbb Z$ and $F,G\\subseteq X$, and assume the standing hypotheses `ProofData a q K σ₁ σ₂ F G` (which supply, among other things, the function $Q$ used below). Write $D=\\mathrm{defaultD}(a)$, $\\kappa=\\mathrm{default}\\kappa(a)$, $S=\\mathrm{defaultS}(X)$ and $o=\\mathrm{cancelPt}(X)$. Assume moreover a grid structure `GridStructure X D κ S o` on $X$. Definition (construction): a tile structure `TileStructure Q D κ S o` on $X$ for $Q$ with parameters $D,\\kappa,S$ and point $o$."
+ }
+}

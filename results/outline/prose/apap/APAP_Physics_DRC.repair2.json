@@ -1,0 +1,5 @@
+{
+ "drc": {
+  "statement": "Let $G$ be a finite abelian group carrying the discrete measurable structure. Let $p \\ge 2$ be a natural number, let $A, B_1, B_2 \\subseteq G$ be finite sets, let $f : G \\to \\mathbb{R}_{\\ge 0}$, and suppose some $x \\in B_1 - B_2$ with $x \\in A - A$ has $f(x) \\ne 0$; suppose $B_1 \\cap B_2$ and $A$ are nonempty. Then there are $A_1 \\subseteq B_1$ and $A_2 \\subseteq B_2$ such that $\\langle \\mu_{A_1}\\circ\\mu_{A_2}, f\\rangle \\cdot \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^p \\le 2\\sum_x (\\mu_{B_1}\\circ\\mu_{B_2})(x)\\,(1_A\\circ 1_A)(x)^p f(x)$, and $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_1|/|B_1|$ and $\\frac14 \\|1_A \\circ 1_A\\|_{p,\\mu_{B_1}\\circ\\mu_{B_2}}^{2p}/|A|^{2p} \\le |A_2|/|B_2|$. Here $\\mu_X$ is the normalised indicator of $X$, $\\circ$ is the discrete difference convolution, $1_A$ is the indicator of $A$, $\\langle\\cdot,\\cdot\\rangle$ is the real inner product (sum over $G$), and $\\|\\cdot\\|_{p,w}$ is the $L^p$ norm weighted by $w = \\mu_{B_1}\\circ\\mu_{B_2}$."
+ }
+}

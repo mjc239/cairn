@@ -1,0 +1,1 @@
+{"mu": {"statement": "Definition. Let $K$ be a division semiring and $\\alpha$ a type. For a finite set $s$ of elements of $\\alpha$, $\\mu_s : \\alpha \\to K$ is a $K$-valued function on $\\alpha$; its docstring describes it as the normalised indicator_one of the set $s$."}}

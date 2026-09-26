@@ -1,0 +1,11 @@
+{
+ "refPackage": {
+  "statement": "For measure spaces $\\Omega_{01}$ and $\\Omega_{02}$ (types each equipped with a canonical measure) and a measurable space $G$, `refPackage Ω₀₁ Ω₀₂ G` is a type (a structure). According to its docstring, it packages all the fixed information in the main argument, so that when defining the $\\tau$ functional one only needs to refer to the package once in the notation instead of stating the reference spaces, the reference measures and the reference random variables; the docstring adds that the parameter $\\eta$ has been incorporated into the package."
+ },
+ "tau": {
+  "statement": "Let $\\Omega_{01}$ and $\\Omega_{02}$ be measure spaces, let $G$ be an abelian group (additive commutative group) equipped with a measurable space structure, and let $p$ be a reference package `refPackage Ω₀₁ Ω₀₂ G`. For measurable spaces $\\Omega_1, \\Omega_2$, functions $X_1 : \\Omega_1 \\to G$ and $X_2 : \\Omega_2 \\to G$, and measures $\\mu_1$ on $\\Omega_1$ and $\\mu_2$ on $\\Omega_2$, define a real number $\\tau[X_1; \\mu_1 \\# X_2; \\mu_2 \\mid p]$. According to its docstring, $\\tau[X_1; X_2] := d[X_1; X_2] + \\eta\\, d[X^0_1; X_1] + \\eta\\, d[X^0_2; X_2]$, where $X^0_1, X^0_2$ are reference random variables fixed once and for all and packaged in $p$."
+ },
+ "TauMinimizes": {
+  "statement": "Let $\\Omega_{01}$ and $\\Omega_{02}$ be measure spaces, let $G$ be an abelian group (additive commutative group) equipped with a measurable space structure, and let $p$ be a reference package `refPackage Ω₀₁ Ω₀₂ G`. For a measure space $\\Omega$ and functions $X_1, X_2 : \\Omega \\to G$, `TauMinimizes p X₁ X₂` is a proposition. According to its docstring, it records the fact that $X_1, X_2$ minimize the $\\tau$ functional; it is expressed in terms of measures on the group to avoid quantifying over all spaces, but it implies comparison with any pair of random variables (see Lemma `is_tau_min`)."
+ }
+}

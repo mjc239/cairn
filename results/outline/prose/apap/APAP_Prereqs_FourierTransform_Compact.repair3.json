@@ -1,0 +1,5 @@
+{
+ "cft": {
+  "statement": "Definition. Let $G$ be a finite additive commutative group. For $f : G \\to \\mathbb{C}$ and an additive character $\\psi : G \\to \\mathbb{C}$ of $G$ (a map with $\\psi(0) = 1$ and $\\psi(x + y) = \\psi(x)\\psi(y)$), $\\mathrm{cft}(f)(\\psi)$ is the complex number $$\\mathrm{cft}(f)(\\psi) = \\langle \\psi, f \\rangle_{n} = \\frac{1}{|G|} \\sum_{x \\in G} \\overline{\\psi(x)}\\, f(x),$$ the normalised (expectation over $G$) complex inner product of $\\psi$ and $f$ (written `⟪ψ, f⟫ₙ_[ℂ]`), where $\\overline{\\cdot}$ denotes complex conjugation. According to its docstring, this is the discrete Fourier transform."
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "TileStructure.Forest.indicator_adjoint_tree_estimate": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.adjoint_tree_control": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.𝔖₀": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.overlap_implies_distance": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound2": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.adjoint_density_tree_bound1": {
+  "faithful": true,
+  "issue": ""
+ },
+ "TileStructure.Forest.adjoint_tree_estimate": {
+  "faithful": true,
+  "issue": ""
+ }
+}

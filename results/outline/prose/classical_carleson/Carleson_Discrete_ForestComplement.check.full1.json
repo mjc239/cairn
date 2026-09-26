@@ -1,0 +1,22 @@
+{
+ "forest_complement": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "𝔓pos": {
+  "faithful": true,
+  "issue": ""
+ },
+ "lintegral_carlesonSum_𝔓₁_compl_le_sum_lintegral": {
+  "faithful": true,
+  "issue": ""
+ },
+ "lintegral_enorm_carlesonSum_le_of_isAntichain_subset_ℭ": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ },
+ "forest_complement_optimized": {
+  "faithful": false,
+  "issue": "Omits the standing assumptions ProofData a q K σ₁ σ₂ F G and TileStructure (metric space X, doubling measure, tile structure)."
+ }
+}

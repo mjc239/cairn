@@ -1,0 +1,8 @@
+{
+ "title": "Weighted Lp norms",
+ "results": {
+  "wLpNorm": {
+   "statement": "For $p \\in [0, \\infty]$, a weight $w : \\alpha \\to \\mathbb{R}_{\\ge 0}$ and $f : \\alpha \\to E$, defines the weighted $L^p$ norm $\\|f\\|_{p, w}$ of $f$."
+  }
+ }
+}
