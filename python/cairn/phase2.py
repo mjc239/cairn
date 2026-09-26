@@ -76,11 +76,18 @@ def _stem(name: str) -> tuple[str, str]:
     return ns, _AUX_SUFFIX.sub("", last) or last
 
 
+_BETWEENNESS_EXACT_UP_TO = 20_000
+_BETWEENNESS_SAMPLE = 500
+
+
 def key_node_features(decls: dict[str, FormalDecl], fg: nx.DiGraph) -> dict[str, dict[str, float]]:
     n = fg.number_of_nodes()
     pr_goal = nx.pagerank(fg)
     pr_use = nx.pagerank(fg.reverse(copy=False))
-    betw = nx.betweenness_centrality(fg)
+    # Exact betweenness is O(nm): hours at the scale of the 55k-declaration Navier–Stokes/Euler development. Large
+    # graphs use a fixed-seed estimate from sampled sources (normalised the same way); smaller ones stay exact.
+    betw = nx.betweenness_centrality(fg, k=_BETWEENNESS_SAMPLE, seed=0) if n > _BETWEENNESS_EXACT_UP_TO \
+        else nx.betweenness_centrality(fg)
     dom = dominator_subtree_sizes(fg)
     family: dict[tuple[str, str], set[str]] = {}
     for v in fg.nodes:
