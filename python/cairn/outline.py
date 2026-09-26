@@ -247,7 +247,7 @@ def _oneline(text: str) -> str:
     return " ".join(text.split())
 
 
-_HELPERS_SHOWN = 200
+_HELPERS_SHOWN = 30
 
 
 def render(o: Outline, decls: dict[str, FormalDecl], title: str, style: Style, detail_note: str,
